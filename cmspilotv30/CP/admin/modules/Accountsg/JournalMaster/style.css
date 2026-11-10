@@ -1,0 +1,83 @@
+.m-accountsg_journalMaster #col3 .c50l,
+.m-accountsg_journalMaster #col3 .c50r {
+    width: 100%;
+}
+
+.m-accountsg_journalMaster #col3 c50r {
+    width: 0;
+}
+.m-accountsg_journalMaster td.accountListHeader {
+    width: 200px;
+}
+.m-accountsg_journalMaster #bodyList {
+}
+
+.m-accountsg_journalMaster #entry .account { width: auto; }
+.m-accountsg_journalMaster #entry .debit { width: 10%; }
+.m-accountsg_journalMaster #entry .credit { width: 10%; }
+.m-accountsg_journalMaster #entry .exch_rate { width: 10%; }
+.m-accountsg_journalMaster #entry .debit_base { width: 10%; }
+.m-accountsg_journalMaster #entry .credit_base { width: 10%; }
+.m-accountsg_journalMaster #entry .delete { width: 3%; }
+.m-accountsg_journalMaster #entry .fld-currency { }
+
+.m-accountsg_journalMaster #entry .fld-account { width: 98%; }
+.m-accountsg_journalMaster #entry .fld-narration { width: 98%; margin-top: 8px;}
+.m-accountsg_journalMaster #entry .fld-debit { width: 96%; text-align: right;}
+.m-accountsg_journalMaster #entry .fld-credit { width: 96%; }
+.m-accountsg_journalMaster #entry .fld-exch_rate { width: 96%; text-align: right;}
+.m-accountsg_journalMaster #entry .fld-debit_base { width: 96%; background-color: transparent;}
+.m-accountsg_journalMaster #entry .fld-credit_base { width: 96%; text-align: right;}
+.m-accountsg_journalMaster #entry .fld-debit_base, #entry .fld-credit_base, #entry .fld-currency {
+    background-color: transparent !important;
+}
+
+.m-accountsg_journalMaster #entryErrorBox {
+	width: 600px;
+	font-weight: bold;
+	text-align: center;
+	margin: auto;
+	display: none;
+	background-color: #EBCE42;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	padding: 3px;
+}
+
+.m-accountsg_journalMaster #entry .type-text label,
+.m-accountsg_journalMaster #entry .type-select label {
+	width: 12%;
+}
+.m-accountsg_journalMaster .yform.detail #entry .type-text .txt,
+.m-accountsg_journalMaster .yform.detail #entry .type-select .txt {
+    margin-left: 14%;
+}
+.m-accountsg_journalMaster .yform.edit #entry .type-text .txt {
+    margin-left: 12%;
+}
+
+.m-accountsg_journalMaster #bodyList .narration {
+    font-style: italic;
+}
+
+.mg-accountsg #entry .row table, .mg-accountsg #entry .summary-row table {
+    border: 1px solid hsl(0, 0%, 80%);
+    width: 100%;
+}
+
+.mg-accountsg #entry .row table th {
+    background: none repeat scroll 0 0 hsl(0, 0%, 90%);
+}
+
+.red-bg {
+    background-color: hsl(0, 69%, 92%);
+}
+
+.mg-accountsg #entry .row table td,
+.mg-accountsg #entry .row table th,
+.mg-accountsg #entry .summary-row table td,
+.mg-accountsg #entry .summary-row table th {
+    border: 1px solid hsl(0, 0%, 80%);
+    padding: 7px;
+}
+

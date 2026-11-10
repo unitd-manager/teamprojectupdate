@@ -1,0 +1,24 @@
+@media all
+{
+    .w-enggCrm-overallSalesSummary .purchaseVal {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .w-enggCrm-overallSalesSummary .purchaseDetails {
+    	display: none;
+    }
+
+    .w-enggCrm-overallSalesSummary .quoteCode {
+        width: 178px;
+    }
+
+    .w-enggCrm-overallSalesSummary .orderDate {
+        width: 178px;
+    }
+
+    .w-enggCrm-overallSalesSummary .companyName {
+        width: 178px;
+    }
+}
+

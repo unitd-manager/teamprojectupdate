@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@media all
+{
+    /* title */
+    h6.vlist {
+        font-weight:bold;
+        padding:3px 0px 3px 10%;
+        margin:;
+        color:#fff;
+        background-color:#7F0000;
+        border-top:2px #ddd solid;
+        border-bottom:4px #888 solid;
+    }
+    
+    .vlist ul {
+        border-bottom:2px #ddd solid;
+    }
+    
+    .vlist ul a {
+        border-bottom:1px #ddd solid;
+    }
+    
+    .vlist ul a {
+        color:#444;
+    }
+
+    /* active list element */
+    .vlist ul li.active > a:first-child, .vlist ul li a:hover{
+        color:#fff;
+        background-color: #000000;
+     }
+    
+    .vlist ul li.active ul li.active a{
+        background-color:#7F7F7F;
+    }
+}

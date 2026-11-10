@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_AceIms_Insurance_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

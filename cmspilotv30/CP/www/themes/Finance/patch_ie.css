@@ -1,0 +1,26 @@
+table.business-structure {
+    *background: url("/www/images/our-structure-chart.jpg") no-repeat scroll 0 8px transparent;
+    *text-align: center;
+    *height: 350px;
+}
+
+table.business-structure td {
+    *border: 0 solid #000;
+    *vertical-align: top;
+}
+
+table.business-structure td span {
+    *text-align: center;
+}
+
+.w-menu-superFish .sf-menu a {
+    *font-size: 0.76em;
+}
+
+#nav {
+    *z-index: 2;
+}
+
+#main {
+    *z-index: 1;
+}

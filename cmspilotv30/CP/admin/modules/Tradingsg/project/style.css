@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-tradingsg_project .c50l{
+        width: 38% !important;
+    }
+
+    .m-tradingsg_project .c50r {
+        width: 62% !important;
+    }
+}

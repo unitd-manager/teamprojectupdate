@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_EnggCrm_InvoiceLink_Model extends CP_Common_Lib_ModuleLinkModelAbstract
+{
+}

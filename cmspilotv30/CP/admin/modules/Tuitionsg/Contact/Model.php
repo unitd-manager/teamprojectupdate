@@ -1,0 +1,1092 @@
+<?
+class CP_Admin_Modules_Tuitionsg_Contact_Model extends CP_Common_Lib_ModuleModelAbstract
+{
+
+    /**
+     *
+     */
+    function getSQL() {
+        $fn = Zend_Registry::get('fn');
+        $cpCfg = Zend_Registry::get('cpCfg');
+
+        $course_id      = $fn->getReqParam('course_id');
+        $interest_id    = $fn->getReqParam('interest_id');
+        $course_status  = $fn->getReqParam('course_status');
+
+        $extraFieldNames = '';
+        $extraTableNames = '';
+
+        if ($interest_id != "") {
+            $extraTableNames .= "JOIN interest_contact ic ON (c.contact_id = ic.contact_id)";
+        }
+
+        if ($course_id != "" || ($course_status != '' && $cpCfg['m.aceIms.course.hasCourseContactStatus'])) {
+            if ($course_status != '') {
+                $extraFieldNames .= ",cc.course_status";
+            } else {
+                $extraFieldNames .= ",cc.batch_id";
+            }
+
+            $extraTableNames .= "JOIN course_contact cc ON (c.contact_id = cc.contact_id)";
+        }
+
+        $SQL = "
+        SELECT c.*
+              ,gc.name AS country_name
+              ,gc2.name AS c_country_name
+              ,CONCAT_WS(' ', c.first_name, c.last_name ) AS contact_name
+              ,IF(c.company_id > 0, co.title, c.company_name) AS company_title
+              ,co.title                AS c_company_name
+              ,co.email                AS c_email
+              ,co.address1             AS c_address_flat
+              ,co.address2             AS c_address_street
+              ,co.address_town         AS c_address_town
+              ,co.address_state        AS c_address_state
+              ,co.address_po_code      AS c_address_po_code
+              ,co.phone                AS c_phone
+              ,co.fax                  AS c_fax
+              ,co.category             AS c_category
+              ,co.reg_number           AS c_reg_number
+              {$extraFieldNames}
+        FROM contact c
+        LEFT JOIN (company co) ON (c.company_id = co.company_id )
+        LEFT JOIN geo_country gc ON (c.address_country = gc.country_code)
+        LEFT JOIN geo_country gc2 ON (co.address_country_code = gc2.country_code)
+        {$extraTableNames}
+        ";
+
+        return $SQL;
+    }
+
+    /**
+     *
+     */
+    function getNewValidate() {
+        $validate = Zend_Registry::get('validate');
+        $fn = Zend_Registry::get('fn');
+        $ln = Zend_Registry::get('ln');
+        $db = Zend_Registry::get('db');
+
+        $validate->resetErrorArray();
+
+        $validate->validateData('first_name', 'Please enter the name');
+        $validate->validateData('id_card_no' , 'Please enter NRIC / Passport No.');
+
+        $id_card_no = $fn->getPostParam('id_card_no', '', true);
+
+        if ($id_card_no != ''){
+            $rec = $fn->getRecordByCondition('contact', "id_card_no = '{$id_card_no}'");
+            $expIdCard = array('displayText' => 'Go to this record', 'target' => '_blank');
+            $IdCardlink = $fn->getRecordDetailLink('aceIms_contact', 'record_id', $rec['contact_id'], $expIdCard);
+
+            if (is_array($rec)){
+                $validate->errorArray['id_card_no']['name'] = "id_card_no";
+                $validate->errorArray['id_card_no']['msg']  = "NRIC / Passport No. already exists. '{$IdCardlink}'";
+            }
+        }
+
+        if (count($validate->errorArray) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     *
+     */
+    function getAdd(){
+        $fn = Zend_Registry::get('fn');
+        $validate = Zend_Registry::get('validate');
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $db = Zend_Registry::get('db');
+
+        if (!$this->getNewValidate()){
+            return $validate->getErrorMessageXML();
+        }
+
+        $fa = $this->getFields();
+        //$fa['registration_no'] = $this->getGenerateRegNoForContact();
+
+        $id = $fn->addRecord($fa);
+        $fn->returnAfterNewSave($id);
+    }
+
+    /**
+     *
+     */
+    function getEditValidate($contact_id = '') {
+        $fn = Zend_Registry::get('fn');
+        $validate = Zend_Registry::get('validate');
+
+        $email  = $fn->getPostParam('email', '', true);
+        $mobile = $fn->getPostParam('mobile');
+
+        $validate->resetErrorArray();
+
+        $validate->validateData('first_name', '');
+        /*$validate->validateData('gender', '');
+        $validate->validateData('id_card_no', '');
+        $validate->validateData('nationality', '');
+        $validate->validateData('date_of_birth', '');
+        $validate->validateData('email', '');
+        $validate->validateData('mobile', '');*/
+        //$validate->validateData('address_flat', '');
+        //$validate->validateData('address_po_code', '');
+
+        /*if ($email != ''){
+            if(!$validate->isEmail($email)){
+                $validate->errorArray['email']['name'] = "email";
+                $validate->errorArray['email']['msg']  = "";
+            }
+        }
+
+        $mobile_no_start = substr($mobile, 0, 1);
+        if ($mobile != '' && $mobile_no_start < '8') {
+            $validate->errorArray['mobile']['name'] = "mobile";
+            $validate->errorArray['mobile']['msg']  = "";
+        }*/
+
+        $count = count($validate->errorArray);
+        if ($count > 0) {
+            $msg = 'Input values for highlighted mandatory fields';
+            $validate->validateData('error_box', $msg);
+        }
+
+        if (count($validate->errorArray) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     *
+     */
+    function getSave($tableName = '', $keyField = '', $keyFieldVal = ''){
+        $fn = Zend_Registry::get('fn');
+        $validate = Zend_Registry::get('validate');
+        $cpCfg  = Zend_Registry::get('cpCfg');
+        $cpUtil = Zend_Registry::get('cpUtil');
+
+        $contact_id = $fn->getReqparam('contact_id');
+
+        if (!$this->getEditValidate($contact_id)){
+            return $validate->getErrorMessageXML();
+        }
+
+        $fa = $this->getFields();
+
+        if ($cpCfg['cp.hasPasswordSalt']) {
+            $pass_word = $fa['pass_word'];
+            $email = $fa['email'];
+            if ($pass_word != '') {
+                $arr = $cpUtil->getSaltAndPasswordArray($email, $pass_word);
+                $fa['salt'] = $arr['salt'];
+                $fa['pass_word'] = $arr['pass_word'];
+            } else {
+                //remove pass_word field from the fields array
+                unset($fa['pass_word']);
+            }
+        }
+        $id = $fn->saveRecord($fa, $tableName, $keyField, $keyFieldVal);
+        $fn->returnAfterNewSave($id);
+    }
+
+    /**
+     *
+     */
+    function getFields(){
+        $fn = Zend_Registry::get('fn');
+
+        $fa = array();
+
+        $fa = $fn->addToFieldsArray($fa, 'first_name');
+        $fa = $fn->addToFieldsArray($fa, 'last_name');
+        $fa = $fn->addToFieldsArray($fa, 'registration_no');
+        $fa = $fn->addToFieldsArray($fa, 'gender');
+        $fa = $fn->addToFieldsArray($fa, 'marital_status');
+        $fa = $fn->addToFieldsArray($fa, 'id_card_no');
+        $fa = $fn->addToFieldsArray($fa, 'contract_no');
+        $fa = $fn->addToFieldsArray($fa, 'is_citizen');
+        $fa = $fn->addToFieldsArray($fa, 'student_pass_holder');
+        $fa = $fn->addToFieldsArray($fa, 'nationality');
+        $fa = $fn->addToFieldsArray($fa, 'race');
+        $fa = $fn->addToFieldsArray($fa, 'date_of_birth');
+        $fa = $fn->addToFieldsArray($fa, 'phone');
+        $fa = $fn->addToFieldsArray($fa, 'mobile');
+        $fa = $fn->addToFieldsArray($fa, 'email');
+        $fa = $fn->addToFieldsArray($fa, 'pass_word');
+        $fa = $fn->addToFieldsArray($fa, 'nric_type');
+        $fa = $fn->addToFieldsArray($fa, 'parent_email');
+
+
+        $fa = $fn->addToFieldsArray($fa, 'company_id');
+
+        $fa = $fn->addToFieldsArray($fa, 'emergency_contact_name');
+        $fa = $fn->addToFieldsArray($fa, 'parent_id_card_no');
+        $fa = $fn->addToFieldsArray($fa, 'emergency_contact_mobile');
+        $fa = $fn->addToFieldsArray($fa, 'emergency_contact_office_no');
+        $fa = $fn->addToFieldsArray($fa, 'address_details');
+        $fa = $fn->addToFieldsArray($fa, 'address_flat');
+        $fa = $fn->addToFieldsArray($fa, 'address_street');
+        $fa = $fn->addToFieldsArray($fa, 'address_city');
+        $fa = $fn->addToFieldsArray($fa, 'address_state');
+        $fa = $fn->addToFieldsArray($fa, 'address_po_code');
+        $fa = $fn->addToFieldsArray($fa, 'address_country');
+
+        $fa = $fn->addToFieldsArray($fa, 'school_name');
+        $fa = $fn->addToFieldsArray($fa, 'school_country');
+        $fa = $fn->addToFieldsArray($fa, 'school_from');
+        $fa = $fn->addToFieldsArray($fa, 'school_to');
+        $fa = $fn->addToFieldsArray($fa, 'school_highest_qual');
+
+        $fa = $fn->addToFieldsArray($fa, 'phone_direct');
+        $fa = $fn->addToFieldsArray($fa, 'position');
+        $fa = $fn->addToFieldsArray($fa, 'department');
+        $fa = $fn->addToFieldsArray($fa, 'yr_of_exp');
+        $fa = $fn->addToFieldsArray($fa, 'salary_range');
+        $fa = $fn->addToFieldsArray($fa, 'apply_for_sdf');
+
+        $fa = $fn->addToFieldsArray($fa, 'published');
+        $fa = $fn->addToFieldsArray($fa, 'pass_word');
+        $fa = $fn->addToFieldsArray($fa, 'subscribe');
+
+        $fa = $fn->addToFieldsArray($fa, 'date_of_arrival');
+        $fa = $fn->addToFieldsArray($fa, 'passport_country_issued');
+        $fa = $fn->addToFieldsArray($fa, 'overseas_address_flat');
+        $fa = $fn->addToFieldsArray($fa, 'overseas_address_street');
+        $fa = $fn->addToFieldsArray($fa, 'overseas_address_po_code');
+        $fa = $fn->addToFieldsArray($fa, 'overseas_address_country');
+        $fa = $fn->addToFieldsArray($fa, 'overseas_contact_no');
+        $fa = $fn->addToFieldsArray($fa, 'parent_passport_country_issued');
+        $fa = $fn->addToFieldsArray($fa, 'parent_nationality');
+        $fa = $fn->addToFieldsArray($fa, 'parent_occupation');
+
+        return $fa;
+    }
+
+    /**
+     *
+     */
+    function getExportData($dataArray){
+        $phpExcel = includeCPClass('Lib', 'PhpExcelExportWrapper', 'PhpExcelExportWrapper');
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+
+        $course_status  = $fn->getReqParam('course_status');
+
+        if ($course_status != '' && $cpCfg['m.tuitionsg.course.hasCourseContactStatus']) {
+            $addStatusField = 1;
+        } else {
+            $addStatusField = '';
+        }
+
+        if ($addStatusField == ''){
+            $fa = array(
+                  'first_name'      => $phpExcel->getFldObj('First Name')
+                 ,'last_name'       => $phpExcel->getFldObj('Last Name')
+                 ,'email'           => $phpExcel->getFldObj('Email')
+                 ,'phone_direct'    => $phpExcel->getFldObj('Phone')
+                 ,'mobile'          => $phpExcel->getFldObj('Mobile')
+                 ,'address_flat'    => $phpExcel->getFldObj('Address 1')
+                 ,'address_street'  => $phpExcel->getFldObj('Address 2')
+                 ,'address_city'    => $phpExcel->getFldObj('City')
+                 ,'address_state'   => $phpExcel->getFldObj('State')
+                 ,'address_po_code' => $phpExcel->getFldObj('Zip Code')
+                 ,'country_name'    => $phpExcel->getFldObj('Country')
+            );
+        } else {
+            $fa = array(
+                  'first_name'      => $phpExcel->getFldObj('First Name')
+                 ,'last_name'       => $phpExcel->getFldObj('Last Name')
+                 ,'email'           => $phpExcel->getFldObj('Email')
+                 ,'phone_direct'    => $phpExcel->getFldObj('Phone')
+                 ,'mobile'          => $phpExcel->getFldObj('Mobile')
+                 ,'address_flat'    => $phpExcel->getFldObj('Address 1')
+                 ,'address_street'  => $phpExcel->getFldObj('Address 2')
+                 ,'address_city'    => $phpExcel->getFldObj('City')
+                 ,'address_state'   => $phpExcel->getFldObj('State')
+                 ,'address_po_code' => $phpExcel->getFldObj('Zip Code')
+                 ,'country_name'    => $phpExcel->getFldObj('Country')
+                 ,'course_status'   => $phpExcel->getFldObj('Status')
+            );
+        }
+
+        $file_name = "Contact_" . date("d-m-Y") . ".xls";
+
+        $config = array(
+             'filename'  => $file_name
+            ,'fldsArr'   => $fa
+            ,'dataArray' => $dataArray
+        );
+
+        return $phpExcel->exportData($config);
+    }
+
+    /**
+     *
+     */
+    function getImportData(){
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $db = Zend_Registry::get('db');
+        $fn = Zend_Registry::get('fn');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+        $phpExcel = includeCPClass('Lib', 'PhpExcelImportWrapper');
+
+        $fa = array(
+              'first_name'         => $phpExcel->getImportFldObj('STUDENTS NAME')
+             ,'email'              => $phpExcel->getImportFldObj('STUDENTS MAIL ID')
+             ,'parent_email'       => $phpExcel->getImportFldObj('PARENTS MAIL ID')
+             ,'registration_no'    => $phpExcel->getImportFldObj('STUDENTS NO')
+             ,'address_flat'       => $phpExcel->getImportFldObj('ADDRESS 1')
+             ,'address_street'     => $phpExcel->getImportFldObj('ADDRESS 2')
+             ,'address_country'    => $phpExcel->getImportFldObj('COUNTRY')
+             ,'address_po_code'    => $phpExcel->getImportFldObj('POSTAL CODE')
+             ,'published'          => $phpExcel->getImportFldObj('Published')           
+
+        );
+
+        
+        $fa['published']['defaultValue'] = 1;
+
+
+        $config = array(
+             'module'              => 'tuitionsg_contact'
+            ,'matchFieldArr'       => array()
+            ,'fldsArr'             => $fa
+
+        );
+
+        return $phpExcel->importData($config);
+    }
+
+    /**
+     *
+     */
+    function linkConactToInterest($contact_id, $interest){
+        $db = Zend_Registry::get('db');
+        $dbUtil = Zend_Registry::get('dbUtil');
+        $fn = Zend_Registry::get('fn');
+
+        $intArr = explode(',', $interest);
+        if (count($intArr) == 0){
+            return;
+        } else {
+            /******** delete all the previous interests linked ******/
+            $SQL = "
+            DELETE FROM interest_contact
+            WHERE contact_id = {$contact_id}
+            ";
+            $result = $db->sql_query($SQL);
+        }
+
+        foreach($intArr AS $intTitle){
+            $intRec = $fn->getRecordByCondition('interest', "title='{$intTitle}'");
+
+            if (!is_array($intRec)){
+                continue;
+            }
+
+            $interest_id = $intRec['interest_id'];
+            $SQL = "
+            SELECT * FROM interest_contact
+            WHERE contact_id = {$contact_id}
+              AND interest_id = {$interest_id}
+            ";
+            $result      = $db->sql_query($SQL);
+            $numRows = $db->sql_numrows($result);
+
+            if ($numRows == 0){
+                $fa = array();
+                $fa['contact_id']    = $contact_id;
+                $fa['interest_id']   = $interest_id;
+                $fa['creation_date'] = date("Y-m-d H:i:s");
+
+                $SQL    = $dbUtil->getInsertSQLStringFromArray($fa, "interest_contact");
+                $result = $db->sql_query($SQL);
+            }
+        }
+    }
+
+    /**
+     *
+     */
+    function getAceImsContactAceImsCourseLinkSQL($id) {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $formObj = Zend_Registry::get('formObj');
+
+        $courseFld = ($formObj->mode == 'edit') ? 'c.course_id' : 'c.title AS course_title';
+        $batchFld = ($formObj->mode == 'edit') ? 'b.batch_id' : 'b.title AS batch_title';
+        $linkStr = "<a href='index.php?module=ecommerce_order&_spAction=printOrder&order_id'>Print</a>";
+
+        $SQL = "
+        SELECT cc.course_contact_id
+              ,c.title AS course_title
+              ,sd.title AS subsidy_title
+              ,sdis.title AS discount_title
+              ,b.title AS batch_title
+              ,cc.year_of_enrollment
+              ,IF ((cc.order_id IS NOT NULL AND cc.order_id != ''),
+                (CONCAT_WS('', '<a href=\'index.php?_topRm=finance&module=aceIms_order&_action=edit&order_id=', cc.order_id, '\' target=\'_blank\'>Goto Finance</a>'))
+              , '')
+               AS order_link
+        FROM course_contact cc
+        LEFT JOIN course c ON (c.course_id = cc.course_id)
+        LEFT JOIN batch b ON (b.batch_id = cc.batch_id)
+        LEFT JOIN course_subsidy_history s ON (cc.course_subsidy_history_id = s.course_subsidy_history_id)
+        LEFT JOIN (subsidy_discount sd) ON (s.subsidy_discount_id = sd.subsidy_discount_id)
+        LEFT JOIN course_subsidy_history csdis ON (cc.discount = csdis.course_subsidy_history_id)
+        LEFT JOIN (subsidy_discount sdis) ON (csdis.subsidy_discount_id = sdis.subsidy_discount_id and sdis.category_type = 'Discount')
+        WHERE cc.contact_id = '{$id}' AND company_id is NULL
+        ORDER BY cc.course_contact_id
+        ";
+
+        $SQL = "
+        SELECT cc.course_contact_id
+              ,c.title AS course_title
+              ,sd.title AS subsidy_discount_title
+              ,b.title AS batch_title
+              ,cc.year_of_enrollment
+              ,IF ((cc.order_id IS NOT NULL AND cc.order_id != ''),
+                (CONCAT_WS('', '<a href=\'index.php?_topRm=finance&module=aceIms_order&_action=edit&order_id=', cc.order_id, '\' target=\'_blank\'>Goto Finance</a>'))
+              , '')
+               AS order_link
+        FROM course_contact cc
+        LEFT JOIN course c ON (c.course_id = cc.course_id)
+        LEFT JOIN batch b ON (b.batch_id = cc.batch_id)
+        LEFT JOIN (subsidy_discount sd) ON (cc.subsidy_discount_id = sd.subsidy_discount_id)
+        WHERE cc.contact_id = '{$id}' AND company_id is NULL
+        ORDER BY cc.course_contact_id
+        ";
+
+        return $SQL;
+    }
+
+    /**
+     *
+     */
+    function setSearchVar($linkRecType = '') {
+        $tv = Zend_Registry::get('tv');
+        $fn = Zend_Registry::get('fn');
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $searchVar = Zend_Registry::get('searchVar');
+        $searchVar->mainTableAlias = 'c';
+
+        $interest_id    = $fn->getReqParam('interest_id');
+        $contact_id     = $fn->getReqParam('contact_id');
+        $course_id      = $fn->getReqParam('course_id');
+        $batch_id       = $fn->getReqParam('batch_id');
+        $class_id       = $fn->getReqParam('class_id');
+        $subscribe      = $fn->getReqParam('subscribe');
+        $special_search = $fn->getReqParam('special_search');
+        $course_status  = $fn->getReqParam('course_status');
+
+        if ($contact_id != "") {
+            $searchVar->sqlSearchVar[] = "c.contact_id = '{$contact_id}'";
+        } else if ($tv['record_id'] != '') {
+            $searchVar->sqlSearchVar[] = "c.contact_id = '{$tv['record_id']}'";
+        } else {
+            $fn->setSearchVarForLinkData($searchVar, $linkRecType, 'c.contact_id');
+
+            //------------------------------------------------------------------------//
+            if ($tv['special_search'] == "Subscribed") {
+                $searchVar->sqlSearchVar[] = "c.subscribe = 1";
+            }
+
+            if ($tv['special_search'] == "Not-Subscribed") {
+                $searchVar->sqlSearchVar[] = "(c.subscribe != 1 OR c.subscribe IS null)";
+            }
+
+            if ($tv['special_search'] == "Flagged") {
+                $searchVar->sqlSearchVar[] = "c.flag = 1";
+            }
+
+            if ($tv['special_search'] == "Not-Flagged") {
+                $searchVar->sqlSearchVar[] = "(c.flag != 1 OR c.flag IS null)";
+            }
+
+            if ($tv['special_search']  == 'Published') {
+                $searchVar->sqlSearchVar[] = "c.published = 1";
+            }
+
+            if ($tv['special_search'] == 'Not-Published' ) {
+                $searchVar->sqlSearchVar[] = "c.published = 0 OR c.published IS NULL OR c.published = ''";
+            }
+
+            if ($tv['special_search']  == 'Batch-Not-Linked') {
+                $searchVar->sqlSearchVar[] = "cc.batch_id IS NULL";
+            }
+
+            //------------------------------------------------------------------------//
+            if ($tv['keyword'] != "") {
+                $searchVar->sqlSearchVar[] = "(
+                       c.first_name         LIKE '%{$tv['keyword']}%'
+                    OR c.last_name          LIKE '%{$tv['keyword']}%'
+                    OR c.company_name       LIKE '%{$tv['keyword']}%'
+                    OR c.id_card_no         LIKE '%{$tv['keyword']}%'
+                    OR c.registration_no    LIKE '%{$tv['keyword']}%'
+                    OR c.email              LIKE '%{$tv['keyword']}%'
+                )";
+            }
+
+            if ($interest_id != '' ) {
+                $searchVar->sqlSearchVar[] = "ic.interest_id = {$interest_id}";
+            }
+
+            if ($course_id != '' ) {
+                $searchVar->sqlSearchVar[] = "cc.course_id = {$course_id}";
+            }
+
+            if ($course_status != '') {
+                $searchVar->sqlSearchVar[] = "cc.course_status = '{$course_status}'";
+            }
+
+            if ($batch_id != '' ) {
+                $searchVar->sqlSearchVar[] = "cc.batch_id = {$batch_id}";
+            }
+
+            if ($class_id != '' ) {
+                $searchVar->sqlSearchVar[] = "sc.class_id = {$class_id}";
+            }
+
+            if ($tv['spAction'] == 'link' && $tv['module'] == 'broadcast' ){
+                $searchVar->sqlSearchVar[] = "c.subscribe = 1";
+            }
+
+            $searchVar->sortOrder = "c.first_name ASC";
+        }
+    }
+
+    /**
+     *
+     */
+        function getPrintForm12() {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $ln = Zend_Registry::get('ln');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $media = Zend_Registry::get('media');
+
+        //-----------------------------------------------------------------//
+        include_once(CP_LIBRARY_PATH.'lib_php/tbs_us/tbs_class.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/tbs_us/plugins/tbs_plugin_opentbs.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/tbs_us/plugins/tbs_plugin_html.php');
+
+        $TBS = new clsTinyButStrong;
+        $TBS->Plugin(TBS_INSTALL, OPENTBS_PLUGIN);
+
+        $course_contact_id = $fn->getReqParam('course_contact_id');
+        $courseContactRec  = $fn->getRecordRowByID('course_contact', 'course_contact_id', $course_contact_id);
+
+        //$contact_id = $fn->getReqParam('id');
+        $contact_id = $courseContactRec['contact_id'];
+
+        $template = 'Form 12.docx';
+        $templatePath = $cpCfg['cp.localPath'].'lib/template/' . $template;
+        $TBS->LoadTemplate($templatePath);
+        $rnd_no = mt_rand();
+        $file_name = 'Form 12_' . $contact_id . '_' . $rnd_no . '.docx';
+        $file_name = str_replace('.', '_' . date('Y-m-d') . '.', $file_name);
+
+        $contactRec = $fn->getRecordRowByID('contact', 'contact_id', $contact_id);
+
+        $path = realpath($cpCfg['cp.mediaFolder']) . '\temp';
+        $file_name_save = $path . '\\' . $file_name;
+        $sourceFilePath = $file_name_save;
+        $current_year =  date('Y');
+        $dob_year = explode('-', $contactRec['date_of_birth']);
+        $dob_year_value  = $dob_year[0];
+        $year_difference = $current_year - $dob_year_value;
+
+        if($year_difference > 18){
+            $student_name = $contactRec['first_name'] . ' ' .$contactRec['last_name'];
+            $parent_name  = '-';
+            $id_card_no = $contactRec['id_card_no'];
+        }
+        else{
+            $parent_name   = $contactRec['first_name'] . ' ' .$contactRec['last_name'];
+            $student_name  = $contactRec['emergency_contact_name'];
+            $id_card_no    = $contactRec['parent_id_card_no'];
+        }
+
+        $valArr = array();
+        $valArr['student_name']         = $student_name;
+        $valArr['student_id_card_no']   = $id_card_no;
+        $valArr['date_of_birth']        = $contactRec['date_of_birth'];
+        $valArr['phone']                = $contactRec['phone'];
+        $valArr['address_flat']         = $contactRec['address_flat'];
+        $valArr['parent_name']          = $parent_name;
+        $valArr['parent_id_no']         = $contactRec['parent_id_card_no'];
+        $valArr['date']                 = $today;
+        $valArr['institute_name']       = $cpCfg['printCompanyNamePvt'];
+
+        $blkMain   = array();
+        $blkMain[] = $valArr;
+
+        $TBS->MergeBlock('blkMain', $blkMain);
+        $TBS->Show(OPENTBS_DOWNLOAD, $file_name);
+    }
+
+    /**
+     *
+     */
+    function getPrintStudentContract() {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $ln = Zend_Registry::get('ln');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $media = Zend_Registry::get('media');
+        $dateUtil = Zend_Registry::get('dateUtil');
+
+        //-----------------------------------------------------------------//
+        include_once(CP_LIBRARY_PATH.'lib_php/tbs_us/tbs_class.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/tbs_us/plugins/tbs_plugin_opentbs.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/tbs_us/plugins/tbs_plugin_html.php');
+
+        $TBS = new clsTinyButStrong;
+        $TBS->Plugin(TBS_INSTALL, OPENTBS_PLUGIN);
+
+        $course_contact_id = $fn->getReqParam('course_contact_id');
+        $courseContactRec  = $fn->getRecordRowByID('course_contact', 'course_contact_id', $course_contact_id);
+
+        $contact_id = $courseContactRec['contact_id'];
+        $order_id   = $courseContactRec['order_id'];
+
+        $orderRec   = $fn->getRecordRowByID('order', 'order_id', $order_id);
+        $contactRec = $fn->getRecordRowByID('contact', 'contact_id', $contact_id);
+        $courseRec  = $fn->getRecordRowByID('course', 'course_id', $courseContactRec['course_id']);
+
+        $SQLTotalAmt = "
+        SELECT oi.*
+              ,o.order_id
+              ,o.contact_module
+              ,o.registration_type
+              ,o.add_registration_fee
+              ,o.full_time
+              ,cc.no_of_months
+              ,IF(o.contact_id > 0, 'Indvidual', 'Company') AS contact_type
+              ,CONCAT_WS(' ', cont.first_name, cont.last_name) as contact_name
+        FROM order_item oi
+        LEFT JOIN `order` o ON (o.order_id = oi.order_id)
+        LEFT JOIN contact cont ON (cont.contact_id = oi.contact_id)
+        LEFT JOIN course_contact cc ON (cc.order_id = o.order_id)
+        WHERE oi.order_id = {$order_id}
+        ORDER BY oi.order_item_id
+        ";
+        $resultForPvt = $db->sql_query($SQLTotalAmt);
+        $resultForPvtNet = $db->sql_query($SQLTotalAmt);
+
+        $modObj = getCPModuleObj('aceIms_order');
+
+        //to get the total after deducting the discount
+        $total_invoice_amount = $modObj->view->getTotalForPvtInst($resultForPvt);
+        $add_registration_fee = $orderRec['add_registration_fee'];
+        if($add_registration_fee == 1){
+            $total_course_fees = $total_invoice_amount + $fn->getSettingsValueByKey("registrationFeePvt");;
+        } else {
+            $total_course_fees = $total_invoice_amount;
+        }
+
+        //to get the total without deducting the discount
+        $netTotal  = $modObj->view->getTotalForPvtInst($resultForPvtNet, 'getTotalOnly');
+
+        $discountTotal = '';
+
+        //to get the discount total
+        $expDiscount = array('condn' => " AND module='aceIms_discount'");
+        $orderItemRecDiscount = $fn->getRecordRowByID('order_item', 'order_id',
+        $order_id, $expDiscount);
+        if($orderItemRecDiscount['unit_price'] > 0){
+            $discountPer   = $orderItemRecDiscount['unit_price'];
+            $discountTotal = ($netTotal *  $discountPer)/100;
+            $discountTotal = round($discountTotal, 2);
+        }
+        if($discountTotal == ''){
+            $discountTotal = '-';
+        }
+        $template     = 'Student Contract.docx';
+        $templatePath = $cpCfg['cp.localPath'].'lib/template/' . $template;
+        $TBS->LoadTemplate($templatePath);
+        $rnd_no       = mt_rand();
+        $file_name    = 'Student_Contract_' .$contact_id.'_'.$rnd_no.'.docx';
+        $file_name    = str_replace('.', '_' . date('Y-m-d') . '.', $file_name);
+
+        $path           = realpath($cpCfg['cp.mediaFolder']) . '\temp';
+        $file_name_save = $path . '\\' . $file_name;
+        $sourceFilePath = $file_name_save;
+        $today          =  date('d/m/Y');
+
+        $countryRec         = $fn->getRecordByCondition('geo_country', "country_code = '{$contactRec['address_country']}'");
+        $overseasCountryRec = $fn->getRecordByCondition('geo_country', "country_code = '{$contactRec['overseas_address_country']}'");
+        $studentPassortRec  = $fn->getRecordByCondition('geo_country', "country_code = '{$contactRec['passport_country_issued']}'");
+        $parentPassortRec   = $fn->getRecordByCondition('geo_country', "country_code = '{$contactRec['parent_passport_country_issued']}'");
+
+        /* To show list of subjects */
+        $synopsys = '';
+        $SQLSubjectHist = "
+        SELECT subject_id FROM course_contact_subject_history
+        WHERE course_contact_id = {$course_contact_id}
+        ";
+        $resultSubjectHist  = $db->sql_query($SQLSubjectHist);
+        $numRows  = $db->sql_numrows($resultSubjectHist);
+        while ($rowSubjectHist = $db->sql_fetchrow($resultSubjectHist)) {
+            $SQLSubject = "
+            SELECT * FROM subject
+            WHERE subject_id = {$rowSubjectHist['subject_id']}
+            ";
+            $resultSubject  = $db->sql_query($SQLSubject);
+            while ($rowSubject = $db->sql_fetchrow($resultSubject)) {
+                $synopsys .= $rowSubject['title'] . ' (SUBJECT CODE: ' . $rowSubject['code'] . ')' . $rowSubject['synopsys'];
+            }
+        }
+
+        /* To show list of exempted subjects - START */
+        $exemptSubTitle = '';
+        $sqlSubjectForCourse = "
+        SELECT s.subject_id
+              ,s.title
+              ,s.fees
+        FROM subject s
+        LEFT JOIN (course_subject cs) ON (s.subject_id = cs.subject_id)
+        WHERE cs.course_id = {$courseRec['course_id']}
+        ";
+        $resultSubjectForCourse  = $db->sql_query($sqlSubjectForCourse);
+        $numRowsSubjectForCourse = $db->sql_numrows($resultSubjectForCourse);
+
+        $exemptSubCount = 0;
+        while ($rowSubjectForCourse = $db->sql_fetchrow($resultSubjectForCourse)) {
+            $count = $fn->getRecordCount('course_contact_subject_history', "course_contact_id = {$course_contact_id} AND subject_id = {$rowSubjectForCourse['subject_id']}");
+            if ($count == 0) {
+                //$exemptSubTitle .= str_replace('<br />', '<text:line-break/>',$rowSubjectExempt['title']);
+                $exemptSubTitle .= $rowSubjectForCourse['title'] . ', ';
+                $exemptSubCount++;
+            }
+        }
+        /* To show list of exempted subjects - STOP */
+
+        /* Subsidy Discount Text and Amount - START */
+        $subsidy_disc_title  = '';
+        $subsidy_disc_amount = 0;
+        if ($courseContactRec['subsidy_discount_id'] > 0) {
+            $subsidyDiscountRec = $fn->getRecordByCondition('order_item', "order_id = {$order_id} AND contact_id = {$courseContactRec['contact_id']} AND (module = 'aceIms_subsidy' OR module = 'aceIms_discount')");
+            $subsidy_disc_title = $subsidyDiscountRec['item_title'];
+            $subsidy_disc_amount = substr($subsidyDiscountRec['unit_price'], 1);
+        }
+        /* Subsidy Discount Text and Amount - STOP */
+
+        $date_of_birth = $dateUtil->formatDate($contactRec['date_of_birth'], 'DD/MM/YYYY');
+        $from_date     = $fn->getCPDate($courseRec['valid_date_from'], 'd/m/Y');
+        $to_date       = $fn->getCPDate($courseRec['valid_date_to'], 'd/m/Y');
+        $award_date    = $fn->getCPDate($courseRec['award_date'], 'd/m/Y');
+
+        $valArr = array();
+        /* Contact Details */
+        $valArr['student_name']             = $contactRec['first_name'] . ' ' .$contactRec['last_name'];
+        $valArr['student_id_card_no']       = $contactRec['id_card_no'];
+        $valArr['date_of_birth']            = $date_of_birth;
+        $valArr['nationality']              = $contactRec['nationality'];
+        $valArr['phone']                    = $contactRec['phone'];
+        $valArr['mobile']                   = $contactRec['mobile'];
+        $valArr['address_flat']             = $contactRec['address_flat'];
+        $valArr['address_street']           = $contactRec['address_street'];
+        $valArr['address_country']          = $countryRec['name'];
+        $valArr['address_po_code']          = $contactRec['address_po_code'];
+        $valArr['date']                     = $today;
+        $valArr['parent_name']              = $contactRec['emergency_contact_name'];
+        $valArr['parent_id_no']             = $contactRec['parent_id_card_no'];
+        $valArr['parent_mobile']            = $contactRec['emergency_contact_mobile'];
+        $valArr['student_passport_country'] = $studentPassortRec['name'];
+
+        $valArr['overseas_address_flat']    = $contactRec['overseas_address_flat'];
+        $valArr['overseas_address_street']  = $contactRec['overseas_address_street'];
+        $valArr['overseas_address_country'] = $overseasCountryRec['name'];
+        $valArr['overseas_address_po_code'] = $contactRec['overseas_address_po_code'];
+        $valArr['overseas_contact_no']      = $contactRec['overseas_contact_no'];
+        $valArr['parent_passport_country']  = $parentPassortRec['name'];
+        $valArr['parent_nationality']       = $contactRec['parent_nationality'];
+        $valArr['parent_occupation']        = $contactRec['parent_occupation'];
+
+        /* Course Details */
+        $valArr['course_title']             = $courseRec['title'];
+        $valArr['part_full_time']           = $full_part_time_value;
+        $valArr['from_date']                = $from_date;
+        $valArr['to_date']                  = $to_date;
+        $valArr['course_duration']          = $courseRec['duration'];
+        $valArr['course_duration_type']     = $courseRec['month_or_hour'];
+        $valArr['type_of_qualification']    = $courseRec['qualification_type'];
+        $valArr['org_development_course']   = $courseRec['developed_by'];
+        $valArr['org_awards_course']        = $courseRec['award_course'];
+        $valArr['course_entry_req']         = $courseRec['course_entry_requirements'];
+        $valArr['course_learning_outcome']  = $courseRec['course_learning_outcome'];
+        $valArr['course_schedule']          = $courseRec['course_schedule'];
+        $valArr['award_date']               = $award_date;
+        $valArr['change']                   = '** Subject to Change';
+        $valArr['scheduled_holidays']       = $courseRec['scheduled_holidays'];
+        $valArr['examination_assessment']   = $courseRec['examination_assessment'];
+        $valArr['examination_results']      = $courseRec['examination_results'];
+        $valArr['course_fee']               = number_format($courseRec['price'], 2);
+        $valArr['course_entry_requirements'] = $courseRec['course_entry_requirements'];
+
+        // Price amount for one subject
+        $price_per_subject = $courseRec['price']/$numRowsSubjectForCourse;
+        $price_per_subject_formatted = number_format($price_per_subject, 2);
+
+        $total_price_for_exempt = $price_per_subject_formatted * $exemptSubCount;
+
+        $valArr['total_price_for_exempt']    = number_format($total_price_for_exempt, 2);
+        $valArr['total_amount_before_grant'] = number_format($courseRec['price'] - $total_price_for_exempt, 2);
+
+        $valArr['contract_no']          = $courseContactRec['contract_no'];
+
+        /* Subsidy Discount details */
+        $valArr['subsidy_disc_title']  = $subsidy_disc_title;
+
+        $total_amount_after_discount = $courseRec['price'] - $total_price_for_exempt - $subsidy_disc_amount;
+        $valArr['amount_after_disc'] = number_format($total_amount_after_discount, 2);
+
+        $total_amount_payable = (($total_amount_after_discount*$cpCfg['gstPercentage'])/100);
+        $valArr['total_amount_payable'] = number_format($total_amount_after_discount + $total_amount_payable, 2);
+
+        /* Subject Details */
+        $valArr['subject_synopsys']    = $synopsys;
+        /* Subject Exempted */
+        $valArr['subject_exempted']    = $exemptSubTitle;
+
+        /* Institute Details */
+        $valArr['institute_name']             = $cpCfg['printCompanyNamePvt'];
+        $valArr['institute_cpe_no']           = $cpCfg['cpeRegistrationNoPvt'];
+        $valArr['institute_address_flat']     = $cpCfg['addressFlatPvt'];
+        $valArr['institute_address_street']   = $cpCfg['addressStreetPvt'];
+        $valArr['institute_address_country']  = $cpCfg['addressCountryAndCodePvt'];
+        $valArr['institute_contact_no']       = $cpCfg['contactNoPvt'];
+        $valArr['institute_email']            = $cpCfg['printCompanyEmailPvt'];
+        $valArr['institute_fax']              = $cpCfg['printCompanyFaxPvt'];
+        $valArr['medical_insurance_provider'] = $cpCfg['medicalInsuranceProviderPvt'];
+        $valArr['current_date']               = $today;
+
+        $blkMain   = array();
+        $blkMain[] = $valArr;
+
+        $TBS->MergeBlock('blkMain', $blkMain);
+        //$TBS->MergeBlock('blkInstallSchedule', $blkInstallSchedule);
+        //$TBS->MergeBlock('blkDueDate', $blkDueDate);
+
+        $TBS->Show(OPENTBS_DOWNLOAD, $file_name);
+    }
+
+    /**
+     *
+     */
+        function getPrintOfferLetter() {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $ln = Zend_Registry::get('ln');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $media = Zend_Registry::get('media');
+
+        //-----------------------------------------------------------------//
+        include_once(CP_LIBRARY_PATH.'lib_php/tbs_us/tbs_class.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/tbs_us/plugins/tbs_plugin_opentbs.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/tbs_us/plugins/tbs_plugin_html.php');
+
+        $TBS = new clsTinyButStrong;
+        $TBS->Plugin(TBS_INSTALL, OPENTBS_PLUGIN);
+
+        $course_contact_id = $fn->getReqParam('course_contact_id');
+        $courseContactRec  = $fn->getRecordRowByID('course_contact', 'course_contact_id', $course_contact_id);
+
+        //$contact_id = $fn->getReqParam('id');
+        $contact_id = $courseContactRec['contact_id'];
+
+        $template = 'Offer Letter.docx';
+        $templatePath = $cpCfg['cp.localPath'].'lib/template/' . $template;
+        $TBS->LoadTemplate($templatePath);
+        $rnd_no = mt_rand();
+        $file_name = 'Offer Letter_' . $contact_id . '_' . $rnd_no . '.docx';
+        $file_name = str_replace('.', '_' . date('Y-m-d') . '.', $file_name);
+
+        $path = realpath($cpCfg['cp.mediaFolder']) . '\temp';
+        $file_name_save = $path . '\\' . $file_name;
+        $sourceFilePath = $file_name_save;
+        $today =  date('d/m/Y');
+        $todayMonth =  date('dS F Y');
+        $todayWithDay =  date('l, d F Y');
+
+        $contactRec = $fn->getRecordRowByID('contact', 'contact_id', $contact_id);
+        $countryNameRec = $fn->getRecordRowByID('geo_country', 'country_code', "'{$contactRec['address_country']}'");
+
+        $courseRec = $fn->getRecordRowByID('course', 'course_id', $courseContactRec['course_id']);
+
+        $valArr = array();
+        /* Contact Details */
+        $valArr['student_name']         = $contactRec['first_name'] . ' ' .$contactRec['last_name'];
+        $valArr['address_flat']         = $contactRec['address_flat'];
+        $valArr['address_street']       = $contactRec['address_street'];
+        $valArr['address_country']      = $countryNameRec['name'];
+        $valArr['address_po_code']      = $contactRec['address_po_code'];
+        $valArr['date']                 = $today;
+        $valArr['date_month']           = $todayMonth;
+        $valArr['date_day']             = $todayWithDay;
+
+        /* Course Details */
+        $from_date = $fn->getCPDate($courseRec['valid_date_from'], 'd F Y');
+        $to_date = $fn->getCPDate($courseRec['valid_date_to'], 'd F Y');
+        $valArr['course_title']         = $courseRec['title'];
+        $valArr['from_date']            = $from_date;
+        $valArr['to_date']              = $to_date;
+
+        $blkMain   = array();
+        $blkMain[] = $valArr;
+
+        $TBS->MergeBlock('blkMain', $blkMain);
+
+        $TBS->Show(OPENTBS_DOWNLOAD, $file_name);
+    }
+
+    /**
+    */
+    function getContactAddSubmit(){
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $validate = Zend_Registry::get('validate');
+
+        $company_id  = $fn->getReqParam('company_id');
+
+        if (!$this->getContactAddValidate()){
+            return $validate->getErrorMessageXML();
+        }
+
+        $fa = array();
+        $fa = $this->getFields();
+        $fa['company_id']      = $company_id;
+        //$fa['registration_no'] = $this->getGenerateRegNoForContact();
+
+        $contact_id = $fn->addRecord($fa, 'contact');
+
+        $_SESSION['selectedContactIds'][] = $contact_id;
+        //below code will be used in case if a new trainee is added, in getSelectedTraineeResultRow
+        $_SESSION['newTrainee']           = $contact_id;
+
+        return $validate->getSuccessMessageXML();
+    }
+
+    /**
+     *
+     */
+    function getContactAddValidate() {
+        $validate = Zend_Registry::get('validate');
+        $fn = Zend_Registry::get('fn');
+        $ln = Zend_Registry::get('ln');
+        $db = Zend_Registry::get('db');
+
+        $email  = $fn->getPostParam('email', '', true);
+        $mobile = $fn->getPostParam('mobile');
+
+        $validate->resetErrorArray();
+
+        $validate->validateData('first_name', 'Please enter the name');
+        $validate->validateData('gender', 'Please select gender');
+        $validate->validateData('id_card_no' , 'Please enter NRIC / Passport No.');
+        $validate->validateData('nationality' , 'Please select nationality');
+        $validate->validateData('date_of_birth' , 'Please enter date of birth');
+        $validate->validateData('email', 'Please enter email address');
+        $validate->validateData('mobile', 'Please enter mobile number');
+
+        $id_card_no = $fn->getPostParam('id_card_no', '', true);
+
+        if ($id_card_no != ''){
+            $rec = $fn->getRecordByCondition('contact', "id_card_no = '{$id_card_no}'");
+            $expIdCard = array('displayText' => 'Go to this record', 'target' => '_blank');
+            $IdCardlink = $fn->getRecordDetailLink('agileIms_contact', 'record_id', $rec['contact_id'], $expIdCard);
+
+            if (is_array($rec)){
+                $validate->errorArray['id_card_no']['name'] = "id_card_no";
+                $validate->errorArray['id_card_no']['msg']  = "NRIC / Passport No. already exists. '{$IdCardlink}'";
+            }
+        }
+
+        if ($email != ''){
+            if(!$validate->isEmail($email)){
+                $validate->errorArray['email']['name'] = "email";
+                $validate->errorArray['email']['msg']  = "Please enter valid email";
+            }
+        }
+
+        $mobile_no_start = substr($mobile, 0, 1);
+        if ($mobile != '' && $mobile_no_start < '8') {
+            $validate->errorArray['mobile']['name'] = "mobile";
+            $validate->errorArray['mobile']['msg']  = "Please enter valid mobile no";
+        }
+
+        if (count($validate->errorArray) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+    */
+    function getGenerateRegNoForContact(){
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+
+        $rowPrefix    = $fn->getRecordByCondition('setting', "key_text = 'registrationCodePrefix'");
+        $current_year = date('Y');
+
+        $nextRegNo    = $fn->getSettingsValueByKey("nextRegistrationNo");
+
+        if ($nextRegNo < 10) {
+            $nextRegNo = $rowPrefix['value'] . '-' . $current_year . '-0000' . $nextRegNo;
+        } else if ($nextRegNo < 100) {
+            $nextRegNo = $rowPrefix['value'] . '-' . $current_year . '-000'  . $nextRegNo;
+        } else if ($nextRegNo > 99) {
+            $nextRegNo = $rowPrefix['value'] . '-' . $current_year . '-00'   . $nextRegNo;
+        } else {
+            $nextRegNo = $rowPrefix['value'] . '-' . $current_year . '-0000' . $nextRegNo;
+        }
+
+        $SQLUpdate    = "UPDATE setting SET value = (value+1) WHERE key_text = 'nextRegistrationNo'";
+        $resultUpdate = $db->sql_query($SQLUpdate);
+
+        return $nextRegNo;
+    }
+
+    /**
+    *
+    */
+    function getContactSave(){
+        $fn = Zend_Registry::get('fn');
+        $validate = Zend_Registry::get('validate');
+
+        $contact_id = $fn->getPostParam('contact_id');
+
+        if (!$this->getEditValidate($contact_id)) {
+            return $validate->getErrorMessageXML();
+        }
+
+        $fa = $this->getFields();
+        $fn->saveRecord($fa, 'contact', 'contact_id', $contact_id);
+
+        return $validate->getSuccessMessageXML('', '', array('data' => $fa));
+    }
+
+    /**
+    *
+    */
+    function getFindContactCountForRegNo($enrollment_year){
+        $db = Zend_Registry::get('db');
+
+        $sqlCount = "
+        SELECT DISTINCT contact_id
+        FROM course_contact
+        WHERE year_of_enrollment = {$enrollment_year}
+        ";
+        $resultCount  = $db->sql_query($sqlCount);
+        $numRowsCount = $db->sql_numrows($resultCount);
+
+        return $numRowsCount;
+    }
+}

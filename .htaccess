@@ -1,0 +1,42 @@
+RewriteEngine On
+
+<IfModule php_module>
+    php_value short_open_tag On
+</IfModule>
+
+#********* the id of the home page is: 1************* #
+RewriteRule .* - [E=firstRoom:1]
+
+RewriteRule ^eng/$ /index.php?lang=eng [QSA,L]
+RewriteRule ^chi/$ /index.php?lang=chi [QSA,L]
+
+#================ WITH SEC, CATEGORY & ACTION ================
+RewriteRule ^(.*)/(.*)/(.*)/([0-9]+)/sample-action/$ /index.php?lang=$1&room_name=$2&category_title=$3&_subRoom=$4&_action=sampleAction [QSA,L]
+RewriteRule ^(.*)/(.*)/(.*)/([0-9]+)/enquiry-thanks/$ /index.php?lang=$1&room_name=$2&category_title=$3&_subRoom=$4&_action=enquiryThanks [QSA,L]
+
+#================ WITH SEC, CAT, SUB CATEGORY & ACTION ================
+RewriteRule ^(.*)/(.*)/(.*)/(.*)/([0-9]+)/([0-9]+)/sample-action/$ /index.php?lang=$1&room_name=$2&category_title=$3&sub_category_title=$4&_subRoom=$5&_subCat=$6&_action=sampleAction [QSA,L]
+
+#================ WITH SEC, CAT, SUB CATEGORY & PAGER ================
+RewriteRule ^(.*)/(.*)/(.*)/(.*)/([0-9]+)/([0-9]+)/Page-([0-9]+)/$ /index.php?lang=$1&room_name=$2&category_title=$3&sub_category_title=$4&_subRoom=$5&_subCat=$6&_page=$7  [QSA,L]
+
+#================ WITH SEC, CATEGORY & PAGER ================
+RewriteRule ^(.*)/(.*)/(.*)/([0-9]+)/Page-([0-9]+)/$ /index.php?lang=$1&room_name=$2&category_title=$3&_subRoom=$4&_page=$5 [QSA,L]
+
+#================ RECORD WITH SUB CATEGORY ================
+RewriteRule ^(.*)/(.*)/(.*)/(.*)/([0-9]+)/([0-9]+)/([0-9]+)/(.*)\.html$ /index.php?lang=$1&room_name=$2&category_title=$3&sub_category_title=$4&_subRoom=$5&_subCat=$6&record_id=$7&record_title=$8&_action=detail [QSA,L]
+
+#================ RECORD WITH CATEGORY ================
+RewriteRule ^(.*)/(.*)/(.*)/([0-9]+)/([0-9]+)/(.*)\.html$ /index.php?lang=$1&room_name=$2&category_title=$3&_subRoom=$4&record_id=$5&record_title=$6&_action=detail [QSA,L]
+
+#================ RECORD ================
+RewriteRule ^(.*)/(.*)/([0-9]+)/(.*)\.html$ /index.php?lang=$1&room_name=$2&record_id=$3&record_title=$4&_action=detail [QSA,L]
+
+#================ WITH SEC, CAT & SUB CATEGORY ================
+RewriteRule ^(.*)/(.*)/(.*)/(.*)/([0-9]+)/([0-9]+)/$ /index.php?lang=$1&room_name=$2&category_title=$3&sub_category_title=$4&_subRoom=$5&_subCat=$6 [QSA,L]
+
+#================ WITH SEC & CATEGORY ================
+RewriteRule ^(.*)/(.*)/(.*)/([0-9]+)/$ /index.php?lang=$1&room_name=$2&category_title=$3&_subRoom=$4 [QSA,L]
+
+#================ WITH SECTION ONLY ================
+RewriteRule ^(.*)/(.*)/$ /index.php?lang=$1&room_name=$2 [QSA,L]

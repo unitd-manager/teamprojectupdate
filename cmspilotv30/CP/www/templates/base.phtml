@@ -1,0 +1,10 @@
+{% import 'lang.phtml' as lang %}
+<!DOCTYPE html>
+<html>
+    <head>{{headerTags | raw}}</head>
+    <body{{bodyClass | raw}}>
+        {% block bodyContent %}{% endblock %}
+        {{hiddenVars | raw}}
+        {{footerScripts | raw}}
+    </body>
+</html>

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-hms_dutyRoster .fc-content {
+    	clear: both;
+    	z-index: 0;
+	}
+
+    .m-hms_dutyRoster .fc-header .fc-state-active,
+    .m-hms_dutyRoster .fc-header .ui-state-active {
+    	z-index: 0;
+	}
+}

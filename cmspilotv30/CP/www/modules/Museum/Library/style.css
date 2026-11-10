@@ -1,0 +1,69 @@
+@media all
+{
+    .m-museum_library .libraryList table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .m-museum_library .libraryList table thead{
+        background: #cdc6c1;
+    }
+
+    .m-museum_library .libraryList table .col-author {
+        width: 23%;
+    }
+
+    .m-museum_library .libraryList table .col-title {
+        width: 40%;
+    }
+
+    .m-museum_library .libraryList table .col-callNumber {
+        width: 23%;
+    }
+
+    .m-museum_library .libraryList table th,
+    .m-museum_library .libraryList table td {
+        border: 1px solid #dddddd;
+        padding: 5px 5px 5px 2px;
+        text-align: left;
+    }
+    .m-museum_library .libraryList table td {
+        vertical-align: top;
+        padding-top: 0;
+    }
+}
+
+@media all
+{
+    .m-museum_library .libraryDetail {
+        padding-top: 10px;
+    }
+
+    .m-museum_library .libraryDetail .key {
+        width: 30%;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+    .m-museum_library .libraryDetail .value {
+        width: 65%;
+        padding-bottom: 10px;
+    }
+
+    .m-museum_library .libraryDetail br {
+        line-height: 30px;
+    }
+}
+
+@media all
+{
+    #librarySearch span.ml10{
+        margin-left: 0 !important;
+    }
+
+    #librarySearch a.jqui-dialog img{
+        float: right;
+        margin-top:2px;
+        margin-right:40px;
+    }
+}

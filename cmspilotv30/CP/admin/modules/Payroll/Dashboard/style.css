@@ -1,0 +1,167 @@
+
+/*** WIDGETS ***/
+@media all
+{
+    .dashboardSummary {
+        color: #ffffff;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .dashboardSummary div{
+        font-size: 18px;
+    }
+
+    .dashboardSummary .dataInner .c50l,
+    .dashboardSummary .dataInner .c33l {
+        width: 30%;
+        font-size: 20px;
+    }
+
+    .dashboardSummary .c50l,
+    .dashboardSummary .c50r {
+        width: 47%;
+        font-size: 40px;
+    }
+
+    .revenueSummary {
+        background-color: #0268DD;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .patientVisitSummary {
+        background-color: #DB4302;
+        padding: 10px;
+        margin-right: 10px;
+    }
+    
+    /* Dasboard highlights styling END */
+
+    .m-payroll_dashboard .widget {
+        margin-bottom:15px;
+        padding-right:0;
+        margin-right:20px;
+    }
+
+    .m-payroll_dashboard .widget h2 {
+        padding:5px;
+        margin:0;
+    }
+
+    .m-payroll_dashboard .widget div.tableOuter {
+        height:300px;
+        overflow: auto;
+        border: 1px solid #CCC4C4;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+     }
+
+    .m-payroll_dashboard .widget table {
+        width:100%;
+        border-collapse: collapse;
+    }
+
+    .m-payroll_dashboard .widget table th,
+    .m-payroll_dashboard .widget table td{
+        padding:0.5em;
+        border: 1px solid #EFEFEF;
+    }
+
+    .m-payroll_dashboard .widget h2 .ui-icon {
+        float: right;
+    }
+
+    .m-payroll_dashboard #col1 .profilePic {
+        padding: 5px;
+        border:1px dotted #ccc;
+    }
+    
+    .m-payroll_dashboard #col1 .profilePic img {
+        display: block;
+        margin: auto;
+        max-width: 165px;
+    }
+
+    .m-payroll_dashboard .highlight strong {
+        font-size: 20px !important;
+    }
+
+    h2.ui-widget-header {
+        background-color: #fff;
+        background-image: none;
+        margin-left: 15px !important;
+        padding: 10px !important;
+        border: 0 !important;
+        font-size: 19px;
+        color: #000;
+    }
+
+    .w-payroll-passportExpiry h2.ui-widget-header,
+    .w-payroll-workpermitExpiry h2.ui-widget-header,
+    .w-payroll-employeeTrainingExpiry h2.ui-widget-header,
+    .w-payroll-csocExpiry h2.ui-widget-header {
+        color: #f44242;
+    }
+
+    /*.m-payroll_dashboard #wd_payroll_passportExpiry table th,*/
+    .m-payroll_dashboard table th {
+        background-color: #fff !important;
+        background-image: none !important;
+    }
+
+    .m-payroll_dashboard #wd_payroll_passportExpiry div.tableOuter,
+    .m-payroll_dashboard #wd_payroll_workpermitExpiry div.tableOuter {
+        border: 0;
+    }
+
+    .m-payroll_dashboard table.list tr.odd,
+    .m-payroll_dashboard table.list tr.even {
+        background-color: #fff;
+    }
+
+    .m-payroll_dashboard .w-payroll-employeeSummary .floatbox {
+        width: 91%;
+    }
+
+    .m-payroll_dashboard table.list .summaryRow {
+        background-color: #333;
+        color: #fff;
+    }
+
+    .m-payroll_dashboard table.list .summaryText {
+        font-size: 18px !important;
+    }
+
+    .m-payroll_dashboard .iconDate,
+    .m-payroll_dashboard .iconName,
+    .m-payroll_dashboard .certName,
+    .m-payroll_dashboard .iconCounter {
+        background-repeat: no-repeat;
+        margin-left: 15px;
+        border: 1px solid red;
+    }
+
+    .m-payroll_dashboard .iconDate {
+        background-image: url('../Lib/images/calendar-icon.png') !important;
+        background-size: auto 30px;
+        background-position: left;
+    }
+
+    .m-payroll_dashboard .iconName {
+        background-image: url('../Lib/images/name-icon.png') !important;
+        background-size: auto 25px;
+        background-position: left;
+    }
+
+    .m-payroll_dashboard .certName {
+        background-image: url('../Lib/images/cert-icon.png') !important;
+        background-size: auto 25px;
+        background-position: left;
+    }
+
+    .m-payroll_dashboard .iconCounter {
+        background-image: url('../Lib/images/counter.jpg') !important;
+        background-size: 35px;
+    }
+}

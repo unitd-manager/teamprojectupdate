@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.batchTransfer .studentList, 
+.batchTransfer .studentSelected {
+    width: 640px;
+    float: left;
+}
+

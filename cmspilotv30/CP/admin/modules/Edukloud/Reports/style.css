@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+.m-edukloud_reports #reportsList {
+    background: #F5F5F5;
+    padding:15px;
+}
+
+.m-edukloud_reports #reportsList .subcr{
+    margin-right: 0;
+}
+
+.m-edukloud_reports #reportsList a.button {
+    width:75%;
+    font-size: 17px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.m-edukloud_reports .report-wrapper h1 {
+    text-shadow: 1px 1px 2px #665D5D;
+    filter: dropshadow(color=#665D5D, offx=1, offy=1);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.m-edukloud_reports  table.search td select.attendanceFilter {
+    width: 175px;
+}
+
+.m-edukloud_reports  table.search td select.callRegistryFilter {
+    width: 175px;
+}
+
+.m-edukloud_reports table.search td select{
+    width: 300px;
+    max-width: 300px;
+    font-size: 1.5em;
+}
+
+#reportSearchPanel {
+    background: #ccc;
+    padding: 5px;
+    display: none;
+    margin: 5px 0 5px 0;
+    overflow: hidden;
+}
+
+#reportSearchPanel table {
+    float: right;
+}
+
+#reportSearch .resetLink {
+    padding-right: 15px;
+    padding-top: 5px;
+}
+
+#reportSearch .button {
+    margin-left: 10px;
+}
+
+optgroup option {
+    background: #fff;
+    padding-left: 10px;
+}
+
+.m-edukloud_reports .actBtns {
+}
+
+#chart_div {
+    min-height: 400px;
+}
+
+
+.exportLink{
+    position: absolute;
+    top: 43px;
+    left: 10px;
+}

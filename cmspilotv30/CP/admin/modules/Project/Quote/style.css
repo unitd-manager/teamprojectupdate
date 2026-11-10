@@ -1,0 +1,96 @@
+/************** QUOTES OUTER ******/
+@media all
+{
+    #quotesOuter {
+        margin-bottom:10px;
+    }
+    
+    #quotesOuter .header .actBtns {
+        margin-top:0;
+        padding:0;
+    }
+
+    #quotesOuter .actBtns {
+        background:transparent;
+    }
+
+    #quotesOuter table{
+       width:100%;
+       border-collapse:collapse;
+    }
+    
+    #quotesOuter table td{
+       border:0;
+    }
+    
+    table#quotes td, table#quotes th{
+       border:1px solid #BFBFBF;
+       padding:10px 5px;
+    }
+    
+    
+    #quotesOuter th, #quotesOuter th.actBtns {
+       text-align:left;
+       font-size:12px;
+       background:#EFEFEF;
+    }
+    
+    table#quotes tr.quote{
+       background:#DFDFDF;
+    }
+    
+    table#quotes tr.quote td.quoteNo{
+       width:78px;
+    }
+    
+    table#quotes tr.quote td.actBtns {
+        width:190px;
+        padding-left:0;
+        padding-right:0;
+    }
+
+    table#quotes tr.quote td.quoteNo a{
+	   text-decoration: underline;
+    }
+    
+    table#quotes tr.quote td.date{
+       width:85px;
+    }
+    
+    table#quotes tr.quote td.status{
+       width:70px;
+    }
+    
+    table#quotes td.type, table#quotes th.type {
+       width:75px;
+    }
+    
+    table#quotes td.amount, th.amount{
+       width:80px;
+       text-align:right !important;
+    }
+
+}
+
+/************** QUOTES CATEGORIES ******/
+@media all
+{
+   div.quoteCategories{
+      display:none;
+      padding:10px;
+   }
+   
+   .quoteCategories table {
+      border:1px solid #BFBFBF;
+      margin-bottom:5px;
+      width:300px;
+   }
+   
+   .quoteCategories table th.title, .quoteCategories table td.title {
+      width:245px;
+   }
+
+   .quoteCategories table td.title small {
+      font-size: 0.8em;
+   }
+}

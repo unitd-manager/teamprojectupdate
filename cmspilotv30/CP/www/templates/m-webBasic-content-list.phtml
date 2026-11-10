@@ -1,0 +1,17 @@
+{% extends "main.phtml" %}
+
+{% block bodyPanel %}
+    {% for row in modDataArray %}
+        {% if row.show_title == 1 %}
+            <h1>{{ row.title }}</h1>
+        {% endif %}
+            
+        <div class="fatlist-row">  
+            {% set picArr = row['media']['picture'] %}
+            {% set attArr = row['media']['attachment'] %}
+            {% include 'picture.phtml' with {'picArr': picArr} %}
+            {{ lang.gfv(row, 'description')}}
+            {% include 'attachment.phtml' with {'attArr': attArr} %}
+        </div>  
+    {% endfor %}
+{% endblock %} {# end bodyPanel #}

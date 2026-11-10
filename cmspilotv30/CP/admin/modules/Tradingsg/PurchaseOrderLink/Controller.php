@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Tradingsg_PurchaseOrderLink_Controller extends CP_Common_Lib_ModuleLinkControllerAbstract
+{
+}

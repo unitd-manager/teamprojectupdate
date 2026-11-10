@@ -1,0 +1,12 @@
+{% extends "main.phtml" %}
+
+{% block bodyPanel %}
+<div class='generalMessage'>
+    {% if message.heading != '' %}
+        <h1>{{ message.heading }}</h1>
+    {% endif %}
+    <p>  
+        {{ message.description|raw }}
+    </p>  
+</div>
+{% endblock %} {# end bodyPanel #}

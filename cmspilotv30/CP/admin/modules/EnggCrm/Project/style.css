@@ -1,0 +1,14 @@
+/************** PROJECT ******/
+@media all
+{
+	.m-enggCrm_project .quotecolumnCheckBox .type-check label {
+	    float: left;
+	    height: 50px;
+	    width: 170px;
+	}
+	.m-enggCrm_project .quotecolumnCheckBox .type-check input {
+	    float: left;
+	    height: 20px;
+	    width: 30px;
+	}
+}

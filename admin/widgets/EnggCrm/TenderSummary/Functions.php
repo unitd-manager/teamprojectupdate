@@ -1,0 +1,13 @@
+<?
+class CPL_Admin_Widgets_EnggCrm_TenderSummary_Functions
+{
+    function setWidgetArray($widgets){
+        $cpCfg 	   = Zend_Registry::get('cpCfg');
+        $widgetObj = $widgets->getWidgetObj('enggCrm_tenderSummary');
+
+        $widgets->registerWidget($widgetObj, array(
+        	'title' => 'Tender Summary Widget'
+        ));
+    }
+}
+

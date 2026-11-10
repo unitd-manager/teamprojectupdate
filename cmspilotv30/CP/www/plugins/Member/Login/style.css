@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@media all
+{
+    .loginInfoText {
+        position:absolute;
+        right:10px;
+        top:10px;
+    }
+}

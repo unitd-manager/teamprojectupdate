@@ -1,0 +1,20 @@
+@media all
+{
+    .w-logistics_listOfDriversIdle{
+    }
+
+    table.thinlist  thead th{
+         background-color: #737277 ;
+         color: #fff;
+    }
+
+    table.thinlist td{
+        border: 1px solid #737277;
+        border-collapse: collapse;
+    }
+    
+    .w-logistics_listOfDriversIdle table.thinlist tr.paymentDue {
+         background-color: #FFA0A0 ;
+    }
+}
+

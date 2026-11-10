@@ -1,0 +1,21 @@
+.linkPortalWrapper.wine_product__ecommerce_countryLink .published,
+.linkPortalWrapper.wine_product__ecommerce_countryLink .price,
+.linkPortalWrapper.wine_product__ecommerce_countryLink .total-stock {
+    width:90px;
+}
+
+.linkPortalWrapper.wine_product__ecommerce_countryLink .published {
+    text-align: center;
+}
+
+.linkPortalWrapper.ecommerce_countryLink__ecommerce_cityLink .stock {
+    width:190px;
+}
+
+.linkPortalWrapper.ecommerce_countryLink__ecommerce_cityLink .published{
+    width:85px;
+}
+
+.linkPortalWrapper.ecommerce_countryLink__ecommerce_cityLink thead {
+    /*display: none;*/
+}

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.m-agileIms_contact .studentEnrollment .highlightBorder {
+   border: 1px dotted #ca226b;
+}
+
+.m-agileIms_contact .ym-columnar div.error .message, 
+.m-agileIms_contact .columnar div.error .message {
+    margin-left: 0%;
+}
+
+.m-agileIms_contact .c50r .rightPanel .linkPortalWrapper table td.highlightClass {
+   background-color: #684A4A;
+   color: #fff;
+}

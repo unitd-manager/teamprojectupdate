@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Widgets_Tradingsg_TodaysActivity_Controller extends CP_Common_Lib_WidgetControllerAbstract
+{
+}

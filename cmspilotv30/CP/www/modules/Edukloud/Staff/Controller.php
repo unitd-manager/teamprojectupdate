@@ -1,0 +1,4 @@
+<?
+class CP_Www_Modules_Edukloud_Staff_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

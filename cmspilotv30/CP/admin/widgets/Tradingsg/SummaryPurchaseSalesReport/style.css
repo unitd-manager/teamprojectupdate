@@ -1,0 +1,24 @@
+@media all
+{
+    .w-tradingsg-summaryPurchaseSalesReport .purchaseVal {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .w-tradingsg-summaryPurchaseSalesReport .purchaseDetails {
+    	display: none;
+    }
+
+    .w-tradingsg-summaryPurchaseSalesReport .quoteCode {
+        width: 178px;
+    }
+
+    .w-tradingsg-summaryPurchaseSalesReport .orderDate {
+        width: 178px;
+    }
+
+    .w-tradingsg-summaryPurchaseSalesReport .companyName {
+        width: 178px;
+    }
+}
+

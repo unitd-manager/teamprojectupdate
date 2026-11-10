@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Logistics_Resource_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

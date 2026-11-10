@@ -1,0 +1,4 @@
+<?
+class CP_Www_Plugins_Common_SiteSearch_Controller extends CP_Common_Lib_PluginControllerAbstract
+{
+}

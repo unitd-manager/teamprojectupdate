@@ -1,0 +1,39 @@
+{% macro gfv2(row, fldName, showDefault = true, lang = '') %}
+    {% set lang  = (lang == '') ? tv['lang'] : lang %}
+
+    {% if lang == 'eng' %}
+        {% set pfx = '' %}
+    {% else %}
+        {% set pfx = lang ~ '_' %}
+    {% endif %}
+
+    {% set fieldName = pfx ~ fldName %}
+    {% set fieldVal = row[fieldName] %}
+    {% set fieldVal1 = row[fldName] %}
+
+    {% if fieldVal != '' %}
+        {{ fieldVal|raw }}
+    {% elseif showDefault == 1 %}
+        {{ fieldVal1 |raw }}
+    {% else %}
+    {% endif %}
+{% endmacro %}
+
+{% macro gfv(row, fldName, showDefault = true, lang = '') %}
+{% spaceless %}
+    {% import _self as langObj %}
+    {{ langObj.gfv2(row, fldName, showDefault, lang)}}
+{% endspaceless %}
+{% endmacro %}
+
+{% macro gd(key, defaultVal = '') %}
+{% spaceless %}
+    {% if attribute(ln, key) != '' %}
+        {{ attribute(ln, key) | raw }}
+    {% elseif defaultVal != '' %}
+        {{ defaultVal | raw }}
+    {% else %}
+        {{ key }}
+    {% endif %}
+{% endspaceless %}
+{% endmacro %}

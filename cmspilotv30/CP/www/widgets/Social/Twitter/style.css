@@ -1,0 +1,19 @@
+@media all
+{
+    .jta-tweet-list {
+        margin: 0;
+    }
+    
+    .jta-tweet-list-item {
+        margin: 0;
+    }
+
+    .jta-tweet-action-reply a    { background-image: url(http://si0.twimg.com/images/dev/cms/intents/icons/reply.png); }
+    .jta-tweet-action-retweet a  { background-image: url(http://si0.twimg.com/images/dev/cms/intents/icons/retweet.png); }
+    .jta-tweet-action-favorite a { background-image: url(http://si0.twimg.com/images/dev/cms/intents/icons/favorite.png); }
+
+    .jta-tweet-action-reply a:hover    { background-image: url(http://si0.twimg.com/images/dev/cms/intents/icons/reply_hover.png); }
+    .jta-tweet-action-retweet a:hover  { background-image: url(http://si0.twimg.com/images/dev/cms/intents/icons/retweet_hover.png); }
+    .jta-tweet-action-favorite a:hover { background-image: url(http://si0.twimg.com/images/dev/cms/intents/icons/favorite_hover.png); }
+
+}

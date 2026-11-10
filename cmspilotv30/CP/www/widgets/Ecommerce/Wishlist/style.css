@@ -1,0 +1,22 @@
+@media all
+{
+    .w-ecommerce-wishlist {
+        margin: 1em 0;
+    }
+    
+    .w-ecommerce-wishlist .button {
+        width:125px;
+        padding: 0.5em;
+    }
+    
+    .w-ecommerce-wishlist .button .ic-cart span {
+        padding-top:4px;
+        display: block;
+        font-size: 20px;
+    }
+
+    .w-ecommerce-wishlist .button a {
+        color: green;
+        text-decoration: none;
+    }
+}

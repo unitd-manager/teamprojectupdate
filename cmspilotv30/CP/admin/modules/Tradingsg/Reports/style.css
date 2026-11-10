@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+	.m-tradingsg_reports #reportsList {
+	    background: #F5F5F5;
+	    padding:15px;
+	}
+
+	.m-tradingsg_reports #reportsList .subcr{
+	    margin-right: 0;
+	}
+
+	.m-tradingsg_reports #reportsList a.button {
+	    width:75%;
+	    font-size: 17px;
+	    display: block;
+	    margin-bottom: 10px;
+	}
+
+	.m-tradingsg_reports .report-wrapper h1 {
+	    text-shadow: 1px 1px 2px #665D5D;
+	    filter: dropshadow(color=#665D5D, offx=1, offy=1);
+	    font-size: 25px;
+	    margin-bottom: 15px;
+	}
+
+	.m-tradingsg_reports  table.search td select.attendanceFilter {
+	    width: 175px;
+	}
+
+	.m-tradingsg_reports  table.search td select.callRegistryFilter {
+	    width: 175px;
+	}
+
+	.m-tradingsg_reports table.search td select.year {
+	    width: 70px;
+	}
+
+	.m-tradingsg_reports table.search td select.month {
+	    width: 100px;
+	}
+
+	.m-tradingsg_reports table.search td select{
+	    width: 300px;
+	    max-width: 300px;
+	    font-size: 1.2em;
+	}
+
+	#reportSearchPanel {
+	    background: #ccc;
+	    padding: 5px;
+	    display: none;
+	    margin: 5px 0 5px 0;
+	    overflow: hidden;
+	}
+
+	#reportSearchPanel table {
+	    float: right;
+	}
+
+	#reportSearch .resetLink {
+	    padding-right: 15px;
+	    padding-top: 5px;
+	}
+
+	#reportSearch .button {
+	    margin-left: 10px;
+	}
+
+	optgroup option {
+	    background: #fff;
+	    padding-left: 10px;
+	}
+
+	.m-tradingsg_reports .actBtns {
+	}
+
+	#chart_div {
+	    min-height: 400px;
+	}
+
+	.exportLink{
+	    position: absolute;
+	    left: 10px;
+	    top:37px;
+	    height:21px;
+	}
+
+	.m-tradingsg_reports table.search td select.salesYearFilter,
+	.m-tradingsg_reports table.search td select.searchBy,
+	.m-tradingsg_reports table.search td select.salesMonthFilter {
+	    width: 150px;
+	    margin-right: 5px;
+	}
+
+	.m-tradingsg_reports table.search td select.leadStaffFilter,
+	.m-tradingsg_reports table.search td select.leadStaffMonthFilter,
+	.m-tradingsg_reports table.search td select.leadStaffYearFilter,
+	.m-tradingsg_reports table.search td select.enquiryByStaffFilter,
+	.m-tradingsg_reports table.search td select.enquiryByStaffMonthFilter,
+	.m-tradingsg_reports table.search td select.enquiryByStaffYearFilter,
+	.m-tradingsg_reports table.search td select.enquiryByStaffFilter,
+	.m-tradingsg_reports table.search td select.enquiryByStaffMonthFilter,
+	.m-tradingsg_reports table.search td select.enquiryByStaffYearFilter,
+	.m-tradingsg_reports table.search td select.enquiryActivityByStaffFilter,
+	.m-tradingsg_reports table.search td select.enquiryActivityByStaffMonthFilter,
+	.m-tradingsg_reports table.search td select.invoiceByClientFilter,
+	.m-tradingsg_reports table.search td select.enquiryActivityByStaffYearFilter {
+	    width: 120px;
+	    margin:7px;
+	}
+
+	.m-tradingsg_reports table.search td input {
+        font-size: 1em;
+	}
+
+    .m-tradingsg_reports table.search td input.fld_date {
+        width: 100px;
+    }
+    
+    .m-tradingsg_reports table.search td select.clientFilter,
+    .m-tradingsg_reports table.search td select.supplierFilter {
+        max-width: 250px;
+    }

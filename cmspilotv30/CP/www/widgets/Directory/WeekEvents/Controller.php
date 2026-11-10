@@ -1,0 +1,4 @@
+<?
+class CP_Www_Widgets_Directory_WeekEvents_Controller extends CP_Common_Lib_WidgetControllerAbstract
+{
+}

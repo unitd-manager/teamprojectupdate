@@ -1,0 +1,85 @@
+@media all
+{
+    #header .w-common-country {
+        position: absolute;
+        left:250px;
+        top:5px
+    }
+
+    .w-common-country ul.vlist li a {
+        background: url("images/right-arrow.png") no-repeat scroll 0 0 transparent;
+        margin-left:16px;
+    }
+
+    .w-common-country .country_menu {
+        height: 25px;
+        width: 150px;
+    }
+
+    .w-common-country .country_menu .title {
+        cursor: pointer;
+        background: url("images/arrow-down.png") no-repeat scroll center right transparent;
+        border:1px solid #1c1c1c;
+        padding:2px 20px 0 0;
+    }
+
+    .w-common-country .country_menu .selected {
+        background: no-repeat scroll 2px 0 transparent;
+        padding: 0 3px 0 20px;
+    }
+
+    .w-common-country .country_menu ul {
+        display:none;
+        width:128px;
+        border: 1px solid #1c1c1c;
+        background: #fff;
+        position: relative;
+        z-index: 1000;
+        -moz-border-radius-bottomright: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+
+    }
+
+    .w-common-country .country_menu li a {
+        color:#000;
+        text-decoration:none;
+        padding:3px;
+        display:block;
+    }
+
+    .w-common-country .country_menu li a:hover {
+        font-weight:bold;
+        color: #F99B18;
+    }
+}
+
+/********* 16*16 country flags *******/
+@media all
+{
+    .w-common-country .country_menu li {
+        background: no-repeat scroll 2px 5px transparent;
+        padding: 0 0 0 17px;
+    }
+
+    .w-common-country .country_menu .HK {
+        background-image: url("images/flags-16/HK.png");
+    }
+
+    .w-common-country .country_menu .CN {
+        background-image: url("images/flags-16/CN.png");
+    }
+
+    .w-common-country .country_menu .UK {
+        background-image: url("images/flags-16/UK.png");
+    }
+
+    .w-common-country .country_menu .MO {
+        background-image: url("images/flags-16/MO.png");
+    }
+
+    .w-common-country .country_menu .SG {
+        background-image: url("images/flags-16/SG.png");
+    }
+}

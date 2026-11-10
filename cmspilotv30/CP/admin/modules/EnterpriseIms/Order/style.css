@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+@media all
+{
+    .columnar .receipt_invoices.error .message {
+        margin-left: 0;
+    }
+    
+    #portalForm.editInvoiceFormPvt .installmentTitle .type-text {
+        width: 85px;
+        margin-top: 10px;
+    }
+
+    .yform .invoiceDate div.type-text {
+        width: 175px;
+    }
+
+    .editInvoiceFormPvt .edit_invoices .error .message {
+    }
+    
+    .receiptForm .invoice_items {
+        width: 190px;
+    }
+
+    .receiptForm .monthField {
+        width: 50px;
+    }
+    
+    #invoicePortalOuter,
+    #receiptPortalOuter {
+        height: 200px;
+        overflow: auto;
+    }
+}

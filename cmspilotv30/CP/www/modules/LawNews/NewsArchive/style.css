@@ -1,0 +1,53 @@
+@media all
+{
+    .m-lawNews_newsArchive .article_memeber_links {
+        padding-bottom: 10px;
+    }
+
+    .m-lawNews_newsArchive .article_memeber_links ul {
+        overflow: hidden;
+    }
+    .m-lawNews_newsArchive .article_memeber_links li {
+        float: left;
+        padding: 0 10px;
+        border-right: 1px solid #000;
+    }
+    .m-lawNews_newsArchive .article_memeber_links_ul_li_last {
+        padding-right: 0px !important;
+        border: 0px !important;
+    }
+
+}
+
+@media all
+{
+    .m-lawNews_newsArchive .reporterList ul {
+        overflow: hidden;
+    }
+
+    .m-lawNews_newsArchive .reporterList img {
+        float: right;
+        padding-left: 5px;
+    }
+
+    .m-lawNews_newsArchive .reporterList ul li{
+        border-bottom: 1px dotted #000;
+        margin-bottom: 5px;
+        min-height: 150px;
+    }
+
+    .m-lawNews_newsArchive .reporterList ul.qAndA li{
+        float: left;
+        padding:10px;
+        width: 130px;
+        height: 100px;
+    }
+
+    .m-lawNews_newsArchive .reporterList ul.qAndA li img{
+        float: none;
+    }
+
+    .m-lawNews_newsArchive .reporterList .title {
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@media screen, projection
+{
+    * html #col3 { height: 1%; }
+    * html #col1 {margin-right: -3px;}
+    * html #col2 {margin-left: -3px;}
+    * html #col3 { margin-left: 24%; margin-right: 24%; }
+    * html #main { height:400px;}
+}

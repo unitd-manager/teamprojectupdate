@@ -1,0 +1,4 @@
+<?
+class CP_Common_Modules_Common_GeoCountry_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

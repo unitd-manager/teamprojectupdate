@@ -1,0 +1,323 @@
+<?
+class CP_Admin_Modules_AgileIms_Course_Model extends CP_Common_Modules_AgileIms_Course_Model
+{
+    function getSQL() {
+
+        $SQL = "
+        SELECT c.*
+              ,pg.title AS program_title
+        FROM course c
+        LEFT JOIN (program_group pg) ON (c.program_group_id = pg.program_group_id)
+        ";
+
+        return $SQL;
+    }
+
+    /**
+    */
+    function setSearchVar($linkRecType = '') {
+        $tv = Zend_Registry::get('tv');
+        $fn = Zend_Registry::get('fn');
+        $searchVar = Zend_Registry::get('searchVar');
+        $searchVar->mainTableAlias = 'c';
+
+        $course_type        = $fn->getReqParam('course_type');
+        $course_id          = $fn->getReqParam('course_id');
+        $special_search     = $fn->getReqParam('special_search');
+        $program_group_id   = $fn->getReqParam('program_group_id');
+
+        if ($course_id != "") {
+            $searchVar->sqlSearchVar[] = "c.course_id = '{$course_id}'";
+        } else if ($tv['record_id'] != '') {
+            $searchVar->sqlSearchVar[] = "c.course_id = '{$tv['record_id']}'";
+        } else {
+            $fn->setSearchVarForLinkData($searchVar, $linkRecType, 'c.course_id');
+
+            if ($program_group_id != "") {
+                $searchVar->sqlSearchVar[] = "c.program_group_id = '{$program_group_id}'";
+            }
+
+            //------------------------------------------------------------------------//
+            if ($tv['special_search'] == "Flagged") {
+                $searchVar->sqlSearchVar[] = "c.flag = 1";
+            }
+
+            if ($tv['special_search'] == "Not-Flagged") {
+                $searchVar->sqlSearchVar[] = "(c.flag != 1 OR c.flag IS null)";
+            }
+
+            if ($tv['special_search']  == 'Published') {
+                $searchVar->sqlSearchVar[] = "c.published = 1";
+            }
+
+            if ($tv['special_search'] == 'Not-Published' ) {
+                $searchVar->sqlSearchVar[] = "c.published = 0 OR c.published IS NULL OR c.published = ''";
+            }
+
+            if ($course_type != '' ) {
+                $searchVar->sqlSearchVar[] = "c.course_type = '{$course_type}'";
+            }
+
+            //------------------------------------------------------------------------//
+            if ($tv['keyword'] != "") {
+                $searchVar->sqlSearchVar[] = "(
+                       c.title LIKE '%{$tv['keyword']}%'
+                    OR c.course_code LIKE '%{$tv['keyword']}%'
+                )";
+            }
+
+            $searchVar->sortOrder = "c.sort_order";
+        }
+    }
+
+    /**
+    */
+    function getNewValidate() {
+        $validate = Zend_Registry::get('validate');
+        $cpCfg = Zend_Registry::get('cpCfg');
+
+        $validate->resetErrorArray();
+
+        if($cpCfg['m.agileIms.course.hasProgramGroup']){
+            $validate->validateData('program_group_id', 'Please select the group');
+        }
+        $validate->validateData('title', 'Please enter the title');
+        $validate->validateData('course_code', 'Please enter the course code');
+
+        if (count($validate->errorArray) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+    */
+    function getAdd(){
+        $fn = Zend_Registry::get('fn');
+        $validate = Zend_Registry::get('validate');
+        $db = Zend_Registry::get('db');
+        $dbUtil = Zend_Registry::get('dbUtil');
+        $cpCfg = Zend_Registry::get('cpCfg');
+
+        $program_group_id   = $fn->getReqParam('program_group_id');
+        
+        if (!$this->getNewValidate()){
+            return $validate->getErrorMessageXML();
+        }
+
+        $fa = $this->getFields();
+        $fa['sort_order'] = $fn->getNextSortOrder("course");
+        $id = $fn->addRecord($fa);
+        
+        if($cpCfg['m.agileIms.course.hasProgramGroup']){
+            $sqlInsert = "
+            SELECT subsidy_discount_id
+            FROM program_group_subsidy_discount
+            WHERE program_group_id = {$program_group_id}
+            ";
+            $resultInsert  = $db->sql_query($sqlInsert);
+            
+            while ($row = $db->sql_fetchrow($resultInsert)) {
+                $fa = array();
+                
+                $fa['course_id']            = $id;
+                $fa['subsidy_discount_id']  = $row['subsidy_discount_id'];
+                $fa['program_group_id']     = $program_group_id;
+                $fa['creation_date']        = date("Y-m-d H:i:s");
+            
+                $SQL = $dbUtil->getInsertSQLStringFromArray($fa, 'course_subsidy_history');
+                $result = $db->sql_query($SQL);
+            } 
+        }
+
+        $fn->returnAfterNewSave($id);
+    }
+
+    /**
+    */
+    function getEditValidate() {
+        $validate = Zend_Registry::get('validate');
+
+        $validate->resetErrorArray();
+        $validate->validateData('title', 'Please enter the title');
+        $validate->validateData('course_code', 'Please enter the course code');
+
+        if (count($validate->errorArray) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+    */
+    function getSave($tableName = '', $keyField = '', $keyFieldVal = ''){
+        $fn = Zend_Registry::get('fn');
+        $validate = Zend_Registry::get('validate');
+
+        if (!$this->getEditValidate()){
+            return $validate->getErrorMessageXML();
+        }
+
+        $fa = $this->getFields();
+        $id = $fn->saveRecord($fa, $tableName, $keyField, $keyFieldVal);
+        $fn->returnAfterNewSave($id);
+    }
+
+    /**
+    */
+    function getFields(){
+        $fn = Zend_Registry::get('fn');
+
+        $fa = array();
+
+        $fa = $fn->addToFieldsArray($fa, 'title', '', true);
+        $fa = $fn->addToFieldsArray($fa, 'course_code');
+        $fa = $fn->addToFieldsArray($fa, 'course_type');
+        $fa = $fn->addToFieldsArray($fa, 'description', '', true);
+
+        $fa = $fn->addToFieldsArray($fa, 'total_hours');
+        $fa = $fn->addToFieldsArray($fa, 'duration');
+        $fa = $fn->addToFieldsArray($fa, 'month_or_hour');
+        $fa = $fn->addToFieldsArray($fa, 'course_entry_requirements');
+        $fa = $fn->addToFieldsArray($fa, 'price');
+        $fa = $fn->addToFieldsArray($fa, 'program_group_id');
+        $fa = $fn->addToFieldsArray($fa, 'published');
+        $fa = $fn->addToFieldsArray($fa, 'valid_date_from');
+        $fa = $fn->addToFieldsArray($fa, 'valid_date_to');
+        $fa = $fn->addToFieldsArray($fa, 'qualification_type');
+        $fa = $fn->addToFieldsArray($fa, 'developed_by');
+        $fa = $fn->addToFieldsArray($fa, 'award_course');
+        $fa = $fn->addToFieldsArray($fa, 'award_date');
+        $fa = $fn->addToFieldsArray($fa, 'scheduled_holidays');
+        $fa = $fn->addToFieldsArray($fa, 'examination_assessment');
+        $fa = $fn->addToFieldsArray($fa, 'examination_results');
+
+        $fa = $fn->addToFieldsArray($fa, 'regular_class');
+        $fa = $fn->addToFieldsArray($fa, 'part_time_class');
+        $fa = $fn->addToFieldsArray($fa, 'sunday_class');        
+        $fa = $fn->addToFieldsArray($fa, 'min_attendance_requirement');
+        $fa = $fn->addToFieldsArray($fa, 'passing_mark');
+        $fa = $fn->addToFieldsArray($fa, 'class_size');
+        $fa = $fn->addToFieldsArray($fa, 'replacement_notes');
+        $fa = $fn->addToFieldsArray($fa, 'general_rules');
+        $fa = $fn->addToFieldsArray($fa, 'legal_requirement');
+        $fa = $fn->addToFieldsArray($fa, 'aim_of_course');
+
+        return $fa;
+    }
+
+    /**
+     * @param type $id = course_id
+    */
+    function getAgileImsCourseAgileImsBatchLinkSQL($id) {
+        $fn = Zend_Registry::get('fn');
+
+        $status  = $fn->getReqParam('batch_status');
+        $site_id = $fn->getSessionParam('cp_site_id');
+
+        if ($status != "") {
+            $whereSQL = " AND b.status = '{$status}'";
+        } else {
+            $whereSQL = "";
+        }
+            
+        return "
+        SELECT b.batch_id 
+              ,b.title
+              ,b.venue
+              ,b.start_date
+              ,b.end_date
+              ,b.start_time
+              ,b.end_time
+              ,(SELECT count(*) FROM course_contact WHERE batch_id = b.batch_id) AS attendee_count
+              ,b.status
+        FROM batch b
+        WHERE b.course_id = '{$id}'
+          {$whereSQL}
+        ORDER BY b.batch_id
+        ";
+    }
+
+    /**
+     * @param type $id = course_id
+    */
+    function getAgileImsCourseAgileImsCourseSubsidyLinkSQL($id) {
+
+        $SQL = "
+        SELECT csh.course_subsidy_history_id
+              ,sd.title
+              ,sd.category_type
+        FROM course_subsidy_history csh 
+        LEFT JOIN subsidy_discount sd ON (sd.subsidy_discount_id = csh.subsidy_discount_id)
+        WHERE csh.course_id = '{$id}'
+        ORDER BY csh.course_subsidy_history_id
+        ";
+
+        return $SQL;
+    }
+
+    /**
+    */
+    function getAddSubsidyDiscountPortal() {
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+        $program_group_id   = $fn->getReqParam('program_group_id');
+        $course_id          = $fn->getReqParam('course_id');
+        
+        $sqlDelete = "
+        DELETE FROM course_subsidy_history
+        WHERE course_id = {$course_id}
+        ";
+        $resultDelete  = $db->sql_query($sqlDelete);
+        
+        $sqlInsert = "
+        SELECT subsidy_discount_id
+        FROM program_group_subsidy_discount
+        WHERE program_group_id = {$program_group_id}
+        ";
+        $resultInsert  = $db->sql_query($sqlInsert);
+        
+        while ($row = $db->sql_fetchrow($resultInsert)) {
+            $fa = array();
+            
+            $fa['course_id']            = $course_id;
+            $fa['subsidy_discount_id']  = $row['subsidy_discount_id'];
+            $fa['program_group_id']     = $program_group_id;
+            $fa['creation_date']        = date("Y-m-d H:i:s");
+
+            $SQL = $dbUtil->getInsertSQLStringFromArray($fa, 'course_subsidy_history');
+            $result = $db->sql_query($SQL);
+        }
+    }
+
+    /**
+     * @param type $id = course_id
+    */
+    function getAgileImsCourseAgileImsSubjectLinkSQL($id) {
+
+        return $SQL = "
+        SELECT cs.course_subject_id
+              ,s.title
+        FROM course_subject cs 
+        LEFT JOIN subject s ON (s.subject_id = cs.subject_id)
+        WHERE cs.course_id = '{$id}'
+        ORDER BY cs.course_subject_id
+        ";
+    }
+    
+    /**
+     * 
+    */
+    function getCourseSQL() {
+        return "
+        SELECT course_id, title
+        FROM course
+        WHERE published = 1
+        ";
+    }
+    
+}

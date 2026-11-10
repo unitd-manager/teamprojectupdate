@@ -1,0 +1,26 @@
+{% extends "main.phtml" %}
+
+{% block bodyPanel %}
+    <div class='clearfix topRow'>
+        <div class='pull-left'>
+            {{ breadcrumbs | raw }}
+        </div>
+        <div class='pull-right'>
+            {% include 'pager.phtml' with {'extraClass': ''} %}
+        </div>
+    </div>
+    <ul class='list-unstyled row'>
+        {% for row in modDataArray %}
+            <li class="col-md-3">
+                <div class="">
+                    <a href='{{ row.url }}' class="img-thumbnail">
+                        <img src="{{ row.file_normal }}" class='img-responsive'>
+                    </a>
+                    <div class="caption">
+                        <h5>{{ lang.gfv(row, 'title') }}</h5>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %} {# end bodyPanel #}

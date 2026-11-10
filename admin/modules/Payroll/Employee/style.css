@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-payroll_employee .noteHighlight {
+        color: #880000;
+        font-weight: bold;
+    }
+
+    .m-payroll_employee .toggle {
+        display:block;
+    }
+
+    .m-payroll_employee .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-payroll_employee .c50l,
+    .m-payroll_employee .c50r {
+        width: 100%;
+    }
+
+    .m-payroll_employee .ym-columnar .ym-fbox-text label,
+    .m-payroll_employee .ym-columnar .ym-fbox-select label,
+    .m-payroll_employee #frmEdit .type-text label,
+    .m-payroll_employee #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-payroll_employee #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-payroll_employee .linkPortalWrapper div.header,
+    .m-payroll_employee .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #90ee90;
+        color: #000;
+        font-size: 20px !important;
+    }
+
+    .displayNone{
+        display: none;
+    }
+
+    .employeeList .employeePic img{
+        height: auto;
+        background-size: cover !important;
+        margin-left: 0;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .rightPanelHeading {
+        color: #000 !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+    }
+
+    #tabs .ui-state-default,
+    #tabs .ui-widget-content .ui-state-default,
+    #tabs .ui-widget-header .ui-state-default {
+        border: 1px solid #00b526 !important;
+    }
+
+    #tabs .ui-state-default
+    ,#tabs .ui-widget-content .ui-state-default
+    ,#tabs .ui-widget-header .ui-state-default {
+        background: #00b526 !important;
+    }
+
+    .ui-tabs .ui-tabs-nav {
+        padding: .2em .2em 0;
+        border-bottom: 1px solid #00b526 !important;
+    }
+
+    .ui-tabs .ui-tabs-nav li {
+        margin: 1px 10px 0 0 !important;
+    }
+
+    #tabs .ui-state-active
+    ,#tabs .ui-widget-content .ui-state-active
+    ,#tabs .ui-widget-header .ui-state-active {
+        background: #ffffff !important;
+        border: 1px solid #00b526;
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+
+    .topPanelCount {
+        float: right;
+        padding: 10px 20px;
+        border: 1px solid #DAE6ED;
+    }
+
+    .topPanelCount img{
+        width: 25px;
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,34 @@
+/*** DEMO SKIN ***/
+.w-menu-superFish .sf-menu {
+    float: none;
+    margin-bottom: 1em;
+    background:#c0c0c0;
+}
+.w-menu-superFish .sf-menu a {
+    border-left:1px solid #fff;
+    border-top: 1px solid #CFDEFF;
+    padding: .75em 1em;
+    text-decoration:none;
+}
+.w-menu-superFish .sf-menu a, .w-menu-superFish .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+    color: #000;
+    text-decoration: none;
+}
+.w-menu-superFish .sf-menu li {
+    background: #eee;
+}
+.w-menu-superFish .sf-menu li li {
+    background:	#eee;
+}
+.w-menu-superFish .sf-menu li li li {
+    background:	#eee;
+}
+.w-menu-superFish .sf-menu li:hover, .w-menu-superFish .sf-menu li.sfHover,
+.w-menu-superFish .sf-menu a:focus, .w-menu-superFish .sf-menu a:hover, .w-menu-superFish .sf-menu a:active,
+.w-menu-superFish .sf-menu li.sfHover > a, .w-menu-superFish .sf-menu li.active > a
+{
+    text-decoration: none;
+    background:	#000;
+    outline: 0;
+    color: #fff;
+}

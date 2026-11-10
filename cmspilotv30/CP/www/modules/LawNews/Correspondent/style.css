@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@media all
+{
+    .m-lawNews_correspondent .correspondentList ul li.correspondent{
+        float:left;
+        width: 297px;
+        margin-bottom: 1em;
+        margin-right: 20px;
+        min-height: 170px;
+    }
+
+    .m-lawNews_correspondent .correspondentList ul li.correspondent .w-content-record ul li {
+        margin: 0px;
+        background-color: #EEEEEE;
+        border-bottom: 3px solid #FFFFFF;
+    }
+
+    .m-lawNews_correspondent .correspondentList ul li.correspondent .w-content-record .title a {
+        font-weight: normal;
+    }
+}

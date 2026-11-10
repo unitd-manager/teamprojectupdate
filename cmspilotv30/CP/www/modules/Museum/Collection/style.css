@@ -1,0 +1,27 @@
+@media all
+{
+    .m-museum_collection div.pp_default .ppt {
+        background-image: none;
+    }
+
+    div.pp_overlay {
+        z-index: 790;
+    }
+
+    div.pp_pic_holder {
+        z-index: 800;
+    }
+
+    div.pp_default .pp_nav a.pp_show_hide_description {
+        font-size: 11px;
+        left: 100px;
+        line-height: 25px;
+        margin: 0;
+        padding: 0 0 0 25px;
+        position: absolute;
+        top: 2px;
+    }
+}
+
+
+

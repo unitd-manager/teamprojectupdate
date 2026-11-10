@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Edukite_Teacher_Controller extends CP_Common_Modules_Edukite_Teacher_Controller
+{
+}

@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Edukite_Parent_Functions extends CP_Common_Modules_Edukite_Parent_Functions
+{
+}

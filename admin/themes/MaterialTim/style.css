@@ -1,0 +1,612 @@
+@charset "UTF-8";
+@media all
+{
+    .ui-dialog-buttonset button[type="button"] {
+        padding: 4px 8px;
+    }
+
+    .ui-dialog-buttonset .btn-cancel {
+        padding: 4px 8px;
+        background-color: #c9302c;
+        border-color: #ac2925;
+        color: #fff;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        border-radius: 4px;
+        background-image: linear-gradient(to bottom,#d9534f 0,#c12e2a 100%);
+    }
+
+    .ui-dialog-buttonset .btn-submit {
+        padding: 6px 12px;
+        background-color: #449d44;
+        border-color: #398439;
+        color: #fff;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        border-radius: 4px;
+        background-image: linear-gradient(to bottom,#5cb85c 0,#419641 100%);
+    }
+
+    select {
+      background: none !important;
+    }
+
+    .actBtns {
+        background-color: #ceffce !important;
+    }
+
+    .disabledInputReadable input,
+    .disabledInputReadable label {
+        pointer-events: none;
+        border: none !important;
+    }
+
+    .linkPortalWrapper table tr.portal-row2 {
+        background-color: #ceffce !important;
+    }
+
+    .w-enggCrm-balanceSheetReport .invoiceTitles,
+    .w-enggCrm-balanceSheetReport .subTitles,
+    .w-enggCrm-profitLossReport .invoiceTitles,
+    .w-enggCrm-profitLossReport .subTitles {
+        display: none;
+    }
+
+    .type-radio .leftCol {
+        width: 100% !important;
+    }
+
+    .w-enggCrm-balanceSheetReport .invoiceDetails strong,
+    .w-enggCrm-balanceSheetReport .expenseDetails strong, 
+    .w-enggCrm-profitLossReport .invoiceDetails strong,
+    .w-enggCrm-profitLossReport .expenseDetails strong {
+        cursor: pointer;
+    }
+
+    .reportTitle {
+        font-size: 16px !important;
+        font-weight: bold;
+
+    }
+
+    img.icon {
+        width: 20px;
+    }
+    
+   	table.timesheetTableProjReltab thead th {
+   		color: #000 !important;
+   	}
+
+    .noPadding {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+
+    a.homeModLink{
+      float: left;
+      font-size :30px;
+      color : #000 !important;
+      margin-top: 12px;
+      margin-left: 14px;
+    }
+
+    .homeModLink::before{
+        content: '\f015';
+        font-family: FontAwesome;
+    }
+
+    .homeTop li::before {
+        content: '' !important;
+        font-family: FontAwesome;
+    }
+
+    ul.homeTop li font a {
+      position: relative !important;
+      top:-2px !important;
+      left:-2px !important;
+      margin-left: 0 !important;
+    }
+
+   	.m-enggCrm_order #generateDetailInvoiceForm .invoice_creation_date label {
+		  width: 100%;
+   	}
+
+   	.m-enggCrm_order #generateDetailInvoiceForm input[name="hidden_date_display"] {
+		    margin-top: -17px;
+        width: 90px !important;
+   	}
+
+    .v-edit.m-enggCrm_order #generateDetailInvoiceForm  input.fld_date.MainDateField {
+        width: 90px !important;
+    }
+
+   	.m-payroll_jobInformation .editTopButtonActionDiv {
+   		position: relative !important;
+   		top: 0px !important;
+   		width: 100% !important;
+   	}
+
+   	#actBtn_payrollDuplicateJobinfo {
+	    background-color: #23B7E5;
+	    border-color: #FFFFFF;
+	}
+
+	.m-payroll_jobInformation .type-radio .leftCol {
+		width: 100% !important;
+	}
+
+   .ui-draggable .ui-dialog-titlebar {
+      background: #90ee90 !important;
+      color: #000 !important;
+   }
+
+   .rightPanel .header a,
+   #toggleComments {
+       color: #000 !important;
+   }
+
+   .timeSheetDaysInput, .timeSheetDaysOTInput, .timeSheetDaysPHInput, .timeSheetDaysNormalInput {
+      height: 22px;
+      width: 53px;
+   }
+
+   .ulModuleSet{
+      height : 330px !important;
+   }
+
+   .sub{
+      height:350px !important;
+   }
+
+   .m-payroll_dormitory .c50l,
+   .m-payroll_dormitory .c50r {
+      width: 100%;
+   }
+
+    .m-payroll_dormitory .ym-columnar .ym-fbox-text label,
+    .m-payroll_dormitory .ym-columnar .ym-fbox-select label,
+    .m-payroll_dormitory #frmEdit .type-text label,
+    .m-payroll_dormitory #frmEdit .type-select label {
+        width: 100%;
+    }
+
+   .m-enggCrm_opportunity .c50l,
+   .m-enggCrm_opportunity .c50r {
+      width: 100%;
+   }
+
+   .m-enggCrm_opportunity #dialog .c50l,
+   .m-enggCrm_opportunity #dialog .c50r {
+      width: 50%;
+   }
+
+    .m-enggCrm_opportunity .ym-columnar .ym-fbox-text label,
+    .m-enggCrm_opportunity .ym-columnar .ym-fbox-select label,
+    .m-enggCrm_opportunity #frmEdit .type-text label,
+    .m-enggCrm_opportunity #frmEdit .type-select label {
+        width: 100%;
+    }
+
+
+   .m-enggCrm_project .c50l,
+   .m-enggCrm_project .c50r {
+      width: 100%;
+   }
+
+   .m-enggCrm_project #dialog .c50l,
+   .m-enggCrm_project #dialog .c50r {
+      width: 50%;
+   }
+
+    .m-enggCrm_project .ym-columnar .ym-fbox-text label,
+    .m-enggCrm_project .ym-columnar .ym-fbox-select label,
+    .m-enggCrm_project #frmEdit .type-text label,
+    .m-enggCrm_project #frmEdit .type-select label {
+        width: 100%;
+    }
+
+   .m-tradingsg_purchaseOrder .c50l,
+   .m-tradingsg_purchaseOrder .c50r {
+      width: 100%;
+   }
+
+    .m-tradingsg_purchaseOrder .ym-columnar .ym-fbox-text label,
+    .m-tradingsg_purchaseOrder .ym-columnar .ym-fbox-select label,
+    .m-tradingsg_purchaseOrder #frmEdit .type-text label,
+    .m-tradingsg_purchaseOrder #frmEdit .type-select label {
+        width: 100%;
+    }
+
+   .m-tradingsg_subCon .c50l,
+   .m-tradingsg_subCon .c50r {
+      width: 100%;
+   }
+
+    .m-tradingsg_subCon .ym-columnar .ym-fbox-text label,
+    .m-tradingsg_subCon .ym-columnar .ym-fbox-select label,
+    .m-tradingsg_subCon #frmEdit .type-text label,
+    .m-tradingsg_subCon #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .addMultipleLineItemForm .lineItemDescription,
+    .actualChargesForm .lineItemDescription,
+    .addMultipleLineItemForm .lineItemTitle,
+    .generateInvoiceForm .invoiceItemDescription,
+    .generateDetailInvoiceForm .invoiceItemDescription,
+    .addMultiplePurchaseOrderForm .poDescription,
+    .editPoMultipleLineItem .poDescription,
+    .addMultipleMaterialRequestForm .poDescription,
+    .editMultipleMaterialRequestForm .poDescription,
+    .addMultipleMaterialsForm .materialDescription,
+    .addMultipleWOItemForm .lineItemDescription,
+    .generateInvoiceForm .invoiceItemTitleFull,
+    .editForDO .lineItemDescription,
+    .invoiceEditForm textarea {
+        width: 160px !important;
+        height: 30px !important;
+    }
+
+    .addMultipleLineItemForm .lineItemDescription:focus,
+    .actualChargesForm .lineItemDescription:focus,
+    .addMultipleLineItemForm .lineItemTitle:focus,
+    .generateInvoiceForm .invoiceItemDescription:focus,
+    .generateDetailInvoiceForm .invoiceItemDescription:focus,
+    .addMultiplePurchaseOrderForm .poDescription:focus,
+    .editPoMultipleLineItem .poDescription:focus,
+    .addMultipleMaterialRequestForm .poDescription:focus,
+    .editMultipleMaterialRequestForm .poDescription:focus,
+    .addMultipleWOItemForm .lineItemDescription:focus,
+    .addMultipleMaterialsForm .materialDescription:focus,
+    .generateInvoiceForm .invoiceItemTitleFull:focus,
+    .editForDO .lineItemDescription:focus,
+    .invoiceEditForm textarea:focus {
+        height: 75px !important;
+    }
+    #generateInvoiceForm {
+		overflow-x: scroll;
+	  }
+
+    .editForDO .lineItemQuantity {
+        font-size: 14px;
+        height: 23px;
+        margin-top: 6px;
+        width: 70px !important;
+    }
+
+    .yearDivHoursEmployeeForm label, .monthDivHoursEmployeeForm label {
+        display: inline-block;
+        font-weight: bold;
+        width: 75px !important;
+    }
+
+    .exportLink {
+        top: 50px !important;
+        left: 23px !important;
+    }
+
+    .otIntroText {
+        text-align: center;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .otHourPopup td input{
+        width: 60px;
+    }
+
+    .otHourPopup td input.allowance1 {
+        width: 77px;
+    }
+
+    .otHourPopup td input.allowance2 {
+        width: 103px;
+    }
+
+    .otHourPopup td input.allowance3 {
+        width: 60px;
+    }
+
+    .otHourPopup td input.allowance4 {
+        width: 71px;
+    }
+
+    .otHourPopup td input.deduction1 {
+        width: 66px;
+    }
+
+    .m-enggCrm_project .toggle {
+        display:block;
+    }
+
+    .enggCrm_project__core_staffLink,
+    .enggCrm_project__enggCrm_employeeLink,
+    #media__enggCrm_project__attachment,
+    .m-enggCrm_project .p-common-comment {
+        float: left;
+        margin-right: 1%;
+    }
+
+    .m-tradingsg_purchaseOrder #po_productTable .qtySize input {
+      width: 65px;
+    }
+
+    .m-tradingsg_purchaseOrder #po_productTable .priceSize input {
+      width: 85px;
+    }
+
+    a.quoteLayoutShow{
+        text-decoration: underline !important;
+    }
+
+    .m-enggCrm_opportunity.v-edit .linkPortalWrapper tr.addQuoteRow td, .m-enggCrm_project.v-edit .linkPortalWrapper tr.addQuoteRow td {
+        color: #000;
+        background-color: #ffffff !important;
+    }
+
+    .m-enggCrm_project .linkPortalWrapper tr.cancelledQuote td.quoteStatusTd {
+        color: #ffffff !important;
+        background-color: red !important;
+        font-weight: bold;
+    }
+
+    .m-enggCrm_opportunity .rightPanel .quoteFromProj, .m-enggCrm_project .rightPanel .quoteFromProj {
+        background-color: #ffffe0;
+    }
+
+    .m-enggCrm_opportunity.v-edit .linkPortalWrapper table.list thead td, .m-enggCrm_opportunity.v-edit .linkPortalWrapper table.list thead th, .m-enggCrm_opportunity.v-edit .linkPortalWrapper table.list tfoot, .m-enggCrm_opportunity.v-edit .linkPortalWrapper tr.header, .m-enggCrm_opportunity.v-edit .linkPortalWrapper div.header, .m-enggCrm_project.v-edit .linkPortalWrapper table.list thead td, .m-enggCrm_project.v-edit .linkPortalWrapper table.list thead th, .m-enggCrm_project.v-edit .linkPortalWrapper table.list tfoot, .m-enggCrm_project.v-edit .linkPortalWrapper tr.header, .m-enggCrm_project.v-edit .linkPortalWrapper div.header {
+        /*background: #ffcd88;*/
+        background: lightgreen;
+        color: #4A4A4A;
+    }
+
+    .m-enggCrm_project.v-edit .linkPortalWrapper table.list thead th{
+        /*background: #8ea1b9;*/
+    }
+
+    .m-tradingsg_booking #media__tradingsg_booking__picture .actBtns{
+        display: none;
+    }
+
+    .m-tradingsg_booking.v-new .columnar div.type-text input,
+    .m-tradingsg_booking.v-edit .columnar div.type-text input#fld_c_company_name {
+        width: 55% !important;
+    }
+
+    .m-payroll_employee .employeeList {
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+
+    .m-payroll_employee .employeeListInner {
+        border: 1px solid #dddddd;
+        padding: 10px 0;
+        min-height: 128px;
+    }
+
+    .employeeListContent {
+      margin-left: -10px;
+    }
+
+    .m-payroll_employee .employeeName a{
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .m-payroll_employee .designation, .m-payroll_employee .age {
+      color: grey;
+    }
+
+    .m-payroll_employee .designation {
+        font-size: 15px;
+    }
+
+    .m-payroll_employee a:visited {
+        color: #000 !important;
+    }
+
+    .ym-form .ym-fbox-text input, .yform .type-text input, .ym-form .ym-fbox-text textarea, .yform .type-text textarea, .ym-form .ym-fbox-select select, .yform .type-select select, .ym-form select, .yform select, .cpSearch select, .cpSearch input {
+        color: #000 !important;
+    }
+
+    .ym-columnar .ym-fbox-text label, .ym-columnar .ym-fbox-select label, .ym-columnar .ym-fbox-radio label, .ym-form label, .yform label, #frmEdit .type-text label, #frmEdit .type-select label, #frmEdit .type-radio label{
+        color : #656565 !important;
+    }
+
+    .m-enggCrm_opportunity.v-edit .columnar.edit div.type-select select {
+        width: 78%;
+    }
+
+    .m-enggCrm_opportunity.v-edit .rightPanelHeading {
+      background: #fff !important;
+      color: #4A4A4A !important;
+      font-size: 22px !important;
+      font-weight: bold !important;
+    }
+
+    .tplLogin .bgloginLoginPanelLeft {
+        background-color: #5ebb50 !important;
+    }
+
+    .homeTop {
+      z-index: 999 !important;
+      width: 96px !important;
+    }
+
+    #costingSummaryForm {
+        padding: 0px;
+        border: none !important;
+    }
+
+    .costingSummaryForm .costingSummaryQuantity {
+        width: 55px !important;
+    }
+
+    .costingSummaryForm .clearOpportunityCostingSummary {
+      cursor: pointer !important;
+      text-decoration: underline !important;
+    }
+
+    .costingSummaryForm .costingSummaryUnit {
+        width: 40px !important;
+    }
+
+    .costingSummaryForm .poProductTitle,
+    .costingSummaryForm .subConTitle{
+        width: 160px !important;
+        padding: 4px 2px 2px 2px !important;
+    }
+
+    .costingSummaryForm .costingSummaryAmount {
+      width: 95px !important;
+    }
+
+    .costingSummaryForm .costingSummarySupplier {
+      width: 100px !important;
+    }
+
+    .costingSummaryForm .costingSummaryUnitPrice {
+        width: 70px !important;
+    }
+
+    .costingSummaryForm .addNewProductProductPopup,
+    .costingSummaryForm .addNewSupplierPopup {
+        color: #4169E1 !important;
+        text-decoration: underline !important;
+        margin-left: 20px;
+    }
+
+    .columnar.costingSummaryForm .type-text label {
+        width: 100%;
+    }
+
+    .costingSummaryForm .type-text.ym-fbox-text.row_transport_charges.editable > label {
+        font-weight: normal;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .costingSummaryForm .type-text.ym-fbox-text.row_total_cost.editable > label {
+        font-weight: bold;
+    }
+
+    .ui-widget #actualChargesTable input {
+        width: 100px !important;  
+    }
+
+    a.addActualCharges {
+      text-decoration: underline !important;
+      cursor: pointer;
+    }
+
+    .m-common_dashboard .widget .w-enggCrm-projectReport div.tableOuter {
+      height: 700px !important;
+      background: #fff;
+    }
+
+    .panel-warning > .panel-heading a {
+      font-size: 20px;
+      font-weight: bold;
+      color: #8a6d3b;
+    }
+
+    .panel-success > .panel-heading a {
+      font-size: 20px;
+      font-weight: bold;
+      color: #3c763d;
+    }
+
+    .panel-danger > .panel-heading a {
+      font-size: 20px;
+      font-weight: bold;
+      color: #a94442;
+    }
+
+    .panel-info > .panel-heading a {
+      font-size: 20px;
+      font-weight: bold;
+      color: #31708f;
+    }
+
+    .overallHomeText a {
+      display: inline-block;
+      font-size: 14px;
+      padding: 5px 0 5px 10px;
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    .topLogoContainer {
+      background-color: green;
+    }
+
+    .m-common_dashboard .widget h2 {
+    }
+    
+    .m-common_dashboard .widget h2 .invoiceSummaryfilter div {
+        font-size :23px !important;
+    }
+
+    .m-common_dashboard table .projectSummary{
+      font-weight: 500;
+    }
+
+    .m-enggCrm_attendance .cpSearch .dateRange {
+        width: 355px;
+    }
+
+    .ui-widget #actualChargesTable input.hiddenDateDisplay {
+      margin-top: -20px;
+    }
+
+    #returnMaterialUsed.columnar .type-text label {
+      width: 100% !important;
+    }
+
+    .companyNameInBgContactLink {
+        display: block;
+        font-weight: bold;
+        font-size: 15px;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+        background-color: #90ee90;
+        width: 100%;
+        padding-top: 5px;
+        padding-left: 10px;
+        margin-bottom: -2px;
+    }
+
+    @media(max-width: 913px) {
+      .sub {
+          width: 53vw !important;
+      }
+    }
+
+    .m-enggCrm_project.v-edit .linkPortalWrapper .addEmployeeRow {
+        background-color: #fff !important;
+    }
+}

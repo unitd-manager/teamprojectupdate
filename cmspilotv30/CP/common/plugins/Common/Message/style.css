@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/************** MESSAGES ******/
+@media all
+{
+    #messageForm {
+        display: none;
+    }
+
+    #messagesList {
+        padding:5px;
+    }
+
+    #messagesList ul{
+        margin:0;
+        padding:5px 0;
+        list-style:none;
+        border-top:2px solid #EEEEEE;
+    }
+
+    #messagesList ul .row{
+        margin:0;
+    }
+
+    #messagesList ul h5{
+        margin:0;
+        font-size:1em;
+    }
+
+    #messagesList ul li{
+        margin:0 0 5px 0;
+        padding:0 0 0 0;
+        background:transparent;
+        border-bottom:1px dashed #ccc;
+        list-style:none;
+    }
+
+    #messagesList ul p.date{
+        margin:0 0 5px 0;
+        font-size:0.9em;
+        font-style:italic;
+    }
+
+    #messageForm div.type-text textarea { height: 20px;}
+}

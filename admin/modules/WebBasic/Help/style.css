@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-webBasic_help .toggle {
+        display:block;
+    }
+
+    .m-webBasic_help .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-webBasic_help .c50l,
+    .m-webBasic_help .c50r {
+        width: 100%;
+    }
+
+    .m-webBasic_help .ym-columnar .ym-fbox-text label,
+    .m-webBasic_help .ym-columnar .ym-fbox-select label,
+    .m-webBasic_help #frmEdit .type-text label,
+    .m-webBasic_help #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-webBasic_help #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+   
+    .m-webBasic_help  .linkPortalWrapper div.header,
+    .m-webBasic_help  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .yform.edit .type-text div.txt {
+        margin-left: 0% !important;
+    }
+    
+    a.addActualCharge,
+    a.addService,
+    a.addRenewalDate {
+        cursor: pointer;
+    }
+
+    select.lineItemClient {
+        width: 160px;
+    }
+}

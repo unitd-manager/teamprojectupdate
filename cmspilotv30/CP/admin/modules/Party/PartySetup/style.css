@@ -1,0 +1,4 @@
+.party_partySetup__ecommerce_orderLink td.order-amount {
+    cursor: pointer;
+    text-decoration: underline;
+}

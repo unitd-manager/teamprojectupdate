@@ -1,0 +1,2221 @@
+@charset "UTF-8";
+
+/*@font-face {
+    font-family: 'Helveltica Neue';
+    src : url('../fonts/HelveticaNeueMedium.ttf);
+    src : url('../fonts/HelveticaNeueLight.ttf) format('truetype'),
+          url('../fonts/HelveticaNeueItalic.ttf) format('truetype'),
+          url('../fonts/HelveticaNeueUltraLight.ttf) format('truetype'),
+          url('../fonts/HelveticaNeueBold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+/******************* HOME ********************/
+@media all
+{
+    body {
+        background: #fff;
+        font-family: verdana;
+        color: #000;
+    }
+
+    body.rt-login {
+        background: url("images/login_bg.png") no-repeat scroll center center transparent;
+        padding-top: 50px;
+    }
+
+    /*body.rt-login {
+        background: url("images/nologin.png") no-repeat scroll center center transparent;
+        padding-top: 350px;
+    }*/
+
+    .loginInfoText {
+        position:absolute;
+        right:19px;
+        top:20px;
+    }
+
+    body.v-list #col1 {
+        display: none;
+    }
+
+    .page_margins {
+        width: 900px;
+        background: transparent;
+    }
+
+    #ie_clearing {
+        height: 0;
+    }
+    a{
+        color: black;
+        text-decoration:none;
+    }
+
+    a:hover, a:focus,a:active{
+        color: blue;
+        text-decoration:none;
+    }
+
+    #header {
+        /*background: url("images/header.jpeg") no-repeat scroll 0 0 transparent;
+        height: 155px;*/
+        color: #fff;
+    }
+
+    #logo {
+        top: 40px;
+        width: 350px;
+    }
+
+    #main {
+        min-height: 400px;
+        margin-top: 3px;
+    }
+
+    .rt-login #main {
+        background: none;
+        margin-top: 53px;
+    }
+
+    #footer {
+        background: url("images/footer.jpg") no-repeat scroll 0 0 transparent;
+        color: #fff;
+    }
+
+    #footer a {
+        color: #fff;
+    }
+
+    #col1_content, #col2_content {
+        padding: 0;
+    }
+
+    .m-edukite_subject #col1,
+    .m-edukite_subject #col2,
+    .m-edukite_type #col1,
+    .m-edukite_type #col2 {
+        display: none;
+    }
+
+    #col3, .ym-col3 {
+        margin: 0 170px 0 250px;
+        width: 380px;
+    }
+
+    #col3_content, ym-col3_content {
+        padding: 0px 5px 0;
+    }
+
+    #col2 {
+        width: 253px;
+    }
+
+    .hideboth #col3_content {
+        padding: 15px;
+    }
+
+    .loginInfoText a {
+        color: #000;
+        padding: 5px;
+        margin-left: 5px;
+    }
+
+    .loginInfoText a.btnLogout {
+        background: url("images/exit.png") no-repeat scroll 0 0 transparent;
+        height: 21px;
+        width: 72px;
+        position: absolute;
+        top: -12px;
+        right: 622px;
+    }
+
+    .help {
+        height: 42px;
+        left: 660px;
+        position: absolute;
+        top: 12px;
+        width: 49px;
+    }
+
+    #nav {
+        background: url("images/sec-panel.png") no-repeat scroll 0 0 transparent;
+        margin: 0;
+        clear: none;
+        width: 390px;
+        height: 212px;
+        border: 0;
+    }
+
+    .v-edit #nav {
+        background: url("images/sec-panel-edit.png") no-repeat scroll 0 0 transparent;
+        clear: none;
+        width: 390px;
+        height: 212px;
+        border: 0;
+    }
+
+    .v-achievementPanel #nav, .rt-achievement #nav, .v-achievementOptions #nav{
+        background: url("images/achievement-sec-panel.png") no-repeat scroll 0 0 transparent;
+    }
+
+    #nav ul {
+        margin: 14px 0 0 14px;
+    }
+
+    #nav .topMost ul {
+        margin:0;
+    }
+
+    #nav .hlist {
+        background: none;
+    }
+
+    #nav .topMost {
+        background: none;
+        padding: 0;
+        height: 25px;
+        margin: 3px 0 0 20px;
+    }
+
+    #nav2 {
+        background: url("images/nav-panel.png") no-repeat scroll 0 0 transparent;
+        width: 386px;
+        height: 97px;
+        padding-top: 15px;
+    }
+
+    .listPanelTitle {
+        position: absolute;
+        right: 376px;
+        top: 98px;
+    }
+
+    .editPanelTitle {
+        font-weight: bold;
+        font-size: 12px;
+        position: absolute;
+        right: 275px;
+        top: 105px;
+    }
+
+    .achievementListTitle {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+	.navPanel .cpSearch {
+		margin:46 0 0 23px;
+	    overflow-x: hidden;
+	    overflow-y: hidden;
+	    width: 387px;
+	}
+
+    .m-edukite_teacher .navPanel .cpSearch,
+    .m-edukite_parent .navPanel .cpSearch,
+    .m-edukite_class .navPanel .cpSearch,
+    .m-edukite_yearGroup .navPanel .cpSearch,
+    .m-edukite_subject .navPanel .cpSearch,
+    .m-edukite_type .navPanel .cpSearch,
+    .m-edukite_interest .navPanel .cpSearch {
+        padding: 39px 0 0 2px;
+    }
+
+    .m-edukite_dailyActivity .ddFilter {
+        width: 387px;
+        margin: 10px 0 6px 18px;
+    }
+
+    .m-edukite_dailyActivity .ddFilter select {
+        border: 0 none;
+        height: 21px;
+        width: 156px;
+    }
+
+    .loginInfoText a.btnLogout span {
+        display: none;
+    }
+
+    .hlist ul li span {
+        display: none;
+    }
+
+    .topMost.hlist ul li span {
+        display: inline;
+    }
+
+    .hlist ul li, .hlist ul li.last {
+        border-right: 0;
+        margin-bottom: 0;
+    }
+
+    .hlist ul li a {
+        width: auto;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .topMost.hlist ul li a {
+        width: auto;
+        height: 15px;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 5px;
+     }
+
+    .topMost.hlist ul li.sec_type_interest span {
+        color: #ccc;
+        text-decoration: underline;
+    }
+
+
+    /*.topMost.hlist ul li.sec_type_teacher {
+        background: url("images/staff-menu.gif") no-repeat scroll 0 0 transparent;
+        width: 63px;
+        height: 42px;
+    }
+
+    .topMost.hlist ul li:hover.sec_type_teacher,
+    .topMost.hlist ul li.active.sec_type_teacher {
+        background: url("images/staff-menu-active.gif") no-repeat scroll 0 0 transparent;
+        width: 63px;
+        height: 42px;
+    }
+
+    .topMost.hlist ul li.sec_type_parent {
+        background: url("images/parent-menu.gif") no-repeat scroll 0 0 transparent;
+        width: 60px;
+        height: 42px;
+    }
+
+    .topMost.hlist ul li:hover.sec_type_parent,
+    .topMost.hlist ul li.active.sec_type_parent {
+        background: url("images/parent-menu-active.gif") no-repeat scroll 0 0 transparent;
+        width: 60px;
+        height: 42px;
+    }
+
+    .topMost.hlist ul li.sec_type_class {
+        background: url("images/class-menu.gif") no-repeat scroll 0 0 transparent;
+        width: 60px;
+        height: 42px;
+    }
+
+    .topMost.hlist ul li.active.sec_type_class,
+    .topMost.hlist ul li:hover.sec_type_class {
+        background: url("images/class-menu-active.gif") no-repeat scroll 0 0 transparent;
+        width: 60px;
+        height: 42px;
+    }
+
+    .topMost.hlist ul li.sec_type_year-group {
+        background: url("images/cohert-menu.gif") no-repeat scroll 0 0 transparent;
+        width: 60px;
+        height: 42px;
+    }
+
+    .topMost.hlist ul li.active.sec_type_year-group,
+    .topMost.hlist ul li:hover.sec_type_year-group {
+        background: url("images/cohert-menu-active.gif") no-repeat scroll 0 0 transparent;
+        width: 60px;
+        height: 42px;
+    }
+
+    .topMost.hlist ul li.sec_type_subject {
+        background: url("images/subject-menu.gif") no-repeat scroll 0 0 transparent;
+        width: 61px;
+        height: 42px;
+    }
+
+    .topMost.hlist ul li.active.sec_type_subject,
+    .topMost.hlist ul li:hover.sec_type_subject {
+        background: url("images/subject-menu-active.gif") no-repeat scroll 0 0 transparent;
+        width: 61px;
+        height: 42px;
+    }
+
+    .topMost.hlist ul li.sec_type_type {
+        background: url("images/type-menu.gif") no-repeat scroll 0 0 transparent;
+        width: 61px;
+        height: 42px;
+    }
+
+    .topMost.hlist ul li.active.sec_type_type,
+    .topMost.hlist ul li:hover.sec_type_type {
+        background: url("images/type-menu-active.gif") no-repeat scroll 0 0 transparent;
+        width: 61px;
+        height: 42px;
+    }*/
+
+    .hlist ul li.sec_type_student {
+        background: url("images/student.png") no-repeat scroll 0 0 transparent;
+        width: 175px;
+        height: 53px;
+        margin-top: 0;
+        margin-left: 1px;
+    }
+
+    .hlist ul li.active.sec_type_student {
+        background: url("images/student-active.png") no-repeat scroll 0 0 transparent !important;
+        width: 175px;
+        height: 53px;
+        margin-top: 0;
+    }
+
+    .hlist ul li:hover.sec_type_student {
+        background: url("images/student-hover.png") no-repeat scroll 0 0 transparent;
+        width: 175px;
+        height: 53px;
+        margin-top: 0;
+    }
+
+    .hlist ul li.sec_type_notice {
+        background: url("images/notice.png") no-repeat scroll 0 0 transparent;
+        width: 173px;
+        height: 53px;
+        margin-top: 0;
+        margin-left: 9px;
+    }
+
+    .hlist ul li.active.sec_type_notice {
+        background: url("images/notice-active.png") no-repeat scroll 0 0 transparent !important;
+        width: 175px;
+        height: 53px;
+        margin-top: 0;
+        margin-left: 9px;
+    }
+
+    .hlist ul li:hover.sec_type_notice {
+        background: url("images/notice-hover.png") no-repeat scroll 0 0 transparent;
+        width: 175px;
+        height: 53px;
+        margin-top: 0px;
+        margin-left: 9px;
+    }
+
+    .hlist.actionBtns {
+        background: none repeat scroll 0 0 transparent;
+        color: #000000;
+        width: auto;
+        position: static;
+    }
+
+    .pagelinks {
+        width: 155px;
+        height: 27px;
+        position: relative;
+        bottom: 30px;
+        left: 236px;
+
+    }
+
+    .pagelinks .nxtBtn {
+        margin: 0 0 0 73px;
+    }
+
+    .pagelinks .linkNos {
+        width: 85px;
+        margin-top: 7px;
+        display:none;
+    }
+
+    .pagelinks .nxtBtn {
+        margin-left: 72px;
+    }
+
+    .pagelinks .totalRecs {
+        position: relative;
+        bottom: 25px;
+        right:75px;
+    }
+
+    .pagelinks span {
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .pagelinks span.noLink {
+        color: #000;
+    }
+
+    body.loggedin #main {
+        background: transparent;
+        padding: 0;
+    }
+
+    body.loggedin .hideboth #col3_content {
+        padding:0;
+    }
+
+    .linkPortalWrapper {
+        background: #F4F4F4;
+    }
+
+    .v-detail .col3Body {
+        margin-top: 2px;
+    }
+
+    .v-edit #nav2 {
+        display: none;
+    }
+
+    .cpSearch div input[type="text"] {
+        margin: 10px 0 0 25px;
+    }
+
+    .cpSearch input[type="text"] {
+        max-width: 117px;
+        height: 15px;
+        border-radius: 3px;
+    }
+
+
+    .cpSearch select {
+        height: 31px;
+        max-width: 160px;
+    }
+
+    .cpSearch div {
+        float: left;
+        margin-left: 8px;
+    }
+
+}
+
+/*************** ACTIONS ICONS ************/
+@media all
+{
+    .actionBtns.hlist ul li {
+        border-right: 0;
+        margin-right: 0;
+    }
+
+    .actionBtns.hlist ul li a, .actionBtns.hlist ul li.last a {
+        display: block;
+        line-height: 16px;
+        padding: 7px 0 0 26px !important;
+        font-weight: normal;
+        color: #fff;
+        background: transparent;
+    }
+
+    a#actBtn_edit {
+        background:transparent url('images/action/edit.png') no-repeat 0 0;
+    }
+
+    a#actBtn_cancelNew{
+        background:transparent url('images/action/save.gif') no-repeat 0 0;
+        height: 32px;
+        width: 88px;
+        color: #15A143;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    a#actBtn_addNew {
+        background:transparent url('images/action/save-continue.gif') no-repeat 0 0;
+        height: 32px;
+        width: 154px;
+        color: #000;
+        font-weight: bold;
+        font-size: 14px;
+        margin: 10px 0 0 165px;
+    }
+
+    a#actBtn_changePassword {
+        background:transparent url('images/action/password.png') no-repeat 0 0;
+    }
+
+    a#actBtn_new {
+        background: url("images/action/save.gif") no-repeat scroll 0 0 transparent;
+        height: 32px;
+        width: 88px;
+        color: #15A143;
+        font-weight: bold;
+        font-size: 14px;
+        margin: 6px 10px 0 190px;
+    }
+
+    .v-edit #nav2 {
+        display: none;
+    }
+
+    a#actBtn_cancel {
+        background: url("images/action/back.gif") no-repeat scroll 0 0 transparent;
+        width: 439px;
+        height: 31px;
+        text-align: center;
+        color: #15A143;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    a#actBtn_save {
+        background: url("images/action/save.gif") no-repeat scroll 0 0 transparent;
+        height: 32px;
+        margin-top: 10px;
+        width: 88px;
+        color: #15A143;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    a#actBtn_delete {
+        background: url("images/action/save.gif") no-repeat scroll 0 0 transparent;
+        height: 32px;
+        margin-top: -77px;
+        width: 88px;
+        font-weight: bold;
+        font-size: 13px;
+        color: #000;
+    }
+
+    .v-edit #nav2 .hlist.noBg ul li.last {
+        border-right: 0 none;
+        float: right;
+        margin-left: 15px;
+    }
+
+    .v-edit .col3Body .yform,
+    .v-edit .col3Body .ym-yform {
+        width: 382px;
+        padding: 1px 0 0 0;
+        min-height: 1065px;
+        font-family: verdana;
+        border-top: 0;
+        background: #FFF;
+        border: 0;
+    }
+
+    .v-new .ym-col3 .yform,
+    .v-edit .yform {
+        width: 374px;
+        background: #EBEBEB;
+    }
+
+    .v-new #col1,
+    .v-new #col2 {
+        display: none;
+    }
+
+    /* NEW STYLES */
+    table.list tr.even,
+    table.list tr.odd:hover,
+    table.list tr.odd {
+        background-color: #FFFFFF;
+        height: 30px;
+    }
+
+    .m-edukite_student table.list td div {
+        width: auto;
+        word-wrap: break-word;
+        font-size:11px;
+    }
+
+    #nav .btn_new {
+        background: url("images/new.png") no-repeat scroll 0 0 transparent;
+        width: 355px;
+        height: 34px;
+        margin: 67px 0 0 17px;
+    }
+
+    #nav .btn_new:hover {
+        background: url("images/new.png") no-repeat scroll 0 0 transparent;
+        width: 355px;
+        height: 34px;
+        margin: 67px 0 0 17px;
+    }
+
+    #nav .newBtnMargin,
+    #nav .newBtnMargin:hover{
+        margin: 94px 0 0 16px;
+    }
+
+    #nav .btn_new a {
+        display: block;
+        color: transparent;
+        height: 36px;
+    }
+
+/*    a.cpBack {
+        background: url("images/return-list.png") no-repeat scroll 0 0 transparent;
+        height: 34px;
+        display: block;
+        width: 355px;
+        position: relative;
+        bottom: -2px;
+        left: 16px;
+    }
+
+    a.cpBack:hover {
+        background: url("images/return-list-active.png") no-repeat scroll 0 0 transparent;
+        height: 34px;
+        display: block;
+        width: 355px;
+        position: relative;
+        bottom: -2px;
+        left: 16px;
+    }*/
+
+/*    .v-edit a.cpBack {
+        background: url("images/goToList.png") no-repeat scroll 0 0 transparent;
+        height: 23px;
+        display: block;
+        width: 355px;
+        position: absolute;
+        left: 271px;
+        top: 97px;
+    }
+
+    .v-edit a.cpBack:hover {
+        background: url("images/goToList-active.png") no-repeat scroll 0 0 transparent;
+        height: 23px;
+        display: block;
+        width: 355px;
+        position: absolute;
+        left: 271px;
+        top: 97px;
+    }*/
+
+    .v-noticeOptions a.cpBack {
+        background: url("images/return-list.png") no-repeat scroll 0 0 transparent;
+        height: 34px;
+        display: block;
+        width: 355px;
+        position: relative;
+        bottom: 65px;
+        left: 15px;
+    }
+
+    .v-noticeOptions a.cpBack:hover {
+        background: url("images/return-list-active.png") no-repeat scroll 0 0 transparent;
+        height: 34px;
+        display: block;
+        width: 355px;
+        position: relative;
+        bottom: 65px;
+        left: 15px;
+    }
+
+    #nav .btn_cancel a,
+    #nav .btn_cancel a:hover  {
+        margin: 0 0 7px 29px;
+        height: 30px;
+        width: 152px;
+        display: block;
+        padding-top: 5px;
+    }
+
+    #nav .btn_cancel a {
+        background: url("images/cancel-btn.gif") no-repeat scroll 0 0 transparent;
+    }
+
+    #nav .btn_cancel a:hover {
+        background: url("images/cancel-btn-active.gif") no-repeat scroll 0 0 transparent;
+    }
+
+    #nav .btn_save a {
+        background: url("images/save.png") no-repeat scroll 0 0 transparent;
+        width: 240px;
+        height: 22px;
+        margin: 9px 7px;
+        display: block;
+    }
+
+    #nav .btn_save a:hover {
+        background: url("images/save-active.png") no-repeat scroll 0 0 transparent;
+        width: 240px;
+        height: 22px;
+        margin: 9px 7px;
+        display: block;
+    }
+
+    #nav .saveBtnMargin a,
+    #nav .saveBtnMargin a:hover {
+        margin-top:60px;
+    }
+
+    .v-edit #nav .btn_save a {
+        background: url("images/save.png") no-repeat scroll 0 0 transparent;
+        width: 240px;
+        height: 22px;
+        margin: 61px 8px;
+    }
+
+    .m-edukite_notice.v-edit #nav .btn_save a {
+        margin: 37px 8px;
+    }
+
+    /*.v-edit #nav .btn_save a:hover {
+        background: url("images/save-active.png") no-repeat scroll 0 0 transparent;
+        width: 240px;
+        height: 22px;
+        margin: 60px 6px;
+    }*/
+
+    #nav .btn_delete a {
+        background: url("images/delete-btn.png") no-repeat scroll 0 0 transparent;
+        height: 20px;
+        width: 99px;
+        display: block;
+        position: relative;
+        top: 61px;
+        left: 89px;
+    }
+
+    .m-edukite_notice #nav .btn_delete a {
+        top: 37px;
+    }
+
+    /*#nav .btn_delete a:hover {
+        background: url("images/delete-btn-active.png") no-repeat scroll 0 0 transparent;
+        height: 21px;
+        width: 103px;
+        display: block;
+        position: relative;
+        top: 56px;
+        left: 89px;
+    }*/
+
+    #nav .btn_save {
+        margin: 0 7px 0 10px;
+        height: 30px;
+        width: 152px;
+    }
+
+    .rt-login .yform fieldset {
+        background: none;
+        width: 373px;
+        padding: 10px 0 0 10px;
+        border: 0;
+    }
+
+    .v-edit .yform fieldset,
+    .v-new .yform fieldset {
+        background: #fff;
+        width: 356px;
+        padding: 10px 0 0 10px;
+        border: 0;
+    }
+
+    .v-new .yform {
+        width: 380px;
+        border: 1px solid #9BBADD;
+        padding: 10px 0 0 10px;
+        min-height: 490px;
+    }
+
+    .rt-login .yform {
+        background: none;
+        border: 0;
+    }
+
+    .rt-login .loginImage {
+        padding: 15px 0 0 60px;
+        display:none;
+    }
+
+    .rt-login .loginType {
+        width: 328px;
+        margin: 205px 34px 3px;
+        height: 32px;
+    }
+
+    .rt-login .loginType a {
+        cursor: pointer;
+        float:left;
+        margin-right: 7px;
+    }
+
+    .rt-login #loginForm {
+        background: url("images/login/plate.png") no-repeat scroll 0 0 transparent;
+        width: 384px;
+        height: 705px;
+        padding: 10px;
+    }
+
+    .rt-login #loginForm label {
+        width: 30%;
+        display:none;
+    }
+
+    .rt-login #loginForm .saveLogin label {
+        width: 30%;
+        display:inline;
+        font-family: arial;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: underline;
+        color: #FD980F;
+    }
+
+    .rt-login #loginForm .resetPasswordLink a {
+        font-family: arial;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: underline;
+        color: #FD980F;
+    }
+
+    .rt-login #loginForm .archiveEnter {
+        width: 60px;
+        margin: 100px 25px 0px 0px;
+        float:right;
+    }
+
+    #media__edukite_student__picture,
+    #media__edukite_teacher__picture,
+    #media__edukite_notice__picture {
+        width: 360px;
+        margin: 10px 0 20px 0;
+        background: #fff;
+        border: 1px solid #9BBADD;
+    }
+
+    #media__edukite_student__picture{
+        margin: 0px 0 10px 0;
+    }
+
+    #media__edukite_student__picture a.btnSelectMedia,
+    #media__edukite_teacher__picture a.btnSelectMedia,
+    #media__edukite_notice__picture a.btnSelectMedia {
+        position: relative;
+        bottom: 10px;
+    }
+
+    #media__edukite_student__picture a.btnSelectMedia img,
+    #media__edukite_teacher__picture a.btnSelectMedia img,
+    #media__edukite_notice__picture a.btnSelectMedia img {
+        position: relative;
+        top: 5px;
+    }
+
+    .studentList table.list,
+    .teacherList table.list,
+    .parentList table.list,
+    .classList table.list,
+    .yearGroupList table.list,
+    .subjectList table.list,
+    .typeList table.list,
+    .dailyActivityList table.list,
+    .noticeList table.list {
+        width: 97.5%;
+        margin: 0 0 0 5px;
+    }
+
+    .studentList table,
+    .teacherList table,
+    .parentList table,
+    .classList table,
+    .yearGroupList table,
+    .subjectList table,
+    .typeList table,
+    .dailyActivityList table,
+    .noticeList table {
+        border-collapse:collapse;
+    }
+
+    .studentList table.list th,
+    .noticeList table.list th,
+    .teacherList table.list th,
+    .parentList table.list th,
+    .classList table.list th,
+    .yearGroupList table.list th,
+    .typeList table.list th,
+    .dailyActivityList table.list th,
+    .subjectList table.list th{
+        padding: 0.5em;
+        vertical-align: top;
+        word-wrap: break-word;
+        background-color: #fff;
+        border-bottom: 3px solid #949494;
+        border-top: 1px solid #949494;
+    }
+
+    .studentList table.list th{
+        padding: 0.9em 0.2em;
+    }
+
+
+    table.list thead a {
+        color: #000000;
+    }
+
+    table.list thead a:hover, table.list thead a:focus{
+        color: blue;
+        text-decoration:none;
+        font-weight:normal;
+    }
+
+    table.list  a {
+        color: #000;
+        text-decoration:none;
+        font-weight:normal;
+    }
+
+    table.list  a:hover, table.list  a:focus{
+        color: blue;
+        text-decoration:none;
+    }
+
+    .studentList table.list td,
+    .teacherList table.list td,
+    .parentList table.list td,
+    .classList table.list td,
+    .yearGroupList table.list td,
+    .noticeList table.list td,
+    .typeList table.list td,
+    .dailyActivityList table.list td,
+    .subjectList table.list td{
+        border-top: 1px solid #CFCEC9;
+        background-color: #FFFFF7;
+        vertical-align: middle;
+    }
+
+    .studentList table.list td {
+        padding: 0.4em 0.2em 0.4em 0.2em;
+    }
+
+    .studentList table.list td:first-child,
+    .noticeList table.list td:first-child {
+        width: 30px;
+    }
+
+    .m-edukite_student .studentList,
+    .m-edukite_teacher .teacherList,
+    .m-edukite_parent .parentList,
+    .m-edukite_class .classList,
+    .m-edukite_yearGroup .yearGroupList,
+    .m-edukite_subject .subjectList,
+    .m-edukite_type .typeList,
+    .m-edukite_dailyActivity .dailyActivityList,
+    .m-edukite_notice .noticeList {
+        border: 1px solid #9BBADD;
+        width: 384px;
+        font-size: 12px;
+        min-height: 700px;
+        background: #EBEBEB;
+    }
+
+    .leftInfoList table,
+    .rightInfoList table {
+        border-collapse:collapse;
+        margin: 0 7px;
+        width: 94%;
+        background: #fff;
+        border-top: 3px solid #454851;
+    }
+
+    .rightInfoList #rightPanelExpandedList  table,
+    .leftInfoList #leftPanelExpandedList  table {
+        margin: 0;
+        width: 99.5%;
+    }
+
+    .rightInfoList #rightPanelExpandedList  td.rightPadding,
+    .leftInfoList #leftPanelExpandedList  td.rightPadding {
+        padding: 0.5em 0;
+    }
+
+    .leftInfoList table.list td,
+    .rightInfoList table.list td {
+        border-bottom: 1px solid #C7C7C7;
+    }
+
+    .leftInfoList table.list td span,
+    .rightInfoList table.list td span {
+        vertical-align: top;
+        position: relative;
+        top: 9px;
+    }
+
+    .leftInfoList #leftPanelExpandedList td span {
+        padding-left:30px;
+    }
+
+    .leftInfoList .assemblyTxt {
+        padding-bottom: 50px;
+    }
+
+    .rightInfoList .audienceTxt {
+        padding-bottom: 50px;
+    }
+
+    .ym-columnar .ym-fbox-text label,
+    .columnar .type-text label,
+    .ym-columnar .ym-fbox-select label,
+    .columnar .type-select label {
+        width: 25%;
+    }
+
+    .ym-columnar div.ym-fbox-text input,
+    .columnar div.type-text input,
+    .ym-columnar div.ym-fbox-text textarea,
+    .columnar div.type-text textarea {
+        width: 62.8%;
+        border: 1px solid #2B2B2B;
+    }
+
+    .w-member-loginForm .ym-columnar div.ym-fbox-text input,
+    .w-member-loginForm .columnar div.type-text input {
+        width: 54.2%;
+        border:0;
+        height:17px;
+        margin-left:127px;
+        margin-top: 3px;
+    }
+
+    .w-member-loginForm .columnar div.row_pass_word input {
+        margin-top: 9px;
+    }
+
+    .ym-columnar div.ym-fbox-select select,
+    .columnar div.type-select select {
+        width: 65%;
+        border: 1px solid #000000;
+    }
+
+    .w-member-loginForm .ym-columnar div.ym-fbox-select select,
+    .w-member-loginForm .columnar div.type-select select {
+        width: 58%;
+    }
+
+    .w-member-loginForm .ym-columnar div.ym-fbox-check input,
+    .w-member-loginForm .columnar div.type-check input {
+        margin-left: 25%;
+    }
+
+    .m-edukite_student.v-list #col2 {
+        display: none;
+    }
+
+    .m-edukite_student #col2_content .rightPanelSelected .list td {
+        font-weight: bold;
+    }
+
+    .m-edukite_student .goKite {
+        background: url("images/blank-panel.png") no-repeat scroll 0 0 transparent;
+        height: 111px;
+        width: 387px;
+        margin: 1px 0 0 0;
+    }
+
+    .m-edukite_student .goKite img {
+        padding: 5px 0 0 145px;
+    }
+
+    .rightInfoTitle {
+        background: url("images/audience-panel.png") no-repeat scroll top right transparent;
+        width: 251px;
+        height: 215px;
+    }
+
+    .rt-login #nav,
+    .rt-login #nav2,
+    .rt-login .help {
+        display: none;
+    }
+
+    .rt-login #loginForm .row_username {
+        display: none;
+    }
+
+    .leftInfoTitle {
+        background: url("images/assembly-panel.png") no-repeat scroll 0 0 transparent;
+        width: 253px;
+        height: 215px;
+    }
+
+    .leftInfoList {
+        background: url("images/left-panel.png") repeat-y scroll 0 0 transparent;
+        margin: 0 0 0 3px;
+        width: 248px;
+        min-height: 791px;
+        background-color: #FFFFF7;
+    }
+
+    .rightInfoList {
+        background: url("images/left-panel.png") repeat-y scroll 0 0 transparent;
+        margin: 0;
+        width: 248px;
+        min-height: 791px;
+        background-color: #FFFFF7;
+    }
+
+    .selectAll {
+        padding: 110px 0 0 12px;
+    }
+
+    .removeAll {
+        padding: 80px 0 0 12px;
+    }
+
+    .leftInfoTitle .btns {
+        padding: 158px 0 0 69px;
+        height: 43px;
+    }
+
+    .m-edukite_notice .leftInfoTitle .btns {
+        padding: 158px 0 0 9px;
+        height: 43px;
+    }
+
+    .leftInfoTitle .btns ul {
+        margin: 0 0 1em 0em;
+    }
+
+    .leftInfoTitle .btns ul li {
+        display: inline;
+        float: left;
+        list-style-type: none;
+        margin: 0;
+        padding: 0 5px 0 0;
+    }
+
+    table.list thead, table.list tfoot, tr.header, div.header {
+        background: none;
+        color: #665D5D;
+        font-weight: bold;
+    }
+
+    .rightPanelSelected a.classLinkExpand{
+        text-decoration: none;
+    }
+
+    .rightPanelSelected a.plus, .rightPanelSelected a.minus {
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 20px;
+        padding-left: 28px;
+        text-decoration: none;
+    }
+
+    #rightPanelExpandedList table.list td span {
+        vertical-align: top;
+    }
+
+    .ym-form .ym-fbox-text input,
+    .yform .type-text input,
+    .ym-form .ym-fbox-text textarea,
+    .yform .type-text textarea,
+    .ym-form .ym-fbox-select select,
+    .yform .type-select select,
+    .ym-form select, .yform select,
+    .cpSearch select, .cpSearch input {
+        font-family: verdana;
+        font-size: 12px;
+        line-height: 1.5em;
+    }
+
+    .ym-form .ym-fbox-text input,
+    .yform .type-text input,
+    .ym-form .ym-fbox-text textarea,
+    .yform .type-text textarea,
+    .ym-form .ym-fbox-select select,
+    .yform .type-select select,
+    .ym-form select, .yform select,
+    .cpSearch select, .cpSearch input {
+        border-radius: 0;
+        border-style: solid;
+        border-width: 1px;
+        color: #6B6B6B;
+        font-family: verdana, 'Helvetica Neue',Arial,Helvetica,sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 3px;
+    }
+
+    .ym-form div.ym-fbox-text input,
+    .yform div.type-text input {
+        margin-top: 3px;
+        padding: 0.25em 3px;
+        font-weight:normal;
+        color: #2B2B2B;
+        border: 1px solid #2B2B2B;
+    }
+
+    .cpSearch .button {
+        background: url("images/find.png") no-repeat scroll 0 0 transparent;
+        padding: 0;
+        width: 53px;
+        height: 22px;
+        border: 0;
+        box-shadow: none;
+        position: relative;
+        bottom: 0;
+        left: 3px;
+        top: 10px;
+    }
+
+    .cpSearch .button:focus,
+    .cpSearch .button:hover,
+    .cpSearch .button:active {
+        background: url("images/find-active.png") no-repeat scroll 0 0 transparent;
+        width: 53px;
+        height: 22px;
+        border: 0;
+        box-shadow: none;
+        left: 3px;
+        top: 10px;
+    }
+
+    .ym-form, .yform {
+        background: none repeat scroll 0 0 #F4F4F4;
+        border: 1px solid #DDDDDD;
+        margin: 0;
+        overflow: visible;
+        padding: 10px;
+        text-align: left;
+    }
+
+    /* Text Area box in next line */
+    .bodyPanel #frmEdit .textAreaDiv label {
+        float: none;
+        margin-bottom: 5px;
+    }
+
+    .bodyPanel #frmEdit .textAreaDiv textarea {
+        width: 300px;
+        font-weight:normal;
+    }
+
+    .rt-login .ym-form .ym-fbox-button input[type="submit"],
+    .rt-login .yform .type-button input[type="submit"] {
+        background: url("images/login/enterA.png") no-repeat scroll 0 0 transparent;
+        height: 60px;
+        width: 117px;
+        border: 0;
+        margin-top: 15px;
+        margin-right: 35px;
+    }
+
+    .rt-login .yform .type-button input[type="submit"]:hover {
+        background: url("images/login/enterB.png") no-repeat scroll 0 0 transparent;
+        height: 60px;
+        width: 117px;
+    }
+
+    .w-member-loginForm .btns {
+        float: right;
+    }
+
+    .rt-login .ym-form .ym-fbox-button input,
+    .rt-login .yform .type-button input {
+        border: 0;
+        border-style: solid;
+        color: #000000;
+        padding: 0;
+    }
+
+    /*.rt-login .ym-form div.ym-fbox-button input:focus,
+    .rt-login .yform div.type-button input:focus,
+    .rt-login .ym-form div.ym-fbox-button input:hover,
+    .rt-login .yform div.type-button input:hover,
+    .rt-login .ym-form div.ym-fbox-button input:active,
+    .rt-login .yform div.type-button input:active {
+        background: url("images/enter-active.gif") no-repeat scroll 0 0 transparent;
+        border: 0;
+        border-style: solid;
+        color: #FFFFFF;
+        height: 39px;
+        width: 342px;
+    }*/
+
+    .rt-login .ym-columnar div.ym-fbox-button,
+    .rt-login .ym-columnar .captcha,
+    .rt-login .columnar div.type-button,
+    .rt-login .columnar .captcha {
+        margin-left: 4px;
+    }
+
+    .saveLogin{
+        position: absolute;
+        top:95px;
+        left: 20px;
+    }
+
+    .resetPasswordLink{
+        position: absolute;
+        top:127px;
+        left: 37px;
+    }
+
+    .w-member-loginForm .columnar div.type-check.saveLogin input {
+        margin-left: 0%;
+    }
+
+    .forgotPasswordLink {
+        position: absolute;
+        top:120px;
+        left: 37px;
+    }
+
+    .forgotPasswordLink a {
+        background: url("images/login/havingB.png") no-repeat scroll 0 0 transparent;
+        width: 150px;
+        height: 16px;
+        display: block;
+        margin: 10px 0px 0 0;
+        border-bottom:2px solid #ff9400;
+    }
+
+    /*.forgotPasswordLink a:hover {
+        background: url("images/forgot-pass-active.gif") no-repeat scroll 0 0 transparent;
+        width: 350px;
+        height: 24px;
+        display: block;
+    }*/
+
+    .emailLink {
+        padding: 20px 0 0 26px;
+        position: absolute;
+        top:137px;
+    }
+
+    .emailLink a {
+        font-weight: bold;
+        color: #3E6E9D;
+        text-decoration: underline;
+    }
+
+    .m-edukite_notice table.mediaFilesDisplay,
+    .m-edukite_teacher table.mediaFilesDisplay {
+        border: 0px solid #CCCCCC;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .m-edukite_notice .mediaFilesDisplayWrap,
+    .m-edukite_teacher .mediaFilesDisplayWrap {
+        margin-top: 0px;
+    }
+
+    .m-membership_contact #fld_comments {
+        height: 100px;
+    }
+
+    .rightInfoList .plus, .leftInfoList .plus {
+        background-image: url("images/plus.png") !important;
+    }
+
+    .rightInfoList .minus, .leftInfoList .minus {
+        background-image: url("images/minus.png") !important;
+    }
+
+    .rightPanelSelected a.plus, .rightPanelSelected a.minus,
+    .leftInfoList a.plus, .leftInfoList a.minus {
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 31px;
+        padding-left: 28px;
+        text-decoration: none;
+    }
+
+    .noticeread {
+        background-color: #4F81BD;
+        border: 2px solid #385D8A;
+        border-radius: 5px;
+        height: 28px;
+        margin-left: 28px;
+        position: absolute;
+        top: 120px;
+        width: 190px;
+    }
+
+    .noticeread .noticeRead{
+        color: #FFFFFF;
+        font-size: 12px;
+        padding: 25px;
+        display: block;
+        margin-left: 20px;
+        padding: 6px;
+        position: absolute;
+    }
+
+    .homeworkSummary {
+        background-color: #4F81BD;
+        border: 2px solid #385D8A;
+        border-radius: 5px;
+        height: 28px;
+        right: 31px;
+        position: absolute;
+        top: 15px;
+        width: 190px;
+    }
+
+    .homeworkSummary a{
+        color: #FFFFFF;
+        font-size: 12px;
+        padding: 25px;
+        display: block;
+        margin-left: 20px;
+        padding: 6px;
+        position: absolute;
+    }
+
+    .rightInfoTitle .classLinkedImg {
+        background: url("images/class-linked.png") no-repeat scroll center bottom transparent;
+        width: 244px;
+        height: 49px;
+        padding: 150px 0 0 6px;
+        display: none;
+    }
+
+    .rightInfoTitle .childLinkedImg {
+        background: url("images/student-linked.png") no-repeat scroll center bottom transparent;
+        width: 244px;
+        height: 49px;
+        padding: 150px 0 0 5px;
+    }
+
+    .m-edukite_student .rightInfoTitle .childLinkedImg,
+    .m-edukite_notice .rightInfoTitle .childLinkedImg,
+    .m-edukite_type .rightInfoTitle .childLinkedImg,
+    .m-edukite_dailyActivity .rightInfoTitle .childLinkedImg,
+    .m-edukite_teacher .rightInfoTitle .childLinkedImg {
+        background: url("images/student-linked.png") no-repeat scroll center bottom transparent;
+        width: 244px;
+        height: 49px;
+        padding: 150px 0 0 6px;
+        display: none;
+    }
+
+    .rightInfoTitle .staffLinkedImg {
+        background: url("images/staff-linked.png") no-repeat scroll center bottom transparent;
+        width: 244px;
+        height: 49px;
+        padding: 150px 0 0 6px;
+        display: none;
+    }
+
+    .rightInfoTitle .parentLinkedImg {
+        background: url("images/parent-linked.png") no-repeat scroll center bottom transparent;
+        width: 244px;
+        height: 49px;
+        padding: 150px 0 0 5px;
+    }
+
+    .m-edukite_notice .rightInfoTitle .parentLinkedImg,
+    .m-edukite_parent .rightInfoTitle .parentLinkedImg,
+    .m-edukite_type .rightInfoTitle .parentLinkedImg,
+    .m-edukite_dailyActivity .rightInfoTitle .parentLinkedImg,
+    .m-edukite_teacher .rightInfoTitle .parentLinkedImg {
+        background: url("images/parent-linked.png") no-repeat scroll center bottom transparent;
+        width: 244px;
+        height: 49px;
+        padding: 150px 0 0 10px;
+        display: none;
+    }
+
+    .rightInfoTitle .cohertLinkedImg {
+        background: url("images/cohort-linked.png") no-repeat scroll center bottom transparent;
+        width: 244px;
+        height: 49px;
+        padding: 150px 0 0 6px;
+        display: none;
+    }
+
+
+    /************* PICTURE PANEL ********************/
+
+   .linkPortalWrapper {
+        background: none;
+        border: 1px solid #9BBADD;
+    }
+
+    .linkPortalWrapper .normal-img {
+        border-bottom: 1px solid #A1A1A1;
+        border-top: 0px solid #A1A1A1;
+    }
+
+    .linkPortalWrapper .actBtns {
+        background: none;
+        font-weight: bold;
+        margin-top: 1px;
+        padding: 0.5em;
+        text-align: center;
+    }
+
+    .linkPortalWrapper a.removeItem {
+        background: url("images/delete-icon.png") no-repeat scroll 0 0 transparent;
+        display: block;
+        float: right;
+        height: 28px;
+        margin-left: 5px;
+        width: 28px;
+        margin-bottom: 5px;
+    }
+
+    .linkPortalWrapper a:hover.removeItem {
+        background: url("images/delete-hover.png") no-repeat scroll 0 0 transparent;
+        display: block;
+        float: right;
+        height: 28px;
+        margin-left: 5px;
+        width: 28px;
+    }
+
+    .linkPortalWrapper a.editItem {
+        background: url("images/pic-edit.png") no-repeat scroll 0 0 transparent;
+        display: block;
+        float: right;
+        height: 28px;
+        margin-left: 5px;
+        width: 28px;
+        /*display:none;*/
+    }
+
+    .linkPortalWrapper a:hover.editItem {
+        background: url("images/pic-edit-hover.png") no-repeat scroll 0 0 transparent;
+        display: block;
+        float: right;
+        height: 28px;
+        margin-left: 5px;
+        width: 28px;
+    }
+
+    .linkPortalWrapper a.sortItem {
+        background: url("images/pic-sort.png") no-repeat scroll 0 0 transparent;
+        display: block;
+        float: right;
+        height: 28px;
+        margin-left: 5px;
+        width: 28px;
+    }
+
+    .linkPortalWrapper a:hover.sortItem {
+        background: url("images/pic-sort-hover.png") no-repeat scroll 0 0 transparent;
+        display: block;
+        float: right;
+        height: 28px;
+        margin-left: 5px;
+        width: 28px;
+    }
+
+
+    .linkPortalWrapper a.rotateItem {
+        background: url("images/pic-rotate.png") no-repeat scroll 0 0 transparent;
+        display: block;
+        float: right;
+        height: 28px;
+        margin-left: 5px;
+        width: 28px;
+    }
+
+    .linkPortalWrapper a:hover.rotateItem {
+        background: url("images/pic-rotate-hover.png") no-repeat scroll 0 0 transparent;
+        display: block;
+        float: right;
+        height: 28px;
+        margin-left: 5px;
+        width: 28px;
+    }
+
+    .linkPortalWrapper a.saveItem {
+        background: url("images/pic-save.png") no-repeat scroll 0 0 transparent;
+        display: block;
+        float: right;
+        height: 28px;
+        margin-left: 5px;
+        width: 28px;
+    }
+
+    .linkPortalWrapper a:hover.saveItem {
+        background: url("images/pic-save-hover.png") no-repeat scroll 0 0 transparent;
+        display: block;
+        float: right;
+        height: 28px;
+        margin-left: 5px;
+        width: 28px;
+    }
+
+    .linkPortalWrapper .mediaFilesDisplay td.icons {
+        border-left: 0 none;
+        width: 100px;
+    }
+
+    .mediaFilesDisplay td.caption {
+        word-break: break-all;
+    }
+
+    .linkPortalWrapper div.header {
+        background: url("../images/body/header_bg.jpg") repeat scroll 0 0 #efefef;
+        color: #6B6767;
+        font-weight: bold;
+        padding-top: 1.5em;
+        height: 30px;
+        margin-top: 3px;
+    }
+
+    .linkPortalWrapper div.toggle.plus {
+        background-image: url("images/plus.png") !important;
+        width: 28px;
+        height: 28px;
+        position: relative;
+        bottom: 9px;
+    }
+
+    .linkPortalWrapper div.toggle.minus {
+        background-image: url("images/minus.png") !important;
+        width: 28px;
+        height: 28px;
+        position: relative;
+        bottom: 5px;
+    }
+
+    .linkPortalWrapper .header a {
+        color:#2684D5;
+    }
+
+    .linkPortalWrapper table th, .linkPortalWrapper table td {
+        border: 0;
+        padding: 0.5em;
+        vertical-align: top;
+    }
+
+    #media__edukite_notice__picture .mediaFilesDisplay td.caption{
+        display:none;
+    }
+
+    .ui-widget-header {
+        background: none repeat-x scroll 50% 50% #EFEFEF;
+        border: 0;
+        color: #222222;
+        font-weight: bold;
+        border-bottom: 2px solid #A1A1A1;
+        border-radius: 0;
+    }
+
+    .ui-dialog .ui-dialog-titlebar {
+        padding: 1em;
+        position: relative;
+    }
+
+    .ui-corner-all {
+        border-radius: 10px;
+    }
+
+    .ui-widget-content {
+        border: 2px solid #AAAAAA;
+        color: #222222;
+    }
+
+    .ui-dialog .ui-dialog-buttonpane {
+        border-width: 2px 0 0;
+    }
+
+    .ui-dialog .ui-dialog-buttonpane button {
+        border-radius: 4px;
+        margin: 0.5em 0.4em 0.5em 0;
+    }
+
+    .uploadify-button {
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #2684D5;
+        border-radius: 4px;
+        color: #2684D5;
+        font: bold 12px Arial,Helvetica,sans-serif;
+        text-align: center;
+        text-shadow: 0 0px 0 rgba(0, 0, 0, 0.25);
+        width: 100%;
+        padding: 3px 15px;
+    }
+
+    .uploadify {
+        width: 220px !important;
+    }
+
+    .uploadify:hover .uploadify-button {
+        background: none;
+    }
+
+    .uploadWrap .uploadFiles {
+        border-radius: 4px;
+        border: 1px solid red;
+        padding: 5px 4px;
+        font: bold 12px Arial,Helvetica,sans-serif;
+        float:right;
+    }
+
+    .uploadWrap .uploadFiles a.uploadQueue {
+        padding: 5px 15px;
+        color: #2684D5 !important;
+    }
+
+    .ui-widget-content .ui-state-default {
+        background: none repeat-x scroll 50% 50% #fff;
+        border: 1px solid #2684D5;
+        color: #2684D5;
+        font-weight: bold;
+    }
+
+	.m-edukite_yearGroup .centerCohortDetails {
+	 	margin-top:15px;
+	}
+
+    .mediaFilesDisplay td.imageDesc input[type="text"]{
+        width:98%;
+        border:1px solid #000;
+        padding: 3px;
+        font-size: 13px;
+    }
+
+    .mediaFilesDisplay td.imageDesc{
+        border-bottom: 2px solid #A1A1A1;
+    }
+
+    /*Below styles used for picture panel uplodifive*/
+    .uploadifive-button {
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #2684D5;
+        border-radius: 4px;
+        color: #2684D5;
+        font: bold 12px Arial,Helvetica,sans-serif;
+        text-align: center;
+        text-shadow: 0 0px 0 rgba(0, 0, 0, 0.25);
+        width: 100%;
+        padding: 0px 15px;
+        height: 25px !important;
+        line-height: 25px !important;
+    }
+
+    .uploadWrap .uploadFiles a.uploadifiveQueue {
+        padding: 5px 15px;
+        color: red !important;
+        text-transform: uppercase;
+    }
+
+    .m-edukite_notice .leftInfoList #staffSearch input,
+    .m-edukite_notice .leftInfoList #studentSearch input,
+    .m-edukite_yearGroup .leftInfoList #studentSearch input,
+    .m-edukite_parent .leftInfoList #studentSearch input,
+    .m-edukite_class .leftInfoList #studentSearch input {
+        position: relative;
+        top: 18px;
+        left: 30px;
+        width: 118px;
+        height: 18px;
+    }
+
+    .m-edukite_notice .leftInfoList #staffSearch img,
+    .m-edukite_notice .leftInfoList #studentSearch img,
+    .m-edukite_yearGroup .leftInfoList #studentSearch img,
+    .m-edukite_parent .leftInfoList #studentSearch img,
+    .m-edukite_class .leftInfoList #studentSearch img {
+        position: absolute;
+        top: 233px;
+        left: 166px;
+    }
+
+    .teacherKiteIcon {
+        width: 39px;
+        height: 49px;
+        position: absolute;
+        top: 60px;
+        right: 200px;
+    }
+
+   /* .m-edukite_notice .leftInfoList a.showAllStudent {
+        position: relative;
+        top: 45px;
+        right: 45px;
+        font-size: 10px;
+        font-weight: bold;
+    }*/
+
+    .m-edukite_notice .globalKite {
+        height: 30px;
+        margin: 10px 0 0 0;
+    }
+
+/*************** ACHIEVEMENTS *********************/
+	.m-edukite_notice .achievementLink	{
+		position:absolute;
+		top: 162px;
+		left: 272px;
+	}
+
+	.m-edukite_notice .achievementListPagePanel a {
+		color:black;
+	}
+
+	.m-edukite_notice .achievementListPagePanel a:hover {
+		color:red;
+	}
+
+    .m-edukite_student.v-achievementOptions #col1,
+    .m-edukite_notice.v-achievementPanel #col1 {
+        display: none;
+    }
+
+	.m-edukite_student .studentAchievement {
+		right:294px;
+		position:absolute;
+
+	}
+
+    .achievementListView table.list td {
+        border-top: 1px solid #CFCEC9;
+        vertical-align: middle;
+    }
+
+    .achievementListView table.categorySubCategoryLink{
+        width: 100%;
+    }
+
+    .achievementListView table.categorySubCategoryLink td {
+        border-top: 0;
+    }
+
+    .achievementListView table.subCategory td {
+        border-top: 1px solid #CFCEC9;
+    }
+
+    .achievementListView table tr.categoryTitle{
+        background: #ebf3e3;
+    }
+
+    .achievementListView table tr.subCategoryTitle:nth-child(odd){
+        background: #d5dfe4;
+    }
+
+    .achievementListView table tr.subCategoryTitle:nth-child(even){
+        background: #ebf0f2;
+    }
+
+    .achievementListView table tr.subCategoryTitleEnd{
+         height: 30px;
+    }
+
+    .achievementListView table.list {
+        width: 97.5%;
+        margin: 0 0 0 5px;
+        background-color: #FFFFF7;
+	}
+
+    .achievementListView {
+        border: 1px solid #9BBADD;
+        width: 384px;
+        font-size: 12px;
+        min-height: 700px;
+        background: #EBEBEB;
+    }
+
+    .achievementListView table.list th {
+        padding: 0.9em 0.2em;
+        vertical-align: top;
+        word-wrap: break-word;
+        background-color: #fff;
+        border-bottom: 3px solid #949494;
+	}
+
+    .achievementListView table {
+        border-collapse:collapse;
+    }
+
+    .achievementListView table.list div.actTitle{
+        font-size: 9px;
+        font-style:italic;
+    }
+
+    .v-achievementPanel .noticeTitle {
+        background: #fff;
+        margin: 0 0 0 5px;
+        width: 369px;
+        padding: 10px 0 5px 5px;
+        font-size: 17px;
+
+    }
+
+/*    .v-achievementOptions a.cpBack {
+        background: url("images/return-list.png") no-repeat scroll 0 0 transparent;
+        bottom: -2px;
+        display: block;
+        height: 34px;
+        left: 16px;
+        position: relative;
+        width: 355px;
+        top: 94px;
+    }
+
+    .v-achievementOptions a.cpBack:hover {
+        background: url("images/return-list-active.png") no-repeat scroll 0 0 transparent;
+        bottom: 65px;
+        display: block;
+        height: 34px;
+        left: 15px;
+        position: relative;
+        width: 355px;
+        top: 94px;
+    }*/
+
+    .v-achievementOptions #nav2 {
+        background: url("images/achievement-panel.png") no-repeat scroll 0 0 transparent;
+        width: 388px;
+        height: 97px;
+        padding-top: 15px;
+        margin: 0 -1px;
+    }
+
+    .v-achievementPanel #nav2 {
+        background: url("images/achievement-panel.png") no-repeat scroll 0 0 transparent;
+        width: 388px;
+        height: 97px;
+        padding-top: 15px;
+        margin: 0 -1px;
+    }
+
+    .v-achievementPanel .achievement-btn {
+        margin: 27px 0 0 19px;
+    }
+
+    .v-achievementOptions .studentImage img,
+    .v-achievementPanel .studentImage img {
+        height: 56px;
+        left: 536px;
+        position: absolute;
+        top: 226px;
+    }
+
+    .v-achievementOptions #achievementSearch {
+        left: 266px;
+        position: absolute;
+        top: 287px;
+    }
+
+    .v-achievementOptions #achievementSearch input {
+        height: 19px;
+        width: 150px;
+    }
+
+    .v-achievementOptions #achievementSearch .float_left {
+        margin-right: 8px;
+    }
+
+    .v-achievementPanel #achievementSearch {
+        left: 266px;
+        position: absolute;
+        top: 287px;
+    }
+
+    .v-achievementPanel #achievementSearch input {
+        height: 19px;
+        width: 150px;
+    }
+
+    .v-achievementPanel #achievementSearch .float_left {
+        margin-right: 8px;
+    }
+
+    .v-achievementOptions .downloadImg,
+    .v-achievementPanel .downloadImg {
+        height: 22px;
+        left: 266px;
+        position: absolute;
+        top: 235px;
+        width: 213px;
+    }
+
+    .v-achievementPanel .backToNotice img {
+        left: 273px;
+        position: absolute;
+        top: 162px;
+    }
+
+    .v-achievementOptions .backToStudent img {
+        left: 273px;
+        position: absolute;
+        top: 162px;
+    }
+
+/*************** Edit Dialog *********************/
+    #editPicture.ui-widget-content.dlg-frmEditMediaProp {
+        background: url("images/edit-panel.png") no-repeat scroll 0 0 #ffffff;
+        border: 0px solid #AAAAAA;
+        color: #222222;
+        width: 620px !important;
+        height: 535px !important;
+        border-radius: 0;
+    }
+
+    #editPicture.dlg-frmEditMediaProp .ui-widget-header {
+        background: none;
+        border: 0;
+        display: none;
+    }
+
+    #editPicture.ui-widget-content.dlg-frmEditMediaProp .yform{
+        background: none;
+        border: 0;
+    }
+
+    .m-edukite_notice #editPicture.dlg-frmEditMediaProp .yform fieldset {
+        background: none;
+        border: 0;
+        width: 565px;
+    }
+
+    .m-edukite_notice #editPicture.dlg-frmEditMediaProp .yform div.type-text input {
+        width: 557px;
+        color: #3C7BBC;
+        border: 1px solid #3C7BBC;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .m-edukite_notice #editPicture.dlg-frmEditMediaProp .yform .row_description {
+        width: 570px;
+        border: 0;
+    }
+
+    .m-edukite_notice #editPicture.dlg-frmEditMediaProp .yform #fld_description {
+        min-height: 266px;
+    }
+
+    #editPicture.dlg-frmEditMediaProp .yform div.type-text textarea {
+        width: 557px;
+        border: 1px solid #3C7BBC;
+    }
+
+    #editPicture.ui-dialog.dlg-frmEditMediaProp .ui-dialog-content {
+        height: 460px !important;
+        margin-top:45px;
+    }
+
+    #editPicture.ui-dialog.dlg-frmEditMediaProp .ui-dialog-buttonpane {
+        border: 0;
+        background: none;
+    }
+
+    #editPicture.ui-dialog.dlg-frmEditMediaProp .ui-dialog-buttonpane button.btn-cancel{
+        display:none;
+    }
+
+    #editPicture.ui-dialog.dlg-frmEditMediaProp .ui-dialog-buttonpane button.btn-submit{
+        position: absolute;
+        top:2px;
+        left:185px;
+        background:none;
+        width: 243px;
+        height: 34px;
+        border: 0;
+        color: transparent;
+    }
+
+    .facebookPanel{
+        position: absolute;
+        top:17px;
+        right: 60px;
+    }
+
+    .facebookPanel iframe{
+        width:162px !important;
+    }
+
+    .archiveLink {
+        text-align: center;
+        margin: 27px 0;
+    }
+
+    .archiveLink a{
+        font-weight: bold;
+        font-size: 13px;
+        color: #000000;
+        font-family: helvetica;
+    }
+
+    .archiveLink a.archive{
+        padding:10px;
+        background: url("images/archive_records.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .archiveLink a.active{
+        padding:10px 14px;
+        background: url("images/active_records.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .noticeTitleForParentSummary{
+        font-size:16px;
+        font-weight:bold;
+        border-bottom: 3px solid #4F81BD;
+    }
+
+    .studentParentSummaryTr{
+        background:#4F81BD;
+        color:#FFFFFF;
+    }
+
+    .noticeReadStatus{
+        color: red;
+    }
+
+    .v-edit .myChat .yform{
+        width: 320px;
+    }
+
+    .myChat .yform .type-text input, .myChat .yform .type-text textarea {
+        width: 95.5%;
+        height:150px;
+    }
+
+    .addCommentRemove {
+        display: none;
+    }
+
+    .m-edukite_notice.v-edit .myChat .chatContentblue {
+        background: none repeat scroll 0 0 #87D5ED;
+        margin: 10px 0;
+        padding: 10px 10px 0;
+        width: 320px;
+    }
+
+    .m-edukite_notice.v-edit .myChat .chatContent {
+        background: none repeat scroll 0 0 #EEEEEE;
+        margin: 10px 0;
+        padding: 10px 10px 0;
+        width: 320px;
+    }
+
+    .postcommentCheckBox label, .postcommentCheckBox input {
+        float: left;
+        height: 32px;
+        padding-left: 4px;
+        padding-top: 10px;
+    }
+
+    .postcommentCheckBox label {
+        width: 80%;
+    }
+
+    .postcommentCheckBox input[type="checkbox"] {
+        height: 36px;
+        width: 10%;
+    }
+
+    .bgRed {
+        background-color: red;
+    }
+
+    .m-edukite_dailyActivity .columnar div.type-text textarea {
+        height:120px;
+    }
+
+    .m-edukite_dailyActivity .dailyActivitySubmit a{
+        background: none repeat scroll 0 0 #00E4FF;
+        border-radius: 5px;
+        font-size: 17px;
+        left: 274px;
+        padding: 5px;
+        position: absolute;
+        text-align: center;
+        top: 162px;
+        width: 339px;
+        font-family: calibri;
+        color: #000000;
+    }
+}

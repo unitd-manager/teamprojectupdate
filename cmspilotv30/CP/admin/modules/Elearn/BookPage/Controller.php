@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_ELearn_BookPage_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

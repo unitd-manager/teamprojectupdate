@@ -1,0 +1,61 @@
+<?
+class CP_Admin_Widgets_Tradingsg_QuoteByYear_View extends CP_Common_Lib_WidgetViewAbstract
+{
+    /**
+     *
+     */
+    function getWidget() {
+        $c = &$this->controller;
+
+        $rowsHTML = $this->getRowsHTML();
+        $text = '';
+
+        if ($rowsHTML != ""){
+            $text = "
+            <h2>Quote by Year</h2>
+    		<div class = 'tableOuter scroll-pane'>
+            <table class='thinlist'>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th class='txtRight'>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {$rowsHTML}
+                </tbody>
+            </table>
+            </div>
+            ";
+        }
+
+        return $text;
+    }
+    
+    /**
+     *
+     */
+    function getRowsHTML() {
+        $rows = '';
+
+        foreach($this->model->dataArray as $row){
+
+            $invoice_amount_monthly = number_format($row['invoice_amount_yearly'], 2);
+            
+            if ($row['invoice_year']) {
+                $rows .= "
+                <tr>
+                    <td>{$row['invoice_year']}</td>
+                    <td class='txtRight'>{$invoice_amount_monthly}</td>
+                </tr>
+                ";    
+            }
+        }
+        
+        $text = "
+        {$rows}
+        ";
+
+        return $text;
+    }
+}

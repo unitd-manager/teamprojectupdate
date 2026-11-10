@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@media all
+{
+
+	element.style {
+	    height: auto;
+	    min-height: 0;
+	    width: auto;
+	}
+
+    #linkModalOuter .c50l {
+	    background: #efefef none repeat scroll 0 0;
+	    padding: 1em;
+	    width: 48%;
+	    float: left;
+	}
+
+	#linkModalOuter .c50r {
+	    background: #dfdfdf none repeat scroll 0 0;
+	    padding: 1em;
+	    width: 50%;
+	    float: right;
+	}
+
+	.rightPanel .header a {
+	    color: #b6e5f9;
+	}
+}

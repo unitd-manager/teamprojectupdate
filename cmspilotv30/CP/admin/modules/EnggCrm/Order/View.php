@@ -1,0 +1,3204 @@
+<?
+class CP_Admin_Modules_EnggCrm_Order_View extends CP_Common_Lib_ModuleViewAbstract
+{
+    /**
+     *
+     */
+    function getList($dataArray){
+        $listObj = Zend_Registry::get('listObj');
+        $db = Zend_Registry::get('db');
+        $tv = Zend_Registry::get('tv');
+        $fn = Zend_Registry::get('fn');
+        $cpCfg = Zend_Registry::get('cpCfg');
+
+        $rows  = "";
+        $rowCounter = 0;
+
+        //--------------------------------------------------------------------------//
+        foreach ($dataArray as $row){
+            $creation_date = $fn->getCPDate($row['creation_date'], 'd-m-Y');
+            $currency = strtoupper($row['currency']);
+            $order_amount = $row['order_amount'];
+
+            if($cpCfg['m.enggCrm.order.addGstAmountToOrderTotal']){
+                $gsttaxperc   = $cpCfg['amtForGSTCalc'] ;
+                $order_amount = $row['order_amount'] + ($row['order_amount'] * $gsttaxperc/100);
+            }
+
+            $rows .= "
+            {$listObj->getListRowHeader($row, $rowCounter)}
+            {$listObj->getGoToDetailText($rowCounter, $row['order_id'])}
+            {$listObj->getListDataCell($row['company_name'])}
+            {$listObj->getListDataCell($creation_date)}
+            {$listObj->getListDataCell($row['project_type'])}
+            {$listObj->getListDataCell($currency.'&nbsp;'.number_format($order_amount, 2))}
+            {$listObj->getListDataCell($row['order_status'])}
+            {$listObj->getListRowEnd($row['order_id'])}
+            ";
+            $rowCounter++ ;
+        }
+
+        $text = "
+        {$listObj->getListHeader()}
+        {$listObj->getListHeaderCell('Order Id', 'o.order_id')}
+        {$listObj->getListHeaderCell('Company Name', 'c.company_name')}
+        {$listObj->getListHeaderCell('Order Date', 'o.creation_date')}
+        {$listObj->getListHeaderCell('Project Type', 'o.project_type')}
+        {$listObj->getListHeaderCell('Amount', '')}
+        {$listObj->getListHeaderCell('Status', 'o.order_status')}
+        {$listObj->getListHeaderEnd()}
+        {$rows}
+        {$listObj->getListFooter()}
+        ";
+
+        return $text;
+    }
+
+    /**
+     *
+     */
+    function getNew(){
+        $formObj = Zend_Registry::get('formObj');
+        $ln = Zend_Registry::get('ln');
+
+        $fieldset = "
+        {$formObj->getDateRow('Order Date', 'order_date')}
+        ";
+
+        $text = "
+        {$formObj->getFieldSetWrapped('Key Details', $fieldset)}
+        ";
+
+        return $text;
+    }
+
+    /**
+     *
+     */
+    function getEdit($row) {
+        $tv = Zend_Registry::get('tv');
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $formObj = Zend_Registry::get('formObj');
+        $dateUtil = Zend_Registry::get('dateUtil');
+        $ln = Zend_Registry::get('ln');
+
+        $formObj->mode = $tv['action'];
+
+        $expStatus = array('sqlType' => 'OneField', 'isEditable' => 0);
+        $expNoEdit = array('isEditable' => 0);
+
+        $sqlCountry = getCPModelObj('common_geoCountry')->getCountryDDSQL();
+        $expCountry = array('detailValue' => $row['shipping_address_country']);
+
+        $creation_date = $dateUtil->formatDate($row['creation_date'], 'DD-MM-YYYY');
+        $start_date = $dateUtil->formatDate($row['start_date'], 'DD-MM-YYYY');
+        $end_date = $dateUtil->formatDate($row['end_date'], 'DD-MM-YYYY');
+
+        $currency = strtoupper($row['currency']);
+
+        $order_amount = $row['order_amount'];
+
+        if($cpCfg['m.enggCrm.order.addGstAmountToOrderTotal']){
+            $gsttaxperc   = $cpCfg['amtForGSTCalc'] ;
+            $order_amount = $row['order_amount'] + ($row['order_amount'] * $gsttaxperc/100);
+        }
+
+        $discount = '';
+        if ($cpCfg['m.enggCrm.order.hasDiscount']){
+            $discount = $formObj->getTBRow('Discount', 'discount', $row['discount'], $expNoEdit);
+        }
+
+        $project_code = "<a href='index.php?_topRm=project&module=enggCrm_project&record_id={$row['project_id']}&_action=edit' target='_blank'><u>{$row['project_code']}</u></a>";
+
+        $fielset1 = "
+        {$formObj->getTBRow('Order Id', 'order_id', $row['order_id'], $expNoEdit)}
+        {$formObj->getTBRow('Project Code', 'project_id', $project_code, $expNoEdit)}
+        {$formObj->getTBRow('Project Category', 'project_type', $row['project_type'], $expNoEdit)}
+        {$formObj->getTBRow('Order Date', 'creation_date', $creation_date, $expNoEdit)}
+        {$formObj->getTBRow('Amount', 'amount', $currency.'&nbsp;'. number_format($order_amount, 2), $expNoEdit)}
+        {$discount}
+        {$formObj->getDDRowByArr('Status', 'order_status', $cpCfg['m.enggCrm.order.statusArr'], $row['order_status'], $expStatus)}
+        {$formObj->getTARow('Terms', 'invoice_terms', $row['invoice_terms'])}
+        {$formObj->getTARow('Notes', 'notes', $row['notes'])}
+        {$formObj->getTBRow('Start Date', 'start_date', $start_date, $expNoEdit)}
+        {$formObj->getTBRow('End Date', 'end_date', $end_date, $expNoEdit)}
+        {$formObj->getYesNoRRow('Auto Generate Invoice', 'auto_create_invoice', $row['auto_create_invoice'])}
+        ";
+
+        $fielset2 = "
+        {$formObj->getTBRow('Company Name', 'company_name', $row['company_name'], $expNoEdit)}
+        {$formObj->getTBRow('Address 1', 'cust_address1', $row['cust_address1'], $expNoEdit)}
+        {$formObj->getTBRow('Address 2', 'cust_address2', $row['cust_address2'], $expNoEdit)}
+        {$formObj->getTBRow('Country', 'cust_address_country', $row['cust_address_country'], $expNoEdit)}
+        {$formObj->getTBRow('Postal Code', 'cust_address_po_code', $row['cust_address_po_code'], $expNoEdit)}
+        ";
+
+        $fielset3 = "
+        {$formObj->getTBRow('Company Name', 'shipping_first_name', $row['shipping_first_name'])}
+        {$formObj->getTBRow('Address 1', 'shipping_address1', $row['shipping_address1'])}
+        {$formObj->getTBRow('Address 2', 'shipping_address2', $row['shipping_address2'])}
+        {$formObj->getTBRow('Country', 'shipping_address_country', $row['shipping_address_country'])}
+        {$formObj->getTBRow('Postal Code', 'shipping_address_po_code', $row['shipping_address_po_code'])}
+        {$formObj->getDateRow('Delivery Date', 'delivery_date', $row['delivery_date'])}
+        {$formObj->getTARow('Delivery Terms', 'delivery_terms', $row['delivery_terms'])}
+        ";
+
+        $text = "
+        {$formObj->getFieldSetWrapped('Main Details', $fielset1)}
+        {$formObj->getFieldSetWrapped('Delivery Address', $fielset3)}
+        {$formObj->getFieldSetWrapped('Customer Details', $fielset2)}
+        {$formObj->getCreationModificationText($row)}
+        ";
+
+        return $text;
+    }
+
+    /**
+     *
+     */
+    function getQuickSearch() {
+        $db = Zend_Registry::get('db');
+        $dbUtil = Zend_Registry::get('dbUtil');
+        $cpUtil = Zend_Registry::get('cpUtil');
+        $tv = Zend_Registry::get('tv');
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $formObj = Zend_Registry::get('formObj');
+        $ln = Zend_Registry::get('ln');
+
+        $order_date1 	 				= $fn->getReqParam('order_date_1');
+        $order_date2	 				= $fn->getReqParam('order_date_2');
+        $order_status    				= $fn->getReqParam('order_status');
+        $shipment_status 				= $fn->getReqParam('shipment_status');
+        $shipping_address_country_code  = $fn->getReqParam('shipping_address_country_code');
+        $project_type                   = $fn->getReqParam('project_type');
+
+        $dirText = "";
+
+        if ($cpCfg['cp.hasDirectoryMg'] == 1){
+            $business_id = $fn->getReqParam('business_id');
+            $business_contact_id = $fn->getReqParam('business_contact_id');
+
+            $SQLBusiness = "
+            SELECT b.business_id
+                    ,b.business_name
+            FROM business b
+            ORDER BY b.business_name
+            ";
+
+            $SQLBusinessContact = "
+            SELECT bc.business_contact_id
+                    ,CONCAT_WS(' ', bc.first_name, bc.last_name) AS contact_name
+            FROM business_contact bc
+            ORDER BY contact_name
+            ";
+
+            $dirText = "
+            <td class='fieldValue'>
+                <select name='business_id'>
+                    <option value=''>Business</option>
+                    {$dbUtil->getDropDownFromSQLCols2($db, $SQLBusiness, $business_id)}
+                </select>
+            </td>
+
+            <td class='fieldValue'>
+                <select name='business_contact_id'>
+                    <option value=''>Contact</option>
+                    {$dbUtil->getDropDownFromSQLCols2($db, $SQLBusinessContact, $business_contact_id)}
+                </select>
+            </td>
+            ";
+        }
+
+        $orgText = "";
+        if ($cpCfg['m.enggCrm.order.showOrganization']) {
+	        $organization_id = $fn->getReqParam('organization_id');
+
+	        $SQLOrg = "
+	        SELECT o.organization_id
+	              ,o.name
+	        FROM organization o
+	        ORDER BY o.name
+	        ";
+
+                $orgText = "
+	        <td class='fieldValue'>
+	            <select name='organization_id'>
+	                <option value=''>Organization</option>
+                        {$dbUtil->getDropDownFromSQLCols2($db, $SQLOrg, $organization_id)}
+	            </select>
+	        </td>
+	        ";
+        }
+
+        $shipmentStatus = "";
+        if ($cpCfg['m.enggCrm.order.showShipmentStatus']) {
+            $shipmentStatus = "
+            <td class='fieldValue'>
+                <select name='shipment_status'>
+                    <option value=''>Shipment Status</option>
+                    {$cpUtil->getDropDown1($cpCfg['m.enggCrm.order.shipmentStatusArr'], $shipment_status)}
+                </select>
+            </td>
+            ";
+        }
+
+        $olArray = array(
+              "Yes"
+             ,"No"
+        );
+
+        $sqlProjType = "
+        SELECT DISTINCT project_type
+        FROM `order`
+        WHERE project_type != ''
+        ";
+
+        /*<!--<td class='fieldValue'>
+            <select name='shipping_address_country_code'>
+                <option value=''>Country</option>
+                {$dbUtil->getDropDownFromSQLCols2($db, $fn->getGeoCountrySQL(), $shipping_address_country_code)}
+            </select>
+        </td>-->*/
+        $text = "
+        {$dirText}
+        {$orgText}
+        <td>
+            {$formObj->getDateRangeRow('Order Date:', 'order_date', $order_date1, $order_date2)}
+        </td>
+
+        <td class='fieldValue'>
+            <select name='order_status'>
+                <option value=''>Status</option>
+                {$cpUtil->getDropDown1($cpCfg['m.enggCrm.order.statusArr'], $order_status)}
+            </select>
+        </td>
+        {$shipmentStatus}
+        <td>
+            <select name='special_search'>
+                <option value=''>Auto Generate Invoice</option>
+                {$cpUtil->getDropDown1($olArray, $tv['special_search'])}
+            </select>
+        </td>
+        <td>
+            <select name='project_type'>
+                <option value=''>Project Type</option>
+                {$dbUtil->getDropDownFromSQLCols1($db, $sqlProjType, $project_type)}
+            </select>
+        </td>
+        ";
+
+        return $text;
+    }
+
+    /**
+     *
+     */
+    function getRightPanel($row){
+        $displayLinkData = Zend_Registry::get('displayLinkData');
+        $media = Zend_Registry::get('media');
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $db = Zend_Registry::get('db');
+
+        $printText = "";
+        $actionButtons = "";
+        $summaryAction = "";
+        $captainCopy = "";
+
+        $links ='';
+        if ($cpCfg['m.enggCrm.order.showAttachment'] == 1) {
+            $links .= $media->getRightPanelMediaDisplay('Attachments', 'enggCrm_order', 'attachment', $row);
+        }
+
+        $printTextButton ='';
+
+        if ($cpCfg['m.enggCrm.order.showReceiptButton']){
+            $actionButtons .="
+            <div class='float_right button mb5'>
+                <a href='#' class='generateReceipt' order_id={$row['order_id']}>CREATE RECEIPT</a>
+            </div>
+            ";
+        }
+
+        if ($cpCfg['m.enggCrm.order.showInvoiceButton']){
+            $actionButtons .="
+            <div class='float_right button mb5'>
+                <a href='#' class='generateInvoice' order_id={$row['order_id']}>CREATE INVOICE</a>
+            </div>
+            <div class='float_right button mb5'>
+                <a href='#' class='generateDetailInvoice' order_id={$row['order_id']}>CREATE DETAIL INVOICE</a>
+            </div>
+            ";
+        }
+
+        if($row['record_type'] == 'POS') {
+            $urlPrint  = "index.php?_topRm=pos&module=enggCrm_pos&_spAction=printBill&printOnly=1&orderNo={$row['order_id']}&showHTML=0";
+            $actionButtons .="
+            <div class='float_right button mb5'>
+                <a href='{$urlPrint}' target='_blank'>PRINT INVOICE</a>
+            </div>
+            ";
+        }
+
+        $urlPrintDeliveryOrder  = "index.php?_topRm=order&module=enggCrm_order&_spAction=PrintDeliveryOrder&order_id={$row['order_id']}&showHTML=0";
+        $print ="
+        <div class='floatbox actionBtnsDetail'>
+	        <div class='orderbtnbackground floatbox'>
+                {$actionButtons}
+	        </div>
+        </div>
+        <div class='floatbox actionBtnsDetail'>
+            <div class='float_right button mb5 mt5'>
+                <a href='{$urlPrintDeliveryOrder}' target='_blank' class='printLink' order_id='{$row['order_id']}'>DELIVERY ORDER</a>
+            </div>
+        </div>
+        ";
+
+        if ($cpCfg['m.enggCrm.order.showInvoicePortalDisplay']){
+            $links .= $this->getInvoicePortalDisplay($row);
+        }
+
+        if ($cpCfg['m.enggCrm.order.showReceiptPortalDisplay']){
+            //$links .= $displayLinkData->getLinkPortalMain('enggCrm_order', 'enggCrm_receiptLink', 'Receipt Linked', $row);
+            $links .= "
+            <div class='mt10'></div>
+            {$this->getReceiptPortalDisplay($row)}
+            ";
+        }
+
+        $summaryTableOrder = '' ;
+        if($row['record_type'] != 'POS') {
+            $summaryTableOrder = $this->getSummaryInOrder($row);
+        }
+
+        $orderItem = '';
+        if ($cpCfg['m.enggCrm.order.showOrderItemDisplay']){
+            $orderItem = $displayLinkData->getLinkPortalMain('enggCrm_order', 'enggCrm_orderItemLink', 'Order Items', $row);
+        }
+
+        $text = "
+        {$print}
+        {$summaryTableOrder}
+        {$orderItem}
+        {$links}
+        ";
+
+        return $text;
+    }
+
+    /**
+     *
+     */
+    function getPrintDeliveryOrder() {
+        $db = Zend_Registry::get('db');
+        $fn = Zend_Registry::get('fn');
+        $cpCfg = Zend_Registry::get('cpCfg');
+
+        ini_set('memory_limit', '512M');
+
+        set_time_limit(50000);
+
+        include_once(CP_LIBRARY_PATH.'lib_php/tcpdf/tcpdf.php');
+        include_once(CP_LOCAL_PATH.'lib/headfoot1.php');
+
+        $pdf = new MYPDF_Local(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+        // set document information
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('USS');
+        $pdf->SetSubject('Print Link');
+        $pdf->SetTitle('Print Link');
+
+        // set default header data
+        $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 04', PDF_HEADER_STRING);
+        // set header and footer fonts
+        $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+        $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+
+        // set default monospaced font
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+        // set margins
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+        $pdf->SetHeaderMargin(PDF_MARGIN_HEADER,10);
+        $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+        // set auto page breaks
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+        // set image scale factor
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
+        // set some language-dependent strings (optional)
+        if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
+            require_once(dirname(__FILE__).'/lang/eng.php');
+            $pdf->setLanguageArray($l);
+        }
+
+        /*HEADER PART AND FOOTER PART FUNCTIONS HAS BEEN ADDED IN (headfoot.php) PATH INCLUDE: (admin/lib/headfoot.php)*/
+        $pdf->AddPage();
+
+        $order_id = $fn->getReqParam('order_id');
+
+        $SQL = "
+        SELECT oi.*
+                ,o.order_id
+                ,o.order_date
+                ,o.order_code
+                ,o.invoice_terms
+                ,o.shipping_first_name
+                ,o.shipping_address1
+                ,o.shipping_address2
+                ,o.shipping_address_country
+                ,o.shipping_address_po_code
+                ,o.delivery_date
+                ,o.delivery_terms
+                ,c.company_name
+                ,c.address_street
+                ,c.address_country
+                ,c.address_po_code
+                ,c.company_id
+                ,co.first_name
+                ,co.last_name
+                ,(SELECT SUM(oit.qty * oit.unit_price) FROM order_item oit
+                  WHERE oit.order_id = oi.order_id) AS sub_total
+        FROM order_item oi
+        LEFT JOIN `order` o ON (o.order_id = oi.order_id)
+        LEFT JOIN company c ON (c.company_id = o.company_id)
+        LEFT JOIN contact co ON (co.contact_id = o.contact_id)
+        WHERE oi.order_id = '{$order_id}'
+        ORDER BY oi.order_item_id
+        ";
+        $result = $db->sql_query($SQL);
+        $result2 = $db->sql_query($SQL);
+        $company = $db->sql_fetchrow($result2);
+
+        $today = date("d-m-Y");
+        $order_date    = $fn->getCPDate($company['order_date'], 'd-m-Y');
+        $delivery_date = $fn->getCPDate($company['delivery_date'], 'd-m-Y');
+
+        $tbl1 = '
+        <table border="0" width="100%">
+            <tr>
+                <td align="center" style="font-size:16px; font-weight:bold">DELIVERY ORDER</td>
+            </tr>
+        </table>
+        ';
+
+        $or_date = $fn->getCPDate($company['order_date'], 'ym/');
+        $order_code = $or_date . $company['order_id'];
+        $address2 = '';
+        if($company['shipping_address2']) {
+            $address2 = '
+            <tr>
+                <td style="font-size:12px;">'.$company['shipping_address2'].'</td>
+                <td colspan="2"></td>
+            </tr>
+            ';
+        }
+        $tbl2 ='<table border="0" width="100%" cellpadding="">
+                    <tr>
+                        <td width="60%" style="font-size:12px; font-weight:bold;">TO: </td>
+                        <td width="26%" align="right" style="font-size:12px; font-weight:bold;"><b>DO NO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b></td>
+                        <td width="14%" align="right" style="font-size:12px; font-weight:bold;">DO-'.$order_code.'</td>
+                    </tr>
+                    <tr>
+                        <td width="60%" style="font-size:12px; font-weight:bold;">'.$company['shipping_first_name'].'</td>
+                        <td width="26%" align="right" style="font-size:12px; font-weight:bold;"><b>DATE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b></td>
+                        <td width="14%" align="right" style="font-size:12px; font-weight:bold;">'.$order_date.'</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:12px;">'.strtoupper($company['shipping_address1']).'</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    '.$address2.'
+                    <tr>
+                        <td style="font-size:12px;">'.strtoupper($company['shipping_address_country']).' - '.strtoupper($company['shipping_address_po_code']).'</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:12px; font-weight:bold;">ATTN:&nbsp;'.$company['first_name'].' '.$company['last_name'].'</td>
+                        <td colspan="2"></td>
+                    </tr>
+                </table>';
+
+        $tbl3 ='<table border="1" cellpadding="2" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="5%" align="center" style="font-size:12px; font-weight:bold;">S/N</th>
+                            <th width="60%" align="center" style="font-size:12px; font-weight:bold;">Description</th>
+                            <th width="13%" align="center" style="font-size:12px; font-weight:bold;">QTY</th>
+                            <th width="22%" align="center" style="font-size:12px; font-weight:bold;">REMARKS</th>
+                        </tr>
+                    </thead>';
+        $sub_total = '';
+        $count = 1;
+
+        while ($row = $db->sql_fetchrow($result)) {
+            if($row['item_title']) {
+                $tbl3 = $tbl3.'<tr>
+                                    <td width="5%"></td>
+                                    <td width="60%" style="font-size:12px; font-weight:bold;"><u>'.strtoupper($row['item_title']).'</u></td>
+                                    <td width="13%"></td>
+                                    <td width="22%"></td>
+                                </tr>
+                        ';
+            }
+            $tbl3 = $tbl3.'<tr>
+                                <td width="5%" style="font-size:12px;">'.$count.'</td>
+                                <td width="60%" style="font-size:12px;">'.$row['description'].'</td>
+                                <td width="13%" align="center" style="font-size:12px;">'.$row['qty'].'</td>
+                                <td width="22%" style="font-size:12px;">'.$row['remarks'].'</td>
+                            </tr>
+                    ';
+            $count++;
+        }
+
+        $tbl3 = $tbl3.'</table>';
+
+        $tbl5 = '
+        <table border="0" width="100%">
+            <tr>
+                <td style="height: 15px;"></td>
+            </tr>
+            <tr>
+                <td align="left" style="font-size:12px; font-weight:bold;">DELIVERY DATE :</td>
+            </tr>
+            <tr>
+                <td align="left" style="font-size:12px;">'. $delivery_date .'</td>
+            </tr>
+            <tr>
+                <td style="height: 40px;"></td>
+            </tr>
+            <tr>
+                <td style="font-size:12px; font-weight:bold;">REMARKS : </td>
+            </tr>
+            <tr>
+                <td align="left" style="font-size:12px;">'. $company['delivery_terms'] .'</td>
+            </tr>
+        </table>
+        ';
+
+        $tbl6 = '
+        <table border="0" width="100%">
+            <tr>
+                <td colspan="2" style="height: 20px;"></td>
+            </tr>
+            <tr>
+                <td width="40%" style="font-size:12px;">Issued By :</td>
+                <td width="60%" style="font-size:12px;" align="right">Above goods received in good condition</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-size:12px; font-weight:bold;">'.$cpCfg['cp.companyName'].'</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 20px;"></td>
+            </tr>
+            <tr>
+                <td width="67%"></td>
+                <td width="30%" style="border-bottom:2px solid black"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="font-size:12px; font-weight:bold;">Authorised Signature & Name</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="font-size:12px;">Date:</td>
+            </tr>
+        </table>
+        ';
+
+        $pdf->writeHTML($tbl1, true, false, false, false, '');
+        $pdf->ln(-4);
+        $pdf->writeHTML($tbl2, true, false, false, false, '');
+        $pdf->writeHTML($tbl3, true, false, false, false, '');
+        $pdf->writeHTML($tbl5, true, false, false, false, '');
+        $pdf->writeHTML($tbl6, true, false, false, false, '');
+        $pdf->Output('Delivery-Order.pdf', 'I');
+    }
+
+
+    /**
+     *
+     */
+    function getSummaryInOrder ($row) {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $formObj = Zend_Registry::get('formObj');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+        $rows  = "";
+
+        /* Finding average gst percentage for the invoices chosen */
+        $sqlGstCalc = "
+        SELECT SUM(gst_percentage) AS total_gst_percentage
+        FROM invoice
+        WHERE order_id = {$row['order_id']}
+        ";
+        $resultGstCalc  = $db->sql_query($sqlGstCalc);
+        $rowGstCalc     = $db->sql_fetchrow($resultGstCalc);
+
+        $rowsGst = $fn->getRecordCount("invoice", "order_id = {$row['order_id']}");
+        $gst_percentage = 0;
+        if ($rowsGst) {
+            $gst_percentage = ($rowGstCalc['total_gst_percentage']/$rowsGst);
+        }
+
+        $SQL = "
+        SELECT o.*
+              ,(SELECT SUM(round((oi.unit_price * oi.qty),2))
+               FROM order_item oi
+               WHERE oi.order_id = {$row['order_id']}
+               ) AS order_amount
+              ,(SELECT SUM(i.invoice_amount) FROM invoice i
+                WHERE i.order_id = o.order_id
+                AND i.status != 'Cancelled'
+                ) AS invoice_amount
+              ,(SELECT SUM(i.invoice_amount)*{$gst_percentage}/100 FROM invoice i
+                WHERE i.order_id = o.order_id
+                AND i.status != 'Cancelled'
+                ) AS gst_amount
+              ,(SELECT SUM(r.amount)
+                FROM receipt r
+                WHERE o.order_id = r.order_id
+                AND r.receipt_status != 'Cancelled'
+                )AS receipt_amount
+        FROM `order`o
+        WHERE o.order_id = {$row['order_id']}
+        ";
+        $result = $db->sql_query($SQL);
+        $row  = $db->sql_fetchrow($result);
+
+        $orderDiscountAmt = number_format($row['discount'], 2);
+        $orderAmt   = number_format($row['order_amount'], 2);
+        $receiptAmt = number_format($row['receipt_amount'] ,2);
+
+        //if ($row['gst_amount']) {
+        if ($gst_percentage > 0) {
+            /* Taking two decimal values for gst amount */
+            $gst_amount = round((($row['invoice_amount'] * $gst_percentage) / 100), 2);
+
+            //$gst_amount = $row['gst_amount'];
+            $fraction_length = strlen(substr(strrchr($gst_amount, "."), 1)); // Checking the lingth of the fraction value
+            if ($fraction_length > 2) {
+                list($integer, $fraction) = explode(".", (string) $gst_amount);
+                $fraction = substr($fraction, 0, 2);
+                $gst_amount = $integer . "." . $fraction;
+            }
+
+            $invoiceAmt = number_format(($row['invoice_amount'] + $gst_amount),2);
+            $outstandingInvoiceAmt = number_format($row['invoice_amount'] + $gst_amount - $row['receipt_amount'], 2);
+            $overallBalanceAmt     = number_format($row['order_amount'] + $gst_amount - $row['receipt_amount'] - $row['discount'], 2);
+
+            $gst_amount = number_format($gst_amount,2);
+            $gstAmtRow = "
+            <tr>
+                <td class='totalOrderAmountLabel'>TOTAL GST AMOUNT</td>
+                <td class='totalOrderAmountValue txtRight'>{$gst_amount}</td>
+            </tr>
+            ";
+        } else {
+            $gstAmtRow = '';
+            $invoiceAmt = number_format($row['invoice_amount'] ,2);
+            $outstandingInvoiceAmt = number_format($row['invoice_amount'] - $row['receipt_amount'], 2);
+            $overallBalanceAmt     = number_format($row['order_amount'] - $row['receipt_amount'] - $row['discount'], 2);
+        }
+
+        // To remove negative sign if balance amount is 0
+        /*$outstandingInvoiceAmt = 0;
+        if ($outstandingInvoiceAmt) {
+            $outstandingInvoiceAmt = $outstandingInvoiceAmt;
+        }*/
+
+        // To remove negative sign if balance amount is 0
+        /*$overallBalanceAmt = 0;
+        if ($overallBalanceAmt) {
+            $overallBalanceAmt = $overallBalanceAmt;
+        }*/
+
+        $rows = "
+        <table class='summaryAmountDetails'>
+            <tr class= 'summaryTitle'>
+                <th>SUMMARY</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td class='totalOrderAmountLabel'>TOTAL ORDER AMOUNT</td>
+                <td class='totalOrderAmountValue txtRight'>{$orderAmt}</td>
+            </tr>
+            <tr>
+                <td class='totalOrderAmountLabel'>DISCOUNT FOR ORDER</td>
+                <td class='totalOrderAmountValue txtRight'>{$orderDiscountAmt}</td>
+            </tr>
+            {$gstAmtRow}
+            <tr>
+                <td class='totalOrderAmountLabel'>TOTAL INVOICE RAISED</td>
+                <td class='totalInvoiceAmountValue txtRight'>{$invoiceAmt}</td>
+            </tr>
+            <tr>
+                <td class='totalOrderAmountLabel'>AMOUNT PAID</td>
+                <td class='totalReciptAmountValue txtRight'>{$receiptAmt}</td>
+            </tr>
+            <tr>
+                <td class='totalOrderAmountLabel'>OUTSTANDING INVOICE</td>
+                <td class='totalOutstandingInvoiceAmtValue txtRight'>{$outstandingInvoiceAmt}</td>
+            </tr>
+            <tr>
+                <td class='totalOrderAmountLabel'>OVERALL BALANCE</td>
+                <td class='totalOverallAmountValue txtRight'>{$overallBalanceAmt}</td>
+            </tr>
+        </table>
+        ";
+
+        $text = "
+        {$rows}
+        ";
+
+        return $text;
+    }
+
+    /**
+     *
+     */
+    function getPrintInvoiceRecord() {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $tv = Zend_Registry::get('tv');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $searchVar = Zend_Registry::get('searchVar');
+        $media = Zend_Registry::get('media');
+        $cpPaths = Zend_Registry::get('cpPaths');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+        ini_set('memory_limit', '512M');
+
+        set_time_limit(50000);
+
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf/fpdf.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf-extra/html2pdf.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf-extra/html_table1.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf-extra/mc_table.php');
+
+        //$pdf = new MYPDF();
+        $pdf = new PDF_MC_Table();
+		$pdf->AddPage();
+		$pdf->SetFont('Arial','',11);
+
+        $invoiceHeading = '';
+
+        $invoice_code = $fn->getReqParam('invoice_code');
+        $invoice_type = $fn->getReqParam('invoice_type');
+        if($invoice_type == 'normal'){
+            $invoiceHeading = '';
+        }
+        else if($invoice_type == 'transporter'){
+            $invoiceHeading = 'TRANSPORTER - ';
+        }
+        else if($invoice_type == 'proforma'){
+            $invoiceHeading = 'PROFORMA - ';
+        }
+        else if($invoice_type == 'extra'){
+            $invoiceHeading = 'EXTRA - ';
+        }
+
+
+        $SQL = "
+        SELECT ini.*
+              ,ini.item_title AS product_title
+              ,p.title AS product_title1
+              ,p.unit
+              ,CONCAT_WS('::', p.carton_no, p.batch_no, p.model) code
+              ,p.item_code
+			  ,p.part_number
+              ,c.company_name
+              ,c.address_flat
+              ,c.address_street
+              ,c.address_town
+              ,c.address_state
+              , (SELECT gc.name FROM geo_country gc
+                 WHERE gc.country_code = c.address_country)
+                AS address_country
+              ,c.billing_address_flat
+              ,c.billing_address_street
+              ,c.billing_address_town
+              ,c.billing_address_state
+              , (SELECT gc.name FROM geo_country gc
+                 WHERE gc.country_code = c.billing_address_country)
+                AS billing_address_country
+              ,c.fax
+              ,c.phone
+              ,c.tin_no
+              ,c.cst_no
+              ,i.invoice_date
+              ,q.delivery_date
+              ,q.delivery_location
+              ,ini.unit_price
+              ,i.invoice_code
+              ,i.invoice_terms
+              ,i.invoice_due_date
+              ,i.notes
+              ,i.cst
+              ,i.vat
+              ,i.cst_value
+              ,i.vat_value
+              ,i.frieght
+              ,i.p_f
+			  ,o.order_id
+			  ,o.shipping_address1
+			  ,o.shipping_first_name
+			  ,o.shipping_address2
+			  ,o.shipping_address_city
+			  ,o.shipping_address_state
+			   ,(SELECT gc.name FROM geo_country gc
+			     WHERE gc.country_code = o.shipping_address_country)
+			     AS shipping_address_country
+              ,q.quote_code
+              ,q.currency
+              ,ini.qty * ini.unit_price AS amount
+              ,(SELECT SUM(init.qty * init.unit_price) FROM invoice_item init
+               WHERE init.invoice_id = ini.invoice_id) AS sub_total
+        FROM invoice_item ini
+        LEFT JOIN product p ON (p.product_id = ini.record_id)
+        LEFT JOIN invoice i ON (i.invoice_id = ini.invoice_id)
+        LEFT JOIN `order` o ON (o.order_id = i.order_id)
+        LEFT JOIN company c ON (c.company_id = o.company_id)
+        LEFT JOIN quote q ON (q.quote_id = o.quote_id)
+        LEFT JOIN product_group pg ON (p.product_group_id = pg.product_group_id)
+        WHERE i.invoice_code = '{$invoice_code}'
+        ORDER BY ini.invoice_item_id, pg.sort_order ASC, p.title
+        ";
+        $result = $db->sql_query($SQL);
+
+        $numRows  = $db->sql_numrows($result);
+
+        $today = date("Y-m-d");
+		if ($numRows == 0){
+            $pdf->SetXY(30,30);
+            $pdf->Cell(50, 20, "Please set the values for your Order and print the PDF");
+			$pdf->Output();
+			return;
+		}
+
+        $count = 0;
+        $total = 0;
+        $discount_price = 0;
+        $rows = "";
+        $lineItemNumber = 1;  // To increment the line item in receipt
+		$printTaxName = '';
+		$gsttaxvalue = '';
+		$gstvalue = '';
+		$totalvalue = '';
+        $totalpf = '';
+
+
+
+        //============================================================================= //
+        $pdf->SetFont('Arial','',11);
+        //syed:multi text code to set width of each column and alignment
+        $pdf->SetWidths(array(10, 65, 37, 13, 13, 26, 26));
+        $pdf->SetAligns(array('L', 'L', 'L', 'R', 'L', 'R', 'R'));
+
+        while ($row = $db->sql_fetchrow($result)) {
+            if ($count == 0){
+                /* Logo of the institution */
+                $pdf->Image('images/logo-print.gif',10,5,45);
+                $pdf->SetXY(10,10);
+                $pdf->SetFont('Courier','B',11);
+                $pdf->Cell(50, 20, $cpCfg['cp.companyName']);
+                $pdf->Ln(5);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf7']);
+                $pdf->Ln(5);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf6']);
+                $pdf->Ln(5);
+                $pdf->Cell(50, 20, $cpCfg['printWebAddress']);
+
+                $creationDate   = $fn->getCPDate($row['invoice_date'], 'd-m-Y');
+                $invoiceDueDate = $fn->getCPDate($row['invoice_due_date'], 'd-m-Y');
+                $deliveryDate   = $fn->getCPDate($row['delivery_date'], 'd-m-Y');
+				$currency = $row['currency'];
+
+				$gsttaxvalue = $cpCfg['amtForGSTCalc'] ;
+				$gstvalue = $row['sub_total'] * $gsttaxvalue / 100;
+				//$totalvalue = $gstvalue + $row['sub_total'];
+				$totalvalue += $row['sub_total'];
+
+                /* Company address */
+                //Address to be got from settings
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetXY(130,0);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf1']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,5);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf2']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,10);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf3']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130, 15);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf4']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,20);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf5']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,25);
+                $pdf->Cell(50, 20, $cpCfg['printTelephoneAndFax']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,30);
+                $pdf->Cell(50, 20, $cpCfg['printEmailAddress']);
+
+                /* Header */
+                $pdf->SetFont('Courier','BU',11);
+                $pdf->SetXY(80, 45);
+                $pdf->Cell(50, 20, $invoiceHeading . "INVOICE", 0, 0, 'C');
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetX(130);
+                $pdf->Cell(31, 20, "DATE : " . $creationDate, 0, 0, 'L');
+                $pdf->Ln(15);
+
+                /* Company Details*/
+
+				if ($row['shipping_address1'] != ''
+					|| $row['shipping_address2'] != ''
+					|| $row['shipping_address_city'] != ''
+					|| $row['shipping_address_state'] != ''
+					|| $row['shipping_address_country'] != '') {
+						//Delivery Address Fields in Order
+						$deliveryAddressFlat 	= $row['shipping_address1'];
+						$deliveryAddressStreet 	= $row['shipping_address2'];
+						$deliveryAddressTown 	= $row['shipping_address_city'];
+						$deliveryAddressState 	= $row['shipping_address_state'];
+						$deliveryAddressCountry = $row['shipping_address_country'];
+						$deliveryCompanyName 	= $row['shipping_first_name'];
+				} else {
+					//Delivery Address Fields in client
+					$deliveryAddressFlat 	= $row['address_flat'];
+					$deliveryAddressStreet 	= $row['address_street'];
+					$deliveryAddressTown 	= $row['address_town'];
+					$deliveryAddressState 	= $row['address_state'];
+					$deliveryAddressCountry = $row['address_country'];
+					$deliveryCompanyName 	= $row['company_name'];
+				}
+
+                /* Company Details*/
+
+                $date = $fn->getCPDate($row['delivery_date'], 'd-m-Y');
+
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(95,8,"INVOICE TO",1,0, 'L', 1);
+                $pdf->Cell(95,8,"DELIVERY TO",1,0, 'L', 1);
+                $pdf->Ln();
+                $pdf->SetFillColor(255,255,255);
+                $pdf->SetFont('Courier','B',10.5);
+
+                $pdf->SetFont('Courier','B',10);
+                $pdf->Cell(95, 8, $row['company_name'],'LR', 0, 'L', 1);
+            	$pdf->Cell(95, 8, $deliveryCompanyName , 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->SetFont('Courier','B',10);
+            	$pdf->Cell(95, 5, $row['billing_address_flat'], 'LR', 0, 'L', 1);
+	            $pdf->Cell(95, 5, $deliveryAddressFlat, 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->SetFont('Courier','B',10);
+	            $pdf->Cell(95, 5, $row['billing_address_street'], 'LR', 0, 'L', 1);
+	            $pdf->Cell(95, 5, $deliveryAddressStreet, 'LR', 0, 'L', 1);
+                $pdf->Ln();
+	        	$pdf->Cell(95, 5, $row['billing_address_town'], 'LR', 0, 'L', 1);
+	            $pdf->Cell(95, 5, $deliveryAddressTown, 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->SetFont('Courier','B',10);
+	            $pdf->Cell(95, 5, $row['billing_address_country'] .' - '. $row['billing_address_state'], 'LR', 0, 'L', 1);
+                $pdf->SetFont('Courier','B',10);
+	            $pdf->Cell(95, 5, $deliveryAddressCountry .' - '. $deliveryAddressState, 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 8, 'TIN NO:' . $row['tin_no'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 8, 'TIN NO:' .$row['tin_no'], 'LR', 0, 'L', 1);
+                $pdf->Ln(6);
+                $pdf->Cell(95, 8, 'CST NO:' . $row['cst_no'], 'BLR', 0, 'L', 1);
+                $pdf->Cell(95, 8, 'CST NO:' .$row['cst_no'], 'BLR', 0, 'L', 1);
+
+                $pdf->Ln(10);
+
+                /* Invoice Details*/
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(47.5,8,"INVOICE NO :",1,0, 'L', 1);
+                $pdf->SetFillColor(255,255,255);
+	            $pdf->Cell(47.5, 8, $row['invoice_code'], 1, 0, 'L', 1);
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(47.5,8,"DUE DATE :",1,0, 'L', 1);
+                $pdf->SetFillColor(255,255,255);
+	            $pdf->Cell(47.5, 8, $invoiceDueDate, 1, 0, 'L', 1);
+                $pdf->Ln(12);
+
+				$terms = $row['invoice_terms'];
+				$bank = $cpCfg['cp.bankDetails'];
+
+	            $pdf->SetFont('Courier','B',11);
+	            $pdf->SetFillColor(254,203,156);
+	            $pdf->Cell(95,8,"TERMS",1,0, 'L', 1);
+	            $pdf->Cell(95,8,"BANK DETAILS",1,0, 'L', 1);
+	            $pdf->SetFillColor(255,255,255);
+                $pdf->SetXY(10,132);
+	            $pdf->drawTextBox($terms, 95, 32, 'L', 'C', 1);
+                $pdf->SetXY(105,132);
+	            $pdf->drawTextBox($bank, 95, 32, 'L', 'C', 'BLR');
+	            $pdf->Ln(20);
+
+                /* List of order items header */
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(10,8,"S.NO",1,0, 'C', 1);
+                $pdf->Cell(65,8,"NAME OF THE ITEM",1,0, 'C', 1);
+                $pdf->Cell(37,8,"REF Code",1,0, 'C', 1);
+                $pdf->Cell(13,8,"QTY",1,0, 'C', 1);
+                $pdf->Cell(13,8,"UOM",1,0, 'C', 1);
+                $pdf->Cell(26,8,"UP",1,0, 'C', 1);
+                $pdf->Cell(26,8,"AMOUNT(" . $row['currency'] . ")",1,0, 'C', 1);
+                $pdf->Ln();
+            }
+
+            //===================================MAIN TABLE============================= //
+            $pdf->SetFillColor(255,255,255);
+            /*
+            $pdf->Cell(10, 8, $lineItemNumber, 1, 0, 'C', 1);
+            $pdf->Cell(65, 8, $row['product_title'], 1, 0, 'L', 1);
+            $pdf->Cell(37, 8, $row['part_number'], 1, 0, 'L', 1);
+            $pdf->Cell(13, 8, $row['qty'], 1, 0, 'R', 1);
+            $pdf->Cell(13, 8, $row['unit'], 1, 0, 'R', 1);
+            $pdf->Cell(26, 8, number_format($row['unit_price'],2), 1, 0, 'R', 1);
+            $pdf->Cell(26, 8, number_format(round($row['amount']),2), 1, 0, 'R', 1);
+            */
+            $pdf->Row(array($lineItemNumber, $row['product_title'] , $row['code'], $row['qty'], $row['unit'], number_format($row['unit_price'],2) , number_format($row['amount'],2) ));
+
+
+            //$pdf->Ln();
+
+            $count++;
+            $lineItemNumber++;
+            $sub_total = $row['sub_total'];
+            $notes = $row['notes'];
+            $frieght = $row['frieght'];
+            $pf = $row['p_f'];
+            $vat = $row['vat'];
+            $cst = $row['cst'];
+            $vat_value = $row['vat_value'];
+            $cst_value = $row['cst_value'];
+
+        }
+            /*$pdf->SetFillColor(255,255,255);
+            $pdf->Cell(164, 8, "SUB TOTAL", 1, 0, 'R', 1);
+            $pdf->Cell(26, 8, number_format(round($sub_total),2), 1, 0, 'R', 1);
+            $pdf->Ln();*/
+
+            $totalvalueRounded = round($totalvalue);
+			$totalFrieght = $sub_total * $frieght / 100;
+
+			if($frieght > 0 ){
+				$totalvalueRounded = $totalvalueRounded + round($totalFrieght);
+	            $pdf->SetFillColor(255,255,255);
+	            $pdf->Cell(164, 8, "ADD FRIEGHT : {$frieght}%", 1, 0, 'R', 1);
+	            $pdf->Cell(26, 8, number_format(round($totalFrieght), 2), 1, 0, 'R', 1);
+				$pdf->Ln();
+			}
+
+			if($pf > 0 ){
+                $totalpf = $sub_total * $pf / 100;
+				$totalvalueRounded = $totalvalueRounded + round($totalpf);
+	            $pdf->SetFillColor(255,255,255);
+	            $pdf->Cell(164, 8, "ADD P&F: {$pf}%", 1, 0, 'R', 1);
+	            $pdf->Cell(26, 8, number_format(round($totalpf), 2), 1, 0, 'R', 1);
+				$pdf->Ln();
+			}
+
+            $totalvalue = $totalvalue +  $totalpf + $totalFrieght;
+
+            $pdf->SetFillColor(255,255,255);
+            $pdf->Cell(164, 8, 'TOTAL', 1, 0, 'R', 1);
+            $pdf->Cell(26, 8, number_format(round($totalvalue), 2), 1, 0, 'R', 1);
+			$pdf->Ln(10);
+
+            $pdf->SetFont('Courier','B',11);
+            $pdf->Cell(190, 8, $cpCfg['cp.invoiceVatInclusive'], 0, 0, 'L');
+            $pdf->Ln(10);
+
+            $pdf->SetFont('Courier','B',11);
+            $pdf->Cell(150, 8, 'NOTE: ');
+            $pdf->Ln(5);
+            $pdf->drawTextBox($notes, 180, 55, 'L', 'T', 0);
+            $pdf->Ln(15);
+
+            $pdf->Cell(195,8, "(This is computer generated document, and does not require a signature)", 0, 0, 'L', 1);
+
+			$pdf->Output();
+
+    }
+
+    /**
+     */
+    function getInvoicePortalDisplay($row){
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $formObj = Zend_Registry::get('formObj');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+        $formAction = '';
+
+        $text = "
+        <tr class=''>
+        <td>
+            <div id='' class='invoiceDisplay'>
+                <h1>INVOICE(S)</h1>
+                <form id='orderItemPrint' class='' method='post' action='{$formAction}'>
+                    <div id='invoicePortalOuter'>
+                        {$this->getInvoicePortalDisplayDetail($row)}
+                    </div>
+                </form>
+            </div>
+        </td>
+        </tr>
+        ";
+
+        return $text;
+    }
+
+    /**
+     */
+    function getSalesReturnDisplay($row){
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $formObj = Zend_Registry::get('formObj');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+        $formAction = '';
+
+        $text = "
+        <tr class=''>
+        <td>
+            <div id='' class='invoiceDisplay'>
+                <h2>Sales Return(s)</h2>
+                <form id='orderItemPrint' class='' method='post' action='{$formAction}'>
+                    <div id='invoicePortalOuter'>
+                        {$this->getSalesReturnDisplayDetail($row)}
+                    </div>
+                </form>
+            </div>
+        </td>
+        </tr>
+        ";
+
+        return $text;
+    }
+
+    /**
+     */
+    function getInvoicePortalDisplayDetail($row){
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $dbUtil = Zend_Registry::get('dbUtil');
+        $formObj = Zend_Registry::get('formObj');
+
+        $rows  = "";
+        $rowsPvt  = "";
+        $links = "";
+        $sqlAppend = "";
+
+        $status = $fn->getReqParam('status');
+
+        if ($status) {
+            $sqlAppend .= "AND i.status = '{$status}'";
+        }
+
+        $_SESSION['selectedInvoiceIds'] = array();
+        $exp = array('isEditable' => 1);
+
+        $SQL = "
+        SELECT i.*
+            ,(
+            SELECT GROUP_CONCAT(r.receipt_code ORDER BY r.receipt_code SEPARATOR ', ')
+            FROM receipt r, invoice_receipt_history invrecpt
+            WHERE r.receipt_id = invrecpt.receipt_id
+            AND i.invoice_id = invrecpt.invoice_id
+            ) AS receipt_codes_history
+            {$sqlAppend}
+        FROM invoice i
+        WHERE i.order_id = {$row['order_id']}
+        ORDER BY i.invoice_id
+        ";
+        $result   = $db->sql_query($SQL);
+
+        $total = 0;
+        while ($rowInvoice = $db->sql_fetchrow($result)) {
+            $rowORder = $fn->getRecordRowByID('order', 'order_id', $row['order_id']);
+
+            //$urlPrint  = "index.php?_topRm=pos&module=enggCrm_pos&_spAction=printBill&invoice_code={$rowInvoice['invoice_code']}&printOnly=1&orderNo={$row['order_id']}&showHTML=0";
+            $urlPrintinvoice  = "index.php?_topRm=order&module=enggCrm_order&_spAction=Printinvoice&invoice_code={$rowInvoice['invoice_code']}&printOnly=1&orderNo={$row['order_id']}&showHTML=0";
+
+            $editInvoiceLink = '';
+            $cancelInvoiceLink = '';
+            if ($rowInvoice['status'] != 'Cancelled'){
+                $editURL = "index.php?_topRm=finance&module=enggCrm_order&_spAction=editInvoiceForm&showHTML=0&invoice_id={$rowInvoice['invoice_id']}&order_id={$row['order_id']}";
+                $editInvoiceLink = "<a href='{$editURL}' class='editInvoice'><u>Edit</u></a>";
+
+                $cancelInvoiceLink = "<a href='#' class='cancelInvoice' invoice_code='{$rowInvoice['invoice_code']}' invoice_id='{$rowInvoice['invoice_id']}'><u>Cancel Invoice</u></a>";
+            }
+
+            $invoice_date = $fn->getCPDate($rowInvoice['invoice_date'], 'd-m-Y');
+
+            if ($rowInvoice['gst_percentage'] > 0) {
+                $gst_amount = (($rowInvoice['invoice_amount'] * $rowInvoice['gst_percentage'])/100);
+                /* Taking two decimal values for gst amount */
+                $fraction_length = strlen(substr(strrchr($gst_amount, "."), 1)); // Checking the lingth of the fraction value
+                if ($fraction_length > 2) {
+                    list($integer, $fraction) = explode(".", (string) $gst_amount);
+                    $fraction = substr($fraction, 0, 2);
+                    $gst_amount = $integer . "." . $fraction;
+                }
+
+                $total = $rowInvoice['invoice_amount'] + $gst_amount;
+            } else {
+                $total = $rowInvoice['invoice_amount'];
+            }
+
+            $totalvalueRounded = number_format($total,2);
+
+            $add_class = '';
+            if ($rowInvoice['status'] == 'Cancelled') {
+                $add_class = 'highlightCell';
+            }
+
+            $inv_date = $fn->getCPDate($rowInvoice['invoice_date'], 'ym/');
+            $invoice_code = $inv_date . substr($rowInvoice['invoice_code'], 2);
+            $rows .= "
+            <tr>
+                <td>{$invoice_code}</td>
+                <!--<td>{$rowInvoice['invoice_code']}</td>-->
+                <td class='{$add_class}'>{$rowInvoice['status']}</td>
+                <td>{$invoice_date}</td>
+                <td align='right'>{$totalvalueRounded}</td>
+                <td><a href='{$urlPrintinvoice}' target='_blank'><u>Print Invoice</u></a></td>
+                <td>{$editInvoiceLink}</td>
+                <td>{$cancelInvoiceLink}</td>
+            </tr>
+            ";
+        }
+
+        $text = "
+        <table class='thinlist'>
+            <tr style='background-color:#EAEAE8;'>
+                <th>Invoice Code</th>
+                <th>Status</th>
+                <th>Invoice Date</th>
+                <th class='txtRight'>Amount</th>
+                <th>Print</th>
+                <th>Edit</th>
+                <th>Cancel</th>
+            </tr>
+            {$rows}
+            {$rowsPvt}
+        </table>
+        ";
+
+        return $text;
+    }
+
+    /**
+     */
+    function getSalesReturnDisplayDetail($row){
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $formObj = Zend_Registry::get('formObj');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+        $rows  = "";
+
+        $_SESSION['selectedInvoiceIds'] = array();
+        $exp = array('isEditable' => 1);
+
+        $SQL = "
+        SELECT srh.*
+              ,i.invoice_code
+              ,(SELECT SUM(srhh.price * srhh.qty_return) FROM sales_return_history srhh
+                WHERE srhh.invoice_id = i.invoice_id
+                AND srhh.order_id = {$row['order_id']}
+                AND srhh.date = srh.date
+                AND srhh.status IS NULL
+                ) AS sales_return_amount
+        FROM sales_return_history srh
+        LEFT JOIN (invoice i) ON (i.invoice_id = srh.invoice_id)
+        WHERE srh.order_id = {$row['order_id']}
+          AND srh.status IS NULL
+        ORDER BY i.invoice_id
+        ";
+        $result   = $db->sql_query($SQL);
+
+        $invoice_code = '';
+        $datechk = '';
+        while ($rowInvoice = $db->sql_fetchrow($result)) {
+            $total = '';
+
+            $urlPrint  = "index.php?_topRm=finance&module=enggCrm_order&_spAction=printSalesReturn&invoice_code={$rowInvoice['invoice_code']}&date={$rowInvoice['date']}&sales_return_history_id={$rowInvoice['sales_return_history_id']}&showHTML=0";
+
+            $date = $fn->getCPDate($rowInvoice['date'], 'd-m-Y');
+            //$total += $rowInvoice['price'] * $rowInvoice['qty_return'];
+            $total += $rowInvoice['sales_return_amount'];
+            $totalvalueRounded = number_format(round($total),2);
+
+            if($invoice_code != $rowInvoice['invoice_code'] || $datechk != $rowInvoice['date']){
+                $srStatus = '';
+                if($rowInvoice['status'] == 'Cancelled'){
+                    $srStatus = '(' .$rowInvoice['status']. ')';
+                }
+                $rows .= "
+                <tr>
+                    <td>{$rowInvoice['invoice_code']} {$srStatus}</td>
+                    <td>{$date}</td>
+                    <td align='right'>$totalvalueRounded</td>
+                    <td><a href='{$urlPrint}' target='_blank'>Print Sales Return</a></td>
+                </tr>
+                ";
+                $invoice_code = $rowInvoice['invoice_code'];
+                $datechk = $rowInvoice['date'];
+            }
+        }
+
+        $header ="
+        <tr style='background-color:#EAEAE8;'>
+        <th>Invoice Code</th>
+        <th>Sales Return Date</th>
+        <th>Amount</th>
+        <th>Print</th>
+        </tr>
+        ";
+
+        $text = "
+        <table class='thinlist'>
+            {$header}
+            {$rows}
+        </table>
+        ";
+
+        return $text;
+    }
+
+    /**
+     *
+     */
+     function getGenerateSalesReturnForm() {
+        $fn = Zend_Registry::get('fn');
+        $formObj = Zend_Registry::get('formObj');
+        $db = Zend_Registry::get('db');
+        $cpCfg = Zend_Registry::get('cpCfg');
+
+        unset($_SESSION['selectedOrderItemIds']);
+
+        $rows = '';
+
+        $invoice_id = $fn->getReqParam('invoice_id');
+        $order_id = $fn->getReqParam('order_id');
+        $date     = $fn->getCurrentDate();
+        $qty_balance = '';
+
+        $sqlInvoiceItem = "
+        SELECT ii.*
+              ,p.carton_no
+              ,o.record_type
+        FROM invoice_item ii
+        LEFT JOIN (product p) ON (p.product_id = ii.record_id)
+        LEFT JOIN (`invoice` i) ON (i.invoice_id = ii.invoice_id)
+        LEFT JOIN (`order` o) ON (o.order_id = i.order_id)
+        WHERE ii.invoice_id = {$invoice_id}
+        ";
+        $resultInvoiceItem = $db->sql_query($sqlInvoiceItem);
+        while ($rowII = $db->sql_fetchrow($resultInvoiceItem)) {
+            $sqlQty = "
+            SELECT SUM(srh.qty_return) AS qty_return
+            FROM sales_return_history srh
+            WHERE srh.invoice_id = {$invoice_id}
+             AND srh.invoice_item_id = {$rowII['invoice_item_id']}
+             AND srh.status IS NULL
+            ";
+            $resultQty = $db->sql_query($sqlQty);
+            $rowQty = $db->sql_fetchrow($resultQty);
+
+            if($rowII['record_type'] == 'POS'){
+                $discount_value_for_one_qty = '';
+                $discountValue = 0;
+                $discountPrice = 0;
+
+                if($rowII['discount_type'] == '%'){
+                    $discount_value_for_one_qty  =  $rowII['unit_price'] * ($rowII['discount_percentage']/100);
+                    $discountValue = $discount_value_for_one_qty;
+                    $discountPrice = $rowII['unit_price'] - $discountValue;
+                }
+                else if($rowII['discount_type']  == 'Value'){
+                    $discount_value_for_one_qty  =  $rowII['discount_percentage'];
+                    $discountValue = $discount_value_for_one_qty;
+                    $discountPrice = $rowII['unit_price'] - $discountValue;
+                }
+                $product_Price = $discountPrice;
+            }
+            else{
+                $product_Price = $rowII['unit_price'];
+            }
+
+            $inputRow = '';
+            $qtyRow = '';
+            $qty_balance = $rowII['qty'] - $rowQty['qty_return'];
+            if ($rowQty['qty_return'] != $rowII['qty']) {
+                $pfx = $rowII['invoice_item_id'] . '_' ;
+                $inputRow = "<input class='invoiceItemId' type='checkbox' name='invoiceItemId[]' value='{$rowII['invoice_item_id']}'>";
+                $qtyRow = "<input type='text' value='{$qty_balance}' id='fld_qty' class='text w50' name='{$pfx}qty_return'>";
+            }
+
+            $rows .= "
+            <tr invoiceRowItem[] = {$rowII['invoice_item_id']}>
+                <td>
+                    {$inputRow}
+                </td>
+                <td>{$rowII['item_title']}</td>
+                <td>{$rowII['carton_no']}</td>
+                <td class='sellingPrice txtRight'>{$product_Price}</td>
+                <td class=''>{$rowII['qty']}</td>
+                <td class=''>{$qtyRow}</td>
+                <td class=''>{$rowQty['qty_return']}</td>
+            </tr>
+            ";
+        }
+
+        $formAction = "index.php?_topRm=finance&module=enggCrm_order&_spAction=generateSalesReturnFormSubmit&showHTML=0";
+
+        $expNoEdit = array('isEditable' => 0);
+
+        $text = "
+        <form id='portalForm' class='yform columnar invoiceForm' method='post' action='{$formAction}'>
+            {$formObj->getTBRow('Amount', 'invoice_amount', '', $expNoEdit)}
+            {$formObj->getDateRow('Date', 'sales_return_date', $date)}
+            {$formObj->getTARow('Notes', 'notes')}
+            {$formObj->getTBRow('Issued By', 'staff_id', $_SESSION['userFullName'], $expNoEdit)}
+            <div class='button updateSalesReturnTotal'>
+                <a href='#'>Update Total</a>
+            </div>
+            <div class=''>{$formObj->getTBRow('', "error_box", '', $expNoEdit)}</div>
+            <table class='thinlist room-order-table'>
+                <thead>
+                    <th class='click-all-top'>
+                        <a href='#' class='check-all'>
+                            <img src='{$cpCfg['cp.commonImagesPathAlias']}icons/checkbox_checked.gif'>
+                        </a>
+                        <a href='#' class='uncheck-all'>
+                            <img src='{$cpCfg['cp.commonImagesPathAlias']}icons/checkbox_unchecked.gif'>
+                        </a>
+                    </th>
+                    <th>Product Name</th>
+                    <th>Carton No.</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th class=''>Qty (Sales Return)</th>
+                    <th>Qty Returned</th>
+                </thead>
+
+                <tbody>
+                    {$rows}
+                </tbody>
+            </table>
+
+            <input type='hidden' name='invoice_id' value='{$invoice_id}' />
+            <input type='hidden' name='order_id' value='{$order_id}' />
+        </form>
+        ";
+
+        return $text;
+    }
+
+    /**
+     *
+     */
+    function getPrintinvoice() {
+        $db = Zend_Registry::get('db');
+        $fn = Zend_Registry::get('fn');
+        $cpCfg = Zend_Registry::get('cpCfg');
+
+        ini_set('memory_limit', '512M');
+        set_time_limit(50000);
+
+        include_once(CP_LIBRARY_PATH.'lib_php/tcpdf/tcpdf.php');
+        include_once(CP_LOCAL_PATH.'lib/headfoot1.php');
+
+        $pdf = new MYPDF_Local(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+        // set document information
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('USS');
+        $pdf->SetSubject('Print Link');
+        $pdf->SetTitle('Print Link');
+
+        // set default header data
+        $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 04', PDF_HEADER_STRING);
+        // set header and footer fonts
+        $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+        $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+
+        // set default monospaced font
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+        // set margins
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+        $pdf->SetHeaderMargin(PDF_MARGIN_HEADER,10);
+        $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+        // set auto page breaks
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+        // set image scale factor
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
+        // set some language-dependent strings (optional)
+        if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
+            require_once(dirname(__FILE__).'/lang/eng.php');
+            $pdf->setLanguageArray($l);
+        }
+
+        /*HEADER PART AND FOOTER PART FUNCTIONS HAS BEEN ADDED IN (headfoot.php) PATH INCLUDE: (admin/lib/headfoot.php)*/
+        $pdf->AddPage();
+
+        $quote_id = $fn->getReqParam('quote_id');
+        $session_order_id = isset($_SESSION['order_id']) ? $_SESSION['order_id']  : '';
+        $invoice_code = $fn->getReqParam('invoice_code');
+
+        $SQL = "
+        SELECT ini.*
+                ,c.company_name
+                ,o.cust_address1
+                ,o.cust_address2
+                ,o.cust_address_country
+                ,o.cust_address_po_code
+                ,c.company_id
+                ,i.invoice_date
+                ,ini.unit_price
+                ,i.invoice_code
+                ,i.invoice_terms
+                ,i.invoice_due_date
+                ,i.notes
+                ,i.discount
+                ,q.quote_code
+                ,q.quote_date
+                ,co.first_name
+                ,co.salutation
+                ,ROUND((ini.qty * ini.unit_price), 2) AS amount
+              ,(SELECT ROUND(SUM(init.qty * init.unit_price), 2) FROM invoice_item init
+               WHERE init.invoice_id = ini.invoice_id) AS sub_total
+        FROM invoice_item ini
+        LEFT JOIN invoice i ON (i.invoice_id = ini.invoice_id)
+        LEFT JOIN `order` o ON (o.order_id = i.order_id)
+        LEFT JOIN company c ON (c.company_id = o.company_id)
+        LEFT JOIN contact co ON (co.contact_id = o.contact_id)
+        LEFT JOIN quote q ON (q.quote_id = o.quote_id)
+        WHERE i.invoice_code = '{$invoice_code}'
+        ORDER BY ini.invoice_item_id
+        ";
+        $result = $db->sql_query($SQL);
+        $result2 = $db->sql_query($SQL);
+        $company = $db->sql_fetchrow($result2);
+        //============================================================================= //
+        $today = date("d-m-Y");
+        $invoice_date   = $fn->getCPDate($company['invoice_date'], 'd-m-Y');
+
+        $tbl1 = '
+        <table border="0" width="100%">
+            <tr>
+                <td align="center" style="font-size:16px; font-weight:bold">TAX INVOICE</td>
+            </tr>
+        </table>
+        ';
+
+        $address2 = '';
+        if($company['cust_address2']) {
+            $address2 = '
+            <tr>
+                <td style="font-size:12px;">'.strtoupper($company['cust_address2']).'</td>
+                <td colspan="2"></td>
+            </tr>
+            ';
+        }
+
+        $inv_date = $fn->getCPDate($company['invoice_date'], 'ym/');
+        $invoice_code = $inv_date . substr($company['invoice_code'], 2);
+        $tbl2 ='<table border="0" width="100%" cellpadding="">
+                    <tr>
+                        <td width="65%" style="font-size:12px; font-weight:bold;">TO: </td>
+                        <td width="21%" align="right" style="font-size:12px; font-weight:bold;"><b>GST REG NO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b></td>
+                        <td width="14%" align="right" style="font-size:12px; font-weight:bold;">'.$cpCfg['cp.regNo'].'</td>
+                    </tr>
+                    <tr>
+                        <td width="65%" style="font-size:12px; font-weight:bold;">'.strtoupper($company['company_name']).'</td>
+                        <td width="21%" align="right" style="font-size:12px; font-weight:bold;"><b>TAX INVOICE NO: </b></td>
+                        <td width="14%" align="right" style="font-size:12px; font-weight:bold;">IN-'.$invoice_code.'</td>
+                    </tr>
+                    <tr>
+                        <td width="65%" style="font-size:12px;">'.strtoupper($company['cust_address1']).'</td>
+                        <td width="21%" align="right" style="font-size:12px; font-weight:bold;"><b>DATE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b></td>
+                        <td width="14%" align="right" style="font-size:12px; font-weight:bold;">'.$invoice_date.'</td>
+                    </tr>
+                    '.$address2.'
+                    <tr>
+                        <td style="font-size:12px;">'.strtoupper($company['cust_address_country']).' - '.$company['cust_address_po_code'].'</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td width="65%" style="font-size:12px; font-weight:bold;">ATTN:&nbsp;'.strtoupper($company['salutation']).' '.strtoupper($company['first_name']).'</td>
+                        <td colspan="2"></td>
+                    </tr>
+                </table>';
+
+        $tbl3 ='<table border="1" cellpadding="2" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="5%" align="center" style="font-size:12px; font-weight:bold;">S/N</th>
+                            <th width="44%" align="center" style="font-size:12px; font-weight:bold;">Description</th>
+                            <th width="13%" align="center" style="font-size:12px; font-weight:bold;">QTY</th>
+                            <th width="19%" align="center" style="font-size:12px; font-weight:bold;">UNIT PRICE (S$)</th>
+                            <th width="19%" align="center" style="font-size:12px; font-weight:bold;"> TOTAL AMT (S$)</th>
+                        </tr>
+                    </thead>';
+        $sub_total = '';
+        $count = 1;
+
+        while ($row = $db->sql_fetchrow($result)) {
+            if($row['item_title']) {
+                $tbl3 = $tbl3.'<tr>
+                                    <td width="5%"></td>
+                                    <td width="44%" style="font-size:12px; font-weight:bold;"><u>'.$row['item_title'].'</u></td>
+                                    <td width="13%"></td>
+                                    <td width="19%"></td>
+                                    <td width="19%"></td>
+                                </tr>
+                        ';
+            }
+
+            $tbl3 = $tbl3.'<tr>
+                                <td width="5%" align="center" style="font-size:12px;">'.$count.'</td>
+                                <td width="44%" style="font-size:12px;">'.nl2br($row['description']).'</td>
+                                <td width="13%" align="center" style="font-size:12px;">'.$row['qty'].'</td>
+                                <td width="19%" align="center" style="font-size:12px;">'.$row['unit_price'].'</td>
+                                <td width="19%" align="right" style="font-size:12px;">'.number_format($row['amount'], 2).'</td>
+                            </tr>
+                    ';
+
+            $sub_total = $row['sub_total'];
+            $gsttaxvalue = $cpCfg['cp.gstPercentage'] ;
+            $gstvalue = $row['sub_total'] * $gsttaxvalue / 100;
+            $totalvalue = $gstvalue + $sub_total;
+            $count++;
+        }
+
+        $amount_in_words = $fn->getConvertNumber($totalvalue);
+        $tbl3 = $tbl3.'<tr>
+                          <td align="right" colspan="4" style="font-size:12px; font-weight:bold;">SUB TOTAL</td>
+                          <td align="right" style="font-size:12px; font-weight:bold;">'.number_format($sub_total,2).'</td>
+                      </tr>
+                      <tr>
+                          <td colspan="4" align="right" style="font-size:12px; font-weight:bold;">GST '.$cpCfg['cp.gstPercentage'].'% </td>
+                          <td align="right" style="font-size:12px; font-weight:bold;">'.number_format($gstvalue, 2).'</td>
+                       </tr>
+                       <tr>
+                          <td colspan="4" align="right" style="font-size:12px; font-weight:bold;">TOTAL AMOUNT</td>
+                          <td align="right" style="font-size:12px; font-weight:bold;">'.number_format($totalvalue, 2).'</td>
+                       </tr>
+                    </table>
+                    <table border="0" width="100%">
+                        <tr>
+                            <td style="line-height:20px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:12px;">TOTAL = <b>'.strtoupper($amount_in_words).'</b></td>
+                        </tr>
+                    </table>';
+
+        $tbl4 = '
+        <table border="0" width="100%">
+            <tr>
+                <td style="height: 70px;"></td>
+            </tr>
+            <tr>
+                <td width="40%" style="border-bottom:2px solid black"></td>
+            </tr>
+            <tr>
+                <td style="font-size:12px; font-weight:bold;">'.$cpCfg['cp.companyName'].'</td>
+            </tr>
+            <tr>
+                <td style="height: 70px;"></td>
+            </tr>
+            <tr>
+                <td width="100%" style="font-size:12px;">Please make all cheques payable to <b>Pylon Tech Pte Ltd.</b></td>
+            </tr>
+        </table>
+        ';
+
+        $pdf->writeHTML($tbl1, true, false, false, false, '');
+        $pdf->ln(-4);
+        $pdf->writeHTML($tbl2, true, false, false, false, '');
+        $pdf->writeHTML($tbl3, true, false, false, false, '');
+        $pdf->writeHTML($tbl4, true, false, false, false, '');
+
+        $download_title = $cpCfg['cp.companyName'] . '-' . $company['invoice_code'] . '-Invoice.pdf';
+        $pdf->Output($download_title, 'I');
+    }
+
+    /**
+     *
+     */
+    function getPrintSalesReturn() {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $tv = Zend_Registry::get('tv');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $searchVar = Zend_Registry::get('searchVar');
+        $media = Zend_Registry::get('media');
+        $cpPaths = Zend_Registry::get('cpPaths');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+        ini_set('memory_limit', '512M');
+
+        set_time_limit(50000);
+
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf/fpdf.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf-extra/html2pdf.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf-extra/html_table1.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf-extra/mc_table.php');
+
+        //$pdf = new MYPDF();
+        $pdf = new PDF_MC_Table();
+        $pdf->AddPage();
+        $pdf->SetFont('Arial','',11);
+
+        $invoiceHeading = '';
+
+        $invoice_code = $fn->getReqParam('invoice_code');
+        $date = $fn->getReqParam('date');
+        $sales_return_history_id = $fn->getReqParam('sales_return_history_id');
+
+        $SQLInvoice = "
+        SELECT *
+        FROM `invoice`
+        WHERE invoice_code = '{$invoice_code}'
+        ";
+        $resultInvoice = $db->sql_query($SQLInvoice);
+        $invoiceRec = $db->sql_fetchrow($resultInvoice);
+
+        //TO CHECK IF THE SUM OF DISCOUNT TYPE(%) HAS VALUE OR NOT AND ASSIGN THE QUERY IF IT HAS VALUE ELSE ASSIGN ZERO
+        $subSqlForPercentSum = "
+        SELECT SUM(round(((ini.cost_price * ini.discount_percentage )/100)* sr.qty_return,2)) as discount_sum
+        FROM sales_return_history sr
+        LEFT JOIN invoice_item ini ON (ini.invoice_item_id = sr.invoice_item_id)
+        WHERE sr.invoice_id = {$invoiceRec['invoice_id']}
+            AND ini.discount_type = '%'
+            AND sr.status IS NULL
+        ";
+        $resultSubSql = $db->sql_query($subSqlForPercentSum);
+        $rowSql       = $db->sql_fetchrow($resultSubSql);
+        if($rowSql['discount_sum'] > 0){
+            $subSqlForPercentSum = "
+            SELECT SUM(round(((ini.cost_price * ini.discount_percentage)/100)* sr.qty_return,2))
+            FROM sales_return_history sr
+            LEFT JOIN invoice_item ini ON (ini.invoice_item_id = sr.invoice_item_id)
+            WHERE sr.invoice_id = {$invoiceRec['invoice_id']}
+                AND ini.discount_type = '%'
+                AND sr.status IS NULL
+            ";
+        }
+        else{
+            $subSqlForPercentSum = 0;
+        }
+
+        //TO CHECK IF THE SUM OF DISCOUNT TYPE(VALUE) HAS VALUE OR NOT AND ASSIGN THE QUERY IF IT HAS VALUE ELSE ASSIGN ZERO
+        $subSqlForValueSum ="
+        SELECT SUM(round(ini.discount_percentage  * sr.qty_return,2)) as discount_sum
+        FROM sales_return_history sr
+        LEFT JOIN invoice_item ini ON (ini.invoice_item_id = sr.invoice_item_id)
+        WHERE sr.invoice_id = {$invoiceRec['invoice_id']}
+            AND ini.discount_type = 'Value'
+            AND sr.status IS NULL
+        ";
+        $resultSubSql = $db->sql_query($subSqlForValueSum);
+        $rowSql       = $db->sql_fetchrow($resultSubSql);
+        if($rowSql['discount_sum'] > 0){
+            $subSqlForValueSum ="
+            SELECT SUM(round(ini.discount_percentage  * sr.qty_return,2))
+            FROM sales_return_history sr
+            LEFT JOIN invoice_item ini ON (ini.invoice_item_id = sr.invoice_item_id)
+            WHERE sr.invoice_id = {$invoiceRec['invoice_id']}
+                AND ini.discount_type = 'Value'
+                AND sr.status IS NULL
+            ";
+        }
+        else{
+            $subSqlForValueSum = 0;
+        }
+
+        $SQL = "
+        SELECT sr.*
+              ,ini.item_title AS product_title
+              ,ini.discount_percentage
+              ,ini.discount_type
+              ,ini.vat
+              ,ini.cost_price
+              ,sr.qty_return AS qty
+              ,p.title AS product_title1
+              ,p.unit
+              ,CONCAT_WS('::', p.carton_no, p.batch_no, p.model) code
+              ,p.item_code
+              ,p.part_number
+              ,c.company_name
+              ,c.address_flat
+              ,c.address_street
+              ,c.address_town
+              ,c.address_state
+              , (SELECT gc.name FROM geo_country gc
+                 WHERE gc.country_code = c.address_country)
+                AS address_country
+              ,c.billing_address_flat
+              ,c.billing_address_street
+              ,c.billing_address_town
+              ,c.billing_address_state
+              , (SELECT gc.name FROM geo_country gc
+                 WHERE gc.country_code = c.billing_address_country)
+                AS billing_address_country
+              ,c.fax
+              ,c.phone
+              ,c.tin_no
+              ,c.cst_no
+              ,i.invoice_date
+              ,q.delivery_date
+              ,q.delivery_location
+              ,ini.unit_price
+              ,i.invoice_code
+              ,i.invoice_code_vat
+              ,i.invoice_code_vat_quote
+              ,i.invoice_terms
+              ,i.invoice_due_date
+              ,i.notes
+              ,i.cst
+              ,i.cst_value
+              ,i.vat_value
+              ,i.vat AS invoice_vat
+              ,i.frieght
+              ,i.p_f
+              ,o.record_type
+              ,o.order_id
+              ,o.shipping_address1
+              ,o.shipping_first_name
+              ,o.shipping_address2
+              ,o.shipping_address_city
+              ,o.shipping_address_state
+               ,(SELECT gc.name FROM geo_country gc
+                 WHERE gc.country_code = o.shipping_address_country)
+                 AS shipping_address_country
+              ,q.quote_code
+              ,q.currency
+              ,sr.qty_return * sr.price AS amount
+              ,(ini.unit_price * sr.qty_return) AS Price_POS
+              ,(SELECT
+              ($subSqlForPercentSum)
+               +
+              ($subSqlForValueSum)) as discount_percentage_amount_sum
+              ,(SELECT SUM(((inih.cost_price * inih.vat )/100)* inih.qty)
+                FROM invoice_item inih
+                WHERE inih.invoice_id = ini.invoice_id) AS vat_amount_sum
+              ,(SELECT SUM(srh.qty_return * srh.price)
+                FROM sales_return_history srh
+                WHERE srh.invoice_id = sr.invoice_id
+                  AND srh.date = sr.date
+                  AND srh.status IS NULL) AS selling_price_sum
+              ,(SELECT SUM(srh.qty_return * init.cost_price) FROM sales_return_history srh
+                LEFT JOIN invoice_item init ON (init.invoice_item_id = srh  .invoice_item_id)
+                WHERE srh.invoice_id = sr.invoice_id
+                  AND srh.date = sr.date
+                  AND srh.status IS NULL) AS sub_total
+        FROM sales_return_history sr
+        LEFT JOIN invoice_item ini ON (ini.invoice_item_id = sr.invoice_item_id)
+        LEFT JOIN product p ON (p.product_id = ini.record_id)
+        LEFT JOIN invoice i ON (i.invoice_id = sr.invoice_id)
+        LEFT JOIN `order` o ON (o.order_id = sr.order_id)
+        LEFT JOIN company c ON (c.company_id = o.company_id)
+        LEFT JOIN quote q ON (q.quote_id = o.quote_id)
+        LEFT JOIN product_group pg ON (p.product_group_id = pg.product_group_id)
+        WHERE i.invoice_code = '{$invoice_code}'
+        AND sr.date = '{$date}'
+        ORDER BY ini.invoice_item_id, pg.sort_order ASC, p.title
+        ";
+        $result = $db->sql_query($SQL);
+
+        $numRows  = $db->sql_numrows($result);
+
+        $today = date("Y-m-d");
+        if ($numRows == 0){
+            $pdf->SetXY(30,30);
+            $pdf->Cell(50, 20, "Please set the values for your Order and print the PDF");
+            $pdf->Output();
+            return;
+        }
+
+        $count = 0;
+        $total = 0;
+        $discount_price = 0;
+        $rows = "";
+        $lineItemNumber = 1;  // To increment the line item in receipt
+        $printTaxName = '';
+        $gsttaxvalue = '';
+        $gstvalue = '';
+        $totalvalue = '';
+        $totalpf = '';
+        $record_type = '';
+        $discountValueTotal = 0;
+        $total_discount_value_sum = 0;
+        $total_vat_sum = 0;
+
+        //============================================================================= //
+        $pdf->SetFont('Arial','',11);
+        //syed:multi text code to set width of each column and alignment
+        $pdf->SetWidths(array(10, 40, 40, 10, 10, 22, 18, 15, 25));
+        $pdf->SetAligns(array('L', 'L', 'L', 'R', 'L', 'R', 'R', 'R', 'R'));
+
+        while ($row = $db->sql_fetchrow($result)) {
+            $discount_value_for_one_qty = 0;
+            $discountValue =0;
+
+            if($row['record_type'] == 'POS'){
+                $pdf->SetWidths(array(10, 45, 50, 10, 10, 22, 18, 25));
+                $pdf->SetAligns(array('L', 'L', 'L', 'R', 'L', 'R', 'R', 'R', 'R'));
+            }
+
+            if($row['record_type'] == 'POS'){
+                $amount = $row['Price_POS'];
+            }else{
+                $amount = $row['amount'];
+            }
+
+            if($row['discount_percentage'] > 0){
+                if($row['discount_type'] == '%'){
+                    $discount_value_for_one_qty  =  $row['cost_price'] * ($row['discount_percentage']/100);
+                    $discountValue = $discount_value_for_one_qty * $row['qty'];
+                }
+                else if($row['discount_type']  == 'Value'){
+                    $discount_value_for_one_qty  =  $row['discount_percentage'];
+                    $discountValue = $discount_value_for_one_qty * $row['qty'];
+                }
+                $discountValueTotal += $discountValue;
+
+            }
+            $total_discount_value_sum += $discountValue;
+            $vat_for_one_qty = 0;
+            $vatAmount =0;
+
+            if($row['vat'] > 0){
+                //$vat_for_one_qty  =  $row['cost_price'] * $row['vat']/100;
+                $vat_for_one_qty  =  ($row['cost_price'] - $discount_value_for_one_qty) * $row['vat']/100;
+                $vatAmount = $vat_for_one_qty;
+            }
+
+            if ($count == 0){
+                /* Logo of the institution */
+                $pdf->Image('images/logo-print.gif',10,5,45);
+                $pdf->SetXY(10,10);
+                $pdf->SetFont('Courier','B',9);
+                $pdf->Cell(50, 20, $cpCfg['cp.companyName']);
+                $pdf->Ln(5);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf7']);
+                $pdf->Ln(5);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf6']);
+                $pdf->Ln(5);
+                $pdf->Cell(50, 20, $cpCfg['printWebAddress']);
+
+                $creationDate   = $fn->getCPDate($row['date'], 'd-m-Y');
+                $invoiceDueDate = $fn->getCPDate($row['date'], 'd-m-Y');
+                $currency = $row['currency'];
+
+                $totalvalue = $row['sub_total'];
+
+                /* Company address */
+                //Address to be got from settings
+                $pdf->SetXY(130,0);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf1']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,5);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf2']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,10);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf3']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130, 15);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf4']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,20);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf5']);
+                $pdf->Ln(5);
+                /*$pdf->SetXY(130,25);
+                $pdf->Cell(50, 20, $cpCfg['printTelephoneAndFax']);
+                $pdf->Ln(5);*/
+                $pdf->SetXY(130,25);
+                $pdf->Cell(50, 20, $cpCfg['printEmailAddress']);
+
+                /* Header */
+                $pdf->SetFont('Courier','BU',10);
+                $pdf->SetXY(80, 45);
+                $pdf->Cell(50, 20, $invoiceHeading . "Sales Return", 0, 0, 'C');
+                $pdf->SetFont('Courier','B',9);
+                $pdf->SetX(130);
+                $pdf->Cell(31, 20, "DATE : " . $creationDate, 0, 0, 'L');
+                $pdf->Ln(15);
+
+                /* Company Details*/
+
+                if ($row['shipping_address1'] != ''
+                    || $row['shipping_address2'] != ''
+                    || $row['shipping_address_city'] != ''
+                    || $row['shipping_address_state'] != ''
+                    || $row['shipping_address_country'] != '') {
+                        //Delivery Address Fields in Order
+                        $deliveryAddressFlat    = $row['shipping_address1'];
+                        $deliveryAddressStreet  = $row['shipping_address2'];
+                        $deliveryAddressTown    = $row['shipping_address_city'];
+                        $deliveryAddressState   = $row['shipping_address_state'];
+                        $deliveryAddressCountry = $row['shipping_address_country'];
+                        $deliveryCompanyName    = $row['shipping_first_name'];
+                } else {
+                    //Delivery Address Fields in client
+                    $deliveryAddressFlat    = $row['address_flat'];
+                    $deliveryAddressStreet  = $row['address_street'];
+                    $deliveryAddressTown    = $row['address_town'];
+                    $deliveryAddressState   = $row['address_state'];
+                    $deliveryAddressCountry = $row['address_country'];
+                    $deliveryCompanyName    = $row['company_name'];
+                }
+
+                /* Company Details*/
+
+                $date = $fn->getCPDate($row['delivery_date'], 'd-m-Y');
+
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(95,8,"INVOICE TO",1,0, 'L', 1);
+                $pdf->Cell(95,8,"DELIVERY TO",1,0, 'L', 1);
+                $pdf->Ln();
+                $pdf->SetFillColor(255,255,255);
+
+                $pdf->Cell(95, 8, $row['company_name'],'LR', 0, 'L', 1);
+                $pdf->Cell(95, 8, $deliveryCompanyName , 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 5, $row['billing_address_flat'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 5, $deliveryAddressFlat, 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 5, $row['billing_address_street'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 5, $deliveryAddressStreet, 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 5, $row['billing_address_town'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 5, $deliveryAddressTown, 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 5, $row['billing_address_country'] .' - '. $row['billing_address_state'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 5, $deliveryAddressCountry .' - '. $deliveryAddressState, 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 8, 'TIN NO:' . $row['tin_no'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 8, 'TIN NO:' .$row['tin_no'], 'LR', 0, 'L', 1);
+                $pdf->Ln(6);
+                $pdf->Cell(95, 8, 'CST NO:' . $row['cst_no'], 'BLR', 0, 'L', 1);
+                $pdf->Cell(95, 8, 'CST NO:' .$row['cst_no'], 'BLR', 0, 'L', 1);
+
+                $pdf->Ln(10);
+
+               if($row['record_type'] != 'POS'){
+
+                   if($row['invoice_vat'] == 1){
+                        $invoiceCode = 'INVQ -' . $row['invoice_code_vat_quote'];
+                    } else {
+                        $invoiceCode = $row['invoice_code'];
+                    }
+                }
+                else{
+                    $invoiceCode = 'INVT -' .$row['invoice_code_vat'];
+                }
+
+
+                /* Invoice Details*/
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(47.5,8,"INVOICE NO :",1,0, 'L', 1);
+                $pdf->SetFillColor(255,255,255);
+                $pdf->Cell(47.5, 8, $invoiceCode, 1, 0, 'L', 1);
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(47.5,8,"Sales Return Date :",1,0, 'L', 1);
+                $pdf->SetFillColor(255,255,255);
+                $pdf->Cell(47.5, 8, $invoiceDueDate, 1, 0, 'L', 1);
+                $pdf->Ln(12);
+
+                /* List of order items header */
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(10,8,"S.NO",1,0, 'C', 1);
+
+                if($row['record_type'] != 'POS'){
+                    $pdf->Cell(40,8,"ITEM NAME",1,0, 'C', 1);
+                    $pdf->Cell(40,8,"ITEM CODE",1,0, 'C', 1);
+                }
+                else{
+                    $pdf->Cell(45,8,"ITEM NAME",1,0, 'C', 1);
+                    $pdf->Cell(50,8,"ITEM CODE",1,0, 'C', 1);
+                }
+
+                $pdf->Cell(10,8,"QTY",1,0, 'C', 1);
+                $pdf->Cell(10,8,"UOM",1,0, 'C', 1);
+                $pdf->Cell(22,8,"UNIT PRICE",1,0, 'C', 1);
+                $pdf->Cell(18,8,"DISCOUNT",1,0, 'C', 1);
+
+                if ($row['record_type'] != 'POS'){
+
+                    $pdf->Cell(15,8,"VAT",1,0, 'C', 1);
+                    $pdf->Cell(25,8,"AMOUNT(" . $row['currency'] . ")",1,0, 'C', 1);
+                    $pdf->Ln();
+                }
+                else{
+
+                    $pdf->Cell(25,8,"AMOUNT",1,0, 'C', 1);
+                    $pdf->Ln();
+                }
+            }
+
+            //$total_discount_value_sum += $discount_value_for_one_qty;
+            $total_vat_sum += $vatAmount;
+
+            //===================================MAIN TABLE============================= //
+            $discount_value_for_one_qty = number_format($discount_value_for_one_qty, 2);
+
+            $pdf->SetFillColor(255,255,255);
+            /*
+            $pdf->Cell(10, 8, $lineItemNumber, 1, 0, 'C', 1);
+            $pdf->Cell(65, 8, $row['product_title'], 1, 0, 'L', 1);
+            $pdf->Cell(37, 8, $row['part_number'], 1, 0, 'L', 1);
+            $pdf->Cell(13, 8, $row['qty'], 1, 0, 'R', 1);
+            $pdf->Cell(13, 8, $row['unit'], 1, 0, 'R', 1);
+            $pdf->Cell(26, 8, number_format($row['unit_price'],2), 1, 0, 'R', 1);
+            $pdf->Cell(26, 8, number_format(round($row['amount']),2), 1, 0, 'R', 1);
+            */
+
+            if ($row['record_type'] != 'POS'){
+                $pdf->Row(array($lineItemNumber, $row['product_title'] , $row['code'], $row['qty'], $row['unit'], number_format($row['cost_price'],2) , '- ' . $discount_value_for_one_qty, number_format($vatAmount, 2), number_format($amount,2) ));
+            }
+            else{
+                $pdf->Row(array($lineItemNumber, $row['product_title'] , $row['code'], $row['qty'], $row['unit'], number_format($row['cost_price'],2) , '- ' . $discount_value_for_one_qty, number_format($amount,2) ));
+            }
+
+            //$pdf->Ln();
+
+            $count++;
+            $lineItemNumber++;
+            $sub_total = $row['sub_total'];
+            $notes = $row['notes'];
+            $vat_value = $row['vat_value'];
+            //$discount = $row['discount_percentage_amount_sum'];
+            $discount  = $total_discount_value_sum;
+            $record_type = $row['record_type'];
+
+            $vat_amount_sum = $row['selling_price_sum'] - ($sub_total - $discount);
+        }
+
+            $totalvalueRounded = $totalvalue;
+
+            $subtotalvalue = $totalvalue;
+            if ($record_type != 'POS'){
+                $totalvalue = $totalvalue + $vat_amount_sum - $discount;
+            }
+            else{
+                $totalvalue = $totalvalue - $discount;
+            }
+            $total_vat_sum = number_format(round($total_vat_sum),2);
+            $vat_amount_sum = number_format(round($vat_amount_sum),2);
+            $discount = number_format(round($discount),2);
+
+            $pdf->Cell(165,8,"SUB TOTAL",1,0, 'R', 1);
+            $pdf->Cell(25,8,number_format(round($subtotalvalue), 2),1,0, 'R', 1);
+            $pdf->Ln();
+
+            $pdf->Cell(165,8,"TOTAL DISCOUNT",1,0, 'R', 1);
+            $pdf->Cell(25,8,'- ' . $discount,1,0, 'R', 1);
+            $pdf->Ln();
+
+            if($record_type != 'POS'){
+                $pdf->Cell(165,8,"TOTAL VAT",1,0, 'R', 1);
+                //$pdf->Cell(25,8,$vat_amount_sum,1,0, 'R', 1);
+                $pdf->Cell(25,8,$total_vat_sum,1,0, 'R', 1);
+                $pdf->Ln();
+            }
+
+            $pdf->SetFillColor(255,255,255);
+            $pdf->Cell(165, 8, 'TOTAL', 1, 0, 'R', 1);
+            $pdf->Cell(25, 8, number_format(round($totalvalue), 2), 1, 0, 'R', 1);
+            $pdf->Ln(10);
+
+            $pdf->Cell(190, 8, $cpCfg['cp.invoiceVatInclusive'], 0, 0, 'L');
+            $pdf->Ln(10);
+
+            $pdf->Cell(150, 8, 'NOTE: ');
+            $pdf->Ln(5);
+            $pdf->drawTextBox($notes, 180, 55, 'L', 'T', 0);
+            $pdf->Ln(15);
+
+            $pdf->Cell(195,8, "(This is computer generated document, and does not require a signature)", 0, 0, 'L', 1);
+
+            $pdf->Output();
+    }
+
+    /**
+     *
+     */
+    function getReceiptPortalDisplay($row){
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $formObj = Zend_Registry::get('formObj');
+
+        $rows = "";
+        $links= "";
+        $sqlAppend = '';
+        $exp = array('isEditable' => 1);
+
+        $receiptRec = $fn->getRecordRowByID('receipt', 'order_id', $row['order_id']);
+
+        $SQL = "
+        SELECT DISTINCT r.receipt_id
+              ,r.*
+        FROM receipt r
+        LEFT JOIN (invoice_receipt_history irh) ON (r.receipt_id = irh.receipt_id)
+        WHERE r.order_id = {$row['order_id']}
+              {$sqlAppend}
+        ORDER BY r.receipt_id
+        ";
+        $result   = $db->sql_query($SQL);
+        $numRows  = $db->sql_numrows($result);
+
+        $total = '';
+        $discount = '';
+        $tdCheckBox = '';
+        $count = 1;
+
+        while ($rowReceipt = $db->sql_fetchrow($result)) {
+
+            $urlPrint = "index.php?_topRm=finance&module=enggCrm_order&_spAction=printReceipt&receipt_code={$rowReceipt['receipt_code']}&order_id={$row['order_id']}&showHTML=0";
+
+            $expMedia = array('condn' => " AND media_type = 'attachment' AND actual_file_name LIKE '%{$rowReceipt['receipt_code']}%'");
+            $mediaRec = $fn->getRecordRowByID('media', 'record_id', $rowReceipt['receipt_id'], $expMedia);
+            $mediaLink = "index.php?plugin=common_media&_spAction=saveMedia&room=pms_receipt&recordType=attachment&media_id={$mediaRec['media_id']}&showHTML=0";
+
+            $receipt_date = $fn->getCPDate($rowReceipt['date'], 'd-m-Y');
+
+            $cancelReceiptLink = '';
+            if ($rowReceipt['receipt_status'] != 'Cancelled') {
+                $cancelReceiptLink = "<a href='#' class='cancelReceipt' order_id =
+                '{$row['order_id']}' receipt_code='{$rowReceipt['receipt_code']}'><u>Cancel Receipt</u></a>";
+            }
+
+            $add_class = '';
+            if ($rowReceipt['receipt_status'] == 'Cancelled') {
+                $add_class = 'highlightCell';
+                $cancelReceiptLink = "";
+            }
+
+            $receipt_amount = number_format($rowReceipt['amount'],2);
+            $urlReceiptDetails = "index.php?module=enggCrm_order&_spAction=viewReceiptDetails&receipt_code={$rowReceipt['receipt_code']}&showHTML=0";
+
+            $rows .= "
+            <tr>
+                <td>{$rowReceipt['receipt_code']}</td>
+                <td class='{$add_class}'>{$rowReceipt['receipt_status']}</td>
+                <td>{$receipt_date}</td>
+                <td>{$rowReceipt['mode_of_payment']}</td>
+                <td align='right'>{$receipt_amount}</td>
+                <td><a class='viewReceiptDetails jqui-dialog' href='{$urlReceiptDetails}'><u>Details</u></a></td>
+                <td><a href='{$urlPrint}' target='_blank'><u>Print Receipt</u></a></td>
+                <td>{$cancelReceiptLink}</td>
+            </tr>
+            ";
+            if($rowReceipt['receipt_status'] == 'Paid'){
+                $total += $rowReceipt['amount'];
+            }
+            $count++;
+        }
+        $total = "
+            <tr style='background-color:#EAEAE8;text-align:center;font-weight:bold;'>
+                <td colspan=7>Total : $total</td>
+            </tr>
+        ";
+
+        $header ="
+        <tr style='background-color:#EAEAE8;'>
+        <th>Receipt Code</th>
+        <th>Status</th>
+        <th>Receipt Date</th>
+        <th>Mode of Payment</th>
+        <th class='txtRight'>Receipt Amount</th>
+        <th>View</th>
+        <th>Print</th>
+        <th>Cancel</th>
+        </tr>
+        ";
+
+        $text = "
+        <h1>RECEIPT(S)</h1>
+        <tr class=''>
+        <td>
+            <div id='' class='linkPortalWrapper pms_company__pms_orderLink'>
+                <table class='thinlist receiptDisplay'>
+                    {$header}
+                    {$rows}
+                </table>
+            </div>
+        </td>
+        </tr>
+        ";
+
+        return $text;
+    }
+
+    /**
+     *
+     */
+    function getPrintReceipt() {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $tv = Zend_Registry::get('tv');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $searchVar = Zend_Registry::get('searchVar');
+        $media = Zend_Registry::get('media');
+        $cpPaths = Zend_Registry::get('cpPaths');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+        ini_set('memory_limit', '512M');
+        set_time_limit(50000);
+        include_once(CP_LIBRARY_PATH.'lib_php/tcpdf/tcpdf.php');
+        include_once(CP_LOCAL_PATH.'lib/headfoot1.php');
+
+        $pdf = new MYPDF_Local(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+        // set document information
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('Green City Scape');
+        $pdf->SetSubject('Print Link');
+        $pdf->SetTitle('Print Link');
+
+        // set default header data
+        $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 04', PDF_HEADER_STRING);
+        // set header and footer fonts
+        $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+        $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+
+        // set default monospaced font
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+        // set margins
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+        $pdf->SetHeaderMargin(PDF_MARGIN_HEADER,10);
+        $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+        // set auto page breaks
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+        // set image scale factor
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
+        // set some language-dependent strings (optional)
+        if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
+            require_once(dirname(__FILE__).'/lang/eng.php');
+            $pdf->setLanguageArray($l);
+        }
+
+        /*HEADER PART AND FOOTER PART FUNCTIONS HAS BEEN ADDED IN (headfoot.php) PATH INCLUDE: (admin/lib/headfoot.php)*/
+        $pdf->AddPage();
+        /*
+        This fucntions requires
+        1.total invoice amount for thie receipt
+        2.Amount already paid for this invoice
+        3. Amount Paid now
+        4. Balance to be calculated.
+        */
+
+        $receipt_code = $fn->getReqParam('receipt_code');
+        $order_id = $fn->getReqParam('order_id');
+
+        $SQL = "
+        SELECT o.cust_company_name
+              ,o.cust_address1
+              ,o.cust_address2
+              ,o.cust_address_country
+              ,o.cust_address_po_code
+              ,i.creation_date
+              ,i.invoice_id AS invoice_id_main
+              ,i.invoice_code
+              ,i.invoice_amount
+              ,i.invoice_date
+              ,r.receipt_id
+              ,r.amount AS receipt_amount
+              ,r.receipt_code
+              ,r.mode_of_payment
+              ,r.remarks
+              ,r.date AS receipt_date
+        FROM receipt r
+        LEFT JOIN invoice_receipt_history irh ON (r.receipt_id = irh.receipt_id)
+        LEFT JOIN invoice i ON (i.invoice_id = irh.invoice_id)
+        LEFT JOIN `order` o ON (o.order_id = i.order_id)
+        LEFT JOIN company c ON (c.company_id = o.company_id)
+        LEFT JOIN quote q ON (q.quote_id = o.quote_id)
+        WHERE r.receipt_code = '{$receipt_code}'
+          AND i.order_id = {$order_id}
+        ";
+        $result  = $db->sql_query($SQL);
+        $result2 = $db->sql_query($SQL);
+        $numRows = $db->sql_numrows($result);
+        $rowRec  = $db->sql_fetchrow($result);
+
+        $today = date("Y-m-d");
+        if ($numRows == 0){
+            $pdf->SetXY(30,30);
+            $pdf->Cell(50, 20, "Please set the values for your Order and print the PDF");
+            $pdf->Output();
+            return;
+        }
+
+        //============================================================================= //
+        $tbl1 = '
+        <table border="0" width="100%">
+            <tr>
+                <td align="center" style="font-size:15px; font-weight:bold;">RECEIPT</td>
+            </tr>
+        </table>
+        ';
+
+        $receipt_date = $fn->getCPDate($rowRec['receipt_date'], 'd-m-Y');
+        $address_street = "";
+        if ($rowRec['cust_address2']) {
+            $address_street = '
+            <tr>
+                <td style="font-size:12px;">'.strtoupper($rowRec['cust_address2']).'</td>
+                <td colspan="3"></td>
+            </tr>
+            ';
+        }
+        $tbl2 ='
+        <table border="0" width="100%" cellpadding="">
+            <tr>
+                <td width="6%" style="font-size:12px; font-weight:bold;">TO:</td>
+                <td width="54%"></td>
+                <td width="26%" align="right" style="font-size:12px; font-weight:bold;">RECEIPT NO: </td>
+                <td width="14%" align="right" style="font-size:12px; font-weight:bold;">'.$rowRec['receipt_code'].'</td>
+            </tr>
+            <tr>
+                <td width="54%" style="font-size:12px; font-weight:bold;">'.strtoupper($rowRec['cust_company_name']).'</td>
+                <td width="6%"></td>
+                <td width="26%" align="right" style="font-size:12px; font-weight:bold;">DATE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
+                <td width="14%" align="right" style="font-size:12px; font-weight:bold;">'.$receipt_date.'</td>
+            </tr>
+            <tr>
+                <td style="font-size:12px;">'.strtoupper($rowRec['cust_address1']).'</td>
+                <td colspan="3"></td>
+            </tr>
+            '. $address_street .'
+            <tr>
+                <td style="font-size:12px;">'.strtoupper($rowRec['cust_address_country']).' - '.$rowRec['cust_address_po_code'].'</td>
+                <td colspan="3"></td>
+            </tr>
+        </table>
+        ';
+
+        $tbl3 ='
+        <table border="1" cellpadding="6" width="100%">
+            <thead>
+                <tr bgcolor="#DDE4FF">
+                    <th width="70%" align="center" style="font-size:12px; font-weight:bold;">DESCRIPTION</th>
+                    <th width="30%" align="right" style="font-size:12px; font-weight:bold;">AMOUNT (S$)</th>
+                </tr>
+            </thead>
+            ';
+
+            $count = 0;
+            $previous_paid_amount = 0;
+            $total_amount = 0;
+            $invoice_code = '';
+            while ($row = $db->sql_fetchrow($result2)) {
+                $count++;
+                //===================================MAIN TABLE============================= //
+               /*This sql used to find the previous amount paid for the invoice */
+                $sqlPreviousPayment = "
+                SELECT SUM(irhist.amount) AS total_amount_paid
+                FROM invoice_receipt_history irhist
+                LEFT JOIN receipt r ON (irhist.receipt_id = r.receipt_id)
+                WHERE irhist.invoice_id = {$row['invoice_id_main']}
+                  AND irhist.receipt_id != {$row['receipt_id']}
+                  AND r.receipt_status != 'Cancelled'
+                ";
+                $resultPreviousPayment = $db->sql_query($sqlPreviousPayment);
+                $rowPreviousPayment    = $db->sql_fetchrow($resultPreviousPayment);
+                $previous_paid_amount += $rowPreviousPayment['total_amount_paid'];
+
+                $sqlInvoiceAmount = "
+                SELECT i.invoice_amount
+                      ,i.gst_percentage
+                FROM invoice i
+                WHERE i.invoice_id = {$row['invoice_id_main']}
+                ";
+                $resultInvAmount = $db->sql_query($sqlInvoiceAmount);
+                $rowInvoiceAmount= $db->sql_fetchrow($resultInvAmount);
+
+                $gst_amount = 0;
+                if ($rowInvoiceAmount['gst_percentage'] > 0) {
+                    $gst_amount = (($rowInvoiceAmount['invoice_amount']*$rowInvoiceAmount['gst_percentage'])/100);
+                }
+
+                $total_amount += $rowInvoiceAmount['invoice_amount'] + $gst_amount;
+
+                if ($numRows == $count) {
+                    $inv_date = $fn->getCPDate($row['invoice_date'], 'ym/');
+                    $invoice_code .= $inv_date . substr($row['invoice_code'], 2);
+                } else {
+                    $inv_date = $fn->getCPDate($row['invoice_date'], 'ym/');
+                    $invoice_code .= $inv_date . substr($row['invoice_code'], 2) . ', ';
+                }
+            }
+
+            $balance_due = $total_amount - $previous_paid_amount - $rowRec['receipt_amount'];
+
+            if ($balance_due > 0) {
+                $balance_due = $balance_due;
+            } else {
+                $balance_due = 0.00;
+            }
+
+            $tbl3 = $tbl3.'
+            <tr>
+                <td width="70%" style="font-size:12px;">Invoice Amount (Invoice Code : '. $invoice_code .')</td>
+                <td width="30%" align="right" style="font-size:12px; font-weight:bold;">'.number_format($total_amount, 2).'</td>
+            </tr>
+            <tr>
+                <td width="70%" style="font-size:12px;">Amount already Paid</td>
+                <td width="30%" align="right" style="font-size:12px; font-weight:bold;">'.number_format($previous_paid_amount, 2).'</td>
+            </tr>
+            <tr>
+                <td width="70%" style="font-size:12px;">Amount Received Now</td>
+                <td width="30%" align="right" style="font-size:12px; font-weight:bold;">'.number_format($rowRec['receipt_amount'], 2).'</td>
+            </tr>
+            <tr>
+                <td width="70%" style="font-size:12px;">Balance Amount to be Paid</td>
+                <td width="30%" align="right" style="font-size:12px; font-weight:bold;">'.number_format($balance_due, 2).'</td>
+            </tr>
+        </table>
+        ';
+
+        $tbl4 = '
+        <table border="0" width="100%">
+            <tr>
+                <td border="0" align="left" width="100%" style="font-size:12px; text-decoration:underline; font-weight:bold;">PAYMENT METHOD:</td>
+            </tr>
+            <tr>
+                <td align="left" style="font-size:12px;">'.$rowRec['mode_of_payment'].'</td>
+            </tr>
+        </table>';
+
+        $pdf->writeHTML($tbl1, true, false, false, false, '');
+        $pdf->ln(-4);
+        $pdf->writeHTML($tbl2, true, false, false, false, '');
+        $pdf->writeHTML($tbl3, true, false, false, false, '');
+        $pdf->writeHTML($tbl4, true, false, false, false, '');
+
+        $download_title = $cpCfg['cp.companyName'] . '-' . $rowRec['receipt_code'] . '-Receipt.pdf';
+        $pdf->Output($download_title, 'I');
+    }
+
+   /**
+     *
+     */
+    function getPrintInvoiceRecordForPurchaseOrder() {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $tv = Zend_Registry::get('tv');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $searchVar = Zend_Registry::get('searchVar');
+        $media = Zend_Registry::get('media');
+        $cpPaths = Zend_Registry::get('cpPaths');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+        ini_set('memory_limit', '512M');
+
+        set_time_limit(50000);
+
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf/fpdf.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf-extra/html2pdf.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf-extra/html_table1.php');
+
+        $pdf = new MYPDF();
+		$pdf->AddPage();
+		$pdf->SetFont('Arial','',11);
+
+        $invoice_code 		  = $fn->getReqParam('invoice_code');
+        $purchase_order_id 	  = $fn->getReqParam('purchase_order_id');
+
+        $SQL = "
+        SELECT ini.*
+              ,p.title AS product_title
+              ,p.unit
+              ,p.item_code
+			  ,p.part_number
+			  ,po.delivery_terms
+			  ,po.company_id_supplier
+			  ,po.notes
+              ,c.company_name
+              ,c.address_flat
+              ,c.address_street
+              ,c.address_town
+              ,c.address_state
+              , (SELECT gc.name FROM geo_country gc
+                 WHERE gc.country_code = c.address_country)
+                AS address_country
+              ,c.billing_address_flat
+              ,c.billing_address_street
+              ,c.billing_address_town
+              ,c.billing_address_state
+              , (SELECT gc.name FROM geo_country gc
+                 WHERE gc.country_code = c.billing_address_country)
+                AS billing_address_country
+              ,c.fax
+              ,c.phone
+              ,i.invoice_date
+              ,q.delivery_date
+              ,q.delivery_location
+              ,ini.unit_price
+              ,i.invoice_code
+              ,i.invoice_terms
+              ,i.invoice_due_date
+              ,i.cst
+              ,i.vat
+              ,i.frieght
+              ,i.p_f
+              ,q.quote_code
+              ,q.currency
+              ,ini.qty * ini.unit_price AS amount
+              ,(SELECT SUM(init.qty * init.unit_price) FROM invoice_item init
+               WHERE init.invoice_id = ini.invoice_id) AS sub_total
+        FROM invoice_item ini
+        LEFT JOIN product p ON (p.product_id = ini.record_id)
+        LEFT JOIN invoice i ON (i.invoice_id = ini.invoice_id)
+        LEFT JOIN purchase_order po  ON (po.purchase_order_id = i.purchase_order_id)
+        LEFT JOIN `order` o ON (o.order_id = i.order_id)
+        LEFT JOIN company c ON (c.company_id = po.company_id_supplier)
+        LEFT JOIN quote q ON (q.quote_id = o.quote_id)
+        LEFT JOIN product_group pg ON (p.product_group_id = pg.product_group_id)
+        WHERE i.invoice_code = '{$invoice_code}'
+        ORDER BY pg.sort_order ASC, p.title
+        ";
+        $result = $db->sql_query($SQL);
+
+
+        $numRows  = $db->sql_numrows($result);
+
+        $today = date("Y-m-d");
+		if ($numRows == 0){
+            $pdf->SetXY(30,30);
+            $pdf->Cell(50, 20, "Please set the values for your Order and print the PDF");
+			$pdf->Output();
+			return;
+		}
+
+        $count = 0;
+        $total = 0;
+        $discount_price = 0;
+        $rows = "";
+        $lineItemNumber = 1;  // To increment the line item in receipt
+		$printTaxName = '';
+		$gsttaxvalue = '';
+		$gstvalue = '';
+		$totalvalue = '';
+
+        //============================================================================= //
+        $pdf->SetFont('Arial','',11);
+        while ($row = $db->sql_fetchrow($result)) {
+            if ($count == 0){
+                /* Logo of the institution */
+                $pdf->Image('images/logo-print.gif',10,5,45);
+                $pdf->SetXY(10,10);
+                $pdf->SetFont('Courier','B',11);
+                $pdf->Cell(50, 20, 'Authorized Distributor of:');
+                $pdf->SetXY(10,25);
+                $pdf->Image('images/parker.jpg',10,28, 25);
+                //$pdf->Image('images/gse.png',42,25, 25);
+                $creationDate   = $fn->getCPDate($row['invoice_date'], 'd-m-Y');
+                $invoiceDueDate = $fn->getCPDate($row['invoice_due_date'], 'd-m-Y');
+                $deliveryDate   = $fn->getCPDate($row['delivery_date'], 'd-m-Y');
+				$currency = $row['currency'];
+
+				$gsttaxvalue = $cpCfg['amtForGSTCalc'] ;
+				$gstvalue = $row['sub_total'] * $gsttaxvalue / 100;
+				$totalvalue = $gstvalue + $row['sub_total'];
+
+                /* Company address */
+                //Address to be got from settings
+                $pdf->SetXY(130,0);
+                $pdf->SetFont('Courier','B',11);
+                $pdf->Cell(50, 20, $cpCfg['cp.companyName']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,5);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf1']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,10);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf2']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,15);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf3']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130, 20);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf4']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,25);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf6']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,30);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf7']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,35);
+                $pdf->Cell(50, 20, $cpCfg['printEmailAddress']);
+
+                /* Header */
+                $pdf->SetFont('Courier','BU',11);
+                $pdf->SetXY(80, 40);
+                $pdf->Cell(50, 20, "INVOICE", 0, 0, 'C');
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetX(130);
+                $pdf->Cell(31, 20, "DATE : " . $creationDate, 0, 0, 'L');
+                $pdf->Ln(20);
+
+                /* Company Details*/
+				$billingAddressFlat = '';
+				$billingAddressStreet = '';
+				$billingAddressTown = '';
+				$billingAddressState = '';
+				$billingAddressCountry = '';
+
+				if ($row['billing_address_flat'] != ''
+				 || $row['billing_address_street'] != ''
+				 || $row['billing_address_town'] != ''
+				 || $row['billing_address_state'] != ''
+				 || $row['billing_address_country'] != '')
+			    {
+					$billingAddressFlat     = $row['billing_address_flat'];
+					$billingAddressStreet   = $row['billing_address_street'];
+					$billingAddressTown     = $row['billing_address_town'];
+					$billingAddressState    = $row['billing_address_state'];
+					$billingAddressCountry  = $row['billing_address_country'];
+			    } else {
+					$billingAddressFlat     = $row['address_flat'];
+					$billingAddressStreet   = $row['address_street'];
+					$billingAddressTown     = $row['address_town'];
+					$billingAddressState    = $row['address_state'];
+					$billingAddressCountry  = $row['address_country'];
+				}
+
+
+                /* Company Details*/
+                $date = $fn->getCPDate($row['delivery_date'], 'd-m-Y');
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(95,8,"INVOICE TO",1,0, 'L', 1);
+                $pdf->Cell(95,8,"DELIVERY TO",1,0, 'L', 1);
+                $pdf->Ln();
+                $pdf->SetFillColor(255,255,255);
+                $pdf->Cell(95, 8, $cpCfg['cp.companyName'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 8, $cpCfg['cp.companyName'], 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf1'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf1'], 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf2'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf2'], 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf3'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf3'], 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf4'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf4'], 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf7'], 'LR', 0, 'L', 1);
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf7'], 'LR', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf6'], 'LRB', 0, 'L', 1);
+                $pdf->Cell(95, 5, $cpCfg['cp.addressPdf6'], 'LRB', 0, 'L', 1);
+                $pdf->Ln();
+                $pdf->Ln(10);
+
+                /* Invoice Details*/
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(47.5,8,"INVOICE NO :",1,0, 'L', 1);
+                $pdf->SetFillColor(255,255,255);
+	            $pdf->Cell(47.5, 8, $row['invoice_code'], 1, 0, 'L', 1);
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(47.5,8,"DUE DATE :",1,0, 'L', 1);
+                $pdf->SetFillColor(255,255,255);
+	            $pdf->Cell(47.5, 8, $invoiceDueDate, 1, 0, 'L', 1);
+                $pdf->Ln(20);
+
+				$terms = $row['invoice_terms'];
+				$bank = "HDFC BANK LTD\nNO.9, MOSQUE STREET\nPALLAVARAM, CHENNAI-600043\nCURRENT A/C:50200000741296";
+
+	            $pdf->SetFont('Courier','B',11);
+	            $pdf->SetFillColor(254,203,156);
+	            $pdf->Cell(95,8,"TERMS",1,0, 'L', 1);
+	            $pdf->Cell(95,8,"BANK DETAILS",1,0, 'L', 1);
+	            $pdf->SetFillColor(255,255,255);
+                $pdf->SetXY(10,144);
+	            $pdf->drawTextBox($terms, 95, 32, 'L', 'C', 1);
+                $pdf->SetXY(105,144);
+	            $pdf->drawTextBox($bank, 95, 32, 'L', 'C', 'BLR');
+	            $pdf->Ln(28);
+
+                /* List of order items header */
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(10,8,"S.NO",1,0, 'C', 1);
+                $pdf->Cell(65,8,"NAME OF THE ITEM",1,0, 'C', 1);
+                $pdf->Cell(37,8,"PART NUMBER",1,0, 'C', 1);
+                $pdf->Cell(13,8,"QTY",1,0, 'C', 1);
+                $pdf->Cell(13,8,"UOM",1,0, 'C', 1);
+                $pdf->Cell(26,8,"UP",1,0, 'C', 1);
+                $pdf->Cell(26,8,"AMOUNT(" . $row['currency'] . ")",1,0, 'C', 1);
+                $pdf->Ln();
+            }
+
+            //===================================MAIN TABLE============================= //
+			$company_name 	= $row['company_name'];
+			$delivery_terms = $row['delivery_terms'];
+			$notes 			= $row['notes'];
+
+
+            $pdf->SetFillColor(255,255,255);
+            $pdf->Cell(10, 8, $lineItemNumber, 1, 0, 'C', 1);
+            $pdf->Cell(65, 8, $row['product_title'], 1, 0, 'L', 1);
+            $pdf->Cell(37, 8, $row['part_number'], 1, 0, 'L', 1);
+            $pdf->Cell(13, 8, $row['qty'], 1, 0, 'R', 1);
+            $pdf->Cell(13, 8, $row['unit'], 1, 0, 'R', 1);
+            $pdf->Cell(26, 8, number_format(round($row['unit_price']),2), 1, 0, 'R', 1);
+            $pdf->Cell(26, 8, number_format(round($row['amount']),2), 1, 0, 'R', 1);
+            $pdf->Ln();
+
+            $count++;
+            $lineItemNumber++;
+            $sub_total = $row['sub_total'];
+            $notes = $row['notes'];
+            $frieght = $row['frieght'];
+            $pf = $row['p_f'];
+
+			if($row['vat'] == 1 && $row['cst'] == 0){
+		        $printTaxName = $cpCfg['printTaxName'] ;
+				$gsttaxvalue = $cpCfg['amtForGSTCalc'] ;
+				$gstvalue = round($row['sub_total']) * $gsttaxvalue / 100;
+				$totalvalue = $gstvalue + round($row['sub_total']);
+			} else if($row['cst'] == 1 && $row['vat'] == 0){
+		        $printTaxName = $cpCfg['printCstText'] ;
+				$gsttaxvalue = $cpCfg['printCstinInvoice'] ;
+				$gstvalue = round($row['sub_total']) * $gsttaxvalue / 100;
+				$totalvalue = $gstvalue + round($row['sub_total']) ;
+			}
+        }
+            $pdf->SetFillColor(255,255,255);
+            $pdf->Cell(164, 8, "SUB TOTAL", 1, 0, 'R', 1);
+            $pdf->Cell(26, 8, number_format(round($sub_total),2), 1, 0, 'R', 1);
+            $pdf->Ln();
+
+            $pdf->SetFillColor(255,255,255);
+
+            $pdf->Cell(164, 8, "ADD: {$printTaxName} {$gsttaxvalue}%", 1, 0, 'R', 1);
+            $pdf->Cell(26, 8, number_format(round($gstvalue), 2), 1, 0, 'R', 1);
+            $pdf->Ln();
+
+            $totalvalueRounded = round($totalvalue);
+			$totalFrieght = $sub_total * $frieght / 100;
+
+			if($frieght != '' ){
+				$totalvalueRounded = $totalvalueRounded + $totalFrieght;
+	            $pdf->SetFillColor(255,255,255);
+	            $pdf->Cell(164, 8, "ADD FRIEGHT : {$frieght}%", 1, 0, 'R', 1);
+	            $pdf->Cell(26, 8, number_format($totalFrieght, 2), 1, 0, 'R', 1);
+				$pdf->Ln();
+			}
+
+			if($pf != '' ){
+				$totalvalueRounded = $totalvalueRounded + $pf;
+	            $pdf->SetFillColor(255,255,255);
+	            $pdf->Cell(164, 8, "ADD P&F", 1, 0, 'R', 1);
+	            $pdf->Cell(26, 8, number_format($pf, 2), 1, 0, 'R', 1);
+				$pdf->Ln();
+			}
+
+            $pdf->SetFillColor(255,255,255);
+            $pdf->Cell(164, 8, 'TOTAL', 1, 0, 'R', 1);
+            $pdf->Cell(26, 8, number_format($totalvalueRounded, 2), 1, 0, 'R', 1);
+			$pdf->Ln(20);
+
+            $pdf->SetFillColor(254,203,156);
+			$pdf->Cell(195,8, "Client :", 0, 0, 'L', 1);
+			$pdf->Ln(12);
+            $pdf->SetFillColor(255,255,255);
+            $pdf->drawTextBox($company_name, 180, 55, 'L', 'T', 0);
+			$pdf->Ln();
+			$pdf->Ln(5);
+
+            $pdf->SetFillColor(254,203,156);
+			$pdf->Cell(195,8, "Delivery Terms :", 0, 0, 'L', 1);
+			$pdf->Ln(12);
+            $pdf->SetFillColor(255,255,255);
+            $pdf->drawTextBox($delivery_terms, 170, 32, 'L', 'T', 0);
+			$pdf->Ln();
+			$pdf->Ln(5);
+
+            $pdf->SetFillColor(254,203,156);
+			$pdf->Cell(195,8, "NOTE :", 0, 0, 'L', 1);
+			$pdf->Ln(12);
+            $pdf->SetFillColor(255,255,255);
+            $pdf->drawTextBox($notes, 170, 32, 'L', 'T', 0);
+			$pdf->Ln();
+			$pdf->Ln(5);
+
+	        /* Creation of media record of the invoice */
+	        $file_name = 'Refund_REF_' . date('Y-m-d') .'.pdf';
+	        $outputPath = realpath($cpCfg['cp.mediaFolder']) . '/temp';
+
+	        $outputFileName = $outputPath . '/' . $file_name;
+	        //$pdf->Output($outputFileName , "F");
+			$pdf->Output();
+
+    }
+
+    /**
+     *
+     */
+    function getPrintBill() {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $tv = Zend_Registry::get('tv');
+        $fn = Zend_Registry::get('fn');
+        $db = Zend_Registry::get('db');
+        $searchVar = Zend_Registry::get('searchVar');
+        $media = Zend_Registry::get('media');
+        $cpPaths = Zend_Registry::get('cpPaths');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+        ini_set('memory_limit', '512M');
+
+        set_time_limit(50000);
+
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf/fpdf.php');
+        include_once(CP_LIBRARY_PATH.'lib_php/fpdf-extra/html_table1.php');
+
+        $pdf = new MYPDF();
+
+		$pdf->AddPage();
+		$pdf->SetFont('Arial','',11);
+
+        $session_order_id = isset($_SESSION['order_id']) ? $_SESSION['order_id']  : '';
+        $invoice_code = $fn->getReqParam('invoice_code');
+
+        $SQL = "
+        SELECT ini.*
+              ,p.title AS product_title
+              ,p.unit
+              ,p.item_code
+              ,c.company_name
+              ,c.address_flat
+              ,c.address_street
+              ,c.address_town
+              ,c.address_state
+              , (SELECT gc.name FROM geo_country gc
+                 WHERE gc.country_code = c.address_country)
+                AS address_country
+              ,c.billing_address_flat
+              ,c.billing_address_street
+              ,c.billing_address_town
+              ,c.billing_address_state
+              , (SELECT gc.name FROM geo_country gc
+                 WHERE gc.country_code = c.billing_address_country)
+                AS billing_address_country
+              ,c.fax
+              ,c.phone
+              ,i.invoice_date
+              ,q.delivery_date
+              ,q.delivery_location
+              ,ini.unit_price
+              ,i.invoice_code
+              ,i.invoice_terms
+              ,i.invoice_due_date
+              ,i.notes
+              ,i.discount
+              ,q.quote_code
+              ,q.currency
+              ,ini.qty * ini.unit_price AS amount
+              ,(SELECT SUM(init.qty * init.unit_price) FROM invoice_item init
+               WHERE init.invoice_id = ini.invoice_id) AS sub_total
+        FROM invoice_item ini
+        LEFT JOIN product p ON (p.product_id = ini.record_id)
+        LEFT JOIN invoice i ON (i.invoice_id = ini.invoice_id)
+        LEFT JOIN `order` o ON (o.order_id = i.order_id)
+        LEFT JOIN company c ON (c.company_id = o.company_id)
+        LEFT JOIN quote q ON (q.quote_id = o.quote_id)
+        WHERE i.invoice_code = '{$invoice_code}'
+        ORDER BY p.title
+        ";
+        $result = $db->sql_query($SQL);
+
+        $numRows  = $db->sql_numrows($result);
+
+        $today = date("Y-m-d");
+		if ($numRows == 0){
+            $pdf->SetXY(30,30);
+            $pdf->Cell(50, 20, "Please set the values for your Order and print the PDF");
+			$pdf->Output();
+			return;
+		}
+
+        $count = 0;
+        $total = 0;
+        $discount_price = 0;
+        $rows = "";
+        $lineItemNumber = 1;  // To increment the line item in receipt
+
+        if($session_order_id < 10){
+            $orderId = '0000' . $session_order_id;
+        }
+        else if($session_order_id < 99){
+            $orderId = '000' . $session_order_id;
+        }
+        else if($session_order_id < 999){
+            $orderId = '00' . $session_order_id;
+        }
+        else if($session_order_id < 9999){
+            $orderId = '0' . $session_order_id;
+        }
+        else{
+            $orderId = $session_order_id;
+        }
+
+        //============================================================================= //
+        $pdf->SetFont('Arial','',11);
+        while ($row = $db->sql_fetchrow($result)) {
+            if ($count == 0){
+                /* Logo of the institution */
+                $pdf->Image('images/logo-print.gif',10,5,45);
+                $pdf->SetFont('Courier','B',11);
+                $pdf->Cell(50, 20, $cpCfg['cp.companyName']);
+                $pdf->Ln(5);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf7']);
+                $pdf->Ln(5);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf6']);
+                $pdf->Ln(5);
+                $pdf->Cell(50, 20, $cpCfg['printWebAddress']);
+
+                $creationDate   = $fn->getCPDate($row['invoice_date'], 'd-m-Y');
+
+                /* Company address */
+                //Address to be got from settings
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetXY(130,0);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf1']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,5);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf2']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,10);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf3']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130, 15);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf4']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,20);
+                $pdf->Cell(50, 20, $cpCfg['cp.addressPdf5'  ]);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,25);
+                $pdf->Cell(50, 20, $cpCfg['printTelephoneAndFax']);
+                $pdf->Ln(5);
+                $pdf->SetXY(130,30);
+                $pdf->Cell(50, 20, $cpCfg['printEmailAddress']);
+
+                /* Header */
+                $pdf->SetFont('Courier','BU',11);
+                $pdf->SetXY(80, 45);
+                $pdf->Cell(50, 20, "BILL", 0, 0, 'C');
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetX(130);
+                $pdf->Cell(31, 20, "DATE : " . $creationDate, 0, 0, 'L');
+                $pdf->Ln(20);
+
+                /* Invoice Details*/
+                $pdf->SetFont('Courier','B',11);
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(30,8,"BILL NO :",1,0, 'L', 1);
+                $pdf->SetFillColor(255,255,255);
+	            $pdf->Cell(65, 8, $row['invoice_code'], 1, 0, 'L', 1);
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(30,8,"ORD NO :",1,0, 'L', 1);
+                $pdf->SetFillColor(255,255,255);
+                $pdf->Cell(65, 8, $orderId, 1, 0, 'L', 1);
+                $pdf->Ln(12);
+
+                /* List of order items header */
+                $pdf->SetFillColor(254,203,156);
+                $pdf->Cell(22,8,"S.NO",1,0, 'C', 1);
+                $pdf->Cell(90,8,"NAME OF THE ITEM",1,0, 'C', 1);
+                $pdf->Cell(15,8,"QTY",1,0, 'C', 1);
+                $pdf->Cell(15,8,"UOM",1,0, 'C', 1);
+                $pdf->Cell(24,8,"UP",1,0, 'C', 1);
+                $pdf->Cell(25,8,"AMOUNT" ,1,0, 'C', 1);
+                $pdf->Ln();
+            }
+
+            //===================================MAIN TABLE============================= //
+            $pdf->SetFillColor(255,255,255);
+            $pdf->Cell(22, 8, $lineItemNumber, 1, 0, 'C', 1);
+            $pdf->Cell(90, 8, $row['product_title'], 1, 0, 'L', 1);
+            $pdf->Cell(15, 8, $row['qty'], 1, 0, 'R', 1);
+            $pdf->Cell(15, 8, $row['unit'], 1, 0, 'R', 1);
+            $pdf->Cell(24, 8, $row['unit_price'], 1, 0, 'R', 1);
+            $pdf->Cell(25, 8, $row['amount'], 1, 0, 'R', 1);
+            $pdf->Ln();
+
+            $count++;
+            $lineItemNumber++;
+            $sub_total = $row['sub_total'];
+            $discount = $row['discount'];
+            $total = $row['sub_total'] - $row['discount'];
+        }
+            $pdf->SetFillColor(255,255,255);
+            $pdf->Cell(166, 8, "SUB TOTAL", 1, 0, 'R', 1);
+            $pdf->Cell(25, 8, $sub_total, 1, 0, 'R', 1);
+            $pdf->Ln();
+
+	        $printTaxName = $cpCfg['printTaxName'] ;
+
+            $pdf->SetFillColor(255,255,255);
+            $pdf->Cell(166, 8, "Discount", 1, 0, 'R', 1);
+            $pdf->Cell(25, 8, $discount, 1, 0, 'R', 1);
+            $pdf->Ln();
+
+            //$totalvalueRounded = round($totalvalue);
+            //$totalvalueRounded = $totalvalue;
+            $pdf->SetFillColor(255,255,255);
+            $pdf->Cell(166, 8, 'TOTAL', 1, 0, 'R', 1);
+            $pdf->Cell(25, 8, number_format($total, 2), 1, 0, 'R', 1);
+			$pdf->Ln(20);
+
+	        /* Creation of media record of the invoice */
+	        $file_name = 'Refund_REF_' . date('Y-m-d') .'.pdf';
+	        $outputPath = realpath($cpCfg['cp.mediaFolder']) . '/temp';
+
+	        $outputFileName = $outputPath . '/' . $file_name;
+	        //$pdf->Output($outputFileName , "F");
+			$pdf->Output();
+
+    }
+}

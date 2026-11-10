@@ -1,0 +1,2626 @@
+@media all
+{
+    body {
+        color: #111111;
+        font-family: 'Calibri',Sans-serif,'Cambria', 'Century Gothic',Verdana,Arial,Helvetica;
+        font-size: 13px;
+    }
+
+    a,
+    html *,
+    .yform .type-text input,
+    .yform .type-text textarea,
+    .yform .type-select select,
+    .yform select,
+    .cpSearch select,
+    .cpSearch input {
+        font-size: 14px;
+        font-family: 'Calibri',Sans-serif, 'Century Gothic',Verdana,Arial,Helvetica;
+    }
+
+    .cpSearch select,
+    .cpSearch input {
+        padding: 5px;
+    }
+
+    .cpSearch input[type="text"] {
+        max-width: 130px;
+    }
+
+    .cpFullWidth #header {
+        background-color: #F8F8F8;
+        background-color: #17375E;
+        border-bottom: 3px solid #E7E7E7;
+        min-height: 53px;
+    }
+
+    #header-left .multi-unique-site {
+        padding: 5px 0;
+    }
+
+    #header .logout {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .cpFullWidth .page_margins {
+        max-width: 100%;
+    }
+
+    .cpFullWidth #main {
+        background: #D4D4D8;
+        padding: 0;
+    }
+
+    .cpFullWidth #main .page {
+        box-shadow: 0 0 5px #fff;
+        -webkit-box-shadow: 0 0 5px #fff;
+    }
+
+    .cpFullWidth #main .page {
+        background: #ffffff;
+        border-radius: 0;
+        padding: 0 0;
+    }
+
+    .cpFullWidth #nav {
+        background: #000;
+        margin: 0;
+    }
+
+    #nav .page {
+        height: 100px;
+        background: url('images/nav-bg.jpg') repeat-x;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    #header .logo {
+        padding: 2px 0;
+    }
+
+    #topnav .logoutWrap {
+        background: none;
+        text-align: right;
+        width: 200px;
+        height: 24px;
+    }
+
+    .cpFullWidth #header .hlist ul li a, .cpFullWidth #header a.logout {
+        color: #000000;
+        color: #ffffff;
+    }
+
+    #topnav {
+        top: 0;
+    }
+
+    #topnav .hlist ul li {
+    }
+
+    .cpFullWidth #header .hlist ul li.active a,
+    .cpFullWidth #header .hlist ul li a:hover{
+        color: #000000;
+        text-align:center;
+        background-color: #FFC000;
+    }
+
+    .cpFullWidth #header .hlist ul li a{
+        padding: 17px 15px;
+    }
+
+    .cpFullWidth #nav2 {
+        background: #ffffff;
+    }
+
+    .cpFullWidth #nav2 .floatbox{
+        width: 99%;
+    }
+
+    .cpFullWidth #nav2 .page {
+        background: #ffffff;
+        padding: 5px 0;
+    }
+
+    .m-hms_home.cpFullWidth #nav2 .page {
+        padding: 0;
+    }
+
+    .v-list .contentScroller {
+    }
+
+    .v-list .contentScroller #bodyList {
+    }
+
+	.ui-button { margin-left: -1px; }
+	.ui-button-icon-only .ui-button-text { padding: 0.35em; }
+	.ui-autocomplete-input { margin: 0; padding: 0.48em 0 0.47em 0.45em; }
+	.ui-menu {
+	    max-height: 200px;
+	    overflow: auto;
+	    text-align: left;
+	}
+
+    .col3Body .rightPanel {
+        padding-top:5px;
+        padding-right: 1em;
+    }
+
+    #col1 {
+        margin-right: 10px;
+        width: 200px;
+        background-color: #F8F8F8;
+        border-right: 1px solid #E7E7E7;
+    }
+
+    #col1_content {
+        padding: 0;
+    }
+
+    .hidecol2 #col3 {
+        margin-left: 200px;
+        margin-right: 0;
+    }
+
+    .m-common_dashboard #col1{
+        display: none;
+    }
+
+    .m-common_dashboard .hidecol2 #col3{
+        margin-left: 0;
+    }
+
+    .m-common_dashboard .c50l, .m-common_dashboard .c50r {
+        width: 100%;
+    }
+
+    .m-hms_reports .hidecol2 #col3{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .m-hms_reports .hidecol2 #col1{
+        display: none;
+    }
+
+    .m-hms_home .hidecol2 #col3,
+    .m-labsg_home .hidecol2 #col3 {
+        margin-left: 0px;
+    }
+
+    .m-hms_home .homeMenuListHead,
+    .m-labsg_home .homeMenuListHead {
+        font-size: 25px;
+        margin-bottom: 10px;
+        padding-left: 5px;
+    }
+
+    .m-hms_home .homeMenuListHead img,
+    .m-labsg_home .homeMenuListHead img{
+        position: relative;
+        top:15px;
+    }
+
+    .m-hms_home .homeMenuList,
+    .m-labsg_home .homeMenuList {
+        margin-bottom: 5px;
+    }
+
+    .m-hms_home .homeMenuListPanel,
+    .m-labsg_home .homeMenuListPanel {
+        background-color: #BFCDDB;
+        padding: 10px;
+        margin-bottom: 2px;
+    }
+
+    .m-hms_home .homeMenuListPanel1,
+    .m-labsg_home .homeMenuListPanel1 {
+        background-color: #F0F0F0;
+        padding: 10px;
+        margin-bottom: 2px;
+    }
+
+    .m-hms_home .modHeading,
+    .m-labsg_home .modHeading{
+        border: 1px solid #CCCCCC;
+        padding: 3px;
+        text-align: center;
+        width: 13%;
+        float:left;
+        margin:5px;
+        cursor: pointer;
+        background-color: #ffffff;
+    }
+
+    .m-hms_home .modHeadingBg,
+    .m-labsg_home .modHeadingBg {
+        background-color: #eeeeee;
+    }
+
+    .m-hms_home .homeMenuListPanel1 .modHeadingBg,
+    .m-labsg_home .homeMenuListPanel1 .modHeadingBg {
+        background-color: #EAE8E8;
+    }
+
+    .m-hms_home .modHeadingBg,
+    .m-labsg_home .modHeadingBg{
+        font-size: 16px;
+        padding: 10px;
+        display: block;
+        color: #17375E;
+    }
+
+    .m-hms_home .modHeadingBg:hover,
+    .m-labsg_home .modHeadingBg:hover {
+        background-color: #FFC000;
+        text-decoration: none;
+        color: #000000;
+    }
+
+    .moduleTitle {
+        font-size: 28px;
+        border-bottom: 1px solid #DDDDDD;
+        margin-bottom: 10px;
+        /*height: 9%;*/
+        height: 56px;
+    }
+
+    .moduleName{
+        font-size: 28px;
+        margin-top: 8px;
+    }
+
+    #nav{
+    }
+
+    .paypalLoginForm {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    .paypalLoginForm .paypalLoginText {
+        color: #AA0000;
+        padding-bottom: 5px;
+    }
+
+    .paypalLoginForm .subscribeBtn {
+        margin-top: 5px;
+    }
+
+    .tplLogin #loginOuter {
+        margin: 0 auto;
+        box-shadow: 10px 10px 10px #6f6f6f;
+        -webkit-box-shadow: 0 0 5px #000;
+        border: 1px solid #000;
+        background : #202020;
+        border-radius: 15px;
+    }
+
+    .cpFullWidth #header h1.siteTitle {
+        color: #777777;
+        color: #ffffff;
+        padding-top: 10px;
+    }
+
+    #header h1.siteTitle {
+        font-family: 'Calibri',Sans-serif,'Oswald',arial,serif;
+        font-size: 20px;
+        text-shadow: 0px 0px 0px #f8f8f8;
+    }
+
+    .tplLogin #col3 {
+        margin: 0;
+    }
+
+    .loginTitle h1 {
+        font-size: 35px;
+        color: #AA0000;
+    }
+
+    .loginTitle {
+        padding-left: 55px;
+        padding-top: 25px;
+        font-family: Trebuchet MS, arial, serif;
+    }
+
+    #loginOuter .yform{
+        border: 0;
+        padding: 0;
+    }
+
+    #loginOuter .yform fieldset{
+        border: 0;
+        background: #fafafa;
+    }
+
+    #loginOuter .columnar div.type-check input {
+        margin-left: 0;
+    }
+
+    #loginOuter .forgotPasswordLink {
+        margin-top: 11px;
+        text-decoration: underline;
+    }
+
+}
+
+@media all
+{
+    .leftNav {
+        text-align: left;
+    }
+
+    .leftNav .hlist ul li {
+        border-right: 0;
+        text-align: left;
+        border-bottom: 1px solid #E7E7E7;
+        display: block;
+        float: none;
+    }
+
+    .hlist.noBg ul li.first a {
+        padding-left: 15px;
+    }
+
+    .leftNav .hlist ul li a{
+        display: block;
+        padding: 10px 15px;
+        position: relative;
+        color: #17375E;
+    }
+
+    .leftNav .hlist ul li a span{
+        font-size: 16px;
+    }
+
+    .leftNav .hlist ul li.active a,
+    .leftNav .hlist ul li:hover a {
+        color: #000000;
+        font-weight: normal;
+        background-color: #FAD160;
+    }
+
+    #nav .actionsWrapper {
+        display: none;
+    }
+
+    #nav .hlist ul {
+        margin: 12px 0 0 14px;
+        overflow: hidden;
+    }
+
+    #nav .hlist ul li {
+        border: 0;
+    }
+
+    #nav .hlist ul li a {
+        background: url("images/navigation_background_blue.gif") repeat-x scroll left top transparent;
+        color: white;
+        display: block;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: bold;
+        height: 65px;
+        overflow: hidden;
+        text-align: center;
+        text-decoration: none;
+        width: 114px;
+        padding: 5px 0;
+    }
+
+    #nav .hlist ul li.first a {
+        background: url('images/navigation_first_blue.gif') repeat-x scroll left top transparent;
+    }
+
+    #nav .hlist ul li.last a {
+        background: url('images/navigation_last_blue.gif') repeat-x scroll right top transparent;
+    }
+
+    #nav .hlist ul li a.selected, #nav .hlist ul li a:hover {
+        background-position: bottom left;
+    }
+
+    #nav .hlist ul li.last a.selected, #nav .hlist ul li.last a:hover {
+        background-position: bottom right;
+    }
+
+    #nav .hlist ul li a.nav_webBasic_section span.inner,
+    #nav .hlist ul li a.nav_webBasic_content span.inner,
+    #nav .hlist ul li a.nav_webBasic_category span.inner,
+    #nav .hlist ul li a.nav_webBasic_subCategory span.inner,
+    #nav .hlist ul li a.nav_pms_order span.inner,
+    #nav .hlist ul li a.nav_pms_creditNote span.inner,
+    #nav .hlist ul li a.nav_pms_subsidyDiscount span.inner {
+        background-image: url("images/icon-order.png");
+    }
+
+
+    #nav .hlist ul li a span.inner {
+        background-position: 50% 3px;
+        background-repeat: no-repeat;
+        display: block;
+        padding: 53px 10px 0px;
+        white-space: nowrap;
+        border-right: 1px solid #4985B2;
+    }
+
+    /*.hlist ul li a.nav_hms_company span {
+        background: url("images/action/client.png") no-repeat scroll 0 0 transparent;
+        padding: 6px 0 6px 40px;
+    }
+
+    .hlist ul li a.nav_hms_employee span {
+        background: url("images/action/employee.png") no-repeat scroll 0 0 transparent;
+        padding: 6px 0 6px 40px;
+    }
+
+    .hlist ul li a.nav_hms_contact span {
+        background: url("images/action/contact.png") no-repeat scroll 0 0 transparent;
+        padding: 6px 0 6px 40px;
+    }
+
+    .hlist ul li a.nav_hms_PatientInformation span {
+        background: url("images/action/info.png") no-repeat scroll 0 0 transparent;
+        padding: 6px 0 6px 40px;
+    }
+
+    .hlist ul li a.nav_hms_PatientVisit span {
+        background: url("images/action/visit.png") no-repeat scroll 0 0 transparent;
+        padding: 6px 0 6px 40px;
+    }
+
+    .hlist ul li a.nav_hms_appointment span {
+        background: url("images/action/appointment.png") no-repeat scroll 0 0 transparent;
+        padding: 6px 0 6px 40px;
+    }*/
+
+    .leftNav .hlist ul li a span {
+        background: url("images/action/cat_icon.png") no-repeat scroll 0 0 transparent;
+        padding: 0px 0 2px 40px;
+    }
+
+}
+
+@media all
+{
+    .m-common_dashboard .widget h2 {
+        padding:5px 5px;
+        font-size: 25px;
+    }
+
+    .m-common_dashboard #main .page {
+        padding: 5px;
+    }
+
+    .m-common_dashboard .widget {
+        border-top: 0;
+    }
+
+    table.search td select {
+        max-width: 100px;
+    }
+
+    .m-common_dashboard .widget table th, .m-common_dashboard .widget table td {
+        border: 4px solid #EFEFEF;
+        padding: 0.5em;
+    }
+
+    table.search td select, table.search td input {
+        font-size: 11px;
+    }
+
+    #footer {
+        padding: 2px 0 0;
+        height: 10px;
+    }
+}
+
+@media all
+{
+    .jspVerticalBar {
+        width: 10px;
+    }
+
+    .jspTrack {
+    }
+
+    .jspDrag {
+        background: #bddef7;
+    }
+}
+
+/*******************************************************************************
+  PAGINATION
+*******************************************************************************/
+@media all
+{
+    .cpFullWidth #extended {
+        padding:4px 0 0 0;
+        background: #333333;
+    }
+    #extended .pagelinks { border:0; margin:0; padding:0; font-size:10px; }
+    #extended .pagelinks .linkNos a { border:solid 1px #DEDEDE; margin-right:2px; }
+    #extended .pagelinks .noLink { color:#888888; display:inline-block; font-weight:normal; padding:3px 4px; }
+    #extended .pagelinks .nxtBtn a, #extended .pagelinks .preBtn a { font-weight:bold; border:solid 1px #FFFFFF; }
+    #extended .pagelinks .currentPage{ color:#fff; font-weight:bold; display:inline-block; padding:4px 6px; }
+    #extended .pagelinks a:link, #extended .pagelinks a:visited { display:inline-block; padding:3px 6px; text-decoration:none; }
+    #extended .pagelinks a:hover{ text-decoration:none; border: 1px solid #999; }
+    #extended .pagelinks .linkNos {
+        width: 250px;
+    }
+
+    #extended .pagelinks .totalRecs {
+        padding: 3px 0;
+        color:#fff;
+    }
+}
+
+/*******************************************************************************
+  ACTIONS
+*******************************************************************************/
+@media all
+{
+    .actionBtns ul li div.button {
+        padding: 3px;
+    }
+
+    .actionBtns ul li {
+        margin-right: 5px;
+        border-right: 0;
+    }
+
+    .actionBtns ul li a {
+        padding:3px 3px 3px 18px;
+        background-position: 0 1px;
+        background-repeat: no-repeat;
+    }
+
+    .hlist.actionBtns a {
+        font-weight: normal;
+    }
+
+    #actBtn_edit {
+        background-image: url("images/action/edit.gif");
+        background-position: 0 3px;
+    }
+
+    #actBtn_delete {
+        background-image: url("images/action/delete.gif");
+    }
+
+    #actBtn_apply {
+        background-image: url("images/action/apply.gif");
+    }
+
+    #actBtn_save {
+        background-image: url("images/action/save.gif");
+    }
+
+    #actBtn_cancel {
+        background-image: url("images/action/cancel.gif");
+    }
+
+    #actBtn_new {
+        background-image: linear-gradient(to bottom, #5CB85C 0px, #419641 100%);
+        background-repeat: repeat-x;
+        border-color: #3E8F3E;
+        border-radius: 4px;
+        /*background-image: url("images/action/new.gif");*/
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 1px rgba(0, 0, 0, 0.075);
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857;
+        margin-bottom: 0;
+        padding: 6px 12px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        color: #FFFFFF;
+    }
+
+    #actBtn_search {
+        background-image: url("images/action/search.gif");
+    }
+
+    #actBtn_export {
+        background-image: url("images/action/export.png");
+    }
+
+    #actBtn_printListPDF {
+        background-image: url("images/action/print.gif");
+    }
+
+    #actBtn_reportsMenu {
+        background-image: url("images/action/report.gif");
+    }
+
+    #actBtn_save {
+        background-image: url("images/action/save.png");
+    }
+
+    #actBtn_convertOppToProject {
+        background-image: url("images/action/convert.png");
+    }
+
+    #actBtn_raiseInvoice {
+        background-image: url("images/action/raise.png");
+    }
+}
+
+/*******************************************************************************
+  LIST
+*******************************************************************************/
+@media all
+{
+    table.list thead td, table.list thead th, table.list tfoot, tr.header, div.header {
+        background: none;
+        border: 1px solid #ccc;
+        color: #000000;
+        font-weight: bold;
+        background: none;
+    }
+
+    table.thinlist thead th {
+        background: none repeat scroll 0 0 #eeeeee;
+        color: #000000;
+        border-bottom: 3px solid #DDDDDD;
+    }
+
+    table.thinlist thead th a{
+        color: #000000;
+    }
+
+    table.thinlist th, table.thinlist td {
+        padding: 8px;
+        border: 1px solid #DDDDDD;
+    }
+
+    table.list thead a {
+        color: #555;
+    }
+
+    table.list thead td a {
+        color: #555;
+        display: block;
+    }
+
+    table.list thead td a:hover {
+        text-decoration: none;
+    }
+
+    table.thinlist tr.odd{
+        background-color: #F9F9F9;
+    }
+
+    table.list tr.odd:hover, tr.even:hover, tr.current:hover{
+        background-color: #F5F5F5;
+    }
+
+    table.cpSearch td {
+        padding: 5px 10px 5px 0;
+    }
+
+    .m-project_opportunity table.search .ui-autocomplete-input,
+    .m-project_project table.search .ui-autocomplete-input,
+    .m-project_task table.search .ui-autocomplete-input{
+        width: 78px;
+    }
+
+    .m-project_task table.search .ui-autocomplete-input,
+    .m-project_timesheet table.search .ui-autocomplete-input {
+        width: 70px;
+    }
+
+    .rightPanel .header a {
+        color: #fff;
+    }
+
+    .quickLinks .actionBtns ul li {
+        list-style-type: none;
+        margin-bottom: 10px;
+    }
+
+    .quickLinks .actionBtns ul li div.button {
+        width: 85px;
+    }
+
+    .homePageSummary {
+        margin-bottom: 10px;
+    }
+
+    .summary {
+        /*border-right: 1px dotted #cccccc;*/
+        /*min-height: 210px;*/
+        /*padding-right: 25px;*/
+    }
+
+    .summDisplayTitle, .summDisplayPic {
+        /*margin: 20px 0 15px 20px;*/
+        float: left;
+    }
+
+    .summDisplayTitle {
+        margin-top: 8px;
+        margin-left: 5px;
+    }
+
+    .summDisplayTitle a{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .overallSummaryText a{
+        display: inline-block;
+        font-size: 14px;
+        padding: 5px 0 5px 25px;
+        color: #000000;
+        margin-bottom: 5px;
+        text-decoration: underline;
+        background: url("images/list-icon.png") no-repeat scroll 0 5px rgba(0, 0, 0, 0);
+
+    }
+
+    .overallSummaryText a:hover {
+        color:#17375E;
+    }
+
+    .homePageSummaryList {
+        margin:15px;
+        min-height: 225px;
+    }
+
+    .homePageSummaryPanel {
+        border:3px solid #FFC000;
+    }
+
+    .homePageSummaryPanel .summaryHeader{
+        background-color: #FFC000;
+    }
+
+    .m-hms_home .homePageSummaryPanel1,
+    .m-labsg_home .homePageSummaryPanel1 {
+        border:3px solid #FFC000;
+    }
+
+    .homeModuleDisplay img{
+        width: 32px;
+    }
+
+    .homeModuleTitle {
+        float:left;
+        width: 50%;
+    }
+
+    #traineeLinkPvt h3{
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    .m-tradingus_quote #col3 .col3Body .c50l ,
+    .m-tradingsg_quote #col3 .col3Body .c50l ,
+    .m-tradingin_quote #col3 .col3Body .c50l ,
+    .m-tradingsg_supplierQuote #col3 .col3Body .c50l {
+        width: 100%;
+    }
+
+    .m-tradingus_quote #col3 .col3Body .c50r ,
+    .m-tradingsg_quote #col3 .col3Body .c50r ,
+    .m-tradingin_quote #col3 .col3Body .c50r ,
+    .m-tradingsg_supplierQuote #col3 .col3Body .c50r {
+        width: 100%;
+    }
+
+    .m-tradingin_quote #col3 .col3Body .summary .c50l,
+    .m-tradingin_quote #col3 .col3Body .summary .c50r ,
+    .m-tradingus_quote #col3 .col3Body .summary .c50l,
+    .m-tradingus_quote #col3 .col3Body .summary .c50r ,
+    .m-tradingsg_quote #col3 .col3Body .summary .c50l,
+    .m-tradingsg_quote #col3 .col3Body .summary .c50r {
+        width: 50%;
+    }
+
+    .row-tradingsg_quote__tradingsg_productLink .cost-price {
+        font-weight: bold;
+    }
+
+	.btnbackground {
+	    border: 1px solid #EDEDED;
+	    background-image: url('images/maze_white.png');
+			width: 98%;
+			margin-bottom: 14px;
+			padding:12px 0px 5px 12px;
+    }
+
+	.btnbackground .button{
+			display: block;
+			width: 175px;
+			margin-left: 50px;
+  	}
+
+	.actionBtnsDetail h6{
+      font-family: Trebuchet MS, arial, serif;
+	    font-size: 17px;
+      color: #555;
+ 			padding-top: 5px;
+ 		}
+
+	.btnbackground .actionbtnwidth{
+			width: 33.3%;
+			float: left;
+  	}
+
+	.orderbtnbackground {
+	    background-image: url('images/az_subtle.png');
+		padding: 12px;
+    }
+
+	.orderbtnbackgroundNovo {
+	    background-image: url('images/az_subtle.png');
+		margin:15px;
+		margin:15px 0px  15px 0px;
+		padding:12px;
+	}
+
+	.orderbtnbackground button{
+		padding-left: 8px;
+	}
+
+	.orderbtnbackgroundCaptain {
+	    background-image: url('images/az_subtle.png');
+    }
+
+	.m-tradingsg_product .columnar div.type-text input, .m-tradingsg_product .columnar div.type-text textarea {
+	    width: 77.8%;
+	}
+
+	.m-tradingsg_product .columnar div.type-select select {
+		width: 78.9%;
+	}
+
+    .m-tradingsg_order .invoiceForm .button,
+    .m-tradingin_order .invoiceForm .button {
+        position: absolute;
+        top: 75px;
+        left: 400px;
+    }
+
+    .m-tradingin_order .invoiceForm .updateSalesReturnTotal {
+        position: absolute;
+        top: 45px;
+        left: 400px;
+    }
+
+    #actBtn_printPOPDFList {
+        background-image: url("images/action/print.gif");
+    }
+
+    .m-tradingsg_order .cstValue,
+    .m-tradingsg_order .vatValue,
+    .m-tradingsg_order .cstValueNew,
+    .m-tradingsg_order .vatValueNew,
+    .m-tradingin_order .cstValueNew,
+    .m-tradingin_order .vatValueNew {
+        display : none;
+    }
+
+    .m-tradingsg_product #quickAddForm input#price_from_supplier,
+    .m-tradingsg_product #quickAddForm input#price {
+        width: 100px;
+    }
+
+    .m-tradingsg_product #quickAddForm .supplier select{
+        width: 150px;
+    }
+
+    .m-tradingsg_product #quickAddForm .uom select{
+        width: 70px;
+    }
+
+	.contentDescription {
+		display:none;
+        margin-left:20px;
+
+	}
+
+	.toggle {
+		display:none;
+	}
+
+    .m-hms_company .toggle,
+    .m-labsg_company .toggle {
+        display:block;
+    }
+
+    .m-hms_company .yform,
+    .m-labsg_company .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_company .c50l,
+    .m-hms_company .c50r,
+    .m-labsg_company .c50l,
+    .m-labsg_company .c50r {
+        width: 100%;
+    }
+
+    .m-hms_company .ym-columnar .ym-fbox-text label,
+    .m-hms_company .ym-columnar .ym-fbox-select label,
+    .m-hms_company #frmEdit .type-text label,
+    .m-hms_company #frmEdit .type-select label,
+    .m-labsg_company .ym-columnar .ym-fbox-text label,
+    .m-labsg_company .ym-columnar .ym-fbox-select label,
+    .m-labsg_company #frmEdit .type-text label,
+    .m-labsg_company #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_company #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_company  .linkPortalWrapper div.header,
+    .m-hms_company  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_patientInformation .toggle,
+    .m-labsg_patientInformation .toggle {
+        display:block;
+    }
+
+    .m-hms_patientInformation .yform,
+    .m-labsg_patientInformation .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_patientInformation .c50l,
+    .m-hms_patientInformation .c50r,
+    .m-labsg_patientInformation .c50l,
+    .m-labsg_patientInformation .c50r {
+        width: 100%;
+    }
+
+    .visitSummary .label{
+        background-color: #f1f1f1;
+    }
+
+    .m-hms_patientInformation .ym-columnar .ym-fbox-text label,
+    .m-hms_patientInformation .ym-columnar .ym-fbox-select label,
+    .m-hms_patientInformation #frmEdit .type-text label,
+    .m-hms_patientInformation #frmEdit .type-select label,
+    .m-labsg_patientInformation .ym-columnar .ym-fbox-text label,
+    .m-labsg_patientInformation .ym-columnar .ym-fbox-select label,
+    .m-labsg_patientInformation #frmEdit .type-text label,
+    .m-labsg_patientInformation #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_patientInformation #frmEdit .creModdate .type-text label,
+    .m-labsg_patientInformation #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_patientInformation  .linkPortalWrapper div.header,
+    .m-hms_patientInformation  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_patientInformation  .linkPortalWrapper div.header,
+    .m-labsg_patientInformation  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_patientVisit .toggle,
+    .m-hms_order .toggle,
+    .m-labsg_patientVisit .toggle,
+    .m-labsg_order .toggle,
+    .m-hms_purchaseOrder .toggle{
+        display:block;
+    }
+
+    .m-hms_patientVisit .yform,
+    .m-hms_order .yform,
+    .m-labsg_patientVisit .yform,
+    .m-labsg_order .yform,
+    .m-hms_purchaseOrder .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_patientVisit .c50l,
+    .m-hms_patientVisit .c50r,
+    .m-hms_order .c50l,
+    .m-hms_order .c50r,
+    .m-labsg_patientVisit .c50l,
+    .m-labsg_patientVisit .c50r,
+    .m-hms_purchaseOrder .c50l,
+    .m-hms_purchaseOrder .c50r{
+        width: 100%;
+    }
+
+    .m-labsg_order .c50l{
+        width:35%;
+    }
+    .m-labsg_order .c50r{
+        width:65%;
+    }
+
+    .m-hms_patientVisit .ym-columnar .ym-fbox-text label,
+    .m-hms_patientVisit .ym-columnar .ym-fbox-select label,
+    .m-hms_patientVisit #frmEdit .type-text label,
+    .m-hms_patientVisit #frmEdit .type-select label,
+    .m-labsg_patientVisit .ym-columnar .ym-fbox-text label,
+    .m-labsg_patientVisit .ym-columnar .ym-fbox-select label,
+    .m-labsg_patientVisit #portalForm_treatmentDisplay .type-text label,
+    .m-labsg_patientVisit #portalForm_treatmentDisplay .type-select label,
+    .m-labsg_patientVisit #frmEdit .type-text label,
+    .m-labsg_patientVisit #frmEdit .type-select label,
+    .m-labsg_patientVisit #tabs .type-text label,
+    .m-labsg_patientVisit #tabs .type-select label,
+    .m-hms_purchaseOrder .ym-columnar .ym-fbox-text label,
+    .m-hms_purchaseOrder .ym-columnar .ym-fbox-select label,
+    .m-hms_purchaseOrder #frmEdit .type-text label,
+    .m-hms_purchaseOrder #frmEdit .type-select label{
+        width: 100%;
+    }
+
+    .m-hms_patientVisit #frmEdit .creModdate .type-text label,
+    .m-labsg_patientVisit #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_patientVisit  .linkPortalWrapper div.header,
+    .m-hms_patientVisit  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-hms_order  .linkPortalWrapper div.header,
+    .m-hms_order  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_patientVisit  .linkPortalWrapper div.header,
+    .m-labsg_patientVisit  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_order  .linkPortalWrapper div.header,
+    .m-labsg_order  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-hms_purchaseOrder  .linkPortalWrapper div.header,
+    .m-hms_purchaseOrder  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_patientQueue .toggle,
+    .m-labsg_patientQueue .toggle {
+        display:block;
+    }
+
+    .m-hms_patientQueue .yform,
+    .m-labsg_patientQueue .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_patientQueue .c50l,
+    .m-hms_patientQueue .c50r,
+    .m-labsg_patientQueue .c50l,
+    .m-labsg_patientQueue .c50r {
+        width: 100%;
+    }
+
+    .m-hms_patientQueue .ym-columnar .ym-fbox-text label,
+    .m-hms_patientQueue .ym-columnar .ym-fbox-select label,
+    .m-hms_patientQueue #frmEdit .type-text label,
+    .m-hms_patientQueue #frmEdit .type-select label,
+    .m-labsg_patientQueue .ym-columnar .ym-fbox-text label,
+    .m-labsg_patientQueue .ym-columnar .ym-fbox-select label,
+    .m-labsg_patientQueue #frmEdit .type-text label,
+    .m-labsg_patientQueue #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_patientQueue #frmEdit .creModdate .type-text label,
+    .m-labsg_patientQueue #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_patientQueue  .linkPortalWrapper div.header,
+    .m-hms_patientQueue  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_patientQueue  .linkPortalWrapper div.header,
+    .m-labsg_patientQueue  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_treatment .toggle,
+    .m-labsg_treatment .toggle {
+        display:block;
+    }
+
+    .m-hms_treatment .yform,
+    .m-labsg_treatment .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_treatment .c50l,
+    .m-hms_treatment .c50r,
+    .m-labsg_treatment .c50l,
+    .m-labsg_treatment .c50r {
+        width: 100%;
+    }
+
+    .m-hms_treatment .ym-columnar .ym-fbox-text label,
+    .m-hms_treatment .ym-columnar .ym-fbox-select label,
+    .m-hms_treatment #frmEdit .type-text label,
+    .m-hms_treatment #frmEdit .type-select label,
+    .m-labsg_treatment .ym-columnar .ym-fbox-text label,
+    .m-labsg_treatment .ym-columnar .ym-fbox-select label,
+    .m-labsg_treatment #frmEdit .type-text label,
+    .m-labsg_treatment #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_treatment #frmEdit .creModdate .type-text label,
+    .m-labsg_treatment #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_treatment  .linkPortalWrapper div.header,
+    .m-hms_treatment  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_treatment  .linkPortalWrapper div.header,
+    .m-labsg_treatment  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_dutyRoster .toggle,
+    .m-labsg_dutyRoster .toggle {
+        display:block;
+    }
+
+    .m-hms_dutyRoster .yform,
+    .m-labsg_dutyRoster .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_dutyRoster .c50l,
+    .m-hms_dutyRoster .c50r,
+    .m-labsg_dutyRoster .c50l,
+    .m-labsg_dutyRoster .c50r {
+        width: 100%;
+    }
+
+    .m-hms_dutyRoster .ym-columnar .ym-fbox-text label,
+    .m-hms_dutyRoster .ym-columnar .ym-fbox-select label,
+    .m-hms_dutyRoster #frmEdit .type-text label,
+    .m-hms_dutyRoster #frmEdit .type-select label,
+    .m-labsg_dutyRoster .ym-columnar .ym-fbox-text label,
+    .m-labsg_dutyRoster .ym-columnar .ym-fbox-select label,
+    .m-labsg_dutyRoster #frmEdit .type-text label,
+    .m-labsg_dutyRoster #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_dutyRoster #frmEdit .creModdate .type-text label,
+    .m-labsg_dutyRoster #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_dutyRoster  .linkPortalWrapper div.header,
+    .m-hms_dutyRoster  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_dutyRoster  .linkPortalWrapper div.header,
+    .m-labsg_dutyRoster  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_followUpPatient .toggle {
+        display:block;
+    }
+
+    .m-hms_followUpPatient .yform{
+        background-color: #fff;
+        border: 0;
+    }
+
+    .m-hms_followUpPatient .c50l,
+    .m-hms_followUpPatient .c50r {
+        width: 100%;
+    }
+
+    .m-hms_followUpPatient .ym-columnar .ym-fbox-text label,
+    .m-hms_followUpPatient .ym-columnar .ym-fbox-select label,
+    .m-hms_followUpPatient #frmEdit .type-text label,
+    .m-hms_followUpPatient #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_followUpPatient #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_followUpPatient  .linkPortalWrapper div.header,
+    .m-hms_followUpPatient  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_medicalTest .toggle {
+        display:block;
+    }
+
+    .m-hms_medicalTest .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_medicalTest .c50l,
+    .m-hms_medicalTest .c50r {
+        width: 100%;
+    }
+
+    .m-hms_medicalTest .ym-columnar .ym-fbox-text label,
+    .m-hms_medicalTest .ym-columnar .ym-fbox-select label,
+    .m-hms_medicalTest #frmEdit .type-text label,
+    .m-hms_medicalTest #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_medicalTest #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_medicalTest  .linkPortalWrapper div.header,
+    .m-hms_medicalTest  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+
+    .m-hms_medicalSupplier .toggle {
+        display:block;
+    }
+
+    .m-hms_medicalSupplier .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_medicalSupplier .c50l,
+    .m-hms_medicalSupplier .c50r {
+        width: 100%;
+    }
+
+    .m-hms_medicalSupplier .ym-columnar .ym-fbox-text label,
+    .m-hms_medicalSupplier .ym-columnar .ym-fbox-select label,
+    .m-hms_medicalSupplier #frmEdit .type-text label,
+    .m-hms_medicalSupplier #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_medicalSupplier #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_medicalSupplier  .linkPortalWrapper div.header,
+    .m-hms_medicalSupplier  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_labsSupplier .toggle {
+        display:block;
+    }
+
+    .m-hms_labsSupplier .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_labsSupplier .c50l,
+    .m-hms_labsSupplier .c50r {
+        width: 100%;
+    }
+
+    .m-hms_labsSupplier .ym-columnar .ym-fbox-text label,
+    .m-hms_labsSupplier .ym-columnar .ym-fbox-select label,
+    .m-hms_labsSupplier #frmEdit .type-text label,
+    .m-hms_labsSupplier #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_labsSupplier #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_labsSupplier  .linkPortalWrapper div.header,
+    .m-hms_labsSupplier  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+
+    .helpContentButton {
+		position:absolute;
+		right:10px;
+    }
+
+    .contentTitle {
+    	margin:10px;
+    	cursor:pointer;
+    	text-decoration:underline;
+    	font-weight: bold;
+    	font-size: 16px;
+    }
+
+	.m-tradingsg_reports .contentScroller .report {
+		display:block !important;
+	}
+
+    .popcontents .row_no_of_records .message {
+        margin-right:60px;
+        color:red;
+    }
+
+        /** SUMMARY ORDER INVOICE FUNCTION AND CLASSES **/
+    .m-tradingin_order .rightPanel .totalOrderAmountLabel,
+    .m-tradingsg_order .rightPanel .totalOrderAmountLabel {
+        border: 1px solid #ccc;
+        padding:8px;
+        width:61%;
+    }
+
+    .m-tradingin_order .rightPanel .totalOverallAmountValue,
+    .m-tradingsg_order .rightPanel .totalOverallAmountValue {
+        border: 1px solid #ccc;
+        padding:8px;
+        text-align:right;
+        width:61%;
+    }
+
+    .m-tradingin_order .rightPanel .totalOrderAmountValue,
+    .m-tradingin_order .rightPanel .totalInvoiceAmountValue,
+    .m-tradingin_order .rightPanel .totalOutstandingInvoiceAmtValue,
+    .m-tradingin_order .rightPanel .totalReciptAmountValue,
+    .m-tradingsg_order .rightPanel .totalOrderAmountValue,
+    .m-tradingsg_order .rightPanel .totalInvoiceAmountValue,
+    .m-tradingsg_order .rightPanel .totalOutstandingInvoiceAmtValue,
+    .m-tradingsg_order .rightPanel .totalReciptAmountValue {
+        border: 1px solid #ccc;
+        padding:8px;
+        width:233px;
+        background-color:#fff;
+        text-align:right;
+    }
+
+    .m-tradingin_order .rightPanel .summaryAmountDetails,
+    .m-tradingsg_order .rightPanel .summaryAmountDetails {
+        background-color: #ededed;
+        border: 1px solid #efefef;
+        margin-top:10px;
+        margin-bottom:10px;
+
+    }
+
+    .m-tradingin_order .rightPanel .summaryTitle,
+    .m-tradingsg_order .rightPanel .summaryTitle {
+        background-color:#dcd9d9 ;
+        height:35px;
+    }
+
+    .m-tradingin_order .rightPanel .summaryTitle th,
+    .m-tradingsg_order .rightPanel .summaryTitle th {
+        padding-left:6px;
+    }
+
+    .summarytable{
+        text-align: right;
+        width:90%;
+    }
+    .expense{
+        text-align: right;
+        width:10%;
+    }
+
+    .order_amount{
+        text-align: right;
+        font-weight: bold;
+    }
+
+    .m-hms_appointment .appointmentCalendarView,
+    .m-hms_dutyRoster .dutyRosterCalendarView,
+    .m-hms_followUpPatient .followUpPatientCalendarView,
+    .m-labsg_appointment .appointmentCalendarView,
+    .m-labsg_dutyRoster .dutyRosterCalendarView,
+    .m-labsg_followUpPatient .followUpPatientCalendarView{
+        float: left;
+        width: 68%;
+    }
+
+    .m-hms_appointment .appointmentCalendarViewRight,
+    .m-hms_dutyRoster .dutyRosterCalendarViewRight,
+    .m-hms_followUpPatient .followUpPatientCalendarViewRight,
+    .m-labsg_appointment .appointmentCalendarViewRight,
+    .m-labsg_dutyRoster .dutyRosterCalendarViewRight,
+    .m-labsg_followUpPatient .followUpPatientCalendarViewRight{
+        width: 30%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 3.5%;
+        float: right;
+    }
+
+    .m-hms_appointment .appointmentCalendarViewRight2,
+    .m-hms_followUpPatient .followUpPatientCalendarViewRight2,
+    .m-labsg_appointment .appointmentCalendarViewRight2,
+    .m-labsg_followUpPatient .followUpPatientCalendarViewRight2{
+        width: 30%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 1%;
+        float: right;
+    }
+
+    .m-hms_appointment .appointmentScroll,
+    .m-hms_followUpPatient .appointmentScroll,
+    .m-labsg_appointment .appointmentScroll,
+    .m-labsg_followUpPatient .appointmentScroll{
+        height: 173px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .m-hms_appointment .appointmentvisitScroll,
+    .m-hms_followUpPatient .followUpScroll,
+    .m-labsg_appointment .appointmentvisitScroll,
+    .m-labsg_followUpPatient .followUpScroll{
+        height: 240px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .queueNoTable{
+        border: 1px solid #838383;
+        border-radius: 2px;
+        box-shadow: 1px 1px #838383;
+        font-weight: bold;
+        padding: 6px;
+        float: right;
+        margin-right: 25px;
+    }
+
+    .m-hms_appointment .fc-event-vert .fc-event-time
+    ,.m-hms_dutyRoster .fc-event-vert .fc-event-time
+    ,.m-hms_followUpPatient .fc-event-vert .fc-event-time,
+    .m-labsg_appointment .fc-event-vert .fc-event-time
+    ,.m-labsg_dutyRoster .fc-event-vert .fc-event-time
+    ,.m-labsg_followUpPatient .fc-event-vert .fc-event-time {
+        font-size: 13px;
+        font-weight: bold;
+        white-space: nowrap;
+        float: left;
+        color: #FFFFFF;
+    }
+
+    .m-hms_followUpPatient .cancelFollowUpDetail ,
+    .m-labsg_followUpPatient .cancelFollowUpDetail {
+        color: #000000 !important;
+        font-weight: bold !important;
+        cursor: pointer !important;
+        text-decoration: underline !important;
+    }
+
+    .m-hms_appointment .cancelAppointment,
+    .m-hms_appointment .cancelAppointment:hover,
+    .m-hms_dutyRoster .cancelAppointment,
+    .m-hms_dutyRoster .cancelAppointment:hover,
+    .m-hms_followUpPatient .cancelFollowUp,
+    .m-hms_followUpPatient .cancelFollowUp:hover,
+    .m-labsg_appointment .cancelAppointment,
+    .m-labsg_appointment .cancelAppointment:hover,
+    .m-labsg_dutyRoster .cancelAppointment,
+    .m-labsg_dutyRoster .cancelAppointment:hover,
+    .m-labsg_followUpPatient .cancelFollowUp,
+    .m-labsg_followUpPatient .cancelFollowUp:hover{
+        color: #FFFFFF;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .m-hms_appointment .cancelDutyRosterOnEvent,
+    .m-labsg_appointment .cancelDutyRosterOnEvent{
+        padding-left: 126px;
+        float: right;
+    }
+
+    .m-hms_appointment .cancelAppointmentOnEvent,
+    .m-hms_followUpPatient .cancelFollowUpOnEvent,
+    .m-labsg_appointment .cancelAppointmentOnEvent,
+    .m-labsg_followUpPatient .cancelFollowUpOnEvent{
+        padding-left: 22px;
+    }
+
+    .nextQueueNo,
+    .cancelPatientVisit{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .button.viewVisitRecord, .button2 {
+        background: -webkit-linear-gradient(#FFFFFF, #FFC000) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: -o-linear-gradient(#FFFFFF, #FFC000) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: linear-gradient(#FFFFFF, #FFC000) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: 1px solid #FFC000;
+    }
+
+    .m-hms_appointment a.evenDetails,
+    .m-hms_appointment a.evenDetails:hover,
+    .m-hms_followUpPatient a.evenDetails,
+    .m-hms_followUpPatient a.evenDetails:hover,
+    .m-labsg_appointment a.evenDetails,
+    .m-labsg_appointment a.evenDetails:hover,
+    .m-labsg_followUpPatient a.evenDetails,
+    .m-labsg_followUpPatient a.evenDetails:hover{
+        color: #FFFFFF;
+        font-size:12px;
+    }
+
+    .fc-event-vert.fc-event-end{
+        border: 5px solid #fff !important;
+    }
+    .m-hms_appointment .fc-event-inner a.createVisit,
+    .m-hms_appointment .fc-event-inner a.createVisit:hover,
+    .m-hms_appointment .fc-event-inner a.cancelAppointment,
+    .m-hms_appointment .fc-event-inner a.cancelAppointment:hover,
+    .m-hms_appointment .fc-event-inner a.viewVisitRecord,
+    .m-hms_appointment .fc-event-inner a.viewVisitRecord:hover,
+    .m-hms_followUpPatient .fc-event-inner a.createAppointment,
+    .m-hms_followUpPatient .fc-event-inner a.createAppointment:hover,
+    .m-hms_followUpPatient .fc-event-inner a.cancelFollowUp,
+    .m-hms_followUpPatient .fc-event-inner a.cancelFollowUp:hover,
+    .m-labsg_appointment .fc-event-inner a.createVisit,
+    .m-labsg_appointment .fc-event-inner a.createVisit:hover,
+    .m-labsg_appointment .fc-event-inner a.cancelAppointment,
+    .m-labsg_appointment .fc-event-inner a.cancelAppointment:hover,
+    .m-labsg_appointment .fc-event-inner a.viewVisitRecord,
+    .m-labsg_appointment .fc-event-inner a.viewVisitRecord:hover,
+    .m-labsg_followUpPatient .fc-event-inner a.createAppointment,
+    .m-labsg_followUpPatient .fc-event-inner a.createAppointment:hover,
+    .m-labsg_followUpPatient .fc-event-inner a.cancelFollowUp,
+    .m-labsg_followUpPatient .fc-event-inner a.cancelFollowUp:hover{
+        font-size:12px;
+    }
+
+    .m-hms_dutyRoster a.evenDetails,
+    .m-hms_dutyRoster a.evenDetails:hover,
+    .m-labsg_dutyRoster a.evenDetails,
+    .m-labsg_dutyRoster a.evenDetails:hover{
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+
+    .m-hms_appointment .doctorFilter_visit,
+    .m-hms_followUpPatient .doctorFilter_visit,
+    .m-labsg_appointment .doctorFilter_visit,
+    .m-labsg_followUpPatient .doctorFilter_visit{
+        border: 1px solid #CCCCCC;
+        font-weight: bold;
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .m-hms_appointment .doctorFilter,
+    .m-hms_followUpPatient .doctorFilter,
+    .m-labsg_appointment .doctorFilter,
+    .m-labsg_followUpPatient .doctorFilter{
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .m-hms_dutyRoster .cancelDutyRoster,
+    .m-labsg_dutyRoster .cancelDutyRoster{
+        color: #FFFFFF;
+        float: right;
+        padding-left: 108px;
+        font-weight: bold;
+    }
+
+    .m-hms_appointment .cancelledAppointment,
+    .m-labsg_appointment .cancelledAppointment{
+        color: #FFFFFF;
+        padding-left: 2px;
+        font-weight: bold;
+    }
+
+    .m-hms_appointment .cancelledAppointmentDetails,
+    .m-labsg_appointment .cancelledAppointmentDetails{
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+
+    .m-hms_appointment .visitCreateButton,
+    .m-labsg_appointment .visitCreateButton{
+        padding: 6px 12px;
+    }
+
+    .m-hms_appointment .eventCancelAppointment,
+    .m-hms_appointment .eventCancelAppointment:hover,
+    .m-labsg_appointment .eventCancelAppointment,
+    .m-labsg_appointment .eventCancelAppointment:hover{
+        color: #000000;
+    }
+
+    .fc-agenda-slots td div {
+        height: 55px;
+    }
+
+    .v-new .ym-columnar div.error .message
+    ,.v-new .columnar div.error .message{
+        margin-left: 20% !important;
+    } 
+
+    .v-edit .ym-columnar div.error .message
+    ,.v-edit .columnar div.error .message {
+        margin-left: 10% !important;
+    }
+
+
+    .m-hms_appointment .ym-columnar div.ym-fbox-text input
+    ,.m-hms_appointment .columnar div.type-text input
+    ,.m-hms_appointment .ym-columnar div.ym-fbox-text textarea
+    ,.m-hms_appointment .columnar div.type-text textarea
+    ,.m-hms_appointment .ym-columnar div.ym-fbox-select select
+    ,.m-hms_appointment .columnar div.type-select select
+    ,.m-hms_followUpPatient .ym-columnar div.ym-fbox-text input
+    ,.m-hms_followUpPatient .columnar div.type-text input
+    ,.m-hms_followUpPatient .ym-columnar div.ym-fbox-text textarea
+    ,.m-hms_followUpPatient .columnar div.type-text textarea
+    ,.m-hms_followUpPatient .ym-columnar div.ym-fbox-select select
+    ,.m-hms_followUpPatient .columnar div.type-select select
+    ,.m-labsg_appointment .ym-columnar div.ym-fbox-text input
+    ,.m-labsg_appointment .columnar div.type-text input
+    ,.m-labsg_appointment .ym-columnar div.ym-fbox-text textarea
+    ,.m-labsg_appointment .columnar div.type-text textarea
+    ,.m-labsg_appointment .ym-columnar div.ym-fbox-select select
+    ,.m-labsg_appointment .columnar div.type-select select
+    ,.m-labsg_followUpPatient .ym-columnar div.ym-fbox-text input
+    ,.m-labsg_followUpPatient .columnar div.type-text input
+    ,.m-labsg_followUpPatient .ym-columnar div.ym-fbox-text textarea
+    ,.m-labsg_followUpPatient .columnar div.type-text textarea
+    ,.m-labsg_followUpPatient .ym-columnar div.ym-fbox-select select
+    ,.m-labsg_followUpPatient .columnar div.type-select select
+    {
+        background-color: #FFFFFF;
+        background-image: none;
+        border: 1px solid #CCCCCC;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        color: #555555;
+        display: block;
+        font-size: 14px;
+        line-height: 1.42857;
+        padding: 6px 12px;
+        transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    }
+
+    .m-hms_appointment .ym-columnar div.ym-fbox-select select
+    ,.m-hms_appointment .columnar div.type-select select
+    ,.m-hms_followUpPatient .ym-columnar div.ym-fbox-select select
+    ,.m-hms_followUpPatient .columnar div.type-select select ,
+    .m-labsg_appointment .ym-columnar div.ym-fbox-select select
+    ,.m-labsg_appointment .columnar div.type-select select
+    ,.m-labsg_followUpPatient .ym-columnar div.ym-fbox-select select
+    ,.m-labsg_followUpPatient .columnar div.type-select select {
+        margin-right: -3px;
+        width: 74.3%;
+    }
+
+    .m-hms_appointment .ym-form
+    ,.m-hms_appointment .yform ,
+    .m-labsg_appointment .ym-form
+    ,.m-labsg_appointment .yform {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #FFFFFF;
+    }
+
+    .m-hms_dutyRoster .ym-fbox-check,
+    .m-labsg_dutyRoster .ym-fbox-check{
+        float: left;
+    }
+
+    .m-hms_patientVisit .toothSelectCheckbox,
+    .m-labsg_patientVisit .toothSelectCheckbox{
+        margin-left: 130px;
+    }
+
+    .m-hms_patientVisit .toothSelectCheckbox .ym-fbox-check,
+    .m-hms_patientVisit .toothSelectCheckbox2 .ym-fbox-check,
+    .m-hms_patientVisit .toothSelectCheckbox3 .ym-fbox-check,
+    .m-labsg_patientVisit .toothSelectCheckbox .ym-fbox-check,
+    .m-labsg_patientVisit .toothSelectCheckbox2 .ym-fbox-check,
+    .m-labsg_patientVisit .toothSelectCheckbox3 .ym-fbox-check{
+        float: left;
+        width: 46px;
+    }
+
+    .m-hms_patientVisit .newLineFornext,
+    .m-labsg_patientVisit .newLineFornext{
+        clear: both;
+    }
+
+
+    .m-hms_patientVisit .toothSelectCheckbox .ym-fbox-check label,
+    .m-hms_patientVisit .toothSelectCheckbox2 .ym-fbox-check label,
+    .m-hms_patientVisit .toothSelectCheckbox3 .ym-fbox-check label,
+    .m-labsg_patientVisit .toothSelectCheckbox .ym-fbox-check label,
+    .m-labsg_patientVisit .toothSelectCheckbox2 .ym-fbox-check label,
+    .m-labsg_patientVisit .toothSelectCheckbox3 .ym-fbox-check label{
+        padding-top: 55px !important;
+    }
+
+    .m-hms_patientVisit .toothSelectCheckbox .ym-fbox-check input,
+    .m-hms_patientVisit .toothSelectCheckbox2 .ym-fbox-check input,
+    .m-hms_patientVisit .toothSelectCheckbox3 .ym-fbox-check input,
+    .m-labsg_patientVisit .toothSelectCheckbox .ym-fbox-check input,
+    .m-labsg_patientVisit .toothSelectCheckbox2 .ym-fbox-check input,
+    .m-labsg_patientVisit .toothSelectCheckbox3 .ym-fbox-check input{
+        visibility: hidden;
+    }
+
+   .m-hms_patientVisit .toothSelectCheckbox .ym-fbox-check input[type="checkbox"] + label,
+   .m-hms_patientVisit .toothSelectCheckbox2 .ym-fbox-check input[type="checkbox"] + label,
+   .m-hms_patientVisit .toothSelectCheckbox3 .ym-fbox-check input[type="checkbox"] + label,
+   .m-labsg_patientVisit .toothSelectCheckbox .ym-fbox-check input[type="checkbox"] + label,
+   .m-labsg_patientVisit .toothSelectCheckbox2 .ym-fbox-check input[type="checkbox"] + label,
+   .m-labsg_patientVisit .toothSelectCheckbox3 .ym-fbox-check input[type="checkbox"] + label{
+        background: url("images/perio_teeth.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        padding: 18px;
+        width: 23px;
+    }
+
+    .m-hms_patientVisit .toothSelectCheckbox .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-hms_patientVisit .toothSelectCheckbox2 .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-hms_patientVisit .toothSelectCheckbox3 .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-labsg_patientVisit .toothSelectCheckbox .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-labsg_patientVisit .toothSelectCheckbox2 .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-labsg_patientVisit .toothSelectCheckbox3 .ym-fbox-check input[type="checkbox"]:checked + label{
+        background: url("images/perio_teeth_checked.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        padding: 18px;
+        width: 23px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check{
+        float: left;
+        width: 120px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check label{
+        padding-top: 55px !important;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input{
+        visibility: hidden;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_1 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_1 + label{
+        background: url("images/PerioSymbols/Cavity.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 34px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_2 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_2 + label{
+        background: url("images/PerioSymbols/Filling.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        padding: 0;
+        width: 36px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_3 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_3 + label{
+        background: url("images/PerioSymbols/Crown.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 36px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_4 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_4 + label{
+        background: url("images/PerioSymbols/Bridge.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 78px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_5 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_5 + label{
+        background: url("images/PerioSymbols/Tooth Missing.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 42px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_6 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_6 + label{
+        background: url("images/PerioSymbols/Root Present.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 44px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_7 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_7 + label{
+        background: url("images/PerioSymbols/Root Filling.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 58px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_8 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_8 + label{
+        background: url("images/PerioSymbols/Pulp Non Vital.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 50px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_9 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_9 + label{
+        background: url("images/PerioSymbols/Fracture.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 53px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_10 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_10 + label{
+        background: url("images/PerioSymbols/Deep Fissure.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 38px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_11 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_11 + label{
+        background: url("images/PerioSymbols/Observed.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 53px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_12 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_12 + label{
+        background: url("images/PerioSymbols/Tooth Present and Sound.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 78px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_13 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_13 + label{
+        background: url("images/PerioSymbols/Tooth Requiring Extraction.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 58px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_14 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_14 + label{
+        background: url("images/PerioSymbols/Tooth Recently Extracted.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 62px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_15 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_15 + label{
+        background: url("images/PerioSymbols/Artifical Tooth.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 46px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_16 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_16 + label{
+        background: url("images/PerioSymbols/Implant.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 4px;
+        width: 44px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .leftCol label,
+    .m-hms_dutyRoster .WeekdaysSelect .leftCol label{
+       padding-left: 10px;
+       padding-top: 15px;
+    }
+
+    .m-hms_dutyRoster .create_MonthCheck .leftCol label{
+       padding-left: 10px;
+       padding-top: 15px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .rightCol .type-check,
+    .m-hms_dutyRoster .WeekdaysSelect .rightCol .type-check,
+    .m-hms_dutyRoster .create_MonthCheck .rightCol .type-check{
+        padding-left: 6px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude,
+    .m-hms_dutyRoster .WeekdaysSelect,
+    .m-hms_dutyRoster .create_MonthCheck{
+        border-radius: 5px;
+        margin-right: 28px;
+        border: 1px solid #D0D0D0;
+        margin-top: 16px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check input + label:hover,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check input + label:hover,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check input + label:hover {
+        background-color: #FFC000;
+        color: #000000;
+    }
+
+/*    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check input + label,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check input + label,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check input + label{
+        background: #17375E;
+        padding: 8px;
+        border-radius: 4px;
+        color: #FFFFFF;
+    }
+*/
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check input + label,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check input + label,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check input + label {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: 1px solid #17375E;
+        border-radius: 4px;
+        color: #17375E;
+        font-weight: bold;
+        padding: 7px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check{
+        padding: 8px;
+    }
+
+    .m-hms_dutyRoster div.ym-fbox-select,
+    .m-hms_dutyRoster div.ym-fbox-text{
+        overflow: visible;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check label:hover,
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check label,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check label:hover,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check label,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check label:hover,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check label{
+         background-color: #FFC000;
+         margin-left: -8px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check input,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check input,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check input {
+        visibility: hidden;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check label input,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check label input,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check label input {
+        position:absolute;
+        top:-20px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check input:checked + label,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check input:checked + label,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check input:checked + label{
+        background-color: #FFC000;
+        border-radius: 4px;
+        color: #000000;
+        font-weight: bold;
+        padding: 7px;
+        /*padding: 8px;*/
+    }
+
+    .m-hms_dutyRoster .WeekdaysSelect .rightCol .ym-fbox-check input + label {
+        display: block;
+        margin-left: 1px;
+        text-align: center;
+        width: 40px;
+    }
+
+    .m-hms_dutyRoster .WeekdaysSelect .rightCol {
+        padding-bottom: 10px;
+        padding-left: 6px;
+    }
+
+    .m-hms_dutyRoster .WeekdaysSelect .leftCol label {
+        padding-top: 28px !important;
+    }
+
+    .m-hms_dutyRoster .onEditUpdateType{
+        margin-right: 54px;
+    }
+
+    .m-hms_dutyRoster .fc-event-inner:hover .fc-event-time,
+    .m-hms_dutyRoster .fc-event-inner:hover .fc-event-title{
+        text-decoration: underline;
+        color: #FFFFFF;
+    }
+
+    .m-hms_dutyRoster .WeekendsExcludeDisable,
+    .m-hms_dutyRoster .WeekdaysSelectDisable,
+    .m-hms_dutyRoster .secondWorkTimeDutyDisable,
+    .m-hms_dutyRoster .secondWorkTimeDutyDisable2{
+        display: none;
+    }
+
+    .m-hms_dutyRoster .addTimeinOutLine img,
+    .m-hms_dutyRoster .addTimeinOutLine2 img,
+    .m-hms_dutyRoster .addTimeinOutLine3 img,
+    .m-hms_dutyRoster .addTimeinOutLine4 img{
+        float: right;
+        height: 25px;
+        padding-right: 33px;
+        width: 25px;
+    }
+
+    .m-hms_dutyRoster .doctorFilter{
+        font-weight: bold;
+        padding-bottom: 28px;
+    }
+
+    .m-hms_dutyRoster .previous_dutyRoster_icon,
+    .m-hms_dutyRoster .next_dutyRoster_icon{
+        font-family: Helvetica;
+        font-size: 18px;
+    }
+
+    .m-hms_dutyRoster .previous_dutyRoster_icon.button,
+    .m-hms_dutyRoster .next_dutyRoster_icon.button{
+        padding: 4px 9px;
+    }
+
+    .m-hms_dutyRoster .today_dutyRoster_icon.button{
+        padding: 7px 10px;
+    }
+
+    .m-hms_dutyRoster .dutyRosterListHeading{
+        font-size: 17px;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .m-hms_dutyRoster .dutyRosterDateChange{
+        font-size: 16px;
+        font-weight: normal;
+        padding-left: 26px;
+        padding-top: 6px;
+    }
+
+    .m-hms_dutyRoster .todayButtonDutyDisable{
+        background: none;
+        box-shadow: none;
+        cursor: default;
+    }
+
+    .searchSelectPatientVisit{
+        float: left;
+        padding-left: 6px;
+    }
+
+    .searchSelectPatientVisit select{
+        font-size: 17px;
+        padding: 11px;
+    }
+
+    .searchSelectPatientVisit option{
+        font-size: 17px;
+    }
+
+    .searchInputPatientVisit{
+        float: left;
+        font-size: 20px;
+        padding: 9px;
+        width: 70%;
+    }
+
+    .searchPanelInPatientVisitLabel{
+        padding-top: 16px;
+    }
+
+    .searchPanelInPatientVisitLabel label{
+        font-size: 18px;
+    }
+
+    .searchButtonPatientVisit{
+        float: left;
+        padding-left: 6px
+    }
+
+    .searchPanelInPatientVisit .button{
+        border-radius: 2px;
+        font-size: 17px;
+        padding: 10px 38px;
+    }
+
+    .searchTableInPatientVisit, .searchTableInPatientVisitAppointment{
+        padding-top: 78px;
+    }
+
+    .searchResultLabel{
+        float: left;
+        padding-bottom: 14px;
+        padding-top: 10px;
+    }
+
+    .searchResultLabel label{
+        font-size: 17px;
+    }
+
+    .visitCreateButtonInVisit{
+        border-radius: 2px;
+        padding: 8px 22px;
+    }
+
+    .searchTableInPatientVisit .thinlist, .searchTableInPatientVisitAppointment .thinlist{
+        float: left;
+    }
+
+    .m-hms_patientVisit.v-edit .goToSearchPatientVisit{
+        padding-bottom: 15px;
+    }
+
+    .m-hms_patientVisit.v-edit .goToSearchPatientVisit a.button {
+        margin-right: 14px;
+    }
+
+    .goToSearchPatientVisit{
+        padding-bottom: 60px;
+    }
+
+    .m-hms_patientVisit .defaultListDisplay, .m-hms_patientVisit .cpSearch,
+    .m-labsg_patientVisit .defaultListDisplay, .m-labsg_patientVisit .cpSearch{
+        display: none;
+    }
+
+    .m-hms_patientVisit.v-list .cpSearch,
+    .m-labsg_patientVisit.v-list .cpSearch {
+        float: left;
+        margin-top: 65px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+    }
+
+    .m-hms_patientVisit .selectedToothSymbol,
+    .m-labsg_patientVisit .selectedToothSymbol{
+        margin-left: 9px;
+        margin-top: 29px;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .m-hms_patientVisit.v-list .cpSearch input[type="text"],
+    .m-labsg_patientVisit.v-list .cpSearch input[type="text"] {
+        min-width: 260px;
+    }
+
+    .m-hms_patientVisit .searchTableInPatientVisithide,
+    .m-labsg_patientVisit .searchTableInPatientVisithide{
+        display: none;
+    }
+
+    .m-hms_patientVisit .perioChartSymbols,
+    .m-labsg_patientVisit .perioChartSymbols{
+        border: 2px solid #CCCCCC;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px 0 #888888;
+        height: 328px;
+    }
+
+    .m-hms_patientVisit .Extracted,
+    .m-labsg_patientVisit .Extracted{
+        margin-left: 6px;
+        margin-top: 22px;
+    }
+
+    .m-hms_patientVisit .Extraction,
+    .m-labsg_patientVisit .Extraction{
+        margin-left: 6px;
+        margin-top: 22px;
+    }
+
+    .m-hms_patientVisit .Observed,
+    .m-labsg_patientVisit .Observed{
+        margin-left: 3px;
+    }
+
+    .m-hms_patientVisit .Bridge,
+    .m-labsg_patientVisit .Bridge{
+        margin-left: 0px;
+        margin-top: 16px;
+    }
+
+    .m-hms_patientVisit #tabs .c50l,
+    .m-labsg_patientVisit #tabs .c50l{
+        width: 50%;
+    }
+
+    #tabs .ui-widget-header{
+        background: #F8F8F8;
+    }
+
+    #tabs .ui-state-default, #tabs .ui-widget-content .ui-state-default, #tabs .ui-widget-header .ui-state-default{
+        background: #17375E;
+    }
+
+    #tabs .ui-state-default, #tabs .ui-widget-content .ui-state-default, #tabs .ui-widget-header .ui-state-default{
+        border: 1px solid #17375E;
+    }
+
+    #tabs .ui-state-active, #tabs .ui-widget-content .ui-state-active, #tabs .ui-widget-header .ui-state-active{
+        background: #ffffff;
+        border: 1px solid #AAAAAA;
+    }
+
+    #tabs .ui-state-default a, #tabs .ui-state-default a:link, #tabs .ui-state-default a:visited {
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    #tabs .ui-state-active a, #tabs .ui-state-active a:link, #tabs .ui-state-active a:visited{
+        color: #212121;
+    }
+
+
+    #tabs.ui-tabs .ui-tabs-nav li a {
+        width: 130px;
+        text-align: center;
+    }
+
+    #tabs .ym-columnar div.ym-fbox-check input, #tabs .columnar div.type-check input {
+        margin-left: 0;
+    }
+
+    #tabs .columnar div.type-check input.normalCheck{
+        margin-left: 15px;
+    }
+
+    #tabs .columnar div.type-check input.abnormalCheck{
+        margin-left: 40px;
+    }
+
+    #tabs .columnar div.type-check input#fld_remarks{
+        width: 127px;
+        margin-left: 27px;
+    }
+
+    #tabs .examination1  .columnar div.type-check input#fld_remarks{
+        width: 175px;
+        margin-left: 27px;
+    }
+
+    #tabs #treatmentDisplay .ym-columnar div.ym-fbox-check input#fld_fees, #tabs #treatmentDisplay .columnar div.type-check input#fld_fees {
+        width: 85px;
+        cursor: text;
+    }
+
+    #tabs #treatmentDisplay .button {
+        padding:5px 0;
+        width: 85px;
+        font-size: 12px;
+    }
+
+    #tabs #treatmentDisplay .c50l {
+        width: 50%;
+    }
+
+    .treatmentDisplay {
+        width:49%;
+        float:left;
+    }
+
+    .m-labsg_patientVisit .treatmentDisplay {
+        width:95%;
+        float:none;
+    }
+
+    .treatmentBox, .labTestBox {
+        border: 1px solid #cccccc;
+        padding: 5px;
+        margin-right: 4px !important;
+    }
+
+    .labTestBox{
+        min-height:73px;
+    }
+
+    .m-hms_patientVisit .treatmentDisplay .yform,
+    .m-hms_patientVisit .diagnosisDisplay .yform,
+    .m-hms_patientVisit .habits .yform,
+    .m-hms_patientVisit .oralHygienic .yform,
+    .m-labsg_patientVisit .treatmentDisplay .yform,
+    .m-labsg_patientVisit .diagnosisDisplay .yform,
+    .m-labsg_patientVisit .habits .yform,
+    .m-labsg_patientVisit .oralHygienic .yform{
+        border: 1px solid #dddddd;
+        padding: 10px;
+    }
+
+    .m-hms_patientVisit .treatmentDisplay .yform,
+    .m-hms_patientVisit .diagnosisDisplay .yform{
+        min-height: 160px;
+    }
+
+    .m-hms_patientVisit .habits .yform,
+    .m-hms_patientVisit .oralHygienic .yform,
+    .m-labsg_patientVisit .habits .yform,
+    .m-labsg_patientVisit .oralHygienic .yform{
+        min-height: 300px;
+        background-color: #f6f6f6;
+        position: relative;
+    }
+
+    .diagnosisDisplay {
+        width:49%;
+        float:right;
+    }
+
+    .displayNone {
+        display: none;
+    }
+
+    .examination .yform .type-check label{
+        width:30%;
+        display: inline-block;
+    }
+
+    .examination1 .yform .type-check label{
+        width:35%;
+        display: inline-block;
+    }
+
+    #tabs .columnar div.type-button {
+        margin-left: 0;
+    }
+
+    #tabs .oralHygienicTab .columnar div.type-button {
+        position: absolute;
+        top:85%;
+    }
+
+    .medHisDisplay{
+        width: 30%;
+    }
+
+    .medHisDisplay .ym-fbox-check{
+        width: 50%;
+        margin-bottom: 20px !important;
+    }
+
+    .medHisDisplay,
+    .medHisDisplay .ym-fbox-check {
+        float: left;
+    }
+
+    #medicalHistory .columnar div.type-text input, #medicalHistory .columnar div.type-text textarea {
+        height: 75px;
+    }
+
+    .m-hms_order .orderRightpanelButtons{
+        padding-bottom: 15px;
+    }
+
+    .m-hms_appointment .ym-form div.error .message
+    ,.m-hms_appointment .yform div.error .message {
+        background-color: #880000;
+        border-radius: 3px;
+        color: #FFFFFF;
+        padding: 4px;
+        width: 284px;
+    }
+
+    .noty_text {
+        display: block;
+        font-size: 17px;
+        margin-top: 5px;
+    }
+
+    #noty_topCenter_layout_container{
+        top: 80px !important;
+    }
+
+    #noty_topCenter_layout_container li {
+        background-color: #FFA500 !important;
+        border-color: #FFA500 !important;
+        color: #3F3F3F !important;
+        font-weight: bold;
+        height: 45px !important;
+        width: 339px !important;
+    }
+
+
+    #summaryDisplay .columnar div.type-text textarea{
+        height: 150px;
+        width: 95%;
+    }
+
+    .fc-event-time .createVisit,
+    .fc-event-time .createAppointment{
+        color: #FFFFFF;
+        text-decoration: underline;
+    }
+
+    .fc-event-time .viewVisitRecord{
+        color: #FFFFFF;
+        text-decoration: underline;
+    }
+
+    .hideNotes, .hideNotesLab{
+        display: none;
+    }
+
+    .order_item_type_title {
+        font-weight: bold;
+        padding: 6px 0;
+    }
+
+    .order_item_type_value {
+        height: 28px;
+        margin: -6px;
+        width: 130px;
+        text-align: right;
+    }
+
+    .thinlist.order_item_type_table {
+        background-color: #999999;
+        color: #FFFFFF;
+    }
+
+    .thinlist.order_item_type_table th {
+        font-size: 18px;
+    }
+
+    .order_item_type_value.invoice_sub_total_amount,
+    .order_item_type_value.invoice_total_amount {
+        background-color: #999999;
+        border-color: #999999;
+        color: #FFFFFF;
+    }
+
+    .m-hms_reports .homeClass{
+        left: 200px;
+        position: absolute;
+        top: 16px;
+    }
+
+    .noRenewal font {
+        display: block;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .m-hms_reports .homeClass a{
+        font-size: 20px;
+    }
+
+    .m-hms_purchaseOrder .row_error_box1 strong.message {
+        background-color: #8B0000;
+        border-radius: 3px;
+        color: #FFFFFF;
+        padding: 6px;
+        width: 300px;
+    }
+
+    .m-hms_purchaseOrder .text.last_price {
+        background-color: #FFFFFF;
+        border: medium none;
+        color: #000000;
+        font-weight: bold;
+        text-align: right;
+        width: 120px;
+    }
+
+    .noRenewal {
+        height: 54px;
+        text-align: center;
+    }
+
+    .floatboxQuoteHistory {
+        height: 20px;
+    }
+
+    .queueNumberDisplay{
+        display: none;
+    }
+
+    .dashboardSummary {
+        color: #ffffff;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .dashboardSummary div{
+        font-size: 18px;
+    }
+
+    .dashboardSummary .c33l{
+        width: 30%;
+        font-size: 40px;
+    }
+
+    .revenueSummary {
+        background-color: #0268DD;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .patientVisitSummary {
+        background-color: #DB4302;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .patientVisitSummaryWalkIn {
+        background-color: #00AA99;
+        padding: 10px;
+    }
+
+    .lastRowBgColor {
+        background-color:#CCCCCC !important;
+        font-weight: bold;
+    }
+
+    .followupTab {
+        background-color: #E3E3E3;
+        border:3px solid #42C1E8;
+    }
+
+    .notesEditLink {
+        text-decoration: underline;
+    }
+
+    .notesFollowupdisable,
+    .notesAppointmentdisable{
+        display: none;
+    }
+
+    .followUpNotesUpdate,
+    .appointmentNotesUpdate {
+        float: right;
+        font-size: 12px !important;
+        padding: 2px;
+    }
+
+    .notesFollowup textarea,
+    .notesAppointment textarea {
+        max-height: 72px;
+        overflow-y: auto !important;
+        width: 188px;
+    }
+
+    .createAppointment {
+        text-decoration: underline;
+    }
+
+    .multi-unique-site select {
+        font-size: 15px;
+        font-weight: bold;
+        padding: 2px;
+    }
+
+}

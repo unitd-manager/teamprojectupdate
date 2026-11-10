@@ -1,0 +1,59 @@
+@media all {
+  .yform .invoiceDate div.type-text {
+    width: 175px;
+  }
+  .columnar .receipt_invoices.error .message {
+    margin-left: 0;
+  }
+  #portalForm.editInvoiceFormPvt .installmentTitle .type-text {
+    width: 85px;
+    margin-top: 10px;
+  }
+  .receiptForm .invoice_items {
+    width: 190px;
+  }
+  .receiptForm .monthField {
+    width: 50px;
+  }
+  #invoicePortalOuter,
+  #receiptPortalOuter {
+    height: 200px;
+    overflow: auto;
+  }
+  .m-aceIms_order .c50l {
+    width: 30%;
+  }
+  .m-aceIms_order .c50r {
+    width: 70%;
+  }
+  .m-aceIms_order .c50r .rightPanel .invoiceDisplay table td.highlightClass,
+  .m-aceIms_order .c50r .rightPanel .receiptDisplay table td.highlightClass {
+    background-color: #684A4A;
+    color: #fff;
+  }
+  .m-aceIms_order .c50r .rightPanel #orderItemList .fontBigAndBold,
+  .m-aceIms_order .c50r .rightPanel #invoicePortalOuter .fontBigAndBold,
+  .m-aceIms_order .c50r .rightPanel .receiptDisplay .fontBigAndBold {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .headerForRightPanel{
+    font-size: 125%;
+  }
+
+  .receiptButtonClass{
+    background: transparent linear-gradient(#27587f, #224d6f 4%, #0f324f 44%, #172d3f 50%, #091f2f 50%, #04131f) repeat scroll 0 0;
+    border: medium none #cccccc;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .receiptButtonClass:hover{
+    background: transparent linear-gradient(#27587f, #224d6f 4%, #0f324f 44%, #172d3f 50%, #091f2f 50%, #04131f) repeat scroll 0 0;
+    border: medium none #cccccc;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+}

@@ -1,0 +1,20 @@
+@media all
+{
+	.w-ecommerce-basket table th, .w-ecommerce-basket table td {
+	    border:1px dotted #ccc;
+	}
+
+	.w-ecommerce-basket table .picture {
+	    width:125px;
+	}
+
+	.w-ecommerce-basket table .qty {
+	    width:60px;
+	    text-align: center;
+	}
+
+	.w-ecommerce-basket table .unit, .w-ecommerce-basket table .total {
+	    width:100px;
+	    text-align: right;
+	}
+}

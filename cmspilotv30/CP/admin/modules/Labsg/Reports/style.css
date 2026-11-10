@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+	.m-labsg_reports #reportsList {
+	    background: #F5F5F5;
+	    padding:15px;
+	}
+
+	.m-labsg_reports #reportsList .subcr{
+	    margin-right: 0;
+	}
+
+	.m-hms #reportsList a.button {
+	    width:75%;
+	    font-size: 17px;
+	    display: block;
+	    margin-bottom: 10px;
+	}
+
+	.exportLink {
+	    height: 36px;
+	    left: 5px;
+	    position: absolute;
+	    top: 125px;
+	}
+
+	.exportLinkPDF{
+		height: 36px;
+	    left: 160px;
+	    position: absolute;
+	    top: 125px;
+	}
+
+	.m-labsg_reports .report-wrapper h1 {
+	    text-shadow: 1px 1px 2px #665D5D;
+	    filter: dropshadow(color=#665D5D, offx=1, offy=1);
+	    font-size: 25px;
+	    margin-bottom: 15px;
+	}
+
+	.m-labsg_reports  table.search td select.attendanceFilter {
+	    width: 175px;
+	}
+
+	.m-labsg_reports  table.search td select.callRegistryFilter {
+	    width: 175px;
+	}
+
+	.m-labsg_reports table.search td select.invoiceSummaryCompany {
+	    width: 225px;
+	    margin-left: 10px;
+	}
+
+	.m-labsg_reports table.search td select.year {
+	    width: 70px;
+	}
+
+	.m-labsg_reports table.search td select.month,
+	.m-labsg_reports table.search td select.invoiceSummaryFilter {
+	    width: 100px;
+	}
+
+	.m-labsg_reports table.search td select{
+	    width: 300px;
+	    max-width: 300px;
+	    font-size: 1.2em;
+	}
+
+	#reportSearchPanel {
+	    background: #ccc;
+	    padding: 5px;
+	    display: none;
+	    margin: 5px 0 5px 0;
+	    overflow: hidden;
+	}
+
+	#reportSearchPanel table {
+	    float: right;
+	}
+
+	#reportSearch .resetLink {
+	    padding-right: 15px;
+	    padding-top: 5px;
+	}
+
+	#reportSearch .button {
+	    margin-left: 10px;
+	}
+
+	optgroup option {
+	    background: #fff;
+	    padding-left: 10px;
+	}
+
+	.m-labsg_reports .actBtns {
+	}
+
+	#chart_div {
+	    min-height: 400px;
+	}
+
+	.m-labsg_reports table.search td select.salesYearFilter,
+	.m-labsg_reports table.search td select.searchBy,
+	.m-labsg_reports table.search td select.salesMonthFilter {
+	    width: 150px;
+	    margin-right: 5px;
+	}
+
+	.m-labsg_reports table.search td select.leadStaffFilter,
+	.m-labsg_reports table.search td select.leadStaffMonthFilter,
+	.m-labsg_reports table.search td select.enquiryByStaffFilter,
+	.m-labsg_reports table.search td select.enquiryByStaffMonthFilter,
+	.m-labsg_reports table.search td select.enquiryByStaffFilter,
+	.m-labsg_reports table.search td select.enquiryByStaffMonthFilter,
+	.m-labsg_reports table.search td select.enquiryActivityByStaffFilter,
+	.m-labsg_reports table.search td select.enquiryActivityByStaffMonthFilter,
+	.m-labsg_reports table.search td select.invoiceByClientFilter {
+	    width: 100px;
+	    margin:7px;
+	}
+
+	.m-labsg_reports table.search td select.leadStaffYearFilter,
+	.m-labsg_reports table.search td select.enquiryByStaffYearFilter,
+	.m-labsg_reports table.search td select.enquiryByStaffYearFilter,
+	.m-labsg_reports table.search td select.enquiryActivityByStaffYearFilter {
+	    width: 70px;
+	    margin:7px;
+	}
+
+	.m-labsg_reports table.search td input {
+        font-size: 1em;
+	}
+
+    .m-labsg_reports table.search td input.fld_date {
+        width: 80px;
+    }
+    
+    .m-labsg_reports table.search td select.clientFilter,
+    .m-labsg_reports table.search td select.supplierFilter {
+        max-width: 250px;
+    }
+	
+	.w-labsg-dailyCollectionReport td.highlight,
+	.w-labsg-revenueByMonth td.highlight {
+	    background-color: #CCCCCC;
+	}
+
+	.m-labsg_reports table.search td.payment_mode_receipt_summary select {
+	    width: 80px;
+	}

@@ -1,0 +1,182 @@
+{% macro input(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    {% set opts = {
+        fldWrapClass: 'col-lg-9',
+       } | merge(opts)
+    %}
+    <div class="form-group row {{name}}_wrapper'">
+        <label class="col-lg-3 control-label" for="fld_{{name}}">{{ label }}</label>
+        <div class="{{ opts.fldWrapClass }}">
+            {{ forms.input(name, value, opts) }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro fileUpload(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class="form-group row">
+        <label class="col-lg-3 control-label" for="fld_{{name}}">{{ label }}</label>
+        <div class="col-lg-9">
+            <input type="file" name='{{ name }}' id='fld_{{name}}'>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro number(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class="form-group row {{name}}_wrapper'">
+        <label class="col-lg-3 control-label" for="fld_{{name}}">{{ label }}</label>
+        <div class="col-lg-9">
+            {{ forms.number(name, value, opts) }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro textarea(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class="form-group row">
+        <label class="col-lg-3 control-label" for="fld_{{name}}">{{ label }}</label>
+        <div class="col-lg-9">
+            {{ forms.textarea(name, value, opts) }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro email(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    {% set opts = opts | merge({
+           type: 'email',
+       })
+    %}
+    <div class="form-group row">
+        <label class="col-lg-3 control-label" for="fld_{{name}}">{{ label }}</label>
+        <div class="col-lg-9">
+            {{ forms.input(name, value, opts) }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro password(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    {% set opts = opts | merge({
+           type: 'password',
+       })
+    %}
+    <div class="form-group row">
+        <label class="col-lg-3 control-label" for="fld_{{name}}">{{ label }}</label>
+        <div class="col-lg-9">
+            {{ forms.input(name, value, opts) }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro date(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    {% set opts = opts | merge({
+           class: opts.class ~ " ",
+           readonly: true,
+           dataFormat: "yyyy-MM-dd",
+       })
+    %}
+
+    <div class="form-group row">
+        <label class="col-lg-3 control-label" for="fld_{{name}}">{{ label }}</label>
+        <div class="col-lg-9">
+            <div class="input-group cpDateTimeDateOnly">
+                {{ forms.input(name, value, opts) }}
+                <span class="input-group-addon add-on">
+                    <i class="icon-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro time(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    {% set opts = opts | merge({
+           class: opts.class ~ " ",
+           readonly: true,
+           dataFormat: "hh:mm",
+       })
+    %}
+    <div class="form-group row">
+        <label class="col-lg-3 control-label" for="fld_{{name}}">{{ label }}</label>
+        <div class="col-lg-9">
+            <div class="input-group cpTimepicker">
+                {{ forms.input(name, value, opts) }}
+                <span class="input-group-addon add-on">
+                    <i class="icon-time"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro captcha(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    {% import 'lang.phtml' as lang %}
+    <div class="form-group row">
+        <label class="col-lg-3 control-label" for="fld_{{name}}">{{ label }}</label>
+        <div class="col-lg-9">
+            {{ forms.input(name, value, opts) }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class='col-lg-offset-3 col-lg-9'>
+            <img id='captcha' src='{{ cpCfg.cp_library_path_alias }}lib_php/securimage/securimage_show.php' alt='Anti-spam Code' />
+            <i class="icon-refresh"></i><a href='#' class='reloadCaptcha' captcha_id='captcha'>{{ lang.gd('reload') }}</a>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro radio(label, name, value, valArr, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class="form-group row">
+        <label class="col-lg-3 control-label">{{ label }}</label>
+        <div class="col-lg-9">
+            {{ forms.radio(name, value, valArr, opts) }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro dd(label, name, valueSel, valArr, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class="form-group row">
+        <label class="col-lg-3 control-label">{{ label }}</label>
+        <div class="col-lg-9">
+            {{ forms.dd(label, name, valueSel, valArr, opts) }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro checks(label, name, valArr, selArr, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class="form-group row">
+        <label class="col-lg-3 control-label">{{ label }}</label>
+        <div class="col-lg-9">
+            {{ forms.checks(name, valArr, selArr, opts) }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro singleCheck(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+
+    <div class='form-group row'>
+        <div class='col-lg-offset-3 col-lg-9'>
+            {{ forms.checkbox(label, name, value, opts) }}
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro checkboxYesNo(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class='form-group row'>
+        <div class='col-lg-offset-3 col-lg-9'>
+            {{ forms.checkboxYesNo(label, name, value, opts) }}
+        </div>
+    </div>
+{% endmacro %}

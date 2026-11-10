@@ -1,0 +1,61 @@
+{% set fluidCls  = isFluidLayout ? "-fluid" : '' %}
+{% set navbarCls = navbarCls is not null ? navbarCls : 'navbar-inverse navbar-fixed-top' %}
+
+<div class="navbar {{navbarCls}}">
+    <div class="container{{ fluidCls }}">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">{{ attribute(cpCfg, 'cp.siteTitle') | raw }}</a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                {% if menuDataArray is iterable %}
+                    {% block mainNav %}
+                        {% for section in menuDataArray.sections %}
+                            {% set activeCls = (section.active == 1) ? "active " : '' %}
+                            {% set ddCls = (section.categories|length > 0) ? "dropdown " : '' %}
+
+                            <li class='{{ activeCls }}{{ ddCls }}'>
+                                {% if section.categories|length > 0 %}
+                                    <a href="{{ section.url }}" target="{{ section.link_target }}" class="dropdown-toggle" data-toggle="dropdown">{{ section.title }} <b class="caret"></b></a>
+                                    <ul class='dropdown-menu'>
+                                        {% for category in section.categories %}
+                                            {% if category.title == '-' %}
+                                                <li role="presentation" class="divider"></li>
+                                            {% else %}
+                                                {% set ddCls = (category.subCategories|length > 0) ? " class='dropdown-submenu'" : '' %}
+                                                <li{{ ddCls|raw }}><a href="{{ category.url }}">{{ category.title }}</a>
+                                                    {% if category.subCategories|length > 0 %}
+                                                        <ul class='dropdown-menu'>
+                                                            {% for subCategory in category.subCategories %}
+                                                                <li><a href="{{ subCategory.url }}">{{ subCategory.title }}</a></li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    {% endif %} <!-- sub category -->
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %} <!-- category -->
+                                    </ul> <!-- category -->
+
+                                {% else %}
+                                    <a href="{{ section.url }}">{{ section.title }}</a>
+                                {% endif %} <!-- category -->
+
+                            </li> <!-- section -->
+                        {% endfor %} <!-- section -->
+                    {% endblock %}  <!-- mainNav -->
+                {% else %}
+                    {% for section in topNavArr %}
+                        {% set activeCls = (section.active == 1) ? " class='active'" : '' %}
+                        <li{{ activeCls|raw }}><a href="{{ section.url }}">{{ section.title }}</a></li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>

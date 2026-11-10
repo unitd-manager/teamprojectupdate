@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-payroll_leave .toggle {
+        display:block;
+    }
+
+    .m-payroll_leave .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-payroll_leave #frmEdit .message {
+        margin-left: 0 !important;
+    }
+
+    .m-payroll_leave .c50l,
+    .m-payroll_leave .c50r {
+        width: 100%;
+    }
+
+    .m-payroll_leave .ym-columnar .ym-fbox-text label,
+    .m-payroll_leave .ym-columnar .ym-fbox-select label,
+    .m-payroll_leave #frmEdit .type-text label,
+    .m-payroll_leave #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-payroll_leave #frmEdit .creModdate .type-text label {
+        width: 20%;
+    }
+
+    .m-payroll_leave .linkPortalWrapper div.header {
+        background-color: #152E43;
+    }
+
+    .m-payroll_leave .linkPortalWrapper .linkPortalDataWrapper th {
+        background-color: #E6E6E6;
+    }
+
+}

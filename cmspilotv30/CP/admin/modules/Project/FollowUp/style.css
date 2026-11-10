@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@media all
+{
+
+    .opportunityCalendarViewRight {
+        float: left;
+        margin-top: 26px;
+        width: 30%;
+    }
+
+    .opportunityCalendarView {
+        float: left;
+        width: 70%;
+    }
+    
+}

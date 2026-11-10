@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Logistics_Vehicle_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

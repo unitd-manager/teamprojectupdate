@@ -1,0 +1,4 @@
+<?
+class CPL_Admin_Modules_EnggCrm_EmployeeLink_Model extends CP_Admin_Modules_EnggCrm_EmployeeLink_Model
+{
+}

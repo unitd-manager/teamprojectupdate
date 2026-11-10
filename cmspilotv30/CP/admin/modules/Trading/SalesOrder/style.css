@@ -1,0 +1,57 @@
+@media all
+{
+    .m-trading_salesOrder #col3 .contentScroller .subcolumns .c50l {
+        width:35%;
+    }
+    .m-trading_salesOrder #col3 .contentScroller .subcolumns .c50r {
+        width:65%;
+    }
+    .m-trading_salesOrder .linkPortalWrapper .callbackWrapper .container {
+        display: none;
+    }
+    .m-trading_salesOrder .linkPortalWrapper .callbackWrapper .invoice-cont {
+        display: none;
+    }
+    .m-trading_salesOrder .linkPortalWrapper .callbackWrapper .showHide {
+        width: 15px;
+        height: 15px;
+        margin-left: -25px;
+        float: left;
+        background: transparent url(/cmspilotv295/admin/images/icons/arrow_right.png) no-repeat center center;
+        cursor: pointer;
+    }
+    .m-trading_salesOrder .linkPortalWrapper .callbackWrapper .showHide a {
+        display: block;
+    }
+    .m-trading_salesOrder .linkPortalWrapper .callbackWrapper .arrowDown {
+        background: transparent url(/cmspilotv295/admin/images/icons/arrow_down.png) no-repeat center center;
+    }
+
+    .m-trading_salesOrder .multiFldTblWrapper table {
+        width:180px;
+    }
+
+    .m-trading_salesOrder .multiFldTblWrapper table td {
+        border: 1px dotted #ccc;
+        text-align:right;
+        padding: 2px 5px 2px 2px;
+    }
+
+    .m-trading_salesOrder .multiFldTblWrapper table td input {
+        text-align:right;
+    }
+    
+    .m-trading_salesOrder table.multi-field2 {
+        width: 400px;
+    }
+    
+    .m-trading_salesOrder table.multi-field2 td.col3,
+    .m-trading_salesOrder table.multi-field2 td.col3 input,
+    .m-trading_salesOrder table.multi-field2 td.col3-header,
+    .m-trading_salesOrder table.multi-field2 td.col4,
+    .m-trading_salesOrder table.multi-field2 td.col4-header
+     {
+        text-align:right;
+    }
+    
+}

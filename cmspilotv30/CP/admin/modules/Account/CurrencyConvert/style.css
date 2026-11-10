@@ -1,0 +1,13 @@
+.m-account_currencyConvert .evening-rate {
+    background-color: #ddd !important;
+}
+
+.m-account_currencyConvert .updateEveningRateWrap{
+    position: absolute;
+    top:-26px;
+    right: 170px;
+}
+
+.m-account_currencyConvert .report-rate {
+    background-color: #ccc; !important;
+}

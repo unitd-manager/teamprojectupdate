@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_WebBasic_Team_Controller extends CP_Common_Modules_WebBasic_Team_Controller
+{
+}

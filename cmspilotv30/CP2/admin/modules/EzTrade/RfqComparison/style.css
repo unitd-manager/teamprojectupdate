@@ -1,0 +1,8 @@
+#rfqComparisonList {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+#rfqComparisonList table.list {
+    width: 140%;
+}

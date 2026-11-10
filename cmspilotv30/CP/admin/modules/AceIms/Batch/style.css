@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+.yform .form-row-wrapper {
+    margin: 0;
+}
+
+table.thinlist th, table.thinlist td {
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+}
+
+.columnar.yform .form-row-wrapper .leftCol {
+    float: left;
+    width: 40%;
+}
+
+.actionBtnsDetail .button {
+    width: 125px;
+}
+
+.yform .form-row-wrapper .rightCol .type-check {
+    display: inline;
+    padding-left: 0;
+}
+
+.rightPanel .header a {
+    color: #fff;
+    cursor: pointer;
+}
+
+.m-aceIms_batch .rightPanel .actBtns a {
+    color: #000;
+    cursor: pointer;
+}
+
+#studentFeedbackOuter {
+    padding: 10px;
+}
+
+.yform.aceIms_batch__aceIms_studentFeedbackLink {
+    overflow: visible;
+    border: 0;
+    padding:0;
+}
+
+#questionsList table.thinlist {
+    width: auto;
+}
+
+#questionsList .questionHeader {
+    background-color: #328AA4;
+}

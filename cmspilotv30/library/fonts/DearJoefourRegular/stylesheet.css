@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'dearJoefourRegular';
+    src: url('dearjoefour.eot');
+    src: url('dearjoefour.eot?#iefix') format('embedded-opentype'),
+         url('dearjoefour.woff') format('woff'),
+         url('dearjoefour.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+

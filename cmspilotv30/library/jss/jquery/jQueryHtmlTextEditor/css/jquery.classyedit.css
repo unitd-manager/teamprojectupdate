@@ -1,0 +1,114 @@
+/*!
+ * jQuery ClassyEdit
+ * http://www.class.pm/projects/jquery/classyedit
+ *
+ * Copyright 2012 - 2013, Class.PM www.class.pm
+ * Written by Marius Stanciu - Sergiu <marius@picozu.net>
+ * Licensed under the GPL Version 3 license.
+ * Version 1.1.0
+ *
+ */
+
+*:focus {
+    outline: none;  
+}
+.classyedit {
+    background-color: #ffffff;
+    border: 1px solid #a9a9a9;
+    border-radius: 3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    width: 70%;
+    float: left;
+}
+.classyedit .toolbar {
+    position:relative;
+    z-index:10;
+    height:41px;
+    background-image:url('../images/toolbar.png');
+    background-repeat:repeat-x;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius: 3px;
+    overflow:hidden;
+    display:none;
+}
+.classyedit .toolbar .button {
+    width:1px;
+    height:10px;
+    float:left;
+    background-image:url('../images/break.png');
+    background-repeat:no-repeat;
+    background-position:right 4px;
+    cursor:pointer;
+}
+.classyedit .toolbar .button:hover,
+.classyedit .toolbar .button.on {
+    background-color:#E5E8EF;
+    border:1px #C9D0DA solid;
+    border-top:none;
+    margin-left:-1px;
+}
+.classyedit .toolbar .button.first:hover {
+    border-left:none;
+    margin-left:0px;
+    -moz-border-top-left-radius:3px;
+    -webkit-border-top-left-radius:3px;
+    border-top-left-radius: 3px;
+}
+.classyedit .toolbar .button div,
+.classyedit .toolbar .button a {
+    background-repeat:no-repeat;
+    background-position:center center;
+    display:block;
+    width:100%;
+    height:22px;
+}
+.classyedit .toolbar .button [command='underline'] {
+    background-image:url('../images/underline.png');
+    width: 16px;
+    margin: -5px;
+}
+.classyedit .toolbar .button [command='italic'] {
+    background-image:url('../images/italic.png');
+    width: 16px;
+    margin: -5px;
+}
+.classyedit .toolbar .button [command='bold'] {
+    background-image:url('../images/bold.png');
+    width: 16px;
+    margin: -5px;
+}
+.classyedit .toolbar .button [command='insertUnorderedList'] {
+    background-image:url('../images/bullet.png');
+    width: 16px;
+    margin: -5px;
+}
+.classyedit .toolbar .button [command='html'] {
+    background-image:url('../images/html.png');
+    width: 16px;
+    margin: -5px;
+}
+.classyedit .toolbar .button [command='href'] {
+    background-image:url('../images/href.png');
+    width: 16px;
+    margin: -5px;
+}
+.classyedit .editor {
+    position:relative;
+    z-index:1;
+    min-height:80px;
+    padding:10px;
+}
+.classyedit .html_editor {
+    width:95%;
+    resize: none;
+    padding:10px;
+    border:0px;
+    display:none;
+    min-height:80px;
+}
+.classy-editor-label {
+    float: left;
+    width: 20%;
+}

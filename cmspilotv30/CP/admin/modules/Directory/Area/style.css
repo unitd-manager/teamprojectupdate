@@ -1,0 +1,14 @@
+@media all
+{
+    .m-directory_area #col3 .contentScroller .subcolumns .c50l {
+        width:80%;
+    }
+    .m-directory_area #col3 .contentScroller .subcolumns .c50r {
+        width:20%;
+    }    
+    .m-directory_area #map-canvas {
+        height: 600px;
+    }
+    .m-directory_area .delete-polygon {
+    }
+}

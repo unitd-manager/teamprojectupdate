@@ -1,0 +1,62 @@
+{% import 'form-rows.phtml' as formRow %}
+{% extends "main.phtml" %}
+
+{% block main %}
+    {% block bodyPanel %}
+        <div class="row">
+            <div class="col-md-4">
+                {% for row in modDataArray %}
+                    <h1>{{ row.title }}</h1>
+                    {% set picArr = row['media']['picture'] %}
+                    {% include 'picture.phtml' with {'picArr': picArr}  %}
+                    {{ row.description|raw }}
+                {% endfor %}
+            </div>
+            <div class='col-md-8'>
+                <h1>Send an Enquiry</h1>
+                <form class='well bsForm' role='form' method='post' id='contactForm' action='/index.php?module=webBasic_contactUs&_spAction=add&showHTML=0'>
+                    <div class='row'>
+                		<div class='col-md-6'>
+                            {{ formRow.input(lang.gd('cp.form.fld.firstName.lbl'), 'first_name', '', {
+                                   required: true,
+                                   placeholder: lang.gd('cp.form.fld.firstName.ph'),
+                               })
+                            }}
+                            {{ formRow.input(lang.gd('cp.form.fld.lastName.lbl'), 'last_name', '', {
+                                   required: true,
+                                   placeholder: lang.gd('cp.form.fld.lastName.ph'),
+                               })
+                            }}
+                            {{ formRow.email(lang.gd('cp.form.fld.email.lbl'), 'email', '', {
+                                   required: true,
+                                   placeholder: lang.gd('cp.form.fld.email.ph'),
+                               })
+                            }}
+                            {{ formRow.captcha(lang.gd('cp.form.fld.antiSpamCode.lbl'), 'captcha_code', '', {
+                                   required: true,
+                                   placeholder: lang.gd('cp.form.fld.antiSpamCode.ph'),
+                               })
+                            }}
+                		</div>
+                		<div class='col-md-6'>
+                            {{ formRow.textarea(lang.gd('cp.form.fld.message.lbl'), 'comments', '', {
+                                   required: true,
+                                   class: 'input-xlarge col-md-12',
+                                   rows: 16,
+                               })
+                            }}
+                            <input type='hidden' name='successMsg' value='{{ lang.gd('m.webBasic.contactUs.form.enquiry.message.success')|raw }}'>
+                    		<button type='submit' class='btn btn-success pull-right'>Send Message</button>
+                		</div>
+                    </div>
+                </form>
+
+                <div class='well'>
+                    {% for row in m_webBasic_contactUs_map %}
+                        {{ row.description|raw }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endblock %} {# end bodyPanel #}
+{% endblock %} {# end main #}

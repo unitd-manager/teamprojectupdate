@@ -1,0 +1,16 @@
+
+/*** WIDGETS ***/
+@media all
+{
+    .m-common_dashboard .quickLinks ul {
+        margin-left: 0;
+    }
+
+    .m-common_dashboard .quickLinks ul li {
+        margin-left: 0;
+    }
+    
+    .m-common_dashboard .quickLinks .actionBtns ul li div.button {
+        width: 100px;
+    }
+}

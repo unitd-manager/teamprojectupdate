@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_AgileIms_BatchDateLink_Controller extends CP_Common_Lib_ModuleLinkControllerAbstract
+{
+}

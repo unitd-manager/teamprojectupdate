@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Wine_Producer_Controller extends CP_Common_Modules_Wine_Producer_Controller
+{
+}

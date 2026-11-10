@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Event_Event_Controller extends CP_Common_Modules_Event_Event_Controller
+{
+}

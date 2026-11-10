@@ -1,0 +1,93 @@
+
+/*** WIDGETS ***/
+@media all
+{
+	.projectHeading {
+		border:2px solid;
+		background-color:#224D6F;
+		border-radius:25px;
+		text-align:center;
+		height:3.5em;
+		
+	} 
+
+	.actionProjectBtns {
+		padding-top:51px;
+		
+	}
+
+	/*.actionProjectBtns li .button {
+		width:15em;
+		height:5em;
+		margin:5px;
+	}*/
+
+	.actionProjectBtns li{ 
+		list-style:none;
+		float:left;
+	}
+
+	.projectHeading h1, 
+	.marketingHeading h1,
+	.adminHeading h1,
+	.reportsHeading h1 {
+		color:#fff;
+		padding-top:14px;
+		font-size:18px;
+	}
+
+	.adminHeading {
+		border:2px solid;
+		background-color:#224D6F;
+		border-radius:25px;
+		text-align:center;
+		margin-top:88px;
+		height:3.5em;
+	} 
+
+	.actionAdminBtns {
+		padding-top:44px;
+	}
+
+	.actionAdminBtns li {
+		list-style:none;
+		float:left;
+	}
+
+	.marketingHeading {
+		border:2px solid;
+		background-color:#224D6F;
+		border-radius:25px;
+		text-align:center;
+		margin-top:88px;
+		height:3.5em;
+	} 
+
+	.actionMarketingBtns {
+		padding-top:51px;
+	}
+
+	.actionMarketingBtns li{ 
+		list-style:none;
+		float:left;
+	}
+
+	.reportsHeading {
+		border:2px solid;
+		background-color:#224D6F;
+		border-radius:25px;
+		text-align:center;
+		margin-top:88px;
+		height:3.5em;
+	} 
+
+	.actionReportsBtns {
+		padding-top:51px;
+	}
+
+	.actionReportsBtns li{ 
+		list-style:none;
+		float:left;
+	}
+
+}

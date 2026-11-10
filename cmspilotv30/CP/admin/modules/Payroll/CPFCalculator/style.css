@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-payroll_cPFCalculator .toggle {
+        display:block;
+    }
+
+    .m-payroll_cPFCalculator .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-payroll_cPFCalculator .c50l,
+    .m-payroll_cPFCalculator .c50r {
+        width: 100%;
+    }
+
+    .m-payroll_cPFCalculator .ym-columnar .ym-fbox-text label,
+    .m-payroll_cPFCalculator .ym-columnar .ym-fbox-select label,
+    .m-payroll_cPFCalculator #frmEdit .type-text label,
+    .m-payroll_cPFCalculator #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-payroll_cPFCalculator #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-payroll_cPFCalculator  .linkPortalWrapper div.header,
+    .m-payroll_cPFCalculator  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+}

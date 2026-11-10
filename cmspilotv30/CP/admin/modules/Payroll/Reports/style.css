@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+.m-payroll_reports #reportsList {
+    background: #F5F5F5;
+    padding:15px;
+}
+
+.m-payroll_reports #reportsList .subcr{
+    margin-right: 0;
+}
+
+.m-payroll_reports #reportsList a.button {
+    width:75%;
+    font-size: 17px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.m-payroll_reports .report-wrapper h1 {
+    text-shadow: 1px 1px 2px #665D5D;
+    filter: dropshadow(color=#665D5D, offx=1, offy=1);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.m-payroll_reports table.search td select{
+    width: 250px;
+    max-width: 300px;
+    font-size: 1.2em;
+}
+
+.m-payroll_reports table.search td select.agmYearFilter,
+.m-payroll_reports table.search td select.searchBy,
+.m-payroll_reports table.search td select.agmMonthFilter {
+    width: 150px;
+    margin-right: 5px;
+}
+
+.m-payroll_reports table.search td input.keyword {
+    width: 150px;
+    margin-right: 5px;
+    height: 22px;
+}
+
+#reportSearchPanel {
+    background: #ccc;
+    padding: 5px;
+    display: none;
+    margin: 5px 0 5px 0;
+    overflow: hidden;
+}
+
+#reportSearchPanel table {
+    float: right;
+}
+
+optgroup option {
+    background: #fff;
+    padding-left: 10px;
+}
+
+.m-payroll_reports .actBtns {
+}
+
+#chart_div {
+    min-height: 400px;
+}
+
+
+.exportLink{
+    position: absolute;
+    top: 43px;
+    left: 10px;
+}
+
+.w-project-salesByMonthReports .projectAmt {
+    cursor: pointer;
+    text-decoration: underline;
+    width: 580px;
+}
+
+.w-project-salesByMonthReports .projectDueAmt {
+    width: 510px;
+}
+
+.w-project-salesByMonthReports .projectDetails {
+    display: none;
+}
+
+.w-project-salesByMonthReports .projectMonth {
+    width: 162px;
+}
+
+.w-project-salesByMonthReports .projectTitle {
+    width: 775px;
+}
+
+.w-project-salesByMonthReports .projectAmtDetail {
+    width: 235px;
+}
+
+.w-project-salesByMonthReports .projectDueAmtDetail {
+    width: 230px;
+}
+
+.w-payroll-opportunityQuotation .quoteVal {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.w-payroll-opportunityQuotation .quoteDetails {
+    display: none;
+}
+
+.w-payroll-employeeReport .employeeVal {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.w-payroll-employeeReport .employeeDetails {
+    display: none;
+}
+
+.w-payroll-employeeReport .employeehrsVal {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.w-payroll-employeeReport .employeehrsDetails {
+    display: none;
+}
+
+.m-payroll_reports table.search td select.yearFilter {
+    width: 75px;
+}
+
+.m-payroll_reports table.search td select.employeeStatusFilter,
+.m-payroll_reports table.search td select.monthFilter {
+    width: 125px;
+}

@@ -1,0 +1,16 @@
+.m-core_adminTranslation td.translation {
+    cursor: pointer;
+}
+
+.m-core_adminTranslation td.translation:hover {
+    border:1px solid red;
+}
+
+.m-core_adminTranslation td.translation .btns {
+    display:none;
+}
+
+.m-core_adminTranslation td.translation textarea {
+    width:250px;
+    height:200px;
+}

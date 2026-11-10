@@ -1,0 +1,13 @@
+@media all
+{
+    .m-core_userGroup .modAccSecurity .thinlist th,
+    .m-core_userGroup .modAccSecurity .thinlist td {
+        text-align: left;
+    }
+
+    .HeadeingTrTh {
+	    line-height: 23px;
+	    background-color: #00bcd4;
+	    color: #FFF;
+	}
+}

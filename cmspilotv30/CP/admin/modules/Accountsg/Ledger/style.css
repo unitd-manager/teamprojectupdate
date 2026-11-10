@@ -1,0 +1,96 @@
+.m-accountsg_ledger #col3 .c50l {
+    width: 100%;
+}
+
+.m-accountsg_ledger #col3 c50r {
+    width: 0;
+}
+
+.m-accountsg_ledger #ledgerHome {
+    -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    border: 1px solid #eee;
+    min-height: 450px;
+    padding: 15px;
+    text-align: center;
+}
+
+.m-accountsg_ledger #ledgerList {
+    -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    border: 1px solid #eee;
+    min-height: 100px;
+    padding: 0 15px 15px;
+    text-align: center;
+}
+
+.m-accountsg_ledger #ledgerHome .container {
+    width: 750px;
+    margin: 160px auto 0;
+}
+
+.m-accountsg_ledger #ledgerHome .fld-acc_head {
+    -moz-border-radius: 5px 5px 5px 5px;
+    border-color: #AAAAAA #D5D5D5 #D5D5D5 #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 18px;
+    padding: 5px 5px 10px;
+    font-weight: bold;
+    width: 75%;
+}
+
+.m-accountsg_ledger #ledgerList .fld-acc_head {
+    -moz-border-radius: 5px 5px 5px 5px;
+    border-color: #AAAAAA #D5D5D5 #D5D5D5 #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 18px;
+    padding: 5px 5px 10px;
+    font-weight: bold;
+    width: 75%;
+}
+
+.m-accountsg_ledger #ledgerHome a.button {
+    font-size: 16px;
+    font-weight: bold;
+    width: 10%;
+}
+
+.m-accountsg_ledger #accountInfo {
+    -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    border: 1px solid #eee;
+    border-color: #AAAAAA #D5D5D5 #D5D5D5 #CCCCCC;
+    margin-bottom: 10px;
+    min-height: 23px;
+    padding: 10px;
+    width: 98%;
+}
+
+.m-accountsg_ledger #accountInfo {
+    font-size: 15px;
+}
+.m-accountsg_ledger #accountInfo th {
+    padding-right: 10px;
+}
+.m-accountsg_ledger #accountInfo td {
+    padding-right: 10px;
+}
+.m-accountsg_ledger #accountInfo td.accountName {
+    width: 280px;
+}
+
+.m-accountsg_ledger #bodyList .narration {
+    font-style: italic;
+}
+
+.m-accountsg_ledger tr.ledger-header {
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+.m-accountsg_ledger .cpSearch {
+    /*display: none;*/
+}
+

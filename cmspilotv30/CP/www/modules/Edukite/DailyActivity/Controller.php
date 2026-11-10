@@ -1,0 +1,4 @@
+<?
+class CP_Www_Modules_Edukite_DailyActivity_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

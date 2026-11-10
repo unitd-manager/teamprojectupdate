@@ -1,0 +1,61 @@
+@charset "UTF-8";
+@media all
+{
+    .m-trading_product #col3 .contentScroller .subcolumns .c50l {
+        width:40%;
+    }
+    .m-trading_product #col3 .contentScroller .subcolumns .c50r {
+        width:60%;
+    }
+
+    .m-trading_product table.costing {
+        width: 100%;
+    }
+    .m-trading_product table.costing td,
+    .m-trading_product table.costing th
+    {
+        padding: 5px;
+        text-align: left;
+    }
+    .m-trading_product table.costing .col1,
+    .m-trading_product table.costing .col2,
+    .m-trading_product table.costing .col3,
+    .m-trading_product table.costing .col4,
+    .m-trading_product table.costing .col5
+    {
+        width: 20%;
+    }
+    .m-trading_product table.costing input,
+    .m-trading_product table.costing select
+    {
+        width: 80%;
+        border: 1px solid #ccc;
+    }
+    .m-trading_product table.costing input:hover,
+    .m-trading_product table.costing input:focus,
+    .m-trading_product table.costing select:hover,
+    .m-trading_product table.costing select:focus
+    {
+        border: 1px solid #aa6666;
+    }
+
+    .m-trading_product div.ex-factory-cost,
+    .m-trading_product div.fob-cost,
+    .m-trading_product div.cif-cost,
+    .m-trading_product div.tax-cost
+    {
+        border-top: 2px solid #666;
+        margin-top: 10px;
+    }
+
+    .m-trading_product .type-text.row_product_code input {
+        width: 50%;
+    }
+
+    .m-trading_product .trading_product__trading_pricingTypeLink .pricing-type {
+        width: 150px;
+    }
+    .m-trading_product .trading_product__trading_pricingTypeLink .sell-unit-price-base {
+        width: 80px;
+    }
+}

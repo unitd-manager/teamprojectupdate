@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Tradingsg_ProductGroupLink_Controller extends CP_Common_Lib_ModuleLinkControllerAbstract
+{
+}

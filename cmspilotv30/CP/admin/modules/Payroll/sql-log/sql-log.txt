@@ -1,0 +1,1015 @@
+ALTER TABLE `setting` ADD `flag` TINYINT( 1 ) NULL;
+
+CREATE TABLE IF NOT EXISTS `cpf_calculator` (
+  `cpf_calculator_id` int(11) NOT NULL AUTO_INCREMENT,
+  `from_age` varchar(10) DEFAULT NULL,
+  `to_age` varchar(10) DEFAULT NULL,
+  `by_employer` decimal(10,3) DEFAULT NULL,
+  `by_employee` decimal(10,3) DEFAULT NULL,
+  `year` int(4) DEFAULT NULL,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `modified_by` varchar(255) DEFAULT NULL,
+  `flag` int(1) DEFAULT NULL,
+  PRIMARY KEY (`cpf_calculator_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `employee` (
+  `employee_id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(255) DEFAULT NULL,
+  `position` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `address_street` varchar(255) DEFAULT NULL,
+  `address_area` varchar(100) DEFAULT NULL,
+  `address_town` varchar(255) DEFAULT NULL,
+  `address_state` varchar(255) DEFAULT NULL,
+  `address_country` varchar(255) DEFAULT NULL,
+  `address_po_code` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `fax` varchar(255) DEFAULT NULL,
+  `sort_order` int(11) DEFAULT NULL,
+  `published` int(1) DEFAULT NULL,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `protected` int(11) DEFAULT NULL,
+  `pass_word` varchar(25) DEFAULT NULL,
+  `subscribe` int(1) DEFAULT NULL,
+  `mobile` varchar(100) DEFAULT NULL,
+  `religion` varchar(100) DEFAULT NULL,
+  `relationship` varchar(100) DEFAULT NULL,
+  `known_as_name` varchar(255) DEFAULT NULL,
+  `address_street1` varchar(255) DEFAULT NULL,
+  `address_town1` varchar(255) DEFAULT NULL,
+  `address_country1` varchar(255) DEFAULT NULL,
+  `flag` int(1) DEFAULT NULL,
+  `sex` varchar(10) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `random_no` bigint(50) DEFAULT NULL,
+  `member_status` varchar(20) DEFAULT NULL,
+  `direct_tel` varchar(200) DEFAULT NULL,
+  `member_type` varchar(50) DEFAULT NULL,
+  `address_flat` varchar(255) DEFAULT NULL,
+  `phone_direct` varchar(255) DEFAULT NULL,
+  `company_id` int(11) DEFAULT NULL,
+  `salutation` varchar(5) DEFAULT NULL,
+  `department` varchar(255) DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `modified_by` varchar(255) DEFAULT NULL,
+  `published_test` int(1) DEFAULT NULL,
+  `company_address_street` text,
+  `company_address_flat` text,
+  `company_address_town` text,
+  `company_address_state` varchar(255) DEFAULT NULL,
+  `company_address_country` varchar(255) DEFAULT NULL,
+  `company_address_id` int(11) DEFAULT NULL,
+  `category` varchar(50) DEFAULT NULL,
+  `status` varchar(25) DEFAULT NULL,
+  `user_group_id` int(3) DEFAULT NULL,
+  `employee_name` varchar(500) DEFAULT NULL,
+  `notes` text,
+  `user_name` varchar(25) DEFAULT NULL,
+  `address` text,
+  `login_count` int(11) DEFAULT NULL,
+  `passport` varchar(255) DEFAULT NULL,
+  `nric_no` varchar(255) DEFAULT NULL,
+  `employee_work_type` varchar(255) DEFAULT NULL,
+  `add_hourly_rate` decimal(10,2) DEFAULT NULL,
+  `salary` decimal(10,2) DEFAULT NULL,
+  `spass_no` varchar(25) DEFAULT NULL,
+  `date_of_expiry` date DEFAULT NULL,
+  `day_rate` decimal(10,2) DEFAULT NULL,
+  `overtime_rate` decimal(10,2) DEFAULT NULL,
+  `emp_code` varchar(20) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `relegion` varchar(50) DEFAULT NULL,
+  `nationality` varchar(20) DEFAULT NULL,
+  `foreign_addrs_street` varchar(200) DEFAULT NULL,
+  `foreign_addrs_area` varchar(50) DEFAULT NULL,
+  `foreign_addrs_city` varchar(25) DEFAULT NULL,
+  `foreign_addrs_postal_code` varchar(10) DEFAULT NULL,
+  `foreign_addrs_country` varchar(30) DEFAULT NULL,
+  `emergency_contact_name` varchar(25) DEFAULT NULL,
+  `emergency_contact_phone` varchar(25) DEFAULT NULL,
+  `emergency_contact_phone2` varchar(25) DEFAULT NULL,
+  `emergency_contact_address` text,
+  `degree1` varchar(30) DEFAULT NULL,
+  `educational_qualitifcation1` varchar(100) DEFAULT NULL,
+  `year_of_completion1` date DEFAULT NULL,
+  `degree2` varchar(30) DEFAULT NULL,
+  `educational_qualitifcation2` varchar(100) DEFAULT NULL,
+  `year_of_completion2` date DEFAULT NULL,
+  `degree3` varchar(30) DEFAULT NULL,
+  `educational_qualitifcation3` varchar(100) DEFAULT NULL,
+  `year_of_completion3` date DEFAULT NULL,
+  `fin_no` varchar(20) DEFAULT NULL,
+  `marital_status` varchar(10) DEFAULT NULL,
+  `is_citizen` int(11) DEFAULT NULL,
+  `race` varchar(255) DEFAULT NULL,
+  `employee_group` varchar(20) DEFAULT NULL,
+  `first_name` varchar(100) DEFAULT NULL,
+  `last_name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`employee_id`),
+  KEY `company_id` (`company_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `job_information` (
+  `employee_id` int(11) NOT NULL AUTO_INCREMENT,
+  `designation` varchar(100) DEFAULT NULL,
+  `probationary` int(3) DEFAULT NULL,
+  `emp_type` varchar(20) DEFAULT NULL,
+  `join_date` date DEFAULT NULL,
+  `act_join_date` date DEFAULT NULL,
+  `termination_date` date DEFAULT NULL,
+  `termination_reason` text,
+  `department` varchar(100) DEFAULT NULL,
+  `basic_pay` decimal(10,2) DEFAULT NULL,
+  `working_days` int(10) DEFAULT NULL,
+  `payment_type` varchar(10) DEFAULT NULL,
+  `overtime` int(1) DEFAULT NULL,
+  `overtime_pay_rate` decimal(10,2) DEFAULT NULL,
+  `cpf_applicable` int(1) DEFAULT NULL,
+  `income_tax_id` varchar(50) DEFAULT NULL,
+  `pay_cdac` int(10) DEFAULT NULL,
+  `pay_sinda` int(10) DEFAULT NULL,
+  `pay_mbmf` int(10) DEFAULT NULL,
+  `cpf_account_no` varchar(50) DEFAULT NULL,
+  `pay_eucf` int(10) DEFAULT NULL,
+  `mode_of_payment` varchar(50) DEFAULT NULL,
+  `account_no` varchar(25) DEFAULT NULL,
+  `bank_name` varchar(100) DEFAULT NULL,
+  `bank_code` varchar(25) DEFAULT NULL,
+  `branch_code` varchar(50) DEFAULT NULL,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `modified_by` varchar(255) DEFAULT NULL,
+  `flag` int(1) DEFAULT NULL,
+  `monthly_allowance` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`employee_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `leave` (
+  `leave_id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date DEFAULT NULL,
+  `employee_id` int(11) DEFAULT NULL,
+  `leave_type` varchar(100) DEFAULT NULL,
+  `from_date` date DEFAULT NULL,
+  `to_date` date DEFAULT NULL,
+  `reason` text,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `created_by` varchar(200) DEFAULT NULL,
+  `modified_by` varchar(200) DEFAULT NULL,
+  `flag` int(1) DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `no_of_days` int(11) DEFAULT NULL,
+  PRIMARY KEY (`leave_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `leave_policy` (
+  `leave_policy_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_of_leave` varchar(100) DEFAULT NULL,
+  `notes` text,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `modified_by` varchar(255) DEFAULT NULL,
+  `flag` int(1) DEFAULT NULL,
+  PRIMARY KEY (`leave_policy_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `leave_policy_employee_type` (
+  `leave_policy_employee_type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `leave_policy_id` int(11) DEFAULT NULL,
+  `employee_group` varchar(20) DEFAULT NULL,
+  `no_of_days` decimal(10,2) DEFAULT NULL,
+  `year` int(10) DEFAULT NULL,
+  `notes` text,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `modified_by` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`leave_policy_employee_type_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `loan` (
+  `loan_id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date DEFAULT NULL,
+  `amount` decimal(10,0) DEFAULT NULL,
+  `employee_id` int(11) DEFAULT NULL,
+  `type` varchar(100) DEFAULT NULL,
+  `status` varchar(100) DEFAULT NULL,
+  `due_date` date DEFAULT NULL,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `created_by` varchar(200) DEFAULT NULL,
+  `modified_by` varchar(200) DEFAULT NULL,
+  `flag` int(1) DEFAULT NULL,
+  `no_of_months` int(11) DEFAULT NULL,
+  `deduction` decimal(10,2) DEFAULT NULL,
+  `approved_by` int(11) DEFAULT NULL,
+  `loan_closing_date` date DEFAULT NULL,
+  PRIMARY KEY (`loan_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `payroll_management` (
+  `payroll_management_id` int(11) NOT NULL AUTO_INCREMENT,
+  `employee_id` int(10) DEFAULT NULL,
+  `payroll_month` varchar(20) DEFAULT NULL,
+  `payroll_year` int(5) DEFAULT NULL,
+  `ot_hours` int(10) DEFAULT NULL,
+  `additional_wages` decimal(10,2) DEFAULT NULL,
+  `cpf_deduction` decimal(10,2) DEFAULT NULL,
+  `statutary_deduction` decimal(10,2) DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `net_total` decimal(10,2) DEFAULT NULL,
+  `notes` text,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `modified_by` varchar(255) DEFAULT NULL,
+  `flag` int(1) DEFAULT NULL,
+  PRIMARY KEY (`payroll_management_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `training` (
+  `training_id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `trainer` varchar(100) DEFAULT NULL,
+  `description` text,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `created_by` varchar(200) DEFAULT NULL,
+  `modified_by` varchar(200) DEFAULT NULL,
+  `flag` int(1) DEFAULT NULL,
+  `training_company_name` varchar(255) DEFAULT NULL,
+  `training_company_address` text,
+  `training_company_email` varchar(50) DEFAULT NULL,
+  `training_company_phone` varchar(30) DEFAULT NULL,
+  `to_date` date DEFAULT NULL,
+  PRIMARY KEY (`training_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `training_staff` (
+  `training_staff_id` int(11) NOT NULL AUTO_INCREMENT,
+  `training_id` int(11) DEFAULT NULL,
+  `staff_id` int(11) DEFAULT NULL,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `created_by` varchar(200) DEFAULT NULL,
+  `modified_by` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`training_staff_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+ALTER TABLE `cpf_calculator` ADD `site_id` int(11) DEFAULT NULL;
+ALTER TABLE `employee` ADD `site_id` int(11) DEFAULT NULL;
+ALTER TABLE `job_information` ADD `site_id` int(11) DEFAULT NULL;
+ALTER TABLE `leave` ADD `site_id` int(11) DEFAULT NULL;
+ALTER TABLE `leave_policy` ADD `site_id` int(11) DEFAULT NULL;
+ALTER TABLE `leave_policy_employee_type` ADD `site_id` int(11) DEFAULT NULL;
+ALTER TABLE `loan` ADD `site_id` int(11) DEFAULT NULL;
+ALTER TABLE `payroll_management` ADD `site_id` int(11) DEFAULT NULL;
+ALTER TABLE `training` ADD `site_id` int(11) DEFAULT NULL;
+ALTER TABLE `training_staff` ADD `site_id` int(11) DEFAULT NULL;
+
+#MOIN 22-03-2016#
+#===================
+ALTER TABLE `job_information` ADD `status` VARCHAR( 100 ) NULL ;
+ALTER TABLE `job_information` ADD `income_tax_amount` DECIMAL( 10, 2 ) NULL ;
+ALTER TABLE `payroll_management` ADD `income_tax_amount` DECIMAL( 10, 2 ) NULL ;
+ALTER TABLE `payroll_management` ADD `loan_amount` DECIMAL( 10, 2 ) NULL;
+ALTER TABLE `payroll_management` ADD `loan_description` TEXT NULL;
+ALTER TABLE `payroll_management` ADD `commission` DECIMAL( 10, 2 ) NULL;
+ALTER TABLE `payroll_management` ADD `mbf` DECIMAL( 10, 2 ) NULL;
+ALTER TABLE `payroll_management` ADD `ot_amount` DECIMAL( 10, 2 ) NULL;
+
+ALTER TABLE `payroll_management` ADD `basic_pay` DECIMAL( 10, 2 ) NULL;
+ALTER TABLE `payroll_management` ADD `overtime_pay_rate` DECIMAL( 10, 2 ) NULL;
+ALTER TABLE `payroll_management` ADD `department` VARCHAR( 100 ) NULL;
+ALTER TABLE `payroll_management` ADD `cpf_account_no` VARCHAR( 50 ) NULL;
+ALTER TABLE `payroll_management` ADD `pay_cdac` INT( 10 ) NULL;
+ALTER TABLE `payroll_management` ADD `pay_sinda` INT( 10 ) NULL;
+ALTER TABLE `payroll_management` ADD `pay_mbmf` INT( 10 ) NULL;
+ALTER TABLE `payroll_management` ADD `pay_eucf` INT( 10 ) NULL;
+ALTER TABLE `payroll_management` ADD `monthly_allowance` DECIMAL( 10, 2 ) NULL;
+
+
+INSERT INTO `setting` (`setting_id`, `description`, `key_text`, `value`, `creation_date`, `modification_date`, `group_name`, `value_type`, `show_to_user`, `chi_value`, `used_for_admin`, `used_for_www`, `flag`) VALUES (NULL, 'Name of the payroll company', 'cp.payrollcompanyName', 'TRADELINK EAST ASIA (S)PTE LTD', NULL, NULL, NULL, 'Text Field', '1', NULL, NULL, NULL, '0');
+INSERT INTO `setting` (`setting_id`, `description`, `key_text`, `value`, `creation_date`, `modification_date`, `group_name`, `value_type`, `show_to_user`, `chi_value`, `used_for_admin`, `used_for_www`, `flag`) VALUES (NULL, 'Address of the company.', 'cp.addressPdf1', '38 Upper Dickson Road', NULL, NULL, NULL, 'Text Field', '1', NULL, NULL, NULL, '0');
+INSERT INTO `setting` (`setting_id`, `description`, `key_text`, `value`, `creation_date`, `modification_date`, `group_name`, `value_type`, `show_to_user`, `chi_value`, `used_for_admin`, `used_for_www`, `flag`) VALUES (NULL, 'Address of the company.', 'cp.addressPdf2', 'singapore', NULL, NULL, NULL, 'Text Field', '1', NULL, NULL, NULL, '0');
+INSERT INTO `setting` (`setting_id`, `description`, `key_text`, `value`, `creation_date`, `modification_date`, `group_name`, `value_type`, `show_to_user`, `chi_value`, `used_for_admin`, `used_for_www`, `flag`) VALUES (NULL, 'Phone number', 'cp.addressPdfTel', 'Tel:6392 3884', NULL, NULL, NULL, 'Text Field', '1', NULL, NULL, NULL, '0');
+INSERT INTO `setting` (`setting_id`, `description`, `key_text`, `value`, `creation_date`, `modification_date`, `group_name`, `value_type`, `show_to_user`, `chi_value`, `used_for_admin`, `used_for_www`, `flag`) VALUES (NULL, 'Phone number', 'cp.addressPdfFax', 'Fax:6392 3884', NULL, NULL, NULL, 'Text Field', '1', NULL, NULL, NULL, '0');
+INSERT INTO `setting` (`setting_id`, `description`, `key_text`, `value`, `creation_date`, `modification_date`, `group_name`, `value_type`, `show_to_user`, `chi_value`, `used_for_admin`, `used_for_www`, `flag`) VALUES (NULL, 'Phone number', 'cp.addressPdfHP', 'HP:9642 4585, 9380 2090', NULL, NULL, NULL, 'Text Field', '1', NULL, NULL, NULL, '0');
+INSERT INTO `setting` (`setting_id`, `description`, `key_text`, `value`, `creation_date`, `modification_date`, `group_name`, `value_type`, `show_to_user`, `chi_value`, `used_for_admin`, `used_for_www`, `flag`) VALUES (NULL, 'EmailAddress', 'cp.companyEmail', 'tradeastasia@gmail.com', NULL, NULL, NULL, 'Text Field', '1', NULL, NULL, NULL, '0');
+
+
+#MOIN 03-05-2016#
+#===================
+CREATE TABLE IF NOT EXISTS `cpf_calculator_history` (
+  `cpf_calculator_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cpf_calculator_id` int(11) DEFAULT NULL,
+  `from_age` varchar(10) DEFAULT NULL,
+  `to_age` varchar(10) DEFAULT NULL,
+  `by_employer` decimal(10,3) DEFAULT NULL,
+  `by_employee` decimal(10,3) DEFAULT NULL,
+  `year` int(4) DEFAULT NULL,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `modified_by` varchar(255) DEFAULT NULL,
+  `flag` int(1) DEFAULT NULL,
+  `site_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cpf_calculator_history_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+INSERT INTO `setting` (`setting_id`, `description`, `key_text`, `value`, `creation_date`, `modification_date`, `group_name`, `value_type`, `show_to_user`, `chi_value`, `used_for_admin`, `used_for_www`, `flag`) VALUES (NULL, 'Name of the payroll company', ' nextEmployeeCode ', '1000', NULL, NULL, NULL, 'Number Field', '1', NULL, NULL, NULL, '0');
+
+ALTER TABLE `cpf_calculator` ADD `from_salary` DECIMAL( 10, 2 ) NULL ,
+ADD `to_salary` DECIMAL( 10, 2 ) NULL ,
+ADD `cap_amount_employer` DECIMAL( 10, 2 ) NULL ,
+ADD `cap_amount_employee` DECIMAL( 10, 2 ) NULL ,
+ADD `spr_year` VARCHAR( 100 ) NULL ;
+
+ALTER TABLE `employee` ADD `spr_year` VARCHAR( 100 ) NULL ;
+
+ALTER TABLE `employee` ADD `citizen` VARCHAR( 100 ) NULL ;
+ALTER TABLE `employee` ADD `date_of_issue` DATE NULL ;
+ALTER TABLE `employee` ADD `work_permit` VARCHAR( 100 ) NULL;
+
+ALTER TABLE `job_information` CHANGE `monthly_allowance` `allowance1` DECIMAL( 10, 2 ) NULL DEFAULT NULL ;
+ALTER TABLE `job_information` ADD `allowance2` DECIMAL( 10, 2 ) NULL ,
+ADD `allowance3` DECIMAL( 10, 2 ) NULL;
+
+ALTER TABLE `payroll_management` CHANGE `monthly_allowance` `allowance1` DECIMAL( 10, 2 ) NULL DEFAULT NULL ;
+ALTER TABLE `payroll_management` ADD `allowance2` DECIMAL( 10, 2 ) NULL ,
+ADD `allowance3` DECIMAL( 10, 2 ) NULL ;
+
+INSERT INTO `cpf_calculator` (`cpf_calculator_id`, `from_age`, `to_age`, `by_employer`, `by_employee`, `year`, `creation_date`, `modification_date`, `created_by`, `modified_by`, `flag`, `from_salary`, `to_salary`, `cap_amount_employer`, `cap_amount_employee`, `spr_year`) VALUES
+(1, '0', '55', '17.000', '20.000', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '750.00', '10000.00', '1020.00', '1200.00', '3'),
+(2, '56', '60', '13.000', '13.000', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '750.00', '10000.00', '780.00', '780.00', '3'),
+(3, '61', '65', '9.000', '7.500', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '750.00', '10000.00', '540.00', '450.00', '3'),
+(4, '66', '200', '7.500', '5.000', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '750.00', '10000.00', '450.00', '300.00', '3'),
+(5, '0', '55', '0', '0', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '0.00', '50.00', '0.00', '0.00', '3'),
+(6, '0', '55', '17.000', '0', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '51.00', '500.00', '0.00', '0.00', '3'),
+(7, '0', '55', '17.000', '0.6', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '501.00', '749.00', '0.00', '0.00', '3'),
+(8, '56', '60', '0', '0', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '0.00', '50.00', '0.00', '0.00', '3'),
+(9, '56', '60', '13.000', '0', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '51.00', '500.00', '0.00', '0.00', '3'),
+(10, '56', '60', '13.000', '0.39', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '501.00', '749.00', '0.00', '0.00', '3'),
+(11, '61', '65', '0', '0', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '0.00', '50.00', '0.00', '0.00', '3'),
+(12, '61', '65', '9.000', '0', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '51.00', '500.00', '0.00', '0.00', '3'),
+(13, '61', '65', '9.000', '0.225', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '501.00', '749.00', '0.00', '0.00', '3'),
+(14, '66', '200', '0', '0', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '0.00', '50.00', '0.00', '0.00', '3'),
+(15, '66', '200', '7.500', '0', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '51.00', '500.00', '0.00', '0.00', '3'),
+(16, '66', '200', '7.500', '0.15', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '501.00', '749.00', '0.00', '0.00', '3'),
+(17, '0', '55', '0', '0', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '0.00', '50.00', '0.00', '0.00', '1'),
+(18, '0', '55', '4.000', '0', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '51.00', '500.00', '0.00', '0.00', '1'),
+(19, '0', '55', '3.85', '0.15', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '501.00', '749.00', '0.00', '0.00', '1'),
+(20, '0', '55', '4.000', '5.000', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '750.00', '10000.00', '240.00', '300.00', '1'),
+(21, '56', '60', '0', '0', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '0.00', '50.00', '0.00', '0.00', '1'),
+(22, '56', '60', '4.000', '0', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '51.00', '500.00', '0.00', '0.00', '1'),
+(23, '56', '60', '3.85', '0.15', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '501.00', '749.00', '0.00', '0.00', '1'),
+(24, '56', '60', '4.000', '5.000', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '750.00', '10000.00', '240.00', '300.00', '1'),
+(25, '61', '65', '0', '0', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '0.00', '50.00', '0.00', '0.00', '1'),
+(26, '61', '65', '3.5', '0', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '51.00', '500.00', '0.00', '0.00', '1'),
+(27, '61', '65', '3.35', '0.15', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '501.00', '749.00', '0.00', '0.00', '1'),
+(28, '61', '65', '3.5', '5.00', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '750.00', '10000.00', '210.00', '300.00', '1'),
+(29, '66', '200', '0', '0', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '0.00', '50.00', '0.00', '0.00', '1'),
+(30, '66', '200', '3.500', '0', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '51.00', '500.00', '0.00', '0.00', '1'),
+(31, '66', '200', '3.35', '0.15', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '501.00', '749.00', '0.00', '0.00', '1'),
+(32, '66', '200', '3.500', '5.000', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '750.00', '10000.00', '210.00', '300.00', '1'),
+(33, '0', '55', '0', '0', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '0.00', '50.00', '0.00', '0.00', '2'),
+(34, '0', '55', '9.000', '0', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '51.00', '500.00', '0.00', '0.00', '2'),
+(35, '0', '55', '8.55', '0.45', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '501.00', '749.00', '0.00', '0.00', '2'),
+(36, '0', '55', '9.000', '15.000', 2016, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, '750.00', '10000.00', '540.00', '900.00', '2'),
+(37, '56', '60', '0', '0', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '0.00', '50.00', '0.00', '0.00', '2'),
+(38, '56', '60', '6.000', '0', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '51.00', '500.00', '0.00', '0.00', '2'),
+(39, '56', '60', '5.625', '0.375', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '501.00', '749.00', '0.00', '0.00', '2'),
+(40, '56', '60', '6.000', '12.5', 2016, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, '750.00', '10000.00', '360.00', '750.00', '2'),
+(41, '61', '65', '0', '0', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '0.00', '50.00', '0.00', '0.00', '2'),
+(42, '61', '65', '3.5', '0', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '51.00', '500.00', '0.00', '0.00', '2'),
+(43, '61', '65', '3.275', '0.225', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '501.00', '749.00', '0.00', '0.00', '2'),
+(44, '61', '65', '3.5', '7.5', 2016, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, '750.00', '10000.00', '210.00', '450.00', '2'),
+(45, '66', '200', '0', '0', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '0.00', '50.00', '0.00', '0.00', '2'),
+(46, '66', '200', '3.500', '0', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '51.00', '500.00', '0.00', '0.00', '2'),
+(47, '66', '200', '3.35', '0.15', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '501.00', '749.00', '0.00', '0.00', '2'),
+(48, '66', '200', '3.500', '5.000', 2016, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, '750.00', '10000.00', '210.00', '300.00', '2');
+
+#ARIF 19-05-2016#
+#===================
+ALTER TABLE `employee` ADD `foreign_mobile` VARCHAR( 25 ) NULL ,
+ADD `foreign_email` VARCHAR( 50 ) NULL;
+
+INSERT INTO `valuelist` (`key_text`, `value`, `creation_date`) VALUES 
+('salutation', 'Mr', NOW()),
+('salutation', 'Mrs', NOW()),
+('salutation', 'Ms', NOW()),
+('gender', 'Male', NOW()),
+('gender', 'Female', NOW()),
+('maritalStatus', 'Single', NOW()),
+('maritalStatus', 'Married', NOW());
+
+INSERT INTO valuelist (`key_text`, `value`, `creation_date`) VALUES 
+('nationality', 'Afghan', NOW()),
+('nationality', 'Albanian', NOW()),
+('nationality', 'Algerian', NOW()),
+('nationality', 'American', NOW()),
+('nationality', 'American', NOW()),
+('nationality', 'Andorran', NOW()),
+('nationality', 'Angolan', NOW()),
+('nationality', 'Antiguans', NOW()),
+('nationality', 'Argentinean', NOW()),
+('nationality', 'Armenian', NOW()),
+('nationality', 'Australian', NOW()),
+('nationality', 'Austrian', NOW()),
+('nationality', 'Azerbaijani', NOW()),
+('nationality', 'Bahamian', NOW()),
+('nationality', 'Bahraini', NOW()),
+('nationality', 'Bangladeshi', NOW()),
+('nationality', 'Barbadian', NOW()),
+('nationality', 'Batswana', NOW()),
+('nationality', 'Belarusian', NOW()),
+('nationality', 'Belgian', NOW()),
+('nationality', 'Belizean', NOW()),
+('nationality', 'Beninese', NOW()),
+('nationality', 'Bhutanese', NOW()),
+('nationality', 'Bolivian', NOW()),
+('nationality', 'Bosnian', NOW()),
+('nationality', 'Herzegovinian', NOW()),
+('nationality', 'Brazilian', NOW()),
+('nationality', 'British', NOW()),
+('nationality', 'Bruneian', NOW()),
+('nationality', 'Bulgarian', NOW()),
+('nationality', 'Burkinabe', NOW()),
+('nationality', 'Burmese', NOW()),
+('nationality', 'Burundian', NOW()),
+('nationality', 'Cambodian', NOW()),
+('nationality', 'Cameroonian', NOW()),
+('nationality', 'Canadian', NOW()),
+('nationality', 'Cape Verdian', NOW()),
+('nationality', 'Central African', NOW()),
+('nationality', 'Chadian', NOW()),
+('nationality', 'Chilean', NOW()),
+('nationality', 'Chinese', NOW()),
+('nationality', 'Colombian', NOW()),
+('nationality', 'Comoran', NOW()),
+('nationality', 'Congolese', NOW()),
+('nationality', 'Costa Rican', NOW()),
+('nationality', 'Croatian', NOW()),
+('nationality', 'Cuban', NOW()),
+('nationality', 'Cypriot', NOW()),
+('nationality', 'Czech', NOW()),
+('nationality', 'Danish', NOW()),
+('nationality', 'Djibouti', NOW()),
+('nationality', 'Dominican', NOW()),
+('nationality', 'Dominican', NOW()),
+('nationality', 'Dutch', NOW()),
+('nationality', 'Ecuadorean', NOW()),
+('nationality', 'Egyptian', NOW()),
+('nationality', 'Emirian', NOW()),
+('nationality', 'Equatorial Guinean', NOW()),
+('nationality', 'Eritrean', NOW()),
+('nationality', 'Estonian', NOW()),
+('nationality', 'Ethiopian', NOW()),
+('nationality', 'Fijian', NOW()),
+('nationality', 'Filipino', NOW()),
+('nationality', 'Finnish', NOW()),
+('nationality', 'French', NOW()),
+('nationality', 'Gabonese', NOW()),
+('nationality', 'Gambian', NOW()),
+('nationality', 'Georgian', NOW()),
+('nationality', 'German', NOW()),
+('nationality', 'Ghanaian', NOW()),
+('nationality', 'Greek', NOW()),
+('nationality', 'Grenadian', NOW()),
+('nationality', 'Guatemalan', NOW()),
+('nationality', 'Guinea-Bissauan', NOW()),
+('nationality', 'Guinean', NOW()),
+('nationality', 'Guyanese', NOW()),
+('nationality', 'Haitian', NOW()),
+('nationality', 'Honduran', NOW()),
+('nationality', 'Hungarian', NOW()),
+('nationality', 'Icelander', NOW()),
+('nationality', 'I-Kiribati', NOW()),
+('nationality', 'Indian', NOW()),
+('nationality', 'Indonesian', NOW()),
+('nationality', 'Iranian', NOW()),
+('nationality', 'Iraqi', NOW()),
+('nationality', 'Irish', NOW()),
+('nationality', 'Israeli', NOW()),
+('nationality', 'Italian', NOW()),
+('nationality', 'Ivorian', NOW()),
+('nationality', 'Jamaican', NOW()),
+('nationality', 'Japanese', NOW()),
+('nationality', 'Jordanian', NOW()),
+('nationality', 'Kazakhstani', NOW()),
+('nationality', 'Kenyan', NOW()),
+('nationality', 'Kirghiz', NOW()),
+('nationality', 'Kittian and Nevisian', NOW()),
+('nationality', 'Kuwaiti', NOW()),
+('nationality', 'Laotian', NOW()),
+('nationality', 'Latvian', NOW()),
+('nationality', 'Lebanese', NOW()),
+('nationality', 'Liberian', NOW()),
+('nationality', 'Libyan', NOW()),
+('nationality', 'Liechtensteiner', NOW()),
+('nationality', 'Lithuanian', NOW()),
+('nationality', 'Luxembourger', NOW()),
+('nationality', 'Macedonian', NOW()),
+('nationality', 'Malagasy', NOW()),
+('nationality', 'Malawian', NOW()),
+('nationality', 'Malaysian', NOW()),
+('nationality', 'Maldivan', NOW()),
+('nationality', 'Malian', NOW()),
+('nationality', 'Maltese', NOW()),
+('nationality', 'Marshallese', NOW()),
+('nationality', 'Mauritanian', NOW()),
+('nationality', 'Mauritian', NOW()),
+('nationality', 'Mexican', NOW()),
+('nationality', 'Micronesian', NOW()),
+('nationality', 'Moldovan', NOW()),
+('nationality', 'Monegasque', NOW()),
+('nationality', 'Mongolian', NOW()),
+('nationality', 'Moroccan', NOW()),
+('nationality', 'Mosotho', NOW()),
+('nationality', 'Mozambican', NOW()),
+('nationality', 'Namibian', NOW()),
+('nationality', 'Nauruan', NOW()),
+('nationality', 'Nepalese', NOW()),
+('nationality', 'New Zealander', NOW()),
+('nationality', 'Nicaraguan', NOW()),
+('nationality', 'Nigerian', NOW()),
+('nationality', 'Nigerien', NOW()),
+('nationality', 'Ni-Vanuatu', NOW()),
+('nationality', 'North Korean', NOW()),
+('nationality', 'Norwegian', NOW()),
+('nationality', 'Omani', NOW()),
+('nationality', 'Pakistani', NOW()),
+('nationality', 'Palauan', NOW()),
+('nationality', 'Palestinian', NOW()),
+('nationality', 'Panamanian', NOW()),
+('nationality', 'Papua New Guinean', NOW()),
+('nationality', 'Paraguayan', NOW()),
+('nationality', 'Peruvian', NOW()),
+('nationality', 'Polish', NOW()),
+('nationality', 'Portuguese', NOW()),
+('nationality', 'Qatari', NOW()),
+('nationality', 'Romanian', NOW()),
+('nationality', 'Russian', NOW()),
+('nationality', 'Rwandan', NOW()),
+('nationality', 'Saint Lucian', NOW()),
+('nationality', 'Salvadoran', NOW()),
+('nationality', 'Sammarinese', NOW()),
+('nationality', 'Samoan', NOW()),
+('nationality', 'Sao Tomean', NOW()),
+('nationality', 'Saudi Arabian', NOW()),
+('nationality', 'Senegalese', NOW()),
+('nationality', 'Serbian', NOW()),
+('nationality', 'Seychellois', NOW()),
+('nationality', 'Sierra Leonean', NOW()),
+('nationality', 'Singaporean', NOW()),
+('nationality', 'Slovak', NOW()),
+('nationality', 'Slovene', NOW()),
+('nationality', 'Solomon Islander', NOW()),
+('nationality', 'Somali', NOW()),
+('nationality', 'South African', NOW()),
+('nationality', 'South Korean', NOW()),
+('nationality', 'Spanish', NOW()),
+('nationality', 'Sri Lankan', NOW()),
+('nationality', 'Sudanese', NOW()),
+('nationality', 'Surinamer', NOW()),
+('nationality', 'Swazi', NOW()),
+('nationality', 'Swedish', NOW()),
+('nationality', 'Swiss', NOW()),
+('nationality', 'Syrian', NOW()),
+('nationality', 'Tadzhik', NOW()),
+('nationality', 'Taiwanese', NOW()),
+('nationality', 'Tanzanian', NOW()),
+('nationality', 'Thai', NOW()),
+('nationality', 'Togolese', NOW()),
+('nationality', 'Tongan', NOW()),
+('nationality', 'Trinidadian', NOW()),
+('nationality', 'Tunisian', NOW()),
+('nationality', 'Turkish', NOW()),
+('nationality', 'Turkmen', NOW()),
+('nationality', 'Tuvaluan', NOW()),
+('nationality', 'Ugandan', NOW()),
+('nationality', 'Ukrainian', NOW()),
+('nationality', 'Uruguayan', NOW()),
+('nationality', 'Uzbekistani', NOW()),
+('nationality', 'Venezuelan', NOW()),
+('nationality', 'Vietnamese', NOW()),
+('nationality', 'Yemeni', NOW()),
+('nationality', 'Zambian', NOW()),
+('nationality', 'Zimbabwean', NOW());
+
+INSERT INTO valuelist (`key_text`, `value`, `creation_date`) VALUES 
+('race', 'AAFRICAN', NOW()),
+('race', 'ACHEHNESE', NOW()),
+('race', 'AFGHAN', NOW()),
+('race', 'ALBANIAN', NOW()),
+('race', 'AMBONESE', NOW()),
+('race', 'AMERICAN', NOW()),
+('race', 'ANGLO BURMESE', NOW()),
+('race', 'ANGLO CHINESE', NOW()),
+('race', 'ANGLO FILIPINO', NOW()),
+('race', 'ANGLO INDIAN', NOW()),
+('race', 'ANGLO SAXON', NOW()),
+('race', 'ANGLO THAI', NOW()),
+('race', 'ANNAMITE', NOW()),
+('race', 'ARAB', NOW()),
+('race', 'ARMENIAN', NOW()),
+('race', 'ARYAN', NOW()),
+('race', 'ASSAMI', NOW()),
+('race', 'AUSTRALIAN', NOW()),
+('race', 'AUSTRIAN', NOW()),
+('race', 'AZERI', NOW()),
+('race', 'BAJAU', NOW()),
+('race', 'BANGALA', NOW()),
+('race', 'BANGLADESHI', NOW()),
+('race', 'BANJARESE', NOW()),
+('race', 'BATAK', NOW()),
+('race', 'BELGIAN', NOW()),
+('race', 'BENGALI', NOW()),
+('race', 'BHUTANESE', NOW()),
+('race', 'BISAYA', NOW()),
+('race', 'BOYANESE', NOW()),
+('race', 'BRAHMIN', NOW()),
+('race', 'BRAZILIAN', NOW()),
+('race', 'BRITISH', NOW()),
+('race', 'BUGIS', NOW()),
+('race', 'BULGARIAN', NOW()),
+('race', 'BURGHER', NOW()),
+('race', 'BURMESE', NOW()),
+('race', 'BUTONESE', NOW()),
+('race', 'CANADIAN', NOW()),
+('race', 'CAPE COLOURED', NOW()),
+('race', 'CAUCASIAN', NOW()),
+('race', 'CEYLON MOOR', NOW()),
+('race', 'CEYLONESE', NOW()),
+('race', 'CHINESE', NOW()),
+('race', 'COCOS', NOW()),
+('race', 'CZECH', NOW()),
+('race', 'CZECHOSLOVAK', NOW()),
+('race', 'DANE', NOW()),
+('race', 'DAYAK', NOW()),
+('race', 'DUSUN', NOW()),
+('race', 'DUTCH', NOW()),
+('race', 'DUTCH BURGHER', NOW()),
+('race', 'EGYPTIAN', NOW()),
+('race', 'ENGLISH', NOW()),
+('race', 'ETHIOPIAN', NOW()),
+('race', 'EURASIAN', NOW()),
+('race', 'EUROPEAN', NOW()),
+('race', 'FIJIAN', NOW()),
+('race', 'FILIPINO', NOW()),
+('race', 'FINN', NOW()),
+('race', 'FRENCH', NOW()),
+('race', 'GERMAN', NOW()),
+('race', 'GHANAIAN', NOW()),
+('race', 'GOANESE', NOW()),
+('race', 'GREEK', NOW()),
+('race', 'GUJARATI', NOW()),
+('race', 'GURKHA', NOW()),
+('race', 'HAWAIIAN', NOW()),
+('race', 'HINDUSTANI', NOW()),
+('race', 'HOLLANDER', NOW()),
+('race', 'IBAN', NOW()),
+('race', 'ICELANDER', NOW()),
+('race', 'INDIAN', NOW()),
+('race', 'INDONESIAN', NOW()),
+('race', 'IRANIAN', NOW()),
+('race', 'IRAQI', NOW()),
+('race', 'IRISH', NOW()),
+('race', 'ISOKO', NOW()),
+('race', 'ISRAELI', NOW()),
+('race', 'ITALIAN', NOW()),
+('race', 'JAMAICAN', NOW()),
+('race', 'JAPANESE', NOW()),
+('race', 'JAVANESE', NOW()),
+('race', 'JEW', NOW()),
+('race', 'JORDANIAN', NOW()),
+('race', 'KACHIN', NOW()),
+('race', 'KADAZAN', NOW()),
+('race', 'KAMPUCHEAN', NOW()),
+('race', 'KAREN', NOW()),
+('race', 'KAZAKH', NOW()),
+('race', 'KELABIT', NOW()),
+('race', 'KENYAN', NOW()),
+('race', 'KHASI', NOW()),
+('race', 'KHMER', NOW()),
+('race', 'KOREAN', NOW()),
+('race', 'LAO', NOW()),
+('race', 'LEBANESE', NOW()),
+('race', 'LIBYAN', NOW()),
+('race', 'MAHRATTA', NOW()),
+('race', 'MAKASARESE', NOW()),
+('race', 'MALABARI', NOW()),
+('race', 'MALAGASY', NOW()),
+('race', 'MALAY', NOW()),
+('race', 'MALAYALEE', NOW()),
+('race', 'MALDIVIAN', NOW()),
+('race', 'MALTESE', NOW()),
+('race', 'MANIPURI', NOW()),
+('race', 'MAORI', NOW()),
+('race', 'MARATHI', NOW()),
+('race', 'MAURITIAN', NOW()),
+('race', 'MELANAU', NOW()),
+('race', 'MELANESIAN', NOW()),
+('race', 'METIS', NOW()),
+('race', 'MEXICAN', NOW()),
+('race', 'MINANGKABAU', NOW()),
+('race', 'MOLDAVIAN', NOW()),
+('race', 'MONGOLIAN', NOW()),
+('race', 'MURUT', NOW()),
+('race', 'NAGA', NOW()),
+('race', 'NAURUAN', NOW()),
+('race', 'NEGRO', NOW()),
+('race', 'NEPALESE', NOW()),
+('race', 'NETHERLANDER', NOW()),
+('race', 'NEW ZEALANDER', NOW()),
+('race', 'NEWAR', NOW()),
+('race', 'NIGERIAN', NOW()),
+('race', 'NORWEGIAN', NOW()),
+('race', 'OTHER EURASIAN', NOW()),
+('race', 'OTHER INDIAN', NOW()),
+('race', 'OTHER INDONESIAN', NOW()),
+('race', 'OTHERS', NOW()),
+('race', 'PAKISTANI', NOW()),
+('race', 'PALESTINE', NOW()),
+('race', 'PARSEE', NOW()),
+('race', 'PATHAN', NOW()),
+('race', 'PENAN', NOW()),
+('race', 'PERSIAN', NOW()),
+('race', 'PERUVIAN', NOW()),
+('race', 'POLE', NOW()),
+('race', 'POLYNESIAN', NOW()),
+('race', 'PORTUGUESE', NOW()),
+('race', 'PUNJABI', NOW()),
+('race', 'RAJPUT', NOW()),
+('race', 'RAKHINE', NOW()),
+('race', 'RUSSIAN', NOW()),
+('race', 'SCOT', NOW()),
+('race', 'SERANI', NOW()),
+('race', 'SERB/MONT', NOW()),
+('race', 'SEYCHELLOIS', NOW()),
+('race', 'SHAN', NOW()),
+('race', 'SIKH', NOW()),
+('race', 'SINDHI', NOW()),
+('race', 'SINHALESE', NOW()),
+('race', 'SINO JAPANESE', NOW()),
+('race', 'SINO KADAZAN', NOW()),
+('race', 'SLOVAK', NOW()),
+('race', 'SPANISH', NOW()),
+('race', 'SRI LANKAN', NOW()),
+('race', 'SUDANESE', NOW()),
+('race', 'SUMATRAN', NOW()),
+('race', 'SWEDE', NOW()),
+('race', 'SWISS', NOW()),
+('race', 'TAMIL', NOW()),
+('race', 'TELUGU', NOW()),
+('race', 'THAI', NOW()),
+('race', 'TIBETAN', NOW()),
+('race', 'TONGAN', NOW()),
+('race', 'TURK', NOW()),
+('race', 'UKRAINIA', NOW()),
+('race', 'UNKNOWN', NOW()),
+('race', 'UZBEK', NOW()),
+('race', 'VENEZUELAN', NOW()),
+('race', 'VIETNAMESE', NOW()),
+('race', 'WELSH', NOW());
+
+INSERT INTO valuelist (`key_text`, `value`, `creation_date`) VALUES 
+('department', 'Management', NOW()),
+('department', 'Marketing', NOW()),
+('department', 'Others', NOW());
+
+#ANSARI 31-05-2016#
+#===================
+ALTER TABLE `employee` ADD `fin_no_expiry_date` date NULL ,
+ADD `work_permit_expiry_date` date NULL; 
+ALTER TABLE `payroll_management` ADD `paid_date` Date NULL ;
+ALTER TABLE `payroll_management` ADD `generated_date` Date NULL ;
+
+#ANSARI 19-07-2016#
+#===================
+ALTER TABLE `job_information` ADD `deduction1` decimal(10,2) NULL
+, ADD `deduction2` decimal(10,2) NULL
+, ADD `deduction3` decimal(10,2) NULL;
+
+ALTER TABLE `payroll_management` ADD `deduction1` decimal(10,2) NULL
+, ADD `deduction2` decimal(10,2) NULL
+, ADD `deduction3` decimal(10,2) NULL;
+
+ALTER TABLE `job_information` CHANGE `employee_id` `job_information_id` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `job_information` ADD `employee_id` int(11) NULL;
+
+#ANSARI 02-08-2016#
+#===================
+ALTER TABLE `payroll_management` ADD `cpf_employee` decimal(10,2) DEFAULT NULL,
+ADD `cpf_employer` decimal(10,2) DEFAULT NULL;
+
+ALTER TABLE `loan` ADD `month_amount` decimal(10,2) DEFAULT NULL;
+ALTER TABLE `payroll_management` ADD `loan_deduction` decimal(10,2) DEFAULT NULL;
+
+#ARIF 09-09-2016#
+#===================
+CREATE TABLE IF NOT EXISTS `loan_repayment_history` (
+  `loan_repayment_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `payroll_management_id` int(11) DEFAULT NULL,
+  `loan_id` int(11) DEFAULT NULL,
+  `remarks` text,
+  `creation_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `modified_by` varchar(255) DEFAULT NULL,
+  `flag` int(1) DEFAULT NULL,
+  PRIMARY KEY (`loan_repayment_history_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+ALTER TABLE `loan_repayment_history` ADD `loan_repayment_amount_per_month` decimal(10,2) DEFAULT NULL;
+
+ALTER TABLE `loan_repayment_history` ADD `employee_id` INT( 11 ) NULL;
+
+ALTER TABLE `loan_repayment_history` ADD `generated_date` DATE NULL;
+ALTER TABLE `loan` ADD `loan_start_date` DATE NULL;
+
+#ARIF 22-09-2016#
+#===================
+ALTER TABLE `loan` ADD `notes` TEXT NULL;
+
+#ARIF 21-11-2016#
+#===================
+ALTER TABLE `job_information` ADD `govt_donation` VARCHAR( 50 ) NULL;
+ALTER TABLE `payroll_management` ADD `govt_donation` VARCHAR( 50 ) NULL ;
+
+#ARIF 21-11-2016#
+#===================
+ALTER TABLE `payroll_management` CHANGE `mbf` `sdl` DECIMAL( 10, 2 ) NULL DEFAULT NULL;
+
+#ARIF 06-04-2017#
+#===================
+ALTER TABLE `payroll_management` ADD `total_cpf_contribution` INT( 11 ) NULL;
+
+#ARIF 21-04-2017#
+#===================
+ALTER TABLE `job_information` ADD `departure_date` DATE NULL ,
+ADD `resignation_notice_date` DATE NULL;
+
+ALTER TABLE `payroll_management` ADD `payslip_start_date` DATE NULL ,
+ADD `payslip_end_date` DATE NULL;
+
+ALTER TABLE `payroll_management` ADD `actual_working_days` DECIMAL( 10, 1 ) NULL;
+ALTER TABLE `payroll_management` ADD `working_days_in_month` DECIMAL( 10, 1 ) NULL;
+
+ALTER TABLE `job_information` CHANGE `working_days` `working_days` DECIMAL( 10, 1 ) NULL DEFAULT NULL;
+UPDATE job_information SET working_days = "6.0";
+
+#ARIF 21-04-2017#
+#===================
+UPDATE payroll_management SET payslip_start_date = '2017-04-01', payslip_end_date = '2017-04-30' WHERE payroll_month = '04' AND payroll_year = '2017';
+UPDATE payroll_management SET payslip_start_date = '2017-03-01', payslip_end_date = '2017-03-31' WHERE payroll_month = '03' AND payroll_year = '2017';
+UPDATE payroll_management SET payslip_start_date = '2017-02-01', payslip_end_date = '2017-02-28' WHERE payroll_month = '02' AND payroll_year = '2017';
+UPDATE payroll_management SET payslip_start_date = '2017-01-01', payslip_end_date = '2017-01-31' WHERE payroll_month = '01' AND payroll_year = '2017';
+
+UPDATE payroll_management SET payslip_start_date = '2016-12-01', payslip_end_date = '2016-12-31' WHERE payroll_month = '12' AND payroll_year = '2016';
+UPDATE payroll_management SET payslip_start_date = '2016-11-01', payslip_end_date = '2016-11-30' WHERE payroll_month = '11' AND payroll_year = '2016';
+UPDATE payroll_management SET payslip_start_date = '2016-10-01', payslip_end_date = '2016-10-31' WHERE payroll_month = '10' AND payroll_year = '2016';
+UPDATE payroll_management SET payslip_start_date = '2016-09-01', payslip_end_date = '2016-09-30' WHERE payroll_month = '09' AND payroll_year = '2016';
+UPDATE payroll_management SET payslip_start_date = '2016-08-01', payslip_end_date = '2016-08-31' WHERE payroll_month = '08' AND payroll_year = '2016';
+UPDATE payroll_management SET payslip_start_date = '2016-07-01', payslip_end_date = '2016-07-31' WHERE payroll_month = '07' AND payroll_year = '2016';
+UPDATE payroll_management SET payslip_start_date = '2016-06-01', payslip_end_date = '2016-06-30' WHERE payroll_month = '06' AND payroll_year = '2016';
+UPDATE payroll_management SET payslip_start_date = '2016-05-01', payslip_end_date = '2016-05-31' WHERE payroll_month = '05' AND payroll_year = '2016';
+UPDATE payroll_management SET payslip_start_date = '2016-04-01', payslip_end_date = '2016-04-30' WHERE payroll_month = '04' AND payroll_year = '2016';
+
+#ARIF 20-04-2017#
+#===================
+ALTER TABLE `job_information` CHANGE `pay_cdac` `pay_cdac` DECIMAL( 10, 2 ) NULL DEFAULT NULL;
+ALTER TABLE `job_information` CHANGE `pay_sinda` `pay_sinda` DECIMAL( 10, 2 ) NULL DEFAULT NULL;
+ALTER TABLE `job_information` CHANGE `pay_mbmf` `pay_mbmf` DECIMAL( 10, 2 ) NULL DEFAULT NULL;
+ALTER TABLE `job_information` CHANGE `pay_eucf` `pay_eucf` DECIMAL( 10, 2 ) NULL DEFAULT NULL;
+ALTER TABLE `payroll_management` CHANGE `pay_cdac` `pay_cdac` DECIMAL( 10, 2 ) NULL DEFAULT NULL;
+ALTER TABLE `payroll_management` CHANGE `pay_sinda` `pay_sinda` DECIMAL( 10, 2 ) NULL DEFAULT NULL;
+ALTER TABLE `payroll_management` CHANGE `pay_mbmf` `pay_mbmf` DECIMAL( 10, 2 ) NULL DEFAULT NULL;
+ALTER TABLE `payroll_management` CHANGE `pay_eucf` `pay_eucf` DECIMAL( 10, 2 ) NULL DEFAULT NULL;
+
+#ARIF 21-04-2017#
+#===================
+ALTER TABLE `payroll_management` CHANGE `ot_hours` `ot_hours` DECIMAL( 10, 2 ) NULL DEFAULT NULL;
+
+#Mariyam 19-08-2017
+#===================
+ALTER TABLE `job_information` ADD `work_hour_details` TEXT NULL ;
+ALTER TABLE `job_information` ADD `duty_responsibility` VARCHAR( 100 ) NULL ;
+ALTER TABLE `job_information` ADD `rest_day_per_week` VARCHAR( 155 ) ;
+
+#ARIF 23-08-2017#
+#===================
+ALTER TABLE `job_information` ADD `probation_start_date` DATE NULL ,
+ADD `probation_end_date` DATE NULL ,
+ADD `length_of_probation` TEXT NULL ,
+ADD `notice_period_for_termination` TEXT NULL;
+
+ALTER TABLE `job_information` ADD `duration_of_employment` VARCHAR( 155 ) NULL ,
+ADD `place_of_work` VARCHAR( 155 ) NULL;
+
+ALTER TABLE `job_information` CHANGE `payment_type` `payment_type` VARCHAR( 15 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL;
+
+ALTER TABLE `job_information` ADD `salary_payment_dates` VARCHAR( 155 ) NULL ,
+ADD `overtime_payment_dates` VARCHAR( 155 ) NULL;
+
+#MOIN 31-08-2017#
+#===================
+ALTER TABLE `leave` ADD `no_of_days_next_month` INT(11) NULL ;
+
+#ARIF 04-09-2017#
+#===================
+ALTER TABLE `payroll_management` ADD `reimbursement` DECIMAL( 10, 2 ) NULL;
+
+#ARIF 05-09-2017#
+#===================
+ALTER TABLE `job_information` ADD `paid_annual_leave_per_year` VARCHAR( 10 ) NULL ,
+ADD `paid_outpatient_sick_leave_per_year` VARCHAR( 10 ) NULL ,
+ADD `paid_hospitalisation_leave_per_year` VARCHAR( 10 ) NULL ,
+ADD `other_type_of_leave` TEXT NULL ,
+ADD `paid_medical_examination_fee` TINYINT( 1 ) NULL ,
+ADD `other_medical_benefits` TEXT NULL;
+
+#ARIF 07-09-2017#
+#===================
+ALTER TABLE `job_information` ADD `allowance4` DECIMAL( 10, 2 ) NULL ,
+ADD `allowance5` DECIMAL( 10, 2 ) NULL;
+
+ALTER TABLE `payroll_management` ADD `allowance4` DECIMAL( 10, 2 ) NULL ,
+ADD `allowance5` DECIMAL( 10, 2 ) NULL;
+
+#ANSARI 03-03-2018#
+#===================
+ALTER TABLE `training_staff` ADD `from_date` DATE NULL DEFAULT NULL AFTER `site_id`, ADD `to_date` DATE NULL DEFAULT NULL AFTER `from_date`;
+
+#ARIF 25-10-2018#
+#===================
+ALTER TABLE `payroll_management` ADD `total_basic_pay_for_month` DECIMAL(10,2) NULL AFTER `director_fee`;
+UPDATE payroll_management SET total_basic_pay_for_month = basic_pay WHERE total_basic_pay_for_month IS NULL;
+
+#ARIF 17-12-2018#
+#===================
+ALTER TABLE `payroll_management` ADD `mode_of_payment` VARCHAR( 50 ) NULL;
+
+#ARIF 08-01-2019#
+#===================
+INSERT INTO `cpf_calculator` (`from_age`, `to_age`, `by_employer`, `by_employee`, `year`, `creation_date`, `modification_date`, `created_by`, `modified_by`, `flag`, `site_id`, `from_salary`, `to_salary`, `cap_amount_employer`, `cap_amount_employee`, `spr_year`) VALUES
+('0', '55', '17.000', '20.000', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '750.00', '10000.00', '1020.00', '1200.00', '3'),
+('56', '60', '13.000', '13.000', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '750.00', '10000.00', '780.00', '780.00', '3'),
+('61', '65', '9.000', '7.500', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '750.00', '10000.00', '540.00', '450.00', '3'),
+('66', '200', '7.500', '5.000', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '750.00', '10000.00', '450.00', '300.00', '3'),
+('0', '55', '0.000', '0.000', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '0.00', '50.00', '0.00', '0.00', '3'),
+('0', '55', '17.000', '0.000', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '51.00', '500.00', '0.00', '0.00', '3'),
+('0', '55', '17.000', '0.600', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '501.00', '749.00', '0.00', '0.00', '3'),
+('56', '60', '0.000', '0.000', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '0.00', '50.00', '0.00', '0.00', '3'),
+('56', '60', '13.000', '0.000', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '51.00', '500.00', '0.00', '0.00', '3'),
+('56', '60', '13.000', '0.390', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '501.00', '749.00', '0.00', '0.00', '3'),
+('61', '65', '0.000', '0.000', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '0.00', '50.00', '0.00', '0.00', '3'),
+('61', '65', '9.000', '0.000', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '51.00', '500.00', '0.00', '0.00', '3'),
+('61', '65', '9.000', '0.230', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '501.00', '749.00', '0.00', '0.00', '3'),
+('66', '200', '0.000', '0.000', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '0.00', '50.00', '0.00', '0.00', '3'),
+('66', '200', '7.500', '0.000', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '51.00', '500.00', '0.00', '0.00', '3'),
+('66', '200', '7.500', '0.150', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '501.00', '749.00', '0.00', '0.00', '3'),
+('0', '55', '0.000', '0.000', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '0.00', '50.00', '0.00', '0.00', '1'),
+('0', '55', '4.000', '0.000', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '51.00', '500.00', '0.00', '0.00', '1'),
+('0', '55', '3.850', '0.150', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '501.00', '749.00', '0.00', '0.00', '1'),
+('0', '55', '4.000', '5.000', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '750.00', '10000.00', '240.00', '300.00', '1'),
+('56', '60', '0.000', '0.000', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '0.00', '50.00', '0.00', '0.00', '1'),
+('56', '60', '4.000', '0.000', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '51.00', '500.00', '0.00', '0.00', '1'),
+('56', '60', '3.850', '0.150', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '501.00', '749.00', '0.00', '0.00', '1'),
+('56', '60', '4.000', '5.000', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '750.00', '10000.00', '240.00', '300.00', '1'),
+('61', '65', '0.000', '0.000', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '0.00', '50.00', '0.00', '0.00', '1'),
+('61', '65', '3.500', '0.000', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '51.00', '500.00', '0.00', '0.00', '1'),
+('61', '65', '3.350', '0.150', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '501.00', '749.00', '0.00', '0.00', '1'),
+('61', '65', '3.500', '5.000', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '750.00', '10000.00', '210.00', '300.00', '1'),
+('66', '200', '0.000', '0.000', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '0.00', '50.00', '0.00', '0.00', '1'),
+('66', '200', '3.500', '0.000', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '51.00', '500.00', '0.00', '0.00', '1'),
+('66', '200', '3.350', '0.150', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '501.00', '749.00', '0.00', '0.00', '1'),
+('66', '200', '3.500', '5.000', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '750.00', '10000.00', '210.00', '300.00', '1'),
+('0', '55', '0.000', '0.000', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '0.00', '50.00', '0.00', '0.00', '2'),
+('0', '55', '9.000', '0.000', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '51.00', '500.00', '0.00', '0.00', '2'),
+('0', '55', '8.550', '0.450', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '501.00', '749.00', '0.00', '0.00', '2'),
+('0', '55', '9.000', '15.000', 2019, '2016-03-14 18:56:36', '2016-05-04 17:51:19', 'Arif Khan', 'Moinudeen R', 0, NULL, '750.00', '10000.00', '540.00', '900.00', '2'),
+('56', '60', '0.000', '0.000', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '0.00', '50.00', '0.00', '0.00', '2'),
+('56', '60', '6.000', '0.000', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '51.00', '500.00', '0.00', '0.00', '2'),
+('56', '60', '5.630', '0.380', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '501.00', '749.00', '0.00', '0.00', '2'),
+('56', '60', '6.000', '12.500', 2019, '2016-03-14 18:57:13', '2016-05-04 17:52:14', 'Arif Khan', 'Moinudeen R', NULL, NULL, '750.00', '10000.00', '360.00', '750.00', '2'),
+('61', '65', '0.000', '0.000', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '0.00', '50.00', '0.00', '0.00', '2'),
+('61', '65', '3.500', '0.000', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '51.00', '500.00', '0.00', '0.00', '2'),
+('61', '65', '3.280', '0.230', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '501.00', '749.00', '0.00', '0.00', '2'),
+('61', '65', '3.500', '7.500', 2019, '2016-03-14 18:57:34', '2016-05-04 17:53:03', 'Arif Khan', 'Moinudeen R', NULL, NULL, '750.00', '10000.00', '210.00', '450.00', '2'),
+('66', '200', '0.000', '0.000', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '0.00', '50.00', '0.00', '0.00', '2'),
+('66', '200', '3.500', '0.000', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '51.00', '500.00', '0.00', '0.00', '2'),
+('66', '200', '3.350', '0.150', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '501.00', '749.00', '0.00', '0.00', '2'),
+('66', '200', '3.500', '5.000', 2019, '2016-03-14 18:57:57', '2016-05-04 17:53:24', 'Arif Khan', 'Moinudeen R', NULL, NULL, '750.00', '10000.00', '210.00', '300.00', '2');
+
+#ARIF 28-02-2020#
+#===================
+ALTER TABLE `employee` ADD `ir21_filed` TINYINT(1) NULL AFTER `work_permit_expiry_date`;

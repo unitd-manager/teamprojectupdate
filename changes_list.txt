@@ -1,0 +1,18 @@
+
+- transfer
+- client name auto search (1st column)
+- show related project name in dropdown
+
+- more details to main
+
+- quote items remove extra fields
+
+- show discount
+
+- quote edit - project ref, site address project location
+
+- add supplier in po pop up
+
+- transferred qty column
+
+- employee and staff link refresh change

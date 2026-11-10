@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@media all
+{
+    .PrimaryContactHide{
+    	display: none;
+    }
+
+    element.style {
+	    height: auto;
+	    min-height: 0;
+	    width: auto;
+	}
+
+    #linkModalOuter .c50l {
+	    background: #efefef none repeat scroll 0 0;
+	    padding: 1em;
+	    width: 48%;
+	    float: left;
+	}
+
+	#linkModalOuter .c50r {
+	    background: #dfdfdf none repeat scroll 0 0;
+	    padding: 1em;
+	    width: 50%;
+	    float: right;
+	}
+
+	.m-hms_patientInformation.v-edit .error strong.message {
+	    background-color: darkred;
+	    border-radius: 2px;
+	    color: #ffffff !important;
+	    padding: 2px 10px;
+	    margin-left: 0 !important;
+	}
+}

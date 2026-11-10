@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@media all
+{
+    .m-web2_blog .date {
+        margin-bottom: 10px;
+    }
+    
+    .m-web2_blog .posted {
+        font-style: italic;
+        margin-right: 5px;
+    }
+    
+    .m-web2_blog .readMore {
+        float: right;
+    }
+    
+}

@@ -1,0 +1,184 @@
+/****************** Overlay ********************/
+@media screen, projection
+{
+    .jqToolsOverlay {
+    	padding:40px;	
+    	width:576px;  
+    	display:none;
+    	background-image:url(images/overlay/white.png);	
+    }
+     
+    .jqToolsOverlay .close {
+    	background:url(images/overlay/close.png) no-repeat;
+    	position:absolute;
+    	top:2px;
+    	right:5px; 
+    	display:block;
+    	width:35px;
+    	height:35px;
+    	cursor:pointer;
+    }
+}
+
+/****************** Tabs ********************/
+@media all
+{
+    /* root element for tabs  */
+    .jqToolsTabsWrap { 
+    }
+    
+    /* root element for tabs  */
+    ul.jqToolsTabs { 
+    	list-style:none; 
+    	margin:0 !important; 
+    	padding:0;	
+    	border-bottom:1px solid #666;	
+    	height:30px;
+    }
+    
+    /* single tab */
+    ul.jqToolsTabs li { 
+    	float:left;	 
+    	text-indent:0;
+    	padding:0;
+    	margin:0 !important;
+        list-style: none outside none;
+    }
+    
+    /* link inside the tab. uses a background image */
+    ul.jqToolsTabs a { 
+    	background: url(images/tabs/blue.png) no-repeat -420px 0;
+    	font-size:11px;
+    	display:block;
+    	height: 30px;  
+    	line-height:30px;
+    	width: 134px;
+    	text-align:center;	
+    	text-decoration:none;
+    	color:#333;
+    	padding:0px;
+    	margin:0px;	
+    	position:relative;
+    	top:1px;
+    }
+    
+    ul.jqToolsTabs a:active {
+    	outline:none;		
+    }
+    
+    /* when mouse enters the tab move the background image */
+    ul.jqToolsTabs a:hover {
+    	background-position: -420px -31px;	
+    	color:#fff;	
+    }
+    
+    /* active tab uses a class name "current". its highlight is also done by moving the background image. */
+    ul.jqToolsTabs a.current, ul.jqToolsTabs a.current:hover, ul.jqToolsTabs li.current a {
+    	background-position: -420px -62px;		
+    	cursor:default !important; 
+    	color:#000 !important;
+    }
+    
+    /* Different widths for tabs: use a class name: s, l, xl */
+    
+    
+    /* width 1 */
+    ul.jqToolsTabs a.s 			{ background-position: -553px 0; width:81px; }
+    ul.jqToolsTabs a.s:hover 	{ background-position: -553px -31px; }
+    ul.jqToolsTabs a.s.current  { background-position: -553px -62px; }
+    
+    /* width 2 */
+    ul.jqToolsTabs a.l 			{ background-position: -247px -0px; width:174px; }
+    ul.jqToolsTabs a.l:hover 	{ background-position: -247px -31px; }
+    ul.jqToolsTabs a.l.current  { background-position: -247px -62px; }
+    
+    
+    /* width 3 */
+    ul.jqToolsTabs a.xl 			{ background-position: 0 -0px; width:248px; }
+    ul.jqToolsTabs a.xl:hover 	{ background-position: 0 -31px; }
+    ul.jqToolsTabs a.xl.current { background-position: 0 -62px; }
+    
+    
+    /* tab pane styling */
+    .jqToolsPanes > div {
+    	display:none;		
+    	padding:15px 10px;
+    	border:1px solid #999;
+    	border-top:0;
+    	background-color:#fff;
+        -moz-border-radius-bottomright: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        -webkit-border-radius: 0px 0px 5px 5px;
+        border-radius: 0px 0px 5px 5px; 
+    
+        -webkit-box-shadow: inset 0px 0px 1px 0px ;
+        -moz-box-shadow: inset 0px 0px 1px 0px ;
+        box-shadow: inset 0px 0px 1px 0px ; 
+        min-height: 100px;
+    }
+}
+
+/****************** Accordian ********************/
+@media all
+{
+    /* root element for accordion. decorated with rounded borders and gradient background image */
+    .jqToolsAccordian {
+        -moz-border-radius-bottomright: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        -webkit-border-radius: 0px 0px 5px 5px;
+        border-radius: 0px 0px 5px 5px; 
+    
+        -webkit-box-shadow: inset 0px 0px 1px 0px ;
+        -moz-box-shadow: inset 0px 0px 1px 0px ;
+        box-shadow: inset 0px 0px 1px 0px ; 
+    	border:1px solid #333;	
+    }
+    
+    /* accordion header */
+    .jqToolsAccordian h2 {
+    	background:#ccc url(images/tabs/h30.png);
+    	margin:0;
+    	padding:5px 15px;
+    	font-size:14px;
+    	font-weight:normal;
+    	border:1px solid #fff;
+    	border-bottom:1px solid #ddd;
+    	cursor:pointer;		
+    	color: #666666;
+    }
+    
+    /* currently active header */
+    .jqToolsAccordian h2.current {
+    	cursor:default;
+    	background-color:#fff;
+    }
+    
+    /* accordion pane */
+    .jqToolsAccordian .pane {
+    	border:1px solid #fff;
+    	border-width:0 2px;
+    	display:none;
+    	min-height:100px;
+    	padding:15px;
+    	color:#fff;
+    	font-size:12px;
+    }
+    
+    /* a title inside pane */
+    .jqToolsAccordian .pane h3 {
+    	font-weight:normal;
+    	margin:0 0 -5px 0;
+    	font-size:16px;
+    	color:#999;
+    }
+
+    .tooltip {
+    	display:block;
+    	background:transparent url(images/tooltip/black_arrow.png);
+    	font-size:12px;
+    	height:70px;
+    	width:160px;
+    	padding:25px;
+    	color:#fff;	
+    }
+}

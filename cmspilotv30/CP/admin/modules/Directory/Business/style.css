@@ -1,0 +1,10 @@
+@media all
+{
+    .directory_business__directory_advertLink .advert-date {
+        width: 120px !important;
+    }
+    
+    .directory_business__directory_advertLink .advert-date input {
+        width: 70% !important;
+    }
+}

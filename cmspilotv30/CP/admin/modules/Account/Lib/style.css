@@ -1,0 +1,124 @@
+@media all
+{
+    .debit-color {
+        color: #E53734;
+    }
+    .credit-color {
+        color: #107e0C;
+    }
+    .debit_base-color {
+        color: #FC6F99;
+    }
+    .credit_base-color {
+        color: #55B24E;
+    }
+    .normal-color {
+        color: #444444;
+    }
+
+    .curve-panel {
+        -webkit-border-radius: .5em;
+        -moz-border-radius: .5em;
+        border-radius: .5em;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+        box-shadow: 0 1px 2px rgba(0,0,0,.5);
+        min-height: 500px;
+        margin-right: 10px;
+        padding:15px;
+    }
+
+    .curve-panel-thin {
+        -webkit-border-radius: .5em;
+        -moz-border-radius: .5em;
+        border-radius: .5em;
+        border: 1px solid #ccc;
+        min-height: 500px;
+        margin-right: 10px;
+        padding:15px;
+    }
+}
+
+/*-------------- JOURNAL ENTRIES --------------*/
+@media all 
+{
+    .mg-account #entry .row table,
+    .mg-account #entry .summary-row table {
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+
+    .mg-account #entry .row table td,
+    .mg-account #entry .row table th,
+    .mg-account #entry .summary-row table td, 
+    .mg-account #entry .summary-row table th {
+        border: 1px solid #ccc;
+        padding: 7px;
+    }
+    .mg-account #entry .row table td {
+        vertical-align: top;
+    }
+    .mg-account #entry .row table th {
+        background: #E5E5E5;
+    }
+    .mg-account #entry .summary-row table th {
+        background: #E5E5E5;
+    }
+
+    .mg-account #entry .jbody input {
+        -moz-border-radius: 5px 5px 5px 5px;
+        border-color: #AAAAAA #D5D5D5 #D5D5D5 #CCCCCC;
+        border-style: solid;
+        border-width: 1px;
+        font-size: 14px;
+        padding: 2px;
+    }
+
+    .mg-account #entry select:focus, #jEntry input[type=text]:focus {
+        border: 1px solid #AA6666;
+        background-color: #FCF3CC !important;
+    }
+
+    .mg-account #entry .fld-non-editable { border: 0px !important; }
+    
+    .mg-account #entry .account { width: auto; }
+    .mg-account #entry .debit { text-align: right; }
+    .mg-account #entry .credit { text-align: right; }
+    .mg-account #entry .exch_rate { text-align: right; }
+    .mg-account #entry .debit_base { text-align: right; }
+    .mg-account #entry .credit_base { text-align: right; }
+    .mg-account #entry .delete { text-align: center; }
+    .mg-account #entry .amount { text-align: right; }
+    .mg-account #entry .amount_base { text-align: right; }
+
+    .mg-account #entry .fld-account { }
+    .mg-account #entry .fld-currency { text-align: center;}
+    .mg-account #entry .fld-debit { text-align: right;}
+    .mg-account #entry .fld-credit { text-align: right; }
+    .mg-account #entry .fld-exch_rate { text-align: right;}
+    .mg-account #entry .fld-debit_base { text-align: right; background-color: transparent;}
+    .mg-account #entry .fld-credit_base { text-align: right;}
+    .mg-account #entry .fld-amount_base { text-align: right;}
+    
+    .mg-account #entry .fld-debit_base, 
+    .mg-account #entry .fld-credit_base, 
+    .mg-account #entry .fld-currency {
+        background-color: transparent !important;
+    } 
+
+    .mg-account #entry #difference div {
+        float: right;
+        height: 18px;
+        line-height: 18px;
+        margin-bottom: 10px;
+        padding: 3px;
+    }
+    .mg-account #entry .red-highlight { background-color: #C97979; }
+    .mg-account #entry .green-highlight { background-color: #15B510; }
+    .mg-account #entry #difference .value {
+        width: 120px;
+        text-align: right;
+        font-weight: bold;
+        border: 1px solid #ccc;
+    }    
+}

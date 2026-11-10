@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Widgets_AceIms_OrderSummary_Controller extends CP_Common_Lib_WidgetControllerAbstract
+{
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /
+Disallow: /www/
+Disallow: /user-data/
+Disallow: /nbproject/
+Disallow: /admin/

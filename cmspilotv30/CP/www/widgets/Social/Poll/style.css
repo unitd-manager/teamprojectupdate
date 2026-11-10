@@ -1,0 +1,38 @@
+@media all
+{
+    .w-social-poll {
+        position: relative;
+    }
+
+    .w-social-poll h3 {
+    }
+
+    .w-social-poll .answer{
+    }
+
+    .w-social-poll .seperator{
+        height:1px;
+        margin:0px;
+        line-height:0px;
+        padding: 0px;
+    }
+
+    .w-social-poll .percentageBarOuter{
+        background-color:#6f6e6e;
+        margin:0 0 5px 0;
+        height:10px;
+        width:100px;
+        line-height: 0;
+        padding: 0;
+    }
+
+    .w-social-poll .percentageBar{
+        background-color: #E66A1F;
+        height:10px;
+    }
+
+    .w-social-poll .percentageText{
+        font-size:0.7em;
+        margin:-5px 0 10px 2px;
+    }
+}

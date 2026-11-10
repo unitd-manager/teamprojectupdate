@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice_list" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="786" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" scriptletClass="net.sf.jasperreports.engine.JRDefaultScriptlet">
+	<property name="ireport.scriptlethandling" value="2"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="small_text2_bold" fontName="Arial" fontSize="8" isBold="true"/>
+	<style name="small_text2" fontName="Arial" fontSize="8"/>
+	<style name="small_text1_bold" fontName="Arial" fontSize="9" isBold="true"/>
+	<style name="small_text1" fontName="Arial" fontSize="9"/>
+	<style name="normal_text" fontName="Arial" fontSize="10"/>
+	<style name="normal_text_bold" fontName="Arial" fontSize="10" isBold="true"/>
+	<style name="big_text1_bold" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="big_text1" fontName="Arial" fontSize="12"/>
+	<parameter name="record_id" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(1)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_SUBREPORT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new String("./")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_IMAGES" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="website_url" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["iatelier.testpilotweb.com"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="record_ids" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["212,438,475,537,543,558,575,576,600,603,606,607,637"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sort_order" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="DIR_MG_LIB" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT i.*
+      ,p.title            AS project_title
+      ,c.company_name
+      ,DATEDIFF(Now() ,i.invoice_date) AS age
+FROM invoice i
+LEFT JOIN (project p) ON (i.project_id   = p.project_id  )
+LEFT JOIN (company c) ON (p.company_id   = c.company_id  )
+WHERE i.invoice_id IN ($P!{record_ids})
+ORDER BY $P!{sort_order}]]>
+	</queryString>
+	<field name="invoice_id" class="java.lang.Integer"/>
+	<field name="invoice_date" class="java.sql.Date"/>
+	<field name="invoice_due_date" class="java.sql.Date"/>
+	<field name="invoice_sent_out" class="java.lang.Integer"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="project_id" class="java.lang.Integer"/>
+	<field name="invoice_amount" class="java.lang.Integer"/>
+	<field name="still_to_bill" class="java.lang.Integer"/>
+	<field name="invoice_terms" class="java.lang.String"/>
+	<field name="notes" class="java.lang.String"/>
+	<field name="creation_date" class="java.sql.Timestamp"/>
+	<field name="modification_date" class="java.sql.Timestamp"/>
+	<field name="invoice_sequence" class="java.lang.String"/>
+	<field name="invoice_type" class="java.lang.String"/>
+	<field name="invoice_paid_date" class="java.sql.Date"/>
+	<field name="invoice_code" class="java.lang.String"/>
+	<field name="flag" class="java.lang.Integer"/>
+	<field name="inv_currency" class="java.lang.String"/>
+	<field name="created_by" class="java.lang.String"/>
+	<field name="modified_by" class="java.lang.String"/>
+	<field name="project_title" class="java.lang.String"/>
+	<field name="company_name" class="java.lang.String"/>
+	<field name="age" class="java.lang.Long"/>
+	<variable name="invoice_amount_sum" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{invoice_amount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-8" x="0" y="0" width="117" height="24"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Microsoft Sans Serif" size="15" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Invoice List]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-9" x="0" y="52" width="50" height="11"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Microsoft Sans Serif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Invoice #]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-10" x="51" y="52" width="76" height="11"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Microsoft Sans Serif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Invoice Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-11" x="132" y="52" width="220" height="11"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Microsoft Sans Serif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Project Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-12" x="357" y="52" width="230" height="11"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Microsoft Sans Serif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Client Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-13" x="591" y="52" width="60" height="11"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Microsoft Sans Serif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-14" x="660" y="52" width="50" height="11"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Microsoft Sans Serif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Due Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-15" x="714" y="52" width="25" height="11"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Microsoft Sans Serif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="745" y="52" width="41" height="11"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Microsoft Sans Serif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="0" y="50" width="786" height="1"/>
+			</line>
+			<line>
+				<reportElement key="line-2" x="0" y="65" width="786" height="1"/>
+			</line>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-1" x="636" y="1" width="150" height="40"/>
+				<subreportParameter name="DIR_SUBREPORT">
+					<subreportParameterExpression><![CDATA[$P{DIR_SUBREPORT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="DIR_IMAGES">
+					<subreportParameterExpression><![CDATA[$P{DIR_IMAGES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MG_LIB} + "logo-right.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="0" y="2" width="48" height="14"/>
+				<textElement>
+					<font fontName="Microsoft Sans Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{invoice_code}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-6" x="51" y="2" width="76" height="14" isPrintInFirstWholeBand="true"/>
+				<textElement>
+					<font fontName="Microsoft Sans Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{invoice_type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-7" x="132" y="2" width="220" height="14" isPrintInFirstWholeBand="true"/>
+				<textElement>
+					<font fontName="Microsoft Sans Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{project_title}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-8" x="357" y="2" width="230" height="14" isPrintInFirstWholeBand="true"/>
+				<textElement>
+					<font fontName="Microsoft Sans Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="$ #,##0" isBlankWhenNull="true">
+				<reportElement key="textField-9" x="591" y="2" width="60" height="14" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="Microsoft Sans Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{invoice_amount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd MMM yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-10" x="660" y="2" width="50" height="14" isPrintInFirstWholeBand="true"/>
+				<textElement>
+					<font fontName="Microsoft Sans Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{invoice_due_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-11" x="714" y="2" width="25" height="14" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft Sans Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-12" x="745" y="2" width="41" height="14" isPrintInFirstWholeBand="true"/>
+				<textElement>
+					<font fontName="Microsoft Sans Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-4" x="0" y="6" width="41" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Microsoft Sans Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-5" x="42" y="6" width="36" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Microsoft Sans Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-3" x="0" y="3" width="786" height="1"/>
+			</line>
+			<textField pattern="dd MMM yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-13" x="696" y="6" width="89" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Microsoft Sans Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement key="line-4" x="0" y="2" width="786" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField pattern="$ #,##0" isBlankWhenNull="true">
+				<reportElement key="textField-14" x="591" y="4" width="60" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="Microsoft Sans Serif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{invoice_amount_sum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

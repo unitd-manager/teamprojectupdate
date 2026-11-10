@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@media all
+{
+    #traineeSelectedForm .subcr {
+        padding: 0;
+    }
+    
+    #traineeSelectedResult .traineesSelectedLinked select {
+    	width: 100px !important;
+    }
+    
+    .parentTransferForm .bgBlue {
+        background-color: #8EB6D4;
+        margin: 10px 0;
+    }
+}

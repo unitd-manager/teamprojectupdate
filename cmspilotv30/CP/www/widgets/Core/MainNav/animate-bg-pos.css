@@ -1,0 +1,42 @@
+/********************* NAVIGATIONS ********************/
+@media all
+{
+    .hlist.animateBg {
+        background: url(images/nav_bg.png) repeat-x !important;
+        font-size: 12px;
+        border: 0;
+    }
+
+    .hlist.animateBg ul {
+    }
+
+    .hlist.animateBg ul li {
+        height: 66px;
+        min-width:164px;
+        border-left:0;
+        border-right:1px solid #cbcfd4;
+    }
+
+    .hlist.animateBg ul li a {
+        color: #fff;
+        font-size: 1.2em;
+        font-weight: bold;
+        line-height: 4em;
+        background:transparent;
+        text-align: center;
+    }
+
+    .hlist.animateBg ul li.active {
+        background:transparent url('images/nav_bg.jpg') repeat scroll -150px 0;
+        border-left:0;
+        border-right:1px solid #cbcfd4;
+    }
+
+    .hlist.animateBg ul li.active a,
+    .hlist.animateBg ul li a:focus,
+    .hlist.animateBg ul li a:hover,
+    .hlist.animateBg ul li a:active  {
+        background:transparent url('images/nav_bg.jpg') repeat scroll -150px 0;
+        color: #fff;
+    }
+}

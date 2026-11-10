@@ -1,0 +1,15 @@
+@charset "UTF-8";
+@media all
+{
+  /*.m-directory_building #col3 .contentScroller .subcolumns .c50l {
+        width:35%;
+    }
+    .m-directory_building #col3 .contentScroller .subcolumns .c50r {
+        width:65%;
+    }*/
+  
+    .m-directory_building #map-canvas {
+        height: 600px;
+    }  
+}
+

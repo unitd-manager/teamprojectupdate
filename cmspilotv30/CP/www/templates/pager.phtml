@@ -1,0 +1,11 @@
+<ul class="pagination {{ extraClass }}">
+    {% set activeCls = (pagerData.prevPage == '') ? " class='disabled'" : '' %}
+    <li{{ activeCls|raw }}><a href="{{ pagerData.prevPage }}">{{ lang.gd('cp.pager.previous') }}</a>
+    {% for page, url in pagerData.pageLinks %}
+        {% set activeCls = (pagerData.currentPage == page) ? " class='disabled'" : '' %}
+        <li{{ activeCls|raw }}><a href="{{ url }}">{{ page }}</a>
+    {% endfor %}
+
+    {% set activeCls = (pagerData.nextPage == '') ? " class='disabled'" : '' %}
+    <li{{ activeCls|raw }}><a href="{{ pagerData.nextPage }}">{{ lang.gd('cp.pager.next') }}</a>
+</ul>

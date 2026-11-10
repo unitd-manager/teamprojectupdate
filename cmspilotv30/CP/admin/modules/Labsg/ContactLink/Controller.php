@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Labsg_ContactLink_Controller extends CP_Common_Lib_ModuleLinkControllerAbstract
+{
+}

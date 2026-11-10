@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+@media all
+{
+    .yform.columnar.qucikaddPatientForm label {
+        width: 100%;
+    }
+
+    .companyDetailsHide{
+    	display: none;
+    }
+
+    .productSearchAuto{
+	    float: left;
+	    font-size: 15px !important;
+	    height: 33px;
+	    padding: 5px;
+	    width: 206px;
+	}
+
+	.poProductToggleSearchiCon::before {
+	    background-image: linear-gradient(to bottom, #5bc0de 0px, #2aabd2 100%);
+	    background-repeat: repeat-x;
+	    border-color: #28a4c9;
+	    border-radius: 0 4px 4px 0;
+	    color: #ffffff;
+	    content: "\f002";
+	    float: left;
+	    font-family: FontAwesome;
+	    font-size: 13px;
+    	padding: 7px 11px;
+	}
+
+	.renewallist.room-poProduct-table > thead > tr > th
+	,.renewallist.room-poProduct-table > tbody > tr > td {
+	    font-size: 12px !important;
+	}
+
+	.m-hms_purchaseOrder .grandTotalPurchasePo{
+		padding: 0 !important;
+	}
+}

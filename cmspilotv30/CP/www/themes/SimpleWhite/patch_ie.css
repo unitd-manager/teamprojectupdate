@@ -1,0 +1,17 @@
+/* superfish menu fix */
+.w-media-banner {
+    z-index: -1;
+}
+
+.w-menu-superFish .sf-menu li {
+    background-color: transparent !important;
+}
+.w-menu-superFish .sf-menu ul li  {
+    background-color: #006B6E !important;
+}
+.w-menu-superFish .sf-menu ul li:hover  {
+    background-color: #f2f0e3 !important;
+}
+.w-menu-superFish .sf-menu ul li a {
+    border-top: 1px solid red !important;
+}

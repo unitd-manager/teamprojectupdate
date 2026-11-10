@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Party_Testimonial_Controller extends CP_Common_Modules_Party_Testimonial_Controller
+{
+}

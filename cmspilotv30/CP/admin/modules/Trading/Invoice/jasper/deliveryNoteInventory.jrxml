@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="salesOrder" pageWidth="595" pageHeight="842" columnWidth="505" leftMargin="50" rightMargin="40" topMargin="18" bottomMargin="18" formatFactoryClass="pilot.jasper.qingdao.JasperFormatFactory">
+	<property name="ireport.scriptlethandling" value="2"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="74"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="h-line-thin">
+		<pen lineWidth="4.25" lineColor="#000000"/>
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<style/>
+		</conditionalStyle>
+	</style>
+	<style name="black">
+		<conditionalStyle>
+			<style/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<style/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="dataset1"/>
+	<parameter name="record_id" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(4)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_SUBREPORT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new String("//PILOTSERVER/pilotserver-d/inetpub/Apache/cmsPilot/v29/master/admin/jasper/")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_IMAGES" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new String("../../../../../../../../qingdao/httpdocs/admin/images/")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_MG_LIB" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["../../Lib/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT DISTINCT
+       c.company_id
+      ,c.company_code
+      ,i.invoice_code
+      ,i.invoice_date
+      ,i.notes
+      ,i.contact_id_customer AS contact_id
+      ,so.so_code
+      ,so.sell_currency
+      ,so.tax_percentage
+      ,so.client_so_no
+      ,so.delivery_terms
+      ,so.payment_terms
+      ,p.product_code
+      ,p.title
+      ,p.cbm_per_pc
+      ,p.dimension_w
+      ,p.dimension_d
+      ,p.dimension_h
+      ,ivt.sell_unit_price_actual
+      ,ivt.serial_no
+FROM invoice_inventory ii
+JOIN invoice i ON i.invoice_id = ii.invoice_id
+JOIN sales_order so ON so.sales_order_id = i.sales_order_id
+JOIN inventory ivt ON ivt.inventory_id = ii.inventory_id
+JOIN product p ON p.product_id = ivt.product_id
+JOIN company c ON c.company_id = so.company_id_customer
+WHERE i.invoice_id = $P{record_id}]]>
+	</queryString>
+	<field name="company_id" class="java.lang.Integer"/>
+	<field name="company_code" class="java.lang.String"/>
+	<field name="invoice_code" class="java.lang.String"/>
+	<field name="invoice_date" class="java.sql.Date"/>
+	<field name="notes" class="java.lang.String"/>
+	<field name="contact_id" class="java.lang.Integer"/>
+	<field name="so_code" class="java.lang.String"/>
+	<field name="sell_currency" class="java.lang.String"/>
+	<field name="tax_percentage" class="java.math.BigDecimal"/>
+	<field name="client_so_no" class="java.lang.String"/>
+	<field name="delivery_terms" class="java.lang.String"/>
+	<field name="payment_terms" class="java.lang.String"/>
+	<field name="product_code" class="java.lang.String"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="cbm_per_pc" class="java.math.BigDecimal"/>
+	<field name="dimension_w" class="java.lang.Float"/>
+	<field name="dimension_d" class="java.lang.Float"/>
+	<field name="dimension_h" class="java.lang.Float"/>
+	<field name="sell_unit_price_actual" class="java.math.BigDecimal"/>
+	<field name="serial_no" class="java.lang.String"/>
+	<variable name="sell_unit_price_actual_sum" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{sell_unit_price_actual}]]></variableExpression>
+	</variable>
+	<variable name="sell_unit_price_actual_sum_add_vat" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[new BigDecimal(
+    $V{sell_unit_price_actual_sum}.floatValue() +
+    ($V{sell_unit_price_actual_sum}.floatValue() * ($F{tax_percentage}.floatValue() / 100))
+)]]></variableExpression>
+	</variable>
+	<variable name="vat_amount" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[new BigDecimal(
+    $V{sell_unit_price_actual_sum}.floatValue() * ($F{tax_percentage}.floatValue() / 100)
+)]]></variableExpression>
+	</variable>
+	<variable name="cbm_per_pc_sum" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{cbm_per_pc}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="197" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="383" y="180" width="35" height="15" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[W]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="347" y="180" width="35" height="15" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[H]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="419" y="180" width="35" height="15" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[D]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="306" y="180" width="40" height="15" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Serial]]></text>
+			</staticText>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-1" x="0" y="0" width="505" height="67"/>
+				<subreportParameter name="DIR_SUBREPORT">
+					<subreportParameterExpression><![CDATA[$P{DIR_SUBREPORT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="report_title">
+					<subreportParameterExpression><![CDATA["DELIVERY NOTE"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="DIR_IMAGES">
+					<subreportParameterExpression><![CDATA[$P{DIR_IMAGES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MG_LIB} + "report_header.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="180" width="90" height="15" backcolor="#DCDDD9"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="91" y="180" width="214" height="15" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="0" y="195" width="505" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="0" y="179" width="505" height="1"/>
+			</line>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-1" x="0" y="80" width="250" height="73"/>
+				<subreportParameter name="company_id">
+					<subreportParameterExpression><![CDATA[$F{company_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MG_LIB} + "address.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement mode="Transparent" x="259" y="108" width="76" height="14" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Client Code]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="335" y="108" width="150" height="14"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_code}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="335" y="122" width="150" height="14"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{invoice_date}]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-1" x="259" y="136" width="246" height="17" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="contact_id">
+					<subreportParameterExpression><![CDATA[$F{contact_id} == null ? new Integer(0) : $F{contact_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MG_LIB} + "contact_detail.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="335" y="80" width="150" height="14"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{invoice_code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="259" y="80" width="76" height="14" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Invoice #]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="456" y="180" width="49" height="15" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Cbm]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="335" y="94" width="150" height="14"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{so_code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="259" y="122" width="76" height="14" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="259" y="94" width="76" height="14" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Sales Order #]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="2" width="100" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{product_code}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="100" y="2" width="205" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="308" y="2" width="40" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{serial_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement x="419" y="2" width="35" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" isBold="false"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{dimension_d}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement x="346" y="2" width="35" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" isBold="false"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{dimension_h}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement x="383" y="2" width="35" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" isBold="false"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{dimension_w}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.0000" isBlankWhenNull="true">
+				<reportElement x="458" y="2" width="46" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" isBold="false"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{cbm_per_pc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="41" splitType="Stretch">
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-1" x="0" y="0" width="505" height="40"/>
+				<subreportParameter name="DIR_SUBREPORT">
+					<subreportParameterExpression><![CDATA[$P{DIR_SUBREPORT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MG_LIB} + "report_footer.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="147" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="1" width="505" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="21" width="505" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="128" width="230" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="57" width="505" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{notes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="130" width="200" height="14" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Signed : Received in good order]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="###0.0000" isBlankWhenNull="true">
+				<reportElement x="455" y="4" width="48" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="false"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{cbm_per_pc_sum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="344" y="4" width="71" height="14" backcolor="#DCDDD9"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="2" y="44" width="38" height="14" isRemoveLineWhenBlank="true" backcolor="#DCDDD9">
+					<printWhenExpression><![CDATA[new Boolean($F{notes} != null && !$F{notes}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Notes]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

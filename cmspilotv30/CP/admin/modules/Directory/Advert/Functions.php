@@ -1,0 +1,5 @@
+<?
+class CP_Admin_Modules_Directory_Advert_Functions extends CP_Common_Modules_Directory_Advert_Functions
+{
+
+}

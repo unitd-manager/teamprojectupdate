@@ -1,0 +1,592 @@
+@charset "UTF-8";
+
+@media all
+{
+    body {
+        background: #2D2D2D;
+        font-size: 12px;
+    }
+
+    .page_margins {
+        max-width: 95%;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        position: relative;
+        border:5px solid #EAC302;
+        background: #fff;
+    }
+
+    .page {
+    }
+
+    #header {
+        background: #000;
+        padding:15px;
+        -moz-border-radius-topleft: 10px;
+        -moz-border-radius-topright: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+
+    #header h1.siteTitle {
+        font-family: 'Oswald',arial,serif;
+        font-size: 30px;
+        text-shadow: 2px 2px 10px #111159;
+        color: #fff;
+    }
+
+    #header h3 {
+        color: #fff;
+    }
+
+    #header .logo {
+        padding: 0;
+    }
+
+    .hideboth #col3 {
+    }
+
+    #nav, #nav2, .hideboth #col3_content {
+        padding:5px 10px;
+    }
+
+    #footer {
+        width:97.3%;
+        background: #ccc;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        margin:0 10px 5px;
+        padding:5px;
+    }
+
+    #footer .version {
+        background:transparent url('images/footer-icon.png') no-repeat 0 0;
+        padding: 3px 0 0 25px;
+        line-height: 1.5em;
+    }
+
+    .pagelinksBottom {
+        margin: 0 10px;
+    }
+
+    .reportLoading{
+        background:transparent url('images/ajax-loader.gif') no-repeat center center;
+        min-height: 50px;
+    }
+
+    .m-common_dashboard .widget h2 {
+        font-size: 130%;
+    }
+
+    #topnav .logoutWrap {
+        width: auto;
+        margin-left: 100px;
+    }
+
+    #topnav .logoutWrap a {
+        color: #EAC302;
+    }
+    
+    .w-common-multiUniqueSite select {
+        font-size: 18px;
+        border: 1px solid #FFFFFF;
+    }
+}
+
+@media all
+{
+    .thinlist th {
+        background-color: #ddd;
+    }
+    .thinlist tr.even {
+        background-color: #fff;
+    }
+    .thinlist tr.odd {
+        background-color: #ddd;
+    }
+}
+
+/*************** forms ************/
+@media all
+{
+    .fld-non-editable {
+        cursor: default;
+    }
+}
+/*************** DETAIL ************/
+@media all
+{
+    .v-detail .subcolumns.body .c50l {
+        width: 66%;
+    }
+
+    .v-detail .subcolumns .c50r {
+        width: 33%;
+    }
+}
+
+/*************** SELECT / OPTIONS ************/
+@media all
+{
+    option.level1 {
+        background: #ccc;
+        font-style: italic;
+    }
+
+    option.level2 {
+        margin-left:15px;
+    }
+
+    option.level3 {
+        margin-left:30px;
+    }
+}
+
+/*************** NAV ************/
+@media all
+{
+    .hlist ul li a {
+        color: #fff;
+        font-weight: normal;
+    }
+
+    .hlist ul li.active a, .hlist ul li a:hover {
+        color: #EAC302;
+    }
+
+    #nav {
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    #nav .roomsWrapper, #nav .actionsWrapper {
+        background: #665D5D;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        margin:10px;
+        padding:10px 10px;
+        height: 33px;
+    }
+
+    #nav .roomsWrapper {
+        width:65%;
+        margin-right: 0;
+    }
+
+    #nav .actionsWrapper {
+        width:29%;
+        margin-left: 0;
+        background: #898585;
+    }
+
+    #nav .actionsWrapper .hlist ul li {
+        float: right;
+    }
+
+    #nav .hlist li {
+        border-right: 0;
+        margin-right: 12px;
+    }
+
+    #nav .actionsWrapper .hlist li.first {
+        margin-right: 0;
+    }
+
+    #nav .hlist a {
+        display:block;
+        padding:0 0 0 34px;
+        line-height: 32px;
+        font-size: 14px;
+    }
+
+    #main {
+        padding: 0;
+    }
+}
+
+/*************** ROOMS ICONS ************/
+@media all
+{
+    .listTblWrapper {
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    table.list thead, table.list tfoot, tr.header, div.header {
+        background: url("images/header_bg.jpg") repeat scroll 0 0 transparent;
+    }
+}
+
+/*************** ROOMS ICONS ************/
+@media all
+{
+    a.nav_account_accHead {
+        background:transparent url('images/list.png') no-repeat 0 0;
+    }
+
+    a.nav_account_journalMaster {
+        background:transparent url('images/book-collection.png') no-repeat 0 0;
+    }
+
+    a.nav_account_ledger {
+        background:transparent url('images/book.png') no-repeat 0 0;
+    }
+
+    a.nav_account_reports {
+        background:transparent url('images/reports.png') no-repeat 0 0;
+    }
+
+    a.nav_account_accCategory {
+        background:transparent url('images/tree.png') no-repeat 0 0;
+    }
+
+    a.nav_account_currencyConvert {
+        background:transparent url('images/conversion.png') no-repeat 0 0;
+    }
+
+    a.nav_account_contact {
+        background:transparent url('images/contact.png') no-repeat 0 0;
+    }
+
+    a.nav_common_interest {
+        background:transparent url('images/group.png') no-repeat 0 0;
+    }
+
+    a.nav_common_broadcast {
+        background:transparent url('images/mail.png') no-repeat 0 0;
+    }
+
+    a.nav_core_staff {
+        background:transparent url('images/key.png') no-repeat 0 0;
+    }
+    a.nav_core_userGroup {
+        background:transparent url('images/group.png') no-repeat 0 0;
+    }
+    a.nav_core_valuelist {
+        background:transparent url('images/valuelist.png') no-repeat 0 0;
+    }
+
+    a.nav_core_setting {
+        background:transparent url('images/setting.png') no-repeat 0 0;
+    }
+
+    a.nav_account_accCompany {
+        background:transparent url('images/company.png') no-repeat 0 0;
+    }
+
+    a.nav_account_company {
+        background:transparent url('images/company.png') no-repeat 0 0;
+    }
+
+    a.nav_account_currency {
+        background:transparent url('images/currency.png') no-repeat 0 0;
+    }
+
+    a.nav_account_counterMaster {
+        background:transparent url('images/dollar2.png') no-repeat 0 0;
+    }
+    a.nav_account_cashMaster {
+        background:transparent url('images/dollar.png') no-repeat 0 0;
+    }
+    a.nav_account_counterSetup {
+        background:transparent url('images/dollar2.png') no-repeat 0 0;
+    }
+
+    a.nav_webBasic_section {
+        background:transparent url('images/section.png') no-repeat 0 0;
+    }
+
+    a.nav_webBasic_category {
+        background:transparent url('images/category.png') no-repeat 0 0;
+    }
+
+    a.nav_webBasic_subCategory {
+        background:transparent url('images/sub-category.png') no-repeat 0 0;
+    }
+
+    a.nav_ecommerce_division {
+        background:transparent url('images/division.png') no-repeat 0 0;
+    }
+
+    a.nav_ecommerce_distributor {
+        background:transparent url('images/distributor.png') no-repeat 0 0;
+    }
+
+    a.nav_ecommerce_industry {
+        background:transparent url('images/industry.png') no-repeat 0 0;
+    }
+
+    a.nav_webBasic_content {
+        background:transparent url('images/content.png') no-repeat 0 0;
+    }
+
+    a.nav_ecommerce_product {
+        background:transparent url('images/product.png') no-repeat 0 0;
+    }
+
+    a.nav_common_contact {
+        background:transparent url('images/contact.png') no-repeat 0 0;
+    }
+
+    a.nav_webBasic_enquiry {
+        background:transparent url('images/enquiry.png') no-repeat 0 0;
+    }
+
+    a.nav_core_translation {
+        background:transparent url('images/translation.png') no-repeat 0 0;
+    }
+
+    a.nav_common_site {
+        background:transparent url('images/site.png') no-repeat 0 0;
+    }
+
+    a.nav_common_geoCountry {
+        background:transparent url('images/country.png') no-repeat 0 0;
+    }
+
+    a.nav_ecommerce_order {
+        background:transparent url('images/order.png') no-repeat 0 0;
+    }
+
+    a.nav_webBasic_clubTable {
+        background:transparent url('images/club_table.png') no-repeat 0 0;
+    }
+
+    a.nav_ecommerce_stockist {
+        background:transparent url('images/stock.png') no-repeat 0 0;
+    }
+
+    a.nav_ecommerce_color {
+        background:transparent url('images/color-swatch.png') no-repeat 0 0;
+    }
+
+    a.nav_ecommerce_cars {
+        background:transparent url('images/car.png') no-repeat 0 0;
+    }
+    
+    a.nav_event_event {
+        background:transparent url('images/event.png') no-repeat 0 0;
+    }
+
+    a.nav_web2_tags {
+        background:transparent url('images/tags.png') no-repeat 0 0;
+    }    
+}
+
+/*************** ACTIONS ICONS ************/
+@media all
+{
+    a#actBtn_new {
+        background:transparent url('images/add.png') no-repeat 0 0;
+    }
+
+    a#actBtn_edit {
+        background:transparent url('images/edit.png') no-repeat 0 0;
+    }
+
+    a#actBtn_delete, a#actBtn_deleteList {
+        background:transparent url('images/delete.png') no-repeat 0 0;
+    }
+
+    a#actBtn_duplicate {
+        background:transparent url('images/copy.png') no-repeat 0 0;
+    }
+
+    a#actBtn_copyContentToAllSections {
+        background:transparent url('images/copy-2.png') no-repeat 0 0;
+    }
+
+    a#actBtn_apply {
+        background:transparent url('images/apply.png') no-repeat 0 0;
+    }
+
+    a#actBtn_save {
+        background:transparent url('images/save.png') no-repeat 0 0;
+    }
+
+    a#actBtn_updateAllChildContent {
+        background:transparent url('images/save.png') no-repeat 0 0;
+    }
+
+    a#actBtn_cancel {
+        background:transparent url('images/cancel.png') no-repeat 0 0;
+    }
+
+    a#actBtn_export {
+        background:transparent url('images/xls.png') no-repeat 0 0;
+    }
+
+    a#actBtn_print {
+        background:transparent url('images/print.png') no-repeat 0 0;
+    }
+
+    a#actBtn_printListPDF {
+        background:transparent url('images/print-to-pdf.png') no-repeat 0 0;
+    }
+
+    a#actBtn_search {
+        background:transparent url('images/search.png') no-repeat 0 0;
+    }
+
+    a#actBtn_sendTest {
+        background:transparent url('images/gear_half.png') no-repeat 0 0;
+    }
+
+    a#actBtn_send {
+        background:transparent url('images/send.png') no-repeat 0 0;
+    }
+
+    a#actBtn_import {
+        background:transparent url('images/import.png') no-repeat 0 0;
+    }
+
+    a#actBtn_counterBuy {
+        background:transparent url('images/counter-buy.png') no-repeat 0 0;
+    }
+
+    a#actBtn_counterSell {
+        background:transparent url('images/counter-sell.png') no-repeat 0 0;
+    }
+
+    a#actBtn_cashReceipt {
+        background:transparent url('images/counter-buy.png') no-repeat 0 0;
+    }
+
+    a#actBtn_cashPayment {
+        background:transparent url('images/counter-sell.png') no-repeat 0 0;
+    }
+
+    a#actBtn_performSearch {
+        background:transparent url('images/search.png') no-repeat 0 0;
+    }
+
+    a.edit-journal {
+        background:transparent url('images/edit-16x16.png') no-repeat 0 0;
+        padding: 0.5em;
+    }
+
+}
+
+@media all
+{
+    a.delete-small, 
+    a.new-small
+    {
+        display: block;
+        width: 17px;
+        height: 17px;
+    }
+    a.delete-small {
+        background:transparent url('images/delete_small.png') no-repeat 0 0;
+    }
+    a.new-small {
+        background:transparent url('images/add_small.png') no-repeat 0 0;
+    }
+}
+
+/*************** QUICK SEARCH ************/
+@media all
+{
+    table.search td {
+        padding: 0 5px;
+    }
+}
+
+@media all
+{
+    .ui-menu {
+        height: 200px;
+        overflow: auto;
+    }
+    .ui-menu, .ui-menu li {
+        list-style-type: none;
+        text-align: left;
+    }
+}
+
+
+/*************** MISC ************/
+.red-bg {
+    background-color: #F9DEDE;
+}
+.green-bg {
+    background-color: #D6EFD5;
+}
+
+.red-dot {
+    background: url("../../themes/Carolina/images/dot-red.png") no-repeat scroll center center transparent;
+    padding: 13px;
+
+}
+.green-dot {
+    background: url("../../themes/Carolina/images/dot-green.png") no-repeat scroll center center transparent;
+    padding: 13px;
+}
+.light-red-dot {
+    background: url("../../themes/Carolina/images/dot-light-red.png") no-repeat scroll center center transparent;
+    padding: 13px;
+}
+.light-green-dot {
+    background: url("../../themes/Carolina/images/dot-light-green.png") no-repeat scroll center center transparent;
+    padding: 13px;
+}
+.light-grey-dot {
+    background: url("../../themes/Carolina/images/dot-light-grey.png") no-repeat scroll center center transparent;
+    padding: 13px;
+}
+
+table.search .dateSingle {
+    width: 195px;
+}
+
+/**** RATING ****/
+@media all {
+    .yform div.star-rating, .yform div.star-rating a {
+        background: url('images/star.png') no-repeat scroll 0 0 transparent
+    }
+
+    .yform div.rating-cancel {
+        display: none !important;
+    }
+
+    .yform div.star-rating a {
+        width: 32px;
+        height: 30px;
+    }
+
+    .yform div.star-rating {
+        width: 33px;
+        height: 33px;
+    }
+
+    .yform div.star-rating-on a {
+        background-position: 0 -30px !important;
+    }
+
+    .yform div.star-rating-hover a {
+        background-position:0 -30px !important;
+    }
+
+    .rating-hover-tips {
+        margin: 8px 0 0 10px;
+        display: block;
+        float: left;
+        background: url('images/rating-hover-tip.png') no-repeat scroll 0 0 transparent;
+        height: 20px;
+    }
+
+    .rating-hover-tips span {
+        margin-left: 11px;
+        background: #ff7000;
+        display: block;
+        padding:0 10px;
+        line-height: 20px;
+        color: #fff;
+        font-size: 1.2em;
+    }
+
+    #commentForm .type-text {
+        border: 0;
+    }
+}

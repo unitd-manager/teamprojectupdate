@@ -1,0 +1,108 @@
+@charset "UTF-8";
+@media all
+{
+    .m-trading_quote #col3 .contentScroller .subcolumns .c50l {
+        width:35%;
+    }
+    .m-trading_quote #col3 .contentScroller .subcolumns .c50r {
+        width:65%;
+    }
+}
+
+@media all
+{
+    .m-trading_quote table.costing {
+        width: 100%;
+    }
+    .m-trading_quote table.costing td,
+    .m-trading_quote table.costing th
+    {
+        padding: 5px;
+        text-align: left;
+    }
+    .m-trading_quote table.costing .col0 {
+        width: 25%;
+    }
+
+    .m-trading_quote table.costing .col1,
+    .m-trading_quote table.costing .col2,
+    .m-trading_quote table.costing .col3,
+    .m-trading_quote table.costing .col4
+    {
+        width: 20%;
+    }
+    .m-trading_quote table.costing .col5
+    {
+        width: 15%;
+    }
+    .m-trading_quote table.costing .col3,
+    .m-trading_quote table.costing .col4,
+    .m-trading_quote table.costing .col4 div
+    {
+        text-align: right;
+    }
+
+
+    .m-trading_quote table.costing input,
+    .m-trading_quote table.costing select
+    {
+        width: 80%;
+        border: 1px solid #ccc;
+    }
+    .m-trading_quote table.costing input:hover,
+    .m-trading_quote table.costing input:focus,
+    .m-trading_quote table.costing select:hover,
+    .m-trading_quote table.costing select:focus
+    {
+        border: 1px solid #aa6666;
+    }
+
+    .m-trading_quote div.costing-section
+    {
+        border-top: 2px solid #666;
+        margin-top: 10px;
+    }
+
+    .m-trading_quote .sales_unit_price_base input,
+    .m-trading_quote .costing .col3 input[type=text]{
+        text-align: right;
+    }
+
+    .m-trading_quote .costs .type-select label[for=fld_status]{
+        margin-left: 5px;
+        font-weight: bold;
+        color: #222222;
+    }
+
+    .linkPortalWrapper table .row-tradingus_quote__tradingus_expenseLink td.portalActBtns {
+        width: 20px;
+    }
+
+    ul#noty_topRight_layout_container {
+        width: 500px !important;
+        font-family: calibri, verdana;
+    }
+
+    ul#noty_topRight_layout_container li {
+        width: auto !important;
+        font-family: calibri, verdana;
+    }
+
+    .noty_text h4 {
+        font-size: 12px;
+    }
+
+    .m-tradingus_quote .rightPanel .header a {
+        color: #174A6F;
+        text-decoration: underline;
+        margin-left: 10px;
+    }
+
+    .linkPortalWrapper table td.portalActBtns {
+        width: 10px;
+    }
+
+    .linkPortalWrapper table.thinlist td{
+        border: 1px solid #DDDDDD;
+    }
+}

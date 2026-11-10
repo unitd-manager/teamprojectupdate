@@ -1,0 +1,63 @@
+.m-account_journalMaster #col3 .c50l {
+    width: 100%;
+}
+
+.m-account_journalMaster #col3 c50r {
+    width: 0;
+}
+.m-account_journalMaster td.accountListHeader {
+    width: 200px;
+}
+.m-account_journalMaster #bodyList {
+}
+
+.m-account_journalMaster #entry .account { width: auto; }
+.m-account_journalMaster #entry .currency { width: 6%; }
+.m-account_journalMaster #entry .debit { width: 10%; }
+.m-account_journalMaster #entry .credit { width: 10%; }
+.m-account_journalMaster #entry .exch_rate { width: 10%; }
+.m-account_journalMaster #entry .debit_base { width: 10%; }
+.m-account_journalMaster #entry .credit_base { width: 10%; }
+.m-account_journalMaster #entry .delete { width: 3%; }
+.m-account_journalMaster #entry .fld-currency { }
+
+.m-account_journalMaster #entry .fld-account { width: 98%; }
+.m-account_journalMaster #entry .fld-narration { width: 98%; margin-top: 8px;}
+.m-account_journalMaster #entry .fld-currency { width: 96%; text-align: center;}
+.m-account_journalMaster #entry .fld-debit { width: 96%; text-align: right;}
+.m-account_journalMaster #entry .fld-credit { width: 96%; }
+.m-account_journalMaster #entry .fld-exch_rate { width: 96%; text-align: right;}
+.m-account_journalMaster #entry .fld-debit_base { width: 96%; background-color: transparent;}
+.m-account_journalMaster #entry .fld-credit_base { width: 96%; text-align: right;}
+.m-account_journalMaster #entry .fld-debit_base, #entry .fld-credit_base, #entry .fld-currency {
+    background-color: transparent !important;
+}
+
+.m-account_journalMaster #entryErrorBox {
+	width: 600px;
+	font-weight: bold;
+	text-align: center;
+	margin: auto;
+	display: none;
+	background-color: #EBCE42;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	padding: 3px;
+}
+
+.m-account_journalMaster #entry .type-text label,
+.m-account_journalMaster #entry .type-select label {
+	width: 12%;
+}
+.m-account_journalMaster .yform.detail #entry .type-text .txt,
+.m-account_journalMaster .yform.detail #entry .type-select .txt {
+    margin-left: 14%;
+}
+.m-account_journalMaster .yform.edit #entry .type-text .txt {
+    margin-left: 12%;
+}
+
+.m-account_journalMaster #bodyList .narration {
+    font-style: italic;
+}
+

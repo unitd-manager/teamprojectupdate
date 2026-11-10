@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contact_label" columnCount="3" printOrder="Horizontal" pageWidth="595" pageHeight="842" columnWidth="179" columnSpacing="19" leftMargin="19" rightMargin="0" topMargin="0" bottomMargin="0" scriptletClass="net.sf.jasperreports.engine.JRDefaultScriptlet">
+	<property name="ireport.scriptlethandling" value="2"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="small_text2_bold" fontName="Arial" fontSize="8" isBold="true"/>
+	<style name="small_text2" fontName="Arial" fontSize="8"/>
+	<style name="small_text1_bold" fontName="Arial" fontSize="9" isBold="true"/>
+	<style name="small_text1" fontName="Arial" fontSize="9"/>
+	<style name="normal_text" fontName="Arial" fontSize="10"/>
+	<style name="normal_text_bold" fontName="Arial" fontSize="10" isBold="true"/>
+	<style name="big_text1_bold" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="big_text1" fontName="Arial" fontSize="12"/>
+	<parameter name="record_ids" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["1,2,3,4,5,6"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_SUBREPORT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new String("//PILOTSERVER/pilotserver-d/inetpub/Apache/cmsPilot/v29/wattis/web_root/admin/jasper/")]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT co.address_flat
+      ,co.address_street
+      ,co.address_town
+      ,co.address_country
+      ,co.address_po_code
+      ,CONCAT_WS(' ', c.first_name, c.last_name ) AS contact_name
+      ,co.company_name AS company_name
+FROM contact c
+LEFT JOIN company co ON c.company_id = co.company_id
+
+WHERE c.contact_id IN ($P{record_ids})]]>
+	</queryString>
+	<field name="address_flat" class="java.lang.String"/>
+	<field name="address_street" class="java.lang.String"/>
+	<field name="address_town" class="java.lang.String"/>
+	<field name="address_country" class="java.lang.String"/>
+	<field name="address_po_code" class="java.lang.String"/>
+	<field name="contact_name" class="java.lang.String"/>
+	<field name="company_name" class="java.lang.String"/>
+	<variable name="total_price" class="java.lang.Float"/>
+	<variable name="total_amount" class="java.lang.Double"/>
+	<variable name="total_amount_sum" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{total_amount}]]></variableExpression>
+	</variable>
+	<variable name="total_qty" class="java.lang.Integer" calculation="Sum"/>
+	<variable name="page_no_now" class="java.lang.Integer" resetType="Page">
+		<variableExpression><![CDATA[$V{PAGE_NUMBER}]]></variableExpression>
+	</variable>
+	<variable name="page_no_report" class="java.lang.Integer">
+		<variableExpression><![CDATA[$V{PAGE_NUMBER}]]></variableExpression>
+	</variable>
+	<group name="dummy_for_summary">
+		<groupExpression><![CDATA[]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="105" splitType="Prevent">
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="0" y="15" width="175" height="13"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Century Gothic" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{contact_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-7" positionType="Float" x="0" y="40" width="175" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{address_flat}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-8" positionType="Float" x="0" y="52" width="175" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{address_street}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-9" positionType="Float" x="0" y="64" width="175" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{address_town}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-10" positionType="Float" x="0" y="28" width="175" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{company_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-11" positionType="Float" x="0" y="76" width="175" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{address_country}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-12" positionType="Float" x="0" y="88" width="175" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{address_po_code}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,267 @@
+<?
+class CP_Admin_Modules_Edukite_Student_Model extends CP_Common_Modules_Edukite_Student_Model
+{
+    /**
+     *
+     */
+    function getNewValidate() {
+        $validate = Zend_Registry::get('validate');
+
+        $validate->resetErrorArray();
+        $validate->validateData('email', 'Please enter the email');
+
+        if (count($validate->errorArray) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     *
+     */
+    function getAdd(){
+        $fn = Zend_Registry::get('fn');
+        $validate = Zend_Registry::get('validate');
+
+        if (!$this->getNewValidate()){
+            return $validate->getErrorMessageXML();
+        }
+
+        $fa = $this->getFields();
+        $id = $fn->addRecord($fa);
+        $fn->returnAfterNewSave($id);
+    }
+
+    /**
+     *
+     */
+    function getEditValidate() {
+        $validate = Zend_Registry::get('validate');
+
+        $validate->resetErrorArray();
+        $validate->validateData('email', 'Please enter the title');
+
+        if (count($validate->errorArray) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     *
+     */
+    function getSave(){
+        $fn = Zend_Registry::get('fn');
+        $validate = Zend_Registry::get('validate');
+
+        if (!$this->getEditValidate()){
+            return $validate->getErrorMessageXML();
+        }
+
+        $fa = $this->getFields();
+        $id = $fn->saveRecord($fa);
+        $fn->returnAfterNewSave($id);
+    }
+
+    /**
+     *
+     */
+    function getFields() {
+        $fn = Zend_Registry::get('fn');
+
+        $fa = array();
+
+        $fa = $fn->addToFieldsArray($fa, 'student_code');
+        $fa = $fn->addToFieldsArray($fa, 'first_name');
+        $fa = $fn->addToFieldsArray($fa, 'last_name');
+        $fa = $fn->addToFieldsArray($fa, 'email');
+        $fa = $fn->addToFieldsArray($fa, 'gender');
+        $fa = $fn->addToFieldsArray($fa, 'date_of_birth');
+        $fa = $fn->addToFieldsArray($fa, 'mobile');
+        $fa = $fn->addToFieldsArray($fa, 'phone');
+        $fa = $fn->addToFieldsArray($fa, 'address1');
+        $fa = $fn->addToFieldsArray($fa, 'address2');
+        $fa = $fn->addToFieldsArray($fa, 'address_city');
+        $fa = $fn->addToFieldsArray($fa, 'address_state');
+        $fa = $fn->addToFieldsArray($fa, 'address_postal_code');
+        $fa = $fn->addToFieldsArray($fa, 'address_country_code');
+        $fa = $fn->addToFieldsArray($fa, 'joined_date');
+        $fa = $fn->addToFieldsArray($fa, 'status');
+        $fa = $fn->addToFieldsArray($fa, 'published');
+        $fa = $fn->addToFieldsArray($fa, 'pass_word');
+        $fa = $fn->addToFieldsArray($fa, 'date_joined');
+
+        return $fa;
+    }
+
+    /**
+     *
+     */
+    //Below Import script will create new students//
+    //(Rename this function before updating the existing student list for status)//
+    function getImportData1(){
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $db = Zend_Registry::get('db');
+        $fn = Zend_Registry::get('fn');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+
+        $phpExcel = includeCPClass('Lib', 'PhpExcelImportWrapper', 'PhpExcelImportWrapper');
+        $fa = array(
+              'first_name'        => $phpExcel->getImportFldObj('First Name')
+             ,'last_name'         => $phpExcel->getImportFldObj('Family Name')
+             ,'student_code'      => $phpExcel->getImportFldObj('Student Code')
+             ,'username'          => $phpExcel->getImportFldObj('User Name')
+             ,'pass_word'         => $phpExcel->getImportFldObj('Password')
+             ,'family_code'       => $phpExcel->getImportFldObj('Family Code')
+             ,'class_title'       => $phpExcel->getImportFldObj('Class')
+             ,'year_group_title'  => $phpExcel->getImportFldObj('Cohort')
+             ,'academic_year'     => $phpExcel->getImportFldObj('Acadamic Year')
+             ,'published'         => $phpExcel->getImportFldObj('Published')
+
+        );
+
+        $fa['academic_year']['defaultValue'] = date('Y');
+        $fa['published']['defaultValue']     = 1;
+        $fa['status']['defaultValue']     = 'Active';
+
+        $fa['class_title']['refOnly']           = true;
+        $fa['year_group_title']['refOnly']      = true;
+
+        $config = array(
+             'module'              => 'edukite_student'
+            ,'fldsArr'             => $fa
+            ,'callbackAfterInsert' => 'importDataRowCallback'
+        );
+
+        return $phpExcel->importData($config);
+    }
+
+    /**
+     *
+     */
+    function importDataRowCallback($student_id, $fa) {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $dbUtil = Zend_Registry::get('dbUtil');
+        $db = Zend_Registry::get('db');
+
+        $class_title      = $fa['class_title'];
+        $year_group_title = $fa['year_group_title'];
+
+        $classRec     = $fn->getRecordByCondition('class', "title = '{$class_title}' AND status = 'Active'");
+        $yearGroupRec = $fn->getRecordByCondition('year_group', "title = '{$year_group_title}' AND status = 'Active'");
+
+        if (is_numeric ($classRec['class_id']) && $classRec['class_id']!= 0){
+            $fa2 = array();
+            $fa2['class_id'] = $classRec['class_id'];
+            $fa2['student_id']  = $student_id;
+            $fa2 = $fn->addCreationDetailsToFieldsArray($fa2, 'class_student');
+
+            $SQL = $dbUtil->getInsertSQLStringFromArray($fa2, 'class_student');
+            $result = $db->sql_query($SQL);
+
+        }
+
+        if (is_numeric ($yearGroupRec['year_group_id']) && $yearGroupRec['year_group_id']!= 0){
+            $fa3 = array();
+            $fa3['year_group_id'] = $yearGroupRec['year_group_id'];
+            $fa3['student_id']  = $student_id;
+            $fa3 = $fn->addCreationDetailsToFieldsArray($fa3, 'student_year_group');
+
+            $SQL1 = $dbUtil->getInsertSQLStringFromArray($fa3, 'student_year_group');
+            $result = $db->sql_query($SQL1);
+        }
+    }
+
+    /**
+     *
+     */
+    //Below Import script will update status for existing students//
+    //(Rename this function as getImportData//
+    function getImportData(){
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $db = Zend_Registry::get('db');
+        $fn = Zend_Registry::get('fn');
+        $dbUtil = Zend_Registry::get('dbUtil');
+
+
+        $phpExcel = includeCPClass('Lib', 'PhpExcelImportWrapper', 'PhpExcelImportWrapper');
+        $fa = array(
+              'first_name'        => $phpExcel->getImportFldObj('First Name')
+             ,'last_name'         => $phpExcel->getImportFldObj('Family Name')
+             ,'class_title'       => $phpExcel->getImportFldObj('Class')
+             ,'year_group_title'  => $phpExcel->getImportFldObj('Cohort')
+             //,'username'        => $phpExcel->getImportFldObj('User Name')
+             //,'pass_word'        => $phpExcel->getImportFldObj('Password')
+             //,'student_code'     => $phpExcel->getImportFldObj('Student Code')
+             ,'student_id'        => $phpExcel->getImportFldObj('Student Id')
+             ,'nas'               => $phpExcel->getImportFldObj('NAS')
+        );
+
+        $fa['published']['defaultValue'] = 1;
+
+        $fa['class_title']['refOnly']           = true;
+        $fa['year_group_title']['refOnly']      = true;
+        $fa['nas']['refOnly']      = true;
+
+        $config = array(
+             'module'              => 'edukite_student'
+            ,'matchFieldArr'       => array('student_id')
+            ,'fldsArr'             => $fa
+            ,'callbackAfterInsert' => 'importDataRowCallbackUpdate'
+        );
+
+        return $phpExcel->importData($config);
+    }
+
+    /**
+     *
+     */
+    function importDataRowCallbackUpdate($student_id, $fa) {
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $fn = Zend_Registry::get('fn');
+        $dbUtil = Zend_Registry::get('dbUtil');
+        $db = Zend_Registry::get('db');
+
+        $class_title      = $fa['class_title'];
+        $year_group_title = $fa['year_group_title'];
+        $nas = $fa['nas'];
+
+        $classRec     = $fn->getRecordByCondition('class', "title = '{$class_title}' AND status = 'Active'");
+        $yearGroupRec = $fn->getRecordByCondition('year_group', "title = '{$year_group_title}' AND status = 'Active'");
+
+        if($nas == 'NR'){
+            $fa4 = array();
+            $fa4['status'] = 'Archive';
+            $whereCondition = "WHERE student_id = '{$student_id}'";
+            $SQL = $dbUtil->getUpdateSQLStringFromArray($fa4, 'student', $whereCondition);
+            $result = $db->sql_query($SQL);
+        }
+
+        if (is_numeric ($classRec['class_id']) && $classRec['class_id']!= 0 && $nas != 'NR'){
+            $fa2 = array();
+            $fa2['class_id'] = $classRec['class_id'];
+            $fa2['student_id']  = $student_id;
+            $fa2 = $fn->addCreationDetailsToFieldsArray($fa2, 'class_student');
+
+            $SQL = $dbUtil->getInsertSQLStringFromArray($fa2, 'class_student');
+            $result = $db->sql_query($SQL);
+
+        }
+
+        if (is_numeric ($yearGroupRec['year_group_id']) && $yearGroupRec['year_group_id']!= 0  && $nas != 'NR'){
+            $fa3 = array();
+            $fa3['year_group_id'] = $yearGroupRec['year_group_id'];
+            $fa3['student_id']  = $student_id;
+            $fa3 = $fn->addCreationDetailsToFieldsArray($fa3, 'student_year_group');
+
+            $SQL1 = $dbUtil->getInsertSQLStringFromArray($fa3, 'student_year_group');
+            $result = $db->sql_query($SQL1);
+        }
+
+
+    }
+}

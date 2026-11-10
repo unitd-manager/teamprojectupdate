@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+/*************** STUDENT LIST PAGE *********************/
+@media all 
+{
+
+}
+
+/*************** STUDENT EDIT PAGE *********************/
+@media all 
+{
+    .m-edukite_student table.mediaFilesDisplay {
+        border: 1px solid #CCCCCC;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .m-edukite_student .mediaFilesDisplayWrap {
+        margin-top: 15px;
+    }
+
+    .m-edukite_student .ddFilter {
+        width: 387px;
+        margin: 9px 0 0 17px;
+        
+    }
+
+    .m-edukite_student .ddFilter select {
+        margin-bottom: 5px;
+        width: 157px;
+        height: 23px;
+    }
+
+    .m-edukite_student .ddFilter .float_left {
+        margin-right: 4px;
+    }
+
+    .m-edukite_student .row_class {
+        margin-left: 55px !important;
+    }
+
+	.m-edukite_student .navPanel .cpSearch {
+	}		
+
+    .m-edukite_student.v-edit .yform fieldset {
+        width: 373px;
+        padding: 10px 0 0 10px;
+        min-height: 670px;
+        border: 1px solid #9BBADD;
+        margin: 0 0 0 1px;
+        background: #EBEBEB;
+    }
+    
+    .m-edukite_student.v-edit .studentFieldset {
+        background: #fff;
+        border: 1px solid #9BBADD;
+        width: 340px;
+        padding: 10px;
+        margin: 0 0 10px 0;
+    }
+    
+    .m-edukite_student.v-new .yform fieldset label,
+    .m-edukite_student.v-edit .yform fieldset label {
+        color: #2B2B2B;
+    }
+        
+   .m-edukite_student.v-edit .studentFieldset {
+        background: #fff;
+        border: 1px solid #9BBADD;
+        width: 340px;
+        padding: 10px;
+        margin: 0 0 10px 0;
+    }
+
+    .m-edukite_student .downloadLink{
+        text-align: center;
+        margin:10px;
+    }
+
+    .m-edukite_student .downloadLink a{
+        border: 1px solid #FFAE00;
+        background: #FFAE00;
+        padding: 5px;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+}

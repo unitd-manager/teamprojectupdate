@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+table.search td input {
+    height: 20px;
+}
+
+table.search td input.button {
+    height: 34px;
+}

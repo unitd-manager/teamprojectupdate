@@ -1,0 +1,24 @@
+@media all
+{
+    .w-tradingsg-overallSalesSummary .purchaseVal {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .w-tradingsg-overallSalesSummary .purchaseDetails {
+    	display: none;
+    }
+
+    .w-tradingsg-overallSalesSummary .quoteCode {
+        width: 178px;
+    }
+
+    .w-tradingsg-overallSalesSummary .orderDate {
+        width: 178px;
+    }
+
+    .w-tradingsg-overallSalesSummary .companyName {
+        width: 178px;
+    }
+}
+

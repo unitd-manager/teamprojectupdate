@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Pms_Resources_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

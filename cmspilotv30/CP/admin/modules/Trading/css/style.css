@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@media all
+{
+    table.multi-field {
+        border: 0px solid #ccc;
+        width: 100%;
+    }
+
+    table.multi-field td.col1-header, 
+    table.multi-field td.col2-header {
+        font-weight:bold;
+    }
+
+    table.multi-field td.col1, 
+    table.multi-field td.col1-header {
+        border:0 none;
+        width:50%;
+    }
+
+    table.multi-field td.col2, 
+    table.multi-field td.col2-header {
+        border:0 none;
+        width:50%;
+    }
+    
+
+    table.multi-field2 {
+        border: 0px solid #ccc;
+        width: 100%;
+    }
+
+    table.multi-field2 td.col1-header, 
+    table.multi-field2 td.col2-header,
+    table.multi-field2 td.col3-header,
+    table.multi-field2 td.col4-header {
+        font-weight:bold;
+    }
+
+    table.multi-field2 td.col1, 
+    table.multi-field2 td.col1-header {
+        border:0 none;
+        width:25%;
+    }
+
+    table.multi-field2 td.col2, 
+    table.multi-field2 td.col2-header {
+        border:0 none;
+        width:25%;
+    }
+    
+    table.multi-field2 td.col3, 
+    table.multi-field2 td.col3-header {
+        border:0 none;
+        width:25%;
+    }
+
+    table.multi-field2 td.col4, 
+    table.multi-field2 td.col4-header {
+        border:0 none;
+        width:25%;
+    }
+    
+    input#recalculate {
+        float: none;
+        width: auto;
+        margin: 0;
+    }
+    
+    .sales_unit_price_base input {
+        text-align: right;
+    }
+}

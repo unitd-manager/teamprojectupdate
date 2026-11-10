@@ -1,0 +1,16 @@
+@media all
+{
+    .w-aceIms-traineeNotLinked{
+    }
+
+    table.thinlist  thead th{
+         background-color: #737277 ;
+         color: #fff;
+    }
+
+    table.thinlist td{
+        border: 1px solid #737277;
+        border-collapse: collapse;
+    }
+}
+

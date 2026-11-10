@@ -1,0 +1,11 @@
+.m-accountsg_accHead form.detail #fld_acc_category_id {
+    border: 0;
+    font-weight: normal;
+    font-size: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+

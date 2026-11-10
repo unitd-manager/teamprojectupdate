@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-hms_appointment .fc-widget-content {
+        height: 60px;
+    }
+
+    .m-hms_appointment .appointmentCalendarView .cancelAppointment,
+    .m-hms_appointment .appointmentCalendarView1 .cancelAppointment,
+    .m-hms_appointment #appointmentListDetails .eventCancelAppointment,
+    .m-hms_appointment #appointmentListDetails .eventCancel {
+        background-image: url('../Appointment/images/cancel.png');
+        background-size: 18px 18px;
+        background-repeat: no-repeat;
+        margin-left: 15px;
+    }
+
+    .m-hms_appointment .appointmentCalendarView .editAppointment,
+    .m-hms_appointment #appointmentListDetails .editVisitNotes {
+        background-image: url('../Appointment/images/edit.png');
+        background-size: 18px 18px;
+        background-repeat: no-repeat;
+        margin-left: 6px;
+        padding-left: 35px;
+    }
+
+    .m-hms_appointment #appointmentListDetails .editVisitNotes {
+        margin-left: 0px !important;
+        padding-left: 25px !important;
+    }
+
+    .m-hms_appointment #appointmentListDetails .eventCancel {
+        background-position: left;
+        margin-left: 0px !important;
+    }
+
+    .m-hms_appointment #appointmentListDetails .eventCancelAppointment {
+        background-position: left;
+        padding-left: 20px;
+    }
+
+    .m-hms_appointment .appointmentCalendarView .createVisit,
+    .m-hms_appointment .appointmentCalendarView1 .createVisit,
+    .m-hms_appointment #appointmentListDetails .createVisit,
+    .m-hms_appointment #appointmentListDetails .createVisitNotes {
+        background-image: url('../Appointment/images/ok_icon.png') !important;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+	    padding-left: 18px;
+    }
+
+    .m-hms_appointment #appointmentListDetails .createVisitNotes {
+        background-size: 16px 16px !important;
+    }
+
+    .m-hms_appointment .appointmentCalendarView .viewVisitRecord,
+    .m-hms_appointment #appointmentListDetails .viewVisitRecord {
+        background-image: url('../Appointment/images/view.png') !important;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+	    padding-left: 18px;
+    }
+
+    .m-hms_appointment .fc-content {
+    	clear: both;
+    	z-index: 0;
+	}
+
+    .m-hms_appointment .fc-header .fc-state-active,
+    .m-hms_appointment .fc-header .ui-state-active {
+    	z-index: 0;
+	}
+}

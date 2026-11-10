@@ -1,0 +1,5 @@
+<?
+class CP_Admin_Widgets_Payroll_Ir8aReport_Controller extends CP_Common_Lib_WidgetControllerAbstract
+{
+    var $searcVarCondn = '';
+}

@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@media all {
+	#reportSearchPanel table.search td.dateRange input {
+		width: 70px !important;
+	}
+
+	.m-enggCrm_reports table.search td select {
+		background-color: #fff !important;
+	}
+
+	.m-enggCrm_reports table.search td select.invoiceByClientFilter {
+		width: 215px !important;
+	}
+
+	.m-enggCrm_reports table.search td select.statusFilter,
+	.m-enggCrm_reports table.search td select.projectStatusFilter {
+		width: 125px !important;
+	}
+
+	.m-enggCrm_reports table.search td select.dormitoryFilter,
+	.m-enggCrm_reports table.search td select.projectCategoryFilter {
+		width: 190px !important;
+	}
+
+	.w-enggCrm-projectReport .projectCode {
+	    cursor: pointer;
+	    text-decoration: underline;
+	}
+
+	.w-enggCrm-projectReport .costingDetails {
+    	display: none;
+    }
+
+}

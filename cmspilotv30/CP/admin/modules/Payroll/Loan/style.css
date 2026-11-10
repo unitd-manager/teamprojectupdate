@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-payroll_loan .toggle {
+        display:block;
+    }
+
+    .m-payroll_loan .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-payroll_loan .c50l,
+    .m-payroll_loan .c50r {
+        width: 100%;
+    }
+
+    .m-payroll_loan .ym-columnar .ym-fbox-text label,
+    .m-payroll_loan .ym-columnar .ym-fbox-select label,
+    .m-payroll_loan #frmEdit .type-text label,
+    .m-payroll_loan #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-payroll_loan #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-payroll_loan .linkPortalWrapper div.header,
+    .m-payroll_loan .linkPortalWrapper .linkPortalDataWrapper th {
+        background-color: #152E43;
+        color: #fff;
+    }
+
+   .m-manPower_candidate .row_period_of_study_from1 .ym-form div.error .message, .yform div.error .message
+   ,.m-manPower_candidate .row_period_of_study_to1 .ym-form div.error .message, .yform div.error .message
+   ,.m-manPower_candidate .row_employment_period_from1 .ym-form div.error .message, .yform div.error .message
+    .m-manPower_candidate .row_employment_period_to1 .ym-form div.error .message, .yform div.error .message {
+        color: #800;
+        margin-left: 0px !important;
+    }
+
+    .yform.edit .type-text div.txt,
+    .yform.edit .type-text div.txt,
+    .yform.edit .type-select div.txt,
+    .yform.edit .form-row-wrapper div.txt {
+        margin-left: 0px !important;
+    }
+}

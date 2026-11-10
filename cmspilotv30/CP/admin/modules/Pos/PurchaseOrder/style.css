@@ -1,0 +1,60 @@
+﻿@charset "UTF-8";
+
+@media all
+{
+    .m-pos_purchaseOrder.v-detail .subcolumns.col3Body .c50l, 
+    .m-pos_purchaseOrder.v-edit .subcolumns.col3Body .c50l {
+        width: 100%;
+    }
+
+    .m-pos_purchaseOrder.v-detail .subcolumns.col3Body .c50l.purchaseOrderLeft, 
+    .m-pos_purchaseOrder.v-edit .subcolumns.col3Body .c50l.purchaseOrderLeft {
+        width: 50%;
+    }
+
+    .m-pos_purchaseOrder.v-detail .subcolumns.col3Body .c50r.purchaseOrderRight, 
+    .m-pos_purchaseOrder.v-edit .subcolumns.col3Body .c50r.purchaseOrderRight {
+        width: 50%;
+    }
+    
+    .seqNo {
+        width: 5%;
+    }
+
+    .action {
+        width: 5%;
+    }
+    .skuNo {
+        width: 10%;
+    }
+    .name {
+        width: 10%;
+    }
+    .vendorNo {
+        width: 10%;
+    }
+    .qty {
+        width: 10%;
+    }
+    .cost {
+        width: 10%;
+    }
+    .discAmount {
+        width: 10%;
+    }
+    .totalAmount {
+        width: 10%;
+    }
+    
+    #purchaseOrderItemRow td {
+        padding: 0;
+    }
+
+    #purchaseOrderItemRow #purchaseOrderItemForm td {
+        padding: 5px;
+    }
+    
+    #addPurchaseOrderItems {
+        margin-left: 20px;
+    }
+}

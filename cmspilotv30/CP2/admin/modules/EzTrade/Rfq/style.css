@@ -1,0 +1,10 @@
+@charset "UTF-8";
+@media all
+{
+    .m-trading_rfq #col3 .contentScroller .subcolumns .c50l {
+        width:40%;
+    }
+    .m-trading_rfq #col3 .contentScroller .subcolumns .c50r {
+        width:60%;
+    }
+}

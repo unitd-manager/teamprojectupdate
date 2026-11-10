@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Widgets_AceIms_TeacherDeploymentReport_Controller extends CP_Common_Lib_WidgetControllerAbstract
+{
+}

@@ -1,0 +1,4 @@
+<?
+class CP_Common_Modules_Core_Valuelist_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

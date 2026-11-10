@@ -1,0 +1,48 @@
+@media all
+{
+    table.orderClass select{
+        border: 0px solid red;
+        width: 125px;
+    }
+
+    .companyCourseBulkLink    {
+    }
+
+    .companyCourseBulkLink  .leftCol,
+    .companyCourseBulkLink  .rightCol {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        min-height: 400px;
+    }
+
+    .companyCourseBulkLink  .leftCol {
+        margin-right: 5px;
+    }
+
+    .traineesSelectedLinked  .type-select select, .traineesSelectedLinked  select{
+        font-size: 10px;
+        width: 75px;
+    }
+
+    .companyCourseBulkLink .highlightBorder {
+        border: 1px dotted #ca226b;
+    }
+
+    .highlightBorder .leftCol,
+    .highlightBorder .rightCol {
+        min-height: 1px;
+        border: 0;
+    }
+
+    .m-aceIms_company .subjectForStudents td select{
+        width:90%;
+        padding: 2px;
+        margin-bottom: 5px;
+    }
+
+    .aceIms_company__aceIms_orderLink .subject {
+        font-size: 13px;
+        width:25%;
+    }
+}
+

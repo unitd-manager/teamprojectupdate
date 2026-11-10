@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@media all
+{
+    .open,
+    .open .fc-event-skin {
+        background-color: #81AE4D;
+        border-color: #81AE4D;
+    }  
+    
+    .limited,
+    .limited .fc-event-skin {
+        background-color: #FFE45C;
+        border-color: #FFE45C;
+        color:#666666;
+    }  
+    
+    .notAvailable,
+    .notAvailable .fc-event-skin {
+        background-color: #A8A8A8;
+        border-color: #A8A8A8;
+    }   
+    
+    .pending,
+    .pending .fc-event-skin,
+    .confirmed,
+    .confirmed .fc-event-skin {
+        background-color: #CDC6C1;
+        border-color: #CDC6C1;
+    }    
+   
+}

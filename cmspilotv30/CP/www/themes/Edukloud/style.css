@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+
+/******************* HOME ********************/
+@media all
+{
+    body {
+        background: #083463;
+        font-family: Verdana,Arial,Tahoma;
+        color: #444444;
+    }
+
+    .page {
+        /*background: #f7f7f7;*/
+    }  
+    
+    .page_margins {
+        margin: auto;
+        width: 990px;
+    }
+
+    #header {
+        background:transparent url('images/top-bg.jpg') repeat-x ;
+        padding: 0;
+        height: 137px;
+    }
+
+    #header .headerInfo{
+        /*background:transparent url('images/top-bg-left.jpg') no-repeat;
+        height: 137px;
+        width: 345px;*/
+    }
+
+    #nav {
+        border-bottom: 0px solid #CCCCCC;
+        border-top: 0px solid #CCCCCC;
+        margin-bottom: 0;
+    }
+
+    .hlist ul li, .topnav ul li {
+        border-right: 0px solid #888888;
+        display: inline;
+        float: left;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .homeContent {
+        margin: 15px;
+    }
+
+    .homeContent .contentNews {
+        border: 4px solid #42699C;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .homeContent .contentNews h2{
+        color: #42699C;
+    }
+
+    .homeContent .contentNews .inner .title{
+        color: #003366;
+        font-weight: bold;
+    }
+    
+    table.list th {
+        background : #DFEFFF;
+    }
+    
+    table.list {
+    }
+
+    #col1_content {
+        padding: 0;
+        border: 5px solid #417ABD;
+        border-radius: 10px;
+        margin-left: 10px;
+    }
+    
+    h6.vlist {
+        background: #417ABD;
+        padding: 10px 10px 10px 20px;
+        color: #fff;
+        font-weight: bold;       
+    }
+
+    .hidecol2 #col3_content {
+        padding-right: 10px;
+        border: 5px solid #417ABD;
+        border-radius: 10px;
+        margin: 0 10px;
+    }
+
+    .m-edukloud_task .hidecol2 #col3_content {
+        padding: 10px 0 10px 0;
+    }
+        
+    .v-detail .hidecol2 #col3_content {
+        padding: 10px;
+    }
+
+    h6.vlist {
+        background: #417ABD;
+        padding: 10px 10px 10px 20px;
+        color: #fff;
+        font-weight: bold;       
+    }
+    
+    .m-edukloud_grade table.list th {
+        text-align: left;
+    }
+}

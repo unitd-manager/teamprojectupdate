@@ -1,0 +1,12 @@
+Please note that DHLToolkit for Linux is not officially supported 
+
+
+Run these commands in order to start use Linux for label generation
+mv label.properties.linux label.properties
+cd clientSoftware/SOPLabel/JasperReports; mv ArchiveLabel.jasper.linux ArchiveLabel.jasper; cd -
+
+In order to generate the Shipment label correctly on Linux you would need to install Microsoft proprietary fonts. Common name of package for many distibutions is msttcorefonts .
+Alternative is to manualy copy Arial and Arial Bold fonts to $JRE_HOME/lib/fonts
+
+You need to amend SOPLabel/generateSOPLabel.sh to point to folder where jre is installed. 
+This was tested on java build 1.6.0_29-b11

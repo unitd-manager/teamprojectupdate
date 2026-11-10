@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-payroll_jobInformation .toggle {
+        display:block;
+    }
+
+    .m-payroll_jobInformation .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-payroll_jobInformation .c50l,
+    .m-payroll_jobInformation .c50r {
+        width: 100%;
+    }
+
+    .m-payroll_jobInformation .ym-columnar .ym-fbox-text label,
+    .m-payroll_jobInformation .ym-columnar .ym-fbox-select label,
+    .m-payroll_jobInformation #frmEdit .type-text label,
+    .m-payroll_jobInformation #frmEdit .type-select label,
+    .m-payroll_jobInformation #frmEdit .type-radio label {
+        width: 100%;
+    }
+
+    .m-payroll_jobInformation #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-payroll_jobInformation .linkPortalWrapper div.header,
+    .m-payroll_jobInformation .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #E6E6E6;
+    }
+
+    .m-payroll_jobInformation .ym-columnar.ym-form .form-row-wrapper .leftCol,
+    .m-payroll_jobInformation .columnar.yform .form-row-wrapper .leftCol,
+    .m-payroll_jobInformation ym-columnar.ym-form .form-row-wrapper.type-radio .leftCol,
+    .m-payroll_jobInformation .columnar.yform .form-row-wrapper.type-radio .leftCol {
+        float: left;
+        width: 45%;
+    }
+
+}

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+/*** Template ***/
+@media all
+{
+    table.search .dateRange{
+        width: 355px;
+    }
+}

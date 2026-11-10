@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-forex_rateBoardAcc #col3_content {
+        min-height: 1481px;
+    }
+
+    .m-forex_rateBoardAcc #nav {
+        display: none;
+    }
+
+    .m-forex_rateBoardAcc #footer .floatbox {
+        display: none;
+    }
+
+    .m-forex_rateBoardAcc #main {
+        background: transparent;
+        color: #fff;
+        padding: 0;
+    }
+
+    .m-forex_rateBoardAcc #col3_content {
+        padding: 0;
+    }
+    
+    .m-forex_rateBoardAcc .message{
+        background: #EECB00;
+        padding:8px;
+        font-size: 23px;
+        margin:0 10px 10px 10px;
+        color: #000;
+        font-weight: bold;
+        text-align: center;
+        -moz-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; 
+    }
+
+    .m-forex_rateBoardAcc .float_left {
+        height:60px;
+        margin:5px;
+        text-align: center;
+        border:2px solid #EECB00;
+        -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; 
+        font-size: 47px;
+        color: #E6C401;
+        overflow: hidden;
+    }
+
+    .m-forex_rateBoardAcc .row {
+    }
+
+    .m-forex_rateBoardAcc .pic {
+        width:85px;
+        border: 0;
+    }
+
+    .m-forex_rateBoardAcc .pic img {
+        margin-top: 8px;
+        width:75px;
+    }
+
+    .m-forex_rateBoardAcc .country {
+        width:244px;
+        font-size: 33px;
+        line-height:1.75em;
+    }
+
+    .m-forex_rateBoardAcc .currency {
+        width:135px;
+    }
+
+    .m-forex_rateBoardAcc .weBuy {
+        width:218px;
+        font-size: 62px;
+        color: #61EB00;
+        line-height: 1em;
+        text-align: right;
+        padding-right:2px;
+    }
+
+    .m-forex_rateBoardAcc .weSell {
+        width:218px;
+        font-size: 62px;
+        color: #FE0000;
+        line-height: 1em;
+        text-align: right;
+        padding-right:2px;
+    }
+
+    .m-forex_rateBoardAcc .heading .float_left {
+        border:0;
+        font-size: 35px;
+        color: #fff;
+        height:50px;
+        font-family: Trebuchet MS, sans-serif;
+        line-height:1.75em;
+    }
+    
+    .m-forex_rateBoardAcc .nivo-slider-wrapper {
+        position: absolute;
+        bottom:-10px;
+    }
+    
+    .m-forex_rateBoardAcc .nivoSlider {
+        height: 150px;
+        width:970px;
+    }
+    
+    .m-forex_rateBoardAcc .nivo-controlNav {
+        display: none;
+    }
+}

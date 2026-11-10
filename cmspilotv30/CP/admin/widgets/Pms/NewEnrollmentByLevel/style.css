@@ -1,0 +1,18 @@
+@media all
+{
+    .w-pms-newEnrollmentByLevel {
+        height: 375px;
+        overflow: auto;
+    }
+
+    table.thinlist  thead th{
+         background-color: #737277 ;
+         color: #fff;
+    }
+
+    table.thinlist td{
+        border: 1px solid #737277;
+        border-collapse: collapse;
+    }
+}
+

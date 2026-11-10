@@ -1,0 +1,24 @@
+@media all
+{
+    .w-enterpriseIms-newEnrolment{
+    }
+
+    /*.m-common_dashboard .widget table {
+        border: 1px solid red;
+    }*/
+    
+    .m-common_dashboard .w-enterpriseIms-orderSummary div.tableOuter {
+        height: 330px;
+    }
+
+    table.thinlist  thead th{
+         background-color: #737277 ;
+         color: #fff;
+    }
+
+    table.thinlist td{
+        border: 1px solid #737277;
+        border-collapse: collapse;
+    }
+}
+

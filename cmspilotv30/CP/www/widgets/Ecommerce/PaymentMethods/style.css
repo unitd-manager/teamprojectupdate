@@ -1,0 +1,16 @@
+@media all
+{
+    .w-ecommerce-paymentMethods {
+        margin:15px 0;
+    }
+
+    .w-ecommerce-paymentMethods table {
+        background:#f4f4f4;
+        border:1px #ddd solid;
+        padding:10px;
+    }
+
+    .w-ecommerce-paymentMethods table td.method{
+        width:150px;
+    }
+}

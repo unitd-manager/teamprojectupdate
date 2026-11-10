@@ -1,0 +1,61 @@
+@media all
+{
+    table.orderClass select{
+        border: 0px solid red;
+        width: 125px;
+    }
+
+    .companyCourseBulkLink    {
+    }
+
+    .companyCourseBulkLink  .leftCol,
+    .companyCourseBulkLink  .rightCol {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        min-height: 400px;
+    }
+
+    .companyCourseBulkLink .highlightBorder {
+        border: 1px dotted #CA226B;
+    }
+
+    .companyCourseBulkLink .highlightBorder .leftCol,
+    .companyCourseBulkLink .highlightBorder .rightCol {
+        border: 0px solid #ccc;
+        border-radius: 5px;
+        min-height: 1px;
+        padding: 4px;
+    }
+
+    .columnar.yform .highlightBorder .form-row-wrapper .leftCol {
+        width: 22%;
+    }
+
+    .companyCourseBulkLink  .leftCol {
+        margin-right: 5px;
+        padding:8px;
+    }
+
+    .traineesSelectedLinked  .type-select select, .traineesSelectedLinked  select{
+        font-size: 10px;
+        width: 75px;
+    }
+
+    #traineeSelectedForm .subcr {
+        padding: 0;
+    }
+
+    .m-agileIms_company .c50r .rightPanel .linkPortalWrapper table td.highlightClass {
+       background-color: #684A4A;
+       color: #fff;
+    }
+
+    .m-agileIms_company .c50r .rightPanel .linkPortalWrapper table .cancelEnrollment {
+       color: #000;
+    }
+
+    .c50r .rightPanel .button {
+        background: none;
+    }
+}
+

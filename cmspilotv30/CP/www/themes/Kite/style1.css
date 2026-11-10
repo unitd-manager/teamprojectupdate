@@ -1,0 +1,2216 @@
+@charset "UTF-8";
+
+/******************* HOME ********************/
+@media all
+{
+html * {
+}
+
+    body {
+        /*background: url("images/sky.jpg") repeat-x #F7FBFE;*/
+        background-color: #fff;
+        font-family: verdana;
+        font-size: 122%;
+    }
+
+    body.rt-login {
+        background: url("images/login_bg.png") no-repeat scroll center center transparent;
+        padding-top: 50px;
+    }
+
+    /*body.rt-login {
+        background: url("images/nologin.png") no-repeat scroll center center transparent;
+        padding-top: 350px;
+    }*/
+
+    .page_margins {
+        width: 900px;
+        background: transparent;
+    }
+
+    .m-edukiteWeb_task.v-detail .page_margins ,
+    .m-edukiteWeb_notice.v-detail .page_margins {
+        width: 762px;
+    }
+
+    h1 {
+        font-size: 175% !important;
+    }
+
+.h2, h2 {
+    font-size: 20px;
+}
+    .productDetail h1 {
+        font-size: 250%;
+    }
+
+    .homeMiddle h1 {
+        width: 95%;
+    }
+
+    .m-webBasic_home .page_margins #main {
+    }
+
+    .m-webBasic_home .page_margins .mainInner {
+        margin: 0 9px;
+    }
+
+    .m-webBasic_home .page_margins #main #col1 {
+        background: none;
+    }
+
+    .page_margins #main #col3 {
+        margin: 0;
+    }
+
+    .rt-login #main {
+        margin-top: 20px;
+    }
+
+    .rt-login .page_margins #main #col3 {
+        margin: 0 170px 0 250px;
+        width: 380px;
+    }
+
+    .v-detailRow .page_margins #main #col3 {
+        margin: 0;
+        width: 900px;
+    }
+
+    .page_margins #main #col2 {
+        background: none;
+    }
+
+    .ym-g310 { width: 310px;}
+    .ym-g273 { width: 268px;}
+    .ym-g281 { width: 276px;}
+    .ym-g208 { width: 208px;}
+    .homeLeft .ym-g310 { width: 213px;}
+    .ym-g390 { width: 422px;        top:-20px;
+}
+    .ym-g150 { width: 150px;}
+
+    .ym-g35 { width: 42px;}
+
+    .ym-g390 .ym-gbox { padding: 0 16px;}
+
+    .ym-g310 .ym-gbox { padding:0 10px;}
+    .ym-g281 .ym-gbox { padding:0 4px;}
+
+    .m-webBasic_home .studentFilter .ym-fbox-select {
+        border: 0;
+        padding: 3px;
+        width: 172px;
+        background: url("images/siblings.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .m-webBasic_home .studentFilter .ym-fbox-select select {
+        border: 0;
+        background: none;
+        padding:0 5px 0 0;
+    }
+
+    .studentFilter {
+        left: 198px;
+        position: absolute;
+        top: 139px;
+    }
+
+    .dailyDairyBanner,
+    .calendarBannerActive,
+    .dailyDairyBannerActive {
+        height: 40px;
+	    left: 118px;
+	    position: absolute;
+	    top: 156px;
+	    font-weight: bold;
+        width: 206px;
+        display:none;
+    }
+
+    .kitePostBanner,
+    .noticeBannerActive,
+    .kitePostBannerActive {
+        height: 40px;
+	    left: 425px;
+	    position: absolute;
+	    top: 156px;
+	    font-weight: bold;
+        width: 206px;
+        display:none;
+    }
+
+    .galleryBanner,
+    .lockerBannerActive,
+    .galleryBannerActive {
+	    height: 40px;
+	    left: 758px;
+	    position: absolute;
+	    top: 156px;
+	    font-weight: bold;
+        width: 120px;
+        display:none;
+    }
+
+    .homeLeft {
+        border : 1px solid #336699;
+        border-radius: 5px;
+    }
+
+    .m-webBasic_home #col3_content .loginName {
+        text-align: center;
+        color:#ffffff;
+        font-weight:bold;
+        padding-top:8px;
+    }
+
+    .m-webBasic_home .rightColumnImage .galleryContent{
+		border:1px solid #336699;
+		padding:5px;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 10px;
+	}
+
+    .m-webBasic_home #col3_content {
+        padding: 0;
+    }
+
+    .m-webBasic_home #col3_content .loginImage {
+        border:1px solid #2828FF;
+        padding:15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        text-align: center;
+        background-color:#4381FF;
+    }
+
+    .m-webBasic_home #col3_content .loginImage img {
+        width: 100px;
+    }
+
+    .m-webBasic_home #col3_content .rightColumnImage img {
+        width: 125px;
+    }
+
+    .m-webBasic_home .homeMiddle .inner .innerContent{
+        border-bottom: 1px solid #336699;
+        padding-bottom: 10px;
+    }
+
+    .m-webBasic_home .inner .innerContent .imgPanel{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .m-webBasic_home .inner .innerContent .imgPanel img{
+        max-width: 288px;
+    }
+
+    .m-webBasic_home .homeMiddle .inner .innerContent .imgPanel img{
+        max-width: 375px;
+    }
+
+    .m-edukiteWeb_task .yourTask .inner .date ,
+    .m-edukiteWeb_task .myHomeworkList .inner .date ,
+    .m-webBasic_home .homeLeft .inner .date ,
+    .m-webBasic_home .homeMiddle .inner .date {
+        font-size: 10px;
+    }
+
+    .m-webBasic_home .homeLeft .typeCalendar {
+        margin-top: 20px;
+    }
+
+    .m-webBasic_home .homeLeft .typeCalendar .date{
+        font-size: 13px !important;
+        font-weight: bold;
+    }
+
+    .m-edukiteWeb_task .yourTask .links,
+    .m-edukiteWeb_task .myHomework .links,
+    .m-webBasic_home .homeMiddle .links,
+    .m-webBasic_home .homeLeft .links,
+    .productDetail .links,
+    .popUpContent .links{
+        border:1px solid #336699;
+        padding:10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+
+    .m-edukiteWeb_task.v-detail #col3_content ,
+    .m-edukiteWeb_task.v-detail .ym-cbox ,
+    .m-edukiteWeb_notice.v-detail  #col3_content,
+    .m-edukiteWeb_notice.v-detail .ym-cbox {
+        padding:0;
+    }
+
+    .popUpContent .links{
+        margin: 0 35px 5px 33px;
+    }
+
+    .m-webBasic_home .homeMiddle .inner .links li a, .links .mediaFilesDisplayThin  li a{
+        text-decoration:underline;
+        background: url("images/paperclip.jpeg") no-repeat scroll 0 0 transparent;
+    }
+
+    .mediaFilesDisplayThin a.extIconS {
+        display: block;
+        line-height: 24px;
+        padding-left: 45px;
+    }
+
+    .m-edukiteWeb_notice .detailHeading{
+        font-weight: bold;
+        font-size: 250% !important;
+        color: #336699;
+    }
+
+    .m-webBasic_home .galleria-container ,
+    .m-edukiteWeb_task .galleria-container ,
+    .m-edukiteWeb_notice .galleria-container {
+        background: none;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .m-edukiteWeb_notice .galleria-container {
+        margin: 10px 0;
+        left: 161px;
+    }
+
+    .m-webBasic_home .galleria-stage {
+        bottom: 0;
+        left: 0;
+        overflow: visible;
+        position: absolute;
+        right: 0;
+        top: 40px;
+    }
+
+    .m-edukiteWeb_task .galleria-stage {
+        bottom: 5px;
+        left: 0;
+        overflow: visible;
+        position: absolute;
+        right: 0;
+        top: 5px;
+    }
+
+    .m-webBasic_home .homeMiddle .galleria-stage {
+        top: 0px;
+    }
+
+    .m-edukiteWeb_notice .galleria-stage {
+        bottom: 0;
+        left: 0;
+        overflow: visible;
+        position: absolute;
+        right: 0;
+        top: 25px;
+    }
+
+    .m-webBasic_home .galleria-info-link ,
+    .m-edukiteWeb_task .galleria-info-link ,
+    .m-edukiteWeb_notice .galleria-info-link {
+        background : none;
+    }
+
+    .m-webBasic_home .galleria-image-nav-right,
+    .m-webBasic_home .galleria-image-nav-left ,
+    .m-edukiteWeb_task .galleria-image-nav-right,
+    .m-edukiteWeb_task .galleria-image-nav-left ,
+    .m-edukiteWeb_notice .galleria-image-nav-right,
+    .m-edukiteWeb_notice .galleria-image-nav-left {
+        background-image: url("images/classic-map.png");
+    }
+
+    .m-edukiteWeb_task .galleria-image-nav-right,
+    .m-webBasic_home .galleria-image-nav-right {
+        /*background-position: -255px 46px;*/
+        left: auto;
+        right: 10px !important;
+        z-index: 2;
+        opacity:1;
+        top:0px;
+    }
+
+    .m-webBasic_home .homeMiddle .galleria-image-nav-right ,
+    .m-webBasic_home .homeMiddle .galleria-image-nav-left {
+        top:0px;
+    }
+
+    .m-edukiteWeb_task .galleria-image-nav-left ,
+    .m-webBasic_home .galleria-image-nav-left {
+        /*background-position: 33px 0px;*/
+        opacity:1;
+        top:0px;
+        left:10px !important;
+    }
+
+    .m-edukiteWeb_notice .galleria-image-nav-right {
+        /*background-position: -287px 0px;*/
+        left: auto;
+        right: 10px !important;
+        z-index: 2;
+        opacity:1;
+        top:0px;
+    }
+
+    .m-edukiteWeb_notice .galleria-image-nav-left {
+        /*background-position: 33px 0px;*/
+        opacity:1;
+        top:0px;
+        left:10px !important;
+    }
+
+    .m-webBasic_home .galleria-info {
+        display: none;
+        position: absolute;
+        left:1500px;
+    }
+
+    .m-edukiteWeb_notice .galleria-info {
+        top:0px;
+        left:0;
+        width:98%;
+    }
+
+    .m-edukiteWeb_notice .galleria-info-text {
+        background-color: #ffffff;
+        display: block !important;
+        padding: 0px;
+    }
+
+    .m-edukiteWeb_notice .galleria-info-title {
+        color: #000000;
+        font: bold 12px/1.1 arial,sans-serif;
+        margin: 0 0 7px;
+        display: none !important;
+    }
+
+    .m-edukiteWeb_notice .galleria-info-description {
+        display: none !important;
+    }
+
+    .m-webBasic_home .ym-fbox-select select {
+        width: 170px;
+        padding: 6px;
+        border: 1px solid #000;
+    }
+
+    .m-webBasic_home .filter .ym-fbox-select select {
+        padding: 2px;
+        /*border: 0;*/
+    }
+
+    /*.returnHome a{
+        background: url("images/return-home.png") no-repeat scroll 0 0 transparent;
+        left: 180px;
+        position: absolute;
+        top: 125px;
+        width:566px;
+        height: 18px;
+        color: transparent;
+    }
+
+    .returnHome a:hover{
+        background: url("images/return-home-hover.png") no-repeat scroll 0 0 transparent;
+        left: 180px;
+        position: absolute;
+        top: 125px;
+        width:566px;
+        height: 18px;
+    }*/
+
+    .returnHome a, .returnHome a:hover{
+        background: url("images/detail-close.png") no-repeat scroll 0 0 transparent;
+        left: 280px;
+        position: absolute;
+        top: 28px;
+        width:202px;
+        height: 34px;
+        color: transparent;
+    }
+
+    #header {
+        /*background: url("images/kite_banner.gif") no-repeat scroll 0 0 transparent;*/
+        height: 178px;
+        color: #000;
+        width: 900px;
+    }
+
+    #header .controller {
+        position: absolute;
+        left:772px;
+        top: 82px;
+    }
+
+    #header .refreshSite {
+        display: none;
+    }
+
+    #header .facebookLike {
+        position: absolute;
+        left:817px;
+        top: 139px;
+    }
+
+    #header .facebookLike a{
+        background: url("images/fb.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        padding: 10px 34px;
+        color:transparent;
+    }
+
+    #header .controller a{
+        background: url("images/controller.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        padding: 12px 27px;
+        color:transparent;
+    }
+
+	/*#header .controller a:hover {
+	    background: url("images/controller-hover.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	    padding: 10px 33px;
+	}*/
+
+    .m-edukiteWeb_task.v-detail .header ,
+    .m-edukiteWeb_notice.v-detail .header {
+        background: url("images/detail-banner.png") no-repeat scroll 0 0 transparent;
+        width: 762px;
+        height: 86px;
+    }
+
+    .m-edukiteWeb_task.v-detail #header ,
+    .m-edukiteWeb_task.v-detail .contactSchool ,
+    .m-edukiteWeb_task.v-detail .edukiteIcon ,
+    .m-edukiteWeb_notice.v-detail #header ,
+    .m-edukiteWeb_notice.v-detail .parentLounge ,
+    .m-edukiteWeb_notice.v-detail .pto ,
+    .m-edukiteWeb_notice.v-detail .contactSchool ,
+    .m-edukiteWeb_notice.v-detail .edukiteIcon {
+        display: none;
+    }
+
+	.contactSchool {
+	    /*background: url("/cmspilotv30/CP/www/themes/Kite/images/School.png") no-repeat scroll 0 0 transparent;*/
+	    left: 610px;
+	    position: absolute;
+	    top: 139px;
+	}
+
+	.edukiteIcon {
+	    /*background: url("/cmspilotv30/CP/www/themes/Kite/images/KiteBoy.png") no-repeat scroll 0 0 transparent;*/
+	    height: 41px;
+	    left: 12px;
+	    position: absolute;
+	    top: 127px;
+	    width: 46px;
+	}
+
+    /*#nav {
+        background: url("images/controller.gif") no-repeat scroll 0 0 transparent;
+    }*/
+
+    #logo {
+        top: 40px;
+        width: 350px;
+    }
+
+    .topMost {
+        background: url("images/topbar.gif") no-repeat scroll 0 0 transparent;
+        height:29px;
+        width: 900px;
+    }
+
+    .topMost.hlist ul li a {
+        background: none;
+        color: #000;
+        font-size: 14px !important;
+        padding: 0;
+    }
+
+    .topMost.hlist ul li.active {
+        background: none;
+        border-right: 0 none;
+        padding-right: 0;
+    }
+
+    .topMost.hlist ul li, .topMost.hlist ul li.last {
+        border-right: 0;
+    }
+
+    .topMost.hlist ul li, .topnav ul li {
+        border-right: 0;
+        padding-top: 6px;
+    }
+
+    .topMost.hlist ul li.active a {
+        color: red;
+    }
+
+    .topMost.hlist ul li a:hover {
+        background: none;
+    }
+
+    .topMost.hlist ul {
+        padding-left: 100px;
+    }
+
+    #main {
+        min-height: 400px;
+    }
+
+    .rt-login #main {
+        background: none;
+    }
+
+    #footer {
+        background: url("images/footer.jpg") no-repeat scroll 0 0 transparent;
+        color: #fff;
+    }
+
+    #footer a {
+        color: #fff;
+    }
+
+    .m-edukiteWeb_task.v-detail #footer ,
+    .m-edukiteWeb_notice.v-detail #footer {
+        background: url("images/detail-footer.png") no-repeat scroll 0 0 transparent;
+        color: transparent;
+    }
+
+    #col1 {
+        background: url("images/col1-bg.gif") no-repeat scroll 0 0 transparent;
+        height:365px;
+        width: 250px;
+        margin: 10px 10px 0 10px;
+    }
+
+    #col2 {
+        width: 170px;
+    }
+
+    #col3 {
+        margin: 0 170px 0 250px;
+    }
+
+    .hideboth #col3_content {
+        padding: 15px;
+    }
+
+    .loginInfoText {
+        right:36px;
+        top:19px;
+    }
+
+    .loginInfoText a {
+        color: transparent;
+        border: 0px solid #000;
+        background: url("images/exit.png") no-repeat scroll 0 0 transparent;
+        padding:4px 18px;
+    }
+
+    #nav {
+        border-bottom: 0;
+        border-top: 0;
+        margin: 2px 0;
+    }
+
+    #nav ul {
+        margin: 15px 0 0 135px;
+    }
+
+    #nav .hlist {
+      /*  background: url("images/header2.gif") repeat-x scroll 0 0 transparent; */
+        background: none;
+    }
+
+    #nav2 .navPanel{
+        /*
+        background: url("images/nav_panel.gif") no-repeat scroll 0 0 transparent;
+        margin: 0 0 10px 10px;
+        width: 460px;
+        height: 90px;
+        */
+    }
+
+    #nav2 .listTitle {
+        margin: 15px 0 0 20px;
+        color: red;
+        font-weight: bold;
+        font-size: 14px !important;
+    }
+
+    .hlist ul li.active {
+        background: url("images/menu-act.gif") no-repeat scroll 0 0 transparent;
+        width: 107px;
+        height: 42px;
+        border-right: 0;
+        padding-right: 25px;
+    }
+
+    .hlist ul li.active a {
+        color: red;
+    }
+
+    .hlist ul li, .hlist ul li.last {
+        border-right: 0;
+    }
+
+    .hlist ul li a:hover {
+        background: url("images/menu-act.gif") no-repeat scroll 0 0 transparent;
+        width: 107px;
+        height: 42px;
+    }
+
+    .hlist ul li a {
+        background: url("images/menu.gif") no-repeat scroll 0 0 transparent;
+        width: 107px;
+        height: 42px;
+        font-size: 16px;
+        padding: 0.3em 0.8em;
+    }
+
+    .hlist.actionBtns {
+        background: none repeat scroll 0 0 transparent;
+        color: #000000;
+        width: auto;
+        position: static;
+    }
+
+    .pagelinks {
+        width: 135px;
+        margin: 10px 0 0 15px;
+    }
+
+    .pagelinks .linkNos {
+        width: 120px;
+        display: none;
+    }
+
+    .pagelinks .totalRecs {
+        display: none;
+    }
+
+    .pagelinks .preBtn {
+        background: url("images/prev-btn.gif") no-repeat scroll 0 0 transparent;
+        height: 27px;
+        width: 55px;
+        padding: 5px 0 0 12px;
+    }
+
+    .pagelinks .nxtBtn {
+        background: url("images/prev-btn.gif") no-repeat scroll 0 0 transparent;
+        height: 27px;
+        width: 55px;
+        padding: 5px 0 0 12px;
+    }
+
+    .pagelinks span.noLink {
+        color: #000;
+    }
+
+    body.loggedin #main {
+        background: transparent;
+        padding: 0;
+    }
+
+    body.loggedin .hideboth #col3_content {
+        padding:0 0;
+    }
+
+    .linkPortalWrapper {
+        background: #F4F4F4;
+    }
+
+    .v-detail .col3Body {
+        margin-top: 2px;
+    }
+
+    .v-edit #nav2 {
+        display: none;
+    }
+
+    .cpSearch {
+        margin: 13px 0 0 10px;
+        overflow: hidden;
+    }
+
+}
+
+/*************** ACTIONS ICONS ************/
+@media all
+{
+    .actionBtns.hlist ul li {
+        border-right: 0;
+        margin-right: 0;
+    }
+
+    .actionBtns.hlist ul li a, .actionBtns.hlist ul li.last a {
+        display: block;
+        line-height: 16px;
+        padding: 7px 0 0 26px !important;
+        font-weight: normal;
+        color: #fff;
+        background: transparent;
+    }
+
+    a#actBtn_edit {
+        background:transparent url('images/action/edit.png') no-repeat 0 0;
+    }
+
+    a#actBtn_cancelNew{
+        background:transparent url('images/action/save.gif') no-repeat 0 0;
+        height: 32px;
+        width: 88px;
+        color: #15A143;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    a#actBtn_addNew {
+        background:transparent url('images/action/save-continue.gif') no-repeat 0 0;
+        height: 32px;
+        width: 154px;
+        color: #000;
+        font-weight: bold;
+        font-size: 14px;
+        margin: 10px 0 0 165px;
+    }
+
+    a#actBtn_changePassword {
+        background:transparent url('images/action/password.png') no-repeat 0 0;
+    }
+
+    a#actBtn_new {
+        background: url("images/action/save.gif") no-repeat scroll 0 0 transparent;
+        height: 32px;
+        width: 88px;
+        color: #15A143;
+        font-weight: bold;
+        font-size: 14px;
+        margin: 6px 10px 0 190px;
+    }
+
+    .v-edit #nav2 {
+        display: inline;
+    }
+
+    a#actBtn_cancel {
+        background: url("images/action/back.gif") no-repeat scroll 0 0 transparent;
+        width: 439px;
+        height: 31px;
+        text-align: center;
+        color: #15A143;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    a#actBtn_save {
+        background: url("images/action/save.gif") no-repeat scroll 0 0 transparent;
+        height: 32px;
+        margin-top: 10px;
+        width: 88px;
+        color: #15A143;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    a#actBtn_delete {
+        background: url("images/action/save.gif") no-repeat scroll 0 0 transparent;
+        height: 32px;
+        margin-top: -77px;
+        width: 88px;
+        font-weight: bold;
+        font-size: 13px;
+        color: #000;
+    }
+
+    .v-edit #nav2 .hlist.noBg ul li.last {
+        border-right: 0 none;
+        float: right;
+        margin-left: 15px;
+    }
+
+    .v-edit .col3Body .yform {
+        width: 438px;
+    }
+
+    .v-new .ym-col3 .yform {
+        width: 438px;
+    }
+
+    .w-edukite-calendarDisplay {
+        min-height: 250px;
+        display: block;
+    }
+
+    .toggleIcon {
+        float:right;
+        margin-top: 5px;
+    }
+
+    .hideContent{
+        display: none;
+    }
+
+    .readNotice, .readNoticeTask {
+        overflow:hidden;
+        margin-top: 5px;
+        width:85%;
+        float:left;
+    }
+
+    .readNotice .leftCol, .readNoticeTask .leftCol{
+        float: left;
+        width: 50%;
+    }
+
+    .homeLeft .readNotice .leftCol{
+        float: left;
+        width: 65%;
+    }
+
+    .readNotice .rightCol,
+    .readNoticeTask .rightCol{
+        float: left;
+    }
+
+    .readNotice .rightCol .type-check,
+    .readNoticeTask .rightCol .type-check{
+        float: left;
+        margin:0;
+    }
+
+    .readNotice .rightCol .type-check label,
+    .readNoticeTask .rightCol .type-check label{
+        margin-right: 5px;
+    }
+
+    .rt-login .yform fieldset{
+        background: none;
+        width: 373px;
+        padding: 10px 0 0 10px;
+        border: 0;
+    }
+
+    .rt-login .yform {
+        background: none;
+        border: 0;
+    }
+
+    .rt-login .loginImage {
+        padding: 15px 0 0 60px;
+        display:none;
+    }
+
+    .rt-login .loginType {
+        width: 328px;
+        margin: 205px 34px 3px;
+        height: 32px;
+    }
+
+    .rt-login .loginType a {
+        cursor: pointer;
+        float:left;
+        margin-right: 7px;
+    }
+
+    .rt-login #loginForm {
+        background: url("images/login/plate.png") no-repeat scroll 0 0 transparent;
+        width: 384px;
+        height: 705px;
+        padding: 10px;
+    }
+
+    .rt-login #loginForm label {
+        width: 30%;
+        display:none;
+    }
+
+    .rt-login #loginForm .saveLogin label {
+        width: 30%;
+        display:inline;
+        font-family: arial;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: underline;
+        color: #FD980F;
+    }
+
+    .rt-login #loginForm .resetPasswordLink a {
+        font-family: arial;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: underline;
+        color: #FD980F;
+    }
+
+    .rt-login #loginForm .archiveEnter {
+        width: 60px;
+        margin: 100px 25px 0 0;
+        float:right;
+    }
+
+    .rt-login #loginForm .row_username{
+        display: none;
+    }
+
+    .rt-login #nav,
+    .rt-login #nav2,
+    .rt-login .help {
+        display: none;
+    }
+
+    .rt-login .ym-form .ym-fbox-button input[type="submit"],
+    .rt-login .yform .type-button input[type="submit"] {
+        background: url("images/login/enterA.png") no-repeat scroll 0 0 transparent;
+        height: 60px;
+        width: 117px;
+        border: 0;
+        margin-top: 15px;
+        margin-right: 35px;
+    }
+
+    .rt-login .yform .type-button input[type="submit"]:hover {
+        background: url("images/login/enterB.png") no-repeat scroll 0 0 transparent;
+        height: 60px;
+        width: 117px;
+    }
+
+    .w-member-loginForm .btns {
+        float: right;
+    }
+
+    .rt-login .ym-form .ym-fbox-button input,
+    .rt-login .yform .type-button input {
+        border: 0;
+        border-style: solid;
+        color: #000000;
+        padding: 0;
+    }
+
+    /*.rt-login .ym-form div.ym-fbox-button input:focus,
+    .rt-login .yform div.type-button input:focus,
+    .rt-login .ym-form div.ym-fbox-button input:hover,
+    .rt-login .yform div.type-button input:hover,
+    .rt-login .ym-form div.ym-fbox-button input:active,
+    .rt-login .yform div.type-button input:active {
+        background: url("images/enter-active.gif") no-repeat scroll 0 0 transparent;
+        border: 0;
+        border-style: solid;
+        color: #FFFFFF;
+        height: 39px;
+        width: 342px;
+    }*/
+
+    .rt-login .ym-columnar div.ym-fbox-button,
+    .rt-login .ym-columnar .captcha,
+    .rt-login .columnar div.type-button,
+    .rt-login .columnar .captcha {
+        margin-left: 4px;
+    }
+
+    .saveLogin{
+        position: absolute;
+        top:95px;
+        left: 20px;
+    }
+
+    .resetPasswordLink{
+        position: absolute;
+        top:127px;
+        left: 37px;
+    }
+
+    .w-member-loginForm .columnar div.type-check.saveLogin input {
+        margin-left: 0%;
+    }
+
+    .forgotPasswordLink {
+        position: absolute;
+        top:120px;
+        left: 37px;
+    }
+
+    .forgotPasswordLink a {
+        background: url("images/login/havingB.png") no-repeat scroll 0 0 transparent;
+        width: 150px;
+        height: 16px;
+        display: block;
+        margin: 10px 0px 0 0;
+        border-bottom:2px solid #ff9400;
+    }
+
+    /*.forgotPasswordLink a:hover {
+        background: url("images/forgot-pass-active.gif") no-repeat scroll 0 0 transparent;
+        width: 350px;
+        height: 24px;
+        display: block;
+    }*/
+
+    .emailLink {
+        padding: 20px 0 0 26px;
+        position: absolute;
+        top:137px;
+    }
+
+    .emailLink a {
+        font-weight: bold;
+        color: #3E6E9D;
+        text-decoration: underline;
+    }
+
+    .w-member-loginForm .ym-columnar div.ym-fbox-text input,
+    .w-member-loginForm .columnar div.type-text input {
+        width: 54.2%;
+        border:0;
+        height:17px;
+        margin-left:127px;
+        margin-top: 3px;
+    }
+
+    .w-member-loginForm .columnar div.row_pass_word input {
+        margin-top: 9px;
+    }
+
+    .w-member-loginForm .ym-columnar div.ym-fbox-select select,
+    .w-member-loginForm .columnar div.type-select select {
+        width: 58%;
+    }
+
+    .w-member-loginForm .ym-columnar div.ym-fbox-check input,
+    .w-member-loginForm .columnar div.type-check input {
+        margin-left: 25%;
+    }
+
+    .ym-columnar .ym-fbox-text label,
+    .columnar .type-text label,
+    .ym-columnar .ym-fbox-select label,
+    .columnar .type-select label {
+        width: 25%;
+    }
+
+    .ym-form .ym-fbox-text input,
+    .yform .type-text input,
+    .ym-form .ym-fbox-text textarea,
+    .yform .type-text textarea,
+    .ym-form .ym-fbox-select select,
+    .yform .type-select select,
+    .ym-form select, .yform select,
+    .cpSearch select, .cpSearch input {
+        font-family: verdana;
+        font-size: 12px !important;
+        line-height: 1.5em;
+    }
+
+    .ym-form .ym-fbox-text input,
+    .yform .type-text input,
+    .ym-form .ym-fbox-text textarea,
+    .yform .type-text textarea,
+    .ym-form .ym-fbox-select select,
+    .yform .type-select select,
+    .ym-form select, .yform select,
+    .cpSearch select, .cpSearch input {
+        border-color: #000;
+        border-radius: 0;
+        border-style: solid;
+        border-width: 1px;
+        color: #6B6B6B;
+        font-family: verdana, 'Helvetica Neue',Arial,Helvetica,sans-serif;
+        font-size: 12px !important;
+        font-weight: bold;
+        padding: 3px;
+    }
+
+    .ym-form div.ym-fbox-text input,
+    .yform div.type-text input {
+        margin-top: 3px;
+        padding: 0.25em 3px;
+        font-weight:normal;
+    }
+
+    .homeMiddle .linkPortalWrapper,
+    .homeLeft .linkPortalWrapper {
+        background-color: transparent;
+        border:0;
+        margin-bottom: 0;
+    }
+
+    .homeMiddle div.header,
+    .homeLeft div.header {
+        background: none;
+        padding:0;
+    }
+
+    .linkPortalWrapper div.toggle.plus {
+        background-image: url("images/up.png") !important;
+        width: 28px;
+        height: 28px;
+        position: relative;
+        bottom: 35px;
+    }
+
+    .linkPortalWrapper div.toggle.minus {
+        background-image: url("images/down.png") !important;
+        width: 28px;
+        height: 28px;
+        position: relative;
+        bottom: 35px;
+    }
+
+    .productDetail .yform{
+        width: 63%;
+    }
+
+    .productDetail .yform,
+    .homeMiddle .yform,
+    .homeLeft .yform {
+        background-color: transparent;
+        border: 0;
+        padding: 0 10px;
+    }
+
+    .productDetail .ym-form .ym-fbox-text textarea,
+    .productDetail .yform .type-text textarea,
+    .homeMiddle .ym-form .ym-fbox-text textarea,
+    .homeMiddle .yform .type-text textarea,
+    .homeLeft .ym-form .ym-fbox-text textarea,
+    .homeLeft .yform .type-text textarea {
+        width: 96%;
+    }
+
+    .productDetail .btnSubmit{
+        width: 62px;
+    }
+
+    .productDetail .ym-g310 {
+        width: 348px;
+    }
+
+    .productDetail .btnSubmit,
+    .homeMiddle .btnSubmit,
+    .homeLeft .btnSubmit {
+        padding-top: 25px;
+    }
+
+    .productDetail .teacherCommentSubmit,
+    .homeMiddle .teacherCommentSubmit,
+    .homeLeft .teacherCommentSubmit {
+        padding-top: 25px;
+    }
+
+    .productDetail .teacherCommentSubmit input,
+    .homeMiddle .teacherCommentSubmit input,
+    .homeLeft .teacherCommentSubmit input,
+    .productDetail .btnSubmit input,
+    .homeMiddle .btnSubmit input,
+    .homeLeft .btnSubmit input{
+        cursor: pointer;
+        padding: 0 8px;
+    }
+
+    .productDetail .feedbackDisplay{
+        width:60%;
+    }
+
+    .productDetail .feedbackTitle,
+    .homeMiddle .feedbackTitle,
+    .homeLeft .feedbackTitle{
+        font-weight: bold;
+        color: #259ef4;
+        padding:10px 10px 0;
+        font-size: 15px !important;
+    }
+
+    .productDetail .feedbackContent,
+    .homeMiddle .feedbackContent{
+        margin:5px 10px 10px;
+        padding:5px;
+        width: 70%;
+    }
+
+    .feedbackPanel{
+        border: 1px solid #336699;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        margin-top: 10px;
+        padding-right: 10px;
+    }
+    .m-edukiteWeb_notice .productDetail {
+        margin: 20px 30px 0;
+        font-size: 12px !important;
+    }
+
+    .m-edukiteWeb_notice .productDetail h1 {
+        color: #457EB6;
+    }
+
+    .productDetail .carousel-caption {
+        position: static;
+        text-align: left;
+        color: #444444;
+        text-shadow: none;
+    }
+
+    .productDetail .carousel-control.left, .carousel-control.right {
+        background-image: none;
+    }
+
+    .productDetail .carousel-inner > .item > img {
+        margin: 0 auto;
+    }
+
+    .homeLeft .feedbackContent{
+        margin:5px 10px 10px;
+        padding:5px;
+        width: 70%;
+    }
+
+    .feedbackDate {
+        margin-left: 3%;
+        margin-top: 5px;
+        color: #259ef4;
+    }
+
+    .productDetail .feedbackDate {
+        margin-left: 58%;
+    }
+
+    .homeLeft .feedbackDate {
+        margin-left: 60%;
+    }
+
+    .feedbackName {
+        margin-top: 5px;
+    }
+
+    .blueText{
+        color: #259ef4;
+    }
+
+    .redText{
+        color: #CA0101;
+    }
+
+    .blueBorder{
+        border:1px solid #259ef4;
+    }
+
+    .redBorder{
+        border:1px solid #CA0101;
+    }
+
+    .homeLeft .youTube iframe {
+        width:287px !important;
+        height: 200px !important;
+    }
+
+    .m-webBasic_home .ui-dialog {
+        top: 100px !important;
+    }
+
+    .contactSchoolContent {
+        line-height: 24px;
+        font-size: 15px !important;
+    }
+
+    .summaryLink {
+        display: none;
+        text-decoration: underline;
+        font-weight: bold;
+        margin-top:25px;
+    }
+
+    .parentProfile{
+        position:absolute;
+        top:144px;
+        left: 388px;
+    }
+
+    .parentProfile a{
+        background: url("images/parent_profile.png") no-repeat scroll 0 0 transparent;
+        padding:5px 12px;
+        color: transparent;
+    }
+
+.unreadHomework{
+    background: #fdff41 url("images/unread_notice_star.png") no-repeat scroll 4px 4px;
+    border-radius: 0;
+    border :1px solid #0c64c0;
+    font-family: helvetica;
+    font-weight: bold;
+    font-size: 12px !important;
+    padding: 3px 5px 3px 21px;
+    margin-right:6px;
+    margin-top: -6px;
+}
+
+    /*.leftSlug {
+        background: url("images/left-panel-slug.png") no-repeat scroll 0 0 transparent;
+    }*/
+
+    .leftSlug {
+        margin-top: 10px;
+        border-bottom: 4px solid #0c64c0;
+        height: 51px;
+        width: 326px;
+    }
+
+    .middleSlug {
+        /*background: url("images/middle-panel-slug.png") no-repeat scroll 0 0 transparent;*/
+        height: 81px;
+        width: 392px;
+        margin-top: 10px;
+    }
+
+    .middle_slug {
+        /*background: url("images/middle_slug.png") no-repeat scroll 0 0 transparent;*/
+        /*height: 48px;*/
+        margin-top: 10px;
+        border-bottom: 4px solid #0c64c0;
+    }
+
+    .middleBorder{
+        margin-top: 10px;
+        border-bottom: 4px solid #0c64c0;
+    }
+
+    .rightSlug {
+        background: url("images/gallery.png") no-repeat scroll 0 0 transparent;
+        height: 45px;
+        margin-left: 3px;
+        width: 145px;
+    }
+
+    .rightPanelTitle {
+        color: white;
+        font-family: helvetica;
+        font-size: 16px !important;
+        padding-top: 11px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .dailyCalendar a{
+        background: url("images/activity_calendar.png") no-repeat scroll 0 0 transparent;
+        display:block;
+        margin:0 0 0 23px;
+        width: 125px;
+        height: 41px;
+        color: transparent;
+    }
+
+    /*.dailyCalendar a:hover,
+    .dailyCalendar a.active {
+        background: url("images/activity_calendar_hover.png") no-repeat scroll 0 0 transparent;
+    }*/
+
+    .task a{
+        background: url("images/homework.png") no-repeat scroll 0 0 transparent;
+        display:block;
+        margin:0px 0 0 36px;
+        width: 135px;
+        height: 41px;
+        font-family: helvetica;
+        font-weight: bold;
+        font-size: 18px !important;
+        color: #000000;
+    }
+
+    /*.task a:hover,
+    .task a.active {
+        background: url("images/homework_hover.png") no-repeat scroll 0 0 transparent;
+    }*/
+
+    .learningJourney {
+        background: url("images/learning_journey.png") no-repeat scroll 0 0 transparent;
+        margin:0px 0 0 59px !important;
+        width: 260px;
+        height: 47px;
+    }
+
+    .news a{
+        background: url("images/news_btn.png") no-repeat scroll 0 0 transparent;
+        display:block;
+        margin:0px 0 0 40px;
+        width: 138px;
+        height: 41px;
+        font-family: helvetica;
+        font-weight: bold;
+        font-size: 18px !important;
+        color: #000000;
+    }
+
+    /*.news a:hover,
+    .news a.active {
+        background: url("images/news_btn_hover.png") no-repeat scroll 0 0 transparent;
+    }*/
+
+    .dailyNotice a{
+        background: url("images/class_news.png") no-repeat scroll 0 0 transparent;
+        display:block;
+        margin: 0 0 0 10px;
+        width: 142px;
+        height: 41px;
+        color: transparent;
+    }
+
+    /*.dailyNotice a:hover,
+    .dailyNotice a.active {
+        background: url("images/class_news_hover.png") no-repeat scroll 0 0 transparent;
+    }*/
+
+    .dailyCalendarShowHide{
+        display: block;
+    }
+
+    .dailyDairyTitle {
+        background: url("images/daily_diary.png") no-repeat scroll 0 0 transparent !important;
+        width: 250px !important;
+        height: 47px !important;
+        margin:0 0 0 32px !important;
+    }
+
+    .staffNews {
+        background: transparent url("/cmspilotv30/CP/www/themes/Kite/images/staff_news.png") no-repeat scroll 0 0;
+        color: transparent;
+        cursor: pointer;
+        font-family: helvetica;
+        font-size: 0;
+        height: 47px;
+        margin: 0 0 0 93px;
+        text-align: center;
+        width: 220px;
+    }
+
+    .staffCalendar a {
+        background: transparent url("/cmspilotv30/CP/www/themes/Kite/images/staff_calendar.png") no-repeat scroll 0 0;
+        color: transparent;
+        cursor: pointer;
+        display: block;
+        font-family: helvetica;
+        font-size: 0;
+        height: 47px;
+        margin: 0 0 0 48px;
+        text-align: center;
+        text-decoration: none;
+        width: 220px;
+    }
+
+    .staffCalendarTitle {
+        height: 54px;
+        margin: 0 0 0 25px !important;
+        width: 124px;
+    }
+
+    .centerPanelTitle {
+        color: transparent;
+        font-size: 14px !important;
+        text-align: center;
+    }
+
+    /*.centerPanelTitle {
+        border-bottom: 4px solid #0c64c0;
+        width: 400px;
+    }*/
+
+    .filter .type-select{
+        margin-top:10px;
+        margin-left: 112px;
+    }
+
+    .m-webBasic_home .achievementList, .productDetail .achievementList{
+        border:1px solid #336699;
+        padding:10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+
+    .m-webBasic_home .homeMiddle .achievementTitle {
+        float: left;
+    }
+
+    .popUpContent {
+        padding: 0px 20px;
+        margin-bottom:25px;
+    }
+
+    .popUpContent h1 {
+        color: #3C7BBC;
+        font-size: 30px;
+        font-family: Verdana;
+    }
+
+    .popUpContent .w-media-imagesSlider {
+        margin: 0 0 0 35px;
+    }
+
+    .m-webBasic_home #detail.ui-dialog {
+        background: url("images/pop-up-frame.png") no-repeat scroll 0 0 #fff;
+        width: 757px !important;
+        height: 607px !important;
+        top: 55px !important;
+        border:0;
+    }
+
+    #detail.ui-dialog #dialog {
+        width: 727px !important;
+        height: 489px !important;
+    }
+
+    #detail.ui-dialog .ui-dialog-content {
+        margin-top: 18px;
+    }
+
+    #detail .ui-widget-content {
+        border: 0;
+    }
+
+    #detail.ui-dialog .ui-dialog-buttonpane {
+        padding: 0;
+    }
+
+    #detail .ui-widget-header {
+        background: none;
+        border: 0;
+    }
+
+    #detail.ui-dialog .ui-dialog-buttonpane button {
+        cursor: pointer;
+        margin: 0;
+        position: absolute;
+        right: 280px;
+        top: 26px;
+    }
+
+    #detail .ui-state-default, #detail .ui-widget-content .ui-state-default,
+    #detail .ui-widget-header .ui-state-default {
+        background: url("images/close.png") repeat-x scroll 50% 50% #E6E6E6;
+        width: 202px;
+        height: 34px;
+    }
+
+    #detail .ui-button-text-only .ui-button-text {
+        display: none;
+    }
+
+    #detail.ui-dialog .ui-dialog-titlebar {
+        padding: 2em 1em;
+    }
+
+    #detail.ui-dialog .ui-dialog-titlebar-close span {
+        margin: 0;
+    }
+
+    #detail .ui-widget-header .ui-icon {
+        background: url("images/close-icon.jpg") no-repeat scroll 0 0 transparent;
+        width: 20px;
+        height: 20px;
+    }
+
+    #detail.ui-dialog .ui-dialog-titlebar-close {
+        height: 20px;
+        margin: 0 20px 0;
+        padding: 1px;
+        position: absolute;
+        right: 0.3em;
+        top: 50%;
+        width: 20px;
+    }
+
+    .popcontents .galleria-info-text {
+        background-color: #ffffff;
+        display: block !important;
+        padding: 0px;
+    }
+
+    .popcontents .galleria-info-description {
+        display: none !important;
+    }
+
+    .popcontents .galleria-info-title {
+        color: #222222;
+        font-weight: normal;
+        height: 305px;
+        overflow: auto;
+        font-family: Verdana;
+        padding-right: 10px;
+    }
+
+    .m-webBasic_home .popcontents .galleria-image-nav-left {
+        left: 0 !important;
+        opacity: 1;
+        top: 0;
+    }
+
+    .m-webBasic_home .popcontents .galleria-image-nav-right {
+        left: auto;
+        opacity: 1;
+        right: -30px !important;
+        top: 0;
+        z-index: 2;
+    }
+
+    .m-webBasic_home .popUpContent .galleria-info {
+        display: block;
+        position: absolute;
+        left:0px;
+        top: 475px;
+        width: 100%;
+    }
+
+    .m-webBasic_home .popUpContent .galleria-container {
+        min-height:780px;
+    }
+
+    .m-webBasic_home .popUpContent .galleria-container img {
+        top: 0 !important;
+    }
+
+    .m-webBasic_home .popUpContent .galleria-image-nav {
+        height: 62px;
+        left: 0;
+        margin-top: 0px;
+        position: absolute;
+        top: 25%;
+        width: 100%;
+    }
+
+    .m-webBasic_home .popUpContent .galleria-image-nav-left {
+        background: url("images/ArrowL.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .m-webBasic_home .popUpContent .galleria-image-nav-right {
+        background: url("images/ArrowR.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .facebookPanel{
+        position: absolute;
+        top:25px;
+        right: 60px;
+    }
+
+    .facebookPanel iframe{
+        width:162px !important;
+    }
+
+    .m-edukiteWeb_task.v-detail .linkPortalWrapper div.header {
+        background: url("../images/body/header_bg.jpg") repeat scroll 0 0 #EFEFEF;
+        color: #6B6767;
+        font-weight: bold;
+        height: 30px;
+        margin-top: 3px;
+        padding-top: 1.5em;
+        width:217px;
+    }
+
+    .m-edukiteWeb_task.v-detail .linkPortalWrapper div.toggle.minus,
+    .m-edukiteWeb_task.v-detail .linkPortalWrapper div.toggle.plus {
+        bottom:7px;
+    }
+
+    .m-edukiteWeb_task.v-detail #portalForm textarea {
+        width:230px;
+        border: 1px solid #000000;
+        min-height: 140px;
+        margin-bottom: 10px;
+        font-size: 11px !important;
+        font-family: Verdana;
+    }
+
+    .m-edukiteWeb_task.v-detail .mediaFilesDisplay td.caption {
+        font-size: 9px !important;
+    }
+
+    .m-edukiteWeb_task.v-detail .linkPortalWrapper a.removeItem {
+        background: url("images/delete-icon.png") no-repeat scroll 0 0 transparent;
+        width: 28px;
+        height: 28px;
+    }
+
+    .m-edukiteWeb_task.v-detail .linkPortalWrapper a:hover.removeItem {
+        background: url("images/delete-hover.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .m-edukiteWeb_task.v-detail .linkPortalWrapper a.saveItem {
+        background: url("images/pic-save.png") no-repeat scroll 0 0 transparent;
+        width: 28px;
+        height: 28px;
+    }
+
+    .m-edukiteWeb_task.v-detail .linkPortalWrapper a:hover.saveItem {
+        background: url("images/pic-save-hover.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .m-edukiteWeb_task.v-detail .linkPortalWrapper a.editItem {
+        background: url("images/pic-edit.png") no-repeat scroll 0 0 transparent;
+        width: 28px;
+        height: 28px;
+    }
+
+    .m-edukiteWeb_task.v-detail .linkPortalWrapper a:hover.editItem {
+        background: url("images/pic-edit-hover.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .m-edukiteWeb_task.v-detail .uploadButton img {
+        margin-left: 80px;
+        cursor: pointer;
+    }
+
+    .m-edukiteWeb_task.v-detail .uploadTask {
+        display: none;
+        margin-top: 75px;
+    }
+
+    .m-edukiteWeb_task.v-detail .yourTask .inner ,
+    .m-edukiteWeb_task.v-detail .myHomework .inner {
+        padding:0 10px 10px;
+    }
+
+    .m-edukiteWeb_task.v-detail .yourTask .inner {
+        background: #87D5ED;
+        min-height: 470px;
+    }
+
+    .m-edukiteWeb_task.v-detail .uploadTask .type-button {
+        position: absolute;
+        top: 174px;
+        left: 355px;
+    }
+
+    .m-edukiteWeb_task.v-detail .uploadTask #reload {
+        position: absolute;
+        top: 162px;
+        left: 383px;
+    }
+
+    .m-edukiteWeb_task.v-detail .uploadTask .type-button input[type="submit"]{
+        background: url("images/submit.png") no-repeat scroll 0 0 transparent;
+        border:0;
+        width: 125px;
+        height: 33px;
+    }
+
+    .m-edukiteWeb_task.v-detail .myChat .chatContent{
+        background: none repeat scroll 0 0 #EEEEEE;
+        margin: 10px 0;
+        padding: 10px 10px 0;
+        width: 188px;
+    }
+
+    .m-edukiteWeb_task.v-detail .myChat .chatContentblue{
+        background: none repeat scroll 0 0 #87D5ED;
+        margin: 10px 0;
+        padding: 10px 10px 0;
+        width: 188px;
+    }
+
+    .m-edukiteWeb_task.v-detail .myChat .date{
+        font-size: 10px !important;
+    }
+
+    .m-edukiteWeb_task.v-detail .myHomework .homeworkTeacherView {
+        border-bottom:1px solid #000000;
+    }
+
+
+    .ui-widget-header {
+        background: none repeat-x scroll 50% 50% #EFEFEF;
+        border: 0;
+        color: #222222;
+        font-weight: bold;
+        border-bottom: 2px solid #A1A1A1;
+        border-radius: 0;
+    }
+
+    .ui-dialog .ui-dialog-titlebar {
+        padding: 1em;
+        position: relative;
+    }
+
+    .ui-corner-all {
+        border-radius: 10px;
+    }
+
+    .ui-widget-content {
+        border: 2px solid #AAAAAA;
+        color: #222222;
+    }
+
+    .ui-dialog .ui-dialog-buttonpane {
+        border-width: 2px 0 0;
+    }
+
+    .ui-dialog .ui-dialog-buttonpane button {
+        border-radius: 4px;
+        margin: 0.5em 0.4em 0.5em 0;
+    }
+
+    .uploadify-button {
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #2684D5;
+        border-radius: 4px;
+        color: #2684D5;
+        font: bold 12px Arial,Helvetica,sans-serif;
+        text-align: center;
+        text-shadow: 0 0px 0 rgba(0, 0, 0, 0.25);
+        width: 100%;
+        padding: 3px 15px;
+    }
+
+    .uploadify {
+        width: 220px !important;
+    }
+
+    .uploadify:hover .uploadify-button {
+        background: none;
+    }
+
+    .uploadWrap .uploadFiles {
+        border-radius: 4px;
+        border: 1px solid red;
+        padding: 5px 4px;
+        font: bold 12px Arial,Helvetica,sans-serif;
+        float:right;
+    }
+
+    .uploadWrap .uploadFiles a.uploadQueue {
+        padding: 5px 15px;
+        color: #2684D5 !important;
+    }
+
+    .ui-widget-content .ui-state-default {
+        background: none repeat-x scroll 50% 50% #fff;
+        border: 1px solid #2684D5;
+        color: #2684D5;
+        font-weight: bold;
+    }
+
+    /*Below styles used for picture panel uplodifive*/
+    .uploadifive-button {
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #2684D5;
+        border-radius: 4px;
+        color: #2684D5;
+        font: bold 12px Arial,Helvetica,sans-serif;
+        text-align: center;
+        text-shadow: 0 0px 0 rgba(0, 0, 0, 0.25);
+        width: 100%;
+        padding: 0px 15px;
+        height: 25px !important;
+        line-height: 25px !important;
+    }
+
+    .uploadWrap .uploadFiles a.uploadifiveQueue {
+        padding: 5px 15px;
+        color: red !important;
+        text-transform: uppercase;
+    }
+
+    .postcommentCheckBox label,
+    .postcommentCheckBox input{
+        float:left;
+        padding-left: 4px;
+        padding-top: 10px;
+        height: 32px;
+    }
+
+    .postcommentCheckBox label{
+        width:80%;
+    }
+
+    .postcommentCheckBox input[type="checkbox"]{
+        height: 36px;
+        width:10%;
+    }
+
+    .postcommentSubmit {
+        padding-top: 10px;
+    }
+
+    .yform .PostAddComment.type-text textarea{
+        height: 140px;
+        width:95%;
+    }
+
+    .addCommentNote h6{
+        color: #666;
+        padding-top: 8px;
+    }
+
+    .addCommentRemove{
+        display: none;
+    }
+
+    .archiveLink {
+        text-align: center;
+        position: absolute;
+        top: 143px;
+        left:505px;
+    }
+
+    .archiveLink a{
+        font-weight: bold;
+        font-size: 13px !important;
+        color: transparent;
+        font-family: helvetica;
+    }
+
+    .archiveLink a.archive{
+        padding:4px 6px;
+        background: url("images/view_archive.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .archiveLink a.active{
+        padding:4px 6px;
+        background: url("images/active_records.png") no-repeat scroll 0 0 transparent;
+        color: #000000;
+    }
+
+    .parentFeedbackLink {
+        text-align: center;
+        margin: 15px 0 8px 4px;
+    }
+
+    .parentFeedbackLink a{
+        font-weight: bold;
+        font-size: 13px !important;
+        color: #000000;
+        font-family: helvetica;
+    }
+
+    .parentFeedbackLink a.FeedbackButton{
+        padding:9px;
+        background: url("images/parent_feedback.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .parentFeedbackDisplay {
+        max-height: 183px;
+        overflow:auto;
+        border-bottom: 1px solid #336699;
+        font-size: 11px !important;
+    }
+
+    .parentFeedbackDisplay table.thinlist thead th{
+        color:#000000;
+        background: none repeat scroll 0 0 #92D270;
+    }
+
+    .parentFeedbackDisplay tbody td a{
+        color:#9D234D;
+    }
+
+    .m-edukiteWeb_notice .productDetail .childName {
+        color: #FF6828;
+        margin-bottom: 10px;
+        font-size: 25px !important;
+        float: left;
+    }
+
+    .feedbackHeading h1{
+        color:#FF6828;
+    }
+
+    .galleryDownloadPdf{
+        padding: 10px 2px 5px;
+    }
+
+    .galleryDownloadPdf{
+        background: url("images/DownloadasPdf.png") no-repeat scroll 0 0 transparent;
+        height: 45px;
+        width: 148px;
+        float: right;
+    }
+
+    .galleryDownloadPdf a{
+        display: block;
+        color: transparent;
+    }
+
+    .rt-reset-password .page_margins {
+        width: 405px;
+    }
+
+    #resetPasswordForm {
+        background: url("images/reset_password_bg.png") no-repeat scroll 0 0 transparent !important;
+        width: 405px;
+        height: 513px;
+        border: 0;
+    }
+
+    #resetPasswordForm fieldset{
+        border:0;
+        background: none;
+        margin-top: 215px;
+    }
+
+    #resetPasswordForm div.type-text input{
+        width: 58.8%;
+    }
+
+    #resetPasswordForm .type-text label{
+        width: 34%;
+        color: #000000;
+    }
+
+    #resetPasswordForm .type-button{
+        margin-left: 34%;
+    }
+
+    .resetPasswordText {
+        margin-bottom: 40px;
+        color: #000000;
+    }
+
+    .dailyActivity .yform{
+        padding: 0;
+    }
+
+    .dailyActivity .yform fieldset{
+        padding:0;
+        background: none;
+        border:0;
+    }
+
+    .dailyActivity .yform div.type-text input{
+        padding: 0.25em 6px;
+    }
+
+    .dailyActivity .columnar .type-text label{
+        margin-right: 5px;
+    }
+
+    .dailyActivity #dailyActivityFormEdit label {
+        font-weight: bold;
+        width:30% !important;
+    }
+
+    .dailyActivity #dailyActivityFormEdit .row_notes label {
+        display:none;
+    }
+
+    .dailyActivity #dailyActivityFormEdit .row_notes .txt {
+        border: 1px solid #000000;
+        padding: 5px;
+    }
+
+    .unreadHomework{
+        background-color: #FFFF99;
+        border-radius: 5px 5px 5px 5px;
+        padding: 5px 10px;
+        text-align: center;
+        color:red;
+        margin-right: 47px;
+    }
+
+}
+@media (max-width: 480px) {
+    body.rt-login{
+        padding-top: 0;
+    }
+    .rt-login .page_margins{
+        width: 413px;
+    }
+    .page_margins{
+        width: 320px;
+    }
+    .rt-login #main{
+        margin-top: 20px;
+    }
+    .rt-login .col-md-9, .rt-login .col-xs-12{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .rt-login #loginForm{
+        margin-left: -5px;
+    }
+
+    .rt-login #loginForm {
+        background: url("images/login/plate_mobile.png") no-repeat scroll 0 0 transparent;
+        width: 320px;
+        height: 458px;
+        padding: 10px;
+    }
+    .rt-login .loginType {
+        width: 328px;
+        margin: 148px 25px 3px;
+        height: 32px;
+    }
+    .w-member-loginForm .ym-columnar div.ym-fbox-text input,
+    .w-member-loginForm .columnar div.type-text input {
+        width: 45.2%;
+        border:0;
+        height:18px;
+        margin-left:96px;
+        margin-top: 3px;
+    }
+    .w-member-loginForm .columnar div.row_pass_word input {
+        margin-top: 5px;
+    }
+    .saveLogin{
+        position: absolute;
+        top:75px;
+        left: 0px;
+    }
+    .resetPasswordLink{
+        position: absolute;
+        top:105px;
+        left: 17px;
+    }
+    .emailLink {
+        padding: 20px 0 0 6px;
+        position: absolute;
+        top:108px;
+    }
+
+    .rt-login .ym-form .ym-fbox-button input[type="submit"],
+    .rt-login .yform .type-button input[type="submit"] {
+        background: url("images/login/enterA_mobile.png") no-repeat scroll 0 0 transparent;
+        height: 31px;
+        width: 60px;
+        border: 0;
+        margin-top: 15px;
+        margin-right: 95px;
+    }
+
+    .rt-login .yform .type-button input[type="submit"]:hover {
+        background: url("images/login/enterB_mobile.png") no-repeat scroll 0 0 transparent;
+        height: 31px;
+        width: 60px;
+    }
+    .rt-login #loginForm .archiveEnter {
+        width: 60px;
+        margin: 65px 8px 0px 0px;
+        float:right;
+    }
+    .rt-login .yform fieldset {
+        background: none;
+        width: 373px;
+        padding: 10px 0 17px 10px;
+        border: 0;
+    }
+    
+}
+/*.col-md-4 {
+    padding: 0;
+    width: 36.667%;
+}
+
+.col-md-6 {
+    padding: 0;
+    width: 46.65%;
+}
+
+.col-md-2 {
+    padding: 0;
+}*/
+
+.col-md-4, .col-md-6, .col-md-2{
+    padding: 0;
+}

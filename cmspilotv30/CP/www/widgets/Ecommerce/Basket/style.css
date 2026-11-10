@@ -1,0 +1,59 @@
+@media all
+{
+    .w-ecommerce-basket table th, .w-ecommerce-basket table td {
+        border:1px dotted #ccc;
+    }
+
+    .w-ecommerce-basket table .picture {
+        width:125px;
+        text-align: center;
+    }
+
+    .w-ecommerce-basket table .qty {
+        width:60px;
+        text-align: center;
+    }
+
+    .w-ecommerce-basket table .unit, .w-ecommerce-basket table .total {
+        width:100px;
+        text-align: right;
+    }
+
+    .w-ecommerce-basket td.title .notes {
+        margin-top: 10px;
+        font-size: 0.85em;
+        font-style: italic;
+    }
+
+    .w-ecommerce-basket td.shippingChargeLbl select {
+        font-size: 12px;
+        padding: 3px;
+        margin: 0 0 0 5px;
+        width: 175px;
+    }
+
+    .proceedToGateway {
+        text-align: center;
+        margin: 50px 0 0 0;
+    }
+    
+    #frmPromoCode div.type-text input {
+        width: 100px;
+    }
+    
+    #frmPromoCode div.type-text label {
+        width: 115px;
+    }
+    
+    #frmPromoCode .type-text.row_promo_code .message {
+        margin-left: 0 !important;
+    }
+
+    .w-ecommerce-basket .discountLbl #enterPromoCode {
+        margin-left: 10px;
+    }
+    
+    .w-ecommerce-basket #promoCodeAppliedWrapper {
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_EzTrade_RfqComparison_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

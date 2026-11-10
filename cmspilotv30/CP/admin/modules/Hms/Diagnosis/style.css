@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@media all
+{
+	.toggle {
+        display:block !important;
+    }
+
+    .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .c50l,
+    .c50r {
+        width: 100%;
+    }
+
+    .ym-columnar .ym-fbox-text label,
+    .ym-columnar .ym-fbox-select label,
+    #frmEdit .type-text label,
+    #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .linkPortalWrapper div.header,
+    .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+    
+}

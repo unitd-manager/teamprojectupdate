@@ -1,0 +1,350 @@
+@charset "UTF-8";
+
+@media all
+{
+    body {
+        background:#D2FA9A url('images/bg.jpg') no-repeat scroll top center;
+    }
+
+    /*--- Links ----------------------------------------------------------------------------------------- */
+    a {color: #4D87C7; background:transparent; text-decoration:none; outline: none;}
+    a:visited  {color: #4D87C7; }
+
+    a:focus,
+    a:hover,
+    a:active {color:#182E7A; text-decoration:underline; }
+
+    .page_margins {
+        background: transparent;
+        width: 1000px;
+    }
+
+    #header {
+        color: #000;
+        background:transparent url('images/logo.png') no-repeat scroll 0 0;
+        padding: 0;
+        height:122px;
+    }
+
+    #logo {
+        display:block;
+        width:225px;
+        height:130px;
+        position:absolute;
+        top:0;
+        left:0;
+        outline: none;
+    }
+
+    #nav {
+        position: absolute;
+        top:70px;
+        right:0;
+        border:0;
+    }
+
+    #main {
+        background:transparent url('images/main-bg.png') repeat scroll 0 0;
+        min-height: 450px;
+    }
+
+    .rt-home #main {
+        background:transparent none;
+    }
+
+    #col1 {
+        width: 225px;
+    }
+
+    #footer {
+        background: transparent;
+    }
+
+    .rt-home #footer {
+        padding:0 10px;
+    }
+
+    .hidecol2 #col3 {
+        margin-left: 225px;
+    }
+}
+
+/**** Login Panel ****/
+@media all
+{
+	.loginInfoText, .btnViewCart, .btnStockist {
+		position:absolute;
+		top:5px;
+        color: #7e7e7e;
+        padding:5px 10px;
+        background: transparent url("images/nav-bg.png") no-repeat scroll center center;
+		font-weight: bold;
+	}
+
+    .loginInfoText {
+		left:330px;
+    }
+    
+	.loginInfoText a {
+	    color: #7e7e7e;
+	}
+
+	.loginInfoText a.btnLogin, .btnViewCart a, .btnStockist a{
+		padding: 0 3px 0 29px;
+		color: #7e7e7e;
+		font-size: 1em;
+		line-height: 24px;
+		display: block;
+	}
+    
+    .loginInfoText a.btnLogin {
+        background: transparent url('images/lock.png') no-repeat scroll 0 0;
+    }
+    
+	.loginInfoText a.btnLogin:hover, .btnViewCart a:hover, .btnStockist a:hover {
+		text-decoration: none;
+		color: #a4a4a4;
+	}
+
+	.btnViewCart {
+		right:0;
+    }
+
+	.btnViewCart a {
+        background: transparent url('images/cart.png') no-repeat scroll 0 0;
+	}
+
+	.btnStockist {
+		left:575px;
+    }
+
+	.btnStockist a {
+        background: transparent url('images/thumb.png') no-repeat scroll 0 0;
+	}
+}
+
+@media all
+{
+    .hlist {
+        background:transparent url('images/nav-bg.png') no-repeat scroll 0 0;
+        border:0;
+        width:667px;
+        height:53px;
+    }
+
+    .hlist ul {
+        margin:0;
+        padding:0;
+    }
+
+    .hlist ul li {
+        border:0;
+        background:transparent url('images/nav-seperator.png') no-repeat scroll top right;
+    }
+
+    .hlist ul li a {
+        background:transparent;
+        color:#333;
+        line-height: 2.75em;
+        font-size: 14px;
+        padding: 0.5em 1.18em;
+    }
+
+    .hlist ul li.active {
+        border:0;
+    }
+
+    .hlist ul li.active a, .hlist ul li a:hover {
+        color: #97b005;
+    }
+}
+
+@media all
+{
+    #col1_content {
+        border:2px solid #cde968;
+        padding: 0;
+        margin: 10px;
+        min-height: 200px;
+    }
+
+    /* title */
+    h6.vlist {
+        font-weight:bold;
+        padding:3px 0px 3px 10%;
+        margin:0;
+        background-color:#97b005;
+        opacity: 0.6;
+        filter: alpha(opacity = 60);
+        color: #fff;
+        font-size: 1.3em;
+    }
+
+    .vlist ul {
+    }
+
+    .vlist ul a {
+        border-bottom:1px #ddd solid;
+    }
+
+    .vlist ul a {
+        color:#444;
+    }
+
+    /* active list element */
+    .vlist ul li.active > a:first-child, .vlist ul li a:hover{
+        color:#000;
+        background-color:#cde185;
+        opacity: 0.5;
+        filter: alpha(opacity = 50);
+     }
+
+    .vlist ul li.active ul li.active a{
+        background-color:#cde185;
+    }
+}
+
+@media all
+{
+    .rt-home #main {padding:0;}
+    .rt-home #col3_content {padding:0; }
+
+    .rt-home .bannerWrapper {
+        background:transparent url('images/slideshow-bg.png') no-repeat scroll 0 0;
+    }
+
+    .rt-home #s3Slider {
+        width: 559px;
+    }
+
+    .rt-home #s3Slider #s3SliderContent {
+        width: 559px;
+    }
+    
+    .rt-home #s3Slider .s3SliderImage span {
+        display: none !important;
+    }
+
+    .rt-home .homeBottom {
+        background:transparent url('images/content-bg.png') no-repeat scroll top center;
+        height: 450px;
+        margin-top: 10px;
+        padding: 10px 8px 0 20px;
+        overflow: hidden;
+    }
+
+    .rt-home .homeBottom .col1 {
+        width:34.5%;
+    }
+
+    .rt-home .homeBottom .col2 {
+        width:41.7%;
+    }
+
+    .rt-home .homeBottom .col3 {
+        width:23.8%;
+    }
+
+    .rt-home .homeBottom h1 {
+        color: #97b005;
+        line-height: 45px;
+        padding-top:10px;
+        font-size: 175%;
+    }
+
+    .rt-home .homeBottom .col1 h1 {
+        background:transparent url('images/home-btm-col1-icon.png') no-repeat scroll 0 0;
+        padding-left:45px;
+    }
+
+    .rt-home .homeBottom .col1 .subcl {
+        border-right: 1px dotted #ccc;
+        padding-right: 20px;
+    }
+
+    .rt-home .homeBottom .col2 h1 {
+        background:transparent url('images/home-btm-col2-icon.png') no-repeat scroll 0 0;
+        padding-left:48px;
+    }
+
+    .rt-home .homeBottom .col3 h1 {
+        background:transparent url('images/home-btm-col3-icon.png') no-repeat scroll 0 24px;
+        padding-left:40px;
+    }
+
+    .rt-home .homeBottom .col2 .subcl {
+        padding-left: 20px;
+    }
+
+    .rt-home .homeBottom .w-ecommerce-productRecord ul li {
+        background:#b7f388 url('images/image.jpg') no-repeat scroll center center;
+        width: 164px;
+        height: 126px;
+        border: 0;
+        line-height: 122px;
+        padding: 0;
+        margin: 0 15px 15px 0;
+    }
+    
+    .rt-home .homeBottom .col3 .w-content-record li {
+        background:transparent url('images/quote-top.png') no-repeat scroll 0 0;
+        padding: 10px 0 0 20px;
+        margin: 20px 0 0 5px;
+    }
+
+    .rt-home .homeBottom .col3 .w-content-record li .desc {
+        background:transparent url('images/quote-btm.png') no-repeat scroll bottom right;
+        margin-right: 8px;
+        padding-bottom: 1px;
+    }
+}
+
+/*************** PRODUCT ***********/
+@media all
+{
+    .m-ecommerce_product .productList ul {
+        overflow: hidden;
+    }
+    
+    .m-ecommerce_product .productList ul li {
+        width: 350px;
+        margin: 0 45px 20px 0;
+    }
+
+    .m-ecommerce_product .productList ul li .inner {
+        height: 230px;
+        overflow: hidden;
+        position: relative;
+        background: #4c2216;
+    }
+
+    .m-ecommerce_product .productList ul li .inner .pic{
+        line-height: auto;
+    }
+
+    .m-ecommerce_product .productList ul li .inner .pic img {
+        vertical-align: middle;
+        max-width: 340px;
+    }
+
+    .m-ecommerce_product .productList ul li .inner .title{
+        position: absolute;
+        bottom:0;
+        width: 326px;
+        opacity: 0.8;
+        height: auto;
+    }
+
+    .w-ecommerce-productRecord ul li img {
+        max-height: 90px;
+    }
+}
+
+/*************** Forms ***********/
+@media all
+{
+    .yform {
+        opacity: 0.7;
+        filter: alpha(opacity = 70);
+    }
+}

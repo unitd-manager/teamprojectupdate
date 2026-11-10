@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-lawNews_reporter .reporterList ul {
+        overflow: hidden;
+    }
+    
+    .m-lawNews_reporter .reporterList img {
+        float: right;
+    }
+    
+    .m-lawNews_reporter .reporterList ul.qAndA li{
+        float: left;
+        padding:10px;
+        width: 130px;
+        height: 100px;
+    }
+    
+    .m-lawNews_reporter .reporterList ul.qAndA li img{
+        float: none;
+    }
+    
+    .m-lawNews_reporter .reporterList .title {
+        font-weight: bold;
+    }
+}

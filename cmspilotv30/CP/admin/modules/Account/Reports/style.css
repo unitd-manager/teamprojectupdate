@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+.m-account_reports #reportsList {
+    background: #F5F5F5;
+    padding:15px;
+}
+
+.m-account_reports #reportsList .subcr{
+    margin-right: 0;
+}
+
+.m-account_reports #reportsList a.button {
+    width:75%;
+    font-size: 17px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.m-account_reports .report-wrapper h1 {
+    text-shadow: 1px 1px 2px #665D5D;
+    filter: dropshadow(color=#665D5D, offx=1, offy=1);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.m-account_reports table.search td select{
+    width: 300px;
+    max-width: 300px;
+    font-size: 1.5em;
+}
+
+.m-account_reports table.search td input {
+}
+
+#reportSearchPanel {
+    background: #ccc;
+    padding: 5px;
+    display: none;
+    margin: 5px 0 5px 0;
+    overflow: hidden;
+}
+
+#reportSearchPanel table {
+    float: right;
+}
+
+optgroup option {
+    background: #fff;
+    padding-left: 10px;
+}
+
+
+#networthSummary {
+    margin: 25px auto;
+}
+
+#networthSummary th, #networthSummary td {
+    font-size: 1.7em;
+}
+
+#networthSummary td {
+}
+
+#networthSummary .netWorth {
+    margin: 50px auto 0 auto;
+    font-size: 3em;
+    width: 300px;
+    padding: 25px;
+    text-align: center;
+    -moz-box-shadow:5px 5px 5px #ccc;
+    -webkit-box-shadow:10px 10px 5px #ccc;
+    box-shadow:5px 5px 5px #ccc;
+    border: 1px solid #ccc;
+}
+
+.m-account_reports .actBtns {
+}
+
+#chart_div {
+    min-height: 400px;
+}

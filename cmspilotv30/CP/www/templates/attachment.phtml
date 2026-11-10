@@ -1,0 +1,10 @@
+{% if attArr|length > 0 %} 
+    <ul class='unstyled'>
+        {% for row in attArr %}
+            {% set caption = (row.caption != '') ?  row.caption : row.actual_file_name %}
+            <li>
+                <a href='{{ row.file_normal }}'><i class='icon icon-download'></i> {{ caption }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

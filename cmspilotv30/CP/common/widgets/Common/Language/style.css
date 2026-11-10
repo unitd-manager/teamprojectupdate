@@ -1,0 +1,83 @@
+@media all
+{
+    .w-common-language {
+        left:390px;
+        top:7px
+    }
+
+    .w-common-language ul li {
+        display:inline;
+        float:left;
+    }
+
+    .w-common-language ul li a {
+        display:block;
+        font-weight:bold;
+        text-decoration:none;
+        padding:0 5px 0 5px;
+        border-right: 1px solid #ccc;
+        line-height:1.2em;
+    }
+
+    .w-common-language ul li a:hover, .w-common-language ul li.active a {
+        color: #ED1C24;
+    }
+
+    .w-common-language ul li.first a {
+        padding-left:0;
+    }
+
+    .w-common-language ul li.last a {
+        border-right:0;
+    }
+}
+/***************** Show As Menu ****************/
+@media all
+{
+    .w-common-language .language_menu {
+        height: 25px;
+        width: 150px;
+    }
+
+    .w-common-language .language_menu .title {
+        cursor: pointer;
+        background: url("images/arrow-down.png") no-repeat scroll center right transparent;
+        border:1px solid #1c1c1c;
+        padding:2px 20px 0 0;
+    }
+
+    .w-common-language .language_menu .selected {
+        background: no-repeat scroll 2px 0 transparent;
+        padding: 0 3px 0 0;
+    }
+
+    .w-common-language .language_menu ul li {
+        display:inherit;
+        float:none;
+    }
+
+    .w-common-language .language_menu ul {
+        display:none;
+        width:128px;
+        border: 1px solid #1c1c1c;
+        background: #fff;
+        position: relative;
+        z-index: 1000;
+        -moz-border-radius-bottomright: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .w-common-language .language_menu li a {
+        color:#000;
+        text-decoration:none;
+        padding:3px;
+        display:block;
+    }
+
+    .w-common-language .language_menu li a:hover {
+        font-weight:bold;
+        color: #F99B18;
+    }
+}

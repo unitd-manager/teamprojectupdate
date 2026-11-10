@@ -1,0 +1,36 @@
+{% extends "main.phtml" %}
+
+{% block bodyPanel %}
+    <div class='clearfix topRow'>
+        <div class='pull-left'>
+            {{ breadcrumbs | raw }}
+        </div>
+        <div class='pull-right'>
+            <i class='icon-backward'></i>&nbsp;<a href='{{ pagerData.backToList }}'>back to list</a>
+        </div>
+    </div>
+    {% for row in modDataArray %}
+        <div class="row">
+            <div class="col-md-6">
+                <a href='{{ row.file_large }}' class='fancybox mainPic' rel='gallery1'>
+                    <img src="{{ row.file_normal }}">
+                </a>
+                {% if row.relPicArray|length > 0 %}
+                    <div class='thumbnails relatedPictures'>
+                        {% for relPic in row.relPicArray %}
+                            <a class='fancybox img-thumbnail pull-left' rel='gallery1' title='' href='{{ relPic.file_large }}'>
+                                <img src='{{ relPic.file_normal }}'>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                <div class="caption">
+                    <h4>{{ lang.gfv(row, 'title') }}</h4>
+                    <div>{{ lang.gfv(row, 'description') }}</div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %} {# end bodyPanel #}

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/*** Template ***/
+@media all
+{
+    .m-manPower_agent .rightPanel .countryChk {
+        padding: 5px 5px 5px 10px;
+    }
+
+    .m-manPower_agent .rightPanel .canCountry {
+        border: 1px solid #ccc;
+    }
+}

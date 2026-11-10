@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Ecommerce_Division_Controller extends CP_Common_Modules_Ecommerce_Division_Controller
+{
+}

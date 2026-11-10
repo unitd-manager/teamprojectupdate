@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="header"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="535"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="invoice_id" isForPrompting="false" class="java.lang.Integer">
+		<defaultValueExpression ><![CDATA[new Integer(117)]]></defaultValueExpression>
+	</parameter>
+	<queryString><![CDATA[SELECT a.*, 
+CONCAT_WS(' ', c.first_name, c.last_name) AS contact_name, 
+c.position as position,
+d.company_name, d.address_flat, d.address_street, d.address_town, d.address_country,
+b.title AS project_title, b.project_value as project_value,
+b.description as project_description, b.project_code as project_code,
+DATEDIFF(Now() ,a.invoice_date) AS age,
+(SELECT invoice_amount FROM invoice WHERE project_id = a.project_id)
+AS previous_invoice_amount,
+
+(SELECT sum(invoice_amount) FROM invoice WHERE project_id = a.project_id)
+AS total_invoice_amount
+
+FROM invoice a
+LEFT JOIN (project b) ON (a.project_id   = b.project_id  ) 
+LEFT JOIN (contact c) ON (b.contact_id   = c.contact_id  )
+LEFT JOIN (company d) ON (b.company_id   = d.company_id  )
+
+WHERE invoice_id = $P{invoice_id}]]></queryString>
+
+	<field name="invoice_id" class="java.lang.Integer"/>
+	<field name="invoice_date" class="java.sql.Date"/>
+	<field name="invoice_due_date" class="java.sql.Date"/>
+	<field name="invoice_sent_out" class="java.lang.Integer"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="project_id" class="java.lang.Integer"/>
+	<field name="invoice_amount" class="java.lang.Integer"/>
+	<field name="still_to_bill" class="java.lang.Integer"/>
+	<field name="invoice_terms" class="java.lang.String"/>
+	<field name="notes" class="java.lang.String"/>
+	<field name="creation_date" class="java.sql.Timestamp"/>
+	<field name="modification_date" class="java.sql.Timestamp"/>
+	<field name="invoice_sequence" class="java.lang.String"/>
+	<field name="invoice_type" class="java.lang.String"/>
+	<field name="invoice_paid_date" class="java.sql.Date"/>
+	<field name="invoice_code" class="java.lang.String"/>
+	<field name="flag" class="java.lang.Integer"/>
+	<field name="inv_currency" class="java.lang.String"/>
+	<field name="contact_name" class="java.lang.String"/>
+	<field name="position" class="java.lang.String"/>
+	<field name="company_name" class="java.lang.String"/>
+	<field name="address_flat" class="java.lang.String"/>
+	<field name="address_street" class="java.lang.String"/>
+	<field name="address_town" class="java.lang.String"/>
+	<field name="address_country" class="java.lang.String"/>
+	<field name="project_title" class="java.lang.String"/>
+	<field name="project_value" class="java.lang.Integer"/>
+	<field name="project_description" class="java.lang.String"/>
+	<field name="project_code" class="java.lang.String"/>
+	<field name="age" class="java.lang.Long"/>
+	<field name="previous_invoice_amount" class="java.lang.Integer"/>
+	<field name="total_invoice_amount" class="java.math.BigDecimal"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="87"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="213"
+						y="28"
+						width="0"
+						height="0"
+						key="staticText-1"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Static Text]]></text>
+				</staticText>
+				<image  scaleImage="RetainShape" hAlign="Right" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="394"
+						y="7"
+						width="139"
+						height="73"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["D:\\inetpub\\Apache\\cmsPilot\\v29\\studiopilot\\admin\\images\\branding\\logo.jpg"]]></imageExpression>
+				</image>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

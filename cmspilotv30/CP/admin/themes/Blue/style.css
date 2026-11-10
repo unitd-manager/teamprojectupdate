@@ -1,0 +1,1421 @@
+@media all
+{
+    a,
+    html *,
+    .yform .type-text input,
+    .yform .type-text textarea,
+    .yform .type-select select,
+    .yform select,
+    .cpSearch select,
+    .cpSearch input {
+        font-size: 14px;
+        font-family: 'Calibri', 'Century Gothic',Verdana,Arial,Helvetica,Sans-serif;
+    }
+
+    .cpFullWidth #header {
+        background: -moz-linear-gradient(center top , #5E5E5E, #4F4F4F 4%, #262626 44%, #1C1C1C 50%, #050505 50%, black) repeat scroll 0 0 transparent;
+    }
+
+    .cpFullWidth #header:before {
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-color: transparent;
+        background-image: url('images/glow.png');
+        background-origin: padding-box;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        bottom: 0;
+        content: " ";
+        display: block;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .cpFullWidth .page_margins {
+        max-width: 1300px;
+    }
+
+    .cpFullWidth #main {
+        background: #D4D4D8;
+        padding: 0;
+    }
+
+    .cpFullWidth #main .page {
+        box-shadow: 0 0 5px #fff;
+        -webkit-box-shadow: 0 0 5px #fff;
+    }
+
+    .cpFullWidth #main .page {
+        background: #fff;
+        border-radius: 0;
+        padding: 0 0;
+    }
+
+    .cpFullWidth #nav {
+        background: #000;
+        margin: 0;
+    }
+
+    #nav .page {
+        height: 100px;
+        background: url('images/nav-bg.jpg') repeat-x;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    #header .logo {
+        padding: 2px 0;
+    }
+
+    #topnav .logoutWrap {
+        text-align: right;
+        width: 200px;
+    }
+
+    .cpFullWidth #header .hlist ul li.active a{
+        background-color: #87BEE7;
+        color: #FFFFFF;
+        min-width: 75px;
+        padding: 5px 8px 10px;
+        text-align:center;
+    }
+
+    .cpFullWidth #nav2 {
+        background: #5e5e5e;
+    }
+
+    .cpFullWidth #nav2 .page {
+        background: #639ECB;
+        padding: 5px;
+    }
+
+    .v-list .contentScroller {
+    }
+
+    .v-list .contentScroller #bodyList {
+    }
+
+	.ui-button { margin-left: -1px; }
+	.ui-button-icon-only .ui-button-text { padding: 0.35em; }
+	.ui-autocomplete-input { margin: 0; padding: 0.48em 0 0.47em 0.45em; }
+	.ui-menu {
+	    max-height: 200px;
+	    overflow: auto;
+	    text-align: left;
+	}
+
+    .col3Body .rightPanel {
+        padding-top:5px;
+    }
+
+    #nav{
+    }
+
+    .tplLogin #loginOuter {
+        margin: 0 auto;
+        box-shadow: 10px 10px 10px #6f6f6f;
+        -webkit-box-shadow: 0 0 5px #000;
+        border: 1px solid #000;
+        background : #202020;
+        border-radius: 15px;
+    }
+
+    #header h1.siteTitle {
+        font-family: 'Oswald',arial,serif;
+        font-size: 20px;
+        text-shadow: 2px 2px 10px #111159;
+    }
+
+    .tplLogin #col3 {
+        margin: 0;
+    }
+
+    .loginTitle h1 {
+        font-size: 35px;
+        color: #AA0000;
+    }
+
+    .loginTitle {
+        padding-left: 55px;
+        padding-top: 25px;
+        font-family: Trebuchet MS, arial, serif;
+    }
+
+    #loginOuter .yform{
+        border: 0;
+        padding: 0;
+    }
+
+    #loginOuter .yform fieldset{
+        border: 0;
+        background: #fafafa;
+    }
+
+    #loginOuter .columnar div.type-check input {
+        margin-left: 0;
+    }
+
+    #loginOuter .forgotPasswordLink {
+        margin-top: 12px;
+        text-decoration: underline;
+    }
+
+}
+
+@media all
+{
+    #nav .actionsWrapper {
+        display: none;
+    }
+
+    #nav .hlist ul {
+        margin: 12px 0 0 14px;
+        overflow: hidden;
+    }
+
+    #nav .hlist ul li {
+        border: 0;
+    }
+
+    #nav .hlist ul li a {
+        background: url("images/navigation_background_blue.gif") repeat-x scroll left top transparent;
+        color: white;
+        display: block;
+        float: left;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: bold;
+        height: 65px;
+        overflow: hidden;
+        text-align: center;
+        text-decoration: none;
+        width: 114px;
+        padding: 5px 0;
+    }
+
+    #nav .hlist ul li.first a {
+        background: url('images/navigation_first_blue.gif') repeat-x scroll left top transparent;
+    }
+
+    #nav .hlist ul li.last a {
+        background: url('images/navigation_last_blue.gif') repeat-x scroll right top transparent;
+    }
+
+    #nav .hlist ul li a.selected, #nav .hlist ul li a:hover {
+        background-position: bottom left;
+    }
+
+    #nav .hlist ul li.last a.selected, #nav .hlist ul li.last a:hover {
+        background-position: bottom right;
+    }
+
+    table.thinlist .highlight {
+        background-color: #000;
+    }
+
+    .m-pms_paymentSummary #nav .hlist ul li a span.inner {
+        padding: 53px 0px 0px;
+    }
+
+    #nav .hlist ul li a.nav_project_task span.inner,
+    #nav .hlist ul li a.nav_pms_programGroup span.inner,
+    #nav .hlist ul li a.nav_pms_course span.inner,
+    #nav .hlist ul li a.nav_pms_level span.inner,
+    #nav .hlist ul li a.nav_aceIms_programGroup span.inner,
+    #nav .hlist ul li a.nav_aceIms_course span.inner,
+    #nav .hlist ul li a.nav_agileIms_programGroup span.inner,
+    #nav .hlist ul li a.nav_tuitionsg_programGroup span.inner,
+    #nav .hlist ul li a.nav_agileIms_course span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_programGroup span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_course span.inner,
+    #nav .hlist ul li a.nav_manPower_task span.inner {
+        background-image: url("images/icon-task.png");
+    }
+
+    #nav .hlist ul li a span.inner {
+        background-position: 50% 3px;
+        background-repeat: no-repeat;
+        display: block;
+        padding: 53px 10px 0px;
+        white-space: nowrap;
+        border-right: 1px solid #4985B2;
+    }
+
+    #nav .hlist ul li a.nav_webBasic_section span.inner,
+    #nav .hlist ul li a.nav_webBasic_content span.inner,
+    #nav .hlist ul li a.nav_webBasic_category span.inner,
+    #nav .hlist ul li a.nav_webBasic_subCategory span.inner,
+    #nav .hlist ul li a.nav_pms_order span.inner,
+    #nav .hlist ul li a.nav_enggCrm_order span.inner,
+    #nav .hlist ul li a.nav_manPower_order span.inner,
+    #nav .hlist ul li a.nav_aceIms_order span.inner,
+    #nav .hlist ul li a.nav_agileIms_order span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_order span.inner,
+    #nav .hlist ul li a.nav_subscription_order span.inner,
+    #nav .hlist ul li a.nav_ecommerce_order span.inner,
+    #nav .hlist ul li a.nav_pms_creditNote span.inner,
+    #nav .hlist ul li a.nav_pms_giroPayment span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_giroPayment span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_subsidyDiscount span.inner,
+    #nav .hlist ul li a.nav_pms_subsidyDiscount span.inner,
+    #nav .hlist ul li a.nav_agileIms_subsidyDiscount span.inner,
+    #nav .hlist ul li a.nav_payroll_jobInformation span.inner {
+        background-image: url("images/icon-order.png");
+    }
+
+    #nav .hlist ul li a.nav_common_dashboard span.inner,
+    #nav .hlist ul li a.nav_payroll_dashboard span.inner,
+    #nav .hlist ul li a.nav_payroll_cPFCalculator span.inner {
+        background-image: url("images/icon_dashboard.png");
+    }
+
+    #nav .hlist ul li a.nav_project_contact span.inner,
+    #nav .hlist ul li a.nav_hms_contact span.inner,
+    #nav .hlist ul li a.nav_enggCrm_contact span.inner,
+    #nav .hlist ul li a.nav_enggCrm_employee span.inner,
+    #nav .hlist ul li a.nav_pms_parent span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_parent span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_contact span.inner,
+    #nav .hlist ul li a.nav_aceIms_contact span.inner,
+    #nav .hlist ul li a.nav_tuitionsg_contact span.inner,
+    #nav .hlist ul li a.nav_agileIms_contact span.inner,
+    #nav .hlist ul li a.nav_subscription_contact span.inner,
+    #nav .hlist ul li a.nav_pms_contact span.inner,
+    #nav .hlist ul li a.nav_payroll_employee span.inner {
+        background-image: url("images/icon-contact.png");
+    }
+
+    #nav .hlist ul li a.nav_common_contact span.inner {
+        background-image: url("images/icon-contact.png");
+    }
+
+    #nav .hlist ul li a.nav_project_opportunity span.inner,
+    #nav .hlist ul li a.nav_enggCrm_opportunity span.inner,
+    #nav .hlist ul li a.nav_project_callRegistry span.inner,
+    #nav .hlist ul li a.nav_enggCrm_callRegistry span.inner,
+    #nav .hlist ul li a.nav_payroll_loan span.inner {
+        background-image: url("images/icon-opportunity.png");
+    }
+
+    #nav .hlist ul li a.nav_manPower_opportunity span.inner {
+        background-image: url("images/icon-opportunity.png");
+    }
+
+    #nav .hlist ul li a.nav_manPower_opportunityCandidate span.inner {
+        background-image: url("images/icon-opportunity.png");
+    }
+
+    #nav .hlist ul li a.nav_enggCrm_project span.inner,
+    #nav .hlist ul li a.nav_project_project span.inner,
+    #nav .hlist ul li a.nav_payroll_payrollManagement span.inner {
+        background-image: url("images/icon-project.png");
+    }
+
+    #nav .hlist ul li a.nav_manPower_project span.inner {
+        background-image: url("images/icon-project.png");
+    }
+
+    #nav .hlist ul li a.nav_enggCrm_invoice span.inner,
+    #nav .hlist ul li a.nav_enggCrm_purchaseOrder span.inner,
+    #nav .hlist ul li a.nav_project_invoice span.inner {
+        background-image: url("images/icon-invoice.png");
+    }
+
+    #nav .hlist ul li a.nav_enggCrm_receipt span.inner,
+    #nav .hlist ul li a.nav_project_receipt span.inner {
+        background-image: url("images/icon-invoice.png");
+    }
+
+    #nav .hlist ul li a.nav_enggCrm_task span.inner,
+    #nav .hlist ul li a.nav_project_task span.inner,
+    #nav .hlist ul li a.nav_project_taskHistory span.inner,
+    #nav .hlist ul li a.nav_pms_programGroup span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_programGroup span.inner,
+    #nav .hlist ul li a.nav_pms_course span.inner,
+    #nav .hlist ul li a.nav_aceIms_course span.inner,
+    #nav .hlist ul li a.nav_tuitionsg_course span.inner,
+    #nav .hlist ul li a.nav_agileIms_course span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_course span.inner,
+    #nav .hlist ul li a.nav_pms_level span.inner,
+    #nav .hlist ul li a.nav_pms_level span.inner,
+    #nav .hlist ul li a.nav_manPower_task span.inner {
+        background-image: url("images/icon-task.png");
+    }
+
+    #nav .hlist ul li a.nav_project_timesheet span.inner,
+    #nav .hlist ul li a.nav_enggCrm_timesheet span.inner,
+    #nav .hlist ul li a.nav_manPower_timesheet span.inner,
+    #nav .hlist ul li a.nav_project_attendance span.inner,
+    #nav .hlist ul li a.nav_enggCrm_attendance span.inner,
+    #nav .hlist ul li a.nav_pms_batchHistory span.inner,
+    #nav .hlist ul li a.nav_aceIms_batchHistory span.inner,
+    #nav .hlist ul li a.nav_agileIms_batchHistory span.inner,
+    #nav .hlist ul li a.nav_payroll_leave span.inner,
+    #nav .hlist ul li a.nav_payroll_leavePolicy span.inner,
+    #nav .hlist ul li a.nav_pms_leave span.inner {
+        background-image: url("images/icon-timesheet.png");
+    }
+
+    #nav .hlist ul li a.nav_enggCrm_thirdPartyCost span.inner,
+    #nav .hlist ul li a.nav_project_thirdPartyCost span.inner {
+        background-image: url("images/icon-thirdparty.png");
+    }
+
+    #nav .hlist ul li a.nav_project_company span.inner,
+    #nav .hlist ul li a.nav_enggCrm_company span.inner,
+    #nav .hlist ul li a.nav_pms_company span.inner,
+    #nav .hlist ul li a.nav_aceIms_company span.inner,
+    #nav .hlist ul li a.nav_enggCrm_supplier span.inner,
+    #nav .hlist ul li a.nav_agileIms_company span.inner {
+        background-image: url("images/icon-company.png");
+    }
+
+    #nav .hlist ul li a.nav_common_interest span.inner,
+    #nav .hlist ul li a.nav_project_domainHosting span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_batch span.inner,
+    #nav .hlist ul li a.nav_aceIms_batch span.inner,
+    #nav .hlist ul li a.nav_agileIms_batch span.inner,
+    #nav .hlist ul li a.nav_tuitionsg_batch span.inner,
+    #nav .hlist ul li a.nav_pms_batch span.inner {
+        background-image: url("images/icon-interest.png");
+    }
+
+    #nav .hlist ul li a.nav_common_broadcast span.inner {
+        background-image: url("images/icon-broadcast.png");
+    }
+
+    #nav .hlist ul li a.nav_common_template span.inner {
+        background-image: url("images/icon-template.png");
+    }
+
+    #nav .hlist ul li a.nav_webBasic_enquiry span.inner {
+        background-image: url("images/enquiry-icon.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_teacher span.inner,
+    #nav .hlist ul li a.nav_aceIms_teacher span.inner,
+    #nav .hlist ul li a.nav_agileIms_teacher span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_teacher span.inner,
+    #nav .hlist ul li a.nav_tuitionsg_teacher span.inner,
+    #nav .hlist ul li a.nav_core_userGroup span.inner,
+    #nav .hlist ul li a.nav_pms_teacherAttendance span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_teacherAttendance span.inner,
+    #nav .hlist ul li a.nav_tuitionsg_teacherAttendance span.inner,
+    #nav .hlist ul li a.nav_manPower_staff span.inner,
+    #nav .hlist ul li a.nav_core_staff span.inner,
+    #nav .hlist ul li a.nav_payroll_training span.inner {
+        background-image: url("images/icon-staff.png");
+    }
+
+    #nav .hlist ul li a.nav_common_geoCountry span.inner,
+    #nav .hlist ul li a.nav_core_translation span.inner,
+    #nav .hlist ul li a.nav_core_valuelist span.inner {
+        background-image: url("images/icon-valuelist.png");
+    }
+
+    #nav .hlist ul li a.nav_core_setting span.inner {
+        background-image: url("images/icon-setting.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_document span.inner,
+    #nav .hlist ul li a.nav_project_quoteTemplate span.inner {
+        background-image: url("images/icon-quote-template.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_voucherCode span.inner {
+        background-image: url("images/icon-voucher-code.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_subsidyHistory {
+        width: 135px;
+    }
+
+    #nav .hlist ul li a.nav_pms_subsidyHistory span.inner {
+        background-image: url("images/icon-subsidy-history.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_invoice span.inner,
+    #nav .hlist ul li a.nav_manPower_invoice span.inner,
+    #nav .hlist ul li a.nav_aceIms_invoice span.inner,
+    #nav .hlist ul li a.nav_agileIms_invoice span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_invoice span.inner,
+    #nav .hlist ul li a.nav_subscription_invoice span.inner,
+    #nav .hlist ul li a.nav_pms_paymentSummary span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_paymentSummary span.inner,
+    #nav .hlist ul li a.nav_subscription_paymentSummary span.inner,
+    #nav .hlist ul li a.nav_pms_refund span.inner,
+    #nav .hlist ul li a.nav_aceIms_refund span.inner,
+    #nav .hlist ul li a.nav_agileIms_refund span.inner {
+        background-image: url("images/icon-invoice.png");
+    }
+
+
+    #nav .hlist ul li a.nav_pms_receipt span.inner,
+    #nav .hlist ul li a.nav_manPower_receipt span.inner,
+    #nav .hlist ul li a.nav_aceIms_receipt span.inner,
+    #nav .hlist ul li a.nav_agileIms_receipt span.inner,
+    #nav .hlist ul li a.nav_agileIms_subsidyHistory span.inner,
+    #nav .hlist ul li a.nav_subscription_receipt span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_receipt span.inner {
+        background-image: url("images/icon-receipt.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_staffAttendance span.inner,
+    #nav .hlist ul li a.nav_manPower_staffAttendance span.inner,
+    #nav .hlist ul li a.nav_aceIms_staffAttendance span.inner,
+    #nav .hlist ul li a.nav_aceIms_attendance span.inner,
+    #nav .hlist ul li a.nav_agileIms_staffAttendance span.inner,
+    #nav .hlist ul li a.nav_agileIms_attendance span.inner,
+    #nav .hlist ul li a.nav_pms_attendance span.inner {
+        background-image: url("images/icon-attendance.png");
+    }
+
+    #nav .hlist ul li a.nav_webBasic_callRegistry span.inner,
+    #nav .hlist ul li a.nav_manPower_callRegistry span.inner {
+        background-image: url("images/icon-callregistry.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_feedback span.inner,
+    #nav .hlist ul li a.nav_aceIms_feedback span.inner,
+    #nav .hlist ul li a.nav_agileIms_feedback span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_feedback span.inner {
+        background-image: url("images/icon-feedback.png");
+    }
+
+    #nav .hlist ul li a.nav_tuitionsg_subject span.inner,
+    #nav .hlist ul li a.nav_pms_subject span.inner,
+    #nav .hlist ul li a.nav_aceIms_subject span.inner,
+    #nav .hlist ul li a.nav_agileIms_subject span.inner {
+        background-image: url("images/icon-subject.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_insurance span.inner,
+    #nav .hlist ul li a.nav_aceIms_insurance span.inner {
+        background-image: url("images/icon-insurance.png");
+    }
+
+    #nav .hlist ul li a.nav_manPower_candidate span.inner {
+        background-image: url("images/icon-candidate.png");
+    }
+
+    #nav .hlist ul li a.nav_manPower_agent span.inner {
+        background-image: url("images/icon-agent.png");
+    }
+
+    #nav .hlist ul li a.nav_hms_company span.inner,
+    #nav .hlist ul li a.nav_manPower_company span.inner {
+        background-image: url("images/icon-client.png");
+    }
+
+    #nav .hlist ul li a.nav_manPower_referral span.inner {
+        background-image: url("images/icon-referral.png");
+    }
+
+    #nav .hlist ul li a.nav_aceIms_class span.inner,
+    #nav .hlist ul li a.nav_pms_class span.inner {
+        background-image: url("images/icon-class.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_resources span.inner,
+    #nav .hlist ul li a.nav_aceIms_resources span.inner {
+        background-image: url("images/icon-resources.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_grade span.inner,
+    #nav .hlist ul li a.nav_aceIms_grade span.inner,
+    #nav .hlist ul li a.nav_agileIms_grade span.inner,
+    #nav .hlist ul li a.nav_enterpriseIms_grade span.inner {
+        background-image: url("images/icon-grade.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_recommendation span.inner,
+    #nav .hlist ul li a.nav_aceIms_recommendation span.inner {
+        background-image: url("images/icon-recommendations.png");
+    }
+
+    #nav .hlist ul li a.nav_pms_expenses span.inner,
+    #nav .hlist ul li a.nav_manPower_expense span.inner,
+    #nav .hlist ul li a.nav_project_expenses span.inner,
+    #nav .hlist ul li a.nav_aceIms_expenses span.inner {
+        background-image: url("images/icon-expense.png");
+    }
+
+    #nav .hlist ul li a.nav_manPower_branch span.inner {
+        background-image: url("images/icon-branch.png");
+    }
+
+    #nav .hlist ul li a.nav_webBasic_product span.inner,
+    #nav .hlist ul li a.nav_ecommerce_product span.inner {
+        background-image: url("images/product.png");
+    }
+
+    #nav .hlist ul li a.nav_project_creditCardPayments span.inner {
+        background-image: url("images/icon-credit_card.png");
+    }
+
+    #nav .hlist .nav_pms_batchTransfer span.inner {
+        background-image: url("images/icon_batchtransfer.png") !important;
+    }
+
+    #nav .hlist .nav_pms_smsBroadcast span.inner {
+        background-image: url("images/sms_reminder.png") !important;
+    }
+}
+
+@media all
+{
+    .m-common_dashboard .widget h2 {
+        padding:5px 5px;
+        font-size: 15px;
+    }
+
+    .m-common_dashboard #main .page {
+        padding: 5px;
+    }
+
+    .m-common_dashboard .widget {
+        border-top: 0;
+    }
+
+    table.search td select {
+        max-width: 100px;
+    }
+
+    table.search td select, table.search td input {
+        font-size: 12.5px;
+    }
+
+    #footer {
+        padding: 2px 0 0;
+        height: 10px;
+    }
+}
+
+@media all
+{
+    .jspVerticalBar {
+        width: 10px;
+    }
+
+    .jspTrack {
+    }
+
+    .jspDrag {
+        background: #bddef7;
+    }
+}
+
+/*******************************************************************************
+  PAGINATION
+*******************************************************************************/
+@media all
+{
+    .cpFullWidth #extended {
+        padding:4px 0 0 0;
+        background: #f3f3f3;
+    }
+    #extended .pagelinks { border:0; margin:0; padding:0; font-size:10px; }
+    #extended .pagelinks .linkNos a { border:solid 1px #DEDEDE; margin-right:2px; }
+    #extended .pagelinks .noLink { color:#888888; display:inline-block; font-weight:normal; padding:3px 4px; }
+    #extended .pagelinks .nxtBtn a, #extended .pagelinks .preBtn a { font-weight:bold; border:solid 1px #FFFFFF; }
+    #extended .pagelinks .currentPage{ color:#000000; font-weight:bold; display:inline-block; padding:4px 6px; }
+    #extended .pagelinks a:link, #extended .pagelinks a:visited { display:inline-block; padding:3px 6px; text-decoration:none; }
+    #extended .pagelinks a:hover{ text-decoration:none; border: 1px solid #999; }
+    #extended .pagelinks .linkNos {
+        width: 250px;
+    }
+
+    #extended .pagelinks .totalRecs {
+        padding: 3px 0;
+    }
+}
+
+/*******************************************************************************
+  ACTIONS
+*******************************************************************************/
+@media all
+{
+    .actionBtns ul li div.button {
+        padding: 3px;
+    }
+
+    .actionBtns ul li {
+        margin-right: 5px;
+    }
+
+    .actionBtns ul li a {
+        padding:3px 3px 3px 18px;
+        background-position: 0 1px;
+        background-repeat: no-repeat;
+    }
+
+    .hlist.actionBtns a {
+        font-weight: normal;
+    }
+
+    #actBtn_edit {
+        background-image: url("images/action/edit.gif");
+        background-position: 0 3px;
+    }
+
+    #actBtn_delete {
+        background-image: url("images/action/delete.gif");
+    }
+
+    #actBtn_apply {
+        background-image: url("images/action/apply.gif");
+    }
+
+    #actBtn_save {
+        background-image: url("images/action/save.gif");
+    }
+
+    #actBtn_cancel {
+        background-image: url("images/action/cancel.gif");
+    }
+
+    #actBtn_new {
+        background-image: url("images/action/new.gif");
+    }
+
+    #actBtn_search {
+        background-image: url("images/action/search.gif");
+    }
+
+    #actBtn_export {
+        background-image: url("images/action/export.png");
+    }
+
+    #actBtn_printListPDF {
+        background-image: url("images/action/print.gif");
+    }
+
+    #actBtn_printListPDFInvoice,
+    #actBtn_printListPDFReceipt {
+        background-image: url("images/action/print.gif");
+    }
+
+    #actBtn_reportsMenu {
+        background-image: url("images/action/report.gif");
+    }
+
+    #actBtn_save {
+        background-image: url("images/action/save.png");
+    }
+
+    #actBtn_convertOppToProject {
+        background-image: url("images/action/convert.png");
+    }
+
+    #actBtn_raiseInvoice {
+        background-image: url("images/action/raise.png");
+    }
+
+    #actBtn_duplicate,
+    #actBtn_payrollDuplicateJobinfo {
+        background-image: url("images/action/duplicate.png");
+    }
+}
+
+/*******************************************************************************
+  LIST
+*******************************************************************************/
+@media all
+{
+    table.list thead td, table.list thead th, table.list tfoot, tr.header, div.header {
+        background: url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") repeat-x scroll 50% 50% #CCCCCC;
+        border: 1px solid #cccccc;
+        color: #fff;
+        font-weight: bold;
+        background: -moz-linear-gradient(center top , #27587F, #224D6F 4%, #0F324F 44%, #172D3F 50%, #091F2F 50%, #04131F) repeat scroll 0 0 transparent;
+        background: -webkit-linear-gradient(#27587F, #224D6F 4%, #0F324F 44%, #172D3F 50%, #091F2F 50%, #04131F) repeat scroll 0 0 transparent;
+    }
+
+    table.list thead a {
+        color: #fff;
+    }
+
+    table.list thead td a {
+        color: #fff;
+        display: block;
+    }
+
+    table.list thead td a:hover {
+        text-decoration: none;
+    }
+
+    .m-project_opportunity table.search .ui-autocomplete-input,
+    .m-project_project table.search .ui-autocomplete-input,
+    .m-project_task table.search .ui-autocomplete-input{
+        width: 78px;
+    }
+
+    .m-project_task table.search .ui-autocomplete-input,
+    .m-project_timesheet table.search .ui-autocomplete-input {
+        width: 70px;
+    }
+
+    .rightPanel .header a {
+        color: #fff;
+    }
+
+    .quickLinks .actionBtns ul li {
+        list-style-type: none;
+        margin-bottom: 10px;
+    }
+
+    .quickLinks .actionBtns ul li div.button {
+        width: 85px;
+    }
+
+    .summary {
+        border-right: 1px dotted #cccccc;
+        min-height: 75px;
+        padding-top: 12px;
+    }
+
+    .overallSummaryText {
+        font-family: 'Oswald',arial,serif;
+        font-size: 14px;
+		line-height: 25px;
+    }
+
+    .m-common_dashboard .summDisplayTitle {
+		text-decoration: underline;
+		font-weight: bold;
+		font-family:'Trebuchet MS', arial, serif;
+		font-size: 12px;
+		width: 113px;
+		padding-bottom: 5px;
+		padding-left: 8px;
+    }
+
+    #traineeLinkPvt h3{
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    .m-project_project a.projectHistory {
+        position: relative;
+        left: 460px;
+        text-decoration: underline;
+    }
+
+	.m-subscription_contact .subscriptionInvoiceCheckBox {
+		margin-left:31px;
+	}
+
+	.m-subscription_contact .subscriptionReceiptCheckBox {
+		margin-left:28px;
+	}
+
+    .contentDescription {
+    	display:none;
+    	margin-left:20px;
+    }
+
+    .toggle {
+    	display:none;
+    }
+
+    .helpContentButton {
+        margin: 10px;
+    }
+
+    .contentTitle {
+    	margin:10px;
+    	cursor:pointer;
+    	text-decoration:underline;
+    	font-weight: bold;
+    	font-size: 16px;
+    }
+
+	.helpContent {
+		margin-right:32px;
+		margin-top:10px;
+	}
+
+	.helpContentTask.button {
+		background: linear-gradient(#27587f, #224d6f 4%, #0f324f 44%, #172d3f 50%, #091f2f 50%, #04131f) repeat scroll 0 0 transparent;
+    	border:#cccccc;
+    	font-weight:bold;
+    	color: #fff;
+    	width:78%;
+
+	}
+
+	.getStartedContentTask.button {
+		background: linear-gradient(#27587f, #224d6f 4%, #0f324f 44%, #172d3f 50%, #091f2f 50%, #04131f) repeat scroll 0 0 transparent;
+    	border:#cccccc;
+    	font-weight:bold;
+    	color: #fff;
+
+	}
+
+	.getStarted {
+		position:absolute;
+		margin-left:88%;
+		margin-top:15px;
+	}
+
+	.helpContent {
+		position:absolute;
+		margin-left:88%;
+		margin-top:57px;
+	}
+
+	.m-manPower_opportunity.v-edit .positionTitle .type-select label,
+    .m-manPower_candidate.v-edit .positionTitle .type-select label,
+    .m-manPower_callRegistry.v-edit .positionTitle .type-select label,
+    .m-manPower_project.v-edit .positionTitle .type-text label,
+    .m-manPower_project.v-edit .positionTitle .type-text span,
+    .m-manPower_order.v-edit .positionTitle .type-text label,
+    .m-manPower_order.v-edit .positionTitle .type-text span{
+		font-size:125%;
+		font-weight:bold;
+	}
+
+    .m-manPower_candidate.v-edit .row_position select,
+    .m-manPower_candidate.v-edit .row_position option,
+	.m-manPower_opportunity.v-edit .row_position select,
+	.m-manPower_opportunity.v-edit .row_position option,
+    .m-manPower_callRegistry.v-edit .row_position select,
+    .m-manPower_callRegistry.v-edit .row_position option {
+		font-size:125%;
+		font-weight:bold;
+	}
+
+		/*** MANPOWER CANDIDATE SECTION STYLES ***/
+
+	.m-manPower_candidate.v-edit .row_edit_locked  {
+	    margin: 0.5em 0;
+	    overflow: hidden;
+	    width: 315%;
+	}
+
+    table.candidatelist th, table.candidatelist td {
+        border: 1px solid #efefef;
+        padding: 5px;
+        vertical-align: top;
+    }
+
+    table.candidatelist td.portalActBtns {
+        width: 75px;
+    }
+
+    table.candidatelist a{
+        text-decoration: underline;
+    }
+
+    table.candidatelist td.noCandidate{
+        height:50px;
+        text-align:center;
+    }
+
+
+	.m-manPower_candidate .columnar .type-text label {
+	    float: left;
+	    margin-top: 6px;
+	    width: 35%;
+	}
+
+	.m-manPower_candidate .columnar div.type-text input {
+	    display: inline;
+	    margin-right: -3px;
+	    width: 41.9%;
+	}
+
+	#addCommentForm textarea {
+	    display: inline;
+	    margin-right: -3px;
+	    width: 95.9%;
+	    height: 200px;
+	}
+
+	.m-manPower_candidate .columnar .type-text label {
+	    float: left;
+	    margin-top: 6px;
+	    width: 52%;
+	}
+
+	.m-manPower_candidate .columnar .type-select label {
+	    float: left;
+	    margin-top: 6px;
+	    width: 52%;
+	}
+
+    .m-manPower_candidate .positionCheckBox .type-check label {
+        float: left;
+        width:100px;
+        height: 50px;
+    }
+
+    .m-manPower_candidate .positionCheckBox .type-check input {
+        float: left;
+        width:30px;
+        height: 20px;
+    }
+
+	.m-manPower_candidate .columnar div.type-select select {
+	    display: inline;
+	    margin-right: -3px;
+	    width: 42.9%;
+	}
+
+	.m-manPower_candidate .c50l {
+	    width: 66%;
+	}
+
+	.m-manPower_candidate .c50r {
+	    width: 33%;
+	}
+
+	.m-manPower_candidate .columnar.yform .form-row-wrapper .rightCol {
+	    float: left;
+	    margin-left: -88px;
+	}
+
+	.m-manPower_candidate .columnar.yform .form-row-wrapper.type-radio .leftCol label {
+	    margin-top: 0;
+	    width: 67%;
+	}
+
+	.m-manPower_candidate #educationDetails ,
+	.m-manPower_candidate #educationDetails1 ,
+	.m-manPower_candidate #educationDetails2 ,
+	.m-manPower_candidate #educationDetails3 ,
+	.m-manPower_candidate #btnAddEducation2 ,
+	.m-manPower_candidate #btnAddEducation3 {
+	    display: none;
+	}
+
+	.m-manPower_candidate #employmentDetails ,
+	.m-manPower_candidate #employmentDetails1 ,
+	.m-manPower_candidate #employmentDetails2 ,
+	.m-manPower_candidate #employmentDetails3 ,
+	.m-manPower_candidate #btnAddEmployment1 ,
+	.m-manPower_candidate #btnAddEmployment2 ,
+	.m-manPower_candidate #btnAddEmployment3 {
+	    display: none;
+	}
+
+    .m-manPower_staff .rightPanel .documentChk,
+	.m-manPower_company .rightPanel .documentChk,
+	.m-manPower_candidate .rightPanel .documentChk,
+	.m-manPower_agent .rightPanel .documentChk {
+        padding: 10px 5x 10px 10px;
+        margin:5px;
+    }
+
+    .m-manPower_staff .rightPanel .staffDocs,
+	.m-manPower_company .rightPanel .companyDocs,
+	.m-manPower_candidate .rightPanel .candidateDocs,
+	.m-manPower_agent .rightPanel .agentDocs {
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+    }
+
+    .hide {
+	    display: none;
+    }
+
+    .m-manPower_candidate .toggle {
+        display: block;
+    }
+
+	.m-manPower_candidate .columnar .dropdownPeriod {
+		width:82%;
+	}
+
+	.m-manPower_candidate .columnar .dropdownPeriod .type-select label {
+		display:none;
+	}
+
+	.m-manPower_candidate .workingMonth {
+		margin-top:0px;
+	}
+
+	.m-manPower_candidate .relevantMonth {
+	}
+
+    .m-manPower_candidate .dateFrom {
+        width: 68%;
+        float: left;
+        margin-top: 5px;
+        /*border: 2px solid red;*/
+
+    }
+
+    .m-manPower_candidate .dateTo {
+        margin-left: 252px;
+        width: 62%;
+        /*border: 2px solid green;*/
+
+    }
+
+    .m-manPower_candidate .dateFrom .row_period_of_study_from1 input,
+    .m-manPower_candidate .dateFrom .row_period_of_study_from2 input,
+    .m-manPower_candidate .dateFrom .row_period_of_study_from3 input,
+    .m-manPower_candidate .dateFrom .row_period_of_study_from4 input,
+    .m-manPower_candidate .dateFrom .row_period_of_study_from5 input,
+    .m-manPower_candidate .dateFrom .row_employment_period_from1 input,
+    .m-manPower_candidate .dateFrom .row_employment_period_from2 input,
+    .m-manPower_candidate .dateFrom .row_employment_period_from3 input,
+    .m-manPower_candidate .dateFrom .row_employment_period_from4 input,
+    .m-manPower_candidate .dateFrom .row_employment_period_from5 input {
+        width: 100px !important;
+        margin-left: 126px;
+    }
+
+    .m-manPower_candidate .dateTo .row_period_of_study_to1 input,
+    .m-manPower_candidate .dateTo .row_period_of_study_to2 input,
+    .m-manPower_candidate .dateTo .row_period_of_study_to3 input,
+    .m-manPower_candidate .dateTo .row_period_of_study_to4 input,
+    .m-manPower_candidate .dateTo .row_period_of_study_to5 input,
+    .m-manPower_candidate .dateTo .row_employment_period_to1 input,
+    .m-manPower_candidate .dateTo .row_employment_period_to2 input,
+    .m-manPower_candidate .dateTo .row_employment_period_to3 input,
+    .m-manPower_candidate .dateTo .row_employment_period_to4 input,
+    .m-manPower_candidate .dateTo .row_employment_period_to5 input {
+        width: 100px !important;
+    }
+
+    .m-manPower_candidate .dateTo .ui-datepicker-trigger {
+        margin-top: 4px;
+    }
+
+    /** TEXT AREA ROW FOR ALL EMPLOYEMENT DETAILS **/
+    .m-manPower_candidate .row_job_duties_responsibilities1 textarea,
+    .m-manPower_candidate .row_job_duties_responsibilities2 textarea,
+    .m-manPower_candidate .row_job_duties_responsibilities3 textarea,
+    .m-manPower_candidate .row_job_duties_responsibilities4 textarea,
+    .m-manPower_candidate .row_job_duties_responsibilities5 textarea {
+        width: 41.9% !important;
+    }
+
+    /** ERROR MESSAGE CLASSES FOR PERIOD OF STUDY FROM AND TO, EMPLOYMENT PERIOD FROM AND TO **/
+
+   .m-manPower_candidate .row_period_of_study_from1 .ym-form div.error .message, .yform div.error .message
+   ,.m-manPower_candidate .row_period_of_study_to1 .ym-form div.error .message, .yform div.error .message
+   ,.m-manPower_candidate .row_employment_period_from1 .ym-form div.error .message, .yform div.error .message
+    .m-manPower_candidate .row_employment_period_to1 .ym-form div.error .message, .yform div.error .message {
+        color: #800;
+    }
+
+    .m-manPower_candidate .dateFrom .row_period_of_study_from1 .message,
+    .m-manPower_candidate .dateFrom .row_employment_period_from1 .message {
+        width: 21%;
+        position: relative;
+        left: 130px;
+    }
+
+    .m-manPower_candidate .dateTo .row_period_of_study_to1 .message,
+    .m-manPower_candidate .dateTo .row_employment_period_to1 .message {
+        width: 43%;
+        position: relative;
+        top:4px;
+        right: 102px;
+     }
+
+    /** DATE RANGE ROW FOR EXPAND SIGN DETAILS **/
+	/*.m-manPower_candidate .columnar .dateTo {
+        position: relative;
+        right: 101px;
+		width:125%;
+	}
+
+    .m-manPower_candidate .columnar .dateFrom {
+        width:125%;
+    } */
+
+    .m-manPower_candidate .row_date_of_birth input,
+    .m-manPower_candidate .row_date_of_expiry input,
+    .m-manPower_candidate .row_contract_date input {
+       width: 100px !important;
+    }
+
+	.m-manPower_candidate .columnar .dateFrom .type-select label {
+		display:none;
+	}
+
+
+	.m-manPower_callRegistry .cpSearch .dateRange {
+	    width: 338px;
+	}
+
+    /*** MANPOWER ORDER RIGHT PANEL STYLES ***/
+
+    table.oderSummaryList th, table.oderSummaryList td {
+        border: 1px solid #EAEAE8;
+        padding: 0.5em;
+        vertical-align: top;
+    }
+
+    table.oderSummaryList td.titleSummary {
+        font-weight: bold;
+    }
+
+    table.oderSummaryList td.summaryAmount {
+        font-weight: bold;
+        text-align: right;
+    }
+
+    .m-manPower_project.v-edit label{
+        color: #000;
+    }
+
+    .orderRighpanelClient{
+        display: inline;
+        float: left;
+        margin-bottom: 0.15em;
+        margin-right: 1em;
+        font-family: "Calibri","Century Gothic",Verdana,Arial,Helvetica,sans-serif;
+        font-size: 18px;
+        padding-top: 5px;
+    }
+
+    .chequeNoDisplay {
+        display: none;
+    }
+
+    .clientNoDisplay{
+        display: none;
+    }
+
+    .candidateNoDisplay{
+        display: none;
+    }
+
+    .referralNoDisplay{
+        display: none;
+    }
+
+    .alertDate {
+        color: #800;
+        display: block;
+        margin-bottom: 0.5em;
+        font-size: 14px;
+        font-weight: bold;
+        padding-left: 106px;
+    }
+
+    .invoiceTitle {
+        font-size: 13pt;
+        padding: 5px;
+        color: #173e5e;
+        vertical-align: top;
+        background-color:#dbebfa;
+        font-weight: bold;
+        border: 1px solid #dbebfa;
+    }
+
+    .seperate {
+        padding: 5px;
+    }
+
+    .updateTotal{
+        float:middle;
+    }
+
+    table.renewallist td.noRenewal{
+        height:50px;
+        text-align:center;
+    }
+
+    .yearDivHoursEmployeeForm
+    ,.monthDivHoursEmployeeForm
+    ,.timesheetTableProj{
+         padding: 8px;
+    }
+
+    .yearDivHoursEmployeeForm select
+    ,.monthDivHoursEmployeeForm select{
+        width: 10%;
+    }
+
+    .yearDivHoursEmployeeForm label
+    ,.monthDivHoursEmployeeForm label{
+        display: inline-block;
+        font-weight: bold;
+        width: 5% !important;
+    }
+
+    .employee_name_timesheet{
+        width: 200px;
+    }
+
+    .timeSheetDaysInput {
+        height: 22px;
+        width: 60px;
+    }
+
+    .timeSheetDaysRatePerHr{
+        height: 22px;
+        width: 86px;
+        font-weight: bold;
+    }
+    
+    .timeSheetTotalHours{
+        color: #000000;
+        font-weight: bold;
+        height: 22px;
+        width: 156px;
+    }
+
+
+    table.timesheetTableProjReltab thead th {
+        background: none repeat scroll 0 0 #808080;
+        color: #FFFFFF;
+    }
+
+    .monthlabelfilter{
+        padding-left: 16px;
+    }
+
+    a.editTimesheetForProjectEmployee,
+    a.editTimesheetForProjectEmployee:hover,
+    a.editTimesheetForProjectEmployee:focus,
+    a.editTimesheetForProjectEmployee:active{
+        color: #FFFFFF;
+        text-decoration: underline;
+    }
+
+    .employeeTrTh{
+        background-color: #EEEEEE;
+    }
+
+    .employeeTrThdummy{
+        -moz-border-bottom-colors: none !important;
+        -moz-border-left-colors: none !important;
+        -moz-border-right-colors: none !important;
+        -moz-border-top-colors: none !important;
+        background-color: #FFFFFF !important;
+        border-bottom: 1px solid #FFFFFF !important;
+        border-image: none !important;
+        border-left: 1px solid #FFFFFF !important;
+        border-top: 1px solid #FFFFFF !important;
+    }
+
+    .timesheetLayoutShow{
+        color: #FFFFFF !important;
+        text-decoration: underline;
+    }
+
+    .employeeListShow{
+        color: #FFFFFF !important;
+        text-decoration: underline;
+    }
+
+    .employeeListHide,
+    .timesheetLayoutHide{
+        display: none;
+    }
+
+    .addEmployeeRow2 td {
+        background-color: #5B95BF;
+        border: 1px solid #00224D !important;
+        color: #FFFFFF;
+    }
+
+    .employeeTrTh {
+        background-color: #255F89;
+        color: #FFFFFF;
+    }
+
+    .employeeTrTh th{
+        border: 1px solid #00224D !important;
+    }
+
+    .addEmployeeRow2 td{
+        border: 1px solid #00224D !important;
+    }
+
+    .employeeItemBackgroundSecond td {
+        background-color: #5B95BF;
+        border: 1px solid #00224D !important;
+        color: #FFFFFF;
+    }
+
+    .timeSheetTableScroll {
+        max-height: 193px;
+        overflow-y: auto;
+    }
+
+    .ValidationForTimesheetRecord{
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+
+    .m-payroll_employee .toggle {
+        display:block;
+    }
+
+    .m-payroll_employee .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-payroll_employee .c50l,
+    .m-payroll_employee .c50r {
+        width: 100%;
+    }
+
+    .m-payroll_employee .ym-columnar .ym-fbox-text label,
+    .m-payroll_employee .ym-columnar .ym-fbox-select label,
+    .m-payroll_employee #frmEdit .type-text label,
+    .m-payroll_employee #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-payroll_employee #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-payroll_employee .linkPortalWrapper div.header,
+    .m-payroll_jobInformation .linkPortalWrapper div.header {
+        background-color: #091F2F;
+        color: #fff;
+    }
+
+    .m-payroll_jobInformation .toggle {
+        display:block;
+    }
+
+    .m-payroll_jobInformation .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-payroll_jobInformation .c50l,
+    .m-payroll_jobInformation .c50r {
+        width: 100%;
+    }
+
+    .m-payroll_jobInformation .ym-columnar .ym-fbox-text label,
+    .m-payroll_jobInformation .ym-columnar .ym-fbox-select label,
+    .m-payroll_jobInformation #frmEdit .type-text label,
+    .m-payroll_jobInformation #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-payroll_jobInformation #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-payroll_jobInformation #frmEdit .error strong.message,
+    .m-payroll_employee #frmEdit .error strong.message {
+        margin-left: 0 !important;
+    }
+
+    #nav .hlist ul li a.nav_agileIms_subsidyHistory {
+        width: 130px;
+    }
+}
+
+

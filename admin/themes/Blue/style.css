@@ -1,0 +1,705 @@
+@charset "UTF-8";
+
+@media all
+{
+    .loginTitle {
+        width: 72%;
+    }
+
+    .logoInLoginPage {
+        width: 20%;
+    }
+
+    .cubosaleTxtInHeader a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .page_margins {
+        min-height: auto;
+    }
+
+    a.nav_common_dashboard {
+        background:transparent url('images/icon-dashboard.png') no-repeat 0 0;
+    }
+
+    a.nav_project_company {
+        background:transparent url('images/icon-company.png') no-repeat 0 0;
+    }
+
+    a.nav_project_contact {
+        background:transparent url('images/icon-contact.png') no-repeat 0 0;
+    }
+
+    a.nav_project_opportunity,
+    a.nav_project_callRegistry {
+        background:transparent url('images/icon-opportunity.png') no-repeat 0 0;
+    }
+
+    a.nav_project_project {
+        background:transparent url('images/icon-project.png') no-repeat 0 0;
+    }
+
+    a.nav_project_invoice {
+        background:transparent url('images/icon-invoice.png') no-repeat 0 0;
+    }
+
+    a.nav_project_task {
+        background:transparent url('images/icon-task.png') no-repeat 0 0;
+    }
+
+    a.nav_project_timesheet,
+    a.nav_project_attendance {
+        background:transparent url('images/icon-timesheet.png') no-repeat 0 0;
+    }
+
+    a.nav_project_thirdPartyCost {
+        background:transparent url('images/icon-thirdparty.png') no-repeat 0 0;
+    }
+
+    a.nav_common_template {
+        background:transparent url('images/icon-quote-template.png') no-repeat 0 0;
+    }
+
+    a.nav_project_quoteTemplate {
+        background:transparent url('images/icon-quote-template.png') no-repeat 0 0;
+    }
+
+    a#actBtn_convertOppToProject {
+        background:transparent url('images/icon-convert.png') no-repeat 0 0;
+    }
+
+    .v-detail .subcolumns .c50r {
+        width: 50%;
+    }
+
+    #footer {
+        padding:3px 10px 1px 10px;
+        margin: 0;
+        width: auto;
+        border-radius: 0;
+    }
+    
+    #footer .float_right {
+        line-height: 2em;
+    }
+    
+    .cpFullWidth #footer {
+        color: #000;
+    }
+    
+    #footer .version {
+        background:transparent url('../../images/footer-icon.png') no-repeat 0 0;
+        padding: 0 0 0 30px;
+        line-height: 2em;
+    }
+
+    #nav .roomsWrapper {
+        width: 90%;
+    }
+
+    #nav .actionsWrapper {
+        width:30%;
+    }
+
+    #nav .actionsWrapper .hlist ul li{
+        margin-right:10px;
+    }
+        
+    /* For dashbpard widget */
+    .c100l {
+        float: left;
+        width: 100%;
+    }
+    
+    .m-common_dashboard .c100l h2 {
+        padding: 0;
+    }
+    
+    .w-project-taskAllocation .button {
+        padding: 5px;
+    }
+    
+    #wd_project_taskAllocation .taskHistoryColorPinkCheckbox,
+    #taskHistory tr.nowTask {
+        background-color: pink;
+    }
+    
+    .widget table th,
+    #taskHistory table {
+        background-color: #D1D9E8;
+        background-image: -moz-linear-gradient(center top , #EBF1FA, #D1D9E8);
+        background-repeat: repeat-x;
+    }
+    
+    .m-common_dashboard #dashboard .c50l, 
+    .m-common_dashboard #dashboard .c50r {
+        width: 49%
+    }
+    
+    .m-common_dashboard .widget .w-project-taskAllocation table th, 
+    .m-common_dashboard .widget .w-project-taskAllocation table td {
+        border: 1px solid #EFEFEF;
+        padding: 0;
+    }
+    
+    .m-common_dashboard .ui-widget input {
+        width: 40px;
+    }
+
+    .m-common_dashboard .row_progress_percent select {
+        width: 60px;
+    }
+
+    .m-common_dashboard .row_priority select {
+        width: 90px;
+    }
+    
+    .m-common_dashboard .ui-widget input, 
+    .m-common_dashboard .ui-widget select, 
+    .m-common_dashboard .ui-widget textarea, 
+    .m-common_dashboard .ui-widget button {
+        font-family: Calibri, Century Gothic, Verdana, Arial, Helvetica, Sans-serif;
+        font-size: 13px;
+    }
+    
+    #col1 {
+        width: 150px;
+    }
+    
+    .hidecol2 #col3 {
+        margin-left: 150px;
+    }
+
+    .m-enggCrm_opportunity.v-edit .addLineItemLayout,
+    .m-enggCrm_project.v-edit .addLineItemLayout {
+        width: 82%;
+        margin-left: 118px;
+        background: none repeat scroll 0 0 #efefef;
+        border: 2px solid;       
+    }
+
+    .m-enggCrm_opportunity.v-edit .addLineItemLayout th,
+    .m-enggCrm_project.v-edit .addLineItemLayout th {
+        border: 1px solid #cccccc;
+
+     }   
+
+    .m-enggCrm_opportunity.v-edit .addLineItemLayout td,
+    .m-enggCrm_project.v-edit .addLineItemLayout td {
+        border: 1px solid #cccccc;
+        background-color: #fff;
+
+     }   
+
+    .m-enggCrm_opportunity.v-edit .linkPortalWrapper .addQuoteRow,
+    .m-enggCrm_project.v-edit .linkPortalWrapper .addQuoteRow {
+        background-color: #0C324E;
+        color:#fff;
+    }
+
+    .m-enggCrm_project.v-edit .linkPortalWrapper .addEmployeeRow {
+        background-color: #0C324E;
+        color:#fff;
+    }
+
+    a.addMultipleLineItem,
+    a.addLineItem {
+        color:#fff;
+        text-decoration: underline;
+    }
+
+    .float_left .deleteEmployeePortal,
+    .float_left .addToHours  {
+        color:#fff;
+        text-decoration: underline;
+    }
+
+    .float_right .addLineItemView  {
+        color:#fff;
+        text-decoration: underline;
+    }
+
+    .showAddEmployeeLineRow .float_left .editForEmployeeItemView {
+        color:#000;
+        text-decoration: underline;
+
+    }
+    .addLineItemLayoutHide {
+        display: none;
+    } 
+
+    .employeeLayoutHide {
+        display: none;
+    } 
+
+     .showAddLineRow .descriptionWrap {
+            max-width: 14em;
+            min-width: 11.5em;
+     }
+
+     .showAddEmployeeLineRow .descriptionWrap {
+            max-width: 14em;
+            min-width: 11.5em;
+     }
+
+     .showAddLineRow .amountRow {
+            text-align: right;            
+     }
+
+    .quoteLayoutHide {
+        /*display: none;*/
+    }
+
+    .showAddLineRow a{
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .showAddEmployeeLineRow a{
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .float_right .quoteLayoutShow {
+        color: #fff;
+        text-decoration: underline;
+
+    }
+
+    .float_right .employeeLayoutShow {
+        text-decoration: underline;
+        color: #fff;
+
+    } 
+
+     .addEmployeeRow .viewRowWidth,
+     .addQuoteRow .viewRowWidth {
+        width: 1%;
+     }   
+
+    .showAddLineRow {
+        color: #000;
+    }
+
+    .showAddLineRow .quoteRowBorder {
+        border-left:1px solid #fff;
+        border-bottom:1px solid #fff;
+        border-right:1px solid #fff;
+    }
+
+    .showAddEmployeeLineRow .employeeRowBorder {
+        border-left:1px solid #fff;
+        border-bottom:1px solid #fff;
+        background-color: #fff;
+    }
+
+    .showAddEmployeeLineRow {
+        border-left:1px solid #fff;
+        border-bottom:1px solid #fff;
+        border-right:1px solid #fff;
+    }
+
+    .showAddEmployeeLineRow {
+        border-left:1px solid #fff;
+        border-bottom:1px solid #fff;
+    }
+
+    .showAddLineRow .quoteRowBordersecond {
+        border-left:1px solid #fff;
+        border-bottom:1px solid #fff;
+    }
+
+    .showAddEmployeeLineRow {
+        background-color: #cccccc;
+    }
+
+    .employeeItemBackground {
+        background-color: #fff;
+    }
+    .showAddLineRow .quoteRowBackground {
+        background-color: #cccccc;
+    }
+
+    .showAddEmployeeLineRow .employeeRowBackground {
+        background-color: #cccccc;
+    }
+
+    .showAddLineRow .borderQuote {
+        border-left: 1px solid #cccccc;
+    }
+
+    .float_left .deleteAddQuote {
+        color:#fff;
+        text-decoration: underline;
+    }
+
+    .float_left .editForQuote {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .float_left .editForEmployeeItemView {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .printLink a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .duplicateQuote a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+
+    .printTimeSheetPdf a {
+        color:#fff;
+        text-decoration: underline;
+    }
+
+    .overAllTimeSheet a {
+        color:#fff;
+    }
+
+    /*** Employee Edit Styles: ***/
+    .m-enggCrm_employee.v-edit .addHourlyRate {
+        display: none;
+    }
+
+    .m-enggCrm_employee.v-edit .salaryForFullTime {
+        display: none;
+    }
+
+    /** Navy blue color #00008B **/   
+    .confirmedQuote {
+        background-color: #4e280c !important;
+    }
+
+    .m-enggCrm_opportunity .rightPanel .quoteFromProj,
+    .m-enggCrm_project .rightPanel .quoteFromProj {
+        background-color: #E6ECF2;
+    }
+
+    .addMultipleLineItemForm .lineItemMainTitle {
+        width: 150px !important;
+    }
+
+    
+    .addMultipleLineItemForm .lineItemAmount,
+    .generateInvoiceForm .invoiceItemAmount,
+    .generateDetailInvoiceForm .invoiceItemAmount,
+    .addMultiplePurchaseOrderForm .poAmount,
+    .addMultipleMaterialsForm .materialAmount {
+        font-size: 14px;
+        height: 23px;
+        margin-top: 6px;
+        width: 100px !important;
+    }
+
+    .addMultipleLineItemForm .lineItemUnit,
+    .generateInvoiceForm .invoiceItemUnit,
+    .generateDetailInvoiceForm .invoiceItemUnit,
+    .addMultiplePurchaseOrderForm .poUnit{
+        font-size: 14px;
+        height: 23px;
+        margin-top: 6px;
+        width: 50px !important;
+    }
+
+
+    .addMultipleLineItemForm .lineItemQuantity,
+    .generateInvoiceForm .invoiceItemQuantity,
+    .generateDetailInvoiceForm .invoiceItemQuantity,
+    .addMultiplePurchaseOrderForm .poQuantity,
+    .addMultipleMaterialsForm .materialQuantity,
+    .addMultipleMaterialsForm .materialUnit{
+        font-size: 14px;
+        height: 23px;
+        margin-top: 6px;
+        width: 70px !important;
+    }
+
+    .addMultipleLineItemForm .lineItemDescription,
+    .generateInvoiceForm .invoiceItemTitle,
+    .generateInvoiceForm .invoiceItemDescription,
+    .generateDetailInvoiceForm .invoiceItemTitle,
+    .generateDetailInvoiceForm .invoiceItemDescription,
+    .addMultiplePurchaseOrderForm .poTitle,
+    .addMultiplePurchaseOrderForm .poDescription,
+    .addMultipleMaterialsForm .materialTitle,
+    .addMultipleMaterialsForm .materialDescription {
+        width: 300px !important;
+    }
+
+    .generateInvoiceForm .invoiceItemTitle,
+    .generateDetailInvoiceForm .invoiceItemTitle,
+    .addMultiplePurchaseOrderForm .poTitle,
+    .addMultipleMaterialsForm .materialTitle,
+    .addMultipleLineItemForm .lineItemTitle,
+    .addMultipleLineItemForm .lineItemRemarks {
+        width: 165px !important;
+    }
+
+    .addMultipleLineItemForm .lineItemDescription,
+    .generateInvoiceForm .invoiceItemDescription,
+    .generateDetailInvoiceForm .invoiceItemDescription,
+    .addMultiplePurchaseOrderForm .poDescription,
+    .addMultipleMaterialsForm .materialDescription{
+        width: 250px !important;
+    }
+
+    .addMultipleLineItemForm .lineItemPartno {
+        width: 100px !important;
+    }
+
+    .rightPanel .summaryAmountDetails {
+        background-color: #ededed;
+        border: 1px solid #efefef;
+        margin-top:10px;
+        margin-bottom:10px;
+        width: 100%;
+    }
+
+    .rightPanel .summaryTitle {
+        background-color:#dcd9d9 ;
+        height:35px;
+    }
+
+    .rightPanel .summaryTitle th,
+    .rightPanel td {
+        padding: 6px;
+    }
+
+    .m-enggCrm_order .rightPanel .invoiceDisplay .highlightCell,
+    .m-enggCrm_order .rightPanel .receiptDisplay .highlightCell,
+    .m-enggCrm_project .rightPanel .materialsDetailRow .highlightCell {
+        background-color: #551a8b;
+        color: #fff;
+    }
+
+    .m-enggCrm_opportunity .ym-columnar div.ym-fbox-text textarea#fld_condition,
+    .m-enggCrm_opportunity .columnar div.type-text textarea#fld_condition {
+        height: 150px;
+    }
+
+    /*.yearDivHoursEmployeeForm*/
+    .monthDivHoursEmployeeForm{
+        float: left;
+        padding: 8px;
+        width: 40%;
+    }
+
+    .yearDivHoursEmployeeForm select
+    ,.monthDivHoursEmployeeForm select{
+        width: 30%;
+    }
+
+    .yearDivHoursEmployeeForm label
+    ,.monthDivHoursEmployeeForm label{
+        display: inline-block;
+        font-weight: bold;
+        width: 10% !important;
+    }
+
+    .employee_name_timesheet{
+        width: 200px;
+    }
+
+    .timeSheetDaysInput,
+    .timeSheetDaysOTInput,
+    .timeSheetDaysPHInput,
+    .timeSheetDaysNormalInput {
+        height: 22px;
+        width: 60px;
+    }
+
+    .timeSheetDaysRatePerHr,
+    .timeSheetDaysOTRatePerHr,
+    .timeSheetDaysPHRatePerHr{
+        height: 22px;
+        width: 86px;
+        font-weight: bold;
+    }
+    
+    .timeSheetTotalHours{
+        color: #000000;
+        font-weight: bold;
+        height: 22px;
+        width: 132px;
+    }
+
+
+    table.timesheetTableProjReltab thead th {
+        background: none repeat scroll 0 0 #808080;
+        color: #FFFFFF;
+    }
+
+    .monthlabelfilter{
+        padding-left: 16px;
+    }
+
+    .InvoiceTypeDropdown {
+        padding-bottom: 4px;
+        padding-left: 2px;
+        padding-top: 15px;
+    }
+
+    .InvoiceTypeDropdown label {
+        font-weight: bold;
+        padding-right: 12px;
+    }
+
+    .txtCenter.No_Records_linked {
+        font-weight: bold;
+        padding: 18px;
+    }
+
+    .invoice_creation_type{
+        padding-bottom: 12px;
+        float: left;
+    }
+
+    .invoice_creation_type select {
+        width: 116px;
+    }
+
+    .invoice_creation_type label {
+        font-weight: bold;
+        padding-right: 10px;
+    }
+
+    .invoice_creation_text {
+        padding: 6px 0 16px;
+    }
+
+    .invoice_creation_text label{
+        font-weight: bold;
+        padding: 2px;
+    }
+
+    .invoice_creation_text input {
+        padding: 2px;
+    }
+
+    .invoice_creation_text_disable,
+    .invoice_creation_description_disable {
+        display: none;
+    }
+
+    .invoice_creation_description textarea {
+        height: 64px;
+        width: 330px;
+    }
+
+    .invoice_creation_description label {
+        display: block;
+        font-weight: bold;
+        padding-bottom: 6px;
+    }
+
+    .invoice_creation_description {
+        padding: 12px 0;
+    }
+
+    .invoice_creation_date label {
+        font-weight: bold;
+        padding-left: 4px;
+        padding-right: 8px;
+    }
+
+    .invoice_creation_date div {
+        margin-top: -12px;
+        padding: 0 9px;
+    }
+
+    .invoice_creation_date .message {
+        background-color: #8B0000;
+        border-radius: 3px;
+        color: #FFFFFF;
+        margin-left: 98px;
+        margin-top: 30px;
+        padding: 5px;
+        position: absolute;
+    }
+
+    .msgforInvoiceCreated {
+        background-color: #8B0000;
+        border-radius: 4px;
+        color: #FFFFFF;
+        float: right;
+        font-size: 19px;
+        font-weight: bold;
+        height: 28px;
+        margin-right: 300px;
+        width: 387px;
+    }
+
+    .msgforInvoiceCreated font {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .validationDivforAdd .message {
+        background-color: #8B0000;
+        border-radius: 3px;
+        color: #FFFFFF;
+        font-size: 15px;
+        margin-right: 481px;
+        padding: 5px;
+    }
+
+    .validationDivforEdit .message {
+        background-color: #8B0000;
+        border-radius: 5px;
+        color: #FFFFFF;
+        padding: 5px 36px;
+    }
+
+    .generateDetailInvoiceForm .error .message .invoiceAlert {
+        font-size: 17px;
+        border: 1px dotted red;
+    }
+
+    .text.invoiceItemBalanceQuantity {
+        display: block;
+        font-size: 16px;
+        padding: 8px 5px;
+        text-align: center;
+    }
+
+    .chargesDivEmployeeForm {
+        padding: 8px;
+    }
+
+    .chargesDivEmployeeForm > label {
+        display: inline-block;
+        font-weight: bold;
+        width: 10%;
+    }
+
+    .chargesDivEmployeeForm > input {
+        margin-right: 18px;
+    }
+
+    .type-text.ym-fbox-text.row_admin_charges.editable{
+        float: left;
+    }
+
+    .type-text.ym-fbox-text.row_admin_charges.editable > label {
+        font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .type-text.ym-fbox-text.row_transport_charges.editable > label {
+        font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+}

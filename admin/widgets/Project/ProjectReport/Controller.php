@@ -1,0 +1,4 @@
+<?
+class CPL_Admin_Widgets_Project_ProjectReport_Controller extends CP_Admin_Widgets_Project_ProjectReport_Controller
+{
+}

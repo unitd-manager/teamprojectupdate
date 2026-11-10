@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-payroll_payrollManagement .toggle {
+        display:block;
+    }
+
+    .linkPortalWrapper table td input[type="text"] {
+        width: 90%;
+    }
+
+    .m-payroll_payrollManagement .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-payroll_payrollManagement .c50l,
+    .m-payroll_payrollManagement .c50r {
+        width: 100%;
+    }
+
+    .m-payroll_payrollManagement .ym-columnar .ym-fbox-text label,
+    .m-payroll_payrollManagement .ym-columnar .ym-fbox-select label,
+    .m-payroll_payrollManagement #frmEdit .type-text label,
+    .m-payroll_payrollManagement #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-payroll_payrollManagement #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-payroll_payrollManagement .linkPortalWrapper div.header{
+        background-color: #152E43;
+    }
+
+    .m-payroll_payrollManagement .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #E6E6E6;
+    }
+
+    .payDetails table.thinlist td{
+        border:1px solid #dddddd;
+    }
+    .payDetails table.thinlist{
+        border:2px solid #49C3E9;
+    }
+    .payDetails table.thinlist tr td:nth-child(2),
+    .payDetails table.thinlist tr th:nth-child(1){
+        border-right:2px solid #49C3E9;
+    }
+
+    .payDetails table.thinlist td:nth-child(1),
+    .payDetails table.thinlist td:nth-child(3){
+        background-color: #E1EDF2;
+        width: 40%;
+    }
+
+    .yform .payDetails div.type-text {
+        margin: 0;
+    }
+
+    .m-payroll_payrollManagement #frmEdit .payDetails .type-text label{
+        display: none;
+    }
+
+    .m-payroll_payrollManagement .yform.edit .type-text div.txt,
+    .m-payroll_payrollManagement .yform.edit .type-select div.txt,
+    .m-payroll_payrollManagement .yform.edit .form-row-wrapper div.txt{
+        margin-left: 10% !important;
+    }
+
+    .m-payroll_payrollManagement .ym-columnar .ym-fbox-text label,
+    .m-payroll_payrollManagement .columnar .type-text label,
+    .m-payroll_payrollManagement .ym-columnar .ym-fbox-select label,
+    .m-payroll_payrollManagement .columnar .type-select label{
+        margin-top: 0px !important;
+    }
+
+    .displayNone{
+        display: none;
+    }
+
+    .m-payroll_payrollManagement .message {
+        margin-left: 0 !important;
+    }
+}

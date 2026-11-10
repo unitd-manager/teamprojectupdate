@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Widgets_Payroll_ForeignWorkers_Controller extends CP_Common_Lib_WidgetControllerAbstract
+{
+}

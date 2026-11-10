@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Gdj_Diamond_Controller extends CP_Common_Modules_Gdj_Diamond_Controller
+{
+}

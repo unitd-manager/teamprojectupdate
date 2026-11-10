@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@media all
+{
+    .m-directory_reports #frSummary {
+        width: 800px;
+        margin-left: 25px;
+    }
+    .m-directory_reports #frSummary th {
+        background-color: #ec9939;
+    }
+    .m-directory_reports #frSummary th.name {
+        width: 100px;
+    }
+    .m-directory_reports #frSummary td.name {
+        font-weight: bold;
+    }
+    .m-directory_reports #frSummary th.day,
+    .m-directory_reports #frSummary td.count {
+        width: 50px;
+        text-align: center;
+    }
+}
+

@@ -1,0 +1,33 @@
+@media all
+{
+    .w-ecommerce-addToCart {
+        margin: 1em 0;
+    }
+    
+    .w-ecommerce-addToCart .button {
+        width:125px;
+        padding: 0.5em;
+    }
+    
+    .w-ecommerce-addToCart .button .ic-cart span {
+        padding-top:4px;
+        display: block;
+        font-size: 20px;
+    }
+
+    .w-ecommerce-addToCart .button a {
+        color: green;
+        text-decoration: none;
+    }
+    
+    .btnViewCart {
+        position:absolute;
+        right:200px;
+        top:10px;
+    }
+
+	.btnViewCart a {
+        background: transparent url('images/cart.png') no-repeat scroll 0 0;
+        padding: 0 3px 0 20px;
+	}
+}

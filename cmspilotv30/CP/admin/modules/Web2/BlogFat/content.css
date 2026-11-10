@@ -1,0 +1,19 @@
+.blogFat {
+    -webkit-box-shadow: 1px 1px 3px gray,;
+    -moz-box-shadow: 1px 1px 3px gray;
+    box-shadow: 1px 1px 3px gray;
+    min-height: 400px;
+    margin:5px;
+    padding:10px;
+}
+
+.blogFat .c80l .subcl{
+    border-right: 1px dotted #ccc;
+}
+
+.blogFat .row{
+    padding:15px 0;
+    border-bottom: 1px dotted #ccc;
+    font-size:1.2em;
+    line-height:2em;
+}

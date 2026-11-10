@@ -1,0 +1,15 @@
+<?
+class CP_Admin_Modules_Payroll_Dashboard_Functions
+{
+    function setModuleArray($modules){
+        $tv = Zend_Registry::get('tv');
+        $modObj = $modules->getModuleObj('payroll_dashboard');
+        $modules->registerModule($modObj, array(
+            'hasDb'       => false
+           ,'actBtnsList' => array()
+           ,'actBtnsDetail' => array()
+           ,'actBtnsEdit' => array()
+           ,'hasOnlyListView' => true
+        ));
+    }
+}

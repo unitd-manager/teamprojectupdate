@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-payroll_employee .noteHighlight {
+        color: #880000;
+        font-weight: bold;
+    }
+
+    .m-payroll_employee .toggle {
+        display:block;
+    }
+
+    .m-payroll_employee .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-payroll_employee .c50l,
+    .m-payroll_employee .c50r {
+        width: 100%;
+    }
+
+    .m-payroll_employee .ym-columnar .ym-fbox-text label,
+    .m-payroll_employee .ym-columnar .ym-fbox-select label,
+    .m-payroll_employee #frmEdit .type-text label,
+    .m-payroll_employee #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-payroll_employee #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-payroll_employee .linkPortalWrapper div.header,
+    .m-payroll_employee .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #E6E6E6;
+    }
+
+    .displayNone{
+        display: none;
+    }
+
+}

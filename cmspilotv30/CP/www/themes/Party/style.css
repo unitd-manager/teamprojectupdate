@@ -1,0 +1,1021 @@
+@charset "UTF-8";
+
+
+@media all
+{
+    body {
+        font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+        font-size: 13px;
+        background-color: #fafaf9;
+    }
+
+    .page {
+        padding: 0 9px;
+        background-color: #fafaf9;
+    }
+    .bodyPanel {
+        position: relative;
+        padding-top: 12px;
+    }
+    small {
+        font-size: 10px;
+    }
+
+    /*--------------------- Links ---------------------- */
+    a {color: #2a2e41; background:transparent; text-decoration:none; outline: none;}
+    a:visited  {color: #2a2e41; }
+
+    a:focus,
+    a:hover,
+    a:active {color:#000; text-decoration:underline; }
+
+    /*--- Buttons ---- */
+    a.button-www-pink,
+    a.button-www,
+    a.button-www-wide,
+    a.button-www-small
+    {
+        display: inline-block;
+        border: 1px solid #CACACA;
+        color: #2A2E41;
+        background: #fff;
+    }
+    a.button-www-pink span,
+    a.button-www-wide span,
+    a.button-www span,
+    a.button-www-small span
+    {
+        display: inline-block;
+        padding: 0.3em 1.05em;
+        margin: 2px;
+        outline: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        background-color: #ECEBE7;
+    }
+    a.button-www-pink span {
+        background-color: #e3467d;
+    }
+    a.button-www-pink {
+        color: #ffffff;
+    }
+    a.button-www-small span {
+        padding: 0.1em 1em;
+    }
+    a.button-www-wide span {
+        padding: 0.4em 4em;
+    }
+
+    h1 {
+        font-weight: bold;
+        /* font-size: 135%; */
+        font-size: 18px;
+        line-height: 1em;
+    }
+    h1.title {
+        padding-top: 0;
+        margin-bottom: 25px;
+    }
+    h2 {
+        font-size: 16px;
+        font-weight: bold !important;
+    }
+    h3 {
+        font-weight: bold !important;
+        font-size: 13px;
+    }
+    p {
+        line-height: 1.5em;
+        margin: 0 0 0.9em;
+        text-align: justify;
+    }
+    li {
+        line-height: 1.5em;
+        margin-left: 0.8em;
+        margin-bottom: 0.9em;
+    }
+
+    ul.noDefault li ul li {
+        list-style-type: disc;
+    }
+
+    /*--- general ---*/
+    .tam {
+        text-align: center;
+    }
+
+    #header {
+        color: #000;
+        background:transparent url('/www/images/logo.png?v=20130410') no-repeat scroll 0px 6px;
+        padding: 0;
+        height:100px;
+    }
+
+    .loginInfoText {
+        right: 0;
+        margin-top: 10px;
+    }
+    .loginInfoText a {
+        color: #333;
+        font-size: 12px;
+    }
+    .loginInfoText a.dashboard {
+        color: #e3467d;
+    }
+
+    #logo {
+        display:block;
+        width:270px;
+        height:80px;
+        position:absolute;
+        top:0;
+        left:0;
+        outline: none;
+    }
+
+    .pink {
+        color: #e3467d;
+    }
+
+    /*--- jquery-ui ---*/
+    .ui-widget {
+        font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+        font-size: 1em;
+    }
+    .ui-widget {
+        font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+        font-size: 1em;
+    }
+
+    .ui-dialog.ui-widget-content {
+        background: #c4c3c1;
+        border: 0;
+        -webkit-box-shadow: 9px 9px 3px -5px #777777;
+        box-shadow: 9px 9px 3px -5px #777777;
+    }
+
+    .ui-dialog.ui-widget-content h2 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .ui-dialog.ui-corner-all {
+        border-radius: 0;
+    }
+    .ui-dialog-title-dialog {
+        display: none;
+    }
+    .ui-dialog .ui-dialog-content {
+        margin: -1px 10px 10px;
+        padding: 10px;
+        background: #ecebe8;
+        font-size: 12px;
+    }
+    .ui-dialog .alert-dialog.ui-dialog-content {
+        margin: -1px 10px 0;
+        padding: 20px;
+    }
+
+    .ui-widget-header {
+        background: none;
+        border: 0;
+        background-color: transparent;
+    }
+    .ui-resizable-handle {
+        display: none !important;
+    }
+    .ui-dialog-title {
+        display: none;
+    }
+    .ui-dialog .ui-dialog-titlebar {
+        height: 12px;
+        padding: 0;
+    }
+    .ui-dialog .ui-dialog-titlebar-close {
+        margin: -12px -8px 0;
+    }
+    .ui-dialog .ui-dialog-titlebar-close:hover,
+    .ui-dialog .ui-dialog-titlebar-close:focus {
+        padding: 0;
+        background: none;
+        border: 0;
+        text-decoration: none;
+    }
+    .ui-state-hover {
+        background: none;
+        border: 0;
+    }
+
+    .ui-dialog .yform .fields {
+        width: 80%;
+        margin: auto;
+    }
+    .ui-dialog .yform .type-text input,
+    .ui-dialog .yform .type-text textarea {
+        width: 96%;
+    }
+
+    .ui-dialog .yform .type-text input.hasDatepicker {
+        width: 84%;
+    }
+
+    /*- ui button -*/
+    .ui-dialog .ui-button
+    {
+        display: inline-block;
+        border: 1px solid #CACACA;
+        color: #2A2E41;
+        background: #fff;
+        border-radius: 0 !important;
+    }
+    .ui-dialog .ui-button span
+    {
+        display: block;
+        padding: 0.3em 10px;
+        margin: 2px;
+        min-width: 75px;
+        outline: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        background-color: #ECEBE7;
+    }
+    .ui-dialog .ui-dialog-buttonpane {
+        /*background: transparent !important;*/
+        border: 0;
+        margin: 0 10px 10px;
+        background: #ECEBE8;
+    }
+
+    .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+        float: none;
+        text-align: center;
+    }
+
+    .dlg-forgotPasswordForm .ui-dialog-content {
+        margin: -1px 10px 0;
+        padding: 20px;
+    }
+    #forgotPasswordForm fieldset {
+        background-color: transparent;
+    }
+
+
+    /*--- main --*/
+    #main {
+        background:#FAFAF9;
+        min-height: 450px;
+        padding: 0px;
+    }
+
+    .hidecol2#main {
+        background:#FAFAF9 url('images/col1-bg.jpg') repeat-y scroll 0 0;
+    }
+
+    /*--- hover large image for card and charity selections ---*/
+    .hoverLargeImage {
+        position: absolute;
+        padding: .5em;
+    }
+
+    /*-- row bg colors --*/
+    .odd {
+        background-color: #ecebe8;
+    }
+    .even {
+        background-color: #ffffff;
+    }
+}
+
+/*--- sub colums ---*/
+@media all
+{
+    .subcolumns.lay1 .c60l {
+        width: 65%;
+    }
+    .subcolumns.lay1 .c40r {
+        width: 35%;
+    }
+    /*--in enquiry --*/
+    .subcolumns.lay2 .c66l {
+        width: 66%;
+    }
+    .subcolumns.lay2 .c33r {
+        width: 34%;
+    }
+}
+
+/*--- main nav ---*/
+@media all
+{
+    #nav {
+        border: 0;
+    }
+
+    /*-------- hlist -------*/
+    .hlist {
+        background-color : #fafaf9;
+        float: right;
+        margin-top: 22px;
+    }
+
+    .hlist, .topnav {
+        overflow: hidden;
+        width: auto;
+
+    }
+
+    .hlist ul li, .topnav ul li {
+        border: 0px solid #888888;
+    }
+
+    .hlist ul li.last a {
+        padding-right: 0px;
+    }
+
+    .hlist ul li a {
+        background: #fafaf9;
+        color:#333;
+        font-size: 14px;
+        padding: 0.5em 0.6em;
+    }
+
+    .hlist ul li.active {
+        background-color: #fff;
+    }
+
+    .hlist ul li a:hover {
+        color: #e2146a;
+    }
+
+    .hlist ul li.active a {
+        color: #e2146a;
+        text-decoration:none;
+        font-weight: normal;
+    }
+
+    /*-------- vlist -------*/
+    .vlist ul li a {
+        font-size: 14px;
+        color: #2a2e41;
+    }
+    .vlist ul li span {
+        font-size: 14px;
+        color: #aaa;
+        padding: 3px 0 3px 10%;
+        display: block;
+    }
+
+    .vlist ul li a:hover {
+        color: #000;
+        font-weight: normal;
+    }
+
+    .vlist ul li.active {
+        background:transparent url('/www/images/cat_select.png') no-repeat scroll 0 8px;
+    }
+
+    .vlist ul li.active > a:first-child, .vlist ul li a:hover {
+        color: #000;
+        font-weight: normal;
+    }
+
+    .vlist ul li.active ul li.active {
+        background:transparent url('/www/images/sub_cat_select.png') no-repeat scroll 20px 7px;
+    }
+
+    .vlist ul li ul li a {
+        font-size: 12px;
+        padding-bottom: 5px;
+        padding-top: 0;
+    }
+}
+
+/*-------- lists (guest list, address list, summary list) -------*/
+@media all
+{
+    .list-style {
+        font-size: 11px;
+    }
+}
+
+/*-------- table -------*/
+@media all
+{
+    table.thinlist {
+        border: 0;
+        border-collapse: separate;
+    }
+    table.thinlist thead th {
+        background: #fff;
+    }
+    table.thinlist td, table.thinlist th {
+        border: 0;
+    }
+}
+
+/*-------- general -------*/
+@media all
+{
+    .selected-event-name {
+        color: #E3467D;
+        font-size: 12px;
+    }
+
+    .remindme {
+        float: right;
+        margin-top: 9px;
+    }
+    .btn-remindme {
+        text-decoration: none;
+    }
+    .btn-remindme span {
+        width: 84px;
+        height: 18px;
+        display: inline-block;
+        padding-left: 25px;
+        outline: none;
+        color: #fff;        
+        background:transparent url('/www/images/remind-me.jpg') no-repeat scroll 0 0;
+        font-size: 12px;
+        font-weight: bold;
+        vertical-align: middle;
+    }
+    
+    .ui-dialog #frmRemindMe .fields {
+        width: 90%;
+        margin: auto;
+    }
+    .ui-dialog #frmRemindMe h2 {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+    .ui-dialog #frmRemindMe .remindMeInfoText {
+        margin-bottom: 35px;
+    }
+    .ui-dialog #frmRemindMe .row_event_date {
+        width: 40%;
+    }
+}
+
+/*-------- login -------*/
+@media all
+{
+    .loginInfoText {
+        
+        position: static;
+        float: right;
+        
+    }
+}
+
+/*-------- faq -------*/
+@media all
+{
+    .rt-faq .faqList a:active,
+    .rt-faq .faqList a:hover,
+    .rt-faq .faqList a:focus
+    {
+        text-decoration: none;
+        color: #E2146A;
+
+    }
+
+}
+
+/*-------- card & charity -------*/
+@media all
+{
+    .rt-select-card .w-content-record .desc,
+    .rt-select-charity .w-content-record .desc {
+        margin: 0 0 35px;
+    }
+
+    .thumb-image-list ul li {
+        float: left;
+        width: 140px;
+        height: 180px;
+    }
+    .thumb-image-list .inner .title {
+        text-align: center;
+        font-size: 10px;
+    }
+    .thumb-image-list .inner .pic {
+        text-align: center;
+    }
+    .thumb-image-list .inner .pic img {
+        cursor: pointer;
+    }
+    .hover-container p {
+        line-height: 1.1em;
+    }
+    .hover-container .hover {
+        /*border: 1px solid red;*/
+        display: none;
+        position: absolute;
+        width: 735px;
+    }
+    .rt-select-charity .hover-container .hover {
+        background:transparent url('/www/images/charity-hover-bg.png') no-repeat;
+        min-height: 315px;
+    }
+    .hover-container .hover .container {
+        margin: 25px 25px 30px 20px;
+    }
+    .hover-container .hover .container .subcolumns .c20l {
+        width: 17%;
+    }
+    .hover-container .hover .container .subcolumns .c80r {
+        width: 83%;
+    }
+    .hover-container .hover .container h1 {
+        font-size: 22px;
+    }
+
+    .rt-select-card li .inner .button-www,
+    .rt-select-charity li .inner .button-www {
+        display: block;
+        width: 80px;
+        margin: 0 auto;
+    }
+    .rt-select-card li .inner .button-www span,
+    .rt-select-charity li .inner .button-www span {
+        padding: 0 1em;
+        display: block;
+        line-height: 18px;
+    }
+}
+/*-------- party setup & rsvp -------*/
+@media all
+{
+    .party-details-rsvp {
+        position: relative;
+    }
+    .party-details-rsvp .subcolumns .c75r .attachment {
+        text-align: right;
+        position: absolute;
+        right: 38px;
+        bottom: 42px;
+        font-size: 10px;
+    }
+
+    .m-party_partySetup .w-member-registerForm a {
+        color: #666666;
+    }
+
+}
+/*-------- how it works -------*/
+@media all
+{
+    .rt-how-it-works .w-media-carousel #carousel1 {
+        padding: 0;
+        margin: 0;
+    }
+    .rt-how-it-works .w-media-carousel .carousel li img {
+        display: none;
+    }
+    .rt-how-it-works .w-media-carousel .carousel li img.first {
+        display: block;
+    }
+    .rt-how-it-works .w-media-carousel .caroufredsel_wrapper li {
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+    .rt-how-it-works #carousel1_pag img {
+        margin: 5px;
+        cursor: pointer;
+        width: 108px;
+    }
+    .rt-how-it-works #carousel1_pag {
+        margin-top: 15px;
+    }
+    .rt-how-it-works #carousel1_pag img.selected {
+        border: 1px solid #999;
+    }
+
+    .carousel a.prev, .carousel a.next {
+        background: url("images/nivoslider-arrows.png") no-repeat scroll 0 0;
+        top: 168px;
+    }
+    .carousel a.prev,
+    .carousel a.prev:hover
+    {
+        background-position: 28px 0;
+    }
+    .carousel a.next,
+    .carousel a.next:hover
+    {
+        background-position: -16px 0;
+    }
+}
+
+/******************* HOME ********************/
+@media all
+{
+    .rt-home .w-content-record h1.title {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .nivo-directionNav a {
+        background: url("images/nivoslider-arrows.png") no-repeat scroll 0 0
+    }
+
+    .w-media-nivoSlider .nivoSlider img {
+        display: none;
+    }
+    .w-media-nivoSlider .nivoSlider img.first {
+        display: block;
+    }
+    a.nivo-prevNav {
+        width: 16px;
+        left: 5px;
+    }
+    a.nivo-nextNav {
+        width: 16px;
+        right: 5px;
+        background-position: -16px 0;
+    }
+
+    .rt-home .nivoSlider {
+       box-shadow: none;
+    }
+    .rt-home .nivo-directionNav a {
+        top: 116px;
+    }
+}
+
+@media all
+{
+    .home-content {
+        margin: 10px 0 20px;
+    }
+    .home-content p {
+        line-height: 1.2em;
+    }
+
+    .home-content .getStarted {
+        position: relative;
+    }
+    .home-content .getStarted .button-www {
+        position: absolute;
+        left: 86px;
+        bottom: -15px;
+    }
+
+    .home-content .subcl,
+    .home-content .subcr {
+        padding: 18px 15px 6px;
+    }
+    .home-content .subcl .desc,
+    .home-content .subcr .desc {
+        margin-top: 16px;
+    }
+
+    .home-content p {
+        margin: 0 0 12px;
+    }
+
+    .rt-home .subcolumns .col1,
+    .rt-home .subcolumns .col2,
+    .rt-home .subcolumns .col3 {
+        background-color: #ECEBE7;
+        width: 32.7%;
+        height: 184px;
+    }
+
+    #col1 {
+        background-color: #eeeae7;
+        width: 187px;
+    }
+
+    #col1_content {
+        min-height: 450px;
+    }
+
+    .hidecol2 #col3 {
+        margin-left: 210px;
+    }
+
+    .hidecol2 #col3_content,
+     #col3_content {
+        padding: 0;
+    }
+
+    .subcolumns .col2 {
+        margin: 0 10px;
+    }
+
+    .rt-home .charity-partner-container {
+        margin-top: 10px;
+    }
+    .rt-home .charity-partner-container h2 {
+        font-size: 15px;
+        border-left: 2px solid #ecebe7;
+        border-bottom: 2px solid #ecebe7;
+        width: 315px;
+        padding: 7px 0 5px 14px;
+        line-height: 1em;
+        margin-bottom: 15px;
+    }
+    .rt-home .charity-partner-container .desc {
+        margin-left: 12px;
+    }
+    .rt-home #our-partner {
+        margin-top: 10px;
+    }
+    
+    
+    #footer {
+        background-color: #fafaf9;
+        font-size: 75%;
+        margin-top: 25px;
+        margin-bottom: 50px;
+        padding: 0px;
+    }
+
+    #footer .links a {
+        font-weight: normal;
+    }
+
+    #footer .links a.jqui-dialog {
+        margin-right: 30px;
+    }
+
+    #footer .icons {
+        margin-right: 30px;
+    }
+    #footer .icons a {
+        font-weight: normal;
+        margin-right: 15px;
+    }
+
+    #footer a.last {
+        margin-right: 0px;
+    }
+
+    #footer a:focus,
+    #footer a:hover,
+    #footer a:active {
+        text-decoration: none;
+    }
+
+    .bodyPanel .fatList .content .description {
+        padding-top: 0;
+    }
+}
+
+/*--- party details ----*/
+@media all
+{
+    .party-details-rsvp .container {
+        min-height: 299px;
+        margin: 17px 34px 30px 22px;
+    }
+    .party-details-rsvp .container .subcolumns {
+        text-align: center;
+    }
+	.party-details-rsvp .subcolumns .c25l {
+        width: 346px;
+    }
+	.party-details-rsvp .subcolumns .c25l .subcl {
+        padding-left: 3px;
+        padding-right: 0;
+        height: 306px;
+        line-height: 306px;
+        overflow: hidden;
+    }
+	.party-details-rsvp .subcolumns .c25l .photo {
+        height: 301px;
+        vertical-align: middle;
+        text-align: center;
+        margin-top: -5px; /* centering issue */
+    }
+	.party-details-rsvp .subcolumns .c75r {
+        width: 572px;
+    }
+	.party-details-rsvp .subcolumns .c75r .subcr.outer {
+        padding: 19px 70px;
+    }
+    .party-details-rsvp .charity-gift {
+        width: 392px;
+        margin: auto;
+        margin: 38px auto 21px;
+        position: relative;
+	}
+    .party-details-rsvp .charity-gift .sharing-between {
+        position: absolute;
+        top: -4px;
+        left: 116px;
+        width: 158px;
+        font-weight: bold;
+    }
+    .party-details-rsvp .charity-gift .logo {
+        height: 48px;
+    }
+    .party-details-rsvp .charity-gift small {
+        font-size: 10px;
+        display: block;
+	}
+    .party-details-rsvp h1 {
+        font-size: 21px;
+        margin-bottom: 15px;
+    }
+    .party-details-rsvp h2 {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .party-details-rsvp h4 {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+    .party-details-rsvp h5 {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+    .party-details-rsvp p {
+        font-size: 13px;
+        margin-bottom: 12px;
+        text-align: center;
+        line-height: 1.1em;
+    }
+    .party-details-rsvp p.p2 {
+        margin: 0 10px;
+        font-size: 11px;
+    }
+    .party-details-rsvp li {
+        line-height: 1.1em;
+    }
+}
+
+/*--- FAQ ----*/
+@media all
+{
+/*    .rt-faq .faqList ul {
+        padding: 0;
+        margin: 0;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .rt-faq .faqList ul li {
+        padding: 0;
+        margin-left: 0;
+        list-style: none;
+    }*/
+}
+
+
+/******************* FORMS ********************/
+@media all
+{
+    textarea {
+        resize: none !important;
+    }
+
+    .yform {
+        border: 0;
+        background: transparent;
+        padding: 0;
+    }
+
+    .yform label {
+        font-size: 10px;
+    }
+
+    .yform .type-text input,
+    .yform .type-text textarea,
+    .yform .type-select select,
+    .yform select,
+    table.search td select,
+    table.search td input {
+        border-color: #AAAAAA #D5D5D5 #D5D5D5 #CCCCCC;
+        border-radius: 0;
+        font-size: 13px;
+    }
+    .yform .type-button input {
+        background: #fff;
+    }
+    .yform .type-text textarea {
+        font-size: 1em;
+        font-weight: normal;
+    }
+    .w-member-loginForm .yform {
+        border: 0;
+        background: none;
+        padding: 0;
+        margin-top: 30px;
+    }
+
+    .w-member-loginForm .yform fieldset {
+        border: 0;
+        padding: 0;
+    }
+
+    /*--- register new member ---*/
+    .w-member-loginForm .registerInfo {
+        margin-top: 30px;
+    }
+
+    .w-member-loginForm .yform label {
+        margin-top: 5px;
+   }
+   .w-member-registerForm .yform .subscribe-terms label {
+       font-size: 14px;
+   }
+
+    .w-member-loginForm .c40r img, .w-member-registerForm .c40r img, .bannerRight img {
+        float: right;
+    }
+
+    .yform .type-text input,
+    .yform .type-text textarea {
+        width: 85%;
+    }
+
+    .row_captcha_code .captcha {
+        margin-top: 10px;
+        position: relative;
+    }
+    .row_captcha_code .captcha .reload {
+        position: absolute;
+        left: 190px;
+        top: 5px;
+        text-align: center;
+    }
+    .row_captcha_code .captcha .reload .info {
+        font-size: 10px;
+    }
+
+    /*--- member - edit profile ---*/
+    .m-membership_contact .yform fieldset {
+        border: 0;
+    }
+}
+
+/******************* MISC ********************/
+@media all
+{
+    #processing_overlay
+    {
+    	position: absolute;
+    	/*zIndex: 99998;*/
+    	top: 0px;
+    	left: 0px;
+    	width: 100%;
+    	height: auto;
+    	background-color:#ccc;
+    	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+        opacity:0.5;
+    	cursor:wait;
+    }
+    #processing_container
+    {
+        font:normal 12px verdana;
+    	min-width: 300px; /* Dialog will be no smaller than this */
+    	max-width: 600px; /* Dialog will wrap after this width */
+    	background: #ddd;
+    	border: 1px solid #ccc;
+    	color: #00303f;
+        opacity: 0.9;
+
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
+    #processing_content {
+    	text-align: center;
+    	padding: 1em 1.75em;
+    	margin: 0em;
+    	vertical-align:middle;
+        background:transparent url('images/progress.gif') no-repeat center center;
+    }
+
+}
+
+/*------- Event Detail --------*/
+@media all
+{
+    .mg-party .subcolumns.party-details-box .c66l {
+        width: 62%;
+    }
+    .mg-party .subcolumns.party-details-box .c33r {
+        width: 38.5%;
+    }
+    .mg-party .subcolumns.party-details-box .c33r .subcr {
+        margin-top: 44px;
+    }
+    .mg-party .subcolumns.party-details-box .floatbox {
+        margin-bottom: 3px;
+    }
+    .mg-party .subcolumns.party-details-box .key {
+        font-weight: bold;
+        margin-right: 0.5em;
+    }
+}
+

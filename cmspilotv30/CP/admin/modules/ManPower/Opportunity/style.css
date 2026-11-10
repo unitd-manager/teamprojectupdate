@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/*** Template ***/
+@media all
+{
+    .m-manPower_opportunity #col3_content .subcl .opportunityAlertBorder {
+        margin-bottom: 10px;
+        border: 1px dotted red;
+        padding: 10px;
+    }
+
+}
+

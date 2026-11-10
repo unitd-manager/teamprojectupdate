@@ -1,0 +1,17 @@
+@media all
+{
+    .thinlist.trialBalance {
+        width: 85%;
+    }
+    .thinlist.trialBalance .account
+    {
+        width: 400px;
+    }
+    .thinlist.trialBalance .currency
+    {
+        width: 70px;
+        text-align: center;
+    }
+
+}
+

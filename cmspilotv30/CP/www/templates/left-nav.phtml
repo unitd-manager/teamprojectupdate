@@ -1,0 +1,47 @@
+<div class="sidebar hidden-print" role="complementary">
+    <ul class="nav sidenav">
+        {% if catSubCatArr is iterable %}
+            {% for category in catSubCatArr.categories %}
+                {% if category.title == '-' %}
+                    <li role="presentation" class="divider"></li>
+                {% else %}
+                    {% set navCls = (category.active == 1) ? "active" : '' %}
+                    {% set navCls = navCls ~  (loop.last == true ? " last" : '') %}
+                    {% set navCls = navCls ~  (loop.first == true ? " first" : '') %}
+                    <li class="{{ navCls }}">
+                        <a href="{{ category.url }}" target="{{ category.link_target }}">{{ category.title }}</a>
+                        {% if category.subCategories|length > 0 %}
+                            <ul class='nav'>
+                                {% for subCategory in category.subCategories %}
+                                    {% set navCls = (subCategory.active == 1) ? "active" : '' %}
+                                    {% set navCls = navCls ~  (loop.last == true ? " last" : '') %}
+                                    <li class="{{ navCls }}">
+                                        <a href="{{ subCategory.url }}" target="{{ subCategory.link_target }}">{{ subCategory.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% for category in subNavArray %}
+                {% if category.title == '-' %}
+                    <li role="presentation" class="divider"></li>
+                {% else %}
+                    {% set activeCls = (category.active == 1) ? " class='active'" : '' %}
+                    <li{{ activeCls|raw }}><a href="{{ category.url }}">{{ category.title }}</a>
+                        {% if category.active %}
+                            <ul class='nav'>
+                                {% for subCategory in subCatArray %}
+                                    {% set activeCls = (subCategory.active == 1) ? " class='active'" : '' %}
+                                    <li{{ activeCls|raw }}><a href="{{ subCategory.url }}">{{ subCategory.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@media all
+{
+    .m-lawNews_contact .myClippingsList ul li{
+        border-top:1px dotted #000;
+        padding: 10px 0;
+    }
+
+    .m-lawNews_contact .myAccount ul {
+        overflow: hidden;
+    }
+
+    .m-lawNews_contact .myAccount ul li {
+        float: left;
+        width: 286px;
+        margin-right: 20px;
+    }
+}

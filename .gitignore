@@ -1,0 +1,24 @@
+# Production configuration
+conf.php
+cmspilotv30/library/cp_conf/cp_conf.php
+cmspilotv30/library/lib_php/aws/config.inc.php
+cmspilotv30/library/lib_php/aws/config-sample.inc.php
+
+# Logs
+*.log
+cp-log/
+
+# Archives/backups
+*.zip
+*.tar
+*.gz
+
+# Environment files
+.env
+.env.*
+
+# Uploaded/generated content
+media/
+
+# SSL/domain verification files
+.well-known/

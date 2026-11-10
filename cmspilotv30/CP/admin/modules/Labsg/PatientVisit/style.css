@@ -1,0 +1,48 @@
+@media all
+{
+	.m-labsg_patientVisit.v-list .error strong.message {
+	    background-color: darkred;
+	    border-radius: 2px;
+	    color: #ffffff !important;
+	    margin-left: 0 !important;
+	    padding: 2px 10px;
+	}
+	.m-labsg_patientVisit.v-list .error strong.message a{
+	    background-color: darkred;
+	    border-radius: 2px;
+	    color: #ffffff !important;
+	    margin-left: 0 !important;
+	    padding: 2px 10px;
+	    text-decoration: underline;
+	}
+
+	.m-labsg_patientVisit .highlightCell {
+	    background-color: #551A8B;
+	    color: #fff;
+	}
+
+	.m-labsg_patientVisit .highlight {
+		background-color: #B4BAC4;
+	}
+
+	#tabs li.highlight {
+		border: 1px solid red;
+	}
+
+	.cancelPatientVisit {
+		text-decoration: none !important;
+	}
+
+	.m-labsg_patientVisit.v-list .cpSearch .dateRange input {
+    	width: 80px !important;
+	}
+
+	.m-labsg_patientVisit.v-list .cpSearch .dateRange {
+    	width: 340px;
+	}
+
+	.m-labsg_patientVisit img.icon {
+		width: 25px;
+	}
+
+}

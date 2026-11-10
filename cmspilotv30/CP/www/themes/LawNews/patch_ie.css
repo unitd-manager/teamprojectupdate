@@ -1,0 +1,123 @@
+/** height added since background did not work **/
+.w-menu-superFish .sf-menu {
+    height:30px;
+}
+
+/********** *html means only for IE6 ******************/
+*html .hidecol1 #col3_content {
+    padding-right:8px;
+    border: 1px solid #fff;
+}
+
+*html #main .mainInner{
+    height:400px;
+}
+
+*html .hidecol1 #col3_content w-member-loginForm {
+    padding-bottom:20px;
+    padding-left:20px;
+    padding-right:0px;
+    padding-top:20px;
+}
+
+*html .jurisdictionList ul li.region ul {
+    position:static;
+}
+
+*html .newsInBrief .w-content-record ul li, .rightPanel .w-content-record ul li {
+    width: 297px;
+}
+
+*html .columnar div.type-button {
+    margin-left:0;
+}
+
+*html .m-lawNews_correspondent .correspondentList ul li.correspondent {
+    height:170px;
+}
+
+*html .yform .type-button input,
+*html .yform .type-button input.submit,
+*html .yform .type-button input.reset { color:#ffffff; background:#D44647 none; }
+
+*html .columnar div.type-button, .columnar .captcha {
+    margin-left: 20%;
+}
+
+*html div.warning {
+    height: 25px;
+}
+
+*html #footer {
+  background: url("images/logo_footer.gif") no-repeat scroll 20px 15px transparent;
+}
+
+*html .ruled,
+*html .w-content-record h2,
+*html .yform h1,
+*html .fatList h1 {
+    height:1px;
+}
+
+*html .myAccount ul li h2.ruled{
+    height:auto;
+}
+
+*html .m-lawNews_contact .myAccount ul li {
+    width: 272px;
+}
+
+*html .advancedSearchList li {
+    height:1px;
+}
+
+*html .sf-sub-indicator {
+    top: 0.6em;
+}
+
+*html .w-menu-superFish .sf-menu li.sfHover,
+*html .w-menu-superFish .sf-menu a:hover
+{
+    text-decoration: none;
+    background:none;
+    outline: 0;
+    color: #FCB131;
+}
+
+*html .w-menu-superFish .sf-menu a:active,
+*html .w-menu-superFish .sf-menu li.active a,
+*html .w-menu-superFish .sf-menu li.active a:hover {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    color: #000000 !important;
+    margin-top: 0px;
+    outline: 0 none;
+    text-decoration: none;
+}
+*html .m-lawNews_newsArchive .reporterList ul li {
+    height: 150px;
+}
+
+#nav .tagLine2 {
+    top: 8px;
+}
+
+#nav {
+    z-index:100;
+    position:relative;
+}
+
+
+.button,
+.button:hover{
+   filter:none;
+}
+
+#main .showSecondLogo .w-content-record h2 {
+    padding-bottom: 10px;
+}
+
+.m-lawNews_correspondent .correspondentList ul li.correspondent {
+  height: 168px;
+}

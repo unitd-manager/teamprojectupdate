@@ -1,0 +1,12 @@
+@charset "UTF-8";
+@media all
+{
+    .export{
+        background:#EFEFEF url('../../../images/icons/xls_icon_xs.png') no-repeat 2px 4px;
+        display:block;
+        height:16px;
+        padding:5px 5px 5px 22px;
+        border: 1px solid #CFCFCF;
+        margin-right:2px;
+    }
+}

@@ -1,0 +1,25 @@
+copy: syntaxhighlight to plugins
+
+config.js
+=========
+CKEDITOR.editorConfig = function( config )
+{
+	// Define changes to default configuration here. For example:
+	// config.language = 'fr';
+	// config.uiColor = '#AADC6E';
+    config.extraPlugins = 'syntaxhighlight';
+    config.toolbar_Full.push(['Code']);
+};
+
+contents.css
+===========
+pre
+{
+    background-color: #fff;
+    font-family: "Consolas" , "Courier New" ,Courier,mono,serif;
+    font-size: 12px;
+    color: blue;
+    padding: 5px;
+    border: 1px dashed blue;
+}
+

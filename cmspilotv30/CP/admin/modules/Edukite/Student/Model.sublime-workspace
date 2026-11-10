@@ -1,0 +1,514 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"subTotal",
+				"subtotalvalue"
+			],
+			[
+				"num",
+				"number_format"
+			],
+			[
+				"nu",
+				"number_format"
+			],
+			[
+				"staff",
+				"staff_name"
+			],
+			[
+				"invoice_",
+				"invoice_date"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"f",
+				"float"
+			],
+			[
+				"floa",
+				"float_left"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"site",
+				"site_id"
+			],
+			[
+				"cp",
+				"cpCfg"
+			],
+			[
+				"L",
+				"LOCATION"
+			],
+			[
+				"float",
+				"float_left"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"s",
+				"solid"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/Projects/scbcedukite/httpdocs/www/modules/Edukite/Notice/View.php",
+		"/E/Projects/scbcedukite/scbcedukite.sublime-project",
+		"/E/Projects/ucsystem/httpdocs/sql-log/svn-commands.txt",
+		"/E/Projects/ucsystem/httpdocs/sql-log/sql-log.txt",
+		"/E/Projects/ucsystem/httpdocs/admin/modules/ManPower/Order/View.php",
+		"/E/Projects/ucsystem/httpdocs/admin/lib/headfoot.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/ManPower/Project/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/ManPower/Order/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/ManPower/Receipt/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/ManPower/Invoice/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/ManPower/Invoice/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/ManPower/Invoice/functions.js",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/AceIms/Contact/Model.php",
+		"/E/Projects/ucsystem/httpdocs/index.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Project/Invoice/jasper/invoice_no_line_item.jasper",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/AceIms/NewEnrollmentByLevel/Functions.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/ManPower/Order/Controller.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/ManPower/Order/Model.php",
+		"/E/Projects/ucsystem/httpdocs/admin/modules/Pms/Invoice/Model.php",
+		"/E/Projects/ucsystem/httpdocs/admin/modules/Pms/Invoice/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/DailyCollectionReport/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/AceIms/Batch/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/themes/Blue/style.css",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/ManPower/Candidate/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/ManPower/Candidate/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/AceIms/Invoice/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/AceIms/CreditNote/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/themes/Green/style.css",
+		"/E/Projects/yolanedukite/httpdocs/www/modules/EdukiteWeb/Notice/View.php",
+		"/E/Projects/yolanedukite/yolanedukite.sublime-project",
+		"/E/Projects/ucsystem/ucsystem.sublime-project",
+		"/E/Projects/scbcedukite/httpdocs/www/modules/EdukiteWeb/Notice/View.php",
+		"/E/Projects/saintedukite/httpdocs/cp-log/svn-commands.txt",
+		"/E/Projects/saintedukite/httpdocs/www/modules/EdukiteWeb/Notice/View.php",
+		"/E/Projects/scbcedukite/httpdocs/cp-log/svn-commands.txt",
+		"/E/Projects/cmsPilot/v3.0/CP/www/modules/Edukite/Parent/Model.php",
+		"/E/Projects/edukitedev/httpdocs/www/plugins/Member/Login/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/www/modules/Edukite/Notice/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/common/lib/ModelHelper.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/WishList/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/common/lib/Modules.php",
+		"/E/Projects/tssedukite/tssedukite.sublime-project",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/DetailSummaryByClient/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/SalesByMonth/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/DetailSummaryByClient/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Trading/Lib/jasper/report_header_ls.jasper",
+		"/E/Projects/cmsPilot/v3.0/CP2/www/themes/Quest/Hooks/ModuleEcommerceBasket.php",
+		"/E/Projects/cmsPilot/v3.0/Notes/membership.sql",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/SalesSummaryByProduct/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/SummaryByClient/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/SummaryByClient/View.php",
+		"/E/Projects/blossoms/httpdocs/admin/widgets/Tradingsg/SalesSummaryByProduct/View.php",
+		"/E/Projects/blossoms/httpdocs/admin/widgets/Tradingsg/SalesSummaryByProduct/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/SalesSummaryByProduct/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/SalesByClient/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/SalesByYear/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Project/TaskHoursByStaffReport/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/EnquiryActivityByStaff/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Project/TaskHoursByStaffReport/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/QuoteByMonth/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/EnquiryByStaff/Model.php",
+		"/E/Projects/usscrmin/httpdocs/sql-log/svn-commands.txt",
+		"/E/Projects/usscrmin/httpdocs/sql-log/sql-log.txt",
+		"/E/Projects/usscrmin/httpdocs/www/lib/config.php",
+		"/E/Projects/cmsPilot/v3.0/Notes/v3.sql",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Gdata/YouTube/Extension/VideoId.php",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Service/Yahoo/VideoResult.php",
+		"/E/Projects/cmsPilot/v3.0/CP/www/modules/Edukite/Achievement/View.php~RF14f1912.TMP",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Directory/Business/ImportDataUK.php",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Server/Reflection/ReturnValue.php",
+		"/E/Projects/usscrmin/httpdocs/conf.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/LeadByStaff/Model.php",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Tool/Project/Context/Zf/ModelFile.php",
+		"/E/Projects/cmsPilot/v3.0/CP/common/lib/ModuleLinkControllerAbstract.php",
+		"/E/Projects/blossoms/httpdocs/admin/themes/Trade/style.css",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/LeadByStaff/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/QuoteByMonth/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/EnquiryByStaff/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/EnquiryByMonth/Model.php",
+		"/E/Projects/cmsPilot/v3.0/Notes/bak/Theme-FullScreen-Bak/Model.php",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Locale/Data/ml_IN.xml",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Project/Invoice/jasper/invoice_other.jasper",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/jasper/header.jasper",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Filter/HtmlEntities.php",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/View/Helper/HeadLink.php",
+		"/E/Projects/cmsPilot/v3.0/library/lib_php/Solarium/Core/Query/Helper.php",
+		"/E/Projects/cmsPilot/v3.0/library/lib_php/emogrifier.php",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Locale/Data/en_HK.xml",
+		"/E/Projects/blossoms/httpdocs123/admin/widgets/Tradingsg/VatInvoice/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/widgets/Tradingsg/DamageProductReport/Model.php",
+		"/E/Projects/cmsPilot/v3.0/Notes/StudioPilot/SP-Quote-Module-SQL/sql-marc-only.sql",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Edukloud/OrderLink/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/ManPower/Project/Model.php",
+		"/E/Projects/blossoms/httpdocs/sql-log/svn-commands.txt",
+		"/E/Projects/blossoms/httpdocs/admin/modules/Tradingsg/Pos/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Tradingsg/Pos/style.css",
+		"/E/Projects/vmsj/httpdocs/admin/themes/Trade/style.css",
+		"/E/Projects/cmsPilot/v3.0/CP/common/css/style.css",
+		"/E/Projects/blossoms/httpdocs/admin/modules/Tradingin/Quote/View.php",
+		"/E/Projects/vmsj/httpdocs/admin/modules/Tradingin/Quote/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/themes/Trade/style.css",
+		"/E/Projects/nourulasia/httpdocs/admin/modules/Tradingsg/Order/View.php",
+		"/E/Projects/nourulasia/httpdocs/admin/themes/Trade/style.css",
+		"/E/Projects/nourulasia/httpdocs/admin/modules/Tradingsg/Order/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Tradingsg/Order/View.php",
+		"/E/Projects/engex/httpdocs/admin/modules/Tradingsg/Order/View.php",
+		"/E/Projects/vmsj/httpdocs/admin/modules/Tradingin/Order/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Tradingin/Order/View.php",
+		"/E/Projects/blossoms/httpdocs/admin/modules/Tradingin/Order/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Tradingin/Order/Controller.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Tradingsg/Order/Model.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Tradingsg/Company/View.php",
+		"/E/Projects/tradesmart/httpdocs/admin/modules/Tradingsg/Order/View.php",
+		"/E/Projects/cmsPilot/v3.0/CP/admin/modules/Tradingsg/Order/Controller.php",
+		"/E/Projects/engex/httpdocs/admin/themes/Trade/style.css",
+		"/E/Projects/tradingdemo/httpdocs/admin/modules/Tradingsg/Order/View.php",
+		"/E/Projects/tradingdemo/httpdocs/conf.php",
+		"/E/Projects/blossoms/httpdocs/robots.txt",
+		"/E/Projects/cmsPilot/v3.0/library/lib_php/PHPExcel/Worksheet/RowIterator.php",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Gdata/App/Extension/Rights.php",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Gdata.php",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Locale/Data/gez_ER.xml",
+		"/E/Projects/cmsPilot/v3.0/library/lib_php/phpFlickr/getToken.php",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/GetRunningConferenceRequest.php",
+		"/E/Projects/cmsPilot/v3.0/library/Zend/Service/Technorati/GetInfoResult.php",
+		"/E/Projects/tradingmass/httpdocs/admin/modules/Tradingsg/Order/View.php",
+		"/E/Projects/tradingdemo/httpdocs/admin/lib/config.php"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"",
+			"*.php",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"bg",
+			"mode_of_payment",
+			"cpCfg",
+			"invoicetype",
+			"+=",
+			"pos = ",
+			"!pos",
+			"pos",
+			"client_hourly_rate",
+			"generate",
+			"getPrintInvoiceRecord",
+			"style=\"text-decoration:underline;",
+			"underline",
+			"valuelist",
+			"processStatus",
+			"concat",
+			"getCPDate",
+			"date",
+			"d",
+			"date",
+			"DD",
+			"date",
+			"DD",
+			"D",
+			"DD",
+			"FF",
+			"formatDate",
+			"d-f-y",
+			"f-d",
+			"date",
+			"dateFormat",
+			"        $dateUtil = Zend_Registry::get('dateUtil');\nF",
+			"dateFormat",
+			"pdf->ln",
+			"invoice_code",
+			"invoice_code.",
+			"billing_address_flat",
+			"product_group",
+			"getListFooter",
+			"position",
+			"used_inhouse",
+			"position",
+			"project",
+			"date1",
+			"DateRange",
+			"Period",
+			"sort_order",
+			"activeTab",
+			"agent_id",
+			"Agent",
+			"getFieldSetWrapped",
+			"Agent Name",
+			"fieldset",
+			"agentDetail",
+			"$tv['teacher_kite']==1",
+			"hostName",
+			"school",
+			"getAutoUpdateFields",
+			"auto",
+			"totalBalanceAmount",
+			"balance_amount",
+			"total_amount_paid",
+			"totalInvoiceAmount",
+			"blossoms",
+			"date('m')",
+			"current_month",
+			"current",
+			"apend",
+			"append",
+			"Handy",
+			"Pos",
+			"row_quote_code",
+			"quotationCode",
+			"creationModificationText",
+			"staffName",
+			"row_quote_date",
+			"    .m-tradingin_quote  .row_quote_date",
+			"paymentTermsTitle",
+			"quoteDateTitle",
+			"clientTitle",
+			"currencyTextTitle",
+			"quotationType",
+			"quoteStatusTitle",
+			"tradingin_order",
+			"Print Packing List",
+			"company_name",
+			"delivery_company_name",
+			"SELECT count(*) AS totalRecords FROM (\n        SELECT o.*\n              ,gc1.name AS cust_country_name\n              ,gc2.name AS shipping_country_name\n              ,c.company_name AS company_name\n              ,c.website AS company_website\n              ,c.fax AS company_fax\n",
+			"SELECT count(*) AS totalRecords FROM (\n        SELECT o.*\n              ,gc1.name AS cust_country_name\n              ,gc2.name AS shipping_country_name\n              ,c.company_name AS company_name\n              ,c.website AS company_website\n              ,c.fax AS company_fax\n              ,c.phone AS company_phone\n              ,c.address_flat AS company_address_flat\n              ,c.address_street AS company_address_street\n              ,c.address_town AS company_address_town\n              ,c.address_state AS company_address_state\n              ,gc3.name AS company_country_name\n              ,(SELECT (SUM(oi.unit_price * oi.qty) + o.shipping_charge)\n               FROM order_item oi\n               WHERE oi.order_id = o.order_id\n               ) AS order_amount\n              ,q.quote_code\n              ,q.delivery_date",
+			"SELECT o.*\n              ,gc1.name AS cust_country_name\n",
+			"SELECT o.*\n              ,gc1.name AS cust_country_name\n              ,gc2.name AS shipping_country_name\n              ,c.company_name AS company_name\n              ,c.website AS company_website\n              ,c.fax AS company_fax\n              ,c.phone AS company_phone\n              ,c.address_flat AS company_address_flat\n              ,c.address_street AS company_address_street",
+			"company_name",
+			"pos",
+			"record",
+			"tradingin_order",
+			"totalOverallAmountValue",
+			"pos",
+			"record_type",
+			"pos",
+			"record_type",
+			"rowCounter",
+			"\n            "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"usscrmin",
+			"tradingsg_order"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "Model.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"modelhe",
+				"CP\\common\\lib\\ModelHelper.php"
+			],
+			[
+				"modelhel",
+				"v3.0\\CP\\common\\lib\\ModelHelper.php"
+			],
+			[
+				"modelh",
+				"v3.0\\CP\\common\\lib\\ModelHelper.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"tss",
+				"E:\\Projects\\scbcedukite\\scbcedukite.sublime-project"
+			],
+			[
+				"",
+				"E:\\Projects\\ucsystem\\ucsystem.sublime-project"
+			],
+			[
+				"wa",
+				"E:\\Projects\\wavesedukite\\wavesedukite.sublime-project"
+			],
+			[
+				"t",
+				"E:\\Projects\\tssedukite\\tssedukite.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"appendSQ",
+				"getManPowerProjectManPowerCandidateLinkSQL"
+			]
+		],
+		"width": 576.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

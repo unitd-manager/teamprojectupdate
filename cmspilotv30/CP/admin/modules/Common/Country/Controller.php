@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Common_Country_Controller extends CP_Common_Modules_Common_Country_Controller
+{
+}

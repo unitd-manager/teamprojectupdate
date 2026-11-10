@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Directory_BookingLink_Controller extends CP_Common_Lib_ModuleLinkControllerAbstract
+{
+}

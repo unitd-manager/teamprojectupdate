@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+/*************** ACHIEVEMENT PAGE *********************/
+@media all
+{
+    .m-edukite_achievement.v-edit fieldset {
+        background: none repeat scroll 0 0 #EBEBEB;
+        border: 1px solid #9BBADD;
+        margin: 53px 0 0;
+        min-height: 718px;
+        padding: 10px;
+        width: 365px;
+    }
+
+    .m-edukite_achievement.v-edit .achievementTitle{
+        border: 2px solid #377ABE;
+        border-radius:7px;
+        padding: 10px;
+        vertical-align: top;
+    }
+
+    .m-edukite_achievement.v-edit h2.heading {
+        margin: 10px 0 10px 0;
+        color: red;
+    }
+
+    .m-edukite_achievement.v-edit h2.heading img {
+        margin: 0 10px 0 0;
+    }
+
+    .m-edukite_achievement.v-edit .leftInfoTitle .activityGroup img {
+        padding: 115px 0 0 14px;
+    }
+
+    .m-edukite_achievement.v-edit .leftInfoTitle .btns {
+        height: 43px;
+        padding: 5px 0 0 69px;
+    }
+
+    .m-edukite_achievement.v-edit .rightInfoTitle .achivementGroup img {
+        position: absolute;
+        top: 114px;
+        right: 15px;
+    }
+
+    .m-edukite_achievement.v-edit .noticeSetup-btn {
+        position: absolute;
+        top: 162px;
+        right: 276px;
+    }
+
+    .m-edukite_achievement.v-edit .achievement-btn {
+        position: absolute;
+        top: 110px;
+        right: 275px;
+    }
+
+    .m-edukite_achievement.v-edit .achievement-group-btn {
+        position: absolute;
+        top: 96px;
+        right: 274px;
+    }
+
+    .m-edukite_achievement.v-edit .achievementHelp {
+        position: absolute;
+        top: 215px;
+        left:255px;
+        background: url("/cmspilotv30/CP/www/themes/Manager/images/achievement-help-bg.png") no-repeat scroll 0 0 transparent;
+        width: 387px;
+        height: 42px;
+    }
+
+    .m-edukite_achievement.v-edit .achievementHelp img{
+        margin: 5px 0 0 17px;
+    }
+
+    .m-edukite_achievement.v-edit .ui-widget-content.ui-dialog-buttons {
+        background: url("/cmspilotv30/CP/www/themes/Manager/images/achievement-help-panel.png") no-repeat scroll 0 0 #FFFFFF;
+        border: 0 solid #AAAAAA;
+        border-radius: 0;
+        color: #222222;
+        height: 535px !important;
+        width: 620px !important;
+    }
+
+    .m-edukite_achievement.v-edit .ui-widget-header {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: 0 none;
+        display: none;
+    }
+
+    .m-edukite_achievement.v-edit .ui-dialog-buttonpane button.ui-button {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: 0 none;
+        color: rgba(0, 0, 0, 0);
+        height: 34px;
+        left: 221px;
+        position: absolute;
+        top: 2px;
+        width: 177px;
+    }
+
+
+    .m-edukite_achievement.v-edit .ui-dialog .ui-dialog-buttonpane {
+        border-width: 0;
+        padding: 0;
+    }
+
+    .helpContent {
+        margin: 80px 50px 0;
+        line-height: 1.5;
+        font-family: Verdana;
+    }
+
+    .helpContentTitle {
+        font-weight: bold;
+        color: #3C7BBC;
+    }
+}
+

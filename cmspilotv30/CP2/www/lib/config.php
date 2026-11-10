@@ -1,0 +1,4 @@
+<?
+$cpCfg = array();
+
+return $cpCfg;

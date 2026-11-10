@@ -1,0 +1,23 @@
+@media all
+{
+	.w-member-loginForm .registerInfo{
+	    margin-top: 15px;
+	}
+
+	.w-member-loginForm .btns {
+	    float: left;
+	}
+
+	.facebookLogin {
+	    margin-top: 15px;
+	}
+
+	.facebookLogin .fbLoginButton a {
+	    width: 196px;
+	    height: 44px;
+	    background: url('images/facebook-login-btn.jpg') no-repeat top left;
+	    display: block;
+	}
+	 
+
+}

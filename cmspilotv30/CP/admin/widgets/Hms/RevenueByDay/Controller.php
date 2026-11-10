@@ -1,0 +1,5 @@
+<?
+class CP_Admin_Widgets_Hms_RevenueByDay_Controller extends CP_Common_Lib_WidgetControllerAbstract
+{
+    var $searcVarCondn = '';
+}

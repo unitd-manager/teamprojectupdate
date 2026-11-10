@@ -1,0 +1,4 @@
+<?
+class CP_Common_Modules_WebBasic_ContentLink_Model extends CP_Common_Lib_ModuleLinkModelAbstract
+{
+}

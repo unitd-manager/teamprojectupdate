@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+.m-pms_reports #reportsList {
+    background: #F5F5F5;
+    padding:15px;
+}
+
+.m-pms_reports #reportContainer .alertText {
+    margin-bottom: 10px;
+    border: 1px dotted red;
+    padding: 10px;
+}
+
+.m-pms_reports #reportsList .subcr{
+    margin-right: 0;
+}
+
+.m-pms_reports #reportsList a.button {
+    width:75%;
+    font-size: 17px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.m-pms_reports .report-wrapper h1 {
+    text-shadow: 1px 1px 2px #665D5D;
+    filter: dropshadow(color=#665D5D, offx=1, offy=1);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.m-pms_reports  table.search td select.attendanceFilter {
+    width: 175px;
+}
+
+.m-pms_reports  table.search td select.callRegistryFilter {
+    width: 175px;
+}
+
+.m-pms_reports table.search td.site_id select,
+.m-pms_reports table.search td.payment_mode_receipt_summary select,
+.m-pms_reports table.search td.studentStatus select,
+.m-pms_reports table.search td.month_drop_down select,
+.m-pms_reports table.search td.new_student_drop_down select {
+    width: 125px;
+}
+
+.m-pms_reports table.search td.year_drop_down select {
+    width: 75px;
+}
+
+.m-pms_reports table.search td.ageing_values select {
+    width: 150px;
+}
+
+.m-pms_reports table.search td select{
+    width: 300px;
+    max-width: 300px;
+    font-size: 1.2em;
+}
+
+#reportSearchPanel {
+    background: #ccc;
+    padding: 5px;
+    display: none;
+    margin: 5px 0 5px 0;
+    overflow: hidden;
+}
+
+#reportSearchPanel table {
+    float: right;
+}
+
+#reportSearch .resetLink {
+    padding-right: 15px;
+    padding-top: 5px;
+}
+
+#reportSearch .button {
+    margin-left: 10px;
+}
+
+optgroup option {
+    background: #fff;
+    padding-left: 10px;
+}
+
+.m-pms_reports .actBtns {
+}
+
+#chart_div {
+    min-height: 400px;
+}
+
+.exportLink{
+    position: absolute;
+    top: 43px;
+    left: 10px;
+}
+
+.m-pms_reports .w-pms-receiptSummary .highlight {
+    background-color: #CCCCCC;
+}
+
+.w-pms-receiptSummary table.thinlist td.alert,
+.w-pms-attendanceDetailReport table.thinlist td.alert {
+    background-color: #CC9D9D;
+}
+
+table.summaryTable th,
+table.summaryTable td {
+    border: 1px solid #CA226B;
+}

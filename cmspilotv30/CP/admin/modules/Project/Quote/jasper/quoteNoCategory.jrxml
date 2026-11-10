@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="quoteNoCategory" pageWidth="595" pageHeight="842" columnWidth="497" leftMargin="56" rightMargin="42" topMargin="28" bottomMargin="28" scriptletClass="com.pilotsoft.servoy.jasperreport.common.CommonScriptlet">
+	<property name="ireport.scriptlethandling" value="2"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="small_text2_bold" fontName="Arial" fontSize="8" isBold="true"/>
+	<style name="small_text2" fontName="Arial" fontSize="8"/>
+	<style name="small_text1_bold" fontName="Arial" fontSize="9" isBold="true"/>
+	<style name="small_text1" fontName="Arial" fontSize="9"/>
+	<style name="normal_text" fontName="Arial" fontSize="10"/>
+	<style name="normal_text_bold" fontName="Arial" fontSize="10" isBold="true"/>
+	<style name="big_text1_bold" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="big_text1" fontName="Arial" fontSize="12"/>
+	<parameter name="record_id" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(75)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_SUBREPORT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new String("//LINUX1/linux1-fs/var/www/vhosts/cmsPilot/v2.9.4/admin/jasper/")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_IMAGES" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["//LINUX1/linux1-fs/var/www/vhosts/studiopilot/httpdocs/images/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_MOD_CONTACT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["//LINUX1/linux1-fs/var/www/vhosts/cmsPilot/v2.9.4/admin/modules/mg_project/contact/jasper/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_MOD_OPPORTUNITY" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["//LINUX1/linux1-fs/var/www/vhosts/cmsPilot/v2.9.4/admin/modules/mg_project/opportunity/jasper/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="print_in_letterhead" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Boolean(false)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="print_logo_left" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Boolean(false)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="print_logo_right" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Boolean(false)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="print_address_right" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Boolean(false)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="print_address_footer" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Boolean(false)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="report_heading" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SIGNATURE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["//LINUX1/linux1-fs/var/www/vhosts/studiopilot/httpdocs/media/staff/normal/219_Tim_signature.jpg"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="COMPANY_NAME" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="opp_contact_sql" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["(SELECT contact_id FROM opportunity o WHERE a.opportunity_id = o.opportunity_id)"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="proj_contact_sql" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["(SELECT contact_id FROM project p WHERE p.project_id = a.project_id)"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_MOD_PROJECT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="opp_company_name_sql" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["(SELECT company_name FROM company c JOIN opportunity o ON (c.company_id = o.company_id) WHERE o.opportunity_id = a.opportunity_id)"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="proj_company_name_sql" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["(SELECT company_name FROM company c JOIN project p ON (c.company_id = p.company_id) WHERE p.project_id = a.project_id)"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="opp_currency_sql" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["(SELECT currency FROM opportunity o WHERE a.opportunity_id = o.opportunity_id)"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="proj_currency_sql" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["(SELECT currency FROM project p WHERE p.project_id = a.project_id)"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_MG_LIB" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT a.*
+      ,DATE_FORMAT(a.quote_date, '%d %b %Y') AS quote_date
+      ,b.quote_category_id
+      ,b.valuelist_id
+      ,b.category_type
+      ,c.quote_items_id
+      ,c.title AS item_title
+      ,c.amount
+      ,c.amount_other
+      ,(
+          SELECT SUM(qi.amount)
+          FROM quote_items qi
+          WHERE qi.quote_category_id = c.quote_category_id
+       ) AS amount_sum
+      ,(
+          SELECT SUM(qi.amount_other)
+          FROM quote_items qi
+          WHERE qi.quote_category_id = c.quote_category_id
+       ) AS amount_other_sum
+      ,c.item_type
+      ,d.value AS quote_cat_title
+      ,(
+          SELECT SUM(qi.amount)
+          FROM quote_items qi
+          WHERE a.quote_id = qi.quote_id
+       ) AS total
+      ,(
+          SELECT SUM(qi.amount_other)
+          FROM quote_items qi
+          WHERE a.quote_id = qi.quote_id
+       ) AS total_other
+      ,(IF(ISNULL(a.project_id), $P!{opp_contact_sql}, $P!{proj_contact_sql})) AS contact_id
+      ,(IF(ISNULL(a.project_id), $P!{opp_company_name_sql}, $P!{proj_company_name_sql})) AS client_company_name
+      ,(IF(ISNULL(a.project_id), $P!{opp_currency_sql}, $P!{proj_currency_sql})) AS currency
+      ,b.sort_order AS quote_category_sort
+      ,c.sort_order AS quote_items_sort
+
+FROM quote a
+LEFT JOIN quote_category b ON (a.quote_id          = b.quote_id)
+LEFT JOIN quote_items c    ON (b.quote_category_id = c.quote_category_id)
+LEFT JOIN (valuelist d)    ON (b.valuelist_id      = d.valuelist_id)
+WHERE a.quote_id = $P!{record_id}
+ORDER BY a.quote_id
+        ,quote_category_sort
+        ,b.quote_category_id
+        ,quote_items_sort]]>
+	</queryString>
+	<field name="amount" class="java.math.BigDecimal"/>
+	<field name="amount_other" class="java.math.BigDecimal"/>
+	<field name="amount_other_sum" class="java.math.BigDecimal"/>
+	<field name="amount_sum" class="java.math.BigDecimal"/>
+	<field name="category_type" class="java.lang.String"/>
+	<field name="client_company_name" class="java.lang.String"/>
+	<field name="condition" class="java.lang.String"/>
+	<field name="contact_id" class="java.lang.Long"/>
+	<field name="created_by" class="java.lang.String"/>
+	<field name="creation_date" class="java.sql.Timestamp"/>
+	<field name="currency" class="java.lang.String"/>
+	<field name="currency_item" class="java.lang.String"/>
+	<field name="flag" class="java.lang.Integer"/>
+	<field name="item_title" class="java.lang.String"/>
+	<field name="item_type" class="java.lang.String"/>
+	<field name="modification_date" class="java.sql.Timestamp"/>
+	<field name="note" class="java.lang.String"/>
+	<field name="opportunity_id" class="java.lang.Integer"/>
+	<field name="project_id" class="java.lang.Integer"/>
+	<field name="quote_cat_title" class="java.lang.String"/>
+	<field name="quote_category_id" class="java.lang.Integer"/>
+	<field name="quote_category_sort" class="java.lang.Integer"/>
+	<field name="quote_code" class="java.lang.String"/>
+	<field name="quote_date" class="java.sql.Date"/>
+	<field name="quote_id" class="java.lang.Integer"/>
+	<field name="quote_items_id" class="java.lang.Integer"/>
+	<field name="quote_items_sort" class="java.lang.Integer"/>
+	<field name="quote_sequence" class="java.lang.Integer"/>
+	<field name="quote_type" class="java.lang.String"/>
+	<field name="sign_staff_id" class="java.lang.Integer"/>
+	<field name="sort_order" class="java.lang.Integer"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="template" class="java.lang.Integer"/>
+	<field name="template_title" class="java.lang.String"/>
+	<field name="total" class="java.math.BigDecimal"/>
+	<field name="total_other" class="java.math.BigDecimal"/>
+	<field name="valuelist_id" class="java.lang.Integer"/>
+	<group name="dummy_for_summary">
+		<groupExpression><![CDATA[]]></groupExpression>
+		<groupHeader>
+			<band height="114" splitType="Stretch">
+				<subreport isUsingCache="true">
+					<reportElement key="subreport-1" x="48" y="37" width="405" height="15" isRemoveLineWhenBlank="true"/>
+					<subreportParameter name="contact_id">
+						<subreportParameterExpression><![CDATA[new Integer($F{contact_id}.intValue())]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MOD_CONTACT} + "customer_name.jasper"]]></subreportExpression>
+				</subreport>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField" x="48" y="53" width="106" height="18"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Microsoft Sans Serif" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{quote_code}]]></textFieldExpression>
+				</textField>
+				<textField pattern="MMMMM dd, yyyy" isBlankWhenNull="false">
+					<reportElement key="textField" x="48" y="71" width="169" height="18"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Microsoft Sans Serif" size="10"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$F{quote_date}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-5" x="0" y="35" width="45" height="18"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Microsoft Sans Serif" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Client:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-6" x="0" y="53" width="45" height="18"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Microsoft Sans Serif" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Ref:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-7" x="0" y="71" width="45" height="18"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Microsoft Sans Serif" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Date:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-6" x="0" y="1" width="227" height="24"/>
+					<textElement>
+						<font fontName="Microsoft Sans Serif" size="18" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{report_heading}]]></textFieldExpression>
+				</textField>
+				<subreport isUsingCache="true">
+					<reportElement key="subreport-8" mode="Opaque" x="1" y="96" width="493" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[new Boolean($F{project_id} == null)]]></printWhenExpression>
+					</reportElement>
+					<subreportParameter name="contact_id">
+						<subreportParameterExpression><![CDATA[new Integer($F{contact_id}.intValue())]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="opportunity_id">
+						<subreportParameterExpression><![CDATA[new Integer($F{opportunity_id}.intValue())]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MOD_OPPORTUNITY} + "opportunuity_detail.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport isUsingCache="true">
+					<reportElement key="subreport-9" mode="Opaque" x="1" y="96" width="493" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[new Boolean($F{project_id} != null)]]></printWhenExpression>
+					</reportElement>
+					<subreportParameter name="contact_id">
+						<subreportParameterExpression><![CDATA[new Integer($F{contact_id}.intValue())]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="project_id">
+						<subreportParameterExpression><![CDATA[new Integer($F{project_id}.intValue())]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MOD_PROJECT} + "project_detail.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="104" splitType="Stretch">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField" positionType="Float" x="0" y="57" width="493" height="12"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement>
+						<font fontName="Microsoft Sans Serif"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{note}]]></textFieldExpression>
+				</textField>
+				<image scaleImage="RetainShape" hAlign="Left">
+					<reportElement key="image-1" positionType="Float" x="160" y="23" width="333" height="28"/>
+					<imageExpression class="java.net.URL"><![CDATA[new URL("file:///" + $P{SIGNATURE})]]></imageExpression>
+				</image>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement key="textField-7" x="161" y="6" width="261" height="12"/>
+					<textElement>
+						<font fontName="Microsoft Sans Serif" size="10" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["signed and agreed on behalf of \n" +
+$P{COMPANY_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement key="textField-8" x="1" y="6" width="159" height="12"/>
+					<textElement>
+						<font fontName="Microsoft Sans Serif" size="10" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["signed and agreed on behalf of \n" +
+$F{client_company_name}]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement key="frame-1" positionType="Float" x="0" y="73" width="494" height="29"/>
+					<staticText>
+						<reportElement key="staticText-8" positionType="Float" x="0" y="0" width="94" height="14"/>
+						<textElement textAlignment="Left">
+							<font fontName="Microsoft Sans Serif" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+						</textElement>
+						<text><![CDATA[Conditions]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement key="textField-9" positionType="Float" x="0" y="15" width="493" height="12"/>
+						<textElement>
+							<font fontName="Microsoft Sans Serif"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA[$F{condition}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="dummy_summary2">
+		<groupExpression><![CDATA[]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band height="27" splitType="Stretch">
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" x="416" y="5" width="80" height="15"/>
+					<textElement textAlignment="Right">
+						<font fontName="Microsoft Sans Serif" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_SCRIPTLET}.getFormattedNumberAsString($F{total}.doubleValue(), $F{currency} + " #,##0")]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-1" x="378" y="5" width="38" height="15"/>
+					<textElement textAlignment="Right">
+						<font fontName="Microsoft Sans Serif" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-3" x="427" y="3" width="69" height="1"/>
+				</line>
+				<line>
+					<reportElement key="line-4" x="427" y="21" width="69" height="1"/>
+				</line>
+				<line>
+					<reportElement key="line-5" x="427" y="24" width="69" height="1"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="quote_category">
+		<groupExpression><![CDATA[$F{quote_category_sort}]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="66" splitType="Stretch">
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-4" x="0" y="0" width="150" height="40">
+					<printWhenExpression><![CDATA[new Boolean($P{print_in_letterhead}.booleanValue() == false && $P{print_logo_left}.booleanValue() == true)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="DIR_SUBREPORT">
+					<subreportParameterExpression><![CDATA[$P{DIR_SUBREPORT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="DIR_IMAGES">
+					<subreportParameterExpression><![CDATA[$P{DIR_IMAGES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MG_LIB} + "logo.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-5" x="347" y="0" width="150" height="40">
+					<printWhenExpression><![CDATA[new Boolean($P{print_in_letterhead}.booleanValue() == false && $P{print_logo_right}.booleanValue() == true)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="DIR_SUBREPORT">
+					<subreportParameterExpression><![CDATA[$P{DIR_SUBREPORT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="DIR_IMAGES">
+					<subreportParameterExpression><![CDATA[$P{DIR_IMAGES}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MG_LIB} + "logo-right.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-6" x="197" y="0" width="300" height="13">
+					<printWhenExpression><![CDATA[new Boolean($P{print_in_letterhead}.booleanValue() == false && $P{print_address_right}.booleanValue() == true)]]></printWhenExpression>
+				</reportElement>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MG_LIB} + "address_right.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="0" y="2" width="385" height="13"/>
+				<textElement>
+					<font fontName="Microsoft Sans Serif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{item_title}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField" x="396" y="2" width="100" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="Microsoft Sans Serif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{amount}.intValue() == 0 ? "inclusive" :
+($F{item_type}.equals("text") || $F{item_type}.equals("blank")) ? "" :
+$P{REPORT_SCRIPTLET}.getFormattedNumberAsString($F{amount}.doubleValue(), $F{currency} + " #,##0")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-7" x="0" y="2" width="497" height="28" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[new Boolean($P{print_in_letterhead}.booleanValue() == false && $P{print_address_footer}.booleanValue() == true)]]></printWhenExpression>
+				</reportElement>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{DIR_MG_LIB} + "footer.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

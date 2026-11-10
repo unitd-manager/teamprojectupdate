@@ -1,0 +1,215 @@
+{% macro input(name, value, opts = {}) %}
+    {% set o = {
+        required: false,
+        placeholder: '',
+        class: '',
+        type: '',
+        size: '',
+        fldPrefix:'',
+        fldAffix:'',
+        dataFormat:'',
+        readonly: false,
+        editable: true,
+       } | merge(opts)
+    %}
+    {% set o = o | merge({
+           required: opts.required ? ' required' : '',
+           readonly: opts.readonly ? ' readonly' : '',
+           dataFormat: opts.dataFormat ? "data-format='"~ o.dataFormat ~"'" : '',
+       })
+    %}
+    {% if o.editable %}
+        {% set fldObj = "<input id='fld_" ~ name ~ "'
+                                type='" ~ o.type|default('text') ~ "'
+                                name='" ~ name ~ "'
+                                class='form-control " ~ o.class ~ "'
+                                placeholder='" ~ o.placeholder ~ "'
+                                value='" ~ value|e ~ "'
+                                size='" ~ o.size|default(20) ~ "' " ~ o.dataFormat ~ o.required ~ o.readonly ~ ">"
+        %}
+
+        {% if o.fldPrefix != '' %}
+            <div class='input-group'>
+                <span class='input-group-addon'>{{ o.fldPrefix }}</span>
+                {{ fldObj | raw }}
+            </div>
+        {% elseif o.fldAffix != '' %}
+            <div class='input-group'>
+                {{ fldObj | raw }}
+                <span class='input-group-addon'>{{ o.fldAffix }}</span>
+            </div>
+        {% else %}
+            {{ fldObj | raw }}
+        {% endif %}
+    {% else %}
+        <div style="line-height: 2.2em;">{{ value|e }}</div>
+        <input type="hidden" name="{{ name }}" value="{{ value|e }}">
+    {% endif %}
+
+{% endmacro %}
+
+{% macro number(name, value, opts = {}) %}
+    {% set o = {
+        required: false,
+        placeholder: '',
+        class: '',
+        min: '',
+        fldPrefix:'',
+        max: '',
+       } | merge(opts)
+    %}
+    {% set o = o | merge({
+           required: opts.required ? 'required' : '',
+       })
+    %}
+    <input type='number' id="fld_{{name}}" name="{{ name }}" min="{{ o.rows|default(1) }}" class="form-control {{ o.class }}" max="{{ o.max|default(1000) }}" placeholder='{{ o.placeholder }}'>
+{% endmacro %}
+
+{% macro radio(name, valueSel, valArr, opts = {}) %}
+    {% set o = {
+        required: false,
+        class: '',
+        checked: false,
+       } | merge(opts)
+    %}
+    {% set o = o | merge({
+           required: opts.required ? 'required' : '',
+           checked: opts.checked ? 'checked' : ''
+       })
+    %}
+    {% for value, title in valArr %}
+        {% set o = o | merge({
+               checked: valueSel == value ? 'checked' : ''
+           })
+        %}
+        <label class="radio-inline">
+            <input type="radio" name="{{ name }}" class="{{ o.class }}"
+                   value="{{ value }}" {{ o.checked }} {{ o.required }}>
+            {{title}}
+        </label>
+    {% endfor %}
+
+{% endmacro %}
+
+{% macro textarea(name, value, opts = {}) %}
+    {% set o = {
+        required: false,
+        placeholder: '',
+        class: '',
+        rows: '',
+        cols: '',
+       } | merge(opts)
+    %}
+    {% set o = o | merge({
+           required: opts.required ? 'required' : '',
+       })
+    %}
+    <textarea id="fld_{{name}}" name="{{ name }}" rows="{{ o.rows|default(10) }}"  class="form-control {{ o.class }}"
+              cols="{{ o.cols|default(40) }}" placeholder='{{ o.placeholder }}'>{{ value|e }}</textarea>
+{% endmacro %}
+
+{% macro dd(label, name, valueSel, valArr, opts = {}) %}
+    {% set o = {
+        required: false,
+        placeholder: '',
+        class: '',
+        type: '',
+        size: '',
+        useKey: true,
+        useKeyOnly: false,
+        hasAdditionalData: false,
+        showFirstOption: true,
+        fldId: 'fld_'~name,
+       } | merge(opts)
+    %}
+    {% set o = o | merge({
+           required: opts.required ? 'required' : ''
+       })
+    %}
+
+    <select id="{{o.fldId}}" name="{{ name }}" class="form-control {{ o.class }}">
+       
+        {% if o.showFirstOption %}
+            <option value="">{{ label }}</option>
+        {% endif %}
+        {% for value, title in valArr %}
+            {% if o.useKeyOnly %}
+                {% set selected = valueSel == value ? 'selected' : '' %}
+                {% set data = o.hasAdditionalData == true ? " data="~ title.data  : '' %}
+                <option value="{{ value }}" {{ selected }}{{ data }}>{{ value }}</option>
+            {% elseif o.useKey %}
+                {% set selected = valueSel == value ? 'selected' : '' %}
+                <option value="{{ value }}" {{ selected }}>{{ title }}</option>
+            {% else %}
+                {% set selected = valueSel == title ? 'selected' : '' %}
+                <option value="{{ title }}" {{ selected }}>{{ title }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+{% endmacro %}
+
+{% macro checkbox(label, name, value, opts = {}) %}
+    {% set o = {
+        required: false,
+        class: '',
+        displayInline: false,
+        checked: false,
+        showElemOnClk: '',
+       } | merge(opts)
+    %}
+    {% set o = o | merge({
+           required: o.required ? 'required' : '',
+           checked: o.checked ? 'checked' : '',
+           showElemOnClk: o.showElemOnClk ? "showElemOnClk='"~ o.showElemOnClk ~"'" : '',
+       })
+    %}
+    
+    {% if (o.displayInline) %}
+        <label class='checkbox-inline'>
+            <input type="checkbox" id="fld_{{name}}" name='{{ name }}' value='{{ value }}' {{ o.checked }} {{ o.required }}{{ o.showElemOnClk }}> {{ label }}
+        </label>
+    {% else %}
+        <div class='checkbox'>
+            <label{{ o.lblClass }}>
+                <input type="checkbox" id="fld_{{name}}" name='{{ name }}' value='{{ value }}' {{ o.checked }} {{ o.required }}{{ o.showElemOnClk }}> {{ label }}
+            </label>
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro checkboxYesNo(label, name, value, opts = {}) %}
+    {% import _self as forms %}
+    {% set o = opts | merge({
+           checked: value == 1 ? 'checked' : ''
+       })
+    %}
+    {{ forms.checkbox(label, name, 1, o) }}
+{% endmacro %}
+
+{% macro checks(name, valArr, selArr, opts = {}) %}
+    {% import _self as forms %}
+
+    {% set o = {
+        required: false,
+        class: '',
+        useKey: true,
+        useKeyForSelArr: true,
+        displayInline: false,
+       } | merge(opts)
+    %}
+    {% for fldVal, fldLabel in valArr %}
+        {% set fldName = name~'[]' %}
+
+        {% if o.useKeyForSelArr %}
+            {% set o = o|merge({checked: fldVal in selArr|keys ? 'checked' : ''}) %}
+        {% else %}
+            {% set o = o|merge({checked: fldVal in selArr ? 'checked' : ''}) %}
+        {% endif %}
+
+        {% if o.useKey %}
+            {{ forms.checkbox(fldLabel, fldName, fldVal, o) }}
+        {% else %}
+            {{ forms.checkbox(fldLabel, fldName, fldLabel, o) }}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}

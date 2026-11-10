@@ -1,0 +1,13 @@
+@charset "UTF-8";
+	.m-labsg_order .highlightCell {
+	    background-color: #551A8B;
+	    color: #fff;
+	}
+
+	.m-labsg_order .highlight {
+		background-color: #B4BAC4;
+	}
+
+	.m-labsg_order img.icon {
+		width: 25px;
+	}

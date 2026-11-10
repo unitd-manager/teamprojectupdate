@@ -1,0 +1,21 @@
+.w-ecommerce-productList table th.select {
+    width: 30px;
+} 
+
+.w-ecommerce-productList table th.unit,
+.w-ecommerce-productList table th.qty {
+    width: 100px; 
+}
+
+.w-ecommerce-productList table th.total {
+    width: 100px; 
+}
+
+.w-ecommerce-productList table td .notesWrap {
+    display: none;
+}
+ 
+.w-ecommerce-productList table td.title textarea {
+    display: block;
+    width: 95%;
+}

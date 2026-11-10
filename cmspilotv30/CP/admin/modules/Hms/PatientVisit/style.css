@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+@media all
+{
+    .yform.columnar.qucikaddPatientForm label {
+        width: 100%;
+    }
+
+    .companyDetailsHide{
+    	display: none;
+    }
+
+    .error strong.message {
+	    background-color: darkred;
+	    border-radius: 2px;
+	    color: #ffffff !important;
+	    padding: 2px 10px;
+	}
+
+    .treatmentCategoryFilter > select {
+        margin: 10px 0;
+        padding: 8px;
+        width: 99%;
+    }
+
+    .m-hms_patientVisit .tooth_PerioTop .leftCol label,
+    .m-hms_patientVisit .tooth_PerioLeft .leftCol label,
+    .m-hms_patientVisit .tooth_PerioCenter .leftCol label,
+    .m-hms_patientVisit .tooth_PerioRight .leftCol label,
+    .m-hms_patientVisit .tooth_PerioBottom .leftCol label{
+       padding-left: 10px;
+       padding-top: 15px;
+    }
+
+    .m-hms_dutyRoster .tooth_PerioTop .leftCol label,
+    .m-hms_dutyRoster .tooth_PerioLeft .leftCol label,
+    .m-hms_dutyRoster .tooth_PerioCenter .leftCol label,
+    .m-hms_dutyRoster .tooth_PerioRight .leftCol label,
+    .m-hms_dutyRoster .tooth_PerioBottom .leftCol label{
+       padding-left: 10px;
+       padding-top: 15px;
+    }
+
+    .m-hms_patientVisit .tooth_PerioTop .rightCol .type-check,
+    .m-hms_patientVisit .tooth_PerioLeft .rightCol .type-check,
+    .m-hms_patientVisit .tooth_PerioCenter .rightCol .type-check,
+    .m-hms_patientVisit .tooth_PerioRight .rightCol .type-check,
+    .m-hms_patientVisit .tooth_PerioBottom .rightCol .type-check{
+        padding-left: 6px;
+    }
+
+    .m-hms_patientVisit .tooth_PerioTop .ym-fbox-check1 input + label:hover,
+    .m-hms_patientVisit .tooth_PerioLeft .ym-fbox-check1 input + label:hover,
+    .m-hms_patientVisit .tooth_PerioCenter .ym-fbox-check1 input + label:hover,
+    .m-hms_patientVisit .tooth_PerioRight .ym-fbox-check1 input + label:hover,
+    .m-hms_patientVisit .tooth_PerioBottom .ym-fbox-check1 input + label:hover{
+        background-color: #23B7E5;
+        color: #000000;
+    }
+
+    .m-hms_patientVisit .tooth_PerioTop .ym-fbox-check1 input + label,
+    .m-hms_patientVisit .tooth_PerioLeft .ym-fbox-check1 input + label,
+    .m-hms_patientVisit .tooth_PerioCenter .ym-fbox-check1 input + label,
+    .m-hms_patientVisit .tooth_PerioRight .ym-fbox-check1 input + label,
+    .m-hms_patientVisit .tooth_PerioBottom .ym-fbox-check1 input + label {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: 1px solid #23B7E5;
+        color: #17375E;
+        font-weight: bold;
+        padding: 15px;
+    }
+
+    .m-hms_patientVisit .tooth_PerioTop .ym-fbox-check1 label:hover,
+    .m-hms_patientVisit .tooth_PerioLeft .ym-fbox-check1 label:hover,
+    .m-hms_patientVisit .tooth_PerioCenter .ym-fbox-check1 label:hover,
+    .m-hms_patientVisit .tooth_PerioRight .ym-fbox-check1 label:hover,
+    .m-hms_patientVisit .tooth_PerioBottom .ym-fbox-check1 label:hover{
+         background-color: #23B7E5;
+    }
+
+    .m-hms_patientVisit .tooth_PerioTop .ym-fbox-check1 input,
+    .m-hms_patientVisit .tooth_PerioLeft .ym-fbox-check1 input,
+    .m-hms_patientVisit .tooth_PerioCenter .ym-fbox-check1 input,
+    .m-hms_patientVisit .tooth_PerioRight .ym-fbox-check1 input,
+    .m-hms_patientVisit .tooth_PerioBottom .ym-fbox-check1 input {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .m-hms_patientVisit .tooth_PerioTop .ym-fbox-check1 label input,
+    .m-hms_patientVisit .tooth_PerioLeft .ym-fbox-check1 label input,
+    .m-hms_patientVisit .tooth_PerioCenter .ym-fbox-check1 label input,
+    .m-hms_patientVisit .tooth_PerioRight .ym-fbox-check1 label input,
+    .m-hms_patientVisit .tooth_PerioBottom .ym-fbox-check1 label input {
+        position:absolute;
+        top:-20px;
+    }
+
+    .tooth_PerioTop,
+    .tooth_PerioLeft,
+    .tooth_PerioCenter,
+    .tooth_PerioRight,
+    .tooth_PerioBottom{
+        margin: -1px -8px;
+    }
+
+    .m-hms_patientVisit .tooth_PerioTop input:checked + label,
+    .m-hms_patientVisit .tooth_PerioLeft input:checked + label,
+    .m-hms_patientVisit .tooth_PerioCenter input:checked + label,
+    .m-hms_patientVisit .tooth_PerioRight input:checked + label,
+    .m-hms_patientVisit .tooth_PerioBottom input:checked + label{
+        background-color: #23B7E5;
+        color: #000000;
+        font-weight: bold;
+        padding: 15px;
+    }
+
+    .m-hms_patientVisit .highlightCell {
+        background-color: #551A8B;
+        color: #fff;
+    }
+
+    .m-hms_patientVisit .highlight {
+        background-color: #B4BAC4;
+    }
+
+    .m-hms_patientVisit img.icon {
+        width: 25px;
+    }
+}

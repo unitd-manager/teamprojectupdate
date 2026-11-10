@@ -1,0 +1,4 @@
+<?
+class CP_Www_Modules_Ecommerce_Stockist_Controller extends CP_Common_Modules_Ecommerce_Stockist_Controller
+{
+}

@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+	.m-hms_reports #reportsList {
+	    background: #F5F5F5;
+	    padding:15px;
+	}
+
+	.m-hms_reports #reportsList .subcr{
+	    margin-right: 0;
+	}
+
+	.m-hms_reports .invoiceSummary.ui-autocomplete-input {
+	    font-size: 16px !important;
+	    height: 26px;
+	    padding: 3px;
+	    width: 200px;
+	}
+
+	.m-hms_reports input.invoiceSummary{
+		font-size: 16px !important;
+	    height: 26px;
+	    padding: 3px;
+	    width: 200px;
+	}
+
+	.m-hms #reportsList a.button {
+	    width:75%;
+	    font-size: 17px;
+	    display: block;
+	    margin-bottom: 10px;
+	}
+
+	.m-hms_reports .report-wrapper h1 {
+	    text-shadow: 1px 1px 2px #665D5D;
+	    filter: dropshadow(color=#665D5D, offx=1, offy=1);
+	    font-size: 25px;
+	    margin-bottom: 15px;
+	}
+
+	.m-hms_reports  table.search td select.attendanceFilter {
+	    width: 175px;
+	}
+
+	.m-hms_reports  table.search td select.callRegistryFilter {
+	    width: 175px;
+	}
+
+	.m-hms_reports table.search td select.year {
+	    width: 100px;
+	}
+
+	.m-hms_reports table.search td select.month {
+	    width: 100px;
+	}
+
+	.m-hms_reports table.search td select.invoiceSummary{
+		width: 210px;
+	}
+
+
+	.m-hms_reports table.search td select{
+	    width: 300px;
+	    max-width: 300px;
+	    font-size: 1.2em;
+	}
+
+	#reportSearchPanel {
+	    background: #ccc;
+	    padding: 5px;
+	    display: none;
+	    margin: 5px 0 5px 0;
+	    overflow: hidden;
+	}
+
+	#reportSearchPanel table {
+	    float: right;
+	}
+
+	#reportSearch .resetLink {
+	    padding-right: 15px;
+	    padding-top: 5px;
+	}
+
+	#reportSearch .button {
+	    margin-left: 10px;
+	}
+
+	optgroup option {
+	    background: #fff;
+	    padding-left: 10px;
+	}
+
+	.m-hms_reports .actBtns {
+	}
+
+	#chart_div {
+	    min-height: 400px;
+	}
+
+	.exportLink{
+	    height: 36px;
+	    left: 5px;
+	    position: absolute;
+	    top: 60px !important;
+	}
+
+	.m-hms_reports table.search td select.salesYearFilter,
+	.m-hms_reports table.search td select.searchBy,
+	.m-hms_reports table.search td select.salesMonthFilter {
+	    width: 150px;
+	    margin-right: 5px;
+	}
+
+	.m-hms_reports table.search td select.leadStaffFilter,
+	.m-hms_reports table.search td select.leadStaffMonthFilter,
+	.m-hms_reports table.search td select.leadStaffYearFilter,
+	.m-hms_reports table.search td select.enquiryByStaffFilter,
+	.m-hms_reports table.search td select.enquiryByStaffMonthFilter,
+	.m-hms_reports table.search td select.enquiryByStaffYearFilter,
+	.m-hms_reports table.search td select.enquiryByStaffFilter,
+	.m-hms_reports table.search td select.enquiryByStaffMonthFilter,
+	.m-hms_reports table.search td select.enquiryByStaffYearFilter,
+	.m-hms_reports table.search td select.enquiryActivityByStaffFilter,
+	.m-hms_reports table.search td select.enquiryActivityByStaffMonthFilter,
+	.m-hms_reports table.search td select.invoiceSummaryFilter,
+	.m-hms_reports table.search td select.invoiceByClientFilter,
+	.m-hms_reports table.search td select.enquiryActivityByStaffYearFilter {
+	    width: 120px;
+	    margin:7px;
+	}
+
+	.m-hms_reports table.search td input {
+        font-size: 1em;
+	}
+
+    .m-hms_reports table.search td input.fld_date {
+        width: 100px;
+    }
+    
+    .m-hms_reports table.search td select.clientFilter,
+    .m-hms_reports table.search td select.supplierFilter {
+        max-width: 250px;
+    }
+
+	.custom-combobox {
+		position: relative;
+		display: inline-block;
+	}
+
+	.custom-combobox-toggle {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin-left: -1px;
+		padding: 0;
+	}
+
+	.chosen-container-single .chosen-single,
+	.chosen-container-single .chosen-search,
+	.chosen-container .chosen-results,
+	.chosen-container .chosen-drop{
+		width: 200px !important;
+	}
+	
+	.custom-combobox-input {
+		margin: 0;
+		padding: 5px 10px;
+	}
+
+	.individualCombobox {
+	    overflow: visible;
+	    width: 267px;
+	}
+
+	.exportPdfLink.button {
+	    height: 36px;
+	    left: 158px;
+	    position: absolute;
+	    top: 60px;
+	}
+
+	#reportSearchPanel 
+	#reportSearch
+	.search .companyFilter {
+		width:120px;
+	}
+
+	.w-hms-panelInvoiceSummary {
+		margin-top: 50px;
+	}
+
+	.exportLink {
+	    height: 36px;
+	    left: 5px;
+	    position: absolute;
+	    top: 110px;
+	}

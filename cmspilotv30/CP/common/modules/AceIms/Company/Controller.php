@@ -1,0 +1,4 @@
+<?
+class CP_Common_Modules_AceIms_Company_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

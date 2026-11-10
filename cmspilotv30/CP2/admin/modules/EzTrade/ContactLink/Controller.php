@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_EzTrade_ContactLink_Controller extends CP_Common_Lib_ModuleLinkControllerAbstract
+{
+}

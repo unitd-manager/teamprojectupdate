@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Widgets_AgileIms_AttendanceReports_Controller extends CP_Common_Lib_WidgetControllerAbstract
+{
+}

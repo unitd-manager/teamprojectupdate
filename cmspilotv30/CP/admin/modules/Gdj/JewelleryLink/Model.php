@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Gdj_JewelleryLink_Model extends CP_Common_Lib_ModuleLinkModelAbstract
+{
+}

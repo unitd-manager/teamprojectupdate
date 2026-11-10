@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@media all
+{
+
+    #traineeSelectedForm .subcr {
+        padding: 0;
+    }
+    
+    #traineeSelectedResult .traineesSelectedLinked select {
+    }
+}

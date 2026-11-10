@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-payroll_incomeHead .toggle {
+        display:block;
+    }
+
+    .m-payroll_incomeHead .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-payroll_incomeHead .c50l,
+    .m-payroll_incomeHead .c50r {
+        width: 100%;
+    }
+
+    .m-payroll_incomeHead .ym-columnar .ym-fbox-text label,
+    .m-payroll_incomeHead .ym-columnar .ym-fbox-select label,
+    .m-payroll_incomeHead #frmEdit .type-text label,
+    .m-payroll_incomeHead #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-payroll_incomeHead #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-payroll_incomeHead  .linkPortalWrapper div.header,
+    .m-payroll_incomeHead  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+}

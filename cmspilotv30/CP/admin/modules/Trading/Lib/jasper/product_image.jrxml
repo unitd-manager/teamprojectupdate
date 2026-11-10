@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="product image" pageWidth="79" pageHeight="73" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="79" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="DIR_MG_LIB" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["../../Lib/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DIR_MEDIA" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["../../../../../../../../qingdao/httpdocs/media/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="report_title" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Quote"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="product_id" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(574)]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT file_name
+FROM media
+WHERE record_id = $P{product_id}
+ORDER BY sort_order
+LIMIT 1]]>
+	</queryString>
+	<field name="file_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="72" splitType="Stretch">
+			<image scaleImage="RetainShape" hAlign="Center" vAlign="Top" onErrorType="Blank">
+				<reportElement x="1" y="0" width="79" height="72" isRemoveLineWhenBlank="true"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{DIR_MEDIA} + "thumb/" + $F{file_name}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Prevent"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+	<noData>
+		<band height="73">
+			<image scaleImage="RetainShape" hAlign="Center" vAlign="Top" onErrorType="Blank">
+				<reportElement x="1" y="0" width="79" height="72" isRemoveLineWhenBlank="true"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{DIR_MG_LIB} + "images/default_product_image.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</noData>
+</jasperReport>

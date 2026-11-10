@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+.m-enterpriseIms_paymentSummary form#paymentSearch table.search td select {
+    max-width: 135px;
+}

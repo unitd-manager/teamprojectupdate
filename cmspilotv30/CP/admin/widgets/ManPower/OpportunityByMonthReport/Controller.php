@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Widgets_ManPower_OpportunityByMonthReport_Controller extends CP_Common_Lib_WidgetControllerAbstract
+{
+}

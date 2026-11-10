@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.addProduct {
+	background: none repeat scroll 0 0 #F8F8F8;
+    border: 1px solid #DDDDDD;
+    float: left;
+    margin: 0 0 12px;
+    padding: 20px;
+    width: 100%;
+}
+
+#toggleComments {
+    color: #000000 !important;
+    text-decoration: underline;
+}
+
+.v-new .c50l, .v-new .c50r {
+    width: 50%;
+}
+
+.v-edit .c50l, .v-edit .c50r {
+    width: 100% !important;
+}
+
+.list.thinlist.topTable thead th {
+    background: none repeat scroll 0 0 #F8F8F8;
+}
+
+.yform{
+    background-color: #fff;
+    border: 0;
+    padding: 0;
+}
+
+.checkProductPrice {
+	background: -moz-linear-gradient(center top , white, #E6E6E6) repeat scroll 0 0 transparent;
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+}
+
+.addProduct input.text{
+	font-size: 16px;
+    width: 70%;
+}
+
+a.deleteItem {
+    text-decoration:underline   ;
+}
+
+.balanceRow {
+	display: none;
+}
+
+.expense_qty_input {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.locationStatus label{
+    display: none;
+}
+
+.v-edit .ym-form div.ym-fbox-text
+,.v-edit .yform div.type-text
+,.v-edit .ym-form div.ym-fbox-select
+,.v-edit .yform div.type-select
+,.v-edit .ym-form div.type-check
+,.v-edit .yform div.type-check
+,.v-edit .ym-form div.ym-fbox-button
+,.v-edit .yform div.type-button{
+    margin: 0 !important;
+}
+
+.cancelledExpenseProduct {
+    background-color: #ffd0cc;
+}
+
+.actionButtons {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
+button[disabled], html input[disabled] {
+    background-color: #ddf3f3;
+    border: 1px solid #49c3e9;
+    cursor: default;
+}

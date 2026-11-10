@@ -1,0 +1,622 @@
+@charset "UTF-8";
+
+@media all
+{
+	.ui-tabs .ui-tabs-panel {
+		padding: 1em 0.4em !important;
+	}
+
+	.tabView .rightPanelHeading {
+		background: transparent !important;
+	}
+
+	#tabs .ui-state-default,
+	#tabs .ui-widget-content .ui-state-default,
+	#tabs .ui-widget-header .ui-state-default {
+	    /*border: 1px solid #ed7f1f !important;*/
+	    border: 1px solid #00b526 !important;
+	}
+
+	#tabs .ui-state-default
+	,#tabs .ui-widget-content .ui-state-default
+	,#tabs .ui-widget-header .ui-state-default {
+	    /*background: #ed7f1f !important;*/
+	    background: #00b526 !important;
+	}
+
+	.ui-tabs .ui-tabs-nav {
+	    padding: .2em .2em 0;
+	    /*border-bottom: 1px solid #ed7f1f !important;*/
+	    border-bottom: 1px solid #00b526 !important;
+	}
+
+	.ui-tabs .ui-tabs-nav li {
+		margin: 1px 10px 0 0 !important;
+	}
+
+	#tabs .ui-state-active
+	,#tabs .ui-widget-content .ui-state-active
+	,#tabs .ui-widget-header .ui-state-active {
+	    background: #ffffff !important;
+	    /*border: 1px solid #ed7f1f;*/
+	    border: 1px solid #00b526;
+	    border-bottom: none !important;
+	    box-shadow: none !important;
+	}
+
+	.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	    padding-bottom: 0px !important;
+	}
+
+	.editQuote .highlight {
+		background-color: #ED7F1F;
+		color: #fff;
+		border: 1px solid red;
+	}
+
+	.lineItemErection,
+	.lineItemDismantle,
+	.lineItemScaffoldCode {
+		width: 70px !important;
+		margin-top: 6px;
+	}
+
+	.yearDivHoursEmployeeForm select#fld_project_Time_year {
+    	width: 70px !important;
+	}
+
+	.yearDivHoursEmployeeForm select#fld_project_Time_Month {
+		width: 124px !important;
+	}
+
+	.row_error_box1 {
+		display: none;
+	}
+
+	.row_error_box1.error {
+		display: block !important;
+	}
+
+	.row_error_box1 {
+		display: none;
+	}
+
+	.row_error_box1.error {
+		display: block !important;
+	}
+
+	.m-enggCrm_project .enggCrm_project__enggCrm_projectLink .quotecolumnCheckBox .type-check label {
+	    float: left;
+	    height: 40px;
+	    width: 29%;
+	    margin-top: 3px;
+	}
+
+	a.deleteLineItem,
+	a.addMultipleLineItem,
+	a.addTitleForInvoice,
+	a.addDescriptionForInvoice {
+		cursor: pointer;
+	}
+
+	#addMultiplePurchaseOrderForm.yform .row_supplier_id label,
+	#addMultiplePurchaseOrderForm.yform .row_po_date label,
+	#addMultiplePurchaseOrderForm.yform .row_po_code label,
+	#addMultiplePurchaseOrderForm.yform .row_gst label,
+	#editPoMultipleLineItem.yform .row_supplier_id label,
+	#editPoMultipleLineItem.yform .row_po_date label,
+	#editPoMultipleLineItem.yform .row_po_code label,
+	#editPoMultipleLineItem.yform .row_gst label,
+	#addMultipleMaterialRequestForm.yform .row_po_date label,
+	#addMultipleMaterialRequestForm.yform .row_po_code label,
+	#addMultipleMaterialRequestForm.yform .row_gst label
+	#editMultipleMaterialRequestForm.yform .row_po_date label,
+	#editMultipleMaterialRequestForm.yform .row_po_code label,
+	#editMultipleMaterialRequestForm.yform .row_gst label {
+		float: left !important;
+	}
+
+	#addMultiplePurchaseOrderForm.yform .row_supplier_id select,
+	#editPoMultipleLineItem.yform .row_supplier_id select {
+		width: 160px;
+	    height: 28px !important;
+	    padding: 2px !important;
+	}
+
+	.type-text.ym-fbox-text.row_supplier_id.non-editable {
+	    width: 200px !important;
+	}
+
+	#editPoMultipleLineItem.yform .row_supplier_id #fld_supplier_id span.value {
+	    width: 200px !important;
+	    margin-left: 3px;
+	    font-weight: bold;
+	}
+
+	#addMultiplePurchaseOrderForm.yform input.hiddenDateDisplay,
+	#editPoMultipleLineItem.yform input.hiddenDateDisplay,
+	#addMultipleMaterialRequestForm input.hiddenDateDisplay,
+	#editMultipleMaterialRequestForm input.hiddenDateDisplay {
+	    height: 28px !important;
+	    width: 95px !important;
+	}
+
+	#addMultiplePurchaseOrderForm.yform .row_po_code input,
+	#editPoMultipleLineItem.yform .row_po_code input,
+	#addMultipleMaterialRequestForm.yform .row_po_code input,
+	#editMultipleMaterialRequestForm.yform .row_po_code input {
+	    width: 125px !important;
+	    height: 28px !important;
+	}
+
+	#addMultiplePurchaseOrderForm.yform .gstField,
+	#editPoMultipleLineItem.yform .gstField {
+		width: 180px !important;
+	}
+
+	#addMultipleMaterialRequestForm.yform .gstField,
+	#editMultipleMaterialRequestForm.yform .gstField  {
+		width: 110px !important;
+	}
+
+	.ui-widget #po_productTable .quantity input{
+		width: 100px;
+	}
+
+	.rightPanelHeading{
+		background: #fff !important;
+		color: #4A4A4A !important;
+		font-size: 22px !important;
+		font-weight: bold !important;
+	}
+
+	#frmEdit.yform.edit {
+		padding: 0 !important;
+	}
+
+	#materialsPortal.linkPortalWrapper table th.rightPanelHeading,
+	#poPortal.linkPortalWrapper table th.rightPanelHeading{
+		padding : 0.3em;
+	}
+
+	.mb30 {
+		margin-bottom: 30px;
+	}
+
+	.creationModificationQuote,
+	.creationModificationMU,
+	.transferPo {
+		cursor: pointer;
+	}
+
+	.enggCrm_project__core_staffLink,
+	.enggCrm_project__enggCrm_employeeLink,
+	#media__enggCrm_project__attachment,
+	.m-enggCrm_project .p-common-comment {
+	    width: 100% !important;
+	    float: left;
+	    margin-right: 1%;
+	}
+
+	.linkPortalWrapper #financeLinkPortal table tbody tr th,
+	.linkPortalWrapper #financeLinkPortal table tbody tr td {
+	    vertical-align: middle !important;
+	}
+
+	#generateInvoiceForm .type-text.ym-fbox-text.row_error_box.non-editable.error {
+	    width: 50%;
+	    float: none !important;
+	}
+
+	#generateInvoiceForm .type-text.ym-fbox-text.row_error_box.non-editable {
+	    float: left;
+	    display: block;
+	}
+
+	.quoteLineItemsOverallTotal,
+	.totalInvoiceAmountLabel {
+	    float: right;
+        margin-top: 8px;
+	    margin-right: 4px;
+	}
+
+	.quoteLineItemsOverallTotal .quoteLineItemsOverallTotalAmount,
+	.totalInvoiceAmountLabel .totalInvoiceAmount {
+	    font-size: 18px;
+	}
+
+	.quoteLineItemsOverallTotal,
+	.totalInvoiceAmountLabel {
+	    font-size: 18px;
+	    font-weight: bold;
+	}
+
+	.showHideCancelledInvoice {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	.cancelledInvoiceTableOrder {
+		display: none;
+	}
+
+	.quoteLayoutHide {
+	    display: none;
+	}
+
+	.generateInvoiceForm .invoiceItemTitleFull,
+	.generateDetailInvoiceForm .invoiceItemTitle,
+	.addMultiplePurchaseOrderForm .poTitle,
+	.editPoMultipleLineItem .poTitle,
+	.addMultipleMaterialRequestForm .poTitle,
+	.editMultipleMaterialRequestForm .poTitle,
+	.addMultipleMaterialsForm .materialTitleFull,
+	.addMultipleLineItemForm .lineItemTitle,
+	.addMultipleLineItemForm .lineItemRemarks {
+	    width: 100% !important;
+	}
+
+	.addMultipleMaterialsForm .materialTitleFull {
+		padding: 4px !important;
+	}
+
+	#cke_fld_payment_terms .cke_contents {
+		height: 110px !important;
+	}
+
+	.row.hideMoreInvoiceDetails {
+		display: none;
+	}
+
+	.row.hideMoreCostingDetails {
+		display: none;
+	}
+
+	.addMultipleWOItemForm .lineItemQuantity,
+	.addMultipleWOItemForm .lineItemSno,
+	.addMultipleWOItemForm .lineItemUnit {
+		width: 70px !important;
+	}
+
+	.addMultipleWOItemForm .lineItemAmount,
+	.addMultipleWOItemForm .lineItemUnitPrice {
+		width: 100px !important;
+	}
+
+	input.overallDiscount {
+	    width: 100px !important;
+	    padding: 4px !important;
+	    margin-left: 5px !important;
+	    margin-top: 5px !important;
+	}
+
+	.emptyTd {
+	    background: #FFF !important;
+	}
+
+	.popcontents.ui-dialog-content.ui-widget-content form {
+    	overflow-x: scroll;
+    }
+
+	#generateInvoiceForm .row_discount.editable {
+	    width: 37% !important;
+	    float: right;
+	    margin: 0px !important;
+	}
+
+	#generateInvoiceForm .row_discount.editable input {
+	    width: 100px !important;
+	}
+
+	.editQuote.ym-columnar .ym-fbox-text label,
+	.editQuote.columnar .type-text label,
+	.editQuote.ym-columnar .ym-fbox-select label,
+	.editQuote.columnar .type-select label {
+		width: 100% !important;
+	}
+
+	.editQuote.ym-columnar div.ym-fbox-text input.text,
+	.editQuote.columnar div.type-text input.text,
+	.editQuote.ym-columnar div.ym-fbox-text textarea,
+	.editQuote.columnar div.type-text textarea {
+	    width: 95% !important;
+	}
+
+	#frmEdit div.ym-fbox-text textarea,
+	#frmEdit div.type-text textarea {
+	    width: 100% !important;
+	}
+
+	form.materialPurchasedTransfer select.poProductTitle {
+	    padding: 6px;
+	    border: 1px solid #7a7a7a;
+	    width: 200px;
+	}
+
+	form.materialPurchasedTransfer .quantity input {
+	    width: 80px !important;
+	    padding: 6px !important;
+	}
+
+	.editClaim.ym-columnar .ym-fbox-text label,
+	.editClaim.columnar .type-text label,
+	.editClaim.ym-columnar .ym-fbox-select label,
+	.editClaim.columnar .type-select label {
+		width: 100% !important;
+	}
+
+	.editClaim.ym-columnar div.ym-fbox-text input.text,
+	.editClaim.columnar div.type-text input.text,
+	.editClaim.ym-columnar div.ym-fbox-text textarea,
+	.editClaim.columnar div.type-text textarea {
+	    width: 95% !important;
+	}
+
+	form.addMultipleClaimItemForm input.claimAmount,
+	form.addMultipleClaimItemForm input.thisMonthAmount,
+	form.editMultipleClaimItemForm input.claimAmount,
+	form.editMultipleClaimItemForm input.thisMonthAmount,
+	form.addMultipleClaimPaymentItemForm input.claimAmount,
+	form.addMultipleClaimPaymentItemForm input.thisMonthAmount,
+	form.editMultipleClaimPaymentItemForm input.claimAmount,
+	form.editMultipleClaimPaymentItemForm input.thisMonthAmount {
+	    width: 80px !important;
+	    padding: 4px !important;
+	}
+
+	textarea.claimTitle,
+	textarea.claimItemDescription,
+	textarea.claimRemarks {
+	    width: 170px;
+	    height: 30px !important;
+	}
+
+	textarea.claimTitle:focus,
+	textarea.claimItemDescription:focus,
+	textarea.claimRemarks:focus {
+	    width: 170px;
+        height: 75px !important;
+	}
+
+	.editMultipleClaimItemForm textarea.claimTitle,
+	.editMultipleClaimItemForm textarea.claimItemDescription,
+	.editMultipleClaimItemForm textarea.claimRemarks {
+	    width: 100% !important;
+	    height: 30px !important;
+	}
+
+	.editMultipleClaimItemForm textarea.claimTitle:focus,
+	.editMultipleClaimItemForm textarea.claimItemDescription:focus,
+	.editMultipleClaimItemForm textarea.claimRemarks:focus {
+	    width: 100% !important;
+        height: 75px !important;
+	}
+
+	.addMultipleClaimItemForm .MainFields input,
+	.editMultipleClaimItemForm .MainFields input,
+	.addMultipleClaimPaymentItemForm .MainFields input,
+	.editMultipleClaimPaymentItemForm .MainFields input {
+		width: 100% !important;
+	}
+
+	.claimPaymentDetails.claimPaymentHide {
+	    display: none;
+	}
+
+	.claimPaymentHeadingBackground {
+	    background-color: #cccccc !important;
+	    color: #000000 !important;
+	}
+
+	.claimDetailRow .claimPaymentLinkedRow {
+		background-color: #ffffe0 !important;
+	}
+
+	.creationModificationDetails u,
+	.clearClaimItem,
+	.clearDrawingLineItem,
+	.clearMR,
+	.editMRMultipleLineItem,
+	.creationModificationMR {
+		cursor: pointer !important;
+		text-decoration: underline !important;
+	}
+
+
+    .editPoMultipleLineItem .poAmount,
+    .addMultipleMaterialRequestForm .poAmount,
+	.editMultipleMaterialRequestForm .poAmount,
+	.addMultipleMaterialRequestForm .poBrand,
+	.editMultipleMaterialRequestForm .poBrand {
+        font-size: 14px;
+        height: 23px;
+        margin-top: 6px;
+        width: 100px !important;
+    }
+
+    .editPoMultipleLineItem .poUnit,
+    .addMultipleMaterialRequestForm .poUnit,
+	.editMultipleMaterialRequestForm .poUnit {
+        font-size: 14px;
+        height: 23px;
+        margin-top: 6px;
+        width: 50px !important;
+    }
+
+    .editPoMultipleLineItem .poQuantity,
+    .addMultipleMaterialRequestForm .poQuantity,
+	.editMultipleMaterialRequestForm .poQuantity {
+        font-size: 14px;
+        height: 23px;
+        margin-top: 6px;
+        width: 70px !important;
+    }
+
+    .addMultipleMaterialRequestForm .poStatus,
+	.editMultipleMaterialRequestForm .poStatus,
+	.addMultipleMaterialRequestForm .poSupplier,
+	.editMultipleMaterialRequestForm .poSupplier {
+		width: 100px !important;
+	}
+
+    .editPoMultipleLineItem .poTitle,
+    .editPoMultipleLineItem .poDescription,
+    .addMultipleMaterialRequestForm .poTitle,
+	.editMultipleMaterialRequestForm .poTitle,
+	.addMultipleMaterialRequestForm .poDescription, 
+	.editMultipleMaterialRequestForm .poDescription {
+        width: 300px !important;
+    }
+
+    .editPoMultipleLineItem .poTitle,
+    .addMultipleMaterialRequestForm .poTitle,
+	.editMultipleMaterialRequestForm .poTitle {
+        width: 165px !important;
+    }
+
+    .editPoMultipleLineItem .poDescription,
+    .addMultipleMaterialRequestForm .poDescription,
+	.editMultipleMaterialRequestForm .poDescription {
+        width: 250px !important;
+    }
+
+    .addMultipleLineItemForm .drawingNumber,
+    .addMultipleLineItemForm .drawingTitle {
+    	width: 300px !important;
+    	height: 30px !important;
+    }
+
+    .addMultipleLineItemForm .drawingNumber:focus,
+    .addMultipleLineItemForm .drawingTitle:focus {
+    	height: 75px !important;
+    }
+
+    .addMultipleLineItemForm .drawingRevision {
+    	width: 130px !important;
+    	padding: 5px !important;
+    }
+
+    #editForMaterialsRequestForm label, #editForPoForm label {
+	    width: 100%;
+	}
+
+	#editForMaterialsRequestForm .type-text.ym-fbox-text.editable input,
+	#editForMaterialsRequestForm .type-text.ym-fbox-text textarea ,
+	#editForPoForm .type-text.ym-fbox-text.editable input,
+	#editForPoForm .type-text.ym-fbox-text textarea {
+	    width: 95%;
+	}
+
+	#frmEdit .type-text.ym-fbox-text.editable input,
+	#frmEdit .type-select.ym-fbox-select select {
+	    width: 100% !important;
+	}
+
+	div.toggleIconBurger {
+	    width: 24px;
+	    height: 2px;
+	    background-color: #FFF;
+	    margin: 4px 0;
+	}
+
+	.mobileTabMenuToggle .dropdown-toggle::after,
+	.mobileTabMenuToggle .dropup .dropdown-toggle::after {
+	    display: none !important;
+	}
+
+	.dropdown.mobileTabMenuToggle {
+	    margin-left: 0px;
+		margin-top: 12px;
+		margin-bottom: 12px;
+	}
+
+	.dropdown.mobileTabMenuToggle .dropdown-menu .dropdown-item, .dropdown-menu li > a {
+	    padding-right: 1.5rem;
+	    padding-left: 1.5rem;
+	    font-size: 17px;
+	}
+
+	.dropdown.mobileTabMenuToggle .dropdown-menu {
+	    min-width: 30rem;
+	}
+
+	.dropdown.mobileTabMenuToggle .dropdown-menu .dropdown-item:focus,
+	.dropdown.mobileTabMenuToggle .dropdown-menu .dropdown-item:hover,
+	.dropdown.mobileTabMenuToggle .dropdown-menu a:active,
+	.dropdown.mobileTabMenuToggle .dropdown-menu a:focus,
+	.dropdown.mobileTabMenuToggle .dropdown-menu a:hover {
+	    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(52, 206, 255, .4) !important;
+	    background: linear-gradient(60deg, #00b526, #2de253) !important;
+	}
+
+	.dropdown.mobileTabMenuToggle #dropdownMenuButton {
+	    padding: 2px 8px;
+	}
+
+	.dropdown-item.tabButtonLi:hover,
+	.dropdown-item.tabButtonLi:focus {
+	    color: #000 !important;
+	    background: #FFF !important;
+	}
+
+	div[role="tabpanel"] {
+	    overflow-x: scroll;
+	}
+
+	.hideTr {
+		display: none;
+	}
+
+	#editForMaterialsRequestForm label, #editForPoForm label {
+	  width: 100%;
+	}
+
+	#editForPoForm .type-text.ym-fbox-text.editable input,
+	#editForPoForm .type-text.ym-fbox-text textarea {
+	    width: 95%;
+	}
+
+	.editTimesheetForProjectEmployee {
+		cursor: pointer;
+	}
+
+	/*@media screen and (max-width: 600px) {
+	  table thead {
+	    border: none;
+	    clip: rect(0 0 0 0);
+	    height: 1px;
+	    margin: -1px;
+	    overflow: hidden;
+	    padding: 0;
+	    position: absolute;
+	    width: 1px;
+	  }
+	  
+	  table tr {
+	    border-bottom: 3px solid #ddd;
+	    display: block;
+	  }
+	  
+	  table td {
+	    border-bottom: 1px solid #ddd;
+	    display: block;
+	    text-align: right;
+	  }
+	  
+	  table td::before {
+	    content: attr(data-label);
+	    float: left;
+	  }
+	}*/
+
+	@media (max-width: 767px) {
+		#frmEdit .type-text.ym-fbox-text.editable input,
+		#frmEdit .type-select.ym-fbox-select select {
+		    width: 100% !important;
+		}
+
+		table.cpSearch td, table.cpSearch th {
+		    float: left;
+		}
+	}
+}

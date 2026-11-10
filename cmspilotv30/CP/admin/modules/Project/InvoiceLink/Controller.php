@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Project_InvoiceLink_Controller extends CP_Common_Lib_ModuleLinkControllerAbstract
+{
+}

@@ -1,0 +1,67 @@
+.carousel {
+	padding: 15px 30px;
+	background: #f7f7f7;
+	position: relative;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px; 
+    margin: 10px 10px;
+}
+
+.carousel ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+}
+
+.carousel ul li {
+	list-style: none;
+	color: #666;
+	text-align: center;
+	margin: 6px;
+	display: block;
+	float: left;
+	border: 1px solid #ccc;
+	background-color: white;
+	padding: 9px;
+	display: block;
+
+}
+
+.carousel a.prev, .carousel a.next {
+	background: url(images/icons-sprite.png) no-repeat transparent;
+	width: 45px;
+	height: 50px;
+	display: block;
+	position: absolute;
+	top: 40px;
+}
+.carousel a.prev {			left: -22px;
+					background-position: 0 0; }
+.carousel a.prev:hover {		background-position: 0 -50px; }
+.carousel a.next {			right: -22px;
+					background-position: -50px 0; }
+.carousel a.next:hover {		background-position: -50px -50px; }
+
+.carousel a.prev span, .carousel a.next span {
+	display: none;
+}
+.carousel .pagination {
+	text-align: center;
+}
+.carousel .pagination a {
+	background: url(images/icons-sprite.png) 0 -300px no-repeat transparent;
+	width: 15px;
+	height: 15px;
+	margin: 0 5px 0 0;
+	display: inline-block;
+}
+.carousel .pagination a.selected {
+	background-position: -25px -300px;
+	cursor: default;
+}
+.carousel .pagination a span {
+	display: none;
+}

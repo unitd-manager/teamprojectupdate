@@ -1,0 +1,31 @@
+@media all
+{
+    .highlightCompleted{
+        animation:blinkingBackgroundTask 2s infinite;
+        padding: 2px 11px;
+        margin-right: 10px;
+    }
+
+    @keyframes blinkingBackgroundTask{
+        0% {background: #999999;}
+        25% {background: green;}
+        50% {background: #ffffff;}
+        75% {background: green;}
+        100% {background: #999999;}
+    }
+
+    .highlightIncomplete {
+        animation:blinkingBackgroundTaskIncomplete 2s infinite;
+        padding: 2px 11px;
+        margin-right: 10px;
+    }
+
+    @keyframes blinkingBackgroundTaskIncomplete{
+        0% {background: #999999;}
+        25% {background: red;}
+        50% {background: #ffffff;}
+        75% {background: red;}
+        100% {background: #999999;}
+    }
+}
+

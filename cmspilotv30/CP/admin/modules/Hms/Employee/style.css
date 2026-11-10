@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@media all
+{
+	.ym-columnar.ym-form .form-row-wrapper .leftCol
+	, .columnar.yform .form-row-wrapper .leftCol {
+	    float: left;
+	    width: 100%;
+	}
+
+	td.highlightedTdForNote{
+		border: 3px solid #23b7e5 !important;
+	}
+}

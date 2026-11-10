@@ -1,0 +1,13 @@
+@media all {
+  .m-aceIms_contact #col3_content .error strong {
+    margin-left: 0 !important;
+  }
+  .m-aceIms_contact .studentEnrollment .highlightBorder,
+  .m-aceIms_contact .studentEnrollmentEdit .highlightBorder {
+    border: 1px dotted #ca226b;
+  }
+  .m-aceIms_contact .c50r .rightPanel .aceIms_contact__aceIms_courseLink .fontBigAndBold {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

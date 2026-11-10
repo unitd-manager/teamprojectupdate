@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="customer_name" pageWidth="400" pageHeight="100" orientation="Landscape" columnWidth="400" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="small_text2" fontName="Arial" fontSize="7"/>
+	<style name="small_text2_bold" fontName="Arial" fontSize="7" isBold="true"/>
+	<style name="small_text1" fontName="Arial" fontSize="8"/>
+	<style name="small_text1_bold" fontName="Arial" fontSize="8" isBold="true"/>
+	<style name="normal_text" fontName="Arial" fontSize="9"/>
+	<style name="normal_text_bold" fontName="Arial" fontSize="9" isBold="true"/>
+	<style name="big_text1" fontName="Arial" fontSize="12"/>
+	<style name="big_text1_bold" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="title_text1" fontName="Arial" fontSize="18" isBold="true"/>
+	<parameter name="DIR_SUBREPORT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new String("")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pageCount" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="pageNo" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(0)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportTitle" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="delivery_count" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(2)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="contact_id" class="java.lang.Integer" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT CONCAT_WS(' - ',
+           CONCAT_WS(' ', TRIM(c.salutation), TRIM(c.first_name), TRIM(c.last_name) ) ,
+           cy.company_name
+       )AS client_name
+FROM contact c
+JOIN company cy ON (c.company_id = cy.company_id)
+WHERE c.contact_id = $P!{contact_id}]]>
+	</queryString>
+	<field name="client_name" class="java.lang.String"/>
+	<variable name="printDate" class="java.util.Date" resetType="None">
+		<variableExpression><![CDATA[new Date()]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" isPrintRepeatedValues="false" x="0" y="1" width="395" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Left">
+					<font fontName="Microsoft Sans Serif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{client_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

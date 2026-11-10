@@ -1,0 +1,201 @@
+@media all
+{
+    .hide {
+        display: none;
+    }
+    body {
+        font-size: 11px;
+    }
+
+    #col1 {
+        background: #f7f7f7;
+        margin-right: 10px;
+    }
+        
+    .tplLogin #header {
+        border-bottom: 1px dotted #CCCCCC;
+    }
+    
+    #header-left .multi-year {
+        padding: 10px 0;
+    }
+    #header-left .multi-unique-site {
+        padding: 10px 0;
+    }
+
+    #topnav .hlist {
+    }
+
+    #topnav .logoutWrap{
+        width:150px;
+        text-align:right;
+    }
+
+    #topnav .logoutWrap .username {
+        margin-right: 5px;
+    }
+
+    #loginOuter {
+	    margin: 6em auto;
+	    padding: 15px;
+	    border: 1px solid #cccccc;
+	    width: 425px;
+        background: #F1F3F5 url('../images/icons/lock.png') no-repeat 60px 20px;
+    }
+
+    #loginOuter .subcolumns .subcl{
+        padding-top:90px;
+    }
+
+    .yform.login .type-text input, .yform.login .type-select select {
+        width:95%;
+    }
+
+    .yform.login h1{
+        color: #a00;
+    }
+
+    #commentForm .columnar div.type-button {
+        margin-left: 0;
+    }
+
+    #header .logo {
+        padding:10px 0;
+    }
+
+    #lang-panel.hlist ul li.active {
+        color: red;
+        padding:0.1em 0.8em
+    }
+
+    #header h1.siteTitle {
+        font-size: 30px;
+        font-family: 'Oswald', arial, serif;
+        text-shadow: 2px 2px 10px #111159;
+        filter: dropshadow(color=#111159, offx=10, offy=10); 
+    }
+}
+
+/************** REPORTS ******/
+@media all
+{
+    #reportContent table {
+        width:100%;
+    }
+
+    #reportContent table tr{
+        border:collapse;
+    }
+
+    #reportContent table td.header {
+        background-color:#ccc !important;
+        font-weight:bold;
+        font-size:0.8em;
+    }
+
+    #reportContent table td.title {
+        background-color:#ccc !important;
+        font-weight:bold;
+    }
+
+    #reportContent table td.value {
+        text-align: right;
+        padding-right : 20px;
+    }
+    ul.printOptions li {
+        margin-bottom:10px;
+    }
+}
+
+@media print
+{
+    a.reportPrint {
+        display: none;
+    }
+    a.reportBack {
+        display: none;
+    }
+}
+
+/******************* FULL WIDTH ITEMS ********************/
+@media all
+{
+    body.cpFullWidth {
+        background:#5E5E5E;/** mainly for footer **/
+        padding: 0;
+    }
+
+    .cpFullWidth .page_margins {
+        background: transparent;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .cpFullWidth .page {
+        margin: auto;
+    }
+
+    .cpFullWidth #header {
+        background:#000;
+        color: #fff;
+        border: 0;
+    }
+
+    .cpFullWidth #header h1.siteTitle {
+        color: #fff;
+        margin-bottom: 0;
+    }
+    
+    .cpFullWidth #header .hlist ul li a, .cpFullWidth #header a.logout {
+        color: #fff;
+    }
+    
+    .cpFullWidth #header .hlist ul li.active a, 
+    .cpFullWidth #header .topnav ul li.active a {
+        color: #ffff00;
+    }
+
+    .cpFullWidth #header .page_margins {
+    }
+
+    .cpFullWidth #nav {
+        background:#d2d2d2;
+    }
+
+    .cpFullWidth #nav2 {
+        background:#d2d2d2;
+    }
+
+    .cpFullWidth #main .page {
+        border-radius: 5px;
+    }
+
+    .cpFullWidth #col3_content {
+        padding: 0;
+    }
+    
+    .cpFullWidth #extended {
+        background:#f3f3f3;
+    }
+
+    .cpFullWidth #footer {
+        background:#5E5E5E;/** mainly for footer **/
+        color: #fff;
+    }
+
+    .cpFullWidth #extended .extendedInner{
+        padding: 15px 0;
+    }
+    
+    /* #nav2 */
+    .v-edit .pagelinks .linkNos {
+        width: 350px;
+    }
+
+    /* media panel */
+    .mediaFilesDisplay .normal-img .pic {
+    }
+    .mediaFilesDisplay .normal-img .pic img {
+        max-width: 195px;
+    }
+}  

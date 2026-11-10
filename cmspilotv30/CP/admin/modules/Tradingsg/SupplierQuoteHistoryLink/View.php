@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Tradingsg_SupplierQuoteHistoryLink_View extends CP_Common_Lib_ModuleLinkViewAbstract
+{
+}

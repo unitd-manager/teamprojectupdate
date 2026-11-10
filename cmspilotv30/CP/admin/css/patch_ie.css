@@ -1,0 +1,11 @@
+#topnav ul {
+    float: right;
+}
+
+.actionsWrapper ul {
+    float: right;
+}
+
+.pagelinks {
+    max-width: 400px;
+}

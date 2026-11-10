@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="customer_name"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Landscape"
+		 pageWidth="400"
+		 pageHeight="100"
+		 columnWidth="400"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<style 
+		name="small_text2"
+		isDefault="false"
+		fontName="Arial"
+		fontSize="7"
+	>
+	</style>
+	<style 
+		name="small_text2_bold"
+		isDefault="false"
+		fontName="Arial"
+		fontSize="7"
+		isBold="true"
+	>
+	</style>
+	<style 
+		name="small_text1"
+		isDefault="false"
+		fontName="Arial"
+		fontSize="8"
+	>
+	</style>
+	<style 
+		name="small_text1_bold"
+		isDefault="false"
+		fontName="Arial"
+		fontSize="8"
+		isBold="true"
+	>
+	</style>
+	<style 
+		name="normal_text"
+		isDefault="false"
+		fontName="Arial"
+		fontSize="9"
+	>
+	</style>
+	<style 
+		name="normal_text_bold"
+		isDefault="false"
+		fontName="Arial"
+		fontSize="9"
+		isBold="true"
+	>
+	</style>
+	<style 
+		name="big_text1"
+		isDefault="false"
+		fontName="Arial"
+		fontSize="12"
+	>
+	</style>
+	<style 
+		name="big_text1_bold"
+		isDefault="false"
+		fontName="Arial"
+		fontSize="12"
+		isBold="true"
+	>
+	</style>
+	<style 
+		name="title_text1"
+		isDefault="false"
+		fontName="Arial"
+		fontSize="18"
+		isBold="true"
+	>
+	</style>
+
+	<parameter name="DIR_SUBREPORT" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[new String("")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pageCount" isForPrompting="false" class="java.lang.Integer"/>
+	<parameter name="pageNo" isForPrompting="false" class="java.lang.Integer">
+		<defaultValueExpression ><![CDATA[new Integer(0)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportTitle" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="delivery_count" isForPrompting="false" class="java.lang.Integer">
+		<defaultValueExpression ><![CDATA[new Integer(2)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="contact_id" isForPrompting="false" class="java.lang.Integer"/>
+	<queryString><![CDATA[SELECT CONCAT_WS(' - ',
+           CONCAT_WS(' ', TRIM(c.salutation), TRIM(c.first_name), TRIM(c.last_name) ) ,
+           cy.company_name
+       )AS client_name
+FROM contact c
+JOIN company cy ON (c.company_id = cy.company_id)
+WHERE c.contact_id = $P!{contact_id}]]></queryString>
+
+	<field name="client_name" class="java.lang.String"/>
+
+	<variable name="printDate" class="java.util.Date" resetType="None" calculation="Nothing">
+		<variableExpression><![CDATA[new Date()]]></variableExpression>
+	</variable>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="17"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="1"
+						width="395"
+						height="15"
+						key="textField"
+						isPrintRepeatedValues="false"
+						isRemoveLineWhenBlank="true"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{client_name}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

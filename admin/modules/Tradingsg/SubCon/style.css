@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-tradingsg_supplier .toggle {
+        display:block;
+    }
+
+    .m-tradingsg_supplier .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-tradingsg_supplier .c50l,
+    .m-tradingsg_supplier .c50r {
+        width: 100%;
+    }
+
+    .m-tradingsg_supplier .ym-columnar .ym-fbox-text label,
+    .m-tradingsg_supplier .ym-columnar .ym-fbox-select label,
+    .m-tradingsg_supplier #frmEdit .type-text label,
+    .m-tradingsg_supplier #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-tradingsg_supplier #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-tradingsg_supplier  .linkPortalWrapper div.header,
+    .m-tradingsg_supplier  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+}

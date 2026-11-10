@@ -1,0 +1,6 @@
+cd SOPLabel/
+generateSOPLabel.cmd
+
+
+
+

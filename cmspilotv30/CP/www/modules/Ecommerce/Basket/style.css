@@ -1,0 +1,10 @@
+@media all
+{
+	.shopBtns {
+	    margin-top:10px;
+	}
+	
+	.m-ecommerce_basket .w-core-subNav .vlist {
+	    display: none;
+	}
+}

@@ -1,0 +1,92 @@
+@media all {
+  .m-tuitionsg_contact #col3_content .error strong {
+    margin-left: 0 !important;
+  }
+  .m-tuitionsg_contact .stepsStudentName {
+    font-size: 18px;
+  }
+  .m-tuitionsg_contact .toggle {
+    display: block;
+  }
+  .m-tuitionsg_contact .ym-columnar.ym-form .form-row-wrapper .leftCol,
+  .m-tuitionsg_contact .columnar.yform .form-row-wrapper .leftCol {
+    float: left;
+    width: 24%;
+  }
+  .m-tuitionsg_contact .tuitionsg_contact__aceIms_courseLink .enrollmentHeader {
+    background: -moz-linear-gradient(center top, #27587f, #224d6f 4%, #0f324f 44%, #172d3f 50%, #091f2f 50%, #04131f) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #CCCCCC;
+    color: #FFFFFF;
+    width: 98%;
+  }
+  .m-tuitionsg_contact .ym-columnar .ym-fbox-text label,
+  .m-tuitionsg_contact .ym-columnar .ym-fbox-select label,
+  .m-tuitionsg_contact #frmEdit .type-text label,
+  .m-tuitionsg_contact #frmEdit .type-select label {
+    width: 100%;
+  }
+  .m-tuitionsg_contact .ym-form label,
+  .m-tuitionsg_contact .yform label {
+    color: #000;
+  }
+  .m-tuitionsg_contact .linkPortalWrapper table td input[type="text"] {
+    width: 96%;
+  }
+  .m-tuitionsg_contact .linkPortalWrapper table td input.hasDatepicker {
+    width: 87%;
+  }
+  .m-tuitionsg_contact div.header {
+    padding: 1em;
+  }
+  .m-tuitionsg_contact div.header div div {
+    font-size: 18px;
+  }
+  .m-tuitionsg_contact .c50l,
+  .m-tuitionsg_contact .c50r {
+    width: 100%;
+  }
+  .m-tuitionsg_contact .c50r .rightPanel {
+    padding: 10px;
+  }
+  .m-tuitionsg_contact .c50r .rightPanel div.header {
+    width: 97%;
+  }
+  .m-tuitionsg_contact .c50r .rightPanel .linkPortalWrapper table th {
+    color: #fff;
+    background-color: #666666;
+  }
+  .m-tuitionsg_contact .c50r .rightPanel .linkPortalWrapper table td {
+    border: 1px solid #000;
+  }
+  .m-tuitionsg_contact .c50r .rightPanel #media__tuitionsg_contact__picture,
+  .m-tuitionsg_contact .c50r .rightPanel #media__tuitionsg_contact__attachment {
+    width: 49%;
+    float: left;
+    margin-right: 10px;
+  }
+  .m-tuitionsg_contact .c50r .rightPanel #media__tuitionsg_contact__picture div.header,
+  .m-tuitionsg_contact .c50r .rightPanel #media__tuitionsg_contact__attachment div.header {
+    width: 95%;
+  }
+
+    .m-tuitionsg_contact .error{
+      background-color: #FF6666;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .m-tuitionsg_contact #col3_content .error strong{
+      text-decoration: none;
+      padding-left: 10px;
+      font-size: 16px;
+    }
+
+    .m-tuitionsg_contact .row_error_box{
+      background-color: #FFFFFF;
+      font-weight: bold;
+    }
+
+    .m-tuitionsg_contact .row_error_box span{
+      display: none;
+    }
+}

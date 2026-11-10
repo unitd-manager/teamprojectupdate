@@ -1,0 +1,43 @@
+{% extends "base.phtml" %}
+
+{% block bodyContent %}
+    {% block header %}
+        {% block nav %}
+            {% include 'main-nav.phtml' %}
+        {% endblock %} {# end nav #}
+    {% endblock %}  {# end header #}
+
+    {% block mainOuter %}
+    <div class="container">
+        {% block main %}
+        <div class="row">
+            <div class="col-md-3">
+                {% block leftPanel %}
+                    {% include 'left-nav.phtml' %}
+                {% endblock %}
+            </div>
+
+            <div class="col-md-9">
+                {% block bodyPanel %}{% endblock %}
+            </div>
+        </div>
+        {% endblock %} {# end main #}
+
+        <hr>
+        {% block footer %}
+        <footer>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>{{ lang.gd('cp.footer.leftText') }}</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="pull-right">
+                        <p>{{ lang.gd('cp.footer.rightText') }}</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {% endblock %} {# end footer #}
+    </div> <!-- /container -->
+    {% endblock %} {# end mainOuter #}
+{% endblock %}

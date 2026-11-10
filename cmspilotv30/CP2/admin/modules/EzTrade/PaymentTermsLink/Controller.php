@@ -1,0 +1,5 @@
+<?
+class CP_Admin_Modules_EzTrade_PaymentTermsLink_Controller extends CP_Common_Lib_ModuleLinkControllerAbstract
+{
+
+}

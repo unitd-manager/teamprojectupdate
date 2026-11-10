@@ -1,0 +1,106 @@
+{% macro input(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class='form-group {{name}}_wrapper'>
+        <label for="fld_{{name}}">{{ label }}</label>
+        {{ forms.input(name, value, opts) }}
+    </div>
+{% endmacro %}
+
+{% macro email(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    {% set opts = opts | merge({
+           type: 'email',
+       })
+    %}
+    <div class='form-group'>
+        <label for="fld_{{name}}">{{ label }}</label>
+        {{ forms.input(name, value, opts) }}
+    </div>
+{% endmacro %}
+
+{% macro password(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    {% set opts = opts | merge({
+           type: 'password',
+       })
+    %}
+    <div class='form-group'>
+        <label class='control-label' for="fld_{{name}}">{{ label }}</label>
+        {{ forms.input(name, value, opts) }}
+    </div>
+{% endmacro %}
+
+{% macro textarea(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class='form-group'>
+        <label for="fld_{{name}}">{{ label }}</label>
+        {{ forms.textarea(name, value, opts) }}
+    </div>
+{% endmacro %}
+
+{% macro radio(label, name, value, valArr, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class='form-group'>
+        <label class='control-label'>{{ label }}</label>
+        {{ forms.radio(name, value, valArr, opts) }}
+    </div>
+{% endmacro %}
+
+{% macro dd(label, name, valueSel, valArr, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class='form-group {{name}}_wrapper'>
+        <label class='control-label' for="fld_{{name}}">{{ label }}</label>
+       {{ forms.dd(label, name, valueSel, valArr, opts) }}
+    </div>
+{% endmacro %}
+
+{% macro checks(label, name, valArr, selArr, opts = {}) %}
+    <div class='form-group'>
+        <label class='control-label'>{{ label }}</label>
+        {{ forms.checks(name, valArr, selArr, opts) }}
+    </div>
+{% endmacro %}
+
+{% macro singleCheck(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class="form-group">
+        {{ forms.checkbox(label, name, value, opts) }}
+    </div>
+{% endmacro %}
+
+{% macro checkboxYesNo(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    <div class="form-group">
+        {{ forms.checkboxYesNo(label, name, value, opts) }}
+    </div>
+{% endmacro %}
+
+{% macro date(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    {% set opts = opts | merge({
+           class: opts.class ~ " ",
+           readonly: true,
+           dateFormat: "yyyy-mm-dd",
+       })
+    %}
+    <div class='form-group'>
+        <label class='control-label' for="fld_{{name}}">{{ label }}</label>
+        <div class="input-append date datepicker" data-date="{{ value }}" data-date-format="{{ opts.dateFormat }}">
+            {{ forms.input(name, value, opts) }}
+            <span class="add-on"><i class="icon-calendar"></i></span>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro captcha(label, name, value, opts = {}) %}
+    {% import 'form-obj.phtml' as forms %}
+    {% import 'lang.phtml' as lang %}
+    <div class='form-group'>
+        <label class='control-label' for="fld_{{name}}">{{ label }}</label>
+        {{ forms.input(name, value, opts) }}
+    </div>
+    <div class='form-group'>
+        <img id='captcha' src='{{ cpCfg.cp_library_path_alias }}lib_php/securimage/securimage_show.php' alt='Anti-spam Code' />
+        <i class="icon-refresh"></i><a href='#' class='reloadCaptcha' captcha_id='captcha'>{{ lang.gd('reload') }}</a>
+    </div>
+{% endmacro %}

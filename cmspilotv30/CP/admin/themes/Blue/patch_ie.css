@@ -1,0 +1,22 @@
+/** height added since background did not work **/
+
+.ui-helper-clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    border: 5px solid red;
+    width: 100%;
+    z-index: 2;
+}
+
+.contentScroller {
+    height: 0;
+}
+
+.w-pms-calendarDisplay {
+    border: 5px solid red;
+    overflow: hidden;
+    
+}

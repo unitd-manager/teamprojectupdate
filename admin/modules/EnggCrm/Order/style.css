@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+@media all
+{
+	.showHideCancelledInvoice {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	.cancelledInvoiceTableOrder {
+		display: none;
+	}
+
+	h1 {
+		font-weight: bold !important;
+	}
+
+	#editInvoicePortalForm {
+		overflow-x: scroll;
+	  }
+
+	.invoice_creation_date .message {
+		margin-top: -25px !important;
+	}
+
+	.invoice_creation_date div {
+	    margin-top: 10px !important;
+	}
+
+	.row_error_box {
+		display: none;
+	}
+	
+	.row_error_box.error {
+		display: block !important;
+	}
+
+	.companyNameWithActions select {
+		width: 60% !important;
+	}
+
+	.companyNameWithActions .formFieldNotesRight {
+		white-space: nowrap;
+	}
+
+	.generateInvoiceForm.columnar div.type-select select,
+	.invoiceEditForm.columnar div.type-select select{
+		width: 100% !important;
+	}
+
+ 	.invoiceEditForm.columnar .type-select label{
+    	display:none !important;
+	}
+}

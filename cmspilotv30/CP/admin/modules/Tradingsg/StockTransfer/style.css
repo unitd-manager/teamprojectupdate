@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+.addProduct {
+	background: none repeat scroll 0 0 #F4F4F4;
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+    margin: 0px 0 10px 0;
+    float:left;
+}
+
+.checkProductPrice {
+	background: -moz-linear-gradient(center top , white, #E6E6E6) repeat scroll 0 0 transparent;
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+}
+
+.addProduct input.text{
+	padding: 3px;
+	width:400px;
+}
+
+/*.allButtonsShow {
+    display:block;
+}
+
+.allButtonsHide {
+    display:none;
+}*/
+
+a.deleteItem {
+    text-decoration:underline   ;
+}
+
+.balanceRow {
+	display: none;
+}
+
+@charset "UTF-8";
+
+.addProduct {
+    background: none repeat scroll 0 0 #F8F8F8;
+    border: 1px solid #DDDDDD;
+    float: left;
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+}
+
+#toggleComments {
+    color: #000000 !important;
+    text-decoration: underline;
+}
+
+.c50l, .c50r {
+    width: 100%;
+}
+
+.list.thinlist.topTable thead th {
+    background: none repeat scroll 0 0 #F8F8F8;
+}
+
+.yform{
+    background-color: #fff;
+    border: 0;
+    padding: 0;
+}
+
+.checkProductPrice {
+    background: -moz-linear-gradient(center top , white, #E6E6E6) repeat scroll 0 0 transparent;
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+}
+
+.addProduct input.text{
+    font-size: 16px;
+    width: 70%;
+}
+
+.type-select.ym-fbox-select.row_status {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.type-select.ym-fbox-select.row_status > label{
+    margin: 0;
+    width: 100%;
+}
+
+a.deleteItem {
+    text-decoration: none;
+}
+
+.balanceRow {
+    display: none;
+}
+
+button[disabled], html input[disabled] {
+    background-color: #ddf3f3;
+    border: 1px solid #49c3e9;
+    cursor: default;
+}
+
+.CancelledButton {
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    margin-top: -8px;
+    padding: 3px;
+    text-align: center;
+    width: 343px;
+}
+
+.DeliveredProducts {
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    margin-top: -8px;
+    padding: 3px;
+    text-align: center;
+    width: 343px;
+}
+
+.btn.btn-danger{
+    color: #FFFFFF !important;
+}
+

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+@media all
+{
+    .m-trading_catalog .trading_catalog__trading_pricingTypeLink .pricing-type {
+        width: 150px;
+    }
+    .m-trading_catalog .trading_catalog__trading_pricingTypeLink .sell-unit-price-base {
+        width: 80px;
+    }
+}

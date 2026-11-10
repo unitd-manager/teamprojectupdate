@@ -1,0 +1,52 @@
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('invalidLoginErrorText', 'Invalid email or password', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('loginFormCaption', 'Returning User', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('saveLogin', 'Save Login', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('loginFormInfoText', 'Please enter your email and password', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('forgotPassword', 'Lost my password', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('forgotPasswordFormCaption', 'Recover My Password', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('forgotPasswordFormInfoText', 'Please enter your email address and click submit. We will the send the instructions to recover your password to your email.', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('emailNotFoundError', 'Sorry, the email address you entered is not found in our database.', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('loginFormRegisterInfoCaption', 'New User', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('loginFormRegisterInfoDesc', 'if you don\'t have an account you can create a new profile here', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('loginFormRegisterBtnText', 'Create My Account', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('registerFormCaption', 'Create Your Profile', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('registerFormInfoText', 'Please fill in the form and submit to proceed', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`, `is_html_text`, `show_to_user`) VALUES
+('thanksTextAfterNewMemberRegistration', 'Thank you for registering with us. \n<br>An email confirmation of your account has been sent to you.\n', NULL, NOW(), NOW(), 'Message', NULL, NULL),
+('newMemberRegNotificationMailToUser', '<html>\n<body>\n<style>\nbody {\n   font: 12px Arial;\n}\n</style>\n\nDear [[first_name]] [[last_name]],<br> <br>\n\nYou have succesfully registered with us.<br><br>\nYour  Login is: [[email]] <br>\nYour Password is: [[pass_word]] <br><br>\n\nTo start shopping <a href="[[activation_link]]"><u>click here</u></a>.<br><br>\n\nRemember to keep checking back for news of our latest offers.<br><br>\n\nThe team\n\n</body>\n</html>', NULL, NOW(), NOW(), 'Message', NULL, NULL),
+('newMemberRegNotificationMailToAdmin', '<html>\n<body>\n\n<table cellpadding="5" border="1" align="left">\n\n<tr>\n    <td colspan="2"><u><b>New Member Registration Info</b></u></td>\n</tr>\n\n<tr>\n   <td>First Name</td>\n   <td>[[first_name]]</td>\n</tr>\n\n<tr>\n   <td>Last Name</td>\n   <td>[[last_name]]</td>\n</tr>\n\n<tr>\n   <td>E-mail Address</td>\n   <td>[[email]]</td>\n</tr>\n\n<tr>\n   <td>Submitted On</td>\n   <td>[[currentDate]]</td>\n</tr>\n\n</table>\n\n</body>\n</html>', NULL, NOW(), NOW(), 'Email Message', NULL, NULL),
+('newMemberRegNotificationMailToAdminSubject', 'New Member Registration', NULL, NOW(), NOW(), 'Email Message', NULL, NULL),
+('newMemberRegNotificationMailToUserSubject', 'Thanks for your registration', NULL, NOW(), NOW(), 'Email Message', NULL, NULL);
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('btnEditProfile', 'Edit Profile', NULL, NOW(), NOW(), 'Membership');
+
+INSERT INTO `translation` (`key_text`, `value`, `chi_value`, `creation_date`, `modification_date`, `group_name`) 
+VALUES ('emailAlreadyExistsError', 'Sorry, the email you have entered already exists in our database', NULL, NOW(), NOW(), 'Membership');
+

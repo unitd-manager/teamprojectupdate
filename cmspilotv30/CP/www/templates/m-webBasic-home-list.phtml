@@ -1,0 +1,30 @@
+{% extends "main.phtml" %}
+
+{% block main %}
+    {% block bodyPanel %}
+        {% set picArr = bannerArr %}
+        {% include 'picture.phtml' with picArr %}
+       <div class="jumbotron">
+            {% for row in modDataArray %}
+                <h1>{{ row.title }}</h1>
+                {{ row.description|raw }}
+                <p><a href="{{ row.url }}" class="btn btn-primary btn-lg">{{ attribute(ln, 'cp.lbl.readMore') | raw }}</a></p>
+            {% endfor %}
+        </div>
+
+        <div class="row">
+            <!-- use this for callouts -->
+            {% for row in calloutArr %}
+                <div class="col-md-4">
+                    <h2>{{ row.title }}</h2>
+                    {% set picArr = row['mediaPicArray'] %}
+                    {% include 'picture.phtml' with {'picArr': picArr}  %}
+                    {{ lang.gfv(row, 'description')}}
+                    {% if row.internal_link != '' %}
+                        <p><a class="btn btn-default" href="#">{{ lang.gd('cp.lbl.readMore') }}</a></p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div><!--/row-->
+    {% endblock %} {# end bodyPanel #}
+{% endblock %}

@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/* Jurisdiction List */
+@media all
+{
+    .m-lawNews_jurisdiction .jurisdictionList ul li.region{
+        float:left;
+        width:25%;
+    }
+
+    .m-lawNews_jurisdiction .jurisdictionList ul li.region h2,
+    .m-lawNews_jurisdiction .jurisdictionList li.jurisdiction {
+        border: 1px solid #CCCCCC;
+        display: block;
+        margin: 0 0 5px 10px;
+        text-align: center;
+        padding: 10px 10px;
+    }
+
+    .m-lawNews_jurisdiction .jurisdictionList ul li.region h2 {
+        background: none repeat scroll 0 0 #6D6E6E;
+        color: #ffffff;
+    }
+
+    .m-lawNews_jurisdiction .jurisdictionList li.jurisdiction  {
+        background: none repeat scroll 0 0 #F0F0F0;
+    }
+}
+
+/* Jurisdiction Detail */
+@media all
+{
+    .m-lawNews_jurisdiction .jurisdictionDetail .newsAndAnalysis .w-content-record,
+    .m-lawNews_jurisdiction .jurisdictionDetail .qAndA .w-content-record,
+    .m-lawNews_jurisdiction .jurisdictionDetail .externalLinks .w-content-record,
+    .m-lawNews_jurisdiction .jurisdictionDetail .newsInBrief .w-content-record {
+        width: 297px;
+        overflow: hidden;
+    }
+
+    .m-lawNews_jurisdiction .jurisdictionDetail .rightBox,
+    .m-lawNews_jurisdiction .jurisdictionDetail .rightBox .w-content-record ul li {
+        margin-right: 0px;
+    }
+}
+
+/* Jurisdiction Archive */
+@media all
+{
+    .m-lawNews_jurisdiction .jurisdictionArchiveList .quickSearch {
+        padding-top: 0px;
+    }
+}

@@ -1,0 +1,129 @@
+@charset "UTF-8";
+@media all
+{
+    .yform.edit .type-text.non-editable div.txt, .yform.edit .type-text.non-editable div.txt {
+        margin-left: 0% !important;
+    }
+
+    .pr15 {
+        padding-right: 15px;
+    }
+
+	.m-payroll_expense .cpSearch input[type="text"]{
+	    max-width: 200px !important;
+	    width: 100px !important;
+	}
+
+	.cpSearch .dateRange {
+	    width: 400px !important;
+	}
+
+    .m-payroll_expense .c50l,
+    .m-payroll_expense .c50r {
+        width: 100%;
+    }
+
+    .m-payroll_expense .ym-columnar .ym-fbox-text label,
+    .m-payroll_expense .ym-columnar .ym-fbox-select label,
+    .m-payroll_expense #frmEdit .type-text label,
+    .m-payroll_expense #frmEdit .type-select label,
+    .m-payroll_expense #frmNew .type-text label,
+    .m-payroll_expense #frmNew .type-select label {
+        width: 100%;
+    }
+
+    .expTitle{
+        font-size: 125%;
+        font-weight: bold;
+        color:#000;
+    }
+
+    .m-payroll_expense .columnar div.type-select select,
+    .m-payroll_expense .columnar div.type-text textarea {
+        width:100%;
+    }
+
+    .m-payroll_expense.v-list .col-md-2 {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .yform div.type-text input {
+        padding: 0.4em 10px !important;
+    }
+    .yform .type-select select {
+        padding: 0.4em 8px 0.4em 10px !important;
+    }
+
+    .m-payroll_expense .form-group.row_amount.editable,
+    .m-payroll_expense .form-group.row_gst.editable,
+    .m-payroll_expense .form-group.row_service_charge.editable {
+        /*width:90px;*/
+    }
+
+    .m-payroll_expense .form-group.row_total_amount.editable {
+        /*width: 100px;*/
+    }
+    .m-payroll_expense .type-text.ym-fbox-text.row_date,
+    .m-payroll_expense .type-text.ym-fbox-text.row_invoice_date,
+    .m-payroll_expense .type-text.ym-fbox-text.row_received_date,
+    .m-payroll_expense .type-text.ym-fbox-text.row_issued_date {
+        width: 120px;
+    }
+
+    .expenseTable{
+        margin-top:20px;
+        margin-bottom:30px;
+        background: wheat;
+    }
+
+    .m-payroll_expense.v-list table.thinlist th{
+        background: #404e67;
+        color: #fff;
+    }
+
+    .incomeFields, .expenseFields, .invoiceFields, .expenseSubGroup56, .expenseSubGroup1112, .invoiceFieldsOther
+    ,.expensePaymentMode {
+        display: none;
+    }
+
+    .m-payroll_expense.v-list #fld_description{
+        height: 36px !important;
+    }
+
+    .m-payroll_expense.v-list #fld_description:focus{
+        height: 100px !important;
+    }
+
+    .yform.edit .type-select div.txt{
+        margin-left: 0;
+    }
+
+    .yform.receiptForm label{
+        width: 30%;
+        display: inline-block;
+    }
+
+    .yform.receiptForm .form-control{
+        width: 60%;
+        display: inline-block;        
+    }
+
+    .columnar.receiptForm div.type-select select,
+    .columnar.receiptForm div.type-text textarea{
+        width: 60%;        
+    }
+
+    .m-payroll_expense.v-list .card .card-body .form-group{
+        height:70px;
+    }
+
+    .m-payroll_expense.v-list .type-radio .leftCol {
+        width: 100% !important;
+    }
+
+    .m-payroll_expense .yform.edit .type-text.row_date div.txt, 
+    .m-payroll_expense .yform.edit .type-text.row_date div.txt {
+        margin-left: 0% !important;
+    }
+}

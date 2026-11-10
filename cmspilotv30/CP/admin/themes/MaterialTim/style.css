@@ -1,0 +1,5649 @@
+@charset "UTF-8";
+
+@media all
+{
+    .leftNav .hlist ul li a {
+        width: 130px;
+    }
+
+    body {
+        color: #111111;
+        font-family: 'Open Sans','Calibri',Sans-serif,'Cambria', 'Century Gothic',Verdana,Arial,Helvetica;
+        font-size: 13px;
+    }
+
+    .uploadifiveQueue.btn {
+        color: #000 !important;
+        padding: 4px 11px;
+    }
+
+    a,
+    html *,
+    .yform .type-text input,
+    .yform .type-text textarea,
+    .yform .type-select select,
+    .yform select,
+    .cpSearch select,
+    .cpSearch input {
+        font-size: 14px;
+        font-family: 'Open Sans','Calibri',Sans-serif, 'Century Gothic',Verdana,Arial,Helvetica;
+    }
+
+    .ui-widget-header {
+        font-weight: bold;
+        background: #fff !important;
+        margin: 0px !important;
+        border-radius: 0px !important;
+        color: #000000 !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+    }
+
+    .ui-dialog.ui-widget.ui-widget-content {
+        border: 1px solid #cdcdcd !important;
+    }
+
+    .homeTop {
+        /*left: 1px;
+        position: absolute;
+        top: 0px;*/
+        z-index: 9999;
+        position: relative;
+        float: left;
+        width: 138px;
+        margin-bottom: 0px !important;
+    }
+
+    #loginOuter{
+        height: auto !important;
+        padding: 4px !important;
+    }
+
+    #loginOuter h1 {
+        background-color: #D9D9D9;
+        font-size: 21px;
+        font-weight: bold;
+        padding: 11px 0px;
+        text-align: center;
+        margin: 0px 0px;
+        border-radius: 9px 9px 0px 0px;
+        color: #000000;
+    }
+
+    #loginOuter h1 span {
+        font-size: 18px;
+        padding: 0 9px 0 0;
+    }
+
+    .takeVirtualTourLinkText {
+        font-family: "Open Sans";
+        font-weight: 600;
+        color: #FFF;
+        text-decoration: underline;
+        font-size: 2.5rem;
+    }
+
+    .takeVirtualTourLink {
+        cursor: pointer;
+    }
+
+    .pr10 {
+        padding-right: 10px !important;
+    }
+
+    .homeTop li {
+        list-style-type: none;
+        cursor: pointer;
+        font-size: 30px;
+        width: 102%;
+        margin-left: 0px;
+        color: #000;
+    }
+
+    ul.homeTop li font a {
+        color: #FFFFFF;
+        cursor: pointer;
+        font-size: 20px;
+        left: 33px;
+        margin-left: 7px;
+        position: absolute;
+        text-decoration: underline;
+        top: 2px;
+        width: 100px !important;
+        text-decoration: underline !important;
+        font-weight: 500;
+    }
+
+    .homeTop li:before {
+        content: '\f015';
+        font-family: FontAwesome;
+    }
+
+    .leftnavShowHide {
+        position: relative;
+        top: 16px;
+        cursor: pointer;
+        float: left;
+    }
+
+    .hideleftnav{
+        display: none;
+    }
+
+    .leftnavShowHideicon:before{
+       content: '\f204' !important;
+    }
+
+    .fullleftlist{
+        margin-left: 0px !important;
+    }
+
+    .leftnavShowHide:hover {
+        text-decoration: none;
+    }
+
+    .leftnavShowHide:before{
+        color: #1a252f;
+        content: "\f205";
+        font-family: FontAwesome;
+        font-size: 24px;
+    }
+
+    .sub {
+        background-color: #ffffff;
+        border: 1px solid #DDDDDD;
+        border-radius: 5px;
+        display: none;
+        height: 334px;
+        overflow: auto !important;
+        padding-top: 20px;
+        /*position: relative;
+        top: 3px;*/
+        position: absolute;
+        z-index: 9999;
+        width: 760px;
+        left: -26px;
+        top: 53px;
+    }
+
+    .homeTop .sub ul li:before {
+        content: '';
+    }
+
+    .homeTop .sub ul ul li:before {
+        content: '\f1cd';
+        font-family: FontAwesome;
+        font-size: 16px;
+        margin-left: 8px;
+        margin-right: 6px;
+        color: #FFF;
+    }
+
+    .sub ul li a{
+        color:#ffffff;
+        font-size: 18px;
+    }
+
+    .sub ul li a span{
+        color:#ffffff;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .sub ul li a:hover, .sub ul li a span:hover{
+    }
+
+    .sub ul li{
+        margin-bottom: 10px;
+        font-size: 12px;
+        width: 100%;
+        margin-left: 15px;
+    }
+
+    .sub ul ul li{
+        margin-bottom: 10px;
+    }
+
+    .sub ul ul li a span{
+        font-weight: normal;
+        font-size: 16px;
+    }
+
+    .sub ul ul {
+        margin-left: 0;
+    }
+
+    .ulModuleSet{
+        width: 167px;
+        height: 298px;
+        background-color: #404e67;
+        border-radius: 5px 5px 5px 5px;
+        margin-bottom: 15px;
+        padding-top: 12px;
+        margin-right: 0;
+        box-shadow: 0 4px 4px 0 rgba(0,0,0,.14);
+    }
+
+    .seperateIconTop {
+        float: left;
+        color: #000;
+        margin-top: 13px;
+        font-size: 22px;
+    }
+
+    .ym-form, .yform {
+        background-color:#FFFFFF;
+        border: 1px solid #CFDBE2;
+        border-top-width: 3px;
+        border-radius:4px;
+    }
+
+    .ym-form fieldset, .yform fieldset {
+        background-color:#FFFFFF;
+        border: 1px solid #DDE6E9;
+    }
+
+    .ym-form label, .yform label {
+        color: #656565;
+        font-weight: 600;
+    }
+
+    .heading-title {
+        padding: 3px 0px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+
+    .heading-title::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background: url(./images/arrow-right.png) left no-repeat;
+        float: left;
+        margin-top: 2px;
+        margin-right: 2px;
+    }
+
+    .scrollToTop {
+        background: #00bcd4 none repeat scroll 0 0;
+        bottom: 140px;
+        font-size: 20px;
+        height: 44px;
+        line-height: 0.8;
+        padding: 10px 11px;
+        position: fixed;
+        right: 60px;
+        text-align: center;
+        width: 42px;
+        z-index: 99;
+        border-radius: 30px;
+        box-shadow: 0 4px 4px 0 rgba(0,0,0,.14);
+    }
+
+    .scrollToTop i {
+        color: #fff;
+        font-size: 22px;
+        font-weight: normal;
+    }
+
+    .btn {
+        color: #FFFFFF !important;
+    }
+
+    .btn-info {
+        color: #FFFFFF !important;
+    }
+
+    .btn-info > a {
+        color: #ffffff !important;
+    }
+
+    .form-control {
+        font-weight: 400 !important;
+        color: #000;
+    }
+
+    .ym-form .ym-fbox-text input,
+    .yform .type-text input,
+    .ym-form .ym-fbox-text textarea,
+    .yform .type-text textarea,
+    .ym-form .ym-fbox-select select,
+    .yform .type-select select,
+    .ym-form select, .yform select,
+    .cpSearch select, .cpSearch input {
+        font-weight:normal;
+        color: #3A3F51;
+        border-color: #DDE6E9;
+        border-radius: 4px;
+    }
+
+    .ym-form div.ym-fbox-text input, .yform div.type-text input {
+        padding: 0.5em 10px;
+    }
+
+    .ym-form .ym-fbox-select select, .yform .type-select select {
+        padding: 0.5em 8px 0.5em 10px;
+    }
+
+    .ym-columnar div.ym-fbox-text textarea,
+    .columnar div.type-text textarea {
+        height: 100px !important;
+    }
+
+    .ym-form .form-row-wrapper .rightCol .ym-fbox-check
+    ,.yform .form-row-wrapper .rightCol .type-check {
+        padding-left: 0;
+        display: inline-block;
+    }
+
+    .linkPortalWrapper {
+        background-color:#FFFFFF;
+        border-color:#DAE6ED;
+    }
+
+    .linkPortalWrapper table td {
+        font-weight: 400 !important;
+    }
+
+    .linkPortalWrapper table th,
+    .linkPortalWrapper table td {
+        color: #000;
+    }
+
+    .linkPortalWrapper table th a,
+    .linkPortalWrapper table td a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    /*.yform.columnar .linkPortalWrapper div.toggle {
+        float: left !important;
+        margin: 4px 6px 0px 4px !important;
+    }*/
+
+    textarea.cke_source.cke_enable_context_menu{
+        height: 187px !important;
+    }
+
+    legend{
+        margin-bottom:25px;
+        border-bottom:1px solid #DDE6E9 !important;
+    }
+
+    .cpSearch select,
+    .cpSearch input {
+        padding: 5px;
+        border: 1px solid #DDE6E9;
+        border-radius: 2px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        color: #000000;
+        width: 128px;
+    }
+
+    .cpSearch input.button {
+        /*width:35px;
+        background-color:#CFDBE2;*/
+        color: #fff;
+        background: #449d44;
+        border-color: #398439;
+        border-radius: 4px;
+        padding: 4px !important;
+        width: 41px;
+        margin-top: 0px !important;
+    }
+
+    .cpSearch input[type="text"] {
+        max-width: 130px;
+    }
+
+    .cpSearch input[type="text"]:hover,
+    .cpSearch select:hover {
+        border: 1px solid #DDE6E9;
+        background-color: #F1F1F1;
+    }
+
+    .cpFullWidth #header {
+        /*background-color: #2A2A2A;
+        background-color: #F4D326;*/
+        background-color: #FFFFFF;
+        border-bottom: 3px solid #E7E7E7;
+        min-height: 53px;
+    }
+
+    #header-left .multi-unique-site {
+        padding: 12px 0;
+    }
+
+    #header .logout {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .cpFullWidth .page_margins {
+        max-width: 100%;
+    }
+
+    .cpFullWidth #main {
+        background: transparent !important;
+        padding: 0;
+    }
+
+    .cpFullWidth #main .page {
+       /* box-shadow: 0 0 5px #fff;
+        -webkit-box-shadow: 0 0 5px #fff;*/
+    }
+
+    .cpFullWidth #main .page {
+       /* background: #ffffff;*/
+        border-radius: 0;
+        padding: 0 0;
+    }
+
+    .cpFullWidth #nav {
+        background: #000;
+        margin: 0;
+    }
+
+    .v-edit .error strong.message,
+    .v-new .error strong.message,
+    .v-list .error strong.message {
+        background-color: darkred;
+        border-radius: 2px;
+        color: #ffffff !important;
+        padding: 2px 10px;
+        margin-left: 0 !important;
+        box-shadow: 2px 1px 13px #A4A4A4;
+    }
+
+    .v-edit .error label,
+    .v-new .error label,
+    .v-list .error label{
+        color: darkred !important;
+    }
+
+    .ym-form div.ym-fbox-text input:focus,
+    .yform div.type-text input:focus,
+    .ym-form div select:focus,
+    .yform div select:focus,
+    .ym-form div textarea:focus,
+    .yform div textarea:focus,
+    .ym-form div.ym-fbox-text input:hover,
+    .yform div.type-text input:hover,
+    .ym-form div select:hover,
+    .yform div select:hover,
+    .ym-form div textarea:hover,
+    .yform div textarea:hover,
+    .ym-form div.ym-fbox-text input:active,
+    .yform div.type-text input:active,
+    .ym-form div select:active,
+    .yform div select:active,
+    .ym-form div textarea:active,
+    .yform div textarea:active,
+    .cpSearch input:focus,
+    .cpSearch input:hover,
+    .cpSearch input:active,
+    .cpSearch select:focus,
+    .cpSearch select:active .cpSearch select:hover{
+        border: 1px #BDBDBD solid;
+    }
+
+    .type-radio .leftCol {
+        width: 20% !important;
+        margin-top: 6px;
+    }
+
+    .rightCol [type="radio"]:not(:checked),
+    .rightCol [type="radio"]:checked {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+    }
+
+    .rightCol [type="radio"]:not(:checked) + label,
+    .rightCol [type="radio"]:checked + label {
+      position: relative;
+      padding-left: 28px;
+      cursor: pointer;
+      display: inline-block;
+      height: 25px;
+      line-height: 25px;
+      transition: .28s ease;
+      /* webkit (konqueror) browsers */
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+    }
+
+    .rightCol [type="radio"] + label:before,
+    .rightCol [type="radio"] + label:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin: 4px;
+      width: 16px;
+      height: 16px;
+      z-index: 0;
+      transition: .28s ease;
+    }
+
+    /* Unchecked styles */
+    .rightCol [type="radio"]:not(:checked) + label:before,
+    .rightCol [type="radio"]:not(:checked) + label:after,
+    .rightCol [type="radio"]:checked + label:before,
+    .rightCol [type="radio"]:checked + label:after,
+    .rightCol [type="radio"].with-gap:checked + label:before,
+    .rightCol [type="radio"].with-gap:checked + label:after {
+      border-radius: 50%;
+    }
+
+    .rightCol [type="radio"]:not(:checked) + label:before,
+    .rightCol [type="radio"]:not(:checked) + label:after {
+      border: 2px solid #5a5a5a;
+    }
+
+    .rightCol [type="radio"]:not(:checked) + label:after {
+      z-index: -1;
+      -webkit-transform: scale(0);
+              transform: scale(0);
+    }
+
+    /* Checked styles */
+    .rightCol [type="radio"]:checked + label:before {
+      border: 2px solid transparent;
+    }
+
+    .rightCol [type="radio"]:checked + label:after,
+    .rightCol [type="radio"].with-gap:checked + label:before,
+    .rightCol [type="radio"].with-gap:checked + label:after {
+      border: 2px solid #00bcd4;
+    }
+
+    .rightCol [type="radio"]:checked + label:after,
+    .rightCol [type="radio"].with-gap:checked + label:after {
+      background-color: #00bcd4;
+      z-index: 0;
+    }
+
+    .rightCol [type="radio"]:checked + label:after {
+      -webkit-transform: scale(1.02);
+              transform: scale(1.02);
+    }
+
+    /* Radio With gap */
+    .rightCol [type="radio"].with-gap:checked + label:after {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+
+    /* Focused styles */
+    .rightCol [type="radio"].tabbed:focus + label:before {
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Disabled Radio With gap */
+    .rightCol [type="radio"].with-gap:disabled:checked + label:before {
+      border: 2px solid rgba(0, 0, 0, 0.26);
+    }
+
+    .rightCol [type="radio"].with-gap:disabled:checked + label:after {
+      border: none;
+      background-color: rgba(0, 0, 0, 0.26);
+    }
+
+    /* Disabled style */
+    .rightCol [type="radio"]:disabled:not(:checked) + label:before,
+    .rightCol [type="radio"]:disabled:checked + label:before {
+      background-color: transparent;
+      border-color: rgba(0, 0, 0, 0.26);
+    }
+
+    .rightCol [type="radio"]:disabled + label {
+      color: rgba(0, 0, 0, 0.26);
+    }
+
+    .rightCol [type="radio"]:disabled:not(:checked) + label:before {
+      border-color: rgba(0, 0, 0, 0.26);
+    }
+
+    .rightCol [type="radio"]:disabled:checked + label:after {
+      background-color: rgba(0, 0, 0, 0.26);
+      border-color: #BDBDBD;
+    }
+
+    .linkPortalWrapper table td input[type="text"],
+    .linkPortalWrapper table td select,
+    .linkPortalWrapper table td textarea {
+        font-weight: 400 !important;
+    }
+
+    select.ui-datepicker-year {
+        background-color: #FFFFFF !important;
+        border: 1px solid #e3e3e3;
+    }
+
+    .v-list .ym-form .ym-fbox-text .hiddenDateDisplay
+    ,.v-list  .yform .type-text .hiddenDateDisplay
+    ,.v-edit .ym-form .ym-fbox-text .hiddenDateDisplay
+    ,.v-edit  .yform .type-text .hiddenDateDisplay 
+    ,.v-new .ym-form .ym-fbox-text .hiddenDateDisplay
+    ,.v-new  .yform .type-text .hiddenDateDisplay {
+        width: 100px;
+        float: left;
+        margin-top: 0px !important;
+        margin-left: -97px;
+    }
+
+    .v-list table.cpSearch .type-text.ym-fbox-text .MainDateField,
+    .v-list table.cpSearch td.dateRange .MainDateField {
+        width: 80px !important;
+    }
+
+    .v-list table.cpSearch td.dateRange .ui-datepicker-trigger {
+        float: left;
+        margin-top: 2px;
+    }
+
+    .v-list table.cpSearch div.type-text.ym-fbox-text .hiddenDateDisplay,
+    .v-list table.cpSearch td.dateRange .hiddenDateDisplay {
+        width: 80px;
+        float: left;
+        margin-top: 0px !important;
+        margin-left: -72px;
+    }
+
+    .v-list table.cpSearch td.dateRange b {
+        float: left;
+        color: #000;
+        margin-top: 5px;
+    }
+
+    .v-list table.cpSearch .type-text.ym-fbox-text.dateRange label,
+    .v-list table.cpSearch .type-text.ym-fbox-text.dateRange input,
+    .v-list table.cpSearch .type-text.ym-fbox-text.dateRange img {
+        float: left;
+    }
+
+    .v-list table.cpSearch .type-text.ym-fbox-text.dateRange label {
+        margin-top: 6px;
+        color: #000000;
+    }
+
+    .v-list table.cpSearch .type-text.ym-fbox-text.dateRange img {
+        margin-top: 4px;
+    }
+
+    #reportSearchPanel table.search td.dateRange input[name="hidden_date_display"] {
+        width: 100px !important;
+    }
+
+    #reportSearchPanel table.search td.dateRange label,
+    #reportSearchPanel table.search td.dateRange input {
+        display: table-cell !important;
+    }
+
+    #reportSearchPanel table.search td.dateRange img {
+        display: table-cell !important;
+    }
+
+    #reportSearchPanel table.search td.dateRange input.fld_date.MainDateField {
+        width: 100px;
+        display: table-cell !important;
+        visibility: hidden;
+        position: relative;
+        margin-right: -100px;
+    }
+
+    .fld_time {
+        border: 1px solid #ccc;
+        height: 34px;
+        width: 50%;
+        padding: 0 7px;
+    }
+
+    /*.v-edit .ym-form .ym-fbox-text .hiddenDateDisplay
+    ,.v-edit  .yform .type-text .hiddenDateDisplay 
+    ,.v-new .ym-form .ym-fbox-text .hiddenDateDisplay
+    ,.v-new  .yform .type-text .hiddenDateDisplay {
+        width: 100px;
+        float: left;
+        margin-top: -38px;
+    }*/
+
+    .v-list input.fld_date.MainDateField {
+        width: 100px;
+        float: left;
+        visibility: hidden;
+        position: relative;
+    }
+
+    .v-edit input.fld_date.MainDateField {
+        visibility: hidden;
+        position: relative;
+    }
+
+    input[name="hidden_date_display"] {
+        display: block !important;
+        right: 0px !important;
+    }
+
+    #nav .page {
+        height: 100px;
+        background: url('images/nav-bg.jpg') repeat-x;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    #header .logo {
+        padding: 2px 0;
+    }
+
+    #topnav .logoutWrap {
+        background: none;
+        text-align: right;
+        width: 200px;
+        height: 24px;
+    }
+
+    .logoutWrap {
+        padding-top: 5px;
+        color: #1a252f;
+        margin-right: 11px;
+    }
+
+    .cpFullWidth #header a.logout {
+        color: darkred;
+    }
+
+    .cpFullWidth #header .hlist ul li a {
+        color: #000000;
+        /*color: #ffffff;*/
+    }
+
+    #topnav {
+        top: 0;
+    }
+
+    #topnav .hlist ul li {
+    }
+
+    .cpFullWidth #header .hlist ul li.active a,
+    .cpFullWidth #header .hlist ul li a:hover{
+        color: #117391;
+        text-align:center;
+    }
+
+    .cpFullWidth #header .hlist ul li a{
+        padding: 17px 15px;
+    }
+
+    .cpFullWidth #nav2 {
+        /*background: #F5F7FA;*/
+        background: transparent !important;
+    }
+
+    .cpFullWidth #nav2 .floatbox{
+        width: 99%;
+    }
+
+    .cpFullWidth #nav2 .page {
+        /*background: #F5F7FA;*/
+        padding: 8px 0;
+    }
+
+    .m-hms_home.cpFullWidth #nav2 .page {
+        padding: 0;
+    }
+
+    .v-list .contentScroller {
+    }
+
+    .v-list .contentScroller #bodyList {
+    }
+
+    .card-body.table-responsive table#bodyList td {
+        font-weight: 400;
+        color: #000000;
+    }
+
+    .ui-button { margin-left: -1px; }
+    .ui-button-icon-only .ui-button-text { padding: 0.35em; }
+    .ui-autocomplete-input { margin: 0; padding: 0.48em 0 0.47em 0.45em; }
+    .ui-menu {
+        max-height: 200px;
+        overflow: auto;
+        text-align: left;
+    }
+
+    .col3Body .rightPanel {
+        padding-top:5px;
+        padding-right: 1em;
+    }
+
+    #col1 {
+        width: 130px;
+        background-color: #404e67;
+        min-height: 600px;
+        color: #FFFFFF;
+    }
+
+    #col1_content {
+        padding: 0;
+    }
+
+    #col3 {
+        background-color: transparent !important;
+    }
+
+    #col3_content {
+        min-height: 600px;
+    }
+
+    .cpFullWidth #col3_content{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .hidecol2 #col3 {
+        margin-left: 200px;
+        margin-right: 0;
+    }
+
+    .c100l {
+        float: left;
+        width: 100%;
+    }
+
+    .helpContent {
+        margin-top: 3px;
+        margin-left: 6px;
+    }
+
+    .helpContentTask.button{
+        padding: 6px 32px;
+    }
+
+    .float_right.helpAndGetStarted{
+        margin-left: 5px;
+        margin-top: 4px;
+        padding-left: 8px;
+    }
+
+    .getStartedContentTask.button{
+        margin-top: 3px;
+    }
+
+    .getStarted.float_left {
+        margin-right: 0;
+    }
+
+    .m-common_dashboard .c100l h2 {
+        padding: 0;
+    }
+
+    .m-common_dashboard form {
+        margin-bottom: 0px !important;
+    }
+
+    .m-common_dashboard .listTblWrapper {
+        padding-right: 12px;
+    }
+
+    .m-common_dashboard .custom-select,
+    .m-common_dashboard select,
+    .m-common_dashboard select.form-control {
+        border: 1px #BDBDBD solid;
+        padding: 0.3em 8px 0.3em 8px;
+        border-radius: 4px;
+    }
+
+    .w-project-taskAllocation .button {
+        padding: 5px;
+    }
+
+    #wd_project_taskAllocation .taskHistoryColorPinkCheckbox,
+    #taskHistory tr.nowTask {
+        background-color: pink;
+    }
+
+    #commentsListStaff {
+        padding: 0;
+    }
+
+    .btn.btn-primary,
+    .btn.btn-warning,
+    .btn.btn-success,
+    .btn.btn-danger,
+    .btn.btn-info{
+         color: #FFFFFF !important;
+    }
+
+    /*.ui-widget-header {
+        background: none repeat scroll 0 0 #23B7E5;
+        border: 1px solid #23B7E5;
+        color: #000000;
+        font-weight: bold;
+    }*/
+
+    #wd_project_staffHistory,
+    #wd_project_taskAllocation {
+        padding: 0px;
+    }
+
+    #SendTaskUpdateEmail textarea {
+        height: 155px !important;
+        width: 350px !important;
+    }
+
+    /*.widget table th,*/
+    #taskHistory table {
+        background-color: #FFFFFF;
+    }
+
+    .m-common_dashboard #dashboard .c50l,
+    .m-common_dashboard #dashboard .c50r {
+        width: 49%;
+    }
+
+    .m-common_dashboard .widget .w-project-taskAllocation table th,
+    .m-common_dashboard .widget .w-project-taskAllocation table td {
+        border: 1px solid #EFEFEF;
+        padding: 0;
+    }
+
+    .m-common_dashboard .ui-widget input {
+        width: 40px;
+    }
+
+    .m-common_dashboard .row_progress_percent select {
+        width: 60px;
+    }
+
+    .m-common_dashboard .row_priority select {
+        width: 90px;
+    }
+
+    .m-common_dashboard .widget{
+        background: none repeat scroll 0 0 #F5F7FA;
+        border: medium none;
+    }
+
+    .m-common_dashboard .ui-widget input,
+    .m-common_dashboard .ui-widget select,
+    .m-common_dashboard .ui-widget textarea,
+    .m-common_dashboard .ui-widget button {
+        font-family: "Open Sans", Century Gothic, Verdana, Arial, Helvetica, Sans-serif;
+        font-size: 13px;
+    }
+
+    .m-common_dashboard .widget h2 {
+        padding:5px 5px;
+        font-size: 15px;
+    }
+
+    #commentsListStaff h2 {
+        height: 55px;
+    }
+
+    .pbt10 {
+        padding-bottom: 10px !important;
+        padding-top: 10px !important;
+    }
+
+    .m-common_dashboard #col1,
+    .m-project_reports #col1 {
+        display: none;
+    }
+
+    .m-common_dashboard #col3 {
+        margin-left: 0;
+    }
+
+    .m-common_dashboard #main .page {
+        padding: 5px;
+    }
+
+    .m-common_dashboard .widget {
+        border-top: 0;
+    }
+
+    table.search td select {
+        max-width: 100px;
+    }
+
+    table.search td select, table.search td input {
+        font-size: 12.5px;
+    }
+
+    .commentsHide{
+        display: none;
+    }
+
+    .m-common_dashboard .commentsBox input {
+        float: right;
+        margin-top: 4px;
+        padding: 3px;
+        width: 57px;
+    }
+
+    .commentsBox{
+        width: 100%;
+    }
+
+    .commentBoxView .txt {
+        margin-left: 5px;
+        margin-top: -12px;
+    }
+
+    .commentsBox textarea {
+        margin-left: 12px;
+        max-height: 195px;
+        max-width: 100%;
+        min-height: 195px;
+        min-width: 100% !important;
+        overflow: auto !important;
+    }
+
+    .commentBoxView{
+        background-color: #E2E2E2;
+        margin-left: 8px;
+        max-height: 250px;
+        min-height: 250px;
+        overflow: auto !important;
+    }
+
+    .comment_buttons{
+        padding: 5px;
+    }
+
+    .addCommentsTostaffIcon {
+        float: left;
+        padding-right: 6px;
+    }
+
+    .m-hms_reports .hidecol2 #col3{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .m-hms_reports .hidecol2 #col1{
+        display: none;
+    }
+
+    .m-hms_home .hidecol2 #col3,
+    .m-labsg_home .hidecol2 #col3 {
+        margin-left: 0px;
+    }
+
+    .m-hms_home .homeMenuListHead,
+    .m-labsg_home .homeMenuListHead {
+        font-size: 25px;
+        margin-bottom: 10px;
+        padding-left: 5px;
+    }
+
+    .m-hms_home .homeMenuListHead img,
+    .m-labsg_home .homeMenuListHead img{
+        position: relative;
+        top:15px;
+    }
+
+    .m-hms_home .homeMenuList,
+    .m-labsg_home .homeMenuList {
+        margin-bottom: 5px;
+    }
+
+    .m-hms_home .homeMenuListPanel,
+    .m-labsg_home .homeMenuListPanel {
+        background-color: #BFCDDB;
+        padding: 10px;
+        margin-bottom: 2px;
+    }
+
+    .m-hms_home .homeMenuListPanel1,
+    .m-labsg_home .homeMenuListPanel1 {
+        background-color: #F0F0F0;
+        padding: 10px;
+        margin-bottom: 2px;
+    }
+
+    .m-hms_home .modHeading,
+    .m-labsg_home .modHeading{
+        border: 1px solid #CCCCCC;
+        padding: 3px;
+        text-align: center;
+        width: 13%;
+        float:left;
+        margin:5px;
+        cursor: pointer;
+        background-color: #ffffff;
+    }
+
+    .m-hms_home .modHeadingBg,
+    .m-labsg_home .modHeadingBg {
+        background-color: #eeeeee;
+    }
+
+    .m-hms_home .homeMenuListPanel1 .modHeadingBg,
+    .m-labsg_home .homeMenuListPanel1 .modHeadingBg {
+        background-color: #EAE8E8;
+    }
+
+    .m-hms_home .modHeadingBg,
+    .m-labsg_home .modHeadingBg{
+        font-size: 16px;
+        padding: 10px;
+        display: block;
+        color: #17375E;
+    }
+
+    .m-hms_home .modHeadingBg:hover,
+    .m-labsg_home .modHeadingBg:hover {
+        background-color: #FFC000;
+        text-decoration: none;
+        color: #000000;
+    }
+
+    .moduleTitle {
+        font-size: 28px;
+        border-bottom: 1px solid #DDDDDD;
+        /*margin-bottom: 10px;
+        height: 9%;*/
+        height: 62px;
+        background-color: #FFFFFF;
+    }
+
+    .moduleName{
+        font-size: 28px;
+        margin-top: 8px;
+        margin-left: 12px;
+    }
+
+    form .form-section,
+    .rightPanel .form-section{
+        color: #404E67;
+        line-height: 36px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #404E67;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    form .form-section i,
+    .rightPanel .form-section i {
+        font-size: 16px;
+        margin-left: 5px;
+        margin-right: 10px;
+    }
+
+    .marginForSteps {
+        margin-left: 24% !important;
+    }
+
+    #nav{
+    }
+
+    .paypalLoginForm {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    .paypalLoginForm .paypalLoginText {
+        color: #AA0000;
+        padding-bottom: 5px;
+    }
+
+    .paypalLoginForm .subscribeBtn {
+        margin-top: 5px;
+    }
+
+    #loginOuter .ym-columnar div.error .message, #loginOuter .columnar div.error .message {
+        margin-left: 20% !important;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+
+    body.cpFullWidth {
+        background: #FFFFFF url("images/bg-login.jpg") repeat !important;
+        padding: 20px !important;
+    }
+
+    /*.tplLogin { 
+        background: orange url("/admin/images/bg-login.jpg") repeat;
+    }*/
+
+    .cpFullWidth .tplLogin #header {
+        background: none !important;
+        background-color: none !important;
+        border-bottom: none !important;
+    }
+
+    .cpFullWidth .tplLogin #main {
+        background: none !important;
+        background-color: none !important;
+    }
+
+    .cpFullWidth .tplLogin #col3_content {
+        padding: 0 9%;
+        margin-top: 5%;
+    }
+
+    .tplLogin .loginPanelLogin.card-header {
+        border-radius: 8px;
+        padding: 0 !important;
+    }
+
+    .tplLogin .bgloginLoginPanelLeft {
+        background: orange url("/admin/images/login-background.jpg") repeat;
+        height: 431px;
+        padding-left: 0px !important;
+        border-radius: 8px 0px 0px 8px;
+    }
+
+    .tplLogin #loginOuter {
+        margin: 0 !important;
+        border: none !important;
+        background: #FFFFFF;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .cpFullWidth #header h1.siteTitle {
+        color: #1a252f;
+        font-weight: 600;
+        margin-left: 18px;
+        margin-top: 0;
+        padding-top: 9px;
+    }
+
+    .cpFullWidth #header h1.siteTitle span {
+        font-size: 23px;
+    }
+
+    .cpFullWidth #header h1.siteTitle.common_dashboard::before {
+        content: "\f1fe";
+        font-family: FontAwesome;
+        color: #1a252f;
+        margin-right: 9px;
+    }
+
+    .cpFullWidth #header h1.siteTitle.project_coOrdinator::before {
+        content: "\f0c0";
+        font-family: FontAwesome;
+        color: #1a252f;
+        margin-right: 9px;
+    }
+
+    .cpFullWidth #header h1.siteTitle.project_project::before {
+        content: "\f0ae";
+        font-family: FontAwesome;
+        color: #1a252f;
+        margin-right: 9px;
+    }
+
+    .topLogoContainer img {
+        width: 135px;
+        margin-top: 5px;
+    }
+
+    .topLogoContainer {
+        background-color: #ed7f1f;
+        width: 130px;
+        height: 50px;
+        float: left;
+        padding: 5px 0 0 10px;
+        font-weight: 600;
+    }
+
+    #header h1.siteTitle {
+        font-family: "Open Sans",'Calibri',Sans-serif,'Oswald',arial,serif;
+        font-size: 25px;
+        text-shadow: 0px 0px 0px #f8f8f8;
+    }
+
+    .tplLogin #col3 {
+        margin: 0;
+        background: none !important;
+    }
+
+    .loginTitle h1 {
+        font-size: 35px;
+        color: #FFFFFF;
+        font-weight: 400;
+    }
+
+    .loginTitle {
+        font-family: "Open Sans", arial, serif;
+    }
+
+    #loginOuter .yform{
+        border: 0;
+        padding: 0;
+    }
+
+    #loginOuter .yform fieldset{
+        border: 0;
+        background: #fafafa;
+    }
+
+    #loginOuter .columnar div.type-check input {
+        margin-left: 0;
+    }
+
+    #loginOuter .forgotPasswordLink {
+        margin-top: 11px;
+        text-decoration: underline;
+    }
+
+    .loginLeftPanelTableLogo th,
+    .loginLeftPanelTableLogo td {
+        border-top: none !important;
+    }
+
+}
+
+@media all
+{
+    .leftNav {
+        text-align: left;
+    }
+
+    .leftNav .hlist ul li {
+        border-right: 0;
+        text-align: left;
+        display: block;
+        float: none;
+        cursor: pointer;
+        color: #FFFFFF;
+    }
+
+    .hlist.noBg ul li.first a {
+        padding-left: 6px;
+        color: #FFFFFF;
+    }
+
+    .leftNav .hlist ul li a{
+        display: block;
+        padding: 12px 5px;
+        position: relative;
+        color: #FFFFFF;
+    }
+
+    /*.leftNav .hlist ul ul li a{
+        margin-left: 10px;
+    }*/
+
+    .leftNav .hlist ul li a span{
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .leftNav .hlist ul li.active a,
+    .leftNav .hlist ul li:hover a {
+        color: #FFFFFF;
+        font-weight: normal;
+        background-color: #38445a;
+    }
+
+    .leftNav .hlist ul li.active.first {
+        border-left: 4px solid #00B5B8;
+    }
+
+    .leftNav .hlist ul li.active.first + ul li {
+        border-left: 4px solid #00B5B8;
+    }
+
+    #nav .actionsWrapper {
+        display: none;
+    }
+
+    #nav .hlist ul {
+        margin: 12px 0 0 14px;
+        overflow: hidden;
+    }
+
+    #nav .hlist ul li {
+        border: 0;
+    }
+
+    #nav .hlist ul li a {
+        background: url("images/navigation_background_blue.gif") repeat-x scroll left top transparent;
+        color: white;
+        display: block;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: bold;
+        height: 65px;
+        overflow: hidden;
+        text-align: center;
+        text-decoration: none;
+        width: 114px;
+        padding: 5px 0;
+    }
+
+    #nav .hlist ul li.first a {
+        background: url('images/navigation_first_blue.gif') repeat-x scroll left top transparent;
+    }
+
+    #nav .hlist ul li.last a {
+        background: url('images/navigation_last_blue.gif') repeat-x scroll right top transparent;
+    }
+
+    #nav .hlist ul li a.selected, #nav .hlist ul li a:hover {
+        background-position: bottom left;
+    }
+
+    #nav .hlist ul li.last a.selected, #nav .hlist ul li.last a:hover {
+        background-position: bottom right;
+    }
+
+    #nav .hlist ul li a.nav_webBasic_section span.inner,
+    #nav .hlist ul li a.nav_webBasic_content span.inner,
+    #nav .hlist ul li a.nav_webBasic_category span.inner,
+    #nav .hlist ul li a.nav_webBasic_subCategory span.inner,
+    #nav .hlist ul li a.nav_pms_order span.inner,
+    #nav .hlist ul li a.nav_pms_creditNote span.inner,
+    #nav .hlist ul li a.nav_pms_subsidyDiscount span.inner {
+        background-image: url("images/icon-order.png");
+    }
+
+    #nav .hlist ul li a span.inner {
+        background-position: 50% 3px;
+        background-repeat: no-repeat;
+        display: block;
+        padding: 53px 10px 0px;
+        white-space: nowrap;
+        border-right: 1px solid #4985B2;
+    }
+
+    .leftNav .hlist ul li a span {
+        /*background: url("images/action/cat_icon.png") no-repeat scroll 0 0 transparent;*/
+        padding: 0px 0 2px 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_dashboard:before {
+        content:"\f1fe";
+        font-family: FontAwesome;
+        font-size: 21px;
+        color: #FFF;
+    }
+
+    ul.ulModuleSet li a.nav_dashboard:before {
+        content:"\f013";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_dashboard span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_opportunity:before{
+        content:"\f201";
+        font-family: FontAwesome;
+        color: #C3C3C3;
+    }
+
+
+    ul.ulModuleSet li a.nav_opportunity:before {
+        content:"\f201";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_opportunity span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_project:before {
+        content:"\f022";
+        font-family: FontAwesome;
+        color: #C3C3C3;
+    }
+
+    ul.ulModuleSet li a.nav_project:before {
+        content:"\f022";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_project span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_marketing:before {
+        content:"\f079";
+        font-family: FontAwesome;
+        color: #C3C3C3;
+    }
+
+    ul.ulModuleSet li a.nav_marketing:before {
+        content:"\f079";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_marketing span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_admin:before {
+        content:"\f0c0";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+        font-size: 22px;
+    }
+
+    ul.ulModuleSet li a.nav_admin:before {
+        content:"\f0c0";
+        font-family: FontAwesome;
+        color: #ffffff;
+    }
+
+    ul.ulModuleSet li a.nav_admin span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_payroll:before {
+        content:"\f073";
+        font-family: FontAwesome;
+        color: #C3C3C3;
+    }
+
+    ul.ulModuleSet li a.nav_payroll:before {
+        content:"\f073";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_payroll span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_accounts:before {
+        content:"\f044";
+        font-family: FontAwesome;
+        color: #C3C3C3;
+    }
+
+    ul.ulModuleSet li a.nav_accounts:before {
+        content:"\f044";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_accounts span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_reports:before {
+        content:"\f080";
+        font-family: FontAwesome;
+        color: #C3C3C3;
+    }
+
+    ul.ulModuleSet li a.nav_reports:before {
+        content:"\f080";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_reports span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_home:before {
+        content:"\f015";
+        font-family: FontAwesome;
+        color: #C3C3C3;
+    }
+
+    ul.ulModuleSet li a.nav_home:before {
+        content:"\f015";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_home span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_main:before {
+        content:"\f007";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+        font-size: 28px;
+    }
+
+    ul.ulModuleSet li a.nav_main:before {
+        content:"\f007";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_main span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_utils:before {
+        content:"\f085";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_utils:before {
+        content:"\f085";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_utils span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_members:before {
+        content:"\f047";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_members:before {
+        content:"\f047";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_members span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_inventory:before {
+        content:"\f16b";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_inventory:before {
+        content:"\f16b";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_inventory span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul li a.nav_finance:before {
+        content:"\f201";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_finance:before {
+        content:"\f201";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+    }
+
+    ul.ulModuleSet li a.nav_finance span{
+        margin-left: 6px;
+    }
+
+    .leftNav .hlist ul ul li a span {
+        background: none !important;
+    }
+
+
+    /** Slide Form ***/
+
+#feedback {
+    position: fixed;
+    right: 0;
+    /*top: 100px;*/
+    top:45px;
+    height: 160px;
+    margin-left: -3px;
+    margin-bottom: -3px;
+}
+
+#feedback-form {
+    float: right;
+    /*width: 500px;*/
+    width: 650px;
+    z-index: 9999999 !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    background-clip: 'padding-box';
+    border: 1px solid rgba(0,0,0,.2);
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    background-color: #f5f5f5;
+}
+
+#feedback-tab {
+    float: left;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    width: 120px;
+    height: 42px;
+    background-color: rgba(0,0,0,0.5);
+    margin-top: 60px;
+    margin-right: -42px;
+    margin-left: -38px;
+    padding-top: 5px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+#feedback-tab:hover {
+    background-color: rgba(0,0,0,0.4);
+}
+
+#feedback-form textarea {
+    resize: none;
+    height: 100px !important;
+    width: 100%;
+}
+
+
+.feedbackFormBtn {
+    margin-top: 10px;
+}
+
+#feedback-form .form-group {
+    height: 60px;
+    margin: 0px;
+}
+
+#feedback-form .type-select.ym-fbox-select{
+    height: 65px;
+}
+
+#feedback-form .yform .type-select select{
+    width: 100%;
+}
+
+#feedback-form .yform div.type-select, #feedback-form .yform div.type-text{
+    margin: 0px;    
+}
+
+.enquirySearch{
+    margin: 15px 0 15px 10px;
+}
+
+#fld_appointment_time {
+    width: 88px;
+}
+
+
+
+.enquirySearch input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.card .card-header {
+    z-index: 0 !important;
+}
+
+}
+
+@media all
+{
+    .m-common_dashboard .widget h2 {
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 5px 5px 0px 0px !important;
+    }
+
+    .m-common_dashboard #main .page {
+        padding: 0px;
+    }
+
+    .m-common_dashboard .widget {
+        border-top: 0;
+        border-radius: 5px 5px 0px 0px !important;
+    }
+
+    .m-common_dashboard .wdWrapper {
+        border-radius: 5px 5px 0px 0px !important;
+    }
+
+    .m-common_dashboard .form-check,
+    .m-common_dashboard label {
+        display: block;
+    }
+
+    table.search td select {
+        max-width: 100px;
+    }
+
+    /*.m-common_dashboard .widget table th, .m-common_dashboard .widget table td {
+        border: 4px solid #EFEFEF;
+        padding: 0.5em;
+    }*/
+
+    table.search td select, table.search td input {
+        font-size: 11px;
+    }
+
+    #footer {
+        padding: 2px 0 0;
+        height: 25px;
+        background: #3B3B3B !important;
+    }
+}
+
+@media all
+{
+    .jspVerticalBar {
+        width: 10px;
+    }
+
+    .jspTrack {
+    }
+
+    .jspDrag {
+        background: #bddef7;
+    }
+}
+
+/*******************************************************************************
+  PAGINATION
+*******************************************************************************/
+@media all
+{
+    .cpFullWidth #extended {
+        border-top: 2px solid #E7E7E7;
+        padding:4px 0 0 0;
+        /*background: #F4D326;*/
+    }
+ 
+    #extended .pagelinks { border:0; margin:0; padding:0; font-size:10px; }
+    #extended .pagelinks .linkNos a { border:solid 1px #000000; margin-right:2px; }
+    #extended .pagelinks .noLink { color:#000000; display:inline-block; font-weight:bold; padding:3px 4px; }
+    #extended .pagelinks .nxtBtn a, #extended .pagelinks .preBtn a { font-weight:bold; border:solid 1px #000000; }
+    #extended .pagelinks .currentPage{ color:#000; font-weight:bold; display:inline-block; padding:4px 6px; }
+    #extended .pagelinks a:link, #extended .pagelinks a:visited { display:inline-block; padding:3px 6px; text-decoration:none; }
+    #extended .pagelinks a:hover{ text-decoration:none; border: 1px solid #999; }
+    #extended .pagelinks .linkNos {
+        width: 250px;
+    }
+
+    .pagelinks .linkNos a {
+        color: #000;
+        padding-right: 2px;
+        font-weight: bold;
+    }
+
+    #extended .pagelinks .totalRecs {
+        padding: 4px 7px;
+        color: #000;
+        font-weight: bold;
+    }
+}
+
+/*******************************************************************************
+  ACTIONS
+*******************************************************************************/
+@media all
+{
+    #bodyList tr.even td {
+        background-color: #f3f3f3;
+        border-collapse: collapse;
+        position: relative !important;
+        margin: 0;
+        background-clip: padding-box;
+    }
+
+    #bodyList tr.odd td {
+        background-color: #ffffff;
+        border-collapse: collapse;
+        position: relative !important;
+        margin: 0;
+        background-clip: padding-box;
+    }
+
+    #bodyList tr.odd:hover td,
+    #bodyList tr.even:hover td {
+        background-color: #eeeeee !important;
+    }
+    
+    .actionBtns ul li div.button {
+        padding: 3px;
+    }
+
+    .actionBtns ul li {
+        margin-right: 5px;
+        border-right: 0;
+    }
+
+    .actionBtns ul li a {
+        padding:3px 3px 3px 18px;
+        background-position: 0 1px;
+        background-repeat: no-repeat;
+    }
+
+    .hlist.actionBtns a {
+        font-weight: normal;
+    }
+
+    #actBtn_edit {
+        /*background-image: url("images/action/edit.gif");
+        background-position: 0 3px;*/
+        background-color: #24B145;
+        border-color: #3E8F3E;
+    }
+
+    #actBtn_deleteList {
+        background-color: #F05050;
+        border-color: #F04B4B;
+    }
+
+    #actBtn_printDetailMenu{
+        background-color: #337AB7;
+        border-color: #2E6DA4;
+    }
+
+    #actBtn_delete {
+        /*background-image: url("images/action/delete.gif");*/
+        background-color: #F05050;
+        border-color: #F04B4B;
+    }
+
+    #actBtn_apply {
+        /*background-image: url("images/action/apply.gif");*/
+        background-color:#23B7E5;
+        border-color: #FFFFFF;
+    }
+
+    #actBtn_save {
+        /*background-image: url("images/action/save.gif");*/
+        background-color: #24B145;
+        border-color: #3E8F3E;
+    }
+
+    #actBtn_cancel {
+        /*background-image: url("images/action/cancel.gif");*/
+        background-color: #FF902B;
+    }
+
+    .actionBtns ul li a.actionButtons {
+        color: #FFFFFF;
+        border-radius: 4px;
+        font-size: 14px;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 1px rgba(0, 0, 0, 0.075);
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+        background-image: none;
+        line-height: 1.42857;
+        margin-bottom: 0;
+        padding: 8px 15px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    #actBtn_new {
+        background-color: #24B145;
+        border-color: #3E8F3E;
+    }
+
+    #actBtn_search {
+        /*background-image: url("images/action/search.gif");*/
+        background-color: #FF902B;
+        border-color: #FF8D26;
+    }
+
+    #actBtn_export {
+        /*background-image: url("images/action/export.png");*/
+        background-color: #5D9CEC;
+        border-color: #FFFFFF;
+    }
+
+    #actBtn_import {
+        /*background-image: url("images/action/export.png");*/
+        background-color:#23B7E5;
+        border-color: #FFFFFF;
+    }
+
+    #actBtn_printListPDF {
+        /*background-image: url("images/action/print.gif");*/
+        background-color: #F05050;
+        border-color: #F04B4B;
+    }
+
+    #actBtn_reportsMenu {
+        /*background-image: url("images/action/report.gif");*/
+        background-color: #7266BA;
+        border-color: rgba(0, 0, 0, 0);
+    }
+
+    #actBtn_duplicateProject {
+        background-color: #FF902B;
+        border-color: #FFFFFF;
+    }
+
+    #actBtn_raiseInvoice {
+        background-color: #5D9CEC;
+        border-color: #FFFFFF;
+    }
+
+    #actBtn_convertOppToProject {
+        background-image: url("images/action/convert.png");
+        background-color:#23B7E5;
+        border-color: #FFFFFF;
+   }
+
+    #actBtn_raiseInvoice {
+        background-image: url("images/action/raise.png");
+    }
+}
+
+/*******************************************************************************
+  LIST
+*******************************************************************************/
+@media all
+{
+    table.list thead, table.list thead td, table.list thead th, table.list tfoot, tr.header, div.header {
+        border: 1px solid #EFEFEF;
+        color: #2E405C;
+        font-weight: bold;
+        background: none;
+    }
+
+    table.list thead {
+        background: #FAFAFA;
+    }
+
+    div.header {
+        padding: 0.2em 8px;
+        color: #404E67;
+    }
+
+    table.thinlist thead th {
+        background: transparent !important;
+        font-weight: bold !important;
+    }
+
+    table.thinlist thead th a {
+        font-weight: bold !important;
+    }
+
+    table.thinlist thead th,
+    table.thinlist thead td {
+        /*background: none repeat scroll 0 0 #23B7E5;
+        color: #FFFFFF;*/
+        border-bottom: 3px solid #DDDDDD;
+        border-top: 1px solid #DDDDDD;
+    }
+
+    .orderEdit table.thinlist thead th {
+        color: #000000;
+    }
+
+    table.thinlist thead th a,
+    table.thinlist thead td a{
+        /*color: #FFFFFF;
+        font-weight: bold;*/
+        font-weight: 400;
+    }
+
+    table.thinlist th, table.thinlist td {
+        padding: 8px;
+        border: 1px solid #EEEEEE;
+    }
+
+    .m-hms_patientVisit.v-edit table.thinlist th,
+    .m-hms_patientVisit.v-edit table.thinlist td {
+        padding: 0px 8px;
+    }
+
+    .m-hms_patientVisit.v-edit table.thinlist.InvoiceFormTable th,
+    .m-hms_patientVisit.v-edit table.thinlist.InvoiceFormTable td,
+    .m-hms_patientVisit.v-edit table.thinlist.order_item_type_table th,
+    .m-hms_patientVisit.v-edit table.thinlist.order_item_type_table td {
+        padding: 8px 8px !important;
+    }
+
+    .yform.columnar.qucikaddPatientForm label {
+        width: 100%;
+    }
+
+    .companyDetailsHide{
+        display: none;
+    }
+
+    .m-labsg_patientVisit.v-list .error strong.message {
+        background-color: darkred;
+        border-radius: 2px;
+        color: #ffffff !important;
+        padding: 2px 10px;
+        margin-left: 0 !important;
+    }
+
+    .disabledDiv {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    table.list thead a {
+        color: #555;
+    }
+
+    table.list thead td a {
+        color: #555;
+        display: block;
+    }
+
+    table.list thead td a:hover {
+        text-decoration: none;
+    }
+
+    table.thinlist tr.odd{
+        background-color: #FFFFFF;
+    }
+
+    table.list tr.odd:hover, tr.even:hover, tr.current:hover{
+        background-color: #F5F5F5;
+    }
+
+    table.cpSearch td {
+        padding: 5px 10px 5px 0;
+    }
+
+    .editTopButtonActionDiv{
+        position: absolute;
+        top: 70px;
+        width: 75%;
+    }
+
+    .createdModifiedEditTop {
+        margin-right: 2px;
+        margin-top: 8px;
+    }
+
+    .creationModificationOnHeader {
+        font-weight: normal !important;
+        font-size: 12px;
+    }
+
+    .creationModificationOnHeader b {
+        font-size: 12px;
+    }
+
+    .m-project_opportunity table.search .ui-autocomplete-input,
+    .m-project_project table.search .ui-autocomplete-input,
+    .m-project_task table.search .ui-autocomplete-input{
+        width: 78px;
+    }
+
+    .m-project_task table.search .ui-autocomplete-input,
+    .m-project_timesheet table.search .ui-autocomplete-input {
+        width: 70px;
+    }
+
+    .rightPanel .header a {
+        color: #095268;
+    }
+
+    .quickLinks .actionBtns ul li {
+        list-style-type: none;
+        margin-bottom: 10px;
+    }
+
+    .quickLinks .actionBtns ul li div.button {
+        width: 85px;
+    }
+
+    .homePageSummary {
+        margin-bottom: 10px;
+    }
+
+    .summary {
+        /*border-right: 1px dotted #cccccc;*/
+        /*min-height: 210px;*/
+        /*padding-right: 25px;*/
+    }
+
+    .summDisplayTitle, .summDisplayPic {
+        /*margin: 20px 0 15px 20px;*/
+        float: left;
+    }
+
+    .summDisplayTitle {
+        margin-top: 8px;
+        margin-left: 5px;
+    }
+
+    .summDisplayTitle a{
+        font-size: 20px;
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+
+    .overallSummaryText a{
+        display: inline-block;
+        font-size: 14px;
+        padding: 5px 0 5px 25px;
+        color: #000000;
+        margin-bottom: 5px;
+        text-decoration: underline;
+        background: url("images/list-icon.png") no-repeat scroll 0 5px rgba(0, 0, 0, 0);
+
+    }
+
+    .overallSummaryText a:hover {
+        color:#17375E;
+    }
+
+    .homePageSummaryList {
+        margin:15px;
+        min-height: 225px;
+    }
+
+    .homePageSummaryPanel {
+        /*border:3px solid #FFC000;*/
+        border: 3px solid #49C3E9;
+    }
+
+    .homePageSummaryPanel .summaryHeader{
+        /*background-color: #FFC000;*/
+        background-color: #49C3E9;
+    }
+
+    .m-hms_home .homePageSummaryPanel1,
+    .m-labsg_home .homePageSummaryPanel1 {
+        border:3px solid #FFC000;
+    }
+
+    .homeModuleDisplay img{
+        width: 32px;
+    }
+
+    .homeModuleTitle {
+        float:left;
+        width: 50%;
+    }
+
+    #traineeLinkPvt h3{
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    .m-tradingus_quote #col3 .col3Body .c50l ,
+    .m-tradingsg_quote #col3 .col3Body .c50l ,
+    .m-tradingin_quote #col3 .col3Body .c50l ,
+    .m-tradingsg_supplierQuote #col3 .col3Body .c50l {
+        width: 100%;
+    }
+
+    .m-tradingus_quote #col3 .col3Body .c50r ,
+    .m-tradingsg_quote #col3 .col3Body .c50r ,
+    .m-tradingin_quote #col3 .col3Body .c50r ,
+    .m-tradingsg_supplierQuote #col3 .col3Body .c50r {
+        width: 100%;
+    }
+
+    .m-tradingin_quote #col3 .col3Body .summary .c50l,
+    .m-tradingin_quote #col3 .col3Body .summary .c50r ,
+    .m-tradingus_quote #col3 .col3Body .summary .c50l,
+    .m-tradingus_quote #col3 .col3Body .summary .c50r ,
+    .m-tradingsg_quote #col3 .col3Body .summary .c50l,
+    .m-tradingsg_quote #col3 .col3Body .summary .c50r {
+        width: 50%;
+    }
+
+
+    .m-core_userGroup.v-edit .c50l,
+    .m-core_userGroup.v-edit .c50r {
+        width: 100%;
+    }
+
+    .row-tradingsg_quote__tradingsg_productLink .cost-price {
+        font-weight: bold;
+    }
+
+    .btnbackground {
+        border: 1px solid #EDEDED;
+        background-image: url('images/maze_white.png');
+            width: 98%;
+            margin-bottom: 14px;
+            padding:12px 0px 5px 12px;
+    }
+
+    .btnbackground .button{
+            display: block;
+            width: 175px;
+            margin-left: 50px;
+    }
+
+    .actionBtnsDetail h6{
+      font-family: "Open Sans", arial, serif;
+        font-size: 17px;
+      color: #555;
+            padding-top: 5px;
+        }
+
+    .btnbackground .actionbtnwidth{
+            width: 33.3%;
+            float: left;
+    }
+
+    .orderbtnbackground {
+        background-image: url('images/az_subtle.png');
+        padding: 12px;
+    }
+
+    .orderbtnbackgroundNovo {
+        background-image: url('images/az_subtle.png');
+        margin:15px;
+        margin:15px 0px  15px 0px;
+        padding:12px;
+    }
+
+    .orderbtnbackground button{
+        padding-left: 8px;
+    }
+
+    .orderbtnbackgroundCaptain {
+        background-image: url('images/az_subtle.png');
+    }
+
+    .m-tradingsg_product .columnar div.type-text input, .m-tradingsg_product .columnar div.type-text textarea {
+        width: 77.8%;
+    }
+
+    .m-tradingsg_product .columnar div.type-select select {
+        width: 78.9%;
+    }
+
+    .m-tradingsg_order .invoiceForm .button,
+    .m-tradingin_order .invoiceForm .button {
+        position: absolute;
+        top: 75px;
+        left: 400px;
+    }
+
+    .m-tradingin_order .invoiceForm .updateSalesReturnTotal {
+        position: absolute;
+        top: 45px;
+        left: 400px;
+    }
+
+    #actBtn_printPOPDFList {
+        background-image: url("images/action/print.gif");
+    }
+
+    .m-tradingsg_order .cstValue,
+    .m-tradingsg_order .vatValue,
+    .m-tradingsg_order .cstValueNew,
+    .m-tradingsg_order .vatValueNew,
+    .m-tradingin_order .cstValueNew,
+    .m-tradingin_order .vatValueNew {
+        display : none;
+    }
+
+    .m-tradingsg_product #quickAddForm input#price_from_supplier,
+    .m-tradingsg_product #quickAddForm input#price {
+        width: 100px;
+    }
+
+    .m-tradingsg_product #quickAddForm .supplier select{
+        width: 150px;
+    }
+
+    .m-tradingsg_product #quickAddForm .uom select{
+        width: 70px;
+    }
+
+    .contentDescription {
+        display:none;
+        margin-left:20px;
+
+    }
+
+    .toggle {
+        display:none;
+    }
+
+    .m-hms_company .toggle,
+    .m-labsg_company .toggle {
+        display:block;
+    }
+
+    .m-hms_company .yform,
+    .m-labsg_company .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_company.v-edit .c50l,
+    .m-hms_company.v-edit .c50r,
+    .m-labsg_company.v-edit .c50l,
+    .m-labsg_company.v-edit .c50r {
+        width: 100%;
+    }
+
+    .m-hms_company .ym-columnar .ym-fbox-text label,
+    .m-hms_company .ym-columnar .ym-fbox-select label,
+    .m-hms_company #frmEdit .type-text label,
+    .m-hms_company #frmEdit .type-select label,
+    .m-labsg_company .ym-columnar .ym-fbox-text label,
+    .m-labsg_company .ym-columnar .ym-fbox-select label,
+    .m-labsg_company #frmEdit .type-text label,
+    .m-labsg_company #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_company #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_company  .linkPortalWrapper div.header,
+    .m-hms_company  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_panel .toggle,
+    .m-labsg_panel .toggle {
+        display:block;
+    }
+
+    .m-hms_panel .yform,
+    .m-labsg_panel .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_panel.v-edit .c50l,
+    .m-hms_panel.v-edit .c50r,
+    .m-labsg_panel.v-edit .c50l,
+    .m-labsg_panel.v-edit .c50r {
+        width: 100%;
+    }
+
+    .m-hms_panel .ym-columnar .ym-fbox-text label,
+    .m-hms_panel .ym-columnar .ym-fbox-select label,
+    .m-hms_panel #frmEdit .type-text label,
+    .m-hms_panel #frmEdit .type-select label,
+    .m-labsg_panel .ym-columnar .ym-fbox-text label,
+    .m-labsg_panel .ym-columnar .ym-fbox-select label,
+    .m-labsg_panel #frmEdit .type-text label,
+    .m-labsg_panel #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_panel #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_panel  .linkPortalWrapper div.header,
+    .m-hms_panel  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_patientInformation .toggle,
+    .m-labsg_patientInformation .toggle {
+        display:block;
+    }
+
+    .m-hms_patientInformation .yform,
+    .m-labsg_patientInformation .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_patientInformation .c50l,
+    .m-hms_patientInformation .c50r,
+    .m-labsg_patientInformation .c50l,
+    .m-labsg_patientInformation .c50r {
+        width: 100%;
+    }
+
+    .m-hms_patientVisit .yform.edit .type-text div.txt
+    ,.m-hms_patientVisit .yform.edit .type-text div.txt
+    ,.m-hms_patientVisit .yform.edit .type-select div.txt
+    ,.m-hms_patientVisit .yform.edit .form-row-wrapper div.txt
+    ,.m-hms_order .yform.edit .type-text div.txt
+    ,.m-hms_order .yform.edit .type-text div.txt
+    ,.m-hms_order .yform.edit .type-select div.txt
+    ,.m-hms_order .yform.edit .form-row-wrapper div.txt
+    ,.m-hms_purchaseOrder .yform.edit .type-text div.txt
+    ,.m-hms_purchaseOrder .yform.edit .type-text div.txt
+    ,.m-hms_purchaseOrder .yform.edit .type-select div.txt
+    ,.m-hms_purchaseOrder .yform.edit .form-row-wrapper div.txt
+    ,.m-hms_labs .yform.edit .type-text div.txt
+    ,.m-hms_labs .yform.edit .type-text div.txt
+    ,.m-hms_labs .yform.edit .type-select div.txt
+    ,.m-hms_labs .yform.edit .form-row-wrapper div.txt
+    ,.m-hms_employee .yform.edit .type-text div.txt
+    ,.m-hms_employee .yform.edit .type-text div.txt
+    ,.m-hms_employee .yform.edit .type-select div.txt
+    ,.m-hms_employee .yform.edit .form-row-wrapper div.txt
+    ,.m-hms_patientInformation .yform.edit .type-text div.txt
+    ,.m-hms_patientInformation .yform.edit .type-text div.txt
+    ,.m-hms_patientInformation .yform.edit .type-select div.txt
+    ,.m-hms_patientInformation .yform.edit .form-row-wrapper div.txt {
+        margin-left: 0;
+        padding: 0 0.5em 0.5em 0;
+    }
+
+    .visitSummary .label{
+        background-color: #f1f1f1;
+        color: #000000 !important;
+        font-size: 100%;
+        font-weight: 600;
+        display: table-cell;
+        border-radius: 0;
+    }
+
+    .m-hms_patientInformation .ym-columnar .ym-fbox-text label,
+    .m-hms_patientInformation .ym-columnar .ym-fbox-select label,
+    .m-hms_patientInformation #frmEdit .type-text label,
+    .m-hms_patientInformation #frmEdit .type-select label,
+    .m-labsg_patientInformation .ym-columnar .ym-fbox-text label,
+    .m-labsg_patientInformation .ym-columnar .ym-fbox-select label,
+    .m-labsg_patientInformation #frmEdit .type-text label,
+    .m-labsg_patientInformation #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_patientInformation #frmEdit .creModdate .type-text label,
+    .m-labsg_patientInformation #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_patientInformation  .linkPortalWrapper div.header,
+    .m-hms_patientInformation  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_patientInformation  .linkPortalWrapper div.header,
+    .m-labsg_patientInformation  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #B6E5F9;
+    }
+
+    .m-hms_patientVisit .toggle,
+    .m-hms_order .toggle,
+    .m-labsg_patientVisit .toggle,
+    .m-labsg_order .toggle,
+    .m-hms_purchaseOrder .toggle,
+    .m-labsg_purchaseOrder .toggle,
+    .m-hms_labs .toggle,
+    .m-hms_employee .toggle{
+        display:block;
+    }
+
+    .m-hms_patientVisit.v-edit .toggle{
+        margin-top: 2px;
+    }
+
+    .m-hms_patientVisit .yform,
+    .m-hms_order .yform,
+    .m-labsg_patientVisit .yform,
+    .m-labsg_order .yform,
+    .m-hms_purchaseOrder .yform,
+    .m-labsg_purchaseOrder .yform,
+    .m-hms_labs .yform,
+    .m-hms_employee .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_patientVisit.v-new .c50l,
+    .m-hms_patientVisit.v-new .c50r,
+    .m-hms_order.v-new .c50l,
+    .m-hms_order.v-new .c50r,
+    .m-labsg_patientVisit.v-new .c50l,
+    .m-labsg_patientVisit.v-new .c50r,
+    .m-labsg_order.v-new .c50l,
+    .m-labsg_order.v-new .c50r,
+    .m-hms_purchaseOrder.v-new .c50l,
+    .m-hms_purchaseOrder.v-new .c50r,
+    .m-labsg_purchaseOrder.v-new .c50l,
+    .m-labsg_purchaseOrder.v-new .c50r,
+    .m-hms_labs.v-new .c50l,
+    .m-hms_labs.v-new .c50r,
+    .m-hms_employee.v-new .c50l,
+    .m-hms_employee.v-new .c50r{
+        width: 50%;
+    }
+
+    .m-hms_patientVisit .c50l,
+    .m-hms_patientVisit .c50r,
+    .m-hms_order .c50l,
+    .m-hms_order .c50r,
+    .m-labsg_patientVisit .c50l,
+    .m-labsg_patientVisit .c50r,
+    .m-labsg_order .c50l,
+    .m-labsg_order .c50r,
+    .m-hms_purchaseOrder .c50l,
+    .m-hms_purchaseOrder .c50r,
+    .m-labsg_purchaseOrder .c50l,
+    .m-labsg_purchaseOrder .c50r,
+    .m-hms_labs .c50l,
+    .m-hms_labs .c50r,
+    .m-hms_employee .c50l,
+    .m-hms_employee .c50r{
+        width: 100%;
+    }
+
+    .ym-columnar .ym-fbox-text label,
+    .ym-columnar .ym-fbox-select label,
+    .ym-columnar .ym-fbox-radio label,
+    .ym-form label,
+    .yform label,
+    #frmEdit .type-text label,
+    #frmEdit .type-select label,
+    #frmEdit .type-radio label{
+        color: #2E405C;
+        font-weight: 500;
+    }
+
+    .columnar .type-select label {
+        float: left !important;
+    }
+
+    .m-hms_patientVisit .ym-columnar .ym-fbox-text label,
+    .m-hms_patientVisit .ym-columnar .ym-fbox-select label,
+    .m-hms_patientVisit #frmEdit .type-text label,
+    .m-hms_patientVisit #frmEdit .type-select label,
+    .m-labsg_patientVisit .ym-columnar .ym-fbox-text label,
+    .m-labsg_patientVisit .ym-columnar .ym-fbox-select label,
+    .m-labsg_patientVisit #frmEdit .type-text label,
+    .m-labsg_patientVisit #frmEdit .type-select label,
+    .m-hms_purchaseOrder .ym-columnar .ym-fbox-text label,
+    .m-hms_purchaseOrder .ym-columnar .ym-fbox-select label,
+    .m-hms_purchaseOrder #frmEdit .type-text label,
+    .m-hms_purchaseOrder #frmEdit .type-select label,
+    .m-labsg_purchaseOrder .ym-columnar .ym-fbox-text label,
+    .m-labsg_purchaseOrder .ym-columnar .ym-fbox-select label,
+    .m-labsg_purchaseOrder #frmEdit .type-text label,
+    .m-labsg_purchaseOrder #frmEdit .type-select label,
+    .m-hms_labs .ym-columnar .ym-fbox-text label,
+    .m-hms_labs .ym-columnar .ym-fbox-select label,
+    .m-hms_labs #frmEdit .type-text label,
+    .m-hms_labs #frmEdit .type-select label,
+    .m-hms_employee .ym-columnar .ym-fbox-text label,
+    .m-hms_employee .ym-columnar .ym-fbox-select label,
+    .m-hms_employee #frmEdit .type-text label,
+    .m-hms_employee #frmEdit .type-select label
+    {
+        width: 100%;
+    }
+
+    .m-hms_patientVisit #frmEdit .creModdate .type-text label,
+    .m-labsg_patientVisit #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_patientVisit  .linkPortalWrapper div.header,
+    .m-hms_patientVisit  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-hms_order  .linkPortalWrapper div.header,
+    .m-hms_order  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_patientVisit  .linkPortalWrapper div.header,
+    .m-labsg_patientVisit  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_order  .linkPortalWrapper div.header,
+    .m-labsg_order  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-hms_purchaseOrder  .linkPortalWrapper div.header,
+    .m-hms_purchaseOrder  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_purchaseOrder  .linkPortalWrapper div.header,
+    .m-labsg_purchaseOrder  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-hms_labs  .linkPortalWrapper div.header,
+    .m-hms_labs  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-hms_employee  .linkPortalWrapper div.header,
+    .m-hms_employee  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_patientVisit.v-edit  .linkPortalWrapper div.header,
+    .m-hms_patientVisit.v-edit  .linkPortalWrapper .linkPortalDataWrapper th{
+        padding: 2px 8px !important;
+    }
+
+
+    .m-hms_patientQueue .toggle,
+    .m-labsg_patientQueue .toggle {
+        display:block;
+    }
+
+    .m-hms_patientQueue .yform,
+    .m-labsg_patientQueue .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_patientQueue .c50l,
+    .m-hms_patientQueue .c50r,
+    .m-labsg_patientQueue .c50l,
+    .m-labsg_patientQueue .c50r {
+        width: 100%;
+    }
+
+    .m-hms_patientQueue .ym-columnar .ym-fbox-text label,
+    .m-hms_patientQueue .ym-columnar .ym-fbox-select label,
+    .m-hms_patientQueue #frmEdit .type-text label,
+    .m-hms_patientQueue #frmEdit .type-select label,
+    .m-labsg_patientQueue .ym-columnar .ym-fbox-text label,
+    .m-labsg_patientQueue .ym-columnar .ym-fbox-select label,
+    .m-labsg_patientQueue #frmEdit .type-text label,
+    .m-labsg_patientQueue #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_patientQueue #frmEdit .creModdate .type-text label,
+    .m-labsg_patientQueue #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_patientQueue  .linkPortalWrapper div.header,
+    .m-hms_patientQueue  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_patientQueue  .linkPortalWrapper div.header,
+    .m-labsg_patientQueue  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_treatment .toggle,
+    .m-labsg_treatment .toggle {
+        display:block;
+    }
+
+    .m-hms_treatment .yform,
+    .m-labsg_treatment .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_treatment .c50l,
+    .m-hms_treatment .c50r,
+    .m-labsg_treatment .c50l,
+    .m-labsg_treatment .c50r {
+        width: 100%;
+    }
+
+    .m-hms_treatment .ym-columnar .ym-fbox-text label,
+    .m-hms_treatment .ym-columnar .ym-fbox-select label,
+    .m-hms_treatment #frmEdit .type-text label,
+    .m-hms_treatment #frmEdit .type-select label,
+    .m-labsg_treatment .ym-columnar .ym-fbox-text label,
+    .m-labsg_treatment .ym-columnar .ym-fbox-select label,
+    .m-labsg_treatment #frmEdit .type-text label,
+    .m-labsg_treatment #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_treatment #frmEdit .creModdate .type-text label,
+    .m-labsg_treatment #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_treatment  .linkPortalWrapper div.header,
+    .m-hms_treatment  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_treatment  .linkPortalWrapper div.header,
+    .m-labsg_treatment  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_followUpPatient .toggle {
+        display:block;
+    }
+
+    .m-hms_followUpPatient .yform{
+        background-color: #fff;
+        border: 0;
+    }
+
+    .m-hms_followUpPatient .c50l,
+    .m-hms_followUpPatient .c50r {
+        width: 100%;
+    }
+
+    .m-hms_followUpPatient .ym-columnar .ym-fbox-text label,
+    .m-hms_followUpPatient .ym-columnar .ym-fbox-select label,
+    .m-hms_followUpPatient #frmEdit .type-text label,
+    .m-hms_followUpPatient #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_followUpPatient #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_followUpPatient  .linkPortalWrapper div.header,
+    .m-hms_followUpPatient  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_medicalTest .toggle {
+        display:block;
+    }
+
+    .m-hms_medicalTest .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_medicalTest .c50l,
+    .m-hms_medicalTest .c50r {
+        width: 100%;
+    }
+
+    .m-hms_medicalTest .ym-columnar .ym-fbox-text label,
+    .m-hms_medicalTest .ym-columnar .ym-fbox-select label,
+    .m-hms_medicalTest #frmEdit .type-text label,
+    .m-hms_medicalTest #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_medicalTest #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_medicalTest  .linkPortalWrapper div.header,
+    .m-hms_medicalTest  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+
+    .m-hms_medicalSupplier .toggle {
+        display:block;
+    }
+
+    .m-hms_medicalSupplier .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_medicalSupplier .c50l,
+    .m-hms_medicalSupplier .c50r {
+        width: 100%;
+    }
+
+    .m-hms_medicalSupplier .ym-columnar .ym-fbox-text label,
+    .m-hms_medicalSupplier .ym-columnar .ym-fbox-select label,
+    .m-hms_medicalSupplier #frmEdit .type-text label,
+    .m-hms_medicalSupplier #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_medicalSupplier #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_medicalSupplier  .linkPortalWrapper div.header,
+    .m-hms_medicalSupplier  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-hms_labsSupplier .toggle {
+        display:block;
+    }
+
+    .m-hms_labsSupplier .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_labsSupplier.v-edit .c50l,
+    .m-hms_labsSupplier.v-edit .c50r {
+        width: 100%;
+    }
+
+    .m-hms_labsSupplier.v-new .c50l,
+    .m-hms_labsSupplier.v-new .c50r {
+        width: 50%;
+    }
+
+    .m-hms_labsSupplier .ym-columnar .ym-fbox-text label,
+    .m-hms_labsSupplier .ym-columnar .ym-fbox-select label,
+    .m-hms_labsSupplier #frmEdit .type-text label,
+    .m-hms_labsSupplier #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_labsSupplier #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_labsSupplier  .linkPortalWrapper div.header,
+    .m-hms_labsSupplier  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+
+    .helpContentButton {
+        position:absolute;
+        right:10px;
+    }
+
+    .contentTitle {
+        margin:10px;
+        cursor:pointer;
+        text-decoration:underline;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .m-tradingsg_reports .contentScroller .report {
+        display:block !important;
+    }
+
+    .popcontents .row_no_of_records .message {
+        margin-right:60px;
+        color:red;
+    }
+
+        /** SUMMARY ORDER INVOICE FUNCTION AND CLASSES **/
+    .m-tradingin_order .rightPanel .totalOrderAmountLabel,
+    .m-tradingsg_order .rightPanel .totalOrderAmountLabel {
+        border: 1px solid #ccc;
+        padding:8px;
+        width:61%;
+    }
+
+    .m-tradingin_order .rightPanel .totalOverallAmountValue,
+    .m-tradingsg_order .rightPanel .totalOverallAmountValue {
+        border: 1px solid #ccc;
+        padding:8px;
+        text-align:right;
+        width:61%;
+    }
+
+    .m-tradingin_order .rightPanel .totalOrderAmountValue,
+    .m-tradingin_order .rightPanel .totalInvoiceAmountValue,
+    .m-tradingin_order .rightPanel .totalOutstandingInvoiceAmtValue,
+    .m-tradingin_order .rightPanel .totalReciptAmountValue,
+    .m-tradingsg_order .rightPanel .totalOrderAmountValue,
+    .m-tradingsg_order .rightPanel .totalInvoiceAmountValue,
+    .m-tradingsg_order .rightPanel .totalOutstandingInvoiceAmtValue,
+    .m-tradingsg_order .rightPanel .totalReciptAmountValue {
+        border: 1px solid #ccc;
+        padding:8px;
+        width:233px;
+        background-color:#fff;
+        text-align:right;
+    }
+
+    .m-tradingin_order .rightPanel .summaryAmountDetails,
+    .m-tradingsg_order .rightPanel .summaryAmountDetails {
+        background-color: #ededed;
+        border: 1px solid #efefef;
+        margin-top:10px;
+        margin-bottom:10px;
+
+    }
+
+    .m-tradingin_order .rightPanel .summaryTitle,
+    .m-tradingsg_order .rightPanel .summaryTitle {
+        background-color:#dcd9d9 ;
+        height:35px;
+    }
+
+    .m-tradingin_order .rightPanel .summaryTitle th,
+    .m-tradingsg_order .rightPanel .summaryTitle th {
+        padding-left:6px;
+    }
+
+    .summarytable{
+        text-align: right;
+        width:90%;
+    }
+    .expense{
+        text-align: right;
+        width:10%;
+    }
+
+    .order_amount{
+        text-align: right;
+        font-weight: bold;
+    }
+
+    .m-hms_appointment .appointmentCalendarView,
+    .m-hms_dutyRoster .dutyRosterCalendarView,
+    .m-hms_followUpPatient .followUpPatientCalendarView,
+    .m-labsg_appointment .appointmentCalendarView,
+    .m-labsg_dutyRoster .dutyRosterCalendarView,
+    .m-labsg_followUpPatient .followUpPatientCalendarView{
+        float: left;
+        width: 68%;
+    }
+
+    .m-hms_appointment .appointmentCalendarViewRight,
+    .m-hms_dutyRoster .dutyRosterCalendarViewRight,
+    .m-hms_followUpPatient .followUpPatientCalendarViewRight,
+    .m-labsg_appointment .appointmentCalendarViewRight,
+    .m-labsg_dutyRoster .dutyRosterCalendarViewRight,
+    .m-labsg_followUpPatient .followUpPatientCalendarViewRight{
+        width: 30%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 3.5%;
+        float: right;
+    }
+
+    .m-hms_appointment .appointmentCalendarViewRight2,
+    .m-hms_followUpPatient .followUpPatientCalendarViewRight2,
+    .m-labsg_appointment .appointmentCalendarViewRight2,
+    .m-labsg_followUpPatient .followUpPatientCalendarViewRight2{
+        width: 30%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 1%;
+        float: right;
+    }
+
+    .m-hms_appointment .appointmentScroll,
+    .m-hms_followUpPatient .appointmentScroll,
+    .m-labsg_appointment .appointmentScroll,
+    .m-labsg_followUpPatient .appointmentScrol{
+        height: 173px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .m-hms_appointment .appointmentvisitScroll,
+    .m-hms_followUpPatient .followUpScroll,
+    .m-labsg_appointment .appointmentvisitScroll,
+    .m-labsg_followUpPatient .followUpScroll{
+        height: 240px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .queueNoTable{
+        border: 1px solid #838383;
+        border-radius: 2px;
+        box-shadow: 1px 1px #838383;
+        font-weight: bold;
+        padding: 6px;
+        float: right;
+        margin-right: 25px;
+    }
+
+    .m-hms_appointment .fc-event-vert .fc-event-time
+    ,.m-hms_dutyRoster .fc-event-vert .fc-event-time
+    ,.m-hms_followUpPatient .fc-event-vert .fc-event-time,
+    .m-labsg_appointment .fc-event-vert .fc-event-time
+    ,.m-labsg_dutyRoster .fc-event-vert .fc-event-time
+    ,.m-labsg_followUpPatient .fc-event-vert .fc-event-time {
+        font-size: 13px;
+        font-weight: bold;
+        white-space: nowrap;
+        float: left;
+        color: #FFFFFF;
+    }
+
+    .m-hms_followUpPatient .cancelFollowUpDetail,
+    .m-labsg_followUpPatient .cancelFollowUpDetail {
+        color: #000000 !important;
+        font-weight: bold !important;
+        cursor: pointer !important;
+        text-decoration: underline !important;
+    }
+
+    .m-hms_appointment .cancelAppointment,
+    .m-hms_appointment .cancelAppointment:hover,
+    .m-hms_dutyRoster .cancelAppointment,
+    .m-hms_dutyRoster .cancelAppointment:hover,
+    .m-hms_followUpPatient .cancelFollowUp,
+    .m-hms_followUpPatient .cancelFollowUp:hover,
+    .m-labsg_appointment .cancelAppointment,
+    .m-labsg_appointment .cancelAppointment:hover,
+    .m-labsg_dutyRoster .cancelAppointment,
+    .m-labsg_dutyRoster .cancelAppointment:hover,
+    .m-labsg_followUpPatient .cancelFollowUp,
+    .m-labsg_followUpPatient .cancelFollowUp:hover{
+        color: #FFFFFF;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .m-hms_appointment .cancelDutyRosterOnEvent,
+    .m-labsg_appointment .cancelDutyRosterOnEvent{
+        padding-left: 126px;
+        float: right;
+    }
+
+    .m-hms_appointment .cancelAppointmentOnEvent,
+    .m-hms_followUpPatient .cancelFollowUpOnEvent,
+    .m-labsg_appointment .cancelAppointmentOnEvent,
+    .m-labsg_followUpPatient .cancelFollowUpOnEvent{
+        padding-left: 66px;
+    }
+
+    .nextQueueNo,
+    .cancelPatientVisit{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .button.viewVisitRecord, .button2 {
+        background: -webkit-linear-gradient(#FFFFFF, #FFC000) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: -o-linear-gradient(#FFFFFF, #FFC000) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: linear-gradient(#FFFFFF, #FFC000) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: 1px solid #FFC000;
+    }
+
+    .m-hms_appointment a.evenDetails,
+    .m-hms_appointment a.evenDetails:hover,
+    .m-hms_followUpPatient a.evenDetails,
+    .m-hms_followUpPatient a.evenDetails:hover,
+    .m-labsg_appointment a.evenDetails,
+    .m-labsg_appointment a.evenDetails:hover,
+    .m-labsg_followUpPatient a.evenDetails,
+    .m-labsg_followUpPatient a.evenDetails:hover{
+        color: #FFFFFF;
+        font-size:12px;
+    }
+
+    .m-hms_appointment .fc-event-inner a.createVisit,
+    .m-hms_appointment .fc-event-inner a.createVisit:hover,
+    .m-hms_appointment .fc-event-inner a.cancelAppointment,
+    .m-hms_appointment .fc-event-inner a.cancelAppointment:hover,
+    .m-hms_appointment .fc-event-inner a.viewVisitRecord,
+    .m-hms_appointment .fc-event-inner a.viewVisitRecord:hover,
+    .m-hms_followUpPatient .fc-event-inner a.createAppointment,
+    .m-hms_followUpPatient .fc-event-inner a.createAppointment:hover,
+    .m-hms_followUpPatient .fc-event-inner a.cancelFollowUp,
+    .m-hms_followUpPatient .fc-event-inner a.cancelFollowUp:hover,
+    .m-labsg_appointment .fc-event-inner a.createVisit,
+    .m-labsg_appointment .fc-event-inner a.createVisit:hover,
+    .m-labsg_appointment .fc-event-inner a.cancelAppointment,
+    .m-labsg_appointment .fc-event-inner a.cancelAppointment:hover,
+    .m-labsg_appointment .fc-event-inner a.viewVisitRecord,
+    .m-labsg_appointment .fc-event-inner a.viewVisitRecord:hover,
+    .m-labsg_followUpPatient .fc-event-inner a.createAppointment,
+    .m-labsg_followUpPatient .fc-event-inner a.createAppointment:hover,
+    .m-labsg_followUpPatient .fc-event-inner a.cancelFollowUp,
+    .m-labsg_followUpPatient .fc-event-inner a.cancelFollowUp:hover{
+        font-size:12px;
+    }
+
+    .m-hms_dutyRoster a.evenDetails,
+    .m-hms_dutyRoster a.evenDetails:hover,
+    .m-labsg_dutyRoster a.evenDetails,
+    .m-labsg_dutyRoster a.evenDetails:hove{
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+
+    .m-hms_appointment .doctorFilter_visit,
+    .m-hms_followUpPatient .doctorFilter_visit,
+    .m-labsg_appointment .doctorFilter_visit,
+    .m-labsg_followUpPatient .doctorFilter_visit{
+        border: 1px solid #CCCCCC;
+        font-weight: bold;
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .m-hms_appointment .doctorFilter,
+    .m-hms_followUpPatient .doctorFilter,
+    .m-labsg_appointment .doctorFilter,
+    .m-labsg_followUpPatient .doctorFilter{
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .m-hms_dutyRoster .cancelDutyRoster,
+    .m-labsg_dutyRoster .cancelDutyRoster{
+        color: #FFFFFF;
+        float: right;
+        padding-left: 108px;
+        font-weight: bold;
+    }
+
+    .m-hms_appointment .cancelledAppointment,
+    .m-labsg_appointment .cancelledAppointment{
+        color: #FFFFFF;
+        padding-left: 2px;
+        font-weight: bold;
+    }
+
+    .m-hms_appointment .cancelledAppointmentDetails{
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+
+    .m-hms_appointment .visitCreateButton{
+        padding: 6px 12px;
+    }
+
+    .m-hms_appointment .eventCancelAppointment,
+    .m-hms_appointment .eventCancelAppointment:hover{
+        color: #000000;
+    }
+
+    .fc-agenda-slots td div {
+        height: 55px;
+    }
+
+
+    .m-hms_appointment .ym-columnar div.ym-fbox-text input
+    ,.m-hms_appointment .columnar div.type-text input
+    ,.m-hms_appointment .ym-columnar div.ym-fbox-text textarea
+    ,.m-hms_appointment .columnar div.type-text textarea
+    ,.m-hms_appointment .ym-columnar div.ym-fbox-select select
+    ,.m-hms_appointment .columnar div.type-select select
+    ,.m-hms_followUpPatient .ym-columnar div.ym-fbox-text input
+    ,.m-hms_followUpPatient .columnar div.type-text input
+    ,.m-hms_followUpPatient .ym-columnar div.ym-fbox-text textarea
+    ,.m-hms_followUpPatient .columnar div.type-text textarea
+    ,.m-hms_followUpPatient .ym-columnar div.ym-fbox-select select
+    ,.m-hms_followUpPatient .columnar div.type-select select
+    {
+        background-color: #FFFFFF;
+        background-image: none;
+        border: 1px solid #CCCCCC;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        color: #555555;
+        display: block;
+        font-size: 14px;
+        line-height: 1.42857;
+        padding: 6px 12px;
+        transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    }
+
+    .m-hms_appointment .ym-columnar div.ym-fbox-select select
+    ,.m-hms_appointment .columnar div.type-select select
+    ,.m-hms_followUpPatient .ym-columnar div.ym-fbox-select select
+    ,.m-hms_followUpPatient .columnar div.type-select select {
+        margin-right: -3px;
+        width: 74.3%;
+    }
+
+    .m-hms_appointment .ym-form
+    ,.m-hms_appointment .yform {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #FFFFFF;
+    }
+
+    .m-hms_dutyRoster .ym-fbox-check,
+    .m-labsg_dutyRoster .ym-fbox-check{
+        float: left;
+    }
+
+    .m-hms_patientVisit .toothSelectCheckbox,
+    .m-hms_labs .toothSelectCheckbox,
+    .m-labsg_patientVisit .toothSelectCheckbox{
+        margin-left: 130px;
+    }
+
+    .m-hms_patientVisit .toothSelectCheckbox .ym-fbox-check,
+    .m-hms_patientVisit .toothSelectCheckbox2 .ym-fbox-check,
+    .m-hms_patientVisit .toothSelectCheckbox3 .ym-fbox-check,
+    .m-hms_labs .toothSelectCheckbox .ym-fbox-check,
+    .m-hms_labs .toothSelectCheckbox2 .ym-fbox-check,
+    .m-hms_labs .toothSelectCheckbox3 .ym-fbox-check,
+    .m-labsg_patientVisit .toothSelectCheckbox .ym-fbox-check,
+    .m-labsg_patientVisit .toothSelectCheckbox2 .ym-fbox-check,
+    .m-labsg_patientVisit .toothSelectCheckbox3 .ym-fbox-check{
+        float: left;
+        width: 46px;
+        position: relative;
+    }
+
+    .m-hms_patientVisit .newLineFornext,
+    .m-hms_labs .newLineFornext,
+    .m-labsg_patientVisit .newLineFornext{
+        clear: both;
+    }
+
+
+    .m-hms_patientVisit .toothSelectCheckbox .ym-fbox-check label,
+    .m-hms_patientVisit .toothSelectCheckbox2 .ym-fbox-check label,
+    .m-hms_patientVisit .toothSelectCheckbox3 .ym-fbox-check label,
+    .m-hms_labs .toothSelectCheckbox .ym-fbox-check label,
+    .m-hms_labs .toothSelectCheckbox2 .ym-fbox-check label,
+    .m-hms_labs .toothSelectCheckbox3 .ym-fbox-check label,
+    .m-labsg_patientVisit .toothSelectCheckbox .ym-fbox-check label,
+    .m-labsg_patientVisit .toothSelectCheckbox2 .ym-fbox-check label,
+    .m-labsg_patientVisit .toothSelectCheckbox3 .ym-fbox-check label{
+        padding-top: 55px !important;
+    }
+
+    .m-hms_patientVisit .toothSelectCheckbox .ym-fbox-check input,
+    .m-hms_patientVisit .toothSelectCheckbox2 .ym-fbox-check input,
+    .m-hms_patientVisit .toothSelectCheckbox3 .ym-fbox-check input,
+    .m-hms_labs .toothSelectCheckbox .ym-fbox-check input,
+    .m-hms_labs .toothSelectCheckbox2 .ym-fbox-check input,
+    .m-hms_labs .toothSelectCheckbox3 .ym-fbox-check input,
+    .m-labsg_patientVisit .toothSelectCheckbox .ym-fbox-check input,
+    .m-labsg_patientVisit .toothSelectCheckbox2 .ym-fbox-check input,
+    .m-labsg_patientVisit .toothSelectCheckbox3 .ym-fbox-check input{
+        visibility: hidden;
+        position: absolute;
+    }
+
+   .m-hms_patientVisit .toothSelectCheckbox .ym-fbox-check input[type="checkbox"] + label,
+   .m-hms_patientVisit .toothSelectCheckbox2 .ym-fbox-check input[type="checkbox"] + label,
+   .m-hms_patientVisit .toothSelectCheckbox3 .ym-fbox-check input[type="checkbox"] + label,
+   .m-hms_labs .toothSelectCheckbox .ym-fbox-check input[type="checkbox"] + label,
+   .m-hms_labs .toothSelectCheckbox2 .ym-fbox-check input[type="checkbox"] + label,
+   .m-hms_labs .toothSelectCheckbox3 .ym-fbox-check input[type="checkbox"] + label,
+   .m-labsg_patientVisit .toothSelectCheckbox .ym-fbox-check input[type="checkbox"] + label,
+   .m-labsg_patientVisit .toothSelectCheckbox2 .ym-fbox-check input[type="checkbox"] + label,
+   .m-labsg_patientVisit .toothSelectCheckbox3 .ym-fbox-check input[type="checkbox"] + label{
+        background: url("images/perio_teeth.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        padding: 10px;
+        width: 48px;
+    }
+
+    .m-hms_patientVisit .toothSelectCheckbox .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-hms_patientVisit .toothSelectCheckbox2 .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-hms_patientVisit .toothSelectCheckbox3 .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-hms_labs .toothSelectCheckbox .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-hms_labs .toothSelectCheckbox2 .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-hms_labs .toothSelectCheckbox3 .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-labsg_patientVisit .toothSelectCheckbox .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-labsg_patientVisit .toothSelectCheckbox2 .ym-fbox-check input[type="checkbox"]:checked + label,
+    .m-labsg_patientVisit .toothSelectCheckbox3 .ym-fbox-check input[type="checkbox"]:checked + label{
+        background: url("images/perio_teeth_checked.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        padding: 10px;
+        width: 48px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check{
+        float: left;
+        width: 120px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check label{
+        padding-top: 55px !important;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input{
+        visibility: hidden;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_1 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_1 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_1 + label{
+        background: url("images/PerioSymbols/Cavity.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 50px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_2 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_2 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_2 + label{
+        background: url("images/PerioSymbols/Filling.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        padding: 0;
+        width: 50px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_3 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_3 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_3 + label{
+        background: url("images/PerioSymbols/Crown.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 50px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_4 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_4 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_4 + label{
+        background: url("images/PerioSymbols/Bridge.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 50px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_5 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_5 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_5 + label{
+        background: url("images/PerioSymbols/Tooth Missing.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 50px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_6 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_6 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_6 + label{
+        background: url("images/PerioSymbols/Root Present.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 50px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_7 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_7 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_7 + label{
+        background: url("images/PerioSymbols/Root Filling.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 58px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_8 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_8 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_8 + label{
+        background: url("images/PerioSymbols/Pulp Non Vital.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 78px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_9 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_9 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_9 + label{
+        background: url("images/PerioSymbols/Fracture.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 53px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_10 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_10 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_10 + label{
+        background: url("images/PerioSymbols/Deep Fissure.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 50px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_11 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_11 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_11 + label{
+        background: url("images/PerioSymbols/Observed.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 60px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_12 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_12 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_12 + label{
+        background: url("images/PerioSymbols/Tooth Present and Sound.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 78px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_13 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_13 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_13 + label{
+        background: url("images/PerioSymbols/Tooth Requiring Extraction.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 78px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_14 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_14 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_14 + label{
+        background: url("images/PerioSymbols/Tooth Recently Extracted.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 62px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_15 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_15 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_15 + label{
+        background: url("images/PerioSymbols/Artifical Tooth.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 0px;
+        width: 50px;
+    }
+
+    .m-hms_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_16 + label,
+    .m-hms_labs .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_16 + label,
+    .m-labsg_patientVisit .SymbolSelectRadio .ym-fbox-check input#selected_Symbols_16 + label{
+        background: url("images/PerioSymbols/Implant.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 4px;
+        width: 50px;
+    }
+
+
+    /* DUTY ROSTER MODULE CLASSES START*/
+    
+    .m-hms_dutyRoster .WeekendsExclude .leftCol label,
+    .m-hms_dutyRoster .WeekdaysSelect .leftCol label,
+    .m-labsg_dutyRoster .WeekendsExclude .leftCol label,
+    .m-labsg_dutyRoster .WeekdaysSelect .leftCol label{
+       padding-left: 10px;
+       padding-top: 15px;
+    }
+
+    .m-hms_dutyRoster .create_MonthCheck .leftCol label,
+    .m-labsg_dutyRoster .create_MonthCheck .leftCol label{
+       padding-left: 10px;
+       padding-top: 15px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .rightCol .type-check,
+    .m-hms_dutyRoster .WeekdaysSelect .rightCol .type-check,
+    .m-hms_dutyRoster .create_MonthCheck .rightCol .type-check,
+    .m-labsg_dutyRoster .WeekendsExclude .rightCol .type-check,
+    .m-labsg_dutyRoster .WeekdaysSelect .rightCol .type-check,
+    .m-labsg_dutyRoster .create_MonthCheck .rightCol .type-check{
+        padding-left: 6px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude,
+    .m-hms_dutyRoster .WeekdaysSelect,
+    .m-hms_dutyRoster .create_MonthCheck,
+    .m-labsg_dutyRoster .WeekendsExclude,
+    .m-labsg_dutyRoster .WeekdaysSelect,
+    .m-labsg_dutyRoster .create_MonthCheck{
+        border-radius: 5px;
+        margin-right: 28px;
+        border: 1px solid #D0D0D0;
+        margin-top: 16px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check input + label:hover,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check input + label:hover,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check input + label:hover,
+    .m-labsg_dutyRoster .WeekendsExclude .ym-fbox-check input + label:hover,
+    .m-labsg_dutyRoster .WeekdaysSelect .ym-fbox-check input + label:hover,
+    .m-labsg_dutyRoster .create_MonthCheck .ym-fbox-check input + label:hover {
+        background-color: #FFC000;
+        color: #000000;
+    }
+
+/*    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check input + label,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check input + label,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check input + label{
+        background: #17375E;
+        padding: 8px;
+        border-radius: 4px;
+        color: #FFFFFF;
+    }
+*/
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check input + label,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check input + label,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check input + label,
+    .m-labsg_dutyRoster .WeekendsExclude .ym-fbox-check input + label,
+    .m-labsg_dutyRoster .WeekdaysSelect .ym-fbox-check input + label,
+    .m-labsg_dutyRoster .create_MonthCheck .ym-fbox-check input + label {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: 1px solid #17375E;
+        border-radius: 4px;
+        color: #17375E;
+        font-weight: bold;
+        padding: 7px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check,
+    .m-labsg_dutyRoster .WeekendsExclude .ym-fbox-check,
+    .m-labsg_dutyRoster .create_MonthCheck .ym-fbox-check{
+        padding: 8px;
+    }
+
+    .m-hms_dutyRoster div.ym-fbox-select,
+    .m-hms_dutyRoster div.ym-fbox-text,
+    .m-labsg_dutyRoster div.ym-fbox-select,
+    .m-labsg_dutyRoster div.ym-fbox-text{
+        overflow: visible;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check label:hover,
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check label,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check label:hover,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check label,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check label:hover,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check label,
+    .m-labsg_dutyRoster .WeekendsExclude .ym-fbox-check label:hover,
+    .m-labsg_dutyRoster .WeekendsExclude .ym-fbox-check label,
+    .m-labsg_dutyRoster .WeekdaysSelect .ym-fbox-check label:hover,
+    .m-labsg_dutyRoster .WeekdaysSelect .ym-fbox-check label,
+    .m-labsg_dutyRoster .create_MonthCheck .ym-fbox-check label:hover,
+    .m-labsg_dutyRoster .create_MonthCheck .ym-fbox-check label{
+         background-color: #FFC000;
+         margin-left: -8px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check input,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check input,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check input,
+    .m-labsg_dutyRoster .WeekendsExclude .ym-fbox-check input,
+    .m-labsg_dutyRoster .WeekdaysSelect .ym-fbox-check input,
+    .m-labsg_dutyRoster .create_MonthCheck .ym-fbox-check input {
+        visibility: hidden;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check label input,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check label input,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check label input,
+    .m-labsg_dutyRoster .WeekendsExclude .ym-fbox-check label input,
+    .m-labsg_dutyRoster .WeekdaysSelect .ym-fbox-check label input,
+    .m-labsg_dutyRoster .create_MonthCheck .ym-fbox-check label input {
+        position:absolute;
+        top:-20px;
+    }
+
+    .m-hms_dutyRoster .WeekendsExclude .ym-fbox-check input:checked + label,
+    .m-hms_dutyRoster .WeekdaysSelect .ym-fbox-check input:checked + label,
+    .m-hms_dutyRoster .create_MonthCheck .ym-fbox-check input:checked + label,
+    .m-labsg_dutyRoster .WeekendsExclude .ym-fbox-check input:checked + label,
+    .m-labsg_dutyRoster .WeekdaysSelect .ym-fbox-check input:checked + label,
+    .m-labsg_dutyRoster .create_MonthCheck .ym-fbox-check input:checked + label{
+        background-color: #FFC000;
+        border-radius: 4px;
+        color: #000000;
+        font-weight: bold;
+        padding: 7px;
+        /*padding: 8px;*/
+    }
+
+    .m-hms_dutyRoster .WeekdaysSelect .rightCol .ym-fbox-check input + label,
+    .m-labsg_dutyRoster .WeekdaysSelect .rightCol .ym-fbox-check input + label {
+        display: block;
+        margin-left: 1px;
+        text-align: center;
+        width: 48px;
+    }
+
+    .m-hms_dutyRoster .WeekdaysSelect .rightCol,
+    .m-labsg_dutyRoster .WeekdaysSelect .rightCol {
+        padding-bottom: 10px;
+        padding-left: 6px;
+    }
+
+    .m-hms_dutyRoster .WeekdaysSelect .leftCol label,
+    .m-labsg_dutyRoster .WeekdaysSelect .leftCol label {
+        padding-top: 28px !important;
+    }
+
+    .m-hms_dutyRoster .onEditUpdateType,
+    .m-labsg_dutyRoster .onEditUpdateType{
+        margin-right: 54px;
+    }
+
+    .m-hms_dutyRoster .fc-event-inner:hover .fc-event-time,
+    .m-hms_dutyRoster .fc-event-inner:hover .fc-event-title,
+    .m-labsg_dutyRoster .fc-event-inner:hover .fc-event-time,
+    .m-labsg_dutyRoster .fc-event-inner:hover .fc-event-title{
+        text-decoration: underline;
+        color: #FFFFFF;
+    }
+
+    .m-hms_dutyRoster .WeekendsExcludeDisable,
+    .m-hms_dutyRoster .WeekdaysSelectDisable,
+    .m-hms_dutyRoster .secondWorkTimeDutyDisable,
+    .m-hms_dutyRoster .secondWorkTimeDutyDisable2,
+    .m-labsg_dutyRoster .WeekendsExcludeDisable,
+    .m-labsg_dutyRoster .WeekdaysSelectDisable,
+    .m-labsg_dutyRoster .secondWorkTimeDutyDisable,
+    .m-labsg_dutyRoster .secondWorkTimeDutyDisable2{
+        display: none;
+    }
+
+    .m-hms_dutyRoster .addTimeinOutLine img,
+    .m-hms_dutyRoster .addTimeinOutLine2 img,
+    .m-hms_dutyRoster .addTimeinOutLine3 img,
+    .m-hms_dutyRoster .addTimeinOutLine4 img,
+    .m-labsg_dutyRoster .addTimeinOutLine img,
+    .m-labsg_dutyRoster .addTimeinOutLine2 img,
+    .m-labsg_dutyRoster .addTimeinOutLine3 img,
+    .m-labsg_dutyRoster .addTimeinOutLine4 img{
+        float: right;
+        height: 25px;
+        padding-right: 33px;
+        width: 25px;
+    }
+
+    .m-hms_dutyRoster .doctorFilter,
+    .m-labsg_dutyRoster .doctorFilter{
+        font-weight: bold;
+        padding-bottom: 28px;
+    }
+
+    .m-hms_dutyRoster .previous_dutyRoster_icon,
+    .m-hms_dutyRoster .next_dutyRoster_icon,
+    .m-labsg_dutyRoster .previous_dutyRoster_icon,
+    .m-labsg_dutyRoster .next_dutyRoster_icon{
+        font-family: "Open Sans";
+        font-size: 18px;
+    }
+
+    .m-hms_dutyRoster .previous_dutyRoster_icon.button,
+    .m-hms_dutyRoster .next_dutyRoster_icon.button,
+    .m-labsg_dutyRoster .previous_dutyRoster_icon.button,
+    .m-labsg_dutyRoster .next_dutyRoster_icon.button{
+        padding: 4px 9px;
+    }
+
+    .m-hms_dutyRoster .today_dutyRoster_icon.button,
+    .m-labsg_dutyRoster .today_dutyRoster_icon.button{
+        padding: 7px 10px;
+    }
+
+    .m-hms_dutyRoster .dutyRosterListHeading,
+    .m-labsg_dutyRoster .dutyRosterListHeading{
+        font-size: 17px;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .m-hms_dutyRoster .dutyRosterDateChange,
+    .m-labsg_dutyRoster .dutyRosterDateChange{
+        font-size: 16px;
+        font-weight: normal;
+        padding-left: 26px;
+        padding-top: 6px;
+    }
+
+    .m-hms_dutyRoster .todayButtonDutyDisable,
+    .m-labsg_dutyRoster .todayButtonDutyDisable{
+        background: none;
+        box-shadow: none;
+        cursor: default;
+    }
+
+    .fa-plus {
+        content:"\f067";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+        padding-right: 8px;
+    }
+
+    .fa-print {
+        content:"\f02f";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+        padding-right: 8px;
+    }
+
+    .fa-check {
+        content:"\f00c";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+        padding-right: 8px;
+    }
+
+    .fa-lock {
+        content:"\f023";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+        padding-right: 8px;
+    }
+
+    .fa-file-pdf-o {
+        content:"\f1c1";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+        padding-right: 8px;
+    }
+
+    .fa-refresh {
+        content:"\f021";
+        font-family: FontAwesome;
+        color: #FFFFFF;
+        padding-right: 8px;
+    }
+
+    .m-hms_dutyRoster .editDutyRoasterDetails,
+    .m-labsg_dutyRoster .editDutyRoasterDetails{
+        cursor: pointer;
+        text-decoration: underline;
+        color: #000000;
+    }
+
+    .m-hms_dutyRoster .toggle,
+    .m-labsg_dutyRoster .toggle {
+        display:block;
+    }
+
+    .m-hms_dutyRoster .yform,
+    .m-labsg_dutyRoster .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-hms_dutyRoster .c50l,
+    .m-hms_dutyRoster .c50r,
+    .m-labsg_dutyRoster .c50l,
+    .m-labsg_dutyRoster .c50r {
+        width: 100%;
+    }
+
+    .m-hms_dutyRoster .ym-columnar .ym-fbox-text label,
+    .m-hms_dutyRoster .ym-columnar .ym-fbox-select label,
+    .m-hms_dutyRoster #frmEdit .type-text label,
+    .m-hms_dutyRoster #frmEdit .type-select label,
+    .m-labsg_dutyRoster .ym-columnar .ym-fbox-text label,
+    .m-labsg_dutyRoster .ym-columnar .ym-fbox-select label,
+    .m-labsg_dutyRoster #frmEdit .type-text label,
+    .m-labsg_dutyRoster #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-hms_dutyRoster #frmEdit .creModdate .type-text label,
+    .m-labsg_dutyRoster #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+
+    .m-hms_dutyRoster  .linkPortalWrapper div.header,
+    .m-hms_dutyRoster  .linkPortalWrapper .linkPortalDataWrapper th,
+    .m-labsg_dutyRoster  .linkPortalWrapper div.header,
+    .m-labsg_dutyRoster  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    /* DUTY ROSTER MODULE CLASSES END*/
+
+    .searchSelectPatientVisit{
+        float: left;
+        padding-left: 6px;
+    }
+
+    .searchSelectPatientVisit select{
+        font-size: 17px;
+        padding: 11px;
+    }
+
+    .searchSelectPatientVisit option{
+        font-size: 17px;
+    }
+
+    .searchInputPatientVisit{
+        float: left;
+        font-size: 20px;
+        padding: 9px;
+        width: 85%;
+    }
+
+    .searchPanelInPatientVisitLabel{
+        padding-top: 16px;
+    }
+
+    .searchPanelInPatientVisitLabel label{
+        font-size: 18px;
+    }
+
+    .searchButtonPatientVisit{
+        float: left;
+        padding-left: 6px
+    }
+
+    .searchPanelInPatientVisit .button{
+        border-radius: 2px;
+        font-size: 17px;
+        padding: 10px 38px;
+    }
+
+    .searchTableInPatientVisit, .searchTableInPatientVisitAppointment{
+        padding-top: 78px;
+    }
+
+    .searchResultLabel{
+        float: left;
+        padding-bottom: 14px;
+        padding-top: 10px;
+    }
+
+    .searchResultLabel label{
+        font-size: 17px;
+    }
+
+    .visitCreateButtonInVisit{
+        border-radius: 2px;
+        padding: 8px 22px;
+    }
+
+    .searchTableInPatientVisit .thinlist, .searchTableInPatientVisitAppointment .thinlist{
+        float: left;
+    }
+
+    .m-hms_patientVisit.v-edit .goToSearchPatientVisit,
+    .m-labsg_patientVisit.v-edit .goToSearchPatientVisit{
+        padding-bottom: 15px;
+    }
+
+    .m-hms_patientVisit.v-edit .goToSearchPatientVisit a.button,
+    .m-labsg_patientVisit.v-edit .goToSearchPatientVisit a.button {
+        margin-right: 14px;
+    }
+
+    .goToSearchPatientVisit{
+        padding-bottom: 60px;
+    }
+
+    .m-hms_patientVisit .defaultListDisplay, .m-hms_patientVisit .cpSearch,
+    .m-labsg_patientVisit .defaultListDisplay, .m-labsg_patientVisit .cpSearch{
+        display: none;
+    }
+
+    .m-hms_patientVisit.v-list .cpSearch,
+    .m-labsg_patientVisit.v-list .cpSearch {
+        float: left;
+        margin-top: 65px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+    }
+
+    .m-hms_patientVisit .selectedToothSymbol,
+    .m-hms_labs .selectedToothSymbol,
+    .m-labsg_patientVisit .selectedToothSymbol{
+        cursor: pointer;
+        left: 9px;
+        top: 12px;
+        position: absolute;
+    }
+
+    .m-hms_patientVisit.v-list .cpSearch input[type="text"],
+    .m-labsg_patientVisit.v-list .cpSearch input[type="text"] {
+        min-width: 260px;
+    }
+
+    .m-hms_patientVisit .searchTableInPatientVisithide,
+    .m-labsg_patientVisit .searchTableInPatientVisithide{
+        display: none;
+    }
+
+    .m-hms_patientVisit .perioChartSymbols,
+    .m-labsg_patientVisit .perioChartSymbols{
+        border: 2px solid #CCCCCC;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px 0 #888888;
+        height: 328px;
+    }
+
+    .m-hms_patientVisit .Extracted,
+    .m-labsg_patientVisit .Extracted{
+        margin-left: 6px;
+        margin-top: 22px;
+    }
+
+    .m-hms_patientVisit .Extraction,
+    .m-labsg_patientVisit .Extraction{
+        margin-left: 6px;
+        margin-top: 22px;
+    }
+
+    .m-hms_patientVisit .Observed,
+    .m-labsg_patientVisit .Observed{
+        margin-left: 3px;
+    }
+
+    .m-hms_patientVisit .Bridge,
+    .m-labsg_patientVisit .Bridge{
+        margin-left: 0px;
+        margin-top: 16px;
+    }
+
+    .m-hms_patientVisit #tabs .c50l,
+    .m-labsg_patientVisit #tabs .c50l{
+        width: 50%;
+    }
+
+    #tabs .ui-widget-header{
+        background: #F8F8F8;
+    }
+
+    #tabs .ui-state-default, #tabs .ui-widget-content .ui-state-default, #tabs .ui-widget-header .ui-state-default{
+        background: #17375E;
+    }
+
+    #tabs .ui-state-default, #tabs .ui-widget-content .ui-state-default, #tabs .ui-widget-header .ui-state-default{
+        border: 1px solid #17375E;
+    }
+
+    #tabs .ui-state-active, #tabs .ui-widget-content .ui-state-active, #tabs .ui-widget-header .ui-state-active{
+        background: #ffffff;
+        border: 1px solid #AAAAAA;
+    }
+
+    #tabs .ui-state-default a, #tabs .ui-state-default a:link, #tabs .ui-state-default a:visited {
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    #tabs .ui-state-active a, #tabs .ui-state-active a:link, #tabs .ui-state-active a:visited{
+        color: #212121;
+    }
+
+
+    #tabs.ui-tabs .ui-tabs-nav li a {
+        text-align: center;
+    }
+
+    .ui-tabs .ui-tabs-nav li a {
+        float: left;
+        padding: 0.5em 6px;
+        text-decoration: none;
+    }
+
+    #tabs .ym-columnar div.ym-fbox-check input, #tabs .columnar div.type-check input {
+        margin-left: 0;
+    }
+
+    #acrylicDentureForm div.type-check.ym-fbox-check {
+        float: left;
+    }
+
+    #acrylicDentureForm  div.type-check input {
+        margin-left: 0;
+    }
+
+    #acrylicDentureForm div.type-check label {
+        float: left;
+        width: 124px;
+    }
+
+    #acrylicDentureForm div.type-check input {
+        float: left;
+        width: 20px;
+    }
+
+    #tabs .columnar div.type-check input.normalCheck{
+        margin-left: 15px;
+    }
+
+    #tabs .columnar div.type-check input.abnormalCheck{
+        margin-left: 40px;
+    }
+
+    #tabs .columnar div.type-check input#fld_remarks{
+        width: 127px;
+        margin-left: 27px;
+    }
+
+    #tabs .examination1  .columnar div.type-check input#fld_remarks{
+        width: 175px;
+        margin-left: 27px;
+    }
+
+    #tabs #treatmentDisplay .ym-columnar div.ym-fbox-check input#fld_fees, #tabs #treatmentDisplay .columnar div.type-check input#fld_fees {
+        width: 85px;
+        cursor: text;
+    }
+
+    #tabs #treatmentDisplay .button {
+        padding:5px 0;
+        width: 85px;
+        font-size: 12px;
+    }
+
+    #tabs #treatmentDisplay .c50l {
+        width: 50%;
+    }
+
+    .treatmentDisplay {
+        width:49%;
+        float:left;
+    }
+
+    .m-labsg_patientVisit .treatmentDisplay {
+        width:100%;
+        float:none;
+    }
+
+
+    .treatmentBox, .labTestBox, .diagnosisBox{
+        border: 1px solid #cccccc;
+        padding: 5px;
+        margin-right: 4px !important;
+        min-height: 74px;
+    }
+
+    .m-hms_patientVisit .treatmentDisplay .yform,
+    .m-hms_patientVisit .diagnosisDisplay .yform,
+    .m-hms_patientVisit .habits .yform,
+    .m-hms_patientVisit .oralHygienic .yform,
+    .m-labsg_patientVisit .treatmentDisplay .yform,
+    .m-labsg_patientVisit .diagnosisDisplay .yform,
+    .m-labsg_patientVisit .habits .yform,
+    .m-labsg_patientVisit .oralHygienic .yform{
+        border: 1px solid #dddddd;
+        padding: 10px;
+    }
+
+    .m-hms_patientVisit .treatmentDisplay .yform,
+    .m-hms_patientVisit .diagnosisDisplay .yform{
+        min-height: 160px;
+    }
+
+    .m-hms_patientVisit .habits .yform,
+    .m-hms_patientVisit .oralHygienic .yform,
+    .m-labsg_patientVisit .habits .yform,
+    .m-labsg_patientVisit .oralHygienic .yform{
+        min-height: 430px;
+        background-color: #f6f6f6;
+        position: relative;
+    }
+
+    .diagnosisDisplay {
+        width:49%;
+        float:right;
+    }
+
+    .displayNone {
+        display: none;
+    }
+
+    .examination .yform .type-check label{
+        width:30%;
+        display: inline-block;
+    }
+
+    .examination1 .yform .type-check label{
+        width:35%;
+        display: inline-block;
+    }
+
+    #tabs .columnar div.type-button {
+        margin-left: 0;
+    }
+
+    /*#tabs .oralHygienicTab .columnar div.type-button {
+        position: absolute;
+        top:85%;
+    }*/
+
+    #tabs .oralHygienicTab .columnar div.type-button,
+    #tabs #medicalHistory .columnar div.type-button,
+    #tabs #treatmentDisplay .columnar div.type-button,
+    #tabs #labDisplay .columnar div.type-button,
+    #tabs #summaryDisplay .columnar div.type-button{
+        padding-bottom: 13px;
+    }
+
+    .medHisDisplay{
+        width: 30%;
+    }
+
+    .medHisDisplay .ym-fbox-check{
+        width: 50%;
+        margin-bottom: 20px !important;
+    }
+
+    .medHisDisplay,
+    .medHisDisplay .ym-fbox-check {
+        float: left;
+    }
+
+    #medicalHistory .columnar div.type-text input, #medicalHistory .columnar div.type-text textarea {
+        height: 75px;
+    }
+
+    .m-hms_order .orderRightpanelButtons{
+        padding-bottom: 15px;
+    }
+
+    .m-hms_appointment .ym-form div.error .message
+    ,.m-hms_appointment .yform div.error .message {
+        background-color: #880000;
+        border-radius: 3px;
+        color: #FFFFFF;
+        padding: 4px;
+        width: 284px;
+    }
+
+    .noty_text {
+        display: block;
+        font-size: 17px;
+        margin-top: 5px;
+    }
+
+    #noty_topCenter_layout_container{
+        top: 80px !important;
+    }
+
+    #noty_topCenter_layout_container li {
+        background-color: #00bcd4 !important;
+        border-color: #00bcd4 !important;
+        color: #FFFFFF !important;
+        font-weight: bold;
+        height: 65px !important;
+        width: 339px !important;
+    }
+
+
+    #summaryDisplay .columnar div.type-text textarea{
+        height: 150px;
+        width: 95%;
+    }
+
+    .fc-event-time .createVisit,
+    .fc-event-time .createAppointment{
+        color: #FFFFFF;
+        text-decoration: underline;
+    }
+
+    .fc-event-time .viewVisitRecord{
+        color: #FFFFFF;
+        text-decoration: underline;
+    }
+
+    .hideNotes, .hideNotesLab{
+        display: none;
+    }
+
+    .order_item_type_title {
+        font-weight: bold;
+        padding: 6px 0;
+    }
+
+    .order_item_type_value {
+        height: 28px;
+        margin: -6px;
+        width: 130px;
+        text-align: right;
+        color: #000000;
+    }
+
+    .thinlist.order_item_type_table {
+        background-color: #C4E7FF;
+        border-color: #E0F1FC;
+        color: #000000;
+    }
+
+    .thinlist.order_item_type_table th {
+        font-size: 14px;
+    }
+
+    .order_item_type_value.invoice_sub_total_amount,
+    .order_item_type_value.invoice_total_amount {
+        background-color: #C4E7FF;
+        border-color: #E0F1FC;
+        color: #000000;
+        border: none;
+    }
+
+    .m-hms_reports .homeClass{
+        left: 200px;
+        position: absolute;
+        top: 16px;
+    }
+    .m-hms_reports .homeClass a{
+        font-size: 20px;
+    }
+
+    .queueNumberDisplay{
+        display: none;
+    }
+
+    .dashboardSummary {
+        color: #ffffff;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .dashboardSummary div{
+        font-size: 18px;
+    }
+
+    .dashboardSummary .c33l{
+        width: 30%;
+        font-size: 40px;
+    }
+
+    .revenueSummary {
+        background-color: #0268DD;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .patientVisitSummary {
+        background-color: #DB4302;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .patientVisitSummaryWalkIn {
+        background-color: #00AA99;
+        padding: 10px;
+    }
+
+    .lastRowBgColor {
+        background-color:#CCCCCC !important;
+        font-weight: bold;
+    }
+
+    .followupTab {
+        background-color: #BCFDFD;
+        border:3px solid #42C1E8;
+    }
+
+    .notesEditLink {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .notesFollowupdisable,
+    .notesAppointmentdisable{
+        display: none;
+    }
+
+    .followUpNotesUpdate,
+    .appointmentNotesUpdate {
+        float: right;
+        font-size: 12px !important;
+        padding: 2px;
+    }
+
+    .notesFollowup textarea,
+    .notesAppointment textarea {
+        max-height: 72px;
+        overflow-y: auto !important;
+        width: 188px;
+    }
+
+    .createAppointment {
+        text-decoration: underline;
+    }
+
+    .multi-unique-site select {
+        font-size: 15px;
+        font-weight: bold;
+        padding: 2px;
+        color: #000000;
+    }
+
+    .m-project_followUp a.evenDetails
+    ,.m-project_followUp a.evenDetails:hover {
+        color: #FFFFFF;
+        text-decoration: underline;
+    }
+
+    /*Module top widgets display starts*/
+
+    .m-project_invoice .moduleTitle,
+    .m-project_project .moduleTitle {
+        background-color: #FFFFFF;
+        border-bottom: 1px solid #DDDDDD;
+        font-size: 28px;
+        height: 88px;
+        margin-bottom: 10px;
+    }
+
+    .m-project_invoice .moduleName,
+    .m-project_project .moduleName{
+        font-size: 28px;
+        margin-left: 26px;
+        margin-top: 18px;
+        padding-right: 10%;
+    }
+
+    .moduleWidgetsDisplayRow{
+        margin-top: -25%;
+        padding-bottom: 5%;
+    }
+
+    @media (max-width: 1280px){
+        .moduleWidgetsDisplayRow{
+            margin-top: -25%;
+            padding-bottom: 10%;
+        }
+    }
+
+    .m-project_project .moduleWidgetsDisplayRow {
+        margin-top: -25%;
+        padding-bottom: 98px;
+    }
+
+    .bg-primary {
+        background-color: #0099CC;
+        color: #FFFFFF;
+    }
+
+    .widget .widget-bg-icon {
+        font-size: 60px;
+        line-height: 80px;
+        position: absolute;
+        right: 15px;
+        top: 0;
+    }
+
+    .widget .widget-details {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .widget .widget-bg-icon i {
+        opacity: 0.2;
+        transform: rotate(-5deg);
+    }
+
+    .widget-details .h4{
+        font-size: 25px;
+    }
+
+    .widget-details .block{
+        display: block;
+    }
+
+    .bg-blue {
+        background-color: #2196F3;
+        color: #FFFFFF;
+    }
+
+    .bg-cyan {
+        background-color: #00BCD4;
+        color: #FFFFFF;
+    }
+
+    .bg-info {
+        background-color: #4CC3D9;
+        color: #FFFFFF;
+    }
+
+    *::-moz-selection {
+        background: none repeat scroll 0 0 #0099CC;
+        color: #FFFFFF;
+        text-shadow: none;
+    }
+
+    .widget {
+        border-radius: 1px;
+        display: table;
+        margin-bottom: 20px;
+        padding: 0px;
+        position: relative;
+        width: 100%;
+        height: 75px;
+    }
+
+    /*Module top widgets display ends*/.
+
+    .btn-primary,
+    .btn-primary:visited{
+        color: #FFFFFF !important;
+    }
+    .summaryBg {
+        background-color: #C4E7FF;
+    }
+
+    .orderSummary table.thinlist th, .orderSummary table.thinlist td {
+        border: 2px solid #E0F1FC;
+    }
+
+    .invoiceDisplay h2, .receiptDisplay h2{
+        font-size: 26px !important;
+    }
+
+    .btn.btn-primary.searchPatientButton{
+        font-size: 18px;
+        padding: 8px 20px;
+    }
+
+    .m-hms_order.v-edit table.thinlist thead th{
+        color:#000;
+    }
+
+    .m-labsg_patientInformation.v-edit div.error .message{
+        margin-left: 0 !important;
+    }
+
+    .InvoiceToggleHeading {
+        font-size: 16px;
+        padding: 0 !important;
+    }
+
+    .followupToggleHeading {
+        background-color: #23b7e5 !important;
+        border: medium none #23b7e5 !important;
+        font-size: 18px !important;
+    }
+
+    .followupToggleSearchiCon::before {
+        background-color: #23b7e5;
+        border-radius: 0 4px 4px 0;
+        color: #ffffff;
+        content: "\f002";
+        float: left;
+        font-family: FontAwesome;
+        font-size: 16px;
+        padding: 3px 26px;
+    }
+
+    .followupToggleHeadingText{
+        font-size: 16px !important;
+        color: #FFFFFF !important;
+    }
+
+    .treatmentSearchAuto,
+    .diagnosisSearchAuto {
+        float: left;
+        font-size: 15px !important;
+        height: 30px;
+        margin-bottom: 10px;
+        padding: 5px;
+        width: 86%;
+    }
+
+    .linkPortalWrapper.followupToggleTab table td input[type="text"]{
+        width: 80% !important;
+    }
+
+    .m-hms_purchaseOrder .row_error_box1 label,
+    .m-hms_purchaseOrder #fld_error_box1 {
+        display: none;
+    }
+
+    .m-hms_purchaseOrder .row_error_box1 {
+        padding-bottom: 5px !important;
+    }
+
+    .m-hms_purchaseOrder .row_error_box1 strong.message {
+        background-color: #8B0000;
+        border-radius: 3px;
+        color: #FFFFFF !important;
+        padding: 5px 13px;
+        width: 50%;
+        display: block;
+    }
+
+    .m-hms_purchaseOrder .text.last_price {
+        background-color: #FFFFFF;
+        border: medium none;
+        color: #000000;
+        font-weight: bold;
+        text-align: right;
+        width: 120px;
+    }
+
+    .floatboxQuoteHistory {
+        height: 20px;
+    }
+
+    .m-hms_purchaseOrder .noRenewal,
+    .m-hms_product .noProductPrice {
+        height: 60px;
+        text-align: center;
+        vertical-align: middle !important;
+    }
+
+    .m-hms_patientVisit .type-radio.form-row-wrapper.yesNo.row_dr_required .leftCol {
+        width: 100%;
+    }
+
+    .m-hms_patientVisit .thinlist.followupTab thead th {
+        background-color: #23B7E5 !important;
+        border-bottom: 3px solid #23B7E5;
+    }
+
+    .m-hms_patientVisit .thinlist.followupTab th,
+    .m-hms_patientVisit .thinlist.followupTab td {
+        border: 3px solid #23B7E5;
+    }
+
+    .m-hms_patientVisit .patientVisitSummaryPortal {
+        max-height: 402px;
+        overflow: auto;
+    }
+
+    .m-hms_patientVisit .patientVisitAppointmentDetails {
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: underline;
+        color: #095268;
+    }
+
+    .m-hms_patientVisit .patientVisitSummary_Filter {
+        margin-left: 6%;
+        padding-top: 8px;
+    }
+
+    .m-hms_patientVisit .patientVisitSummary_Filter label {
+        margin-right: 6px;
+    }
+
+    .m-hms_patientVisit.v-edit .ym-columnar div.error .message,
+    .m-hms_patientVisit.v-edit .columnar div.error .message,
+    .m-hms_employee.v-edit .ym-columnar div.error .message,
+    .m-hms_employee.v-edit .columnar div.error .message{
+        margin-left: 0 !important;
+    }
+
+    .m-hms_patientVisit.v-edit td.notesTitle .ym-fbox-text > textarea {
+        width: 98%;
+    }
+
+    .m-hms_patientVisit.v-edit .totalDueAmountInvoice b,
+    .m-hms_order.v-edit .totalDueAmountInvoice b {
+        font-size: 16px;
+    }
+
+    .m-hms_patientVisit.v-edit .invoice_due_amount_total input,
+    .m-hms_order.v-edit .invoice_due_amount_total input {
+        font-size: 14px;
+        padding: 4px;
+        text-align: right;
+        width: 122px;
+    }
+
+    .m-hms_patientVisit.v-edit .due_amount_table_invoice,
+    .m-hms_order.v-edit .due_amount_table_invoice {
+        background-color: #6B8EA6;
+        color: #FFFFFF;
+    }
+
+    .m-hms_patientVisit.v-edit .due_amount_table_disable,
+    .m-hms_order.v-edit .due_amount_table_disable{
+        display: none;
+    }
+
+    .m-hms_patientVisit.v-edit .invoice_due_amount_total > input#fld_overall_Total_invoice,
+    .m-hms_order.v-edit .invoice_due_amount_total > input#fld_overall_Total_invoice,
+    .m-hms_patientVisit.v-edit .invoice_due_amount_total > input#fld_due_amount,
+    .m-hms_order.v-edit .invoice_due_amount_total > input#fld_due_amount,
+    .m-hms_patientVisit.v-edit .invoice_due_amount_total > input#balance_Total_invoice,
+    .m-hms_order.v-edit .invoice_due_amount_total > input#balance_Total_invoice{
+        background-color: #6B8EA6;
+        border: medium none;
+        color: #FFFFFF;
+    }
+
+    .m-hms_patientVisit.v-edit .invoice_due_amount_total > input#fld_due_receipt_amount,
+    .m-hms_order.v-edit .invoice_due_amount_total > input#fld_due_receipt_amount{
+        color: #000000;
+    }
+
+    .m-hms_patientVisit.v-edit .row_error_box1 label,
+    .m-hms_patientVisit.v-edit #fld_error_box1,
+    .m-hms_patientVisit.v-edit .row_error_box2 label,
+    .m-hms_patientVisit.v-edit #fld_error_box2 {
+        display: none;
+    }
+
+    .m-hms_patientVisit.v-edit .row_error_box1 strong.message {
+        background-color: #8B0000;
+        border-radius: 3px;
+        color: #FFFFFF !important;
+        padding: 3px 13px;
+        width: 50%;
+    }
+
+    .m-hms_patientVisit.v-edit .row_error_box2 strong.message{
+        background-color: #8B0000;
+        border-radius: 3px;
+        color: #FFFFFF !important;
+        padding: 3px 13px;
+        width: 100%;
+    }
+
+    .m-hms_patientVisit.v-edit .checkedCheckBoxTreatment {
+        background-color: #C8FFFF;
+        border: 2px solid #37B1D4;
+    }
+
+    .m-hms_patientVisit.v-edit .patientVisitSummary_type{
+        text-decoration: underline;
+    }
+
+    .ym-columnar.generateInvoiceForm .ym-fbox-select label
+    , .columnar.generateInvoiceForm .type-select label{
+        width: 26%;
+    }
+
+    .boldFormObjField span {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .chequeNoDisplay {
+        display: none;
+    }
+
+    #ChromeFormDetail .checkboxGroupDiv .type-check.ym-fbox-check {
+        display: inline;
+        padding: 0 12px 0 0;
+    }
+
+    .m-hms_patientInformation.v-edit .companyDetailsHide{
+        display: none;
+    }
+
+    .form-row-wrapper.checkboxGroupDiv {
+        float: left;
+        width: 30% !important;
+    }
+
+    #toggleComments {
+        color: #000000 !important;
+        text-decoration: underline;
+    }
+
+    .m-hms_purchaseOrder #addMultipleLineItemForm .lineItemDescription,
+    .m-hms_purchaseOrder #addMultipleLineItemForm .poQuantity {
+        padding: 6px;
+        width: 100px;
+    }
+
+    .m-hms_purchaseOrder #addMultipleLineItemForm .poProductTitle{
+        width: 250px;
+    }
+
+    .m-hms_purchaseOrder .grandTotalPurchasePo {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    .m-hms_purchaseOrder .purchaseOrderPoProduct {
+        max-height: 600px;
+        overflow: auto;
+    }
+
+    .backToList a {
+        background-color: #D43F3A;
+        color: #FFFFFF;
+        padding: 8px;
+        float: left;
+        border-radius: 3px;
+        margin-left: -13px;
+        text-decoration: none;
+    }
+
+    .hlist.actionBtns .noDefault {
+        float: left;
+    }
+
+    .hlist.actionBtns {
+        margin-top: 5px;
+    }
+
+    .card {
+        color:#000000;
+        font-weight: 400;
+    }
+
+    .m-project_university.v-list .ui-dialog .ui-dialog-content{
+        height: 500px !important;
+    }
+
+    .m-project_university.v-list .ui-dialog{
+        width: 450px !important;
+    }
+
+    .university-student-reply {
+        box-shadow: 0 -20px 20px -5px #fff;
+        position: relative;
+        margin-top: 30px;
+        border: 1px solid #dddddd;
+        background: #f8f8f8;
+    }
+
+    .university-student-reply textarea {
+        width: 100%;
+        font-size: 16px;
+        border: 0;
+        padding: 7px 11px;
+        resize: none;
+        height: 60px;
+        background: 0 0;
+    }
+
+    .university-student-reply button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 0;
+        height: 100%;
+        width: 60px;
+        font-size: 25px;
+        color: #00000;
+        background: #ddbc17;
+    }
+
+    .university-student-reply button:hover {
+        background: #f2f2f2;
+    }
+
+    .chat
+    {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .chat li
+    {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted #B3A9A9;
+    }
+
+    .chat li.left .chat-body
+    {
+        margin-left: 60px;
+    }
+
+    .chat li.right .chat-body
+    {
+        margin-right: 60px;
+    }
+
+
+    .chat li .chat-body p
+    {
+        margin: 0;
+        color: #777777;
+    }
+
+    .commentsDisplay {
+        max-height: 250px;
+        overflow: auto;
+        height: 250px;
+    }
+
+    .highlightChatMessageStudent {
+        padding: 7px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+        background-color: #2cb5e8;
+        border-radius: 2px;
+    }
+
+    .highlightChatMessageStudent .chat-body p {
+        color: #FFFFFF !important;
+        font-size: 16px !important;
+    }
+
+    .highlightChatMessageStudent .header .text-muted,
+    .highlightChatMessageStudent .header .primary-font {
+        color: #FFFFFF !important;
+    }
+
+    .btn-primary a
+    ,.btn-success a
+    ,.btn-danger a
+    ,.btn-info a {
+        color: #FFFFFF !important;
+    }
+
+    .uploadify-button-text {
+        font-size: 12px;
+    }
+
+    .noPadding {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .stepwizard-step p {
+        margin-top: 8px;
+        color:#666;
+    }
+
+    .stepwizard-row {
+        display: table-row;
+    }
+
+    .stepwizard {
+        display: table;
+        width: 100%;
+        position: relative;
+    }
+
+    .stepwizard-step button[disabled] {
+        /*opacity: 1 !important;
+        filter: alpha(opacity=100) !important;*/
+    }
+
+    .stepwizard .btn.disabled, .stepwizard .btn[disabled], .stepwizard fieldset[disabled] .btn {
+        opacity:1 !important;
+        color:#bbb;
+    }
+
+    /*.stepwizard-row:before {
+        top: 14px;
+        bottom: 0;
+        position: absolute;
+        content:" ";
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        z-index: 0;
+    }*/
+
+    .stepwizard-step {
+        display: table-cell;
+        text-align: center;
+        position: relative;
+    }
+
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        padding: 6px 0;
+        font-size: 12px;
+        line-height: 1.428571429;
+        border-radius: 15px;
+    }
+
+    a.stepsFormStep {
+        background-color: #FFF;
+        color: #00B5B8;
+        line-height: 40px;
+        border: 5px solid #eeeeee;
+        font-size: 1.3rem;
+        padding: 6px 11px;
+        border-radius: 50%;
+    }
+
+    a.stepFormSelectedRound {
+        background-color: #FFF !important;
+        border-color: #00B5B8 !important;
+        color: #00B5B8 !important;
+    }
+
+    a.stepFormSelectedRoundCompleted {
+        background-color: #00B5B8 !important;
+        border-color: #00B5B8 !important;
+        color: #FFF !important;
+    }
+
+    .stepNoWithLabel {
+        position: relative;
+        width: 11%;
+        display: inline-block;
+        margin-right: 13%;
+    }
+
+    .btn.disabled,
+    .btn[disabled],
+    fieldset[disabled] .btn,
+    .stepsFormStep[disabled] {
+        cursor: not-allowed !important;
+        pointer-events: none;
+    }
+
+    .marginForSteps {
+        margin-left: 11%;
+    }
+
+    .paddingZero {
+        padding: 0 !important;
+    }
+
+    .fc-header-title h2 {
+        margin: 0 !important;
+        font-size: 19px !important;
+        font-weight: 400;
+    }
+
+    table.fc-header .fc-button {
+        margin-bottom: 0 !important;
+        vertical-align: top;
+        margin-top: 0px !important;
+        height: 30px;
+    }
+
+    table.fc-header .fc-button {
+        color: #fff !important;
+        background-color: #2C3E50 !important;
+        background-image: none !important;
+        box-shadow: none !important;
+        border-color: #2C3E50 !important;
+        text-shadow: none !important;
+        font-weight: 400;
+    }
+
+    table.fc-header .fc-button:hover {
+        background-color: #1a252f !important;
+        border-color: #151e27 !important; 
+    }
+
+    table.fc-header .fc-button:not(:disabled).fc-state-active,
+    table.fc-header .fc-button:not(:disabled):active {
+        color: #fff !important;
+        background-color: #1a252f !important;
+        border-color: #151e27 !important;
+    }
+
+    table.fc-header .fc-state-default.fc-corner-right {
+        border-top-right-radius: 3px !important;
+        border-bottom-right-radius: 3px !important;
+    }
+
+    table.fc-header .fc-state-default.fc-corner-left {
+        border-top-left-radius: 3px !important;
+        border-bottom-left-radius: 3px !important;
+    }
+
+    .fc-event-vert .fc-event-time {
+        white-space: nowrap;
+        background-color: #2C3E50;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    .fc-event-time {
+        border-bottom: 1px solid #2C3E50;
+    }
+
+    .fc-event {
+        border: 1px solid #2C3E50;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        background-color: #2C3E50;
+    }
+
+    .fc-event-title {
+        font-weight: 500;
+    }
+
+    .companyNameHeader h2 {
+        color: #000;
+        font-weight: bold;
+        margin-top: 9px;
+        font-size: 16px;
+        padding: 3px 9px;
+    }
+
+    .w225 {
+        width: 225px !important;
+    }
+
+    .m-payroll_expense .defaultListDisplay, .m-payroll_expense .cpSearch{
+        display: none;
+    }
+
+    .paymentReminderTextScroll {
+        color: #FFF;
+        font-weight: bold;
+        padding-top: 8px;
+    }
+
+    .paymentReminderTextScroll marquee strong {
+        font-size: 16px;
+    }
+
+    .employeeListHide,
+    .timesheetLayoutHide{
+        display: none;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .m-enggCrm_opportunity.v-edit .addLineItemLayout,
+    .m-enggCrm_project.v-edit .addLineItemLayout {
+        width: 82%;
+        margin-left: 118px;
+        background: none repeat scroll 0 0 #efefef;
+        border: 2px solid;       
+    }
+
+    .m-enggCrm_opportunity.v-edit .addLineItemLayout th,
+    .m-enggCrm_project.v-edit .addLineItemLayout th {
+        border: 1px solid #cccccc;
+
+     }   
+
+    .m-enggCrm_opportunity.v-edit .addLineItemLayout td,
+    .m-enggCrm_project.v-edit .addLineItemLayout td {
+        border: 1px solid #cccccc;
+        background-color: #fff;
+
+     }   
+
+    .m-enggCrm_opportunity.v-edit .linkPortalWrapper tr.addQuoteRow td,
+    .m-enggCrm_project.v-edit .linkPortalWrapper tr.addQuoteRow td {
+        color: #000;
+        background-color: #ffdc7c !important;
+    }
+
+    .m-enggCrm_opportunity.v-edit .linkPortalWrapper  table.list thead td,
+    .m-enggCrm_opportunity.v-edit .linkPortalWrapper  table.list thead th,
+    .m-enggCrm_opportunity.v-edit .linkPortalWrapper  table.list tfoot,
+    .m-enggCrm_opportunity.v-edit .linkPortalWrapper  tr.header,
+    .m-enggCrm_opportunity.v-edit .linkPortalWrapper  div.header,
+    .m-enggCrm_project.v-edit .linkPortalWrapper  table.list thead td,
+    .m-enggCrm_project.v-edit .linkPortalWrapper  table.list thead th,
+    .m-enggCrm_project.v-edit .linkPortalWrapper  table.list tfoot,
+    .m-enggCrm_project.v-edit .linkPortalWrapper  tr.header,
+    .m-enggCrm_project.v-edit .linkPortalWrapper  div.header {
+        background: #ed7f1f;
+        color: #FFFFFF;
+    }
+
+    .m-enggCrm_project.v-edit .linkPortalWrapper .addEmployeeRow {
+        background-color: #ffba5a !important;
+    }
+
+    a.addMultipleLineItem,
+    a.addLineItem {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .float_left .deleteEmployeePortal,
+    .float_left .addToHours  {
+        color:#fff !important;
+        text-decoration: underline;
+    }
+
+    .float_right .addLineItemView  {
+        text-decoration: underline;
+    }
+
+    .showAddEmployeeLineRow .float_left .editForEmployeeItemView {
+        text-decoration: underline;
+    }
+
+    .addLineItemLayoutHide {
+        display: none;
+    } 
+
+    .employeeLayoutHide {
+        display: none;
+    } 
+
+    .showAddLineRow .descriptionWrap {
+        max-width: 14em;
+        min-width: 11.5em;
+    }
+
+    .showAddEmployeeLineRow .descriptionWrap {
+        max-width: 14em;
+        min-width: 11.5em;
+    }
+
+    .showAddLineRow .amountRow {
+        text-align: right;            
+    }
+
+    .quoteLayoutHide {
+        display: none;
+    }
+
+    .showAddLineRow a{
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .showAddEmployeeLineRow a{
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .float_right .quoteLayoutShow {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .float_right .employeeLayoutShow {
+        text-decoration: underline;
+    } 
+
+    .addEmployeeRow .viewRowWidth,
+    .addQuoteRow .viewRowWidth {
+        width: 1%;
+    }   
+
+    .showAddLineRow {
+        color: #000;
+    }
+
+    .showAddLineRow .quoteRowBorder {
+        border-left:1px solid #fff;
+        border-bottom:1px solid #fff;
+        border-right:1px solid #fff;
+    }
+
+    .showAddEmployeeLineRow .employeeRowBorder {
+        border-left:1px solid #fff;
+        border-bottom:1px solid #fff;
+        background-color: #fff;
+    }
+
+    .showAddEmployeeLineRow {
+        border-left:1px solid #fff;
+        border-bottom:1px solid #fff;
+        border-right:1px solid #fff;
+    }
+
+    .showAddEmployeeLineRow {
+        border-left:1px solid #fff;
+        border-bottom:1px solid #fff;
+    }
+
+    .showAddLineRow .quoteRowBordersecond {
+        border-left:1px solid #fff;
+        border-bottom:1px solid #fff;
+    }
+
+    .showAddEmployeeLineRow {
+        background-color: #cccccc;
+    }
+
+    .employeeItemBackground {
+        background-color: #fff;
+    }
+    .showAddLineRow .quoteRowBackground {
+        background-color: #cccccc;
+    }
+
+    .showAddEmployeeLineRow .employeeRowBackground {
+        background-color: #cccccc;
+    }
+
+    .showAddLineRow .borderQuote {
+        border-left: 1px solid #cccccc;
+    }
+
+    .float_left .deleteAddQuote {
+        color:#000;
+        text-decoration: underline;
+    }
+
+    .float_left .editForQuote {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .float_left .editForEmployeeItemView {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .printLink a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .duplicateQuote a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+
+    .printTimeSheetPdf a {
+        color:#000;
+        text-decoration: underline;
+    }
+
+    .overAllTimeSheet a {
+        color:#000;
+    }
+
+    /*** Employee Edit Styles: ***/
+    .m-enggCrm_employee.v-edit .addHourlyRate {
+        display: none;
+    }
+
+    .m-enggCrm_employee.v-edit .salaryForFullTime {
+        display: none;
+    }
+
+    /** Navy blue color #00008B **/   
+    .confirmedQuote {
+        background-color: #4e280c !important;
+    }
+
+    .m-enggCrm_opportunity .rightPanel .quoteFromProj,
+    .m-enggCrm_project .rightPanel .quoteFromProj {
+        background-color: #E6ECF2;
+    }
+
+    .addMultipleLineItemForm .lineItemMainTitle {
+        width: 150px !important;
+    }
+    
+    .addMultipleLineItemForm .lineItemAmount,
+    .addMultipleLineItemForm .lineItemTotalCost,
+    .addMultipleLineItemForm .lineItemUnitPrice,
+    .generateInvoiceForm .invoiceItemUnitPrice,
+    .generateInvoiceForm .invoiceItemAmount,
+    .generateDetailInvoiceForm .invoiceItemAmount,
+    .addMultiplePurchaseOrderForm .poAmount,
+    .addMultipleMaterialsForm .materialAmount {
+        font-size: 14px;
+        height: 23px;
+        margin-top: 6px;
+        width: 100px !important;
+    }
+
+    .addMultipleLineItemForm .lineItemUnit,
+    .generateInvoiceForm .invoiceItemUnit,
+    .generateDetailInvoiceForm .invoiceItemUnit,
+    .addMultiplePurchaseOrderForm .poUnit{
+        font-size: 14px;
+        height: 23px;
+        margin-top: 6px;
+        width: 50px !important;
+    }
+
+
+    .addMultipleLineItemForm .lineItemQuantity,
+    .generateInvoiceForm .invoiceItemQuantity,
+    .generateDetailInvoiceForm .invoiceItemQuantity,
+    .addMultiplePurchaseOrderForm .poQuantity,
+    .addMultipleMaterialsForm .materialQuantity,
+    .addMultipleMaterialsForm .materialUnit{
+        font-size: 14px;
+        height: 23px;
+        margin-top: 6px;
+        width: 70px !important;
+    }
+
+    .addMultipleLineItemForm .lineItemDescription,
+    .generateInvoiceForm .invoiceItemTitle,
+    .generateInvoiceForm .invoiceItemDescription,
+    .generateDetailInvoiceForm .invoiceItemTitle,
+    .generateDetailInvoiceForm .invoiceItemDescription,
+    .addMultiplePurchaseOrderForm .poTitle,
+    .addMultiplePurchaseOrderForm .poDescription,
+    .addMultipleMaterialsForm .materialTitle,
+    .addMultipleMaterialsForm .materialDescription {
+        width: 300px !important;
+    }
+
+    .generateInvoiceForm .invoiceItemTitle,
+    .generateDetailInvoiceForm .invoiceItemTitle,
+    .addMultiplePurchaseOrderForm .poTitle,
+    .addMultipleMaterialsForm .materialTitle,
+    .addMultipleLineItemForm .lineItemTitle,
+    .addMultipleLineItemForm .lineItemRemarks {
+        width: 165px !important;
+    }
+
+    .addMultipleLineItemForm .lineItemDescription,
+    .generateInvoiceForm .invoiceItemDescription,
+    .generateDetailInvoiceForm .invoiceItemDescription,
+    .addMultiplePurchaseOrderForm .poDescription,
+    .addMultipleMaterialsForm .materialDescription{
+        width: 250px !important;
+    }
+
+    .addMultipleLineItemForm .lineItemPartno {
+        width: 100px !important;
+    }
+
+    .rightPanel .summaryAmountDetails {
+        background-color: #ededed;
+        border: 1px solid #efefef;
+        margin-top:10px;
+        margin-bottom:10px;
+        width: 100%;
+    }
+
+    .rightPanel .summaryTitle {
+        background-color:#dcd9d9 ;
+        height:35px;
+    }
+
+    .rightPanel .summaryTitle th,
+    .rightPanel td {
+        padding: 6px;
+    }
+
+    .m-enggCrm_order .rightPanel .invoiceDisplay .highlightCell,
+    .m-enggCrm_order .rightPanel .receiptDisplay .highlightCell,
+    .m-enggCrm_project .rightPanel .materialsDetailRow .highlightCell {
+        background-color: #551a8b;
+        color: #fff;
+    }
+
+    .m-enggCrm_opportunity .ym-columnar div.ym-fbox-text textarea#fld_condition,
+    .m-enggCrm_opportunity .columnar div.type-text textarea#fld_condition {
+        height: 150px;
+    }
+
+    /*.yearDivHoursEmployeeForm*/
+    .monthDivHoursEmployeeForm{
+        float: left;
+        padding: 8px;
+        width: 40%;
+    }
+
+    .yearDivHoursEmployeeForm select
+    ,.monthDivHoursEmployeeForm select{
+        width: 30%;
+    }
+
+    .yearDivHoursEmployeeForm label
+    ,.monthDivHoursEmployeeForm label{
+        display: inline-block;
+        font-weight: bold;
+        width: 10% !important;
+    }
+
+    .employee_name_timesheet{
+        width: 200px;
+    }
+
+    .timeSheetDaysInput,
+    .timeSheetDaysOTInput,
+    .timeSheetDaysPHInput,
+    .timeSheetDaysNormalInput {
+        height: 22px;
+        width: 60px;
+    }
+
+    .timeSheetDaysRatePerHr,
+    .timeSheetDaysOTRatePerHr,
+    .timeSheetDaysPHRatePerHr{
+        height: 22px;
+        width: 86px;
+        font-weight: bold;
+    }
+    
+    .timeSheetTotalHours{
+        color: #000000;
+        font-weight: bold;
+        height: 22px;
+        width: 132px;
+    }
+
+
+    table.timesheetTableProjReltab thead th {
+        background: none repeat scroll 0 0 #808080;
+        color: #FFFFFF;
+    }
+
+    .monthlabelfilter{
+        padding-left: 16px;
+    }
+
+    .InvoiceTypeDropdown {
+        padding-bottom: 4px;
+        padding-left: 2px;
+        padding-top: 15px;
+    }
+
+    .InvoiceTypeDropdown label {
+        font-weight: bold;
+        padding-right: 12px;
+    }
+
+    .txtCenter.No_Records_linked {
+        font-weight: bold;
+        padding: 18px;
+    }
+
+    .invoice_creation_type{
+        padding-bottom: 12px;
+        float: left;
+    }
+
+    .invoice_creation_type select {
+        width: 116px;
+    }
+
+    .invoice_creation_type label {
+        font-weight: bold;
+        padding-right: 10px;
+    }
+
+    .invoice_creation_text {
+        padding: 6px 0 16px;
+    }
+
+    .invoice_creation_text label{
+        font-weight: bold;
+        padding: 2px;
+    }
+
+    .invoice_creation_text input {
+        padding: 2px;
+    }
+
+    .invoice_creation_text_disable,
+    .invoice_creation_description_disable {
+        display: none;
+    }
+
+    .invoice_creation_description textarea {
+        height: 64px;
+        width: 330px;
+    }
+
+    .invoice_creation_description label {
+        display: block;
+        font-weight: bold;
+        padding-bottom: 6px;
+    }
+
+    .invoice_creation_description {
+        padding: 12px 0;
+    }
+
+    .invoice_creation_date label {
+        font-weight: bold;
+        padding-left: 4px;
+        padding-right: 8px;
+    }
+
+    .invoice_creation_date div {
+        margin-top: -12px;
+        padding: 0 9px;
+    }
+
+    .invoice_creation_date .message {
+        background-color: #8B0000;
+        border-radius: 3px;
+        color: #FFFFFF;
+        margin-left: 98px;
+        margin-top: 30px;
+        padding: 5px;
+        position: absolute;
+    }
+
+    .msgforInvoiceCreated {
+        background-color: #8B0000;
+        border-radius: 4px;
+        color: #FFFFFF;
+        float: right;
+        font-size: 19px;
+        font-weight: bold;
+        height: 28px;
+        margin-right: 300px;
+        width: 387px;
+    }
+
+    .msgforInvoiceCreated font {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .validationDivforAdd .message {
+        background-color: #8B0000;
+        border-radius: 3px;
+        color: #FFFFFF;
+        font-size: 15px;
+        margin-right: 481px;
+        padding: 5px;
+    }
+
+    .validationDivforEdit .message {
+        background-color: #8B0000;
+        border-radius: 5px;
+        color: #FFFFFF;
+        padding: 5px 36px;
+    }
+
+    .generateDetailInvoiceForm .error .message .invoiceAlert {
+        font-size: 17px;
+        border: 1px dotted red;
+    }
+
+    .text.invoiceItemBalanceQuantity {
+        display: block;
+        font-size: 16px;
+        padding: 8px 5px;
+        text-align: center;
+    }
+
+    .chargesDivEmployeeForm {
+        padding: 8px;
+    }
+
+    .chargesDivEmployeeForm > label {
+        display: inline-block;
+        font-weight: bold;
+        width: 10%;
+    }
+
+    .chargesDivEmployeeForm > input {
+        margin-right: 18px;
+    }
+
+    .type-text.ym-fbox-text.row_admin_charges.editable{
+        float: left;
+    }
+
+    .type-text.ym-fbox-text.row_admin_charges.editable > label {
+        font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .type-text.ym-fbox-text.row_transport_charges.editable > label {
+        font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .m-enggCrm_project .quotecolumnCheckBox .type-check label {
+        float: left;
+        height: 40px;
+        width: 28%;
+    }
+}

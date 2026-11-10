@@ -1,0 +1,8 @@
+#menu {
+    background: #F5F5F5;
+    padding:15px;
+}
+
+#menu .filetree span.folder, #menu .filetree span.file {
+    padding-left: 20px;
+}

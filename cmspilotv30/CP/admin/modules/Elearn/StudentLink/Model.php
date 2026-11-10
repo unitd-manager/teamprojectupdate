@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_ELearn_StudentLink_Model extends CP_Common_Lib_ModuleLinkModelAbstract
+{
+}

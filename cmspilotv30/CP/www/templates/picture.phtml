@@ -1,0 +1,61 @@
+{% if picArr|length > 1 %}
+    {% set carouselId = 'myCarousel_' ~ random() %}
+    <div id="{{ carouselId }}" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            {% for row in picArr %}
+                {% set activeCls = (loop.index == 1) ? " class='active'" : '' %}
+                <li data-target="#{{ carouselId }}" data-slide-to="{{ loop.index -1 }}" {{ activeCls | raw }}></li>
+            {% endfor %}
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            {% for row in picArr %}
+                {% set activeCls = (loop.index == 1) ? ' active' : '' %}
+                <div class="item{{ activeCls }}">
+                    {% if row.url != '' %}
+                        <a href='{{ row.url }}'><img src="{{ row.file_large }}" class='img-responsive' alt="{{ row.caption }}"></a>
+                    {% else %}
+                        <img src="{{ row.file_large }}" alt="" class='img-responsive'>
+                    {% endif %}
+                    <div class="carousel-caption">
+                        <h4>{{ row.caption }}</h4>
+                        <p>{{ row.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="left carousel-control" href="#{{ carouselId }}" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#{{ carouselId }}" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </div>
+
+    {% if showThumb %}
+        <div class='carousel-thumbnail'>
+            <ol class="list-unstyled clearfix">
+                {% for row in picArr %}
+                    {% set activeCls = (loop.index == 1) ? " active" : '' %}
+                    <li class='thumbnail{{ activeCls }}' data-target="#{{ carouselId }}" data-slide-to="{{ loop.index -1 }}">
+                        <a class='' href='javascript:void(0);'><img class='img-responsive' src="{{ row.file_thumb}}"></a>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+    {% endif %}
+{% elseif picArr|length > 0 %}
+    {% set imgCls = imgCls is not null ? imgCls : '' %}
+    {% set imgFolder = imgFolder is not null ? imgFolder : 'large' %}
+    {% set imgSrcLbl =  'file_'~imgFolder %}
+    {% set imgLargeLbl =  'file_large' %}
+    {% for pic in picArr %}
+        {% if row.url != '' %}
+            <a href='{{ row.url }}'><img class='{{ imgCls }} img-responsive' src="{{ pic[imgSrcLbl] }}" alt="{{ pic.caption }}"></a>
+        {% elseif zoomImage %}
+            <a href='{{ pic[imgLargeLbl] }}' class='fancybox'><img class='{{ imgCls }} img-responsive' src="{{ pic[imgSrcLbl] }}" alt="{{ pic.caption }}"></a>
+        {% else %}
+            <img class='{{ imgCls }} img-responsive' src='{{ pic[imgSrcLbl] }}'>
+        {% endif %}
+    {% endfor %}
+{% endif %}

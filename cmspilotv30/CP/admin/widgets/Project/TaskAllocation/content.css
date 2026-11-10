@@ -1,0 +1,49 @@
+@charset "UTF-8";
+@media all
+{
+    #wd_project_taskAllocation {
+    }
+
+    #wd_project_taskAllocation .inner{
+    }
+
+    #wd_project_taskAllocation .c50l .subcl{
+        margin:5px 5px;
+        border: 1px solid #CCC4C4;
+        -moz-border-radius: 4px;
+        -webkit-border-bottom-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-bottom-radius: 4px;
+        padding:0;
+    }
+
+    #wd_project_taskAllocation .c50l .subcl .inner{
+        height: 200px;
+        overflow: auto;
+        overflow-y: scroll;
+    }
+
+    #wd_project_taskAllocation table td{
+        vertical-align: top;
+    }
+
+    #wd_project_taskAllocation .title {
+        width:150px;
+    }
+    
+    #wd_project_taskAllocation .currentTask {
+        background: #DFDFDF;
+    }
+
+    #wd_project_taskAllocation .nowTask {
+        background: #FFEFEF;
+    }
+
+    #wd_project_taskAllocation h2 span {
+        font-size:11px;
+    }
+
+    #wd_project_taskAllocation .c80l {
+        width:85%;
+    }
+}

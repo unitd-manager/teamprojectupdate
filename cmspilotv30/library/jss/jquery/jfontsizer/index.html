@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Font Sizer Demo</title>
+		<link type="text/css" rel="stylesheet" href="default.css" />
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jquery.jfontsizer.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#fontsizer').jfontsizer({
+					applyTo: '#content',
+					changesmall: '2',
+					changelarge: '2',
+					expire: 30
+				});
+			});
+		</script>
+	</head>
+	<body>
+		
+		<div id="fontsizer"></div>
+		
+		<div id="content">
+			
+			<h1>jQuery Font-Sizer Demo</h1>
+			
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra, tellus et cursus elementum, mi tellus cursus dui, ac malesuada nisi libero ut purus. Fusce bibendum fringilla congue. Praesent vitae nisi dui. Vivamus elementum lacus id elit condimentum sit amet dapibus risus mattis. Fusce est massa, fringilla a imperdiet et, malesuada eu dui. Donec consectetur elit nec tortor convallis eget placerat libero mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In auctor pharetra justo ut aliquam. Aenean eros tortor, varius nec porta eget, ultrices ut sapien. Cras tellus ipsum, aliquam at convallis ac, varius eget sapien. In hendrerit, libero faucibus placerat lobortis, nulla enim viverra ipsum, ut accumsan augue tellus vitae purus. Mauris elementum sem ut nibh faucibus molestie. Praesent quis pharetra metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lacinia vestibulum turpis, at congue nibh eleifend in. Quisque ultrices hendrerit faucibus.
+			</p>
+			
+			<h2>Pellentesque tempor lectus magna</h2>
+			
+			<p>
+			Quisque id justo arcu. Pellentesque tempor lectus magna. Praesent ipsum sem, tristique nec fermentum sit amet, facilisis ac elit. Aliquam posuere molestie augue eget blandit. Nullam tempus tempor magna, ut dapibus eros porttitor ac. Cras molestie lorem a augue suscipit aliquet. Nulla ac quam sed neque ultrices dignissim. Ut sem erat, pellentesque eu dignissim nec, pretium quis justo. Curabitur quis urna auctor orci congue venenatis lacinia vitae lectus. Nam in varius est. Sed aliquet, nulla quis venenatis molestie, lectus ipsum interdum nulla, a ullamcorper nisi lorem varius eros. Mauris rhoncus lacus a ipsum vestibulum pellentesque. Vestibulum quis enim nulla, eu interdum nibh. In ultricies bibendum iaculis. Aliquam posuere accumsan sem, quis viverra orci faucibus non. Quisque rhoncus lacinia massa, ac dignissim nisl vestibulum et.
+			</p>
+			
+		</div>
+		
+	</body>
+</html>

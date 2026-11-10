@@ -1,0 +1,13 @@
+@media all
+{
+	.facebookRegister{
+	    margin-top: 15px;
+	}
+	
+	.facebookRegister .fbRegisterButton a {
+	    width: 196px;
+	    height: 44px;
+	    background: url('images/facebook-register-btn.jpg') no-repeat top left;
+	    display: block;
+	}
+}

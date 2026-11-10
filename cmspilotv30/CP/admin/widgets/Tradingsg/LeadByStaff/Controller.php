@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Widgets_Tradingsg_LeadByStaff_Controller extends CP_Common_Lib_WidgetControllerAbstract
+{
+}

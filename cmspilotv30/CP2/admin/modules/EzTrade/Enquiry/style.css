@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@media all
+{
+    .m-trading_enquiry #col3 .contentScroller .subcolumns .c50l {
+        width:40%;
+    }
+    .m-trading_enquiry #col3 .contentScroller .subcolumns .c50r {
+        width:60%;
+    }
+    .m-trading_enquiry #linkRight .suppliers-cont {
+        border: 1px solid #ccc;
+    }
+    .m-trading_enquiry #linkRight .suppliers-cont table {
+        width: 100%;
+    }
+
+    .m-trading_enquiry #linkRight .suppliers-cont table td.title {
+        width:35%;
+    }
+    .m-trading_enquiry #linkRight .suppliers-cont table td.title2 {
+        width:20%;
+    }
+    .m-trading_enquiry #linkRight .suppliers-cont table td.check {
+        width:5%;
+    }
+
+
+    .m-trading_enquiry .linkPortalWrapper .callbackWrapper .quote-req-cont {
+        display: none;
+    }
+    .m-trading_enquiry .linkPortalWrapper .callbackWrapper .showHide {
+        width: 15px;
+        height: 15px;
+        margin-left: -25px;
+        float: left;
+        background: transparent url(/cmspilotv295/admin/images/icons/arrow_right.png) no-repeat center center;
+        cursor: pointer;
+    }
+    .m-trading_enquiry .linkPortalWrapper .callbackWrapper .showHide a {
+        display: block;
+    }
+    .m-trading_enquiry .linkPortalWrapper .callbackWrapper .arrowDown {
+        background: transparent url(/cmspilotv295/admin/images/icons/arrow_down.png) no-repeat center center;
+    }
+}

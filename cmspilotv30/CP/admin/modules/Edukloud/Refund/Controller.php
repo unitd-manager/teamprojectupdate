@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Edukloud_Refund_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

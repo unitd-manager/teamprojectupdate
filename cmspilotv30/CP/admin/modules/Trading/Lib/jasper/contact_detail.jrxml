@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_header_address" pageWidth="290" pageHeight="65" orientation="Landscape" columnWidth="290" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="113"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="DIR_MG_LIB" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="DIR_IMAGES" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["../../../../../../../../qingdao/httpdocs/admin/images/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="contact_id" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(1)]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT DISTINCT
+       CONCAT_WS(' ', c.first_name, c.last_name) AS name
+      ,c.email
+      ,TRIM(CONCAT_WS(' ',
+            c.phone_country_code,
+            c.phone_area_code,
+            c.phone)
+       ) AS phone
+      ,TRIM(CONCAT_WS(' ',
+            c.mobile_country_code,
+            c.mobile_area_code,
+            c.mobile)
+       ) AS mobile
+FROM contact c
+WHERE c.contact_id = $P{contact_id}]]>
+	</queryString>
+	<field name="name" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="phone" class="java.lang.String"/>
+	<field name="mobile" class="java.lang.String"/>
+	<variable name="name" class="java.lang.String" resetType="None">
+		<variableExpression><![CDATA[$F{name}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="14" width="76" height="14" isRemoveLineWhenBlank="true" backcolor="#DCDDD9">
+					<printWhenExpression><![CDATA[new Boolean( !($F{name}.trim().isEmpty() || $F{name} == null) )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Contact]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement positionType="Float" x="76" y="28" width="194" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="76" y="0" width="194" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="76" y="42" width="194" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mobile}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="28" width="76" height="14" isRemoveLineWhenBlank="true" backcolor="#DCDDD9">
+					<printWhenExpression><![CDATA[new Boolean( !($F{phone}.trim().isEmpty() || $F{phone} == null) )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Tel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="42" width="76" height="14" isRemoveLineWhenBlank="true" backcolor="#DCDDD9">
+					<printWhenExpression><![CDATA[new Boolean( !($F{mobile}.trim().isEmpty() || $F{mobile} == null) )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="76" height="14" isRemoveLineWhenBlank="true" backcolor="#DCDDD9">
+					<printWhenExpression><![CDATA[new Boolean( !($F{email}.trim().isEmpty() || $F{email} == null) )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="76" y="14" width="194" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Prevent"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

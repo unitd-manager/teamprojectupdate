@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+.m-enggCrm_reports #reportsList {
+    background: #F5F5F5;
+    padding:15px;
+}
+
+.m-enggCrm_reports #reportsList .subcr{
+    margin-right: 0;
+}
+
+.m-enggCrm_reports #reportsList a.button {
+    width:75%;
+    font-size: 17px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.m-enggCrm_reports .report-wrapper h1 {
+    text-shadow: 1px 1px 2px #665D5D;
+    filter: dropshadow(color=#665D5D, offx=1, offy=1);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.m-enggCrm_reports table.search td select{
+    width: 250px;
+    max-width: 300px;
+    font-size: 1.2em;
+}
+
+.m-enggCrm_reports table.search td select.agmYearFilter,
+.m-enggCrm_reports table.search td select.searchBy,
+.m-enggCrm_reports table.search td select.agmMonthFilter {
+    width: 150px;
+    margin-right: 5px;
+}
+
+.m-enggCrm_reports table.search td input.keyword {
+    width: 150px;
+    margin-right: 5px;
+    height: 22px;
+}
+
+#reportSearchPanel {
+    background: #ccc;
+    padding: 5px;
+    display: none;
+    margin: 5px 0 5px 0;
+    overflow: hidden;
+}
+
+#reportSearchPanel table {
+    float: right;
+}
+
+optgroup option {
+    background: #fff;
+    padding-left: 10px;
+}
+
+.m-enggCrm_reports .actBtns {
+}
+
+#chart_div {
+    min-height: 400px;
+}
+
+
+.exportLink{
+    position: absolute;
+    top: 43px;
+    left: 10px;
+}
+
+.w-project-salesByMonthReports .projectAmt {
+    cursor: pointer;
+    text-decoration: underline;
+    width: 580px;
+}
+
+.w-project-salesByMonthReports .projectDueAmt {
+    width: 510px;
+}
+
+.w-project-salesByMonthReports .projectDetails {
+    display: none;
+}
+
+.w-project-salesByMonthReports .projectMonth {
+    width: 162px;
+}
+
+.w-project-salesByMonthReports .projectTitle {
+    width: 775px;
+}
+
+.w-project-salesByMonthReports .projectAmtDetail {
+    width: 235px;
+}
+
+.w-project-salesByMonthReports .projectDueAmtDetail {
+    width: 230px;
+}
+
+.w-enggCrm-opportunityQuotation .quoteVal {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.w-enggCrm-opportunityQuotation .quoteDetails {
+    display: none;
+}
+
+.w-enggCrm-employeeReport .employeeVal {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.w-enggCrm-employeeReport .employeeDetails {
+    display: none;
+}
+
+.w-enggCrm-employeeReport .employeehrsVal {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.w-enggCrm-employeeReport .employeehrsDetails {
+    display: none;
+}

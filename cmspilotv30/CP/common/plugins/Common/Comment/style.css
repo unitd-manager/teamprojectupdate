@@ -1,0 +1,156 @@
+@charset "UTF-8";
+/************** COMMENTS ******/
+@media all
+{
+    #commentForm {
+        display: none;
+    }
+
+    #commentsList {
+        padding:5px;
+    }
+
+    #commentsList ul{
+        margin:0;
+        padding:5px 0;
+        list-style:none;
+        border-top:2px solid #EEEEEE;
+    }
+
+    #commentsList ul .row{
+        margin:0;
+    }
+
+    #commentsList ul h5{
+        margin:0;
+        font-size:1em;
+    }
+
+    #commentsList ul h5.name {
+        float: left;
+        margin-right: 5px;
+    }
+
+    #commentsList ul .date {
+        float: left;
+        font-size:0.9em;
+        font-style:italic;
+        color: #ccc;
+    }
+
+    #commentsList ul li{
+        margin:0 0 5px 0;
+        padding:0 0 0 0;
+        background:transparent;
+        border-bottom:1px dashed #ccc;
+        list-style:none;
+    }
+
+    #commentForm div.type-text textarea { height: 40px;}
+
+
+    #commentsList .headerRow {
+        overflow: hidden;
+        margin-bottom: 5px;
+    }
+
+    #commentsList ul li .withPic {
+        overflow: hidden;
+    }
+
+    #commentsList ul li .withPic .pic {
+        float: left;
+        width: 18%;
+        margin-right: 2%;
+    }
+
+    #commentsList ul li .withPic .pic img {
+        display: block;
+        margin: auto;
+        max-width: 64px;
+    }
+
+    #commentsList ul li .withPic .txt {
+        float: right;
+        width: 80%;
+        position: relative;
+    }
+
+    #commentForm.loginRequiredText {
+        margin-bottom: 15px;
+    }
+
+    #commentForm .rating-hover-tips {
+        margin: 8px 0 0 15px;
+        display: block;
+        float: left;
+    }
+
+    .p-common-comment .header .countWrapper {
+        float: left;
+    }
+
+    .p-common-comment .header .countWrapper {
+        float: right;
+    }
+
+    #commentsList .commentPics {
+        overflow: hidden;
+    }
+
+    #commentsList .commentPics .thumb {
+        width: 90px;
+        height: 90px;
+        margin: 0 5px 5px 0;
+        float: left;
+        overflow: hidden;
+        line-height: 90px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding:3px;
+        text-align: center;
+    }
+
+    #commentsList .commentPics .thumb a {
+        text-align: center;
+        line-height: 90px;
+        width: 90px;
+        height: 90px;
+    }
+    
+    #commentsList .commentPics .thumb img {
+        max-width: 85px;
+        max-height: 85px;
+        vertical-align: middle;
+        display: block;
+        margin: auto;
+        vertical-align: middle;
+    }
+    
+    #commentsList .reportAbuse {
+        float: right;
+    }
+}
+
+@media all
+{
+    .rating-static {
+        width: 60px;
+        height: 16px;
+        display: block;
+        background: url('images/star-rating.png') 0 0 no-repeat;
+    }
+
+    .rating-50 { background-position: 0 0; }
+    .rating-40 { background-position: -12px 0; }
+    .rating-30 { background-position: -24px 0; }
+    .rating-20 { background-position: -36px 0; }
+    .rating-10 { background-position: -48px 0; }
+    .rating-0 { background-position: -60px 0; }
+     
+    .rating-5  { background-position: -48px -16px; }
+    .rating-15 { background-position: -36px -16px; }
+    .rating-25 { background-position: -24px -16px; }
+    .rating-35 { background-position: -12px -16px; }
+    .rating-45 { background-position: 0 -16px; }
+}

@@ -1,0 +1,4 @@
+<?
+class CP_Admin_Modules_Directory_BusinessContactLink_Model extends CP_Common_Lib_ModuleLinkModelAbstract
+{
+}

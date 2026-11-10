@@ -1,0 +1,338 @@
+@charset "UTF-8";
+
+@media all
+{
+    .ui-tabs .ui-tabs-panel {
+        padding: 1em 0.4em !important;
+    }
+
+    .tabView .rightPanelHeading {
+        background: transparent !important;
+    }
+
+    #tabs .ui-state-default,
+    #tabs .ui-widget-content .ui-state-default,
+    #tabs .ui-widget-header .ui-state-default {
+        /*border: 1px solid #ed7f1f !important;*/
+        border: 1px solid #00b526 !important;
+    }
+
+    #editInvoicePortalForm {
+		overflow-x: scroll;
+	  }
+
+    #tabs .ui-state-default
+    ,#tabs .ui-widget-content .ui-state-default
+    ,#tabs .ui-widget-header .ui-state-default {
+        /*background: #ed7f1f !important;*/
+        background: #00b526 !important;
+    }
+
+    .ui-tabs .ui-tabs-nav {
+        padding: .2em .2em 0;
+        /*border-bottom: 1px solid #ed7f1f !important;*/
+        border-bottom: 1px solid #00b526 !important;
+    }
+
+    .ui-tabs .ui-tabs-nav li {
+        margin: 1px 10px 0 0 !important;
+    }
+
+     #tabs .ui-state-active
+    ,#tabs .ui-widget-content .ui-state-active
+    ,#tabs .ui-widget-header .ui-state-active {
+        background: #ffffff !important;
+        /*border: 1px solid #ed7f1f;*/
+        border: 1px solid #00b526;
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+
+    .ui-tabs .ui-tabs-nav li.ui-tabs-active {
+        padding-bottom: 0px !important;
+    }
+
+    .dropdown-item.tabButtonLi:hover,
+    .dropdown-item.tabButtonLi:focus {
+        color: #000 !important;
+        background: #FFF !important;
+    }
+
+    div[role="tabpanel"] {
+        overflow-x: scroll;
+    }
+
+    .editQuote .highlight {
+        background-color: #ED7F1F;
+        color: #fff;
+        border: 1px solid red;
+    }
+
+    .row_error_box1 {
+        display: none;
+    }
+
+    .row_error_box1.error {
+        display: block !important;
+    }
+
+    a.deleteLineItem,
+    a.addMultipleLineItem {
+        cursor: pointer;
+    }
+
+    .creationModificationQuote,
+    .creationModificationMU,
+    .transferPo {
+        cursor: pointer;
+    }
+
+    .quoteLineItemsOverallTotal,
+    .totalInvoiceAmountLabel {
+        float: right;
+        margin-top: 8px;
+        margin-right: 4px;
+    }
+
+    .quoteLineItemsOverallTotal .quoteLineItemsOverallTotalAmount,
+    .totalInvoiceAmountLabel .totalInvoiceAmount {
+        font-size: 18px;
+    }
+
+    .quoteLineItemsOverallTotal,
+    .totalInvoiceAmountLabel {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .quoteLayoutHide {
+        display: none;
+    }
+
+    input.overallDiscount {
+        width: 100px !important;
+        padding: 4px !important;
+        margin-left: 5px !important;
+        margin-top: 5px !important;
+    }
+
+    .emptyTd {
+        background: #FFF !important;
+    }
+
+
+    .editQuote.ym-columnar .ym-fbox-text label,
+    .editQuote.columnar .type-text label,
+    .editQuote.ym-columnar .ym-fbox-select label,
+    .editQuote.columnar .type-select label {
+        width: 100% !important;
+    }
+
+    .editQuote.ym-columnar div.ym-fbox-text input.text,
+    .editQuote.columnar div.type-text input.text,
+    .editQuote.ym-columnar div.ym-fbox-text textarea,
+    .editQuote.columnar div.type-text textarea {
+        width: 95% !important;
+    }
+
+    #frmEdit div.ym-fbox-text textarea,
+    #frmEdit div.type-text textarea {
+        width: 100% !important;
+    }
+
+    .row.hideMoreOpportunityCostingDetails {
+        display: none;
+    }
+
+    #opportunityCostingSummaryForm {
+        padding: 0px;
+        border: none !important;
+    }
+
+    .opportunityCostingSummaryForm .costingSummaryQuantity {
+        width: 55px !important;
+    }
+
+    .opportunityCostingSummaryForm .clearOpportunityCostingSummary {
+        cursor: pointer !important;
+        text-decoration: underline !important;
+    }
+
+    .opportunityCostingSummaryForm .costingSummaryUnit {
+        width: 40px !important;
+    }
+
+    .opportunityCostingSummaryForm .poProductTitle,
+    .opportunityCostingSummaryForm .subConTitle{
+        width: 160px !important;
+        padding: 4px 2px 2px 2px !important;
+    }
+
+    .opportunityCostingSummaryForm .costingSummaryAmount {
+        width: 95px !important;
+    }
+
+    .opportunityCostingSummaryForm .costingSummarySupplier {
+        width: 100px !important;
+    }
+
+    .opportunityCostingSummaryForm .costingSummaryUnitPrice {
+        width: 70px !important;
+    }
+
+    .opportunityCostingSummaryForm .addNewProductProductPopup,
+    .opportunityCostingSummaryForm .addNewSupplierPopup {
+        color: #4169E1 !important;
+        text-decoration: underline !important;
+        margin-left: 20px;
+    }
+
+    .columnar.opportunityCostingSummaryForm .type-text label {
+        width: 100%;
+    }
+
+    .opportunityCostingSummaryForm .type-text.ym-fbox-text.row_transport_charges.editable > label {
+        font-weight: normal;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .opportunityCostingSummaryForm .type-text.ym-fbox-text.row_total_cost.editable > label {
+        font-weight: bold;
+    }
+
+    @media (max-width: 767px) {
+        #frmEdit .type-text.ym-fbox-text.editable input,
+        #frmEdit .type-select.ym-fbox-select select {
+            width: 100% !important;
+        }
+
+        table.cpSearch td, table.cpSearch th {
+            float: left;
+        }
+
+        /*.m-enggCrm_opportunity.v-list table#bodyList { 
+          width: 100% !important; 
+          border-collapse: collapse; 
+        }
+
+        .m-enggCrm_opportunity.v-list table#bodyList td {
+            width: 100% !important;
+        }
+
+        .m-enggCrm_opportunity.v-list table#bodyList td div[align="center"] {
+            text-align: left;
+        }
+
+        .m-enggCrm_opportunity.v-list table#bodyList tr:nth-of-type(odd) { 
+          background: #eee; 
+        }
+
+        .m-enggCrm_opportunity.v-list table#bodyList th { 
+          background: #333; 
+          color: white; 
+          font-weight: bold; 
+        }
+
+        .m-enggCrm_opportunity.v-list table#bodyList td,
+        .m-enggCrm_opportunity.v-list table#bodyList th { 
+          padding: 6px; 
+          border: 1px solid #d8d8d8 !important; 
+          text-align: left; 
+        }
+
+        .m-enggCrm_opportunity.v-list table,
+        .m-enggCrm_opportunity.v-list thead,
+        .m-enggCrm_opportunity.v-list tbody,
+        .m-enggCrm_opportunity.v-list th,
+        .m-enggCrm_opportunity.v-list td,
+        .m-enggCrm_opportunity.v-list tr { 
+            display: block; 
+        }
+        
+        .m-enggCrm_opportunity.v-list table#bodyList thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        .m-enggCrm_opportunity.v-list table#bodyList tr { border: 1px solid #d8d8d8; }
+        
+        .m-enggCrm_opportunity.v-list table#bodyList td { 
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            padding-left: 50%; 
+            display: block;
+            overflow: visible;
+            min-height: 35px;
+        }
+        
+        .m-enggCrm_opportunity.v-list table#bodyList td:before { 
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 45%; 
+            padding-right: 10px; 
+            white-space: nowrap;
+        }
+
+        .m-enggCrm_opportunity.v-list table#bodyList td:nth-of-type(1):before { content: "S.No"; font-weight: bold; }
+        .m-enggCrm_opportunity.v-list table#bodyList td:nth-of-type(2):before { content: "Edit"; font-weight: bold; }
+        .m-enggCrm_opportunity.v-list table#bodyList td:nth-of-type(3):before { content: "Flag"; font-weight: bold; }
+        .m-enggCrm_opportunity.v-list table#bodyList td:nth-of-type(4):before { content: "Code"; font-weight: bold; }
+        .m-enggCrm_opportunity.v-list table#bodyList td:nth-of-type(5):before { content: "Project"; font-weight: bold; }
+        .m-enggCrm_opportunity.v-list table#bodyList td:nth-of-type(6):before { content: "Office Ref No"; font-weight: bold; }
+        .m-enggCrm_opportunity.v-list table#bodyList td:nth-of-type(7):before { content: "Main Con"; font-weight: bold; }
+        .m-enggCrm_opportunity.v-list table#bodyList td:nth-of-type(8):before { content: "Actual Closing"; font-weight: bold; }
+        .m-enggCrm_opportunity.v-list table#bodyList td:nth-of-type(9):before { content: "Status"; font-weight: bold; }
+        */
+    }
+}
+@media all
+{
+    .m-enggCrm_renewal .toggle {
+        display:block;
+    }
+
+    .m-enggCrm_renewal .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-enggCrm_renewal .c50l,
+    .m-enggCrm_renewal .c50r {
+        width: 100%;
+    }
+
+    .m-enggCrm_renewal .ym-columnar .ym-fbox-text label,
+    .m-enggCrm_renewal .ym-columnar .ym-fbox-select label,
+    .m-enggCrm_renewal #frmEdit .type-text label,
+    .m-enggCrm_renewal #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-enggCrm_renewal #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+   
+    .m-enggCrm_renewal  .linkPortalWrapper div.header,
+    .m-enggCrm_renewal  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .m-enggCrm_renewal table .thinlist tr.highlight-row {
+        background-color: #1dc696;
+    }
+
+    .yform.edit .type-text div.txt {
+        margin-left: 0% !important;
+    }
+    
+    a.addActualCharge,
+    a.addService,
+    a.addRenewalDate {
+        cursor: pointer;
+    }
+}

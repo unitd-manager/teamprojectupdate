@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+@media all
+{
+    /*--- Links ----------------------------------------------------------------------------------------- */
+    a {color: #4D87C7; background:transparent; text-decoration:none; outline: none;}
+    a:visited  {color: #4D87C7; }
+    
+    a:focus,
+    a:hover,
+    a:active {color:#182E7A; text-decoration:underline; }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Oswald', arial, serif;
+    }
+    
+    #header {
+        color: #000;
+        background:transparent url('/www/images/logo.png') no-repeat scroll 10px 10px;
+        padding: 0;
+        height:120px;
+    }
+
+    #logo {
+        display:block;
+        width:100px;
+        height:110px;
+        position:absolute;
+        top:0;
+        left:0;
+        outline: none;
+    }
+
+    .ui-widget {
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 1em;
+    }    
+
+    #main {
+        /*
+        box-shadow: 0 0 100px #000000;
+        behavior: url('/cmspilotv30/library/jss/pie/v1.0/PIE.htc');
+        */
+    }
+}
+
+@media all
+{
+    .hlist {
+        background:#c0c0c0;
+    }
+    
+    .hlist ul li a {
+        background:#eee; 
+        color:#333; 
+    }
+    
+    .hlist ul li.active {
+        background:#272727;
+    }
+    
+    .hlist ul li.active a{ 
+        background:transparent; 
+        color:#fff; 
+        text-decoration:none;
+    }
+}
+
+@media all
+{
+    .rt-home #main {padding:0;}
+    .rt-home #col3_content {padding:0;}
+    .rt-home .content {
+        padding: 15px;
+    }
+}
+
+
+/******************* FULL WIDTH ITEMS ********************/
+@media all
+{
+    body.cpFullWidth {
+        background: #dbdcde; /** mainly for footer **/
+    }
+
+    .cpFullWidth .page_margins {
+        background: transparent;
+    }
+
+    .cpFullWidth #header {
+        background:#fff url('images/wave3header.jpg') no-repeat scroll 0 0;
+    }
+
+    .cpFullWidth #header .page_margins {
+        background:transparent url('/www/images/logo.png') no-repeat scroll 0 10px;
+        height: 110px;
+    }
+    
+    .cpFullWidth #nav {
+        background:#d2d2d2;
+    }
+    
+    .cpFullWidth #extended {
+        background:#f3f3f3;
+    }
+
+    .cpFullWidth #footer {
+        background: transparent;
+    }
+    
+    .cpFullWidth #extended .extendedInner{
+        padding: 15px 0;
+    }
+}

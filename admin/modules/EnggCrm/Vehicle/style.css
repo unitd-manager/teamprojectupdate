@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-enggCrm_vehicle .toggle {
+        display:block;
+    }
+
+    .m-enggCrm_vehicle .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-enggCrm_vehicle .c50l,
+    .m-enggCrm_vehicle .c50r {
+        width: 100%;
+    }
+
+    .m-enggCrm_vehicle .ym-columnar .ym-fbox-text label,
+    .m-enggCrm_vehicle .ym-columnar .ym-fbox-select label,
+    .m-enggCrm_vehicle #frmEdit .type-text label,
+    .m-enggCrm_vehicle #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-enggCrm_vehicle #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+   
+    .m-enggCrm_vehicle  .linkPortalWrapper div.header,
+    .m-enggCrm_vehicle  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .yform.edit .type-text div.txt {
+        margin-left: 0% !important;
+    }
+    
+    a.addActualCharge,
+    a.addService,
+    a.addRenewalDate {
+        cursor: pointer;
+    }
+}

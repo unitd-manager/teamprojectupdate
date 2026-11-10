@@ -1,0 +1,16 @@
+/*************** SELECT / OPTIONS ************/
+@media all
+{
+    option.level1 {
+        background: #ccc;
+        font-style: italic;
+    }
+
+    option.level2 {
+        margin-left:15px;
+    }
+
+    option.level3 {
+        margin-left:30px;
+    }
+}

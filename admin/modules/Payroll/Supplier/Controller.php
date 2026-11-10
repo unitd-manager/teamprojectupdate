@@ -1,0 +1,4 @@
+<?
+class CPL_Admin_Modules_Payroll_Supplier_Controller extends CP_Common_Lib_ModuleControllerAbstract
+{
+}

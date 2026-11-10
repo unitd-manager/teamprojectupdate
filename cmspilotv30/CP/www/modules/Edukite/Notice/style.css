@@ -1,0 +1,534 @@
+@charset "UTF-8";
+
+/*************** NOTICE LIST PAGE *********************/
+@media all
+{
+
+	.m-edukite_notice .navPanel .template {
+        border: 1px solid red;
+        float:left;
+	}
+
+	.m-edukite_notice .navPanel .cpSearch {
+		margin: 0 0 0 5px;
+	    width: 375px;
+	}
+
+    table.list thead a {
+        color: #000000;
+    }
+    .m-edukite_notice .noticeList table.list td {
+        border-top: 1px solid #CFCEC9;
+        background-color: #FFFFF7;
+    }
+
+    .m-edukite_notice .noticeList table.list th {
+        vertical-align: top;
+        word-wrap: break-word;
+        border-bottom: 3px solid #BCBCBC;
+    }
+
+    .m-edukite_notice.v-new .yform {
+        width: 375px;
+        border: 1px solid #333333;
+        padding: 10px 0 0 10px;
+        min-height: 200px;
+    }
+
+    .m-edukite_notice .noticeType {
+        border: 1px solid #9BBADD;
+        width: 371px;
+        padding: 25px 0 0 12px;
+        text-align: center;
+        height: 320px;
+        margin: 0 0 0 1px;
+        background: #EBEBEB;
+    }
+
+    .m-edukite_notice .noticeType .noticeTypeBg a {
+        background: url("/cmspilotv30/CP/www/themes/Manager/images/notice-type-bg.png") no-repeat scroll 0 0 transparent;
+        width: 100px;
+        height: 215px;
+        display: block;
+        padding: 0 3px;
+    }
+
+    .m-edukite_notice .noticeType .noticeTypeBg a:hover {
+        background: url("/cmspilotv30/CP/www/themes/Manager/images/notice-type-bg-active.png") no-repeat scroll 0 0 transparent;
+        width: 100px;
+        height: 215px;
+        display: block;
+        padding: 0 3px;
+    }
+
+    .m-edukite_notice .noticeType .noticeTypeSmallBg a {
+        background: url("/cmspilotv30/CP/www/themes/Manager/images/notice_type_small.png") no-repeat scroll 0 0 transparent;
+        width: 99px;
+        height: 106px;
+        display: block;
+        padding: 0 3px;
+    }
+
+    .m-edukite_notice .noticeType .noticeTypeSmallBg a:hover {
+        background: url("/cmspilotv30/CP/www/themes/Manager/images/notice_type_small_active.png") no-repeat scroll 0 0 transparent;
+        width: 99px;
+        height: 106px;
+        display: block;
+        padding: 0 3px;
+    }
+
+    .m-edukite_notice .noticeType .news {
+        margin-top: 3px;
+    }
+
+    .m-edukite_notice .noticeType .noticeTypeBg span{
+        position: relative;
+        top: 135px;
+        font-size: 18px;
+        color: #000;
+        text-align: center;
+
+    }
+
+    .m-edukite_notice .noticeType .noticeTypeSmallBg span {
+        position: relative;
+        top: 56px;
+        font-size: 18px;
+        color: #000;
+        text-align: center;
+
+    }
+
+    .m-edukite_notice .noticeType .noticeTypeBg {
+        margin: 0 0 0 10px;
+    }
+
+    .m-edukite_notice .noticeType .leftNotice {
+        margin: 0 0 0 10px;
+        float:left;
+    }
+
+    /*.m-edukite_notice .noticeType img {
+        padding: 0 0 3px 0;
+    }*/
+
+    .m-edukite_notice.v-noticeOptions #col1 {
+        display: none;
+    }
+
+    .m-edukite_notice .notice,
+    .m-edukite_notice .locker,
+    .m-edukite_notice .kitePost,
+    .m-edukite_notice .gallery,
+    .m-edukite_notice .dailyDiary {
+        float: left;
+    }
+
+    .m-edukite_notice.v-new #col1,
+    .m-edukite_notice.v-new #col2 {
+        display: block;
+    }
+
+    .m-edukite_notice .ddFilter {
+        width: 387px;
+        margin: 10px 0 0 12px;
+    }
+
+    .m-edukite_notice .ddFilter select {
+        width: 156px;
+        height: 21px;
+        border: 0;
+    }
+
+    .m-edukite_notice .ddFilter .float_left {
+        margin-right: 6px;
+    }
+
+    .m-edukite_notice .cpSearch div input[type="text"] {
+        margin: 16px 0 0 20px;
+    }
+
+    .m-edukite_notice .cpSearch div input[type="submit"] {
+        margin: 6px 0 0 0;
+    }
+
+    .m-edukite_notice table.list td div {
+        word-wrap: break-word;
+    }
+
+    .m-edukite_notice table.list .category{
+        word-wrap: break-word;
+        color:#000;
+        font-style: italic;
+        font-size: 10px;
+    }
+
+    .v-noticeOptions #nav2 {
+        background: url("/cmspilotv30/CP/www/themes/Manager/images/blank-panel.png") no-repeat scroll 0 0 transparent;
+        width: 388px;
+        height: 96px;
+        margin-top: 1px;
+    }
+
+    .m-edukite_notice.v-list .noticeList .teacherName {
+        font-style: italic;
+        font-weight: normal;
+        font-size: 10px;
+    }
+
+	.m-edukite_notice .noticeAchievement {
+		right:294px;
+		position:absolute;
+	}
+
+	.m-edukite_notice .noticeAchievementStudentPanelLink {
+		right:55px;
+		position:absolute;
+	}
+
+
+}
+
+/*************** NOTICE EDIT PAGE *********************/
+@media all
+{
+
+    .m-edukite_notice #fld_description {
+        min-height: 200px;
+    }
+
+    .m-edukite_notice .filter {
+        width: 345px;
+        position: absolute;
+        left: 284px;
+        top: 264px;
+    }
+
+    .m-edukite_notice .taskLinkBtn {
+        width: 155px;
+        position: absolute;
+        left: 458px;
+        top: 269px;
+    }
+
+	.m-edukite_notice .emailAlert{
+        width: 96px;
+        position: absolute;
+        left: 540px;
+        top: 304px;
+	}
+
+	.m-edukite_notice .kiteChat {
+        width: 96px;
+        position: absolute;
+        left: 540px;
+        top: 337px;
+	}
+
+    .m-edukite_notice .teacherKiteChat {
+        width: 96px;
+        position: absolute;
+        left: 540px;
+        top: 369px;
+    }
+
+    .m-edukite_notice .homeworkChat {
+        width: 210px;
+        position: absolute;
+        left: 265px;
+        top: 369px;
+    }
+
+    .homeworkChat .home_Work{
+        width:80px;
+    }
+
+	.m-edukite_notice .row_parent_email_sent .leftCol {
+        width: 44% !important;
+	}
+
+	.m-edukite_notice .row_kite_chat {
+        border: 1px solid #333333;
+        padding: 5px;
+        width: 153px;
+	}
+
+    .m-edukite_notice .launchNow {
+        background: url("/cmspilotv30/CP/www/themes/Manager/images/launch-kite-bg.png") no-repeat scroll 0 0 transparent;
+        width: 387px;
+        height: 42px;
+    }
+
+    .m-edukite_notice .launchNow .text {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .m-edukite_notice .launchNow img {
+        position: absolute;
+        top: 217px;
+        left: 271px;
+    }
+
+    .m-edukite_notice .row_launch_date {
+        left: 331px;
+        position: absolute;
+        top: 296px;
+        width: 114px;
+    }
+
+    .m-edukite_notice .row_launch_date {
+        left: 338px;
+        position: absolute;
+        top: 297px;
+        width: 114px;
+        height: 22px;
+    }
+
+    .m-edukite_notice .row_launch_date img {
+        position:absolute;
+        top: 4px;
+        right: 1px;
+        cursor: pointer;
+    }
+
+    .m-edukite_notice .row_launch_date input {
+        border: 0;
+    }
+
+    .m-edukite_notice .row_activity_date {
+        position: absolute;
+        top: 255px;
+        left: 374px;
+        width: 195px;
+    }
+
+    .m-edukite_notice .row_activity_date img {
+        position:relative;
+        top:11px;
+        right: 24px;
+        cursor: pointer;
+    }
+
+    .m-edukite_notice .row_expiry_date {
+        position: absolute;
+        top: 324px;
+        left: 337px;
+        width: 114px;
+        height: 29px;
+    }
+
+    .m-edukite_notice .row_expiry_date img {
+        position: absolute;
+        top: 10px;
+        left: 92px;
+        cursor: pointer;
+    }
+
+    .m-edukite_notice #fld_description {
+        min-height: 200px;
+    }
+
+    .m-edukite_notice #media__edukite_notice__attachment {
+        width: 360px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        background: #fff;
+    }
+
+    .m-edukite_notice .bodyPanel #frmEdit .textAreaDiv label {
+        float: none;
+    }
+
+    .m-edukite_notice .row_parent_email_sent input {
+        display: none;
+    }
+
+    .m-edukite_notice .row_notice_type_id label,
+    .m-edukite_notice .row_subject_id label {
+        display: none;
+    }
+
+    .m-edukite_notice .row_subject_id {
+        border-radius: 0;
+    }
+
+    .m-edukite_notice .row_notice_type_id select {
+        border-radius: 0;
+        margin: 0 0 0 6px
+    }
+
+    .ym-columnar div.ym-fbox-select.row_notice_type_id select,
+    .columnar div.type-select.row_notice_type_id select,
+    .ym-columnar div.ym-fbox-select.row_subject_id select,
+    .columnar div.type-select.row_subject_id select {
+        border: 0;
+        width: 157px;
+        height: 22px;
+    }
+
+    .m-edukite_notice .onOff {
+        padding: 10px 0 10px 4px;
+        border-bottom: 3px solid #A1A1A1;
+        width: 378px;
+    }
+
+    .m-edukite_notice .onOff .float_left {
+        margin-right: 3px;
+    }
+
+    .m-edukite_notice.v-edit .row_description {
+        width: 360px;
+        margin-top: 10px;
+    }
+
+    .m-edukite_notice.v-edit #fld_youtube_links {
+        width: 351px !important;
+    }
+
+    .m-edukite_notice.v-edit .yform fieldset {
+        width: 375px;
+        padding: 0 0 0 10px;
+        min-height: 200px;
+        border: 1px solid #9BBADD;
+        background: #EBEBEB;
+        margin: 1px 0 0 0;
+    }
+
+    .m-edukite_notice.v-edit .row_expiry_date input,
+    .m-edukite_notice.v-edit .row_launch_date input,
+    .m-edukite_notice.v-edit .row_activity_date input {
+        border: 1px solid #EBEBEB;
+    }
+
+    .m-edukite_notice.v-edit .row_activity_date input {
+        width: 147px !important;
+    }
+
+    .m-edukite_notice.v-edit .ym-form div.ym-fbox-text input,
+    .m-edukite_notice.v-edit .yform div.type-text input {
+        margin-top: 3px;
+        padding: 0.25em 3px;
+        width: 348px;
+    }
+
+    .m-edukite_notice.v-edit .ym-columnar .row_activity_date label,
+    .m-edukite_notice.v-edit .columnar .row_activity_date label {
+        width: 81% !important;
+    }
+
+    .m-edukite_notice.v-edit .ym-columnar .row_launch_date label,
+    .m-edukite_notice.v-edit .columnar .row_launch_date label {
+        width: 0% !important;
+    }
+
+    .m-edukite_notice.v-edit .ym-columnar .ym-fbox-text label,
+    .m-edukite_notice.v-edit .columnar .type-text label,
+    .m-edukite_notice.v-edit .ym-columnar .ym-fbox-select label,
+    .m-edukite_notice.v-edit .columnar .type-select label {
+        width: 45%;
+    }
+
+    .m-edukite_notice .bodyPanel #frmEdit .textAreaDiv textarea,
+    .m-edukite_notice .bodyPanel #frmEdit .row_links textarea {
+        width: 352px;
+        font-weight:normal;
+        min-height: 100px;
+    }
+
+    .m-edukite_notice.v-edit .row_links label {
+        margin-bottom: 5px;
+    }
+
+    .m-edukite_notice.v-edit .yform fieldset label {
+        color: #2B2B2B;
+    }
+
+    .m-edukite_notice.v-edit .centerPanel {
+        margin: 4px 0 0 0;
+    }
+
+    .yform.edit .type-text div.txt {
+        margin-left: 10%;
+    }
+
+    .yform.edit .type-text.row_description div.txt {
+        max-height: 105px;
+        overflow: auto;
+        margin-left: 0%;
+        border: 1px solid #000000;
+        padding: 5px;
+    }
+
+    .m-edukite_notice.v-edit .row_teacher_id {
+        margin: 10px 0 0 0;
+    }
+
+    .m-edukite_notice.v-edit .row_teacher_id label {
+        width: 35% !important;
+    }
+
+    .m-edukite_notice.v-edit .row_teacher_id span {
+        margin: 5px 0 0 0;
+        font-style: italic;
+    }
+
+    .m-edukite_notice.v-edit .ym-form .formFieldNotesRight,
+    .yform .formFieldNotesRight {
+        float: right;
+        margin: 0 10px 0 5px;
+    }
+
+    .tdbg{
+        background-color: #BCCEAD;
+        font-weight: bold;
+    }
+
+    .achievementListView table tr.subCategoryTitle{
+        font-size:11px;
+    }
+    .outcomesNote {
+        color:blue;
+        border-top: 2px solid #000000;
+        border-bottom: 2px solid #000000;
+        border-left: 1px solid #000000;
+        border-right: 1px solid #000000;
+        font-size: 11px;
+    }
+
+    .achSubHeadWidth{
+        width: 9%;
+    }
+
+    .achSubHeadTitleWidth{
+        width: 84%;
+    }
+
+    .noty_text {
+        display: block;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    #noty_topCenter_layout_container{
+        top: 170px !important;
+    }
+
+    /*#noty_topCenter_layout_container li {
+        background-color: #FFA500 !important;
+        border-color: #FFA500 !important;
+        color: #3F3F3F !important;
+    }*/
+
+    .headRedColor {
+        color:#C8024C;
+        font-size: 10px;
+        padding-left: 0 !important;
+    }
+
+    .headBlueColor {
+        color:#387ABE;
+        font-size: 10px;
+        padding-right: 0 !important;
+    }
+}

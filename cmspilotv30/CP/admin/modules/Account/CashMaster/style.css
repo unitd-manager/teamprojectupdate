@@ -1,0 +1,123 @@
+.m-account_cashMaster #col3 .c50l {
+    width: 70%;
+}
+
+.m-account_cashMaster #col3 c50r {
+    width: 0;
+}
+.m-account_cashMaster .v-list #col2 {
+    display: block;
+}
+
+.m-account_cashMaster #col2 .stock-list {
+    font-size: 11px;
+}
+.m-account_cashMaster #col2 .stock-list .stock,
+.m-account_cashMaster #col2 .stock-list .buy-rate,
+.m-account_cashMaster #col2 .stock-list .stock-rate
+{
+    text-align: right;
+}
+
+form fieldset legend {
+    padding: 0 0 0 32px;
+    vertical-align: middle;
+    line-height: 32px;
+}
+.yform .row_acc_head_id_customer {
+    overflow: visible !important;
+}
+.yform .row_acc_head_id_customer div {
+    display: inline-block;
+}
+
+.m-account_cashMaster #entry .account { width: auto; }
+.m-account_cashMaster #entry .amount { width: 13%; }
+.m-account_cashMaster #entry .exch_rate { width: 13%; }
+.m-account_cashMaster #entry .amount_base { width: 13%; }
+.m-account_cashMaster #entry .narration { width: 30%; }
+.m-account_cashMaster #entry .delete { width: 4%; }
+
+.m-account_cashMaster #entry .fld-account { width: 98%; }
+.m-account_cashMaster #entry .fld-amount { width: 98%; text-align: right;}
+.m-account_cashMaster #entry .fld-exch_rate { width: 96%; text-align: right;}
+.m-account_cashMaster #entry .fld-amount_base { width: 96%; background-color: transparent;}
+.m-account_cashMaster #entry .fld-amount_base_sum { width: 96%; text-align: right; background-color: transparent;}
+.m-account_cashMaster #entry .fld-narration { width: 96%;}
+
+.m-account_cashMaster #entry {
+    position: relative;
+}
+.m-account_cashMaster #entry #difference {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.m-account_cashMaster #entry #fld_amount {
+    width: 125px;
+}
+
+.m-account_cashMaster #bodyList .narration {
+    font-style: italic;
+}
+.m-account_cashMaster #bodyList th.fld-entry_date {
+    width: 65px;
+}
+.m-account_cashMaster #bodyList th.fld-action {
+    width: 40px;
+}
+.m-account_cashMaster #bodyList th.fld-voucher_code {
+    width: 60px;
+}
+.m-account_cashMaster #bodyList th.fld-currency_code {
+    width: 35px;
+}
+.m-account_cashMaster #bodyList th.fld-v_buy_amount {
+    width: 80px;
+}
+.m-account_cashMaster #bodyList th.fld-v_buy_rate {
+    width: 50px;
+}
+.m-account_cashMaster #bodyList th.fld-v_sell_amount {
+    width: 80px;
+}
+.m-account_cashMaster #bodyList th.fld-v_sell_rate {
+    width: 50px;
+}
+.m-account_cashMaster #bodyList th.fld-amount_base {
+    width: 80px;
+}
+.m-account_cashMaster #bodyList th.fld-staff_short_code {
+    width: 30px;
+}
+
+.mg-account #entry .summary-row2 table {
+    width: 100%;
+}
+.mg-account #entry .summary-row2 table td {
+    padding: 2px;
+}
+.mg-account #entry .summary-row2 .new-row {
+    width: 30%;
+}
+.mg-account #entry .summary-row2 .customer-curr,
+.mg-account #entry .summary-row2 .exch-rate-label
+{
+    width: 23%;
+    text-align: right;
+}
+.mg-account #entry .summary-row2 .amount_base_sum {
+    width: 13%;
+}
+.mg-account #entry .summary-row2 .exch-rate-lc-to-fc {
+    width: 34%;
+}
+.mg-account #entry .summary-row2 .fld-exch_rate_cust_curr,
+.mg-account #entry .summary-row2 .fld-amount_sum_cust_curr {
+    width: 96%;
+    text-align: right;
+}
+
+.mg-account #entry .summary-row2 .exch-rate-lc-to-fc input {
+    width: 100px;
+}

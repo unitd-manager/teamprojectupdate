@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@media all
+{
+    .w-ecommerce-productRecord ul {
+        overflow: hidden;
+    }
+    
+    .w-ecommerce-productRecord ul li {
+        width:125px;
+        height: 125px;
+        float: left;
+        margin: 5px;
+        border: 1px dotted green;
+        padding: 5px;
+        text-align: center;
+        line-height: 125px;
+    }
+
+    .w-ecommerce-productRecord ul li img {
+        vertical-align: middle;
+    }    
+}

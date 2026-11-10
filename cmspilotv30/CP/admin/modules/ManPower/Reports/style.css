@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+.m-manPower_reports #reportsList {
+    background: #F5F5F5;
+    padding:15px;
+}
+
+.m-manPower_reports #reportsList .subcr{
+    margin-right: 0;
+}
+
+.m-manPower_reports #reportsList a.button {
+    width:75%;
+    font-size: 17px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.m-manPower_reports .report-wrapper h1 {
+    text-shadow: 1px 1px 2px #665D5D;
+    filter: dropshadow(color=#665D5D, offx=1, offy=1);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.m-manPower_reports  table.search td select.attendanceFilter {
+    width: 175px;
+}
+
+.m-manPower_reports  table.search td select.callRegistryFilter {
+    width: 175px;
+}
+
+.m-manPower_reports table.search td select{
+    width: 250px;
+    max-width: 300px;
+    font-size: 1.2em;
+}
+
+.m-manPower_reports table.search td select.opportunityYearFilter,
+.m-manPower_reports table.search td select.opportunityMonthFilter,
+.m-manPower_reports table.search td select.callRegistryYearFilter,
+.m-manPower_reports table.search td select.callRegistryMonthFilter {
+    width: 150px;
+}
+
+#reportSearchPanel {
+    background: #ccc;
+    padding: 5px;
+    display: none;
+    margin: 5px 0 5px 0;
+    overflow: hidden;
+}
+
+#reportSearchPanel table {
+    float: right;
+}
+
+optgroup option {
+    background: #fff;
+    padding-left: 10px;
+}
+
+.m-manPower_reports .actBtns {
+}
+
+#chart_div {
+    min-height: 400px;
+}
+
+
+.exportLink{
+    position: absolute;
+    top: 43px;
+    left: 10px;
+}
+
+.m-manPower_reports table.search td.taxYearFilter select{
+    width: 100px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.m-manPower_reports table.search td.taxWorkstateFilter select{
+    width: 150px;
+    margin-left: 8px;
+    margin-right: 4px;
+}
+
+.m-manPower_reports table.search td.taxMonthFilter select{
+    width: 120px;
+    margin-left: 4px;
+    margin-right: 8px;
+}
+
+.m-manPower_reports table.search td.candidateFilter select{
+    width: 200px;
+    margin-left: 4px;
+    margin-right: 8px;
+}

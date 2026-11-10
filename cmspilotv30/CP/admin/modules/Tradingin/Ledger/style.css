@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.m-tradingin_invoiceSequence .columnar .room-invSeq-table .type-text label {
+    width: 0%;
+}
+
+.m-tradingin_invoiceSequence .columnar .type-text.row_invoice_code_vat label {
+    width: 22%;
+}
+
+.m-tradingin_invoiceSequence .columnar div.type-text.row_invoice_code_vat input {
+    width: 22%;
+}

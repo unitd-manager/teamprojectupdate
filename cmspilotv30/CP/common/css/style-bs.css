@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@media all
+{
+    
+    #cp-progress.modal .modal-dialog{
+        width: 150px;
+        text-align: center;
+    }
+    
+    .cp-loading{
+        background:transparent url('../images/icons/ajax-loader.gif') no-repeat center center;
+        min-height: 32px;
+    }
+}
