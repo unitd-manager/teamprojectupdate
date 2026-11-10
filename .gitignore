@@ -17,8 +17,6 @@ cp-log/
 .env
 .env.*
 
-# Uploaded/generated content
-media/
 
 # SSL/domain verification files
 .well-known/

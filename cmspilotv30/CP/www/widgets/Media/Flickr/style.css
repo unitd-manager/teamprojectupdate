@@ -1,0 +1,8 @@
+@media all
+{
+    .w-media-flickr ul li {
+        float: left;
+        margin-bottom: 13px;
+        margin-right: 13px;
+    }
+}

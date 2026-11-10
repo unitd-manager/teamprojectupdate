@@ -1,0 +1,26 @@
+.w-media-banner {
+    position: relative;
+}
+.w-media-banner .callout {
+    width: 400px;
+    position: absolute;
+    top: 50px;
+    right: 70px;
+    color: #fff;
+    border: 0px solid red;
+}
+.w-media-banner .callout h1 {
+    color: #fff;
+}
+
+.w-media-banner ul li {
+    position: relative;
+}
+
+.w-media-banner .caption {
+    left: 0;
+    bottom: 0;
+    font-size:1.5em;
+    position: absolute;
+    padding: 5px;
+}

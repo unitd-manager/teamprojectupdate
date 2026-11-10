@@ -1,0 +1,12 @@
+@charset "UTF-8";
+@media all
+{
+    .w-media-imagesSlider .single .galleria-image-nav {
+        display: none;
+    }
+    
+    .w-media-imagesSlider .galleria-thumbnails {
+        margin: auto;
+    }
+    
+}

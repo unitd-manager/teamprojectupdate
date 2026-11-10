@@ -1,0 +1,3 @@
+<?
+class CP_Www_Widgets_Media_Flickr_Model extends CP_Common_Widgets_Media_Flickr_Model
+{}

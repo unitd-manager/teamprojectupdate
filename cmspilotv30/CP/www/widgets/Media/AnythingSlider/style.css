@@ -1,0 +1,119 @@
+.w-media-anythingSlider div.anythingSlider-cs-portfolio .anythingControls {
+    margin: 0 auto;
+}
+
+.w-media-anythingSlider div.anythingSlider-default {
+	width: 900px !important;
+}
+
+.w-media-anythingSlider .anythingSlider-minimalist-round, .w-media-anythingSlider .anythingSlider-minimalist-square {
+	width: 930px !important;
+}
+
+.w-media-anythingSlider .anythingSlider-metallic {
+	width: 940px !important;
+}
+
+.w-media-anythingSlider .anythingSlider-cs-portfolio {
+    padding: 0 !important;
+}
+
+.w-media-anythingSlider .anythingSlider-construction {
+	width: 900px !important;
+	margin:50px 0;
+}
+
+.w-media-anythingSlider .anythingSlider .panel{ position: relative; }
+
+/* captions */
+.w-media-anythingSlider .anythingSlider .caption-top, 
+.w-media-anythingSlider .anythingSlider .caption-right,
+.w-media-anythingSlider .anythingSlider .caption-bottom, 
+.w-media-anythingSlider .anythingSlider .caption-left {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    position: relative;
+    z-index: 10;
+    opacity: .8;
+    filter: alpha(opacity=80);
+}
+
+/* Top caption - padding is included in the width (480px here, 500px in the script), same for height */
+.w-media-anythingSlider .anythingSlider .caption-top {
+    left: 0;
+    top: 0;
+    width: 480px;
+    height: 30px;
+}
+
+/* Right caption - padding is included in the width (130px here, 150px in the script), same for height */
+.w-media-anythingSlider .anythingSlider .caption-right {
+    right: 0;
+    bottom: 0;
+    width: 130px;
+    height: 180px;
+}
+/* Bottom caption - padding is included in the width (480px here, 500px in the script), same for height */
+.w-media-anythingSlider .anythingSlider .caption-bottom {
+    left: 0;
+    bottom: 0;
+    width: 98%;
+    height: 20px;
+    text-align: center;
+    font-size:1.5em;
+}
+/* Left caption - padding is included in the width (130px here, 150px in the script), same for height */
+.w-media-anythingSlider .anythingSlider .caption-left {
+    left: 0;
+    bottom: 0;
+    width: 130px;
+    height: 180px;
+}
+/* Caption close button */
+.w-media-anythingSlider .caption-top .close, 
+.w-media-anythingSlider .caption-right .close,
+.w-media-anythingSlider .caption-bottom .close, 
+.w-media-anythingSlider .caption-left .close {
+    font-size: 80%;
+    cursor: pointer;
+    float: right;
+    display: inline-block;
+}
+
+/* Caption close button */
+
+div.anythingSlider-cs-portfolio .thumbNav a, 
+div.anythingSlider-cs-portfolio.activeSlider .thumbNav a {
+    background-image: url("images/circle-grey.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin: 20px 5px 0 0;
+    height: 16px;
+}
+
+div.anythingSlider-cs-portfolio .thumbNav a:hover, 
+div.anythingSlider-cs-portfolio .thumbNav a.cur, 
+div.anythingSlider-cs-portfolio.activeSlider .thumbNav a:hover, 
+div.anythingSlider-cs-portfolio.activeSlider .thumbNav a.cur {
+    background-image: url("images/circle-orange.png");
+    background-color: transparent;
+}
+
+div.anythingSlider-cs-portfolio .thumbNav li {
+    margin-left: 5px;
+}
+
+div.anythingSlider-cs-portfolio .back {
+    left: 10px;
+}
+
+div.anythingSlider-cs-portfolio .forward {
+    right: 45px;
+}
+
+div.anythingSlider-cs-portfolio a.start-stop {
+    display: none;
+}
