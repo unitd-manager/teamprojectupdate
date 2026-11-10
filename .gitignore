@@ -1,8 +1,8 @@
 # Production configuration
-conf.php
-cmspilotv30/library/cp_conf/cp_conf.php
-cmspilotv30/library/lib_php/aws/config.inc.php
-cmspilotv30/library/lib_php/aws/config-sample.inc.php
+/conf.php
+/cmspilotv30/library/cp_conf/cp_conf.php
+/cmspilotv30/library/lib_php/aws/config.inc.php
+/cmspilotv30/library/lib_php/aws/config-sample.inc.php
 
 # Logs
 *.log
