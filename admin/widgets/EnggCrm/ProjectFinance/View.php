@@ -143,6 +143,7 @@ class CPL_Admin_Widgets_EnggCrm_ProjectFinance_View extends CP_Common_Lib_Widget
         $invoiceAmount = 0.0;
         $receiptAmount = 0.0;
         $balAmount     = 0.0;
+        $text = '';
 
         if($orderRows > 0) {
           $orderRec = $fn->getRecordRowByID('order', 'project_id', $project_id);
@@ -217,6 +218,7 @@ class CPL_Admin_Widgets_EnggCrm_ProjectFinance_View extends CP_Common_Lib_Widget
         $supplierAmountPaid = 0.0;
         $subconAmountPaid   = 0.0;
         $balAmount          = 0.0;
+        $text               = '';
 
         if($project_id > 0) {
           $orderRec = $fn->getRecordRowByID('order', 'project_id', $project_id);
