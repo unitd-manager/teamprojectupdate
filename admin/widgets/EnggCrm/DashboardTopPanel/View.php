@@ -13,8 +13,8 @@ class CPL_Admin_Widgets_EnggCrm_DashboardTopPanel_View extends CP_Common_Lib_Wid
         SELECT DATE_FORMAT(o.creation_date, '%b') AS month
               ,COUNT(o.opportunity_id) as total
         FROM `opportunity` o
-        WHERE DATE_FORMAT(o.creation_date, '%Y-%m-%d') > Date_add(Now(), interval - 12 month)
-          AND DATE_FORMAT(o.creation_date, '%Y-%m-%d') < Now()
+        WHERE o.creation_date >= DATE_ADD(DATE(DATE_ADD(NOW(), INTERVAL -12 MONTH)), INTERVAL 1 DAY)
+          AND o.creation_date < DATE_ADD(CURDATE(), INTERVAL 1 DAY)
         GROUP BY DATE_FORMAT(o.creation_date, '%m-%Y')
         ORDER BY total DESC, DATE_FORMAT(o.creation_date, '%m-%Y') DESC
         LIMIT 1
@@ -26,8 +26,8 @@ class CPL_Admin_Widgets_EnggCrm_DashboardTopPanel_View extends CP_Common_Lib_Wid
         SELECT DATE_FORMAT(i.creation_date, '%b') AS month
               ,COUNT(i.invoice_id) as total
         FROM `invoice` i
-        WHERE DATE_FORMAT(i.creation_date, '%Y-%m-%d') > Date_add(Now(), interval - 12 month)
-          AND DATE_FORMAT(i.creation_date, '%Y-%m-%d') < Date_add(Now(), interval - 1 month)
+        WHERE i.creation_date >= DATE_ADD(DATE(DATE_ADD(NOW(), INTERVAL -12 MONTH)), INTERVAL 1 DAY)
+          AND i.creation_date < DATE(DATE_ADD(NOW(), INTERVAL -1 MONTH))
         GROUP BY DATE_FORMAT(i.creation_date, '%m-%Y')
         ORDER BY total DESC, DATE_FORMAT(i.creation_date, '%m-%Y') DESC
         LIMIT 1
@@ -108,7 +108,6 @@ class CPL_Admin_Widgets_EnggCrm_DashboardTopPanel_View extends CP_Common_Lib_Wid
      */
     function getTenderSummary($month) {
         $cpCfg = Zend_Registry::get('cpCfg');
-        $fn    = Zend_Registry::get('fn');
         $db    = Zend_Registry::get('db');
 
         $rows = 0;
@@ -117,8 +116,8 @@ class CPL_Admin_Widgets_EnggCrm_DashboardTopPanel_View extends CP_Common_Lib_Wid
             SELECT DATE_FORMAT(o.creation_date, '%Y-%m') AS monthYear
                   ,COUNT(o.opportunity_id) as total
             FROM `opportunity` o
-            WHERE DATE_FORMAT(o.creation_date, '%Y-%m-%d') > Date_add(Now(), interval - 12 month)
-              AND DATE_FORMAT(o.creation_date, '%Y-%m-%d') < Now()
+            WHERE o.creation_date >= DATE_ADD(DATE(DATE_ADD(NOW(), INTERVAL -12 MONTH)), INTERVAL 1 DAY)
+              AND o.creation_date < DATE_ADD(CURDATE(), INTERVAL 1 DAY)
             GROUP BY DATE_FORMAT(o.creation_date, '%m-%Y')
             ORDER BY total DESC, DATE_FORMAT(o.creation_date, '%m-%Y') DESC
             LIMIT 1
@@ -131,7 +130,8 @@ class CPL_Admin_Widgets_EnggCrm_DashboardTopPanel_View extends CP_Common_Lib_Wid
                 SELECT SUM(q.total_amount) AS total_amount
                 FROM opportunity o
                 LEFT JOIN (quote q) ON (q.opportunity_id = o.opportunity_id)
-                WHERE DATE_FORMAT(o.creation_date, '%Y-%m') = '{$rowBest['monthYear']}'
+                WHERE o.creation_date >= '{$rowBest['monthYear']}-01'
+                  AND o.creation_date < DATE_ADD('{$rowBest['monthYear']}-01', INTERVAL 1 MONTH)
                 ";
                 $resultAmount = $db->sql_query($SQLAmount);
                 $rowAmount    = $db->sql_fetchrow($resultAmount);
@@ -140,7 +140,8 @@ class CPL_Admin_Widgets_EnggCrm_DashboardTopPanel_View extends CP_Common_Lib_Wid
                 SELECT COUNT(o.opportunity_id) AS Awarded
                 FROM opportunity o
                 LEFT JOIN (quote q) ON (q.opportunity_id = o.opportunity_id)
-                WHERE DATE_FORMAT(o.creation_date, '%Y-%m') = '{$rowBest['monthYear']}'
+                WHERE o.creation_date >= '{$rowBest['monthYear']}-01'
+                  AND o.creation_date < DATE_ADD('{$rowBest['monthYear']}-01', INTERVAL 1 MONTH)
                   AND (o.status = 'Awarded' 
                   OR o.status = 'Converted to Project')
                 ";
@@ -165,81 +166,112 @@ class CPL_Admin_Widgets_EnggCrm_DashboardTopPanel_View extends CP_Common_Lib_Wid
             if ($month == 'Current Month'){
                 $start_date = date('Y-m-01');
                 $end_date   = date('Y-m-t');
-                $date = "(DATE_FORMAT(o.creation_date, '%Y-%m-%d') >= '{$start_date}' AND DATE_FORMAT(o.creation_date, '%Y-%m-%d') <= '{$end_date}')";
             } else if ($month == 'Last Month'){
                 $start_date = date('Y-m-d', strtotime('first day of last month'));
                 $end_date   = date('Y-m-d', strtotime('last day of last month'));
-                $date = "(DATE_FORMAT(o.creation_date, '%Y-%m-%d') >= '{$start_date}' AND DATE_FORMAT(o.creation_date, '%Y-%m-%d') <= '{$end_date}')";
             }
 
-             $SQLTender1 = "
-            SELECT COUNT(o.opportunity_id) AS total
+            $SQLTender = "
+            SELECT o.opportunity_id, o.status
             FROM `opportunity` o
-            WHERE {$date}
+            WHERE o.creation_date >= '{$start_date}'
+              AND o.creation_date < DATE_ADD('{$end_date}', INTERVAL 1 DAY)
             ";
-            $resultTender1 = $db->sql_query($SQLTender1);
-            $rowTender1    = $db->sql_fetchrow($resultTender1);
+            $resultTender = $db->sql_query($SQLTender);
+            $totalOpportunityCount = 0;
+            $awardedOpportunityIds = array();
+            while ($opportunity = $db->sql_fetchrow($resultTender)) {
+                $totalOpportunityCount++;
+                if ($opportunity['status'] == 'Awarded' || $opportunity['status'] == 'Converted to Project') {
+                    $awardedOpportunityIds[] = (int) $opportunity['opportunity_id'];
+                }
+            }
 
-            $SQLTender2 = "
-            SELECT o.*
-            FROM `opportunity` o
-            WHERE {$date}
-            AND (o.status = 'Awarded' 
-              OR o.status = 'Converted to Project')
-            ";
-            $resultTender2 = $db->sql_query($SQLTender2);
+            $quotesByOpportunity = array();
+            foreach (array_chunk($awardedOpportunityIds, 500) as $opportunityIdChunk) {
+                $opportunityIds = implode(',', $opportunityIdChunk);
+                $SQLQuotes = "
+                SELECT q.quote_id
+                      ,q.opportunity_id
+                      ,q.drawing_nos
+                      ,q.total_amount
+                      ,q.discount
+                      ,q.gst
+                FROM quote q
+                WHERE q.opportunity_id IN ({$opportunityIds})
+                ORDER BY q.opportunity_id, q.quote_id
+                ";
+                $resultQuotes = $db->sql_query($SQLQuotes);
+                while ($quote = $db->sql_fetchrow($resultQuotes)) {
+                    if (!isset($quotesByOpportunity[$quote['opportunity_id']])) {
+                        $quotesByOpportunity[$quote['opportunity_id']] = $quote;
+                    }
+                }
+            }
+
+            $quoteIds = array();
+            foreach ($quotesByOpportunity as $quote) {
+                if ($quote['drawing_nos'] != 1) {
+                    $quoteIds[] = (int) $quote['quote_id'];
+                }
+            }
+
+            $quoteItemsByQuote = array();
+            foreach (array_chunk($quoteIds, 500) as $quoteIdChunk) {
+                $quoteIdList = implode(',', $quoteIdChunk);
+                $SQLQuoteItems = "
+                SELECT qi.quote_id, qi.unit_price, qi.quantity, qi.amount
+                FROM quote_items qi
+                WHERE qi.quote_id IN ({$quoteIdList})
+                ";
+                $resultQuoteItems = $db->sql_query($SQLQuoteItems);
+                while ($quoteItem = $db->sql_fetchrow($resultQuoteItems)) {
+                    $quoteItemsByQuote[$quoteItem['quote_id']][] = $quoteItem;
+                }
+            }
+
             $totalQuoteAmount = 0;
             $AwardedCount     = 0;
-            while ($rowTender2 = $db->sql_fetchrow($resultTender2)) {
-                $quoteRec = $fn->getRecordByCondition('quote', "opportunity_id = {$rowTender2['opportunity_id']}");
-                if($quoteRec['drawing_nos'] == 1) {
+            foreach ($awardedOpportunityIds as $opportunityId) {
+                $quoteRec = isset($quotesByOpportunity[$opportunityId]) ? $quotesByOpportunity[$opportunityId] : array();
+                if (isset($quoteRec['drawing_nos']) && $quoteRec['drawing_nos'] == 1) {
                     $totalQuoteAmount += $quoteRec['total_amount'] - $quoteRec['discount'];
-                } else {
-                  $sqlQuoteItems ="
-                  SELECT *
-                  FROM quote_items qi
-                  WHERE qi.quote_id = {$quoteRec['quote_id']}
-                  ";
-
-                  $resultForQuoteItems  = $db->sql_query($sqlQuoteItems);
-                  $subtotalValue = 0;
-                  while ($rowQuoteItems = $db->sql_fetchrow($resultForQuoteItems)) {
-                      $subtotal_amount = 0; 
-                      if($rowQuoteItems['unit_price'] > 0 && $rowQuoteItems['quantity'] > 0) {
-                          $subtotal_amount = round($rowQuoteItems['quantity'] * $rowQuoteItems['unit_price'], 2);
-                      } elseif ($rowQuoteItems['unit_price'] > 0 && $rowQuoteItems['quantity'] == 0) {
-                          $subtotal_amount = round($rowQuoteItems['unit_price'], 2);
-                      } elseif ($rowQuoteItems['amount'] > 0) {
-                          $subtotal_amount = round($rowQuoteItems['amount'], 2);
-                      }
-
-                      $subtotalValue += $subtotal_amount;
-                      
-                      if($quoteRec['gst'] == 1) {
-                        $gsttaxvalue    = $cpCfg['cp.gstPercentage'] ;
-                        $gstvalue       = $subtotalValue * $gsttaxvalue / 100;
-                        /* Taking two decimal values for gst amount */
-                        $fraction_length = strlen(substr(strrchr($gstvalue, "."), 1)); // Checking the lingth of the fraction value
-                        if ($fraction_length > 2) {
-                            list($integer, $fraction) = explode(".", (string) $gstvalue);
-
-                            /* Checking whether 3rd decimal point is more than or equal to 5
-                               If Yes, add 1 to 2nd decimal point
-                             */
-                            $gstDecimalMore = substr($fraction, 2, 1);
-                            $fraction = substr($fraction, 0, 2);
-                            if ($gstDecimalMore >= 5) {
-                                $fraction = $fraction + 1;
-                            }
-
-                            $gstvalue = $integer . "." . $fraction;
+                } else if (isset($quoteRec['quote_id'])) {
+                    $subtotalValue = 0;
+                    $quoteItems = isset($quoteItemsByQuote[$quoteRec['quote_id']])
+                        ? $quoteItemsByQuote[$quoteRec['quote_id']]
+                        : array();
+                    foreach ($quoteItems as $rowQuoteItems) {
+                        $subtotal_amount = 0;
+                        if ($rowQuoteItems['unit_price'] > 0 && $rowQuoteItems['quantity'] > 0) {
+                            $subtotal_amount = round($rowQuoteItems['quantity'] * $rowQuoteItems['unit_price'], 2);
+                        } elseif ($rowQuoteItems['unit_price'] > 0 && $rowQuoteItems['quantity'] == 0) {
+                            $subtotal_amount = round($rowQuoteItems['unit_price'], 2);
+                        } elseif ($rowQuoteItems['amount'] > 0) {
+                            $subtotal_amount = round($rowQuoteItems['amount'], 2);
                         }
 
-                        $totalQuoteAmount += $gstvalue + $subtotalValue;
-                      } else {
-                        $totalQuoteAmount += $subtotalValue;
-                      }
-                  }
+                        $subtotalValue += $subtotal_amount;
+
+                        if ($quoteRec['gst'] == 1) {
+                            $gsttaxvalue = $cpCfg['cp.gstPercentage'];
+                            $gstvalue = $subtotalValue * $gsttaxvalue / 100;
+                            $fraction_length = strlen(substr(strrchr($gstvalue, "."), 1));
+                            if ($fraction_length > 2) {
+                                list($integer, $fraction) = explode(".", (string) $gstvalue);
+                                $gstDecimalMore = substr($fraction, 2, 1);
+                                $fraction = substr($fraction, 0, 2);
+                                if ($gstDecimalMore >= 5) {
+                                    $fraction = $fraction + 1;
+                                }
+                                $gstvalue = $integer . "." . $fraction;
+                            }
+
+                            $totalQuoteAmount += $gstvalue + $subtotalValue;
+                        } else {
+                            $totalQuoteAmount += $subtotalValue;
+                        }
+                    }
                 }
                 $AwardedCount++;
             }
@@ -249,7 +281,7 @@ class CPL_Admin_Widgets_EnggCrm_DashboardTopPanel_View extends CP_Common_Lib_Wid
                 $totalAmount = " | $".number_format($totalQuoteAmount);
             }
 
-            $rows = '('.$rowTender1['total'].'/'.$AwardedCount.$totalAmount.')';
+            $rows = '('.$totalOpportunityCount.'/'.$AwardedCount.$totalAmount.')';
         }
 
         return $rows;
@@ -270,8 +302,8 @@ class CPL_Admin_Widgets_EnggCrm_DashboardTopPanel_View extends CP_Common_Lib_Wid
                   ,COUNT(i.invoice_id) AS total
                   ,SUM(i.invoice_amount) AS totalAmount 
             FROM `invoice` i
-            WHERE DATE_FORMAT(i.creation_date, '%Y-%m-%d') > Date_add(Now(), interval - 12 month)
-              AND DATE_FORMAT(i.creation_date, '%Y-%m-%d') < Date_add(Now(), interval - 1 month)
+            WHERE i.creation_date >= DATE_ADD(DATE(DATE_ADD(NOW(), INTERVAL -12 MONTH)), INTERVAL 1 DAY)
+              AND i.creation_date < DATE(DATE_ADD(NOW(), INTERVAL -1 MONTH))
             GROUP BY DATE_FORMAT(i.creation_date, '%m-%Y')
             ORDER BY total DESC, DATE_FORMAT(i.creation_date, '%m-%Y') DESC
             LIMIT 1
