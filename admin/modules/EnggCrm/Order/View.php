@@ -4030,7 +4030,7 @@ switch ($site_id) {
         $result   = $db->sql_query($SQL);
         $numRows  = $db->sql_numrows($result);
 
-        $total = '';
+        $total = 0.0;
         $discount = '';
         $tdCheckBox = '';
         $count = 1;
@@ -4041,7 +4041,8 @@ switch ($site_id) {
 
             $expMedia = array('condn' => " AND media_type = 'attachment' AND actual_file_name LIKE '%{$rowReceipt['receipt_code']}%'");
             $mediaRec = $fn->getRecordRowByID('media', 'record_id', $rowReceipt['receipt_id'], $expMedia);
-            $mediaLink = "index.php?plugin=common_media&_spAction=saveMedia&room=pms_receipt&recordType=attachment&media_id={$mediaRec['media_id']}&showHTML=0";
+            $mediaId = isset($mediaRec['media_id']) ? $mediaRec['media_id'] : '';
+            $mediaLink = "index.php?plugin=common_media&_spAction=saveMedia&room=pms_receipt&recordType=attachment&media_id={$mediaId}&showHTML=0";
 
             $receipt_date = $fn->getCPDate($rowReceipt['date'], 'd-m-Y');
 
@@ -4074,7 +4075,7 @@ switch ($site_id) {
             </tr>
             ";
             if($rowReceipt['receipt_status'] == 'Paid'){
-                $total += $rowReceipt['amount'];
+                $total += (float) ($rowReceipt['amount'] ?? 0);
             }
             $count++;
         }
@@ -4147,7 +4148,7 @@ switch ($site_id) {
         $result   = $db->sql_query($SQL);
         $numRows  = $db->sql_numrows($result);
 
-        $total = '';
+        $total = 0.0;
         $discount = '';
         $tdCheckBox = '';
         $count = 1;
@@ -4158,7 +4159,8 @@ switch ($site_id) {
 
             $expMedia = array('condn' => " AND media_type = 'attachment' AND actual_file_name LIKE '%{$rowReceipt['receipt_code']}%'");
             $mediaRec = $fn->getRecordRowByID('media', 'record_id', $rowReceipt['receipt_id'], $expMedia);
-            $mediaLink = "index.php?plugin=common_media&_spAction=saveMedia&room=pms_receipt&recordType=attachment&media_id={$mediaRec['media_id']}&showHTML=0";
+            $mediaId = isset($mediaRec['media_id']) ? $mediaRec['media_id'] : '';
+            $mediaLink = "index.php?plugin=common_media&_spAction=saveMedia&room=pms_receipt&recordType=attachment&media_id={$mediaId}&showHTML=0";
 
             $receipt_date = $fn->getCPDate($rowReceipt['date'], 'd-m-Y');
 
@@ -4191,7 +4193,7 @@ switch ($site_id) {
             </tr>
             ";
             if($rowReceipt['receipt_status'] == 'Paid'){
-                $total += $rowReceipt['amount'];
+                $total += (float) ($rowReceipt['amount'] ?? 0);
             }
             $count++;
         }
@@ -4264,7 +4266,7 @@ switch ($site_id) {
         $result   = $db->sql_query($SQL);
         $numRows  = $db->sql_numrows($result);
 
-        $total = '';
+        $total = 0.0;
         $discount = '';
         $tdCheckBox = '';
         $count = 1;
@@ -4275,7 +4277,8 @@ switch ($site_id) {
 
             $expMedia = array('condn' => " AND media_type = 'attachment' AND actual_file_name LIKE '%{$rowReceipt['receipt_code']}%'");
             $mediaRec = $fn->getRecordRowByID('media', 'record_id', $rowReceipt['receipt_id'], $expMedia);
-            $mediaLink = "index.php?plugin=common_media&_spAction=saveMedia&room=pms_receipt&recordType=attachment&media_id={$mediaRec['media_id']}&showHTML=0";
+            $mediaId = isset($mediaRec['media_id']) ? $mediaRec['media_id'] : '';
+            $mediaLink = "index.php?plugin=common_media&_spAction=saveMedia&room=pms_receipt&recordType=attachment&media_id={$mediaId}&showHTML=0";
 
             $receipt_date = $fn->getCPDate($rowReceipt['date'], 'd-m-Y');
 
@@ -4308,7 +4311,7 @@ switch ($site_id) {
             </tr>
             ";
             if($rowReceipt['receipt_status'] == 'Paid'){
-                $total += $rowReceipt['amount'];
+                $total += (float) ($rowReceipt['amount'] ?? 0);
             }
             $count++;
         }
