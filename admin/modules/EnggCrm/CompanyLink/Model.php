@@ -4,7 +4,7 @@ class CPL_Admin_Modules_EnggCrm_CompanyLink_Model extends CP_Admin_Modules_EnggC
     /**
      *
      */
-    function setSearchVar($linkRecType = '') {
+    function setSearchVar($linkRecType = '', $lnkRoom = '', $exp = array()) {
         $tv = Zend_Registry::get('tv');
         $fn = Zend_Registry::get('fn');
         $searchVar = Zend_Registry::get('searchVar');
