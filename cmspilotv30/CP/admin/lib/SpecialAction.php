@@ -227,6 +227,10 @@ class CP_Admin_Lib_SpecialAction extends CP_Common_Lib_SpecialAction
         $module = $fn->getReqParam('room_name');
         $importType = $fn->getReqParam('importType');
         $viewObj = getCPViewObj($module);
+        $tv = Zend_Registry::get('tv');
+        $tv['module'] = $module;
+        list($tv['moduleGroup']) = explode('_', $module);
+        Zend_Registry::set('tv', $tv);
 
         $additionalFields = "";
         if (method_exists($viewObj, 'getAdditionalImportFields')){
