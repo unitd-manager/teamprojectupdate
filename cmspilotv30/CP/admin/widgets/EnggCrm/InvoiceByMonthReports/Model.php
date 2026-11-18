@@ -85,7 +85,7 @@ class CP_Admin_Widgets_EnggCrm_InvoiceByMonthReports_Model extends CP_Common_Lib
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Month');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Amount');
         /******************** FORMAT HEADER *******************/

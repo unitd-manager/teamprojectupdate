@@ -84,7 +84,7 @@ class CP_Common_Lib_PhpExcelExportWrapper
         $rowc = $dataRowStartPos;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         //set values for header field in excel sheet
         foreach ($fldsArr as $dbFld => $fldArr) {
@@ -227,7 +227,7 @@ class CP_Common_Lib_PhpExcelExportWrapper
     To set the values by row number & column number
     ===============================================
     $objPHPExcel = new PHPExcel();
-    $actSheet = &$objPHPExcel->getActiveSheet();
+    $actSheet = $objPHPExcel->getActiveSheet();
 
     $rowc = 1;
     $colc = 0;

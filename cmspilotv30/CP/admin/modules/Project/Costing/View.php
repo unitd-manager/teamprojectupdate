@@ -120,7 +120,7 @@ class CP_Admin_Modules_Project_Costing_View extends CP_Common_Lib_ModuleViewAbst
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Estimated Hours for: ' . $title);
         $actSheet->mergeCells("A1:D1");

@@ -212,7 +212,7 @@ class CP_Admin_Modules_Ecard_EcardUsage_View extends CP_Common_Lib_ModuleViewAbs
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'E-card Design');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Recipient');
@@ -295,7 +295,7 @@ class CP_Admin_Modules_Ecard_EcardUsage_View extends CP_Common_Lib_ModuleViewAbs
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Music');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Recipient');
@@ -378,7 +378,7 @@ class CP_Admin_Modules_Ecard_EcardUsage_View extends CP_Common_Lib_ModuleViewAbs
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Language');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Recipient');

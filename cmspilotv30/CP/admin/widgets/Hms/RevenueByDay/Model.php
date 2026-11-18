@@ -110,7 +110,7 @@ class CP_Admin_Widgets_Hms_RevenueByDay_Model extends CP_Common_Lib_WidgetModelA
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $headStyle = array(
             'font' => array('bold' => true)
         );

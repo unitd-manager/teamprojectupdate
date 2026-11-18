@@ -260,7 +260,7 @@ class CP_Admin_Widgets_Tradingsg_DetailCollectionReport_Model extends CP_Common_
         $record_type    = $fn->getReqParam('record_type');
         $order_status   = $fn->getReqParam('order_status');
         $location_id    = $fn->getReqParam('location_id');
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Order Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Order No');

@@ -299,7 +299,7 @@ class CP_Admin_Modules_EzTrade_Company_View extends CP_Common_Lib_ModuleViewAbst
         $rowc = 1;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Company Number');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Company Name');

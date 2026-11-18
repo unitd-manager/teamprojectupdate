@@ -120,7 +120,7 @@ class CPL_Admin_Widgets_EnggCrm_ContractReport_Model extends CP_Common_Lib_Widge
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Contract No');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Company Name');

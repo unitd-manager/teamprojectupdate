@@ -110,7 +110,7 @@ class CPL_Admin_Widgets_EnggCrm_OverallSalesSummary_Model extends CP_Common_Lib_
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Invoice Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Company Name');

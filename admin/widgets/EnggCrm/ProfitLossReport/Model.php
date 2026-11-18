@@ -162,7 +162,7 @@ class CPL_Admin_Widgets_EnggCrm_ProfitLossReport_Model extends CP_Common_Lib_Wid
                 'font' => array('bold' => true)
                 );
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $actSheet->mergeCells("A1:G1");
         $actSheet->getStyle("A{$rowc}:G{$rowc}")->applyFromArray($styleHeader);
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'BALANCE SHEET REPORT');

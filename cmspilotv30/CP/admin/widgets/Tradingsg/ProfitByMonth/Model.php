@@ -116,7 +116,7 @@ class CP_Admin_Widgets_Tradingsg_ProfitByMonth_Model extends CP_Common_Lib_Widge
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Month');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Amount');
@@ -198,7 +198,7 @@ class CP_Admin_Widgets_Tradingsg_ProfitByMonth_Model extends CP_Common_Lib_Widge
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $location_id    = $fn->getReqParam('location_id');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Month');
         if($cpCfg['cp.hasMultiUniqueSites']){

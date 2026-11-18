@@ -158,7 +158,7 @@ class CP_Admin_Widgets_Tradingsg_DetailVatPercentForInvoice_Model extends CP_Com
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Invoice Code (VAT)');
@@ -408,7 +408,7 @@ class CP_Admin_Widgets_Tradingsg_DetailVatPercentForInvoice_Model extends CP_Com
         $rowc = 1;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Invoice Code (VAT)');

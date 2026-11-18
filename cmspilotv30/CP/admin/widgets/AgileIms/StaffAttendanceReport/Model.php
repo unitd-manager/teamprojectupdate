@@ -101,7 +101,7 @@ class CP_Admin_Widgets_AgileIms_StaffAttendanceReport_Model extends CP_Common_Li
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Serial No.');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');

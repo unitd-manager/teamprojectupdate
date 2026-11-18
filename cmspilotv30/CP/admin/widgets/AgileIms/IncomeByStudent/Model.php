@@ -122,7 +122,7 @@ class CP_Admin_Widgets_AgileIms_IncomeByStudent_Model extends CP_Common_Lib_Widg
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Invoice Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Student/Company Name');

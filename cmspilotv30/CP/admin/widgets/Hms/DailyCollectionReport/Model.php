@@ -166,7 +166,7 @@ class CP_Admin_Widgets_Hms_DailyCollectionReport_Model extends CP_Common_Lib_Wid
         $year           = date('Y');
         $record_type    = $fn->getReqParam('record_type');
         $location_id    = $fn->getReqParam('location_id');
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');
         if($cpCfg['cp.hasMultiUniqueSites']){

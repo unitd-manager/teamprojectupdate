@@ -764,7 +764,7 @@ class CP_Admin_Modules_ManPower_Candidate_Model extends CP_Common_Lib_ModuleMode
         $rowc = 1;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Candidate Id');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Salutation');

@@ -106,7 +106,7 @@ class CP_Admin_Widgets_EnggCrm_InvoiceSummary_Model extends CP_Common_Lib_Widget
         header("Content-Transfer-Encoding: binary ");
 
         $objPHPExcel = new PHPExcel();
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $headStyle = array(
             'font' => array('bold' => true)
         );

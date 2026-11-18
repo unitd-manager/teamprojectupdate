@@ -119,7 +119,7 @@ class CP_Admin_Widgets_Project_ProjectReport_Model extends CP_Common_Lib_WidgetM
         $rowc = 1;
         $colc = 0;
         $row  = 1;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'S.No');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Project Name');

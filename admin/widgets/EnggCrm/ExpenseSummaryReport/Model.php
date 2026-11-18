@@ -126,7 +126,7 @@ class CPL_Admin_Widgets_EnggCrm_ExpenseSummaryReport_Model extends CP_Common_Lib
         $rowc = 1;
         $colc = 0;
         $appendSql = '';
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Invoice No');

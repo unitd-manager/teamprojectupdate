@@ -154,7 +154,7 @@ class CP_Admin_Modules_Ecard_UserStatistics_View extends CP_Common_Lib_ModuleVie
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Email');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'E-card Sent');

@@ -136,7 +136,7 @@ class CP_Admin_Widgets_AceIms_MonthlyEnrollment_Model extends CP_Common_Lib_Widg
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Data_Accuracy_Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'PEIs_UEN_No');

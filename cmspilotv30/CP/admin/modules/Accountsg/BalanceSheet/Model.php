@@ -254,7 +254,7 @@ class CP_Admin_Modules_Accountsg_BalanceSheet_Model extends CP_Common_Lib_Module
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Narration Main');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Narration for Item');

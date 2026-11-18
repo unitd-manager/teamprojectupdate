@@ -134,7 +134,7 @@ class CPL_Admin_Widgets_EnggCrm_StatementofAccountsReport_Model extends CP_Commo
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->getStyle("E{$rowc}:G{$rowc}")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Serial No.');

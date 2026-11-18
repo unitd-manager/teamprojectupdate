@@ -138,7 +138,7 @@ class CP_Admin_Modules_Account_CurrencyConvert_Model extends CP_Common_Lib_Modul
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'ID');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'From Currency');

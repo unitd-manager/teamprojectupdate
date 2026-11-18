@@ -80,7 +80,7 @@ class CP_Admin_Widgets_Payroll_EmployeeSalaryReport_Model extends CP_Common_Lib_
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'S.No');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Employee Name');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'NRIC');

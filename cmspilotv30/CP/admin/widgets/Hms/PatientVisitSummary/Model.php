@@ -137,7 +137,7 @@ class CP_Admin_Widgets_Hms_PatientVisitSummary_Model extends CP_Common_Lib_Widge
         $month          = date('m');
         $year           = date('Y');
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Day');

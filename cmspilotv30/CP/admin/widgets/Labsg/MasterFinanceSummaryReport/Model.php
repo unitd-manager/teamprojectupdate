@@ -108,7 +108,7 @@ class CP_Admin_Widgets_Labsg_MasterFinanceSummaryReport_Model extends CP_Common_
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Mode of Payment');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Amount');

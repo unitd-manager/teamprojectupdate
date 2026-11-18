@@ -94,7 +94,7 @@ class CP_Admin_Widgets_Payroll_Ir8aReport_Model extends CP_Common_Lib_WidgetMode
         $rowc = 1;
         $colc = 0;
         $row  = 1;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $actSheet->mergeCells("A{$rowc}:K{$rowc}");
         $actSheet->getStyle("A{$rowc}:K{$rowc}")->applyFromArray($styleTopHeader);
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, "IR8A Report for {$cpCfg['cp.ir8aFormForYear']}");

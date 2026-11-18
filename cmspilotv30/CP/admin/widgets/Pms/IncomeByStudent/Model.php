@@ -101,7 +101,7 @@ class CP_Admin_Widgets_Pms_IncomeByStudent_Model extends CP_Common_Lib_WidgetMod
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Student Name');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'NRIC No.');

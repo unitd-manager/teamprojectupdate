@@ -309,7 +309,7 @@ class CP_Admin_Modules_Hms_Employee_Model extends CP_Common_Lib_ModuleModelAbstr
         $rowc = 1;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Employee Id');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Salutation');

@@ -138,7 +138,7 @@ class CP_Admin_Widgets_Tradingsg_SummaryByClient_Model extends CP_Common_Lib_Wid
         $rowc = 1;
         $colc = 0;
         $appendSql = '';
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Client Name');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Total Invoice Raised');

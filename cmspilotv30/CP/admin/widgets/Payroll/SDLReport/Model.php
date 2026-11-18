@@ -88,7 +88,7 @@ class CP_Admin_Widgets_Payroll_SDLReport_Model extends CP_Common_Lib_WidgetModel
         $rowc = 1;
         $colc = 0;
         $row  = 1;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $month    = $fn->getReqParam('month');
         $year     = $fn->getReqParam('year');
 

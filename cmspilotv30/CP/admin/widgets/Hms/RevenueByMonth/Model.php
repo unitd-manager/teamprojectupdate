@@ -89,7 +89,7 @@ class CP_Admin_Widgets_Hms_RevenueByMonth_Model extends CP_Common_Lib_WidgetMode
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $headStyle = array(
             'font' => array('bold' => true)
         );

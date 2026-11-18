@@ -159,7 +159,7 @@ class CP_Admin_Widgets_EnterpriseIms_StaffAttendanceOverallReport_Model extends 
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Serial No.');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Staff Name');

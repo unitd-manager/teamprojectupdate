@@ -89,7 +89,7 @@ class CP_Admin_Widgets_EnterpriseIms_StudentProgressionReports_Model extends CP_
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'S/No');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Student Name');

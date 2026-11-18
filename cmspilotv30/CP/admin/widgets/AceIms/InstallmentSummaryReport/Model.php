@@ -71,7 +71,7 @@ class CP_Admin_Widgets_AceIms_InstallmentSummaryReport_Model extends CP_Common_L
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'DATE');
         /******************** FORMAT HEADER *******************/

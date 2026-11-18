@@ -120,7 +120,7 @@ class CP_Admin_Widgets_Pms_OverdueReport_Model extends CP_Common_Lib_WidgetModel
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Branch');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Parent Name');

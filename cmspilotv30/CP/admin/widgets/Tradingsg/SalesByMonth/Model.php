@@ -154,7 +154,7 @@ class CP_Admin_Widgets_Tradingsg_SalesByMonth_Model extends CP_Common_Lib_Widget
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $location_id    = $fn->getReqParam('location_id');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Month');
         if($cpCfg['cp.hasMultiUniqueSites']){

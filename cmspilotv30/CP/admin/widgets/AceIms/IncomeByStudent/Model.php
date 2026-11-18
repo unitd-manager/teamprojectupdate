@@ -128,7 +128,7 @@ class CP_Admin_Widgets_AceIms_IncomeByStudent_Model extends CP_Common_Lib_Widget
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Reg No');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Student Name');

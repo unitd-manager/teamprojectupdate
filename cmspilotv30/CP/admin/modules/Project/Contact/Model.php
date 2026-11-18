@@ -362,7 +362,7 @@ class CP_Admin_Modules_Project_Contact_Model extends CP_Common_Lib_ModuleModelAb
         $rowc = 1;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Contact Id');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Salutation');

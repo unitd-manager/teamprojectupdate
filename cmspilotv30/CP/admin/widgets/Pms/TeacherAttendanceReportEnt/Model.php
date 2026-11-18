@@ -96,7 +96,7 @@ class CP_Admin_Widgets_Pms_TeacherAttendanceReportEnt_Model extends CP_Common_Li
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'S/No');
         if ($teacher_id == '') {

@@ -79,7 +79,7 @@ class CP_Admin_Widgets_Payroll_EmployeeTrainingExpiryReport_Model extends CP_Com
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'S.No');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Training Title');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Employee Name');

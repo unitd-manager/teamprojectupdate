@@ -96,7 +96,7 @@ class CP_Admin_Widgets_Project_DetailSummaryByClient_Model extends CP_Common_Lib
         $rowc = 1;
         $colc = 0;
         $appendSql = '';
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         if($company_id == ''){
             $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Client Name');

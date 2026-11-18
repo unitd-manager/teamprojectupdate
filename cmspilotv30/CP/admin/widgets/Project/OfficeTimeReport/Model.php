@@ -101,7 +101,7 @@ class CP_Admin_Widgets_Project_OfficeTimeReport_Model extends CP_Common_Lib_Widg
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Serial No.');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');

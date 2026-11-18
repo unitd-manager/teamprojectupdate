@@ -84,7 +84,7 @@ class CPL_Admin_Widgets_EnggCrm_EmployeeReport_Model extends CP_Admin_Widgets_En
         $rowc = 1;
         $colc = 0;
         $row  = 1;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'S.No');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Employee Name');

@@ -714,7 +714,7 @@ class CP_Admin_Modules_ManPower_Project_Model extends CP_Common_Lib_ModuleModelA
         $rowc = 1;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Project ID');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Project Title');
@@ -1039,7 +1039,7 @@ class CP_Admin_Modules_ManPower_Project_Model extends CP_Common_Lib_ModuleModelA
         $rowc = 1;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Project Summary');
         $actSheet->getColumnDimension('A')->setWidth(35);
@@ -1250,7 +1250,7 @@ class CP_Admin_Modules_ManPower_Project_Model extends CP_Common_Lib_ModuleModelA
         $rowc = 1;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Month');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, "Sales {$cpCfg['m.project.refCurrency']}");

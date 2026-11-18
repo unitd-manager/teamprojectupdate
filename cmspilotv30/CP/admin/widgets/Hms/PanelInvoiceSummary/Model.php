@@ -135,7 +135,7 @@ class CP_Admin_Widgets_Hms_PanelInvoiceSummary_Model extends CP_Common_Lib_Widge
         $month          = date('m');
         $year           = date('Y');
         $company_id      = $fn->getReqParam('company_id');
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Name');

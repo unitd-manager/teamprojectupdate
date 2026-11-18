@@ -94,7 +94,7 @@ class CP_Admin_Widgets_Pms_EnrollmentByYearReport_Model extends CP_Common_Lib_Wi
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         if (is_numeric($site_id)) {
             $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Branch');

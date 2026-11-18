@@ -114,7 +114,7 @@ class CP_Admin_Widgets_Labsg_RevenueByMonth_View extends CP_Common_Lib_WidgetVie
             $end_date = $month_year . '31';
         }
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Treatment Name');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Visits');
         /******************** FORMAT HEADER *******************/

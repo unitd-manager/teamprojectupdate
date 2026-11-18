@@ -518,7 +518,7 @@ class CP_Admin_Modules_EnggCrm_Invoice_Model extends CP_Common_Lib_ModuleModelAb
         $rowc = 1;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Invoice Code');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Invoice Type');

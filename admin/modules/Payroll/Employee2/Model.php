@@ -616,7 +616,7 @@ class CPL_Admin_Modules_Payroll_Employee_Model extends CP_Admin_Modules_Payroll_
         $rowc = 1;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Employee Id');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Salutation');

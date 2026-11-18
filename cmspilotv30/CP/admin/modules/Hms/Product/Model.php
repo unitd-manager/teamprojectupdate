@@ -556,7 +556,7 @@ class CP_Admin_Modules_Hms_Product_Model extends CP_Common_Lib_ModuleModelAbstra
         $rowc = 1;
         $colc = 0;
         $appendSql = '';
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'PRODUCT CODE');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'PRODUCT NAME');

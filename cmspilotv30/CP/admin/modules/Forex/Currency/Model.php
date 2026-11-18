@@ -153,7 +153,7 @@ class CP_Admin_Modules_Forex_Currency_Model extends CP_Common_Lib_ModuleModelAbs
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Currency Code');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Buying Rate');

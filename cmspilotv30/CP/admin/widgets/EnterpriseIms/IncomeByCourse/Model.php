@@ -117,7 +117,7 @@ class CP_Admin_Widgets_EnterpriseIms_IncomeByCourse_Model extends CP_Common_Lib_
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Course');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Number of Students');

@@ -124,7 +124,7 @@ class CP_Admin_Widgets_EnterpriseIms_StudentEnrollmentReport_Model extends CP_Co
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Branch');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Student No.');

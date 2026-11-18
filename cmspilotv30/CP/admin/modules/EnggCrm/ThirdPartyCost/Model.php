@@ -71,7 +71,7 @@ class CP_Admin_Modules_EnggCrm_ThirdPartyCost_Model extends CP_Common_Lib_Module
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Project Title');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Project Code');

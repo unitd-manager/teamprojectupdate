@@ -112,7 +112,7 @@ class CP_Admin_Widgets_AgileIms_StudentProgressionReports_Model extends CP_Commo
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'S/No');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Student Name');

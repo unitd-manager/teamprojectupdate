@@ -136,7 +136,7 @@ class CP_Admin_Widgets_Tradingsg_SalesSummaryByProductGroup_Model extends CP_Com
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'S.No');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Sales Date');

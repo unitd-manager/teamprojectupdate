@@ -129,7 +129,7 @@ class CP_Admin_Widgets_Tradingsg_SummaryPurchaseReport_Model extends CP_Common_L
         $rowc = 1;
         $colc = 0;
         $appendSql = '';
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Quote Code');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Quote Date');

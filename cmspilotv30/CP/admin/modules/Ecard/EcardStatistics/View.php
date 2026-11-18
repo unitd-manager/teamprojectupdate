@@ -114,7 +114,7 @@ class CP_Admin_Modules_Ecard_EcardStatistics_View extends CP_Common_Lib_ModuleVi
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'E-card Design');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Music');

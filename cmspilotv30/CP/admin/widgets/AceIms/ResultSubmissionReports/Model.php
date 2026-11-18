@@ -115,7 +115,7 @@ class CP_Admin_Widgets_AceIms_ResultSubmissionReports_Model extends CP_Common_Li
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'S/No');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Reg No');

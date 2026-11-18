@@ -119,7 +119,7 @@ class CP_Admin_Widgets_Tradingsg_GstReport_Model extends CP_Common_Lib_WidgetMod
         $rowc = 1;
         $colc = 0;
         $appendSql = '';
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Order Id');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Order Date');

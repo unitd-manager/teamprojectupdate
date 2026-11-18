@@ -274,7 +274,7 @@ class CP_Admin_Modules_Ecard_Contact_View extends CP_Common_Lib_ModuleViewAbstra
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'First Name');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Last Name');

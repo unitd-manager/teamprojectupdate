@@ -477,7 +477,7 @@ class CP_Admin_Modules_Manpower_Company_Model extends CP_Common_Lib_ModuleModelA
         $rowc = 1;
         $colc = 0;
 
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, "Company ID");
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, "Company Name");

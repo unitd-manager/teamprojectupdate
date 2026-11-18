@@ -192,7 +192,7 @@ class CP_Admin_Widgets_Labsg_DailyCollectionReport_Model extends CP_Common_Lib_W
         $year           = date('Y');
         $monthVal       = $fn->getReqParam('month');
         $yearVal        = $fn->getReqParam('year');
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Patient Name');
@@ -387,7 +387,7 @@ class CP_Admin_Widgets_Labsg_DailyCollectionReport_Model extends CP_Common_Lib_W
         //--------------------------------------------------//
         $rowc = 1;
         $colc = 0;
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Payment Date');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Invoice Code');

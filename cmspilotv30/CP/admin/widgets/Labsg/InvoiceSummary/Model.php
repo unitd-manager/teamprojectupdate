@@ -130,7 +130,7 @@ class CP_Admin_Widgets_Labsg_InvoiceSummary_Model extends CP_Common_Lib_WidgetMo
         $rowc = 1;
         $colc = 0;
         $appendSql = '';
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Company Name/ Patient Name');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');
@@ -311,7 +311,7 @@ class CP_Admin_Widgets_Labsg_InvoiceSummary_Model extends CP_Common_Lib_WidgetMo
         $rowc = 1;
         $colc = 0;
         $appendSql = '';
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Company Name/ Patient Name');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Date');

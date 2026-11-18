@@ -129,7 +129,7 @@ class CP_Admin_Widgets_Tradingsg_OverallGstSummary_Model extends CP_Common_Lib_W
         $rowc = 1;
         $colc = 0;
         $appendSql = '';
-        $actSheet = &$objPHPExcel->getActiveSheet();
+        $actSheet = $objPHPExcel->getActiveSheet();
 
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Supplier Name');
         $actSheet->setCellValueByColumnAndRow($colc++, $rowc, 'Amount (before GST)');
